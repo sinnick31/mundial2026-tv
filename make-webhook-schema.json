@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ResultadoShorts - Payload Make.com",
+  "description": "Schema para el webhook de Make.com que dispara la generación del Short de resultado",
+  "type": "object",
+  "required": [
+    "homeTeam",
+    "awayTeam",
+    "homeScore",
+    "awayScore",
+    "homeFlag",
+    "awayFlag",
+    "homeColor",
+    "awayColor",
+    "matchDate",
+    "matchStage",
+    "venue",
+    "city"
+  ],
+  "properties": {
+    "homeTeam": {
+      "type": "string",
+      "description": "Nombre del equipo local en MAYÚSCULAS",
+      "example": "BRASIL"
+    },
+    "awayTeam": {
+      "type": "string",
+      "description": "Nombre del equipo visitante en MAYÚSCULAS",
+      "example": "ARGENTINA"
+    },
+    "homeScore": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Goles del equipo local",
+      "example": 2
+    },
+    "awayScore": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Goles del equipo visitante",
+      "example": 1
+    },
+    "homeFlag": {
+      "type": "string",
+      "description": "Emoji de bandera del equipo local",
+      "example": "🇧🇷"
+    },
+    "awayFlag": {
+      "type": "string",
+      "description": "Emoji de bandera del equipo visitante",
+      "example": "🇦🇷"
+    },
+    "homeColor": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$",
+      "description": "Color primario del equipo local en HEX",
+      "example": "#009c3b"
+    },
+    "awayColor": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$",
+      "description": "Color primario del equipo visitante en HEX",
+      "example": "#74acdf"
+    },
+    "matchDate": {
+      "type": "string",
+      "description": "Fecha del partido formateada para mostrar",
+      "example": "25 JUN 2026"
+    },
+    "matchStage": {
+      "type": "string",
+      "description": "Fase del torneo",
+      "example": "CUARTOS DE FINAL",
+      "enum": [
+        "GRUPO A · JORNADA 1",
+        "GRUPO A · JORNADA 2",
+        "GRUPO A · JORNADA 3",
+        "GRUPO B · JORNADA 1",
+        "GRUPO B · JORNADA 2",
+        "GRUPO B · JORNADA 3",
+        "GRUPO C · JORNADA 1",
+        "GRUPO C · JORNADA 2",
+        "GRUPO C · JORNADA 3",
+        "GRUPO D · JORNADA 1",
+        "GRUPO D · JORNADA 2",
+        "GRUPO D · JORNADA 3",
+        "GRUPO E · JORNADA 1",
+        "GRUPO E · JORNADA 2",
+        "GRUPO E · JORNADA 3",
+        "GRUPO F · JORNADA 1",
+        "GRUPO F · JORNADA 2",
+        "GRUPO F · JORNADA 3",
+        "GRUPO G · JORNADA 1",
+        "GRUPO G · JORNADA 2",
+        "GRUPO G · JORNADA 3",
+        "GRUPO H · JORNADA 1",
+        "GRUPO H · JORNADA 2",
+        "GRUPO H · JORNADA 3",
+        "GRUPO I · JORNADA 1",
+        "GRUPO I · JORNADA 2",
+        "GRUPO I · JORNADA 3",
+        "GRUPO J · JORNADA 1",
+        "GRUPO J · JORNADA 2",
+        "GRUPO J · JORNADA 3",
+        "GRUPO K · JORNADA 1",
+        "GRUPO K · JORNADA 2",
+        "GRUPO K · JORNADA 3",
+        "GRUPO L · JORNADA 1",
+        "GRUPO L · JORNADA 2",
+        "GRUPO L · JORNADA 3",
+        "OCTAVOS DE FINAL",
+        "CUARTOS DE FINAL",
+        "SEMIFINAL",
+        "TERCER PUESTO",
+        "FINAL"
+      ]
+    },
+    "venue": {
+      "type": "string",
+      "description": "Nombre del estadio",
+      "example": "AT&T Stadium"
+    },
+    "city": {
+      "type": "string",
+      "description": "Ciudad y estado/país del estadio",
+      "example": "Dallas, Texas"
+    }
+  }
+}
