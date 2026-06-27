@@ -33,8 +33,8 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      matches_found: ${{ steps.check.outputs.matches_found }}
-      match_count: ${{ steps.check.outputs.match_count }}
+      matches_found: ${{ steps.check.outputs.matches_found || steps.manual.outputs.matches_found }}
+      match_count: ${{ steps.check.outputs.match_count || steps.manual.outputs.match_count }}
 
     steps:
       - name: 📥 Checkout
