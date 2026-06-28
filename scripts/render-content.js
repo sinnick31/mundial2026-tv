@@ -69,14 +69,6 @@ const enriched = successful.map((r) => {
   let youtubeDescription = "";
   let hashtags = "#Mundial2026 #FIFA #WorldCup2026 #Shorts";
 
-  const AFFILIATE = [
-    ``,
-    `━━━━━━━━━━━━━━━━━━━━━━━━━━`,
-    `🛒 PRODUCTOS DEL MUNDIAL 2026 → https://meli.la/2dqYoTC`,
-    `💳 PAGA CON TARJETA FÁCIL → https://mpago.li/1QSRsUa`,
-    `━━━━━━━━━━━━━━━━━━━━━━━━━━`,
-  ].join("\n");
-
   if (r.compositionId === "PrediccionIA") {
     const p = r.props;
     youtubeTitle = `🤖 IA PREDICE: ${p.homeFlag}${p.homeTeam} ${p.predictedHome}-${p.predictedAway} ${p.awayTeam}${p.awayFlag} | ${p.matchStage} #WorldCup2026`;
@@ -94,7 +86,7 @@ const enriched = successful.map((r) => {
       `📅 ${p.matchDate} | ${p.matchStage}`,
       ``,
       `🔔 Suscríbete para predicciones diarias con IA real`,
-      AFFILIATE,
+      ``,
       `#${p.homeTeam.replace(/\s/g,"")} #${p.awayTeam.replace(/\s/g,"")} ${hashtags} #Prediccion #IA`,
     ].join("\n");
   } else if (r.compositionId === "EstadisticaViral") {
@@ -108,7 +100,7 @@ const enriched = successful.map((r) => {
       `💡 ${s.context}`,
       ``,
       `🔔 Suscríbete para más datos increíbles del Mundial`,
-      AFFILIATE,
+      ``,
       `${hashtags} #DatoViral #Football #Soccer`,
     ].join("\n");
   }

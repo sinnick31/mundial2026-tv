@@ -1,0 +1,207 @@
+name: 🤖 Mundial 2026 — Contenido IA Diario
+
+on:
+  schedule:
+    # ── Predicciones: 7 AM Chile (11 UTC) — antes de los partidos del día ──
+    - cron: "0 11 * 6-7 *"
+
+    # ── Estadística viral: 11 AM Chile (15 UTC) — peak de tráfico ──
+    - cron: "0 15 * 6-7 *"
+
+    # ── Segunda ronda predicciones: 2 PM Chile (18 UTC) — pre partidos tarde
+    - cron: "0 18 * 6-7 *"
+
+  workflow_dispatch:
+    inputs:
+      content_type:
+        description: "Tipo de contenido a generar"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - predictions
+          - stats
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  # ══════════════════════════════════════════════════════════════════════════
+  # JOB 1: Generar contenido con IA
+  # ══════════════════════════════════════════════════════════════════════════
+  generate-content:
+    name: 🧠 Generar con IA
+    runs-on: ubuntu-latest
+
+    outputs:
+      has_predictions: ${{ steps.gen.outputs.predictions_found }}
+      has_stats: ${{ steps.gen.outputs.stat_found }}
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🟢 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Instalar dependencias
+        run: npm ci
+
+      - name: 🔮 Generar predicciones con Claude AI
+        id: gen
+        if: ${{ github.event.inputs.content_type != 'stats' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+          COMPETITION_ID: ${{ secrets.COMPETITION_ID || 'WC' }}
+        run: node scripts/generate-predictions.js
+
+      - name: 📊 Generar estadística viral con Claude AI
+        if: ${{ github.event.inputs.content_type != 'predictions' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+          COMPETITION_ID: ${{ secrets.COMPETITION_ID || 'WC' }}
+        run: node scripts/generate-stats.js
+
+      - name: 📤 Subir JSONs generados
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-generated-content
+          path: |
+            /tmp/predictions.json
+            /tmp/stat-viral.json
+          retention-days: 1
+          if-no-files-found: warn
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # JOB 2: Renderizar los videos con Remotion
+  # ══════════════════════════════════════════════════════════════════════════
+  render:
+    name: 🎬 Renderizar Videos
+    runs-on: ubuntu-latest
+    needs: generate-content
+    if: ${{ needs.generate-content.outputs.has_predictions == 'true' || needs.generate-content.outputs.has_stats == 'true' }}
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🟢 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: 📦 Instalar dependencias
+        run: npm ci
+
+      - name: 🌐 Instalar Chrome
+        run: npx remotion browser ensure
+
+      - name: 📥 Descargar JSONs de IA
+        uses: actions/download-artifact@v4
+        with:
+          name: ai-generated-content
+          path: /tmp/
+
+      - name: 🎬 Renderizar todos los videos
+        run: node scripts/render-content.js
+
+      - name: 📤 Subir videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-videos
+          path: out/
+          retention-days: 2
+
+      - name: 📤 Subir manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: content-manifest
+          path: /tmp/content-manifest.json
+          retention-days: 1
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # JOB 3: Subir a YouTube con títulos y descripciones optimizados por IA
+  # ══════════════════════════════════════════════════════════════════════════
+  upload:
+    name: 📺 Publicar en YouTube
+    runs-on: ubuntu-latest
+    needs: render
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🟢 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📥 Descargar videos
+        uses: actions/download-artifact@v4
+        with:
+          name: ai-videos
+          path: out/
+
+      - name: 📥 Descargar manifest
+        uses: actions/download-artifact@v4
+        with:
+          name: content-manifest
+          path: /tmp/
+
+      - name: 📤 Subir a YouTube Shorts
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const { execSync } = require('child_process');
+
+            const manifest = JSON.parse(fs.readFileSync('/tmp/content-manifest.json','utf-8'));
+
+            for (const item of manifest) {
+              if (!item.success) continue;
+
+              const filePath = item.file.replace(/.*\/out\//, 'out/');
+              if (!fs.existsSync(filePath)) {
+                console.warn('Archivo no encontrado:', filePath);
+                continue;
+              }
+
+              console.log('Subiendo:', item.youtubeTitle);
+
+              // Guardar metadata temporal
+              fs.writeFileSync('/tmp/yt-meta.json', JSON.stringify({
+                title: item.youtubeTitle,
+                description: item.youtubeDescription,
+              }));
+
+              try {
+                execSync('node scripts/upload-youtube.js', {
+                  stdio: 'inherit',
+                  env: {
+                    ...process.env,
+                    VIDEO_FILE: filePath,
+                    MATCH_JSON: JSON.stringify({
+                      ...item.props,
+                      _youtubeTitle: item.youtubeTitle,
+                      _youtubeDescription: item.youtubeDescription,
+                    }),
+                  }
+                });
+                console.log('✅ Subido:', item.youtubeTitle.substring(0, 50));
+              } catch(e) {
+                console.error('❌ Error subiendo:', e.message);
+              }
+
+              // Pausa entre uploads
+              execSync('sleep 5');
+            }
+          "
