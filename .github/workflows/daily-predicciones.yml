@@ -1,0 +1,237 @@
+name: 🎬 Daily Predicciones Mundial 2026
+
+on:
+  # ─── Automático: 3 veces por día (horario Chile GMT-4) ─────────────────────
+  schedule:
+    - cron: '0 12 * * *'   # 08:00 Chile — tanda de mañana (4 videos)
+    - cron: '0 19 * * *'   # 15:00 Chile — tanda de tarde  (4 videos)
+    - cron: '0 23 * * *'   # 19:00 Chile — tanda de noche  (4 videos)
+
+  # ─── Manual desde GitHub UI ─────────────────────────────────────────────────
+  workflow_dispatch:
+    inputs:
+      tipo_contenido:
+        description: 'Qué tipo de videos generar'
+        required: false
+        default: 'todos'
+        type: choice
+        options:
+          - todos
+          - predicciones
+          - ranking
+          - noticia
+      cantidad:
+        description: 'Cantidad de videos (1-4)'
+        required: false
+        default: '4'
+        type: choice
+        options: ['1', '2', '3', '4']
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  # ════════════════════════════════════════════════════════════════════════════
+  # JOB 1: GENERAR CONTENIDO CON GEMINI
+  # ════════════════════════════════════════════════════════════════════════════
+  generate:
+    name: 🤖 Generar contenido con Gemini
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    outputs:
+      contenido_generado: ${{ steps.gen.outputs.success }}
+      fecha: ${{ steps.gen.outputs.fecha }}
+
+    steps:
+      - name: 📦 Checkout
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📥 Instalar dependencias
+        run: npm ci
+
+      - name: 🤖 Generar contenido del día
+        id: gen
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: |
+          node scripts/generate-daily-content.js
+          echo "success=true" >> $GITHUB_OUTPUT
+          echo "fecha=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
+
+      - name: 💾 Guardar daily-content.json como artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-content-${{ steps.gen.outputs.fecha }}
+          path: daily-content.json
+          retention-days: 7
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # JOB 2: RENDER + UPLOAD (paralelo por video)
+  # ════════════════════════════════════════════════════════════════════════════
+  render-upload:
+    name: 🎬 Render y subir a YouTube
+    runs-on: ubuntu-latest
+    needs: generate
+    if: needs.generate.outputs.contenido_generado == 'true'
+    timeout-minutes: 60
+
+    strategy:
+      matrix:
+        video_index: [1, 2, 3, 4]
+      max-parallel: 2  # 2 en paralelo para no saturar la cuota de YouTube
+
+    steps:
+      - name: 📦 Checkout
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📥 Instalar dependencias
+        run: npm ci
+
+      - name: 🎨 Instalar dependencias de Chromium para Remotion
+        run: npx remotion browser ensure
+
+      - name: 📥 Descargar daily-content.json
+        uses: actions/download-artifact@v4
+        with:
+          name: daily-content-${{ needs.generate.outputs.fecha }}
+
+      - name: 🎬 Render video ${{ matrix.video_index }}
+        env:
+          VIDEO_INDEX: ${{ matrix.video_index }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const { execSync } = require('child_process');
+            const data = JSON.parse(fs.readFileSync('daily-content.json'));
+            const item = data.contenido.find(c => c._orden === parseInt(process.env.VIDEO_INDEX));
+            if (!item) { console.log('No hay video para index', process.env.VIDEO_INDEX); process.exit(0); }
+
+            const props = JSON.stringify({
+              gancho: item.gancho,
+              subtitulo: item.subtitulo,
+              descripcion: item.descripcion,
+              equipo1: item.equipo1,
+              equipo2: item.equipo2 || undefined,
+              probabilidad: item.probabilidad,
+              puntos: item.puntos,
+              emoji: item.emoji,
+              tipo: item.tipo,
+            });
+
+            fs.mkdirSync('out', { recursive: true });
+            const outFile = 'out/video_' + item._orden + '.mp4';
+
+            execSync([
+              'npx remotion render src/index.tsx PrediccionShorts',
+              outFile,
+              \"--props='\" + props.replace(/'/g, \"'\\\\\\''\") + \"'\",
+              '--codec=h264 --fps=30 --width=1080 --height=1920 --concurrency=2'
+            ].join(' '), { stdio: 'inherit' });
+
+            // Guardar metadata para el upload
+            fs.writeFileSync('out/meta_' + item._orden + '.json', JSON.stringify(item, null, 2));
+            console.log('✅ Renderizado:', outFile);
+          "
+
+      - name: 📤 Subir video ${{ matrix.video_index }} a YouTube
+        env:
+          YOUTUBE_CLIENT_ID:     ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          VIDEO_INDEX: ${{ matrix.video_index }}
+        run: |
+          node -e "
+            const { google } = require('googleapis');
+            const fs = require('fs');
+
+            const metaFile = 'out/meta_' + process.env.VIDEO_INDEX + '.json';
+            const videoFile = 'out/video_' + process.env.VIDEO_INDEX + '.mp4';
+
+            if (!fs.existsSync(videoFile)) {
+              console.log('Sin video para index', process.env.VIDEO_INDEX);
+              process.exit(0);
+            }
+
+            const item = JSON.parse(fs.readFileSync(metaFile));
+            const oauth2 = new google.auth.OAuth2(
+              process.env.YOUTUBE_CLIENT_ID,
+              process.env.YOUTUBE_CLIENT_SECRET,
+              'urn:ietf:wg:oauth:2.0:oob'
+            );
+            oauth2.setCredentials({ refresh_token: process.env.YOUTUBE_REFRESH_TOKEN });
+            const yt = google.youtube({ version: 'v3', auth: oauth2 });
+
+            const tags = [...new Set([...(item.tags||[]), 'Mundial2026','Futbol','Shorts','FIFA','WorldCup2026','IA'])].slice(0,15);
+
+            (async () => {
+              const res = await yt.videos.insert({
+                part: ['snippet','status'],
+                requestBody: {
+                  snippet: {
+                    title: item.titulo_youtube,
+                    description: item.descripcion_youtube,
+                    tags,
+                    categoryId: '17',
+                    defaultLanguage: 'es',
+                  },
+                  status: {
+                    privacyStatus: 'public',
+                    selfDeclaredMadeForKids: false,
+                    madeForKids: false,
+                  },
+                },
+                media: { body: fs.createReadStream(videoFile) },
+              });
+              console.log('✅ Publicado:', 'https://youtu.be/' + res.data.id);
+              console.log('   Título:', item.titulo_youtube);
+            })().catch(e => { console.error('❌ Upload error:', e.message); process.exit(1); });
+          "
+
+      - name: 💾 Guardar video como artifact (backup)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: video-${{ matrix.video_index }}-${{ needs.generate.outputs.fecha }}
+          path: out/video_${{ matrix.video_index }}.mp4
+          retention-days: 3
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # JOB 3: NOTIFICACIÓN DE RESULTADOS
+  # ════════════════════════════════════════════════════════════════════════════
+  notify:
+    name: 📊 Reporte del día
+    runs-on: ubuntu-latest
+    needs: [generate, render-upload]
+    if: always()
+
+    steps:
+      - name: 📊 Resumen de ejecución
+        run: |
+          echo "═══════════════════════════════════════"
+          echo "📺 MUNDIAL 2026 TV — Reporte diario"
+          echo "═══════════════════════════════════════"
+          echo "📅 Fecha: $(date '+%Y-%m-%d %H:%M') Chile"
+          echo "🤖 Generación: ${{ needs.generate.result }}"
+          echo "🎬 Render/Upload: ${{ needs.render-upload.result }}"
+          echo ""
+          if [ "${{ needs.render-upload.result }}" == "success" ]; then
+            echo "✅ Pipeline completado exitosamente"
+            echo "   Revisa tu canal: https://www.youtube.com/@eliasvaldivia7233"
+          else
+            echo "⚠️ Pipeline con errores — revisar logs"
+          fi
+          echo "═══════════════════════════════════════"
