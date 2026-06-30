@@ -202,7 +202,7 @@ async function llamarGemini(model, prompt) {
 // ─── Pipeline principal ───────────────────────────────────────────────────────
 
 async function generateContent() {
-  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
   const history = loadHistory();
   const fecha = new Date().toISOString().split('T')[0];
   const results = [];
