@@ -1,0 +1,183 @@
+name: 🎬 Mundial 2026 TV — Pipeline Automático Diario
+
+# ════════════════════════════════════════════════════════════════════════
+# PIPELINE COMPLETO: Noticias reales + Partidos + IA + YouTube Shorts
+# Busca noticias de internet, resultados de partidos, genera videos con IA
+# y los sube automáticamente a YouTube. Corre 4 veces al día.
+# ════════════════════════════════════════════════════════════════════════
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # 05:00 Chile — Resumen mañana (partidos noche anterior)
+    - cron: '0 15 * * *'  # 11:00 Chile — Mediodía (noticias del día)
+    - cron: '0 21 * * *'  # 17:00 Chile — Tarde (preview partidos de la noche)
+    - cron: '0 3 * * *'   # 23:00 Chile — Noche (resultados del día)
+
+  workflow_dispatch:
+    inputs:
+      max_items:
+        description: 'Máximo de videos a generar'
+        required: false
+        default: '4'
+        type: choice
+        options: ['1', '2', '3', '4', '5']
+      modo:
+        description: 'Modo de ejecución'
+        required: false
+        default: 'auto'
+        type: choice
+        options: ['auto', 'noticias', 'partidos', 'predicciones', 'ranking']
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: '24'
+
+jobs:
+  # ══════════════════════════════════════════════════════════════════════
+  # JOB 1: BUSCAR NOTICIAS REALES EN INTERNET + GENERAR CONTENIDO CON IA
+  # ══════════════════════════════════════════════════════════════════════
+  generate:
+    name: 🤖 Buscar noticias y generar contenido
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      hay_contenido: ${{ steps.gen.outputs.hay_contenido }}
+      fecha: ${{ steps.gen.outputs.fecha }}
+
+    steps:
+      - name: 📦 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📥 Instalar dependencias
+        run: npm ci
+
+      - name: 🌐 Instalar librerías de noticias
+        run: |
+          npm install --no-save node-fetch@3 cheerio rss-parser
+
+      - name: 🔍 Buscar noticias del Mundial en internet
+        run: node scripts/fetch-news.js
+
+      - name: ⚽ Obtener partidos y resultados
+        run: node scripts/fetch-matches.js
+
+      - name: 🤖 Generar contenido único con IA
+        id: gen
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+          COMPETITION_ID: ${{ secrets.COMPETITION_ID }}
+          MAX_ITEMS: ${{ inputs.max_items || '4' }}
+          MODO: ${{ inputs.modo || 'auto' }}
+        run: |
+          node scripts/generate-daily-content.js
+          FECHA=$(date +%Y-%m-%d)
+          echo "fecha=$FECHA" >> $GITHUB_OUTPUT
+          TOTAL=$(node -e "const f=require('./daily-content.json');console.log(f.total||0)" 2>/dev/null || echo "0")
+          echo "📊 Videos únicos generados: $TOTAL"
+          if [ "$TOTAL" -gt 0 ]; then
+            echo "hay_contenido=true" >> $GITHUB_OUTPUT
+          else
+            echo "hay_contenido=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 💾 Commit historial y caché de noticias
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content-history.json news-cache.json 2>/dev/null || true
+          git diff --staged --quiet && echo "Sin cambios" || git commit -m "tarea: actualizar historial y caché de noticias [skip ci]"
+          git push || echo "Nada para pushear"
+
+      - name: 💾 Guardar daily-content.json como artefacto
+        if: steps.gen.outputs.hay_contenido == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: contenido-diario-${{ steps.gen.outputs.fecha }}-${{ github.run_number }}
+          path: daily-content.json
+          retention-days: 7
+
+  # ══════════════════════════════════════════════════════════════════════
+  # JOB 2: RENDER + SUBIR A YOUTUBE
+  # ══════════════════════════════════════════════════════════════════════
+  render-upload:
+    name: 🎬 Renderizar y publicar en YouTube
+    runs-on: ubuntu-latest
+    needs: generate
+    if: needs.generate.outputs.hay_contenido == 'true'
+    timeout-minutes: 60
+
+    steps:
+      - name: 📦 Checkout
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📥 Instalar dependencias
+        run: npm ci
+
+      - name: 🌐 Instalar Chrome para Remotion
+        run: |
+          npx remotion browser ensure
+          echo "REMOTION_CHROME_FLAGS=--no-sandbox --disable-setuid-sandbox" >> $GITHUB_ENV
+
+      - name: 📥 Descargar daily-content.json
+        uses: actions/download-artifact@v4
+        with:
+          name: contenido-diario-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
+
+      - name: 🎬 Renderizar y subir todos los videos
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: node scripts/render-and-upload.js
+
+      - name: 💾 Backup de videos generados
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: videos-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
+          path: output/
+          retention-days: 5
+
+  # ══════════════════════════════════════════════════════════════════════
+  # JOB 3: REPORTE FINAL
+  # ══════════════════════════════════════════════════════════════════════
+  notify:
+    name: 📊 Reporte final del pipeline
+    runs-on: ubuntu-latest
+    needs: [generate, render-upload]
+    if: always()
+    steps:
+      - name: 📊 Resumen
+        run: |
+          echo "══════════════════════════════════════════════"
+          echo "📺 MUNDIAL 2026 TV — Reporte Automático"
+          echo "══════════════════════════════════════════════"
+          echo "🕐 Ejecución: $(date '+%Y-%m-%d %H:%M UTC')"
+          echo "🔄 Run #${{ github.run_number }}"
+          if [ "${{ needs.generate.outputs.hay_contenido }}" == "false" ]; then
+            echo "ℹ️ No había partidos/noticias nuevas sin cubrir hoy."
+            echo "Esto es ESPERADO — evita publicar duplicados."
+          elif [ "${{ needs.render-upload.result }}" == "success" ]; then
+            echo "✅ Pipeline completado — videos publicados en YouTube"
+            echo "📺 Canal: https://www.youtube.com/@mundial2026shorts"
+          else
+            echo "⚠️ Errores en render/upload — revisar logs del job"
+          fi
+          echo "══════════════════════════════════════════════"
