@@ -1,5 +1,6 @@
 import { Composition, registerRoot } from 'remotion';
 import { PrediccionShorts, PrediccionProps } from './PrediccionShorts';
+import { JugadaAnimada, JugadaAnimadaProps, defaultJugadaProps } from './JugadaAnimada';
 
 const PREVIEW_PROPS: PrediccionProps = {
   gancho: '¡ARGENTINA ELIMINADA!',
@@ -17,6 +18,10 @@ const PREVIEW_PROPS: PrediccionProps = {
   tipo: 'eliminacion',
 };
 
+// Esta es la raíz que usa el pipeline real (render-and-upload.js apunta a
+// src/index.tsx explícitamente). Por eso AMBAS composiciones que se usan
+// en producción (PrediccionShorts y JugadaAnimada) deben estar registradas
+// acá, no solo en Root.tsx (que es para `remotion studio`).
 const RemotionRoot: React.FC = () => {
   return (
     <>
@@ -28,6 +33,15 @@ const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={PREVIEW_PROPS}
+      />
+      <Composition
+        id="JugadaAnimada"
+        component={JugadaAnimada}
+        durationInFrames={360}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={defaultJugadaProps}
       />
     </>
   );
