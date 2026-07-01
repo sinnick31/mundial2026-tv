@@ -22,9 +22,9 @@ let props = null;
 
 for (const arg of args) {
   if (arg.startsWith("--props=")) {
-    props = JSON.parse(arg.replace("--props=", ""));
+    props = JSON.parse(arg.slice(8)); // Más seguro que replace
   } else if (arg.startsWith("--propsFile=")) {
-    const file = arg.replace("--propsFile=", "");
+    const file = arg.slice(12); // Más seguro que replace
     props = JSON.parse(fs.readFileSync(path.resolve(file), "utf-8"));
   }
 }
@@ -62,7 +62,9 @@ console.log(`🎬 Renderizando: ${props.homeTeam} ${props.homeScore} - ${props.a
 console.log(`📁 Output: ${outFile}`);
 
 const propsJson = JSON.stringify(props);
-const cmd = `npx remotion render ResultadoShorts "${outFile}" --props='${propsJson}' --codec=h264`;
+// Escapar comillas simples para evitar inyección de comandos
+const escapedPropsJson = propsJson.replace(/'/g, "'\\''");
+const cmd = `npx remotion render ResultadoShorts "${outFile}" --props='${escapedPropsJson}' --codec=h264`;
 
 try {
   execSync(cmd, { stdio: "inherit", cwd: __dirname });

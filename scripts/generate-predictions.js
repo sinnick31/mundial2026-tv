@@ -4,6 +4,7 @@
 
 const https = require("https");
 const fs = require("fs");
+const path = require("path");
 
 const GEMINI_KEY = process.env.GEMINI_API_KEY;
 const FOOTBALL_KEY = process.env.FOOTBALL_DATA_API_KEY;
@@ -14,89 +15,8 @@ if (!GEMINI_KEY || !FOOTBALL_KEY) {
   process.exit(1);
 }
 
-const TEAM_FLAGS = {
-  "Brazil":"🇧🇷","Argentina":"🇦🇷","France":"🇫🇷","Germany":"🇩🇪",
-  "Spain":"🇪🇸","Portugal":"🇵🇹","England":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","Netherlands":"🇳🇱",
-  "Belgium":"🇧🇪","Uruguay":"🇺🇾","Colombia":"🇨🇴","Mexico":"🇲🇽",
-  "United States":"🇺🇸","USA":"🇺🇸","Chile":"🇨🇱","Ecuador":"🇪🇨",
-  "Peru":"🇵🇪","Japan":"🇯🇵","South Korea":"🇰🇷","Morocco":"🇲🇦",
-  "Canada":"🇨🇦","Saudi Arabia":"🇸🇦","Poland":"🇵🇱","Croatia":"🇭🇷",
-  "Switzerland":"🇨🇭","Denmark":"🇩🇰","Austria":"🇦🇹","Turkey":"🇹🇷",
-  "Serbia":"🇷🇸","Ukraine":"🇺🇦","Italy":"🇮🇹","Costa Rica":"🇨🇷",
-  "Senegal":"🇸🇳","Nigeria":"🇳🇬","Cameroon":"🇨🇲","Ghana":"🇬🇭",
-  "Venezuela":"🇻🇪","Bolivia":"🇧🇴","Paraguay":"🇵🇾","Algeria":"🇩🇿",
-};
-
-const TEAM_COLORS = {
-  "Brazil":"#009c3b","Argentina":"#74acdf","France":"#002395",
-  "Germany":"#1d1d1d","Spain":"#AA151B","Portugal":"#006600",
-  "England":"#00247D","Netherlands":"#FF6600","Belgium":"#EF3340",
-  "Uruguay":"#5EB6E4","Colombia":"#FCD116","Mexico":"#006847",
-  "United States":"#002868","USA":"#002868","Chile":"#D52B1E",
-  "Ecuador":"#FFD100","Peru":"#D91023","Japan":"#003087",
-  "South Korea":"#003478","Morocco":"#C1272D","Canada":"#FF0000",
-  "Saudi Arabia":"#006C35","Poland":"#DC143C","Croatia":"#FF0000",
-  "Switzerland":"#FF0000","Denmark":"#C60C30","Austria":"#ED2939",
-  "Turkey":"#E30A17","Serbia":"#C6363C","Ukraine":"#005BBB",
-};
-
-const STAGE_MAP = {
-  "GROUP_STAGE":"FASE DE GRUPOS","LAST_16":"OCTAVOS DE FINAL",
-  "QUARTER_FINALS":"CUARTOS DE FINAL","SEMI_FINALS":"SEMIFINAL",
-  "THIRD_PLACE":"TERCER PUESTO","FINAL":"FINAL",
-};
-
-function fetchFootball(path) {
-  return new Promise((resolve, reject) => {
-    const req = https.request({
-      hostname: "api.football-data.org", path, method: "GET",
-      headers: { "X-Auth-Token": FOOTBALL_KEY },
-    }, (res) => {
-      let d = ""; res.on("data", c => d += c);
-      res.on("end", () => { try { resolve(JSON.parse(d)); } catch(e) { resolve({}); } });
-    });
-    req.on("error", reject); req.end();
-  });
-}
-
-function callGemini(prompt) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 0.7, maxOutputTokens: 400 },
-    });
-    const path = `/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`;
-    const req = https.request({
-      hostname: "generativelanguage.googleapis.com", path, method: "POST",
-      headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(body) },
-    }, (res) => {
-      let d = ""; res.on("data", c => d += c);
-      res.on("end", () => {
-        try {
-          const json = JSON.parse(d);
-          const text = json.candidates?.[0]?.content?.parts?.[0]?.text || "";
-          const clean = text.replace(/```json|```/g, "").trim();
-          resolve(JSON.parse(clean));
-        } catch(e) { reject(new Error("Gemini parse error: " + d.substring(0,200))); }
-      });
-    });
-    req.on("error", reject); req.write(body); req.end();
-  });
-}
-
-function formatDate(iso) {
-  const d = new Date(iso);
-  const m = ["ENE","FEB","MAR","ABR","MAY","JUN","JUL","AGO","SEP","OCT","NOV","DIC"];
-  return `${d.getUTCDate()} ${m[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
-}
-
-function formatStage(match) {
-  const stage = STAGE_MAP[match.stage] || match.stage;
-  if (match.stage === "GROUP_STAGE" && match.group) {
-    return `GRUPO ${match.group.replace("GROUP_","")} · JORNADA ${match.matchday||1}`;
-  }
-  return stage;
-}
+// Importar datos compartidos de equipos
+const { TEAM_FLAGS, TEAM_COLORS, STAGE_MAP, formatDate, formatStage } = require("../utils/teamData");
 
 async function main() {
   console.log("🔮 Generando predicciones con Gemini AI...");
