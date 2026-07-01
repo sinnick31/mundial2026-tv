@@ -104,6 +104,26 @@ async function getPartidosProximos() {
   }
 }
 
+// ─── Enriquecer un partido finalizado con datos del gol (para JugadaAnimada) ─
+// football-data.org no siempre expone goleador/minuto en el plan free para
+// todas las competiciones — por eso esto SIEMPRE debe poder fallar en
+// silencio. Si no hay dato, JugadaAnimada usa una recreación genérica.
+async function getGolInfo(matchId) {
+  try {
+    const data = await fetchFootballData(`/matches/${matchId}`);
+    const goles = data.goals || [];
+    if (goles.length === 0) return null;
+    const ultimo = goles[goles.length - 1]; // el gol que define el resultado mostrado
+    return {
+      scorerName: ultimo.scorer?.name || null,
+      scorerMinute: ultimo.minute ?? null,
+      scorerTeam: ultimo.team?.id === data.homeTeam?.id ? 'home' : 'away',
+    };
+  } catch (err) {
+    return null; // silencioso a propósito — nunca debe tumbar el pipeline
+  }
+}
+
 // ─── Prompts Gemini — estilo TV, no spoiler plano ────────────────────────────
 
 function promptNarrativaPartido(partido) {
@@ -235,10 +255,16 @@ async function generateContent() {
         : promptPrediccionPartido(partido);
       const data = await llamarGemini(model, prompt);
 
+      const golInfo = modo === 'narrativa' ? await getGolInfo(partido.id) : null;
+
       results.push({
         ...data,
         _tipo_contenido: modo,
         _match_id: partido.id,
+        _gol_info: golInfo,
+        _goles_local: partido.golesLocal ?? null,
+        _goles_visita: partido.golesVisita ?? null,
+        _fase: partido.fase || '',
         _label: label,
         _fecha: fecha,
         _orden: results.length + 1,

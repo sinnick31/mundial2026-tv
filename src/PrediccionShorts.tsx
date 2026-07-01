@@ -1,10 +1,13 @@
 import {
   AbsoluteFill,
+  Audio,
+  Easing,
+  OffthreadVideo,
   Sequence,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
   interpolate,
-  Easing,
   spring,
 } from 'remotion';
 
@@ -18,6 +21,10 @@ export interface PrediccionProps {
   puntos: string[];      // ["Razón 1", "Razón 2", "Razón 3"]
   emoji: string;         // "⚽"
   tipo: 'eliminacion' | 'campeon' | 'sorpresa' | 'fracaso';
+  /** Clip de stock real (public/broll/...) — opcional, hace que se vea como contenido real */
+  brollSrc?: string;
+  /** .wav generado por scripts/generate-narration.js — opcional, le da voz al video */
+  audioSrc?: string;
 }
 
 const COLORES = {
@@ -27,9 +34,23 @@ const COLORES = {
   fracaso:     { bg: '#0d0500', acento: '#ff6b00', acento2: '#ff1a1a' },
 };
 
+// ─── Capa de video real de fondo (stock libre de copyright) ──────────────────
+const BrollLayer: React.FC<{ brollSrc?: string; opacity?: number }> = ({ brollSrc, opacity = 0.34 }) => {
+  if (!brollSrc) return null;
+  return (
+    <AbsoluteFill style={{ opacity }}>
+      <OffthreadVideo
+        src={brollSrc.startsWith('http') ? brollSrc : staticFile(brollSrc)}
+            muted
+        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.2) contrast(1.05)' }}
+      />
+    </AbsoluteFill>
+  );
+};
+
 // ─── Fase 1: HOOK (0–2s) ─────────────────────────────────────────────────────
-const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionProps['tipo']; emoji: string }> = ({
-  gancho, subtitulo, tipo, emoji
+const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionProps['tipo']; emoji: string; brollSrc?: string }> = ({
+  gancho, subtitulo, tipo, emoji, brollSrc,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -46,6 +67,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
 
   return (
     <AbsoluteFill style={{ background: `radial-gradient(ellipse at center, ${colores.bg}dd 0%, #000000 70%)` }}>
+      <BrollLayer brollSrc={brollSrc} opacity={0.25} />
       {/* Líneas de energía de fondo */}
       <AbsoluteFill style={{ opacity: 0.15 }}>
         {[...Array(8)].map((_, i) => (
@@ -145,31 +167,22 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
   );
 };
 
-// ─── Fase 2: CONTENIDO (2–20s) ───────────────────────────────────────────────
-const ContentPhase: React.FC<{
-  descripcion: string;
-  equipo1: string;
-  equipo2?: string;
-  probabilidad: number;
-  puntos: string[];
-  tipo: PrediccionProps['tipo'];
-}> = ({ descripcion, equipo1, equipo2, probabilidad, puntos, tipo }) => {
+// ─── Cabecera + descripción + barra (parte fija del contenido) ───────────────
+const HeaderBlock: React.FC<{
+  descripcion: string; equipo1: string; equipo2?: string;
+  probabilidad: number; tipo: PrediccionProps['tipo'];
+}> = ({ descripcion, equipo1, equipo2, probabilidad, tipo }) => {
   const frame = useCurrentFrame();
   const colores = COLORES[tipo];
-
   const headerOpacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: 'clamp' });
   const barWidth = interpolate(frame, [20, 80], [0, probabilidad], {
-    extrapolateRight: 'clamp',
-    easing: Easing.out(Easing.cubic),
+    extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic),
   });
 
   return (
     <AbsoluteFill style={{
-      background: `linear-gradient(180deg, #050505 0%, #0a0a0a 100%)`,
-      padding: '60px 36px',
-      display: 'flex', flexDirection: 'column', gap: 28,
+      padding: '60px 36px 0', display: 'flex', flexDirection: 'column', gap: 28,
     }}>
-      {/* Header con equipos */}
       <div style={{
         opacity: headerOpacity,
         display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16,
@@ -177,8 +190,7 @@ const ContentPhase: React.FC<{
       }}>
         <div style={{
           display: 'flex', alignItems: 'center', gap: 20,
-          fontSize: 56, fontWeight: 900,
-          color: '#fff',
+          fontSize: 56, fontWeight: 900, color: '#fff',
           fontFamily: "'Arial Black', sans-serif",
         }}>
           <span>{equipo1}</span>
@@ -187,41 +199,26 @@ const ContentPhase: React.FC<{
             <span>{equipo2}</span>
           </>}
         </div>
-        <div style={{
-          width: '100%', height: 3,
-          background: `linear-gradient(90deg, transparent, ${colores.acento}, transparent)`,
-        }} />
+        <div style={{ width: '100%', height: 3, background: `linear-gradient(90deg, transparent, ${colores.acento}, transparent)` }} />
       </div>
 
-      {/* Descripción principal */}
       <div style={{
-        fontSize: 36,
-        color: '#ffffffdd',
-        lineHeight: 1.45,
-        fontFamily: "'Arial', sans-serif",
-        fontWeight: 500,
-        textAlign: 'center',
+        fontSize: 36, color: '#ffffffdd', lineHeight: 1.45,
+        fontFamily: "'Arial', sans-serif", fontWeight: 500, textAlign: 'center',
         opacity: interpolate(frame, [10, 30], [0, 1], { extrapolateRight: 'clamp' }),
       }}>
         {descripcion}
       </div>
 
-      {/* Barra de probabilidad */}
-      <div style={{
-        opacity: interpolate(frame, [15, 35], [0, 1], { extrapolateRight: 'clamp' }),
-      }}>
+      <div style={{ opacity: interpolate(frame, [15, 35], [0, 1], { extrapolateRight: 'clamp' }) }}>
         <div style={{
           display: 'flex', justifyContent: 'space-between', marginBottom: 10,
-          fontSize: 26, fontWeight: 700, color: '#ffffffaa',
-          fontFamily: "'Arial', sans-serif",
+          fontSize: 26, fontWeight: 700, color: '#ffffffaa', fontFamily: "'Arial', sans-serif",
         }}>
           <span>Probabilidad según la IA</span>
           <span style={{ color: colores.acento }}>{Math.round(barWidth)}%</span>
         </div>
-        <div style={{
-          width: '100%', height: 18, background: '#ffffff15', borderRadius: 99,
-          overflow: 'hidden',
-        }}>
+        <div style={{ width: '100%', height: 18, background: '#ffffff15', borderRadius: 99, overflow: 'hidden' }}>
           <div style={{
             width: `${barWidth}%`, height: '100%', borderRadius: 99,
             background: `linear-gradient(90deg, ${colores.acento}, ${colores.acento2})`,
@@ -229,56 +226,98 @@ const ContentPhase: React.FC<{
           }} />
         </div>
       </div>
-
-      {/* Puntos clave */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-        {puntos.map((punto, i) => {
-          const pOpacity = interpolate(frame, [30 + i * 15, 50 + i * 15], [0, 1], { extrapolateRight: 'clamp' });
-          const pX = interpolate(frame, [30 + i * 15, 50 + i * 15], [-30, 0], { extrapolateRight: 'clamp' });
-          return (
-            <div key={i} style={{
-              display: 'flex', alignItems: 'flex-start', gap: 14,
-              opacity: pOpacity,
-              transform: `translateX(${pX}px)`,
-            }}>
-              <div style={{
-                minWidth: 36, height: 36, borderRadius: '50%',
-                background: colores.acento,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: 18, fontWeight: 900, color: '#000',
-                fontFamily: "'Arial Black', sans-serif",
-                marginTop: 2,
-              }}>
-                {i + 1}
-              </div>
-              <div style={{
-                fontSize: 30, color: '#ffffffcc',
-                lineHeight: 1.3, fontFamily: "'Arial', sans-serif",
-              }}>
-                {punto}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Badge IA */}
-      <div style={{
-        alignSelf: 'center',
-        background: '#ffffff10',
-        border: `1px solid ${colores.acento}44`,
-        borderRadius: 12, padding: '10px 24px',
-        fontSize: 22, color: '#ffffff88',
-        fontFamily: "'Arial', sans-serif",
-        opacity: interpolate(frame, [60, 80], [0, 1], { extrapolateRight: 'clamp' }),
-      }}>
-        🤖 Predicción generada por Inteligencia Artificial
-      </div>
     </AbsoluteFill>
   );
 };
 
-// ─── Fase 3: CTA (20–30s) ────────────────────────────────────────────────────
+// ─── Un punto clave a pantalla completa (reemplaza la lista numerada) ────────
+const PuntoFullscreen: React.FC<{
+  punto: string; index: number; total: number; tipo: PrediccionProps['tipo']; brollSrc?: string;
+}> = ({ punto, index, total, tipo, brollSrc }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const colores = COLORES[tipo];
+
+  const scale = spring({ frame, fps, config: { damping: 14, stiffness: 160 } });
+  const opacity = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
+  const slideX = interpolate(frame, [0, 12], [40, 0], { extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
+
+  return (
+    <AbsoluteFill style={{ background: '#050505' }}>
+      <BrollLayer brollSrc={brollSrc} opacity={0.3} />
+      <AbsoluteFill style={{
+        background: `linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.85) 100%)`,
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+        padding: '0 60px',
+      }}>
+        <div style={{
+          fontSize: 24, fontWeight: 900, color: colores.acento, letterSpacing: 3,
+          fontFamily: "'Arial Black', sans-serif", opacity, marginBottom: 22,
+        }}>
+          RAZÓN {index + 1}/{total}
+        </div>
+        <div style={{
+          opacity, transform: `scale(${scale}) translateX(${slideX}px)`,
+          fontSize: 46, fontWeight: 800, color: '#fff', textAlign: 'center',
+          lineHeight: 1.2, fontFamily: "'Arial Black', sans-serif",
+          textShadow: `0 0 30px ${colores.acento}55`,
+        }}>
+          {punto}
+        </div>
+        <div style={{
+          display: 'flex', gap: 8, marginTop: 36,
+          opacity: interpolate(frame, [8, 18], [0, 1], { extrapolateRight: 'clamp' }),
+        }}>
+          {Array.from({ length: total }).map((_, i) => (
+            <div key={i} style={{
+              width: i === index ? 28 : 10, height: 10, borderRadius: 99,
+              background: i === index ? colores.acento : '#ffffff30',
+            }} />
+          ))}
+        </div>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
+// ─── Fase 2: CONTENIDO (header fijo + puntos a pantalla completa) ────────────
+const ContentPhase: React.FC<{
+  descripcion: string; equipo1: string; equipo2?: string;
+  probabilidad: number; puntos: string[]; tipo: PrediccionProps['tipo'];
+  durationInFrames: number; brollSrc?: string;
+}> = ({ descripcion, equipo1, equipo2, probabilidad, puntos, tipo, durationInFrames, brollSrc }) => {
+  const HEADER_FRAMES = Math.round(durationInFrames * 0.34);
+  const puntosFrames = Math.max(durationInFrames - HEADER_FRAMES, 30);
+  const perPunto = Math.max(Math.floor(puntosFrames / Math.max(puntos.length, 1)), 20);
+
+  return (
+    <AbsoluteFill>
+      <Sequence from={0} durationInFrames={HEADER_FRAMES}>
+        <AbsoluteFill style={{ background: `linear-gradient(180deg, #050505 0%, #0a0a0a 100%)` }}>
+          <BrollLayer brollSrc={brollSrc} opacity={0.22} />
+          <HeaderBlock
+            descripcion={descripcion} equipo1={equipo1} equipo2={equipo2}
+            probabilidad={probabilidad} tipo={tipo}
+          />
+          <div style={{
+            position: 'absolute', bottom: 50, left: 0, right: 0, textAlign: 'center',
+            fontSize: 22, color: '#ffffff66', fontFamily: "'Arial', sans-serif",
+          }}>
+            🤖 Predicción generada por Inteligencia Artificial
+          </div>
+        </AbsoluteFill>
+      </Sequence>
+
+      {puntos.map((punto, i) => (
+        <Sequence key={i} from={HEADER_FRAMES + i * perPunto} durationInFrames={perPunto}>
+          <PuntoFullscreen punto={punto} index={i} total={puntos.length} tipo={tipo} brollSrc={brollSrc} />
+        </Sequence>
+      ))}
+    </AbsoluteFill>
+  );
+};
+
+// ─── Fase 3: CTA ──────────────────────────────────────────────────────────────
 const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -297,11 +336,7 @@ const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
       alignItems: 'center', justifyContent: 'center',
       gap: 40, padding: '0 40px',
     }}>
-      {/* Pregunta principal */}
-      <div style={{
-        transform: `scale(${scale})`,
-        textAlign: 'center',
-      }}>
+      <div style={{ transform: `scale(${scale})`, textAlign: 'center' }}>
         <div style={{
           fontSize: 62, fontWeight: 900, color: '#ffffff',
           lineHeight: 1.1, fontFamily: "'Arial Black', sans-serif",
@@ -309,56 +344,29 @@ const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
         }}>
           ¿Crees que esto pasará?
         </div>
-        <div style={{
-          fontSize: 38, color: '#ffffffaa', marginTop: 12,
-          fontFamily: "'Arial', sans-serif",
-        }}>
+        <div style={{ fontSize: 38, color: '#ffffffaa', marginTop: 12, fontFamily: "'Arial', sans-serif" }}>
           Deja tu predicción en los comentarios 👇
         </div>
       </div>
 
-      {/* Botones SI / NO */}
-      <div style={{
-        display: 'flex', gap: 30,
-        transform: `scale(${pulse})`,
-      }}>
+      <div style={{ display: 'flex', gap: 30, transform: `scale(${pulse})` }}>
         <div style={{
-          opacity: siOpacity,
-          background: '#00cc44',
-          borderRadius: 20, padding: '28px 52px',
-          fontSize: 64, fontWeight: 900, color: '#000',
-          fontFamily: "'Arial Black', sans-serif",
+          opacity: siOpacity, background: '#00cc44', borderRadius: 20, padding: '28px 52px',
+          fontSize: 64, fontWeight: 900, color: '#000', fontFamily: "'Arial Black', sans-serif",
           boxShadow: '0 0 40px #00cc4488',
-        }}>
-          ✅ SI
-        </div>
+        }}>✅ SI</div>
         <div style={{
-          opacity: noOpacity,
-          background: '#ff1a1a',
-          borderRadius: 20, padding: '28px 52px',
-          fontSize: 64, fontWeight: 900, color: '#fff',
-          fontFamily: "'Arial Black', sans-serif",
+          opacity: noOpacity, background: '#ff1a1a', borderRadius: 20, padding: '28px 52px',
+          fontSize: 64, fontWeight: 900, color: '#fff', fontFamily: "'Arial Black', sans-serif",
           boxShadow: '0 0 40px #ff1a1a88',
-        }}>
-          ❌ NO
-        </div>
+        }}>❌ NO</div>
       </div>
 
-      {/* Seguir canal */}
-      <div style={{
-        opacity: interpolate(frame, [50, 70], [0, 1], { extrapolateRight: 'clamp' }),
-        textAlign: 'center',
-      }}>
-        <div style={{
-          fontSize: 30, color: colores.acento,
-          fontWeight: 700, fontFamily: "'Arial', sans-serif",
-        }}>
+      <div style={{ opacity: interpolate(frame, [50, 70], [0, 1], { extrapolateRight: 'clamp' }), textAlign: 'center' }}>
+        <div style={{ fontSize: 30, color: colores.acento, fontWeight: 700, fontFamily: "'Arial', sans-serif" }}>
           🔔 Síguenos para más predicciones del Mundial 2026
         </div>
-        <div style={{
-          fontSize: 26, color: '#ffffff66', marginTop: 8,
-          fontFamily: "'Arial', sans-serif",
-        }}>
+        <div style={{ fontSize: 26, color: '#ffffff66', marginTop: 8, fontFamily: "'Arial', sans-serif" }}>
           @MUNDIAL2026TV
         </div>
       </div>
@@ -368,38 +376,37 @@ const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
 
 // ─── Composición principal ────────────────────────────────────────────────────
 export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
 
-  const HOOK_END    = 2 * fps;   // 60 frames
-  const CONTENT_END = 20 * fps;  // 600 frames
-  const CTA_END     = 30 * fps;  // 900 frames
+  // La duración total ahora puede venir del largo real de la narración
+  // (--duration-in-frames la sobreescribe en el render). Estas fases
+  // se reparten proporcionalmente en vez de usar segundos fijos.
+  const HOOK_END = Math.min(2 * fps, Math.round(durationInFrames * 0.12));
+  const CTA_FRAMES = Math.min(5 * fps, Math.round(durationInFrames * 0.2));
+  const CONTENT_END = Math.max(durationInFrames - CTA_FRAMES, HOOK_END + 30);
 
   return (
     <AbsoluteFill style={{ background: '#000' }}>
-      {/* FASE 1: HOOK */}
+      {props.audioSrc && (
+        <Audio src={props.audioSrc.startsWith('http') ? props.audioSrc : staticFile(props.audioSrc)} />
+      )}
+
       <Sequence from={0} durationInFrames={HOOK_END}>
         <HookPhase
-          gancho={props.gancho}
-          subtitulo={props.subtitulo}
-          tipo={props.tipo}
-          emoji={props.emoji}
+          gancho={props.gancho} subtitulo={props.subtitulo}
+          tipo={props.tipo} emoji={props.emoji} brollSrc={props.brollSrc}
         />
       </Sequence>
 
-      {/* FASE 2: CONTENIDO */}
       <Sequence from={HOOK_END} durationInFrames={CONTENT_END - HOOK_END}>
         <ContentPhase
-          descripcion={props.descripcion}
-          equipo1={props.equipo1}
-          equipo2={props.equipo2}
-          probabilidad={props.probabilidad}
-          puntos={props.puntos}
-          tipo={props.tipo}
+          descripcion={props.descripcion} equipo1={props.equipo1} equipo2={props.equipo2}
+          probabilidad={props.probabilidad} puntos={props.puntos} tipo={props.tipo}
+          durationInFrames={CONTENT_END - HOOK_END} brollSrc={props.brollSrc}
         />
       </Sequence>
 
-      {/* FASE 3: CTA */}
-      <Sequence from={CONTENT_END} durationInFrames={CTA_END - CONTENT_END}>
+      <Sequence from={CONTENT_END} durationInFrames={durationInFrames - CONTENT_END}>
         <CTAPhase tipo={props.tipo} />
       </Sequence>
     </AbsoluteFill>
