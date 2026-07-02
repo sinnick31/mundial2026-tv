@@ -26,7 +26,22 @@ const ROOT = path.join(__dirname, '..');
 const BROLL_DIR = path.join(ROOT, 'public', 'broll');
 const PUBLIC_TMP_DIR = path.join(ROOT, 'public', 'tmp');
 const FPS = 30;
-const DEFAULT_DURATION_FRAMES = 900; // 30s — fallback si no hay audio
+
+// Duraciones objetivo POR TIPO de contenido (en segundos, fallback sin audio).
+// Antes todos los videos salían idénticos (~31s) — YouTube detecta ese patrón.
+// Ahora: dato rápido corto, análisis de partido largo, noticia intermedio.
+const DURACION_POR_TIPO = {
+  narrativa:  { fallbackSeg: 45, guion: 'completo' },  // resultado real → análisis largo
+  noticia:    { fallbackSeg: 22, guion: 'breve' },     // noticia → dato rápido
+  prediccion: { fallbackSeg: 35, guion: 'completo' },  // análisis previo
+  ranking:    { fallbackSeg: 50, guion: 'completo' },  // 5 posiciones necesitan aire
+};
+
+function fuenteTexto(item) {
+  const fecha = item._fecha || new Date().toISOString().split('T')[0];
+  const base = item._fuente ? `${item._fuente} · football-data.org` : 'football-data.org · ESPN';
+  return `Datos: ${base} — ${fecha}`;
+}
 
 function getYouTubeClient() {
   const oauth2Client = new google.auth.OAuth2(
@@ -74,21 +89,28 @@ function renderVideo(compositionId, props, outputPath, durationInFrames) {
 
 // ─── Prepara narración + duración para un item ────────────────────────────────
 async function prepararNarracion(item) {
-  const guion = construirGuion(item);
+  const config = DURACION_POR_TIPO[item._tipo_contenido] || DURACION_POR_TIPO.prediccion;
+  const guion = construirGuion(item, config.guion);
   fs.mkdirSync(PUBLIC_TMP_DIR, { recursive: true });
   const wavPath = path.join(PUBLIC_TMP_DIR, `narracion_${item._orden}.wav`);
 
   const { audioPath, duracionSeg } = await generarNarracion(guion, wavPath);
 
   if (!audioPath) {
-    return { audioSrc: undefined, durationInFrames: DEFAULT_DURATION_FRAMES };
+    // Fallback sin audio: duración por tipo + jitter de ±3s para no repetir patrón
+    const jitterSeg = (Math.random() * 6) - 3;
+    return {
+      audioSrc: undefined,
+      durationInFrames: Math.round((config.fallbackSeg + jitterSeg) * FPS),
+    };
   }
 
   // relativo a public/, para staticFile() dentro del componente
   const audioSrc = `tmp/${path.basename(audioPath)}`;
-  // 2.2s de aire antes de empezar a hablar + ~2.5s de cierre/CTA después
+  // Aire antes/después variable (3.5–5.5s total) — evita duraciones idénticas
+  const padding = 3.5 + Math.random() * 2;
   const durationInFrames = Math.max(
-    Math.ceil((duracionSeg + 4.5) * FPS),
+    Math.ceil((duracionSeg + padding) * FPS),
     Math.round(8 * FPS),
   );
   return { audioSrc, durationInFrames };
@@ -125,6 +147,7 @@ async function prepararRender(item) {
       venue: '',
       brollSrc,
       audioSrc,
+      fuente: fuenteTexto(item),
     };
     return { compositionId: 'JugadaAnimada', props, durationInFrames };
   }
@@ -142,6 +165,7 @@ async function prepararRender(item) {
     tipo: item.tipo,
     brollSrc,
     audioSrc,
+    fuente: fuenteTexto(item),
   };
   return { compositionId: 'PrediccionShorts', props, durationInFrames };
 }

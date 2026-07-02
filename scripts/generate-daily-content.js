@@ -66,13 +66,34 @@ function fetchFootballData(endpoint) {
 
 // ─── Prompts Gemini ───────────────────────────────────────────────────────────
 
+// ─── Reglas anti-clickbait compartidas por todos los prompts ─────────────────
+const REGLAS_TITULO = `REGLAS ESTRICTAS PARA titulo_youtube (YouTube penaliza el clickbait genérico):
+- PROHIBIDO usar: "BOMBAZO", "INCREÍBLE", "IMPACTANTE", "NO LO VAS A CREER", "SHOCK", "AL LÍMITE"
+- PROHIBIDO más de 1 signo de exclamación y más de 1 emoji en el título
+- OBLIGATORIO: el título debe contener UN DATO CONCRETO Y VERIFICABLE (minuto, marcador, estadística, nombre de jugador) seguido de una pregunta o ángulo específico
+- Formato ejemplo: "España tardó 78 min en marcar a Austria: ¿problema táctico?" o "Kane suma 4 goles en 3 partidos: los números detrás"
+- El título debe poder verificarse contra los datos reales que te entregué arriba. NO inventes cifras.`;
+
+const REGLAS_DESCRIPCION = `REGLAS PARA descripcion_youtube:
+- El primer párrafo resume el dato/hecho real
+- El segundo párrafo da contexto o análisis
+- El tercer párrafo incluye los hashtags
+- NO inventes estadísticas que no estén en los datos entregados`;
+
 function promptNarrativaPartido(partido) {
-  return `Eres guionista deportivo de TV (ESPN/Fox Sports) para un Short de YouTube.
+  const golInfo = partido.goleadores ? `\nGoleadores: ${JSON.stringify(partido.goleadores)}` : '';
+  return `Eres guionista deportivo de TV (ESPN/Fox Sports) para un Short de YouTube sobre un partido REAL ya jugado.
 
-Partido FINALIZADO: ${partido.equipo1} ${partido.golesLocal}-${partido.golesVisita} ${partido.equipo2}
+DATOS REALES DEL PARTIDO (única fuente permitida — no inventes nada fuera de esto):
+Resultado FINAL: ${partido.equipo1} ${partido.golesLocal}-${partido.golesVisita} ${partido.equipo2}
 Fase del Mundial 2026: ${partido.fase}
+Fecha: ${partido.fecha || 'reciente'}${golInfo}
 
-REGLA: NO uses el marcador como gancho. Crea un ángulo narrativo de TV (la jugada clave, el misterio táctico, por qué ganó quien ganó).
+REGLA DE GANCHO: NO uses el marcador como gancho. Crea un ángulo narrativo de TV (la jugada clave, el misterio táctico, por qué ganó quien ganó), pero SIEMPRE anclado en los datos reales de arriba.
+
+${REGLAS_TITULO}
+
+${REGLAS_DESCRIPCION}
 
 Responde SOLO con JSON válido sin markdown:
 {
@@ -81,36 +102,61 @@ Responde SOLO con JSON válido sin markdown:
   "subtitulo": "frase que profundiza el gancho máx 10 palabras",
   "equipo1": "${partido.equipo1}",
   "equipo2": "${partido.equipo2}",
-  "descripcion": "análisis narrativo 2 frases máx 40 palabras",
+  "descripcion": "análisis narrativo 2 frases máx 40 palabras basado en el resultado real",
   "probabilidad": 0,
-  "puntos": ["dato/análisis 1", "dato/análisis 2", "dato/análisis 3"],
+  "puntos": ["dato real 1 (con cifra)", "dato real 2 (con cifra)", "análisis basado en los datos"],
   "emoji": "emoji relacionado",
-  "titulo_youtube": "título que NO revela el marcador máx 80 chars",
-  "descripcion_youtube": "descripción con hashtags 3 párrafos #Mundial2026 #Shorts",
+  "titulo_youtube": "dato real + pregunta, máx 80 chars, siguiendo las reglas estrictas",
+  "descripcion_youtube": "descripción de 3 párrafos siguiendo las reglas #Mundial2026 #Shorts",
   "tags": ["tag1","tag2","tag3","tag4","tag5"]
 }`;
 }
 
-function promptPrediccionPartido(partido) {
-  return `Eres analista deportivo de TV generando predicción REAL antes de un partido del Mundial 2026.
+function promptPrediccionPartido(partido, contexto = {}) {
+  const { resultadosRecientes = [], tabla = [] } = contexto;
+
+  // Filtrar contexto relevante a los dos equipos del partido
+  const relevante = (nombre) => (p) =>
+    [p.equipo1, p.equipo2].some(e => e && nombre && (e.includes(nombre) || nombre.includes(e)));
+  const historialE1 = resultadosRecientes.filter(relevante(partido.equipo1)).slice(0, 3);
+  const historialE2 = resultadosRecientes.filter(relevante(partido.equipo2)).slice(0, 3);
+
+  const datosContexto = [];
+  if (historialE1.length) datosContexto.push(`Resultados recientes de ${partido.equipo1}: ${historialE1.map(p => `${p.equipo1} ${p.golesLocal}-${p.golesVisita} ${p.equipo2}`).join(' | ')}`);
+  if (historialE2.length) datosContexto.push(`Resultados recientes de ${partido.equipo2}: ${historialE2.map(p => `${p.equipo1} ${p.golesLocal}-${p.golesVisita} ${p.equipo2}`).join(' | ')}`);
+  if (tabla.length) datosContexto.push(`Tabla de posiciones (resumen): ${JSON.stringify(tabla.slice(0, 8))}`);
+
+  return `Eres analista deportivo de TV generando un ANÁLISIS PREVIO (no una predicción sensacionalista) de un partido del Mundial 2026.
 
 Partido PRÓXIMO: ${partido.equipo1} vs ${partido.equipo2}
 Fase: ${partido.fase}
 Fecha: ${partido.fecha}
 
-Genera predicción concreta, justificada y polémica. Responde SOLO con JSON válido sin markdown:
+DATOS REALES DISPONIBLES (basa TODO tu análisis en esto):
+${datosContexto.length ? datosContexto.join('\n') : 'Sin datos de contexto — en ese caso limita el análisis a la fase del torneo y NO inventes estadísticas.'}
+
+REGLAS DEL ANÁLISIS:
+- Cada punto DEBE citar una cifra o hecho de los datos de arriba
+- PROHIBIDO afirmar eliminaciones como hechos ("X ELIMINADO"). Presenta escenarios con probabilidad
+- La probabilidad debe ser coherente con los datos, no siempre 75
+
+${REGLAS_TITULO}
+
+${REGLAS_DESCRIPCION}
+
+Responde SOLO con JSON válido sin markdown:
 {
-  "tipo": "eliminacion",
-  "gancho": "texto MAYÚSCULAS máx 5 palabras que genere shock",
+  "tipo": "sorpresa",
+  "gancho": "ángulo de análisis MAYÚSCULAS máx 5 palabras (sin afirmar resultados)",
   "subtitulo": "frase explicativa máx 10 palabras",
   "equipo1": "${partido.equipo1}",
   "equipo2": "${partido.equipo2}",
-  "descripcion": "predicción concreta 2 frases máx 40 palabras",
-  "probabilidad": 75,
-  "puntos": ["razón táctica 1", "razón táctica 2", "razón táctica 3"],
+  "descripcion": "análisis previo concreto 2 frases máx 40 palabras",
+  "probabilidad": 60,
+  "puntos": ["dato real + implicancia 1", "dato real + implicancia 2", "dato real + implicancia 3"],
   "emoji": "emoji relacionado",
-  "titulo_youtube": "título predicción ANTES del partido máx 80 chars",
-  "descripcion_youtube": "descripción con hashtags 3 párrafos #Mundial2026 #Shorts",
+  "titulo_youtube": "dato real + pregunta sobre el partido próximo, máx 80 chars",
+  "descripcion_youtube": "descripción de 3 párrafos siguiendo las reglas #Mundial2026 #Shorts",
   "tags": ["tag1","tag2","tag3","tag4","tag5"]
 }`;
 }
@@ -122,10 +168,16 @@ NOTICIA REAL: "${noticia.title}"
 FUENTE: ${noticia.fuente || 'Prensa deportiva'}
 RESUMEN: ${noticia.description || ''}
 
-Crea contenido que amplíe y contextualice esta noticia para el Mundial 2026. Responde SOLO con JSON válido sin markdown:
+Crea contenido que amplíe y contextualice esta noticia para el Mundial 2026. La descripcion_youtube DEBE mencionar la fuente ("Según ${noticia.fuente || 'la prensa deportiva'}...").
+
+${REGLAS_TITULO}
+
+${REGLAS_DESCRIPCION}
+
+Responde SOLO con JSON válido sin markdown:
 {
   "tipo": "sorpresa",
-  "gancho": "titular viral en MAYÚSCULAS máx 6 palabras",
+  "gancho": "titular en MAYÚSCULAS máx 6 palabras fiel a la noticia real",
   "subtitulo": "contexto que amplía la noticia máx 10 palabras",
   "equipo1": "País o equipo principal de la noticia",
   "equipo2": null,
@@ -133,18 +185,30 @@ Crea contenido que amplíe y contextualice esta noticia para el Mundial 2026. Re
   "probabilidad": 80,
   "puntos": ["dato clave 1", "dato clave 2", "impacto en el Mundial"],
   "emoji": "emoji temático",
-  "titulo_youtube": "título YouTube optimizado para la noticia máx 80 chars",
-  "descripcion_youtube": "descripción con hashtags 3 párrafos #Mundial2026 #Noticias #Shorts",
+  "titulo_youtube": "dato de la noticia + ángulo específico, máx 80 chars",
+  "descripcion_youtube": "descripción de 3 párrafos citando la fuente #Mundial2026 #Noticias #Shorts",
   "tags": ["tag1","tag2","tag3","tag4","tag5"]
 }`;
 }
 
-function promptRanking(temasEvitar) {
-  return `Eres analista de TV deportiva generando un ranking viral sobre el Mundial 2026.
+function promptRanking(temasEvitar, contexto = {}) {
+  const { resultadosRecientes = [], tabla = [] } = contexto;
+  const datos = [];
+  if (resultadosRecientes.length) datos.push(`Resultados reales recientes: ${resultadosRecientes.slice(0, 8).map(p => `${p.equipo1} ${p.golesLocal}-${p.golesVisita} ${p.equipo2} (${p.fase || ''})`).join(' | ')}`);
+  if (tabla.length) datos.push(`Tabla de posiciones real: ${JSON.stringify(tabla.slice(0, 10))}`);
+
+  return `Eres analista de TV deportiva generando un ranking sobre el Mundial 2026 BASADO EN DATOS REALES.
+
+DATOS REALES DISPONIBLES (el ranking DEBE derivarse de estas cifras — cada posición debe incluir el número que la justifica):
+${datos.length ? datos.join('\n') : 'ATENCIÓN: no hay datos reales disponibles hoy. En ese caso responde exactamente {"sin_datos": true} y nada más.'}
 
 NO repitas estos enfoques ya usados: ${temasEvitar.join(' | ') || 'ninguno aún'}
 
-Elige un ángulo ORIGINAL y ESPECÍFICO. Responde SOLO con JSON válido sin markdown:
+${REGLAS_TITULO}
+
+${REGLAS_DESCRIPCION}
+
+Elige un ángulo ORIGINAL y ESPECÍFICO derivado de los datos. Responde SOLO con JSON válido sin markdown:
 {
   "tipo": "sorpresa",
   "gancho": "nombre del ranking MAYÚSCULAS máx 5 palabras",
@@ -153,7 +217,7 @@ Elige un ángulo ORIGINAL y ESPECÍFICO. Responde SOLO con JSON válido sin mark
   "equipo2": null,
   "descripcion": "criterio del ranking máx 30 palabras",
   "probabilidad": 75,
-  "puntos": ["#1: ...", "#2: ...", "#3: ...", "#4: ...", "#5: ..."],
+  "puntos": ["#1: equipo/jugador — cifra real", "#2: ... — cifra real", "#3: ... — cifra real", "#4: ... — cifra real", "#5: ... — cifra real"],
   "emoji": "emoji temático",
   "titulo_youtube": "título YouTube optimizado máx 80 chars",
   "descripcion_youtube": "descripción con hashtags 3 párrafos #Mundial2026 #Ranking #Shorts",
@@ -168,6 +232,48 @@ async function llamarGemini(model, prompt) {
   const text = result.response.text().trim();
   const clean = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
   return JSON.parse(clean);
+}
+
+// ─── Sanitización anti-clickbait (garantía a nivel de código) ─────────────────
+// Aunque el prompt lo prohíbe, si Gemini igual devuelve clickbait, se limpia acá.
+
+const PALABRAS_PROHIBIDAS = /(¡?BOMBAZO!?|INCRE[IÍ]BLE|IMPACTANTE|NO LO VAS A CREER|SHOCK(EANTE)?|AL L[IÍ]MITE)[:\s]*/gi;
+
+function sanitizarTitulo(titulo) {
+  if (!titulo) return titulo;
+  let t = String(titulo)
+    .replace(PALABRAS_PROHIBIDAS, '')
+    .replace(/[¡!]{2,}/g, '')        // pares/rachas de exclamación huérfanas
+    .replace(/\?{2,}/g, '?')
+    .replace(/^[\s¡!:,.\-–]+/, '')   // puntuación huérfana al inicio
+    .replace(/\s+([?!,.])/g, '$1')   // espacio antes de puntuación
+    .replace(/¡\s*\?/g, '¿')         // "¡ ?" residual
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  // Máximo 1 emoji en el título
+  const emojis = t.match(/\p{Extended_Pictographic}/gu) || [];
+  if (emojis.length > 1) {
+    let visto = 0;
+    t = t.replace(/\p{Extended_Pictographic}/gu, (m) => (++visto === 1 ? m : ''));
+    t = t.replace(/\s{2,}/g, ' ').trim();
+  }
+  return t.substring(0, 100);
+}
+
+function footerFuentes(item, fecha) {
+  const fuentes = ['football-data.org', 'ESPN'];
+  if (item._fuente) fuentes.unshift(item._fuente);
+  return `\n\n📊 Fuentes: ${[...new Set(fuentes)].join(' · ')} — datos al ${fecha}.`;
+}
+
+// Aplica sanitización + fuentes a un item ya generado
+function pulirItem(item, fecha) {
+  item.titulo_youtube = sanitizarTitulo(item.titulo_youtube);
+  item.gancho = sanitizarTitulo(item.gancho);
+  if (item.descripcion_youtube && !item.descripcion_youtube.includes('📊 Fuentes:')) {
+    item.descripcion_youtube = item.descripcion_youtube.trim() + footerFuentes(item, fecha);
+  }
+  return item;
 }
 
 // ─── Pipeline principal ───────────────────────────────────────────────────────
@@ -198,30 +304,41 @@ async function generateContent() {
   const recientesNuevos = recientes.filter(p => !hasMatch(history, p.id));
   const proximosNuevos = proximos.filter(p => !hasMatch(history, p.id));
 
+  // Contexto de datos reales que se inyecta a los prompts de predicción y ranking
+  const contextoDatos = {
+    resultadosRecientes: recientes,
+    tabla: matchesCache.tabla_posiciones || [],
+  };
+
   // ─── Prioridad según MODO ──────────────────────────────────────────────────
+  // ORDEN NUEVO (SEO): 1º resultados reales jugados (lo que la gente busca),
+  // 2º noticias del día, 3º análisis previo de próximos (máx 1, al final).
+  // Antes las predicciones iban primero → generaba el catálogo de "BOMBAZOS"
+  // especulativos que YouTube no distribuye.
   const queue = [];
 
-  // Si hay partidos en curso → MÁXIMA PRIORIDAD (contenido en vivo)
-  if (enCurso.length > 0 && MODO !== 'noticias' && MODO !== 'ranking') {
-    enCurso.slice(0, 2).forEach(p => queue.push({ tipo: 'prediccion', data: p }));
-  }
-
-  // Partidos recientes con narrativa
+  // 1. Partidos recientes con narrativa — MÁXIMA PRIORIDAD (contenido con búsqueda real)
   if (MODO === 'auto' || MODO === 'partidos') {
     recientesNuevos.slice(0, 3).forEach(p => queue.push({ tipo: 'narrativa', data: p }));
   }
 
-  // Próximos partidos con predicción
-  if (MODO === 'auto' || MODO === 'predicciones') {
-    proximosNuevos.slice(0, 2).forEach(p => queue.push({ tipo: 'prediccion', data: p }));
+  // 2. Partidos en curso (marcador en vivo real, no especulación)
+  if (enCurso.length > 0 && MODO !== 'noticias' && MODO !== 'ranking') {
+    enCurso.slice(0, 1).forEach(p => queue.push({ tipo: 'prediccion', data: p }));
   }
 
-  // Noticias del día
+  // 3. Noticias del día
   if (MODO === 'auto' || MODO === 'noticias') {
     const noticiasNuevas = noticiasHoy
       .filter(n => !hasSimilarHook(history, n.title, 'noticia'))
       .slice(0, 3);
     noticiasNuevas.forEach(n => queue.push({ tipo: 'noticia', data: n }));
+  }
+
+  // 4. Análisis previo del próximo partido — máx 1 y al final de la cola
+  if (MODO === 'auto' || MODO === 'predicciones') {
+    const limite = MODO === 'predicciones' ? 2 : 1;
+    proximosNuevos.slice(0, limite).forEach(p => queue.push({ tipo: 'prediccion', data: p }));
   }
 
   // Procesar cola hasta MAX_ITEMS
@@ -239,17 +356,17 @@ async function generateContent() {
       
       if (item.tipo === 'narrativa') {
         prompt = promptNarrativaPartido(item.data);
-        data = await llamarGemini(model, prompt);
+        data = pulirItem(await llamarGemini(model, prompt), fecha);
         registrar(history, { matchId: item.data.id, tipoContenido: 'narrativa', hook: data.gancho, titulo: data.titulo_youtube });
         results.push({ ...data, _tipo_contenido: 'narrativa', _match_id: item.data.id, _goles_local: item.data.golesLocal, _goles_visita: item.data.golesVisita, _fase: item.data.fase, _label: label, _fecha: fecha, _orden: results.length + 1 });
       } else if (item.tipo === 'prediccion') {
-        prompt = promptPrediccionPartido(item.data);
-        data = await llamarGemini(model, prompt);
+        prompt = promptPrediccionPartido(item.data, contextoDatos);
+        data = pulirItem(await llamarGemini(model, prompt), fecha);
         registrar(history, { matchId: item.data.id, tipoContenido: 'prediccion', hook: data.gancho, titulo: data.titulo_youtube });
         results.push({ ...data, _tipo_contenido: 'prediccion', _match_id: item.data.id, _fase: item.data.fase, _label: label, _fecha: fecha, _orden: results.length + 1 });
       } else if (item.tipo === 'noticia') {
         prompt = promptNoticiaDia(item.data);
-        data = await llamarGemini(model, prompt);
+        data = pulirItem({ ...(await llamarGemini(model, prompt)), _fuente: item.data.fuente }, fecha);
         registrar(history, { matchId: null, tipoContenido: 'noticia', hook: data.gancho, titulo: data.titulo_youtube });
         results.push({ ...data, _tipo_contenido: 'noticia', _match_id: null, _noticia_original: item.data.title, _fuente: item.data.fuente, _label: label, _fecha: fecha, _orden: results.length + 1 });
       }
@@ -273,7 +390,12 @@ async function generateContent() {
 
       for (let i = 0; i < huecosRestantes; i++) {
         try {
-          const data = await llamarGemini(model, promptRanking(temasUsados));
+          const data = await llamarGemini(model, promptRanking(temasUsados, contextoDatos));
+          if (data.sin_datos) {
+            console.log('  ⚠️ Sin datos reales para rankings hoy — se omite (mejor no publicar que inventar).');
+            break;
+          }
+          pulirItem(data, fecha);
           if (hasSimilarHook(history, data.gancho, 'ranking')) {
             console.log(`  ⚠️ Ranking similar descartado: ${data.gancho}`);
             continue;

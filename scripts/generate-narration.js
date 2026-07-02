@@ -136,10 +136,18 @@ async function generarNarracion(textoBase, outputPath, opciones = {}) {
  * Arma el texto a narrar a partir de un item de daily-content.json,
  * juntando gancho + descripción + puntos en un guion fluido (no lista leída).
  */
-function construirGuion(item) {
+/**
+ * Construye el guion de narración.
+ * @param {object} item - Item de daily-content.json
+ * @param {'completo'|'breve'} modo - 'breve' usa solo subtítulo + descripción + 1er punto
+ *   (dato rápido ~20s); 'completo' incluye todos los puntos (análisis ~40-55s).
+ *   Esto rompe el patrón de duración idéntica que penaliza YouTube.
+ */
+function construirGuion(item, modo = 'completo') {
   const partes = [item.subtitulo, item.descripcion];
   if (Array.isArray(item.puntos) && item.puntos.length > 0) {
-    partes.push(item.puntos.join('. '));
+    const puntos = modo === 'breve' ? item.puntos.slice(0, 1) : item.puntos;
+    partes.push(puntos.join('. '));
   }
   return partes.filter(Boolean).join('. ');
 }

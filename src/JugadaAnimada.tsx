@@ -11,6 +11,7 @@ import {
 } from "remotion";
 import { loadFont as loadOswald } from "@remotion/google-fonts/Oswald";
 import { loadFont as loadRoboto } from "@remotion/google-fonts/Roboto";
+import { CreditoFuente } from "./PrediccionShorts";
 
 const { fontFamily: oswald } = loadOswald("normal", { weights: ["400", "700"], subsets: ["latin"] });
 const { fontFamily: roboto } = loadRoboto("normal", { weights: ["300", "400", "700"], subsets: ["latin"] });
@@ -36,6 +37,8 @@ export interface JugadaAnimadaProps {
   brollSrc?: string;
   /** Ruta al .wav generado por generate-narration.js — opcional */
   audioSrc?: string;
+  /** Crédito de fuentes de datos, ej: "Datos: football-data.org · ESPN — 02 jul 2026" */
+  fuente?: string;
 }
 
 export const defaultJugadaProps: JugadaAnimadaProps = {
@@ -300,7 +303,7 @@ export const JugadaAnimada: React.FC<JugadaAnimadaProps> = (props) => {
   const {
     homeTeam, awayTeam, homeFlag, awayFlag, homeColor, awayColor,
     golesLocal, golesVisita, scorerTeam, scorerName, scorerMinute,
-    gancho, matchStage, brollSrc, audioSrc,
+    gancho, matchStage, brollSrc, audioSrc, fuente,
   } = props;
 
   const frame = useCurrentFrame();
@@ -319,6 +322,8 @@ export const JugadaAnimada: React.FC<JugadaAnimadaProps> = (props) => {
       {audioSrc && (
         <Audio src={audioSrc.startsWith("http") ? audioSrc : staticFile(audioSrc)} />
       )}
+
+      <CreditoFuente fuente={fuente} />
 
       <Sequence from={0} durationInFrames={T_INTRO}>
         <IntroPhase
