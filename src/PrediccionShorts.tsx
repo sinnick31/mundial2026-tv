@@ -25,7 +25,24 @@ export interface PrediccionProps {
   brollSrc?: string;
   /** .wav generado por scripts/generate-narration.js — opcional, le da voz al video */
   audioSrc?: string;
+  /** Crédito de fuentes de datos, ej: "Datos: football-data.org · ESPN — 02 jul 2026" */
+  fuente?: string;
 }
+
+/** Crédito de fuente persistente — señal de legitimidad para el algoritmo y el espectador */
+export const CreditoFuente: React.FC<{ fuente?: string }> = ({ fuente }) => {
+  if (!fuente) return null;
+  return (
+    <div style={{
+      position: 'absolute', top: 40, left: 0, right: 0, textAlign: 'center',
+      fontSize: 24, color: '#ffffff99', fontFamily: "'Arial', sans-serif",
+      letterSpacing: 0.5, zIndex: 50,
+      textShadow: '0 1px 4px #000000cc',
+    }}>
+      📊 {fuente}
+    </div>
+  );
+};
 
 const COLORES = {
   eliminacion: { bg: '#0d0000', acento: '#ff1a1a', acento2: '#ff6b00' },
@@ -390,6 +407,8 @@ export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
       {props.audioSrc && (
         <Audio src={props.audioSrc.startsWith('http') ? props.audioSrc : staticFile(props.audioSrc)} />
       )}
+
+      <CreditoFuente fuente={props.fuente} />
 
       <Sequence from={0} durationInFrames={HOOK_END}>
         <HookPhase
