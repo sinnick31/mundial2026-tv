@@ -1,46 +1,39 @@
-# Broll real para los videos (sin copyright)
+# B-roll real de fútbol (automático, sin copyright)
 
-Estos clips se usan como fondo/atmósfera detrás de los gráficos en
-`PrediccionShorts` y `JugadaAnimada`. Son **video real de fútbol**,
-con licencia Pexels (gratis, uso comercial permitido, sin atribución
-obligatoria) — cero riesgo de Content ID.
+Estos clips son el **fondo de video real** detrás de los gráficos en
+`PrediccionShorts` y `JugadaAnimada`. Reemplazan el antiguo fondo negro
+que YouTube penalizaba por "parecer bot".
 
-## Cómo agregarlos (una sola vez)
+## Ya no hay que hacer nada a mano
 
-1. Descarga 5-8 clips de esta lista (botón "Free Download", elige
-   calidad HD o 4K, formato MP4):
+El pipeline descarga los clips solo, en cada corrida, con
+`scripts/fetch-broll.js` (paso "Descargar b-roll real" del workflow):
 
-   - https://www.pexels.com/video/aerial-footage-of-a-soccer-field-8938615/
-   - https://www.pexels.com/video/people-playing-soccer-6077718/
-   - https://www.pexels.com/video/aerial-view-of-soccer-game-on-green-field-28870860/
-   - https://www.pexels.com/video/top-view-footage-of-the-soccer-field-3441747/
-   - https://www.pexels.com/video/football-players-kicking-the-ball-during-a-match-15448993/
-   - https://www.pexels.com/video/soccer-game-in-a-stadium-2657257/
-   - https://www.pexels.com/video/football-players-running-on-a-field-14507176/
+- **Con `PEXELS_API_KEY`** (secret opcional): busca clips frescos vía la
+  API de Pexels → variedad casi infinita, fondo distinto cada día.
+- **Sin API key**: descarga una lista curada de Pexels (licencia libre,
+  uso comercial, sin atribución). Funciona igual, con menos variedad.
 
-2. Conviértelos a vertical 1080x1920, ~8s, sin audio (más liviano y
-   listo para usarse de fondo). Necesitas `ffmpeg` instalado:
+Los clips se procesan con ffmpeg a 1080x1920, 8s, sin audio, y se
+repiten en loop para cubrir videos de 30s+ sin cortes a negro.
 
-   ```bash
-   ffmpeg -i original.mp4 -t 8 -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" -an -c:v libx264 -crf 23 public/broll/clip1.mp4
-   ```
+## Recomendado: agrega el secret PEXELS_API_KEY
 
-   Repite para cada clip (`clip2.mp4`, `clip3.mp4`, ...).
+1. Crea una cuenta gratis en https://www.pexels.com/api/
+2. Copia tu API key.
+3. En GitHub: Settings → Secrets and variables → Actions → New secret
+   - Nombre: `PEXELS_API_KEY`
+   - Valor: tu key
+4. Listo. Sin este secret igual funciona (usa la lista de respaldo).
 
-3. Commitea los archivos resultantes dentro de `public/broll/`.
-   El pipeline (`render-and-upload.js`) elige uno al azar en cada video.
+## Por qué es seguro
 
-## Por qué esto es seguro
+Pexels License permite uso comercial, modificación y redistribución sin
+pedir permiso ni dar crédito: https://www.pexels.com/license/ — cero
+riesgo de Content ID, a diferencia de transmisiones oficiales (FIFA+,
+ESPN), que sí dan strike.
 
-Pexels License permite uso comercial, modificación y redistribución
-dentro de un proyecto derivado (como estos Shorts) sin pedir permiso
-ni dar crédito: https://www.pexels.com/license/
+## Si querés fijar clips manualmente
 
-Esto es distinto a usar clips de transmisiones oficiales del Mundial
-(FIFA+, ESPN, etc.), que SÍ tienen copyright y dan strike.
-
-## Tamaño del repo
-
-Cada clip de 8s a 1080x1920 pesa ~3-6 MB ya comprimido. Con 6-8 clips
-el repo crece ~30-40 MB — aceptable. Si quieres mantenerlo liviano,
-usa menos clips o bájales más la calidad (`-crf 28`).
+Podés commitear tus propios `clip1.mp4`, `clip2.mp4`... acá. Si ya hay
+3+ clips, el script los respeta y no descarga nada.

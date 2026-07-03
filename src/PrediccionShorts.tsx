@@ -2,6 +2,7 @@ import {
   AbsoluteFill,
   Audio,
   Easing,
+  Loop,
   OffthreadVideo,
   Sequence,
   staticFile,
@@ -52,15 +53,21 @@ const COLORES = {
 };
 
 // ─── Capa de video real de fondo (stock libre de copyright) ──────────────────
-const BrollLayer: React.FC<{ brollSrc?: string; opacity?: number }> = ({ brollSrc, opacity = 0.34 }) => {
+const BROLL_CLIP_FRAMES = 8 * 30; // los clips de public/broll/ duran 8s @ 30fps
+
+const BrollLayer: React.FC<{ brollSrc?: string; opacity?: number }> = ({ brollSrc, opacity = 0.5 }) => {
   if (!brollSrc) return null;
+  const src = brollSrc.startsWith('http') ? brollSrc : staticFile(brollSrc);
   return (
     <AbsoluteFill style={{ opacity }}>
-      <OffthreadVideo
-        src={brollSrc.startsWith('http') ? brollSrc : staticFile(brollSrc)}
-            muted
-        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.2) contrast(1.05)' }}
-      />
+      {/* Loop: el clip de 8s se repite para cubrir videos de 30s+ sin fundirse a negro */}
+      <Loop durationInFrames={BROLL_CLIP_FRAMES}>
+        <OffthreadVideo
+          src={src}
+          muted
+          style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.2) contrast(1.05)' }}
+        />
+      </Loop>
     </AbsoluteFill>
   );
 };
@@ -84,7 +91,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
 
   return (
     <AbsoluteFill style={{ background: `radial-gradient(ellipse at center, ${colores.bg}dd 0%, #000000 70%)` }}>
-      <BrollLayer brollSrc={brollSrc} opacity={0.25} />
+      <BrollLayer brollSrc={brollSrc} opacity={0.42} />
       {/* Líneas de energía de fondo */}
       <AbsoluteFill style={{ opacity: 0.15 }}>
         {[...Array(8)].map((_, i) => (
@@ -261,9 +268,9 @@ const PuntoFullscreen: React.FC<{
 
   return (
     <AbsoluteFill style={{ background: '#050505' }}>
-      <BrollLayer brollSrc={brollSrc} opacity={0.3} />
+      <BrollLayer brollSrc={brollSrc} opacity={0.48} />
       <AbsoluteFill style={{
-        background: `linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.85) 100%)`,
+        background: `linear-gradient(180deg, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.68) 100%)`,
         display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
         padding: '0 60px',
       }}>
@@ -310,8 +317,8 @@ const ContentPhase: React.FC<{
   return (
     <AbsoluteFill>
       <Sequence from={0} durationInFrames={HEADER_FRAMES}>
-        <AbsoluteFill style={{ background: `linear-gradient(180deg, #050505 0%, #0a0a0a 100%)` }}>
-          <BrollLayer brollSrc={brollSrc} opacity={0.22} />
+        <AbsoluteFill style={{ background: `linear-gradient(180deg, #0a1420 0%, #050505 100%)` }}>
+          <BrollLayer brollSrc={brollSrc} opacity={0.4} />
           <HeaderBlock
             descripcion={descripcion} equipo1={equipo1} equipo2={equipo2}
             probabilidad={probabilidad} tipo={tipo}

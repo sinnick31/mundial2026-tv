@@ -2,6 +2,7 @@ import {
   AbsoluteFill,
   Audio,
   Easing,
+  Loop,
   OffthreadVideo,
   Sequence,
   interpolate,
@@ -65,18 +66,21 @@ const fi = (frame: number, s: number, e: number, os: number, oe: number, easing 
 
 // ── Fondo: broll real (si hay) o gradiente de estadio ─────────────────────────
 const StadiumBackground: React.FC<{ frame: number; brollSrc?: string; dim?: number }> = ({
-  frame, brollSrc, dim = 0.78,
+  frame, brollSrc, dim = 0.6,
 }) => {
   const flicker = 0.9 + Math.sin(frame * 0.5) * 0.03;
   return (
     <AbsoluteFill style={{ background: "#040308" }}>
       {brollSrc && (
-        <AbsoluteFill style={{ opacity: 0.5 }}>
-          <OffthreadVideo
-            src={brollSrc.startsWith("http") ? brollSrc : staticFile(brollSrc)}
-            muted
-            style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(1.15) contrast(1.05)" }}
-          />
+        <AbsoluteFill style={{ opacity: 0.62 }}>
+          {/* Loop: clip de 8s repetido para cubrir toda la jugada sin negro */}
+          <Loop durationInFrames={8 * 30}>
+            <OffthreadVideo
+              src={brollSrc.startsWith("http") ? brollSrc : staticFile(brollSrc)}
+              muted
+              style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(1.15) contrast(1.05)" }}
+            />
+          </Loop>
         </AbsoluteFill>
       )}
       {/* Reflectores de estadio */}
@@ -317,7 +321,7 @@ export const JugadaAnimada: React.FC<JugadaAnimadaProps> = (props) => {
 
   return (
     <AbsoluteFill style={{ background: "#020205", overflow: "hidden" }}>
-      <StadiumBackground frame={frame} brollSrc={brollSrc} dim={frame < T_INTRO ? 0.55 : 0.82} />
+      <StadiumBackground frame={frame} brollSrc={brollSrc} dim={frame < T_INTRO ? 0.4 : 0.66} />
 
       {audioSrc && (
         <Audio src={audioSrc.startsWith("http") ? audioSrc : staticFile(audioSrc)} />
