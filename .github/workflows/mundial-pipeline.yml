@@ -135,6 +135,14 @@ jobs:
           npx remotion browser ensure
           echo "REMOTION_CHROME_FLAGS=--no-sandbox --disable-setuid-sandbox" >> $GITHUB_ENV
 
+      - name: 🎞️ Instalar ffmpeg (para procesar b-roll)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: ⚽ Descargar b-roll real de fútbol (elimina el fondo negro)
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: node scripts/fetch-broll.js
+
       - name: 📥 Descargar daily-content.json
         uses: actions/download-artifact@v4
         with:
