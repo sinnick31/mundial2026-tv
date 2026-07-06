@@ -82,3 +82,48 @@ node scripts/render-and-upload.js
 - Revisar retención en los primeros 2 segundos y reescribir ganchos con baja retención.
 
 No se pueden garantizar 3 millones de visitas, pero el repo queda preparado para producir contenido constante, reconocible y optimizado para aumentar la probabilidad de alcance.
+
+
+## Arquitectura v3.0 (en desarrollo)
+
+Esta rama (v3.0-dev) evoluciona el repo hacia una "fabrica" de
+contenido deportivo con arquitectura modular y agentes de IA que
+preparan cada pieza del short (guion, SEO, thumbnail, prompt de video y
+narracion) a partir de los datos reales de un partido.
+
+### Nueva estructura
+
+```
+AI/
+  script_generator.py      Guion (gancho, resultado, dato curioso,
+                            clasificacion, proximo rival, CTA)
+  seo_generator.py          Titulo, descripcion y hashtags
+  thumbnail_generator.py    Brief creativo para la miniatura
+  prompt_generator.py       Prompt de video cinematografico (Pixar-like)
+  narration.py               Guion de narracion con tiempos para TTS
+  requirements.txt
+
+assets/
+  characters/    krono.png, issy.png, kuky.png, pepa.png, zeus.png
+  backgrounds/stadiums/
+  logos/worldcup/
+
+templates/
+  shorts/  youtube/  tiktok/  instagram/
+
+videos/output/   Videos renderizados (agregar a .gitignore)
+
+config/
+  affiliate-links.example.json
+  .env.example
+```
+
+### Flujo de un modulo de IA
+
+Primero, `node scripts/fetch-matches.js` obtiene el resultado real del partido. Con ese resultado, `script_generator.py` genera el guion estructurado. A partir del guion, `seo_generator.py` genera el titulo, la descripcion y los hashtags, mientras que `thumbnail_generator.py` prepara el brief de la miniatura y `prompt_generator.py` arma el prompt de video cinematografico. Por ultimo, `narration.py` prepara el texto y los tiempos para el motor de texto a voz, y Remotion renderiza el video final usando todos estos artefactos.
+
+### Proximas fases
+
+Entre las siguientes fases planeadas estan: construir una interfaz web y un panel de administracion para disparar y monitorear la generacion de contenido; orquestar los modulos de IA en paralelo para varios partidos a la vez; e integrar un proveedor de texto a voz (TTS) real dentro de narration.py.
+
+Los modulos de IA usan la variable `GEMINI_API_KEY` (ver `config/.env.example`). Si esta variable no esta configurada, cada script cae en una plantilla de respaldo simple para que el pipeline no se detenga.
