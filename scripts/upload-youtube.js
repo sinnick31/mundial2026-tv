@@ -12,6 +12,10 @@ const https = require("https");
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const {
+  finalResultDescription,
+  finalResultTitle,
+} = require("./metadata-generator");
 
 // ── Variables de entorno ──────────────────────────────────────────────────
 const CLIENT_ID = process.env.YOUTUBE_CLIENT_ID;
@@ -74,40 +78,8 @@ function getAccessToken() {
 // ── Generar metadata del video ─────────────────────────────────────────────
 
 function buildVideoMetadata(match) {
-  const { homeTeam, awayTeam, homeScore, awayScore, matchStage, matchDate, homeFlag, awayFlag } = match;
-
-  const score = `${homeScore}-${awayScore}`;
-  const winner =
-    homeScore > awayScore ? homeTeam
-    : awayScore > homeScore ? awayTeam
-    : null;
-
-  const titleEmoji = winner ? "🏆" : "🤝";
-
-  const title = `${homeFlag} ${homeTeam} ${homeScore} - ${awayScore} ${awayTeam} ${awayFlag} | ${matchStage} | #WorldCup2026`;
-
-  const description = [
-    `⚽ RESULTADO FINAL — FIFA WORLD CUP 2026™`,
-    ``,
-    `${homeFlag} ${homeTeam}: ${homeScore} goles`,
-    `${awayFlag} ${awayTeam}: ${awayScore} goles`,
-    ``,
-    winner
-      ? `${titleEmoji} GANADOR: ${winner}`
-      : `🤝 EMPATE — ${score}`,
-    ``,
-    `📅 Fecha: ${matchDate}`,
-    `🏟️ ${matchStage}`,
-    ``,
-    `━━━━━━━━━━━━━━━━━━━━━━━━━━`,
-    `🔔 Suscríbete para no perderte ningún resultado del Mundial 2026`,
-    `✅ Activa la campanita 🔔`,
-    `━━━━━━━━━━━━━━━━━━━━━━━━━━`,
-    ``,
-    `#FIFA #WorldCup2026 #Mundial2026 #FifaWorldCup #Football #Soccer`,
-    `#${homeTeam.replace(/\s/g, "")} #${awayTeam.replace(/\s/g, "")}`,
-    `#Shorts #ResultadoFinal #Mundial`,
-  ].join("\n");
+  const homeTeam = match.homeTeam || match.equipo1 || "Local";
+  const awayTeam = match.awayTeam || match.equipo2 || "Visitante";
 
   const tags = [
     "FIFA World Cup 2026", "Mundial 2026", "World Cup", "FIFA",
@@ -116,7 +88,11 @@ function buildVideoMetadata(match) {
     "MUNDIAL 2026 TV",
   ];
 
-  return { title: title.substring(0, 100), description, tags };
+  return {
+    title: finalResultTitle(match),
+    description: finalResultDescription(match),
+    tags,
+  };
 }
 
 // ── Upload resumable a YouTube ────────────────────────────────────────────

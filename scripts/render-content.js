@@ -8,6 +8,11 @@
 const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+const {
+  enhanceGeneratedDescription,
+  finalResultDescription,
+  finalResultTitle,
+} = require("./metadata-generator");
 
 const OUT_DIR = path.join(__dirname, "..", "out");
 if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -89,6 +94,9 @@ const enriched = successful.map((r) => {
       ``,
       `#${p.homeTeam.replace(/\s/g,"")} #${p.awayTeam.replace(/\s/g,"")} ${hashtags} #Prediccion #IA`,
     ].join("\n");
+  } else if (r.compositionId === "ResultadoShorts") {
+    youtubeTitle = finalResultTitle(r.props);
+    youtubeDescription = finalResultDescription(r.props);
   } else if (r.compositionId === "EstadisticaViral") {
     const s = r.props;
     youtubeTitle = `${s.emoji} ${s.title} | ${s.bigNumber} ${s.bigLabel} #WorldCup2026 #Shorts`;
@@ -108,7 +116,7 @@ const enriched = successful.map((r) => {
   return {
     ...r,
     youtubeTitle: youtubeTitle.substring(0, 100),
-    youtubeDescription,
+    youtubeDescription: enhanceGeneratedDescription(youtubeDescription),
   };
 });
 

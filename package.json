@@ -1,8 +1,11 @@
 {
   "name": "mundial2026-shorts",
   "version": "1.0.0",
-  "description": "My Remotion video",
-  "repository": {},
+  "description": "Automatización de Shorts verticales con resultados, análisis y metadata SEO para el Mundial FIFA 2026.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sinnick31/mundial2026-tv.git"
+  },
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
@@ -28,6 +31,9 @@
   "scripts": {
     "dev": "remotion studio",
     "build": "remotion bundle",
+    "fetch:matches": "node scripts/fetch-matches.js",
+    "generate:daily": "node scripts/generate-daily-content.js",
+    "render:upload": "node scripts/render-and-upload.js",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"
   },

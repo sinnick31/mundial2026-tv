@@ -16,6 +16,7 @@ const https = require('https');
 const {
   loadHistory, saveHistory, hasMatch, hasSimilarHook, registrar,
 } = require('./content-history');
+const { appendAffiliateFooter } = require('./affiliate-links');
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const FOOTBALL_API_KEY = process.env.FOOTBALL_DATA_API_KEY;
@@ -273,6 +274,7 @@ function pulirItem(item, fecha) {
   if (item.descripcion_youtube && !item.descripcion_youtube.includes('📊 Fuentes:')) {
     item.descripcion_youtube = item.descripcion_youtube.trim() + footerFuentes(item, fecha);
   }
+  item.descripcion_youtube = appendAffiliateFooter(item.descripcion_youtube);
   return item;
 }
 

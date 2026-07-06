@@ -21,6 +21,7 @@ const fs = require('fs');
 const path = require('path');
 const { generarNarracion, construirGuion } = require('./generate-narration');
 const { estiloEquipo } = require('./team-styles');
+const { enhanceGeneratedDescription } = require('./metadata-generator');
 
 const ROOT = path.join(__dirname, '..');
 const BROLL_DIR = path.join(ROOT, 'public', 'broll');
@@ -182,7 +183,7 @@ async function uploadToYouTube(youtube, filePath, data) {
     requestBody: {
       snippet: {
         title: data.titulo_youtube,
-        description: data.descripcion_youtube,
+        description: enhanceGeneratedDescription(data.descripcion_youtube),
         tags,
         categoryId: '17',
         defaultLanguage: 'es',

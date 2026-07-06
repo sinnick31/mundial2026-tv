@@ -2,9 +2,7 @@ import {
   AbsoluteFill,
   Easing,
   interpolate,
-  Sequence,
   useCurrentFrame,
-  useVideoConfig,
 } from "remotion";
 import { loadFont as loadOswald } from "@remotion/google-fonts/Oswald";
 import { loadFont as loadRoboto } from "@remotion/google-fonts/Roboto";
@@ -111,26 +109,330 @@ function countUp(frame: number, start: number, target: number, dur = 35) {
 
 // ── Sub-componentes ────────────────────────────────────────────────────────
 
-/** Fondo con gradiente dinámico basado en colores de equipos */
+/** Fondo de estudio deportivo con pantallas LED */
 const Background: React.FC<{ homeColor: string; awayColor: string }> = ({
   homeColor,
   awayColor,
 }) => {
   const frame = useCurrentFrame();
-  const shimmer = interpolate(frame, [0, 300], [0, 10], {
+  const dolly = interpolate(frame, [0, 300], [1.06, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: easeOut,
+  });
+  const lightSweep = interpolate(frame % 90, [0, 45, 90], [-25, 35, 105], {
+    extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
   return (
-    <AbsoluteFill
+    <AbsoluteFill style={{ background: "#080912", overflow: "hidden" }}>
+      <AbsoluteFill
+        style={{
+          scale: String(dolly),
+          background: `
+            radial-gradient(ellipse at 18% 16%, ${homeColor}78 0%, transparent 30%),
+            radial-gradient(ellipse at 82% 18%, ${awayColor}78 0%, transparent 32%),
+            linear-gradient(180deg, #161827 0%, #080912 62%, #05050a 100%)
+          `,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: 70,
+          right: 70,
+          top: 210,
+          height: 430,
+          borderRadius: 22,
+          border: "2px solid rgba(245,208,110,0.35)",
+          background: `
+            linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+            linear-gradient(0deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+            radial-gradient(circle at ${lightSweep}% 20%, rgba(255,255,255,0.26), transparent 22%),
+            linear-gradient(135deg, ${homeColor}cc, #10142a 48%, ${awayColor}cc)
+          `,
+          backgroundSize: "46px 46px, 46px 46px, auto, auto",
+          boxShadow: "0 28px 80px rgba(0,0,0,0.65), inset 0 0 80px rgba(255,255,255,0.08)",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(180deg, rgba(255,255,255,0.18), transparent 35%, rgba(0,0,0,0.25))",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: 78,
+            background: "rgba(0,0,0,0.32)",
+          }}
+        />
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          left: -140,
+          right: -140,
+          bottom: -120,
+          height: 510,
+          background:
+            "radial-gradient(ellipse at center, rgba(255,255,255,0.16), rgba(255,255,255,0.03) 36%, transparent 64%)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: 430,
+          background:
+            "linear-gradient(180deg, transparent 0%, rgba(7,8,18,0.4) 30%, rgba(0,0,0,0.92) 100%)",
+        }}
+      />
+    </AbsoluteFill>
+  );
+};
+
+/** Cintillo LED con el marcador, visible desde el primer segundo */
+const StudioScoreboard: React.FC<{
+  frame: number;
+  homeTeam: string;
+  awayTeam: string;
+  homeScore: number;
+  awayScore: number;
+  homeFlag: string;
+  awayFlag: string;
+}> = ({ frame, homeTeam, awayTeam, homeScore, awayScore, homeFlag, awayFlag }) => {
+  const opacity = fadeIn(frame, 8, 18);
+  const ty = slideUp(frame, 8, 20, 24);
+
+  return (
+    <div
       style={{
-        background: `
-          radial-gradient(ellipse at 20% 30%, ${homeColor}55 0%, transparent 55%),
-          radial-gradient(ellipse at 80% 70%, ${awayColor}55 0%, transparent 55%),
-          linear-gradient(170deg, #0a0a1a 0%, #0d0d2b 50%, #0a0a1a 100%)
-        `,
+        opacity,
+        translate: `0px ${ty}px`,
+        position: "absolute",
+        left: 96,
+        right: 96,
+        top: 278,
+        height: 236,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 28,
       }}
-    />
+    >
+      <div
+        style={{
+          fontFamily: oswald,
+          fontWeight: 700,
+          fontSize: 52,
+          color: "#ffffff",
+          textAlign: "right",
+          width: 270,
+          textTransform: "uppercase",
+          textShadow: "0 6px 22px rgba(0,0,0,0.6)",
+        }}
+      >
+        {homeFlag} {homeTeam}
+      </div>
+      <div
+        style={{
+          fontFamily: oswald,
+          fontWeight: 700,
+          fontSize: 126,
+          lineHeight: 1,
+          color: "#f5d06e",
+          textShadow: "0 0 32px rgba(245,208,110,0.65)",
+        }}
+      >
+        {homeScore}-{awayScore}
+      </div>
+      <div
+        style={{
+          fontFamily: oswald,
+          fontWeight: 700,
+          fontSize: 52,
+          color: "#ffffff",
+          width: 270,
+          textTransform: "uppercase",
+          textShadow: "0 6px 22px rgba(0,0,0,0.6)",
+        }}
+      >
+        {awayTeam} {awayFlag}
+      </div>
+    </div>
+  );
+};
+
+const StudioHost: React.FC<{
+  frame: number;
+  startAt: number;
+  emoji: string;
+  name: string;
+  role: string;
+  color: string;
+  x: number;
+}> = ({ frame, startAt, emoji, name, role, color, x }) => {
+  const opacity = fadeIn(frame, startAt, 18);
+  const ty = slideUp(frame, startAt, 20, 36);
+  const bob = Math.sin((frame + startAt) / 12) * 7;
+  const mouth = frame % 28 < 14 ? 1 : 0.25;
+
+  return (
+    <div
+      style={{
+        opacity,
+        translate: `${x}px ${ty + bob}px`,
+        position: "absolute",
+        bottom: 184,
+        left: "50%",
+        width: 205,
+        marginLeft: -102,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          width: 150,
+          height: 150,
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: 82,
+          background: `radial-gradient(circle at 35% 25%, #ffffff 0%, ${color} 48%, #11131f 100%)`,
+          border: "4px solid rgba(255,255,255,0.72)",
+          boxShadow: `0 0 36px ${color}aa, 0 22px 46px rgba(0,0,0,0.52)`,
+        }}
+      >
+        {emoji}
+      </div>
+      <div
+        style={{
+          width: 42,
+          height: 8 * mouth,
+          borderRadius: 12,
+          background: "#17141a",
+          marginTop: -34,
+          marginBottom: 36,
+          boxShadow: "0 0 8px rgba(255,255,255,0.28)",
+        }}
+      />
+      <div
+        style={{
+          minWidth: 162,
+          textAlign: "center",
+          padding: "8px 14px 9px",
+          borderRadius: 8,
+          background: "rgba(6,7,14,0.82)",
+          border: `1px solid ${color}aa`,
+          boxShadow: "0 12px 24px rgba(0,0,0,0.35)",
+        }}
+      >
+        <div
+          style={{
+            fontFamily: oswald,
+            fontWeight: 700,
+            fontSize: 24,
+            color: "#ffffff",
+            letterSpacing: 1,
+            lineHeight: 1,
+          }}
+        >
+          {name}
+        </div>
+        <div
+          style={{
+            fontFamily: roboto,
+            fontWeight: 700,
+            fontSize: 11,
+            color: "#f5d06e",
+            letterSpacing: 1.6,
+            marginTop: 5,
+            textTransform: "uppercase",
+          }}
+        >
+          {role}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CommentatorDesk: React.FC<{ frame: number }> = ({ frame }) => {
+  const glow = interpolate(frame % 80, [0, 40, 80], [0.65, 1, 0.65], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none" }}>
+      <StudioHost
+        frame={frame}
+        startAt={48}
+        emoji="🐶"
+        name="KRONO"
+        role="Relator"
+        color="#c28a45"
+        x={-250}
+      />
+      <StudioHost
+        frame={frame}
+        startAt={58}
+        emoji="🐶"
+        name="ISSY"
+        role="Análisis"
+        color="#f0c15a"
+        x={0}
+      />
+      <StudioHost
+        frame={frame}
+        startAt={68}
+        emoji="🐱"
+        name="KUKY"
+        role="Táctica"
+        color="#9aa7b7"
+        x={250}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: 116,
+          right: 116,
+          bottom: 104,
+          height: 150,
+          borderRadius: "30px 30px 12px 12px",
+          background:
+            "linear-gradient(180deg, rgba(255,255,255,0.16), rgba(8,9,18,0.96) 42%, rgba(0,0,0,1))",
+          border: "2px solid rgba(245,208,110,0.28)",
+          boxShadow: `0 0 ${38 * glow}px rgba(245,208,110,0.22), 0 30px 70px rgba(0,0,0,0.72)`,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: 204,
+          right: 204,
+          bottom: 145,
+          height: 42,
+          borderRadius: 8,
+          background: "linear-gradient(90deg, transparent, rgba(245,208,110,0.8), transparent)",
+          opacity: 0.75,
+        }}
+      />
+    </AbsoluteFill>
   );
 };
 
@@ -624,6 +926,16 @@ export const ResultadoShorts: React.FC<ResultadoShortsProps> = (props) => {
 
       {/* Destellos */}
       <Stars />
+      <StudioScoreboard
+        frame={frame}
+        homeTeam={homeTeam}
+        awayTeam={awayTeam}
+        homeScore={homeScore}
+        awayScore={awayScore}
+        homeFlag={homeFlag}
+        awayFlag={awayFlag}
+      />
+      <CommentatorDesk frame={frame} />
 
       {/* Líneas decorativas laterales */}
       <AbsoluteFill style={{ pointerEvents: "none" }}>
