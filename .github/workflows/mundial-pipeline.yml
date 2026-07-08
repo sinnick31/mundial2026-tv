@@ -153,6 +153,7 @@ jobs:
 
       - name: 🎬 Renderizar y subir todos los videos
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
@@ -163,7 +164,7 @@ jobs:
         if: always()
         with:
           name: videos-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
-          path: output/
+          path: out/
           retention-days: 5
 
   # ══════════════════════════════════════════════════════════════════════
