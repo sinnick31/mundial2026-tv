@@ -48,12 +48,12 @@ jobs:
 
     steps:
       - name: 📦 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: ⚙️ Configurar Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -104,7 +104,7 @@ jobs:
 
       - name: 💾 Guardar daily-content.json como artefacto
         if: steps.gen.outputs.hay_contenido == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: contenido-diario-${{ steps.gen.outputs.fecha }}-${{ github.run_number }}
           path: daily-content.json
@@ -122,10 +122,10 @@ jobs:
 
     steps:
       - name: 📦 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: ⚙️ Configurar Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -147,7 +147,7 @@ jobs:
         run: node scripts/fetch-broll.js
 
       - name: 📥 Descargar daily-content.json
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: contenido-diario-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
 
@@ -159,7 +159,7 @@ jobs:
         run: node scripts/render-and-upload.js
 
       - name: 💾 Backup de videos generados
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: videos-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
