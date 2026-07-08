@@ -73,14 +73,14 @@ function httpGet(url) {
 // ─── Parser de RSS básico sin dependencias externas ──────────────────────────
 function parseRSS(xmlString) {
   const items = [];
-  const itemRegex = /<item>([sS]*?)<\/item>/gi;
+  const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
   let match;
   while ((match = itemRegex.exec(xmlString)) !== null) {
     const itemContent = match[1];
-    const title = (itemContent.match(/<title[^>]*>(?:<![CDATA[)?([sS]*?)(?:]]>)?<\/title>/) || [])[1] || '';
-    const desc = (itemContent.match(/<description[^>]*>(?:<![CDATA[)?([sS]*?)(?:]]>)?<\/description>/) || [])[1] || '';
-    const link = (itemContent.match(/<link>([sS]*?)<\/link>/) || [])[1] || '';
-    const pubDate = (itemContent.match(/<pubDate>([sS]*?)<\/pubDate>/) || [])[1] || '';
+    const title = (itemContent.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/) || [])[1] || '';
+    const desc = (itemContent.match(/<description[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/) || [])[1] || '';
+    const link = (itemContent.match(/<link>([\s\S]*?)<\/link>/) || [])[1] || '';
+    const pubDate = (itemContent.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1] || '';
     
     const cleanTitle = title.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
     const cleanDesc = desc.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim().substring(0, 300);
