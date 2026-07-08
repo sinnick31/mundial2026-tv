@@ -69,7 +69,10 @@ jobs:
         run: node scripts/fetch-news.js
 
       - name: ⚽ Obtener partidos y resultados
-        run: node scripts/fetch-matches.js
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+            COMPETITION_ID: ${{ secrets.COMPETITION_ID }}
+            run: node scripts/fetch-matches.js
 
       - name: 🤖 Generar contenido único con IA
         id: gen
