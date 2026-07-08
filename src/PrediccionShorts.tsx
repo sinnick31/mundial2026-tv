@@ -78,7 +78,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const colores = COLORES[tipo];
+  const colores = COLORES[tipo] || COLORES.sorpresa;
 
   const scale = spring({ frame, fps, config: { damping: 10, stiffness: 180 } });
   const opacity = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: 'clamp' });
@@ -197,7 +197,7 @@ const HeaderBlock: React.FC<{
   probabilidad: number; tipo: PrediccionProps['tipo'];
 }> = ({ descripcion, equipo1, equipo2, probabilidad, tipo }) => {
   const frame = useCurrentFrame();
-  const colores = COLORES[tipo];
+  const colores = COLORES[tipo] || COLORES.sorpresa;
   const headerOpacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: 'clamp' });
   const barWidth = interpolate(frame, [20, 80], [0, probabilidad], {
     extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic),
@@ -260,7 +260,7 @@ const PuntoFullscreen: React.FC<{
 }> = ({ punto, index, total, tipo, brollSrc }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const colores = COLORES[tipo];
+  const colores = COLORES[tipo] || COLORES.sorpresa;
 
   const scale = spring({ frame, fps, config: { damping: 14, stiffness: 160 } });
   const opacity = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
@@ -345,7 +345,7 @@ const ContentPhase: React.FC<{
 const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const colores = COLORES[tipo];
+  const colores = COLORES[tipo] || COLORES.sorpresa;
 
   const scale = spring({ frame, fps, config: { damping: 12, stiffness: 150 } });
   const pulse = 1 + Math.sin(frame * 0.2) * 0.04;
