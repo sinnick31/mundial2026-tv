@@ -1,13 +1,13 @@
 /**
- * generate-daily-content.js (v3 — CON NOTICIAS REALES DE INTERNET)
+ * generate-daily-content.js — FOOTBALL AI STUDIO v4.0
  *
- * Mejoras vs v2:
- * 1. Usa noticias reales del día (news-cache.json de fetch-news.js)
- * 2. Usa partidos en tiempo real (matches-cache.json de fetch-matches.js)
- * 3. 5 tipos de contenido: narrativa, prediccion, noticia, ranking, en_vivo
- * 4. Contenido basado en actualidad del día, no solo datos de API
- * 5. Anti-duplicados mejorado con historial persistente
- * 6. Soporte para modo: auto | noticias | partidos | predicciones | ranking
+ * Mejoras v4 vs v3:
+ * 1. Ya NO depende del Mundial 2026 — cubre TODO el fútbol 365 días al año
+ * 2. 🇨🇱 Fútbol chileno con prioridad alta (ventaja competitiva del canal)
+ * 3. Motor VIRAL SCORE: solo se producen las noticias con mayor potencial
+ * 4. Prompts genéricos multi-competición (Champions, Primera A, Libertadores...)
+ * 5. Hashtags y SEO dinámicos según la competencia de cada video
+ * 6. Modos: auto | noticias | partidos | predicciones | ranking | chile | fichajes
  */
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
@@ -17,6 +17,15 @@ const {
   loadHistory, saveHistory, hasMatch, hasSimilarHook, registrar,
 } = require('./content-history');
 const { appendAffiliateFooter } = require('./affiliate-links');
+const { seleccionarTop } = require('./viral-score');
+
+// Etiqueta de competencia para inyectar en prompts (v4: multi-competición)
+function ctxCompetencia(partido) {
+  return partido.competencia || 'Fútbol internacional';
+}
+function hashtagCompetencia(partido) {
+  return (partido && partido.hashtag) || '#Futbol';
+}
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const FOOTBALL_API_KEY = process.env.FOOTBALL_DATA_API_KEY;
@@ -87,7 +96,7 @@ function promptNarrativaPartido(partido) {
 
 DATOS REALES DEL PARTIDO (única fuente permitida — no inventes nada fuera de esto):
 Resultado FINAL: ${partido.equipo1} ${partido.golesLocal}-${partido.golesVisita} ${partido.equipo2}
-Fase del Mundial 2026: ${partido.fase}
+Competencia: ${ctxCompetencia(partido)} | Fase: ${partido.fase}
 Fecha: ${partido.fecha || 'reciente'}${golInfo}
 
 REGLA DE GANCHO: NO uses el marcador como gancho. Crea un ángulo narrativo de TV (la jugada clave, el misterio táctico, por qué ganó quien ganó), pero SIEMPRE anclado en los datos reales de arriba.
@@ -108,7 +117,7 @@ Responde SOLO con JSON válido sin markdown:
   "puntos": ["dato real 1 (con cifra)", "dato real 2 (con cifra)", "análisis basado en los datos"],
   "emoji": "emoji relacionado",
   "titulo_youtube": "dato real + pregunta, máx 80 chars, siguiendo las reglas estrictas",
-  "descripcion_youtube": "descripción de 3 párrafos siguiendo las reglas #Mundial2026 #Shorts",
+  "descripcion_youtube": "descripción de 3 párrafos siguiendo las reglas ${hashtagCompetencia(partido)} #Futbol #Shorts",
   "tags": ["tag1","tag2","tag3","tag4","tag5"]
 }`;
 }
@@ -127,10 +136,10 @@ function promptPrediccionPartido(partido, contexto = {}) {
   if (historialE2.length) datosContexto.push(`Resultados recientes de ${partido.equipo2}: ${historialE2.map(p => `${p.equipo1} ${p.golesLocal}-${p.golesVisita} ${p.equipo2}`).join(' | ')}`);
   if (tabla.length) datosContexto.push(`Tabla de posiciones (resumen): ${JSON.stringify(tabla.slice(0, 8))}`);
 
-  return `Eres analista deportivo de TV generando un ANÁLISIS PREVIO (no una predicción sensacionalista) de un partido del Mundial 2026.
+  return `Eres analista deportivo de TV generando un ANÁLISIS PREVIO (no una predicción sensacionalista) de un partido de fútbol.
 
 Partido PRÓXIMO: ${partido.equipo1} vs ${partido.equipo2}
-Fase: ${partido.fase}
+Competencia: ${ctxCompetencia(partido)} | Fase: ${partido.fase}
 Fecha: ${partido.fecha}
 
 DATOS REALES DISPONIBLES (basa TODO tu análisis en esto):
@@ -157,19 +166,27 @@ Responde SOLO con JSON válido sin markdown:
   "puntos": ["dato real + implicancia 1", "dato real + implicancia 2", "dato real + implicancia 3"],
   "emoji": "emoji relacionado",
   "titulo_youtube": "dato real + pregunta sobre el partido próximo, máx 80 chars",
-  "descripcion_youtube": "descripción de 3 párrafos siguiendo las reglas #Mundial2026 #Shorts",
+  "descripcion_youtube": "descripción de 3 párrafos siguiendo las reglas ${hashtagCompetencia(partido)} #Futbol #Shorts",
   "tags": ["tag1","tag2","tag3","tag4","tag5"]
 }`;
 }
 
 function promptNoticiaDia(noticia) {
+  const esChile = noticia.categoria === 'chile' || noticia.equipo_chile;
+  const contextoCategoria = esChile
+    ? `Esta es una noticia del FÚTBOL CHILENO${noticia.equipo_chile ? ` sobre ${noticia.equipo_chile}` : ''}. El público objetivo son hinchas chilenos: usa referencias locales (Primera División, Copa Chile, La Roja) y un tono cercano al hincha chileno.`
+    : noticia.categoria === 'fichajes'
+      ? 'Esta es una noticia de MERCADO DE FICHAJES. Enfoca el ángulo en las cifras, el impacto en el equipo y lo que significa para la próxima temporada.'
+      : 'Esta es una noticia del fútbol internacional. Contextualiza para audiencia hispanohablante de Latinoamérica.';
+  const hashtags = esChile ? '#FutbolChileno #PrimeraDivision' : noticia.categoria === 'fichajes' ? '#Fichajes #MercadoDePases' : '#Futbol';
   return `Eres editor de noticias deportivas para YouTube Shorts. Debes convertir esta noticia real del día en un Short viral.
 
 NOTICIA REAL: "${noticia.title}"
 FUENTE: ${noticia.fuente || 'Prensa deportiva'}
 RESUMEN: ${noticia.description || ''}
 
-Crea contenido que amplíe y contextualice esta noticia para el Mundial 2026. La descripcion_youtube DEBE mencionar la fuente ("Según ${noticia.fuente || 'la prensa deportiva'}...").
+${contextoCategoria}
+La descripcion_youtube DEBE mencionar la fuente ("Según ${noticia.fuente || 'la prensa deportiva'}...") e incluir estos hashtags: ${hashtags} #Shorts.
 
 ${REGLAS_TITULO}
 
@@ -184,10 +201,10 @@ Responde SOLO con JSON válido sin markdown:
   "equipo2": null,
   "descripcion": "análisis de la noticia en 2 frases máx 40 palabras",
   "probabilidad": 80,
-  "puntos": ["dato clave 1", "dato clave 2", "impacto en el Mundial"],
+  "puntos": ["dato clave 1", "dato clave 2", "impacto para el equipo/torneo"],
   "emoji": "emoji temático",
   "titulo_youtube": "dato de la noticia + ángulo específico, máx 80 chars",
-  "descripcion_youtube": "descripción de 3 párrafos citando la fuente #Mundial2026 #Noticias #Shorts",
+  "descripcion_youtube": "descripción de 3 párrafos citando la fuente con los hashtags indicados",
   "tags": ["tag1","tag2","tag3","tag4","tag5"]
 }`;
 }
@@ -195,10 +212,10 @@ Responde SOLO con JSON válido sin markdown:
 function promptRanking(temasEvitar, contexto = {}) {
   const { resultadosRecientes = [], tabla = [] } = contexto;
   const datos = [];
-  if (resultadosRecientes.length) datos.push(`Resultados reales recientes: ${resultadosRecientes.slice(0, 8).map(p => `${p.equipo1} ${p.golesLocal}-${p.golesVisita} ${p.equipo2} (${p.fase || ''})`).join(' | ')}`);
+  if (resultadosRecientes.length) datos.push(`Resultados reales recientes: ${resultadosRecientes.slice(0, 8).map(p => `[${p.competencia || 'Fútbol'}] ${p.equipo1} ${p.golesLocal}-${p.golesVisita} ${p.equipo2}`).join(' | ')}`);
   if (tabla.length) datos.push(`Tabla de posiciones real: ${JSON.stringify(tabla.slice(0, 10))}`);
 
-  return `Eres analista de TV deportiva generando un ranking sobre el Mundial 2026 BASADO EN DATOS REALES.
+  return `Eres analista de TV deportiva generando un ranking de fútbol BASADO EN DATOS REALES (usa la competencia que aparezca en los datos: Champions, Premier, Primera División de Chile, etc.).
 
 DATOS REALES DISPONIBLES (el ranking DEBE derivarse de estas cifras — cada posición debe incluir el número que la justifica):
 ${datos.length ? datos.join('\n') : 'ATENCIÓN: no hay datos reales disponibles hoy. En ese caso responde exactamente {"sin_datos": true} y nada más.'}
@@ -221,7 +238,7 @@ Elige un ángulo ORIGINAL y ESPECÍFICO derivado de los datos. Responde SOLO con
   "puntos": ["#1: equipo/jugador — cifra real", "#2: ... — cifra real", "#3: ... — cifra real", "#4: ... — cifra real", "#5: ... — cifra real"],
   "emoji": "emoji temático",
   "titulo_youtube": "título YouTube optimizado máx 80 chars",
-  "descripcion_youtube": "descripción con hashtags 3 párrafos #Mundial2026 #Ranking #Shorts",
+  "descripcion_youtube": "descripción con hashtags 3 párrafos #Futbol #Ranking #Shorts",
   "tags": ["tag1","tag2","tag3","tag4","tag5"]
 }`;
 }
@@ -321,20 +338,40 @@ async function generateContent() {
 
   // 1. Partidos recientes con narrativa — MÁXIMA PRIORIDAD (contenido con búsqueda real)
   if (MODO === 'auto' || MODO === 'partidos') {
+    // v4: ya vienen ordenados por prioridad (Chile > Champions > resto)
     recientesNuevos.slice(0, 3).forEach(p => queue.push({ tipo: 'narrativa', data: p }));
   }
 
   // 2. Partidos en curso (marcador en vivo real, no especulación)
-  if (enCurso.length > 0 && MODO !== 'noticias' && MODO !== 'ranking') {
+  if (enCurso.length > 0 && !['noticias', 'ranking', 'chile', 'fichajes'].includes(MODO)) {
     enCurso.slice(0, 1).forEach(p => queue.push({ tipo: 'prediccion', data: p }));
   }
 
-  // 3. Noticias del día
-  if (MODO === 'auto' || MODO === 'noticias') {
-    const noticiasNuevas = noticiasHoy
-      .filter(n => !hasSimilarHook(history, n.title, 'noticia'))
-      .slice(0, 3);
-    noticiasNuevas.forEach(n => queue.push({ tipo: 'noticia', data: n }));
+  // 3. Noticias del día — v4: seleccionadas por VIRAL SCORE, con cupo
+  //    garantizado para fútbol chileno (ventaja competitiva del canal)
+  if (MODO === 'auto' || MODO === 'noticias' || MODO === 'chile' || MODO === 'fichajes') {
+    const candidatas = noticiasHoy.filter(n => !hasSimilarHook(history, n.title, 'noticia'));
+
+    let seleccion;
+    if (MODO === 'chile') {
+      seleccion = seleccionarTop(candidatas.filter(n => n.categoria === 'chile' || n.equipo_chile), { top: 4, umbral: 30 });
+    } else if (MODO === 'fichajes') {
+      seleccion = seleccionarTop(candidatas.filter(n => n.categoria === 'fichajes'), { top: 4, umbral: 30 });
+    } else {
+      // auto/noticias: top viral general + mínimo 1 chilena si existe
+      const topGeneral = seleccionarTop(candidatas, { top: 3, umbral: 40 });
+      const hayChilena = topGeneral.some(n => n.categoria === 'chile' || n.equipo_chile);
+      if (!hayChilena) {
+        const mejorChilena = seleccionarTop(candidatas.filter(n => n.categoria === 'chile' || n.equipo_chile), { top: 1, umbral: 30 });
+        if (mejorChilena.length) topGeneral.splice(Math.min(1, topGeneral.length), 0, mejorChilena[0]);
+      }
+      seleccion = topGeneral.slice(0, 3);
+    }
+
+    seleccion.forEach(n => {
+      console.log(`  🎯 Noticia seleccionada [score ${n.viral?.score ?? n.viral_score ?? '?'}] [${n.categoria}]: ${n.title.substring(0, 70)}`);
+      queue.push({ tipo: 'noticia', data: n });
+    });
   }
 
   // 4. Análisis previo del próximo partido — máx 1 y al final de la cola

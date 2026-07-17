@@ -175,7 +175,7 @@ async function uploadToYouTube(youtube, filePath, data) {
   const fileSize = fs.statSync(filePath).size;
   const tags = [...new Set([
     ...(data.tags || []),
-    'Mundial2026', 'Futbol', 'Shorts', 'FIFA', 'WorldCup2026',
+    'Futbol', 'Shorts', 'FutbolChileno', 'ChampionsLeague', 'Fichajes',
   ])].slice(0, 15);
 
   const response = await youtube.videos.insert({

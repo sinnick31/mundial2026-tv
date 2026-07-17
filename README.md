@@ -1,129 +1,73 @@
-# Mundial2026 TV
+# ⚽ FOOTBALL AI STUDIO v4.0
 
-Fábrica de Shorts verticales para resultados, noticias y análisis del Mundial FIFA 2026.
+> Antes: **Mundial2026 TV** (canal dependiente de un solo torneo).
+> Ahora: **fábrica automática de contenido de fútbol 365 días al año**, con el fútbol chileno como ventaja competitiva.
 
-El proyecto usa Remotion, datos de partidos, generación de guiones con IA, narración, b-roll, metadata SEO y subida automática a YouTube Shorts.
+Pipeline 100% automático y gratuito (GitHub Actions + APIs free tier) que busca noticias y resultados reales, decide qué tiene potencial viral, genera guiones con IA, renderiza Shorts verticales con Remotion y los publica en YouTube.
 
-## Estilo visual 2026
+## 🎯 Qué cubre (365 días)
 
-- Formato vertical 9:16 en 1080x1920.
-- Videos cortos de ritmo rápido para Shorts, TikTok y Reels.
-- Estética de estudio deportivo animado con pantallas LED, luces de transmisión, marcador gigante y comentaristas de marca.
-- Personajes del canal:
-  - Krono: conductor principal.
-  - Issy: analista energético.
-  - Kuky: experto táctico.
-- Descripciones enfocadas en resultados finales cuando el partido ya terminó, no en predicciones.
+| Bloque | Fuente | Prioridad |
+|---|---|---|
+| 🇨🇱 **Fútbol chileno** — Primera A, Primera B, Copa Chile, La Roja | Google News RSS + ESPN (`chi.1`, `chi.copa_chi`) | **MÁXIMA** |
+| 🏆 Champions League y Copa Libertadores | football-data.org + ESPN | Alta |
+| 🌍 Premier, LaLiga, Serie A, Bundesliga, Ligue 1, Brasileirão | football-data.org (1 sola llamada multi-competición) | Media |
+| 💰 Mercado de fichajes | Google News RSS | Alta |
+| 📊 Récords, polémicas VAR, estadísticas | Detección por keywords + viral score | Media |
+| 🏟️ Torneos FIFA (Mundial, Eurocopa) cuando estén activos | football-data.org | Alta |
 
-## Nombre sugerido del video
+## 🧠 Motor Viral Score (nuevo en v4)
 
-`Brasil 1-2 Noruega: resultado final con análisis 3D`
+Cada noticia recibe un puntaje **0–100** ANTES de gastar tokens de Gemini:
+- Categoría (Chile +30, fichajes +20, polémicas +18…)
+- Frescura (últimas 3h +15, más de 48h −10)
+- Señales virales (OFICIAL, récord, marcador, cifras, VAR…)
+- Clubes gigantes (+10)
+- Penalización a contenido institucional/aburrido (−12)
 
-Puedes cambiar equipos y marcador según el partido real.
+Solo el Top sobre el umbral se convierte en video. **Mejor no publicar que publicar relleno.**
 
-## Descripción base para resultados finales
-
-```text
-⚽ RESULTADO FINAL ⚽
-
-Estos fueron los resultados del encuentro. Revive el marcador definitivo, las claves del partido y los momentos más importantes en este resumen con animación 3D cinematográfica.
-
-💬 ¿Qué te pareció el partido?
-👇 Déjame tu opinión en los comentarios y cuéntame si esperabas este resultado.
-
-🔔 Suscríbete para no perderte todos los resultados, resúmenes y noticias del Mundial FIFA 2026.
-
-#Mundial2026 #FIFAWorldCup #Resultados #Futbol #Football #Shorts #Resumen #Goles #FIFA #WorldCup2026
-```
-
-El repo ahora genera una versión dinámica de esta descripción desde `scripts/metadata-generator.js`.
-
-## Links de afiliados
-
-1. Copia `config/affiliate-links.example.json` como `config/affiliate-links.json`.
-2. Reemplaza cada URL por tus links reales.
-3. Deja `"enabled": true` solo en los links que quieras publicar.
-
-`config/affiliate-links.json` está ignorado por Git para no publicar links privados o de campaña por accidente.
-
-También puedes usar una ruta externa con:
-
-```bash
-AFFILIATE_LINKS_FILE=/ruta/a/mis-links.json npm run ...
-```
-
-## Scripts útiles
-
-```bash
-npm install
-npm run dev
-npm run lint
-node scripts/fetch-matches.js
-node scripts/generate-daily-content.js
-node scripts/render-and-upload.js
-```
-
-## Flujo automático recomendado
-
-1. Obtener resultados reales del Mundial.
-2. Generar contenido diario con `generate-daily-content.js`.
-3. Crear narración y video con `render-and-upload.js`.
-4. Subir a YouTube Shorts con título, descripción, hashtags y afiliados.
-5. Reutilizar el mismo MP4 en TikTok e Instagram Reels.
-
-## Estrategia para crecer hacia 3 millones de visitas
-
-- Publicar primero resultados finales reales: el algoritmo favorece intención clara de búsqueda.
-- Subir rápido después del pitazo final.
-- Crear 3 ángulos por partido: resultado final, jugada clave y dato táctico.
-- Mantener una identidad visual reconocible con Krono, Issy y Kuky.
-- Evitar clickbait genérico: usar marcador, minuto, equipo o dato verificable.
-- Probar miniaturas con marcador grande, banderas y una emoción clara.
-- Revisar retención en los primeros 2 segundos y reescribir ganchos con baja retención.
-
-No se pueden garantizar 3 millones de visitas, pero el repo queda preparado para producir contenido constante, reconocible y optimizado para aumentar la probabilidad de alcance.
-
-
-## Arquitectura v3.0 (en desarrollo)
-
-Esta rama (v3.0-dev) evoluciona el repo hacia una "fabrica" de
-contenido deportivo con arquitectura modular y agentes de IA que
-preparan cada pieza del short (guion, SEO, thumbnail, prompt de video y
-narracion) a partir de los datos reales de un partido.
-
-### Nueva estructura
+## 🔁 Flujo del pipeline
 
 ```
-AI/
-  script_generator.py      Guion (gancho, resultado, dato curioso,
-                            clasificacion, proximo rival, CTA)
-  seo_generator.py          Titulo, descripcion y hashtags
-  thumbnail_generator.py    Brief creativo para la miniatura
-  prompt_generator.py       Prompt de video cinematografico (Pixar-like)
-  narration.py               Guion de narracion con tiempos para TTS
-  requirements.txt
-
-assets/
-  characters/    krono.png, issy.png, kuky.png, pepa.png, zeus.png
-  backgrounds/stadiums/
-  logos/worldcup/
-
-templates/
-  shorts/  youtube/  tiktok/  instagram/
-
-videos/output/   Videos renderizados (agregar a .gitignore)
-
-config/
-  affiliate-links.example.json
-  .env.example
+fetch-news.js (12 feeds, Chile primero) ──┐
+fetch-matches.js (multi-competición)  ────┤
+                                          ▼
+                              viral-score.js (Top-N)
+                                          ▼
+                    generate-daily-content.js (Gemini 2.5 Flash)
+                                          ▼
+                     Remotion (render 9:16) ▶ YouTube API
+                                          ▼
+                    content-history.json (anti-duplicados)
 ```
 
-### Flujo de un modulo de IA
+Corre 4 veces al día (horario Chile): 08:00 · 12:00 · 17:00 · 21:00.
 
-Primero, `node scripts/fetch-matches.js` obtiene el resultado real del partido. Con ese resultado, `script_generator.py` genera el guion estructurado. A partir del guion, `seo_generator.py` genera el titulo, la descripcion y los hashtags, mientras que `thumbnail_generator.py` prepara el brief de la miniatura y `prompt_generator.py` arma el prompt de video cinematografico. Por ultimo, `narration.py` prepara el texto y los tiempos para el motor de texto a voz, y Remotion renderiza el video final usando todos estos artefactos.
+## ⚙️ Modos (workflow_dispatch)
 
-### Proximas fases
+`auto` · `noticias` · `partidos` · `predicciones` · `ranking` · **`chile`** (solo fútbol chileno) · **`fichajes`** (solo mercado)
 
-Entre las siguientes fases planeadas estan: construir una interfaz web y un panel de administracion para disparar y monitorear la generacion de contenido; orquestar los modulos de IA en paralelo para varios partidos a la vez; e integrar un proveedor de texto a voz (TTS) real dentro de narration.py.
+## 🔑 Secrets requeridos
 
-Los modulos de IA usan la variable `GEMINI_API_KEY` (ver `config/.env.example`). Si esta variable no esta configurada, cada script cae en una plantilla de respaldo simple para que el pipeline no se detenga.
+| Secret | Uso |
+|---|---|
+| `GEMINI_API_KEY` | Guiones y metadata con IA |
+| `FOOTBALL_DATA_API_KEY` | Partidos y tablas (plan gratis) |
+| `YOUTUBE_CLIENT_ID` / `SECRET` / `REFRESH_TOKEN` | Publicación automática |
+| `PEXELS_API_KEY` | B-roll (opcional) |
+| `COMPETITIONS` | *(opcional)* override de IDs de competiciones, ej: `2001,2021,2152` |
+
+> `COMPETITION_ID` ya no se usa (era el candado del Mundial). Puedes borrarlo de los secrets.
+
+## 📁 Archivos clave v4
+
+- `config/ligas.js` — TODA la configuración: competiciones, equipos chilenos (A + B) con alias, categorías, feeds RSS
+- `scripts/viral-score.js` — motor de puntaje 0–100
+- `scripts/fetch-news.js` — noticias multi-tema con clasificación por categoría
+- `scripts/fetch-matches.js` — partidos multi-competición (1 llamada API) + liga chilena vía ESPN
+- `scripts/generate-daily-content.js` — generación IA con prompts genéricos y cupo garantizado para Chile
+
+## 📌 Nota sobre la liga chilena
+
+football-data.org (gratis) **no** incluye la Primera División de Chile. La cobertura chilena viene de dos fuentes que sí son gratis: **Google News RSS** (noticias, muy completo para Chile) y la **API pública de ESPN** (`chi.1` y `chi.copa_chi`) para marcadores de partidos.

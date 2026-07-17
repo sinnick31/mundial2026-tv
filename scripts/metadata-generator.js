@@ -1,7 +1,7 @@
 const { appendAffiliateFooter } = require('./affiliate-links');
 
 const BASE_HASHTAGS = [
-  '#Mundial2026',
+  '#Futbol',
   '#FIFAWorldCup',
   '#Resultados',
   '#Futbol',
@@ -43,7 +43,7 @@ function finalResultTitle(match) {
     ? `Empate ${homeScore}-${awayScore}`
     : `${homeTeam} ${homeScore}-${awayScore} ${awayTeam}`;
 
-  return clamp(`${lead} ${homeFlag}${awayFlag} | Resultado final Mundial 2026`, 95);
+  return clamp(`${lead} ${homeFlag}${awayFlag} | Resultado final ${match.competencia || 'Fútbol'}`, 95);
 }
 
 function finalResultDescription(match = {}) {
@@ -51,7 +51,7 @@ function finalResultDescription(match = {}) {
   const awayTeam = cleanTeam(match.awayTeam || match.equipo2 || 'Visitante');
   const homeScore = Number(match.homeScore ?? match.golesLocal ?? match._goles_local ?? 0);
   const awayScore = Number(match.awayScore ?? match.golesVisita ?? match._goles_visita ?? 0);
-  const stage = match.matchStage || match.fase || match._fase || 'Mundial FIFA 2026';
+  const stage = match.competencia || match.matchStage || match.fase || match._fase || 'Fútbol Internacional';
   const venue = [match.venue, match.city].filter(Boolean).join(', ');
   const hashtags = [
     tagFromTeam(homeTeam),
@@ -70,7 +70,7 @@ function finalResultDescription(match = {}) {
     '💬 ¿Qué te pareció el resultado?',
     '👇 Déjame tu opinión en los comentarios y cuéntame si esperabas este marcador.',
     '',
-    '🔔 Suscríbete para no perderte resultados, resúmenes y noticias del Mundial FIFA 2026.',
+    '🔔 Suscríbete para no perderte resultados, fichajes y noticias del fútbol chileno e internacional todos los días.',
     '',
     hashtags.join(' '),
   ].join('\n');

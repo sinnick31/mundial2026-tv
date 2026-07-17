@@ -1,17 +1,17 @@
-name: 🎬 Mundial 2026 TV — Pipeline Automático Diario
+name: ⚽ FOOTBALL AI STUDIO v4.0 — Pipeline 365 días
 
 # ════════════════════════════════════════════════════════════════════════
-# PIPELINE COMPLETO: Noticias reales + Partidos + IA + YouTube Shorts
-# Busca noticias de internet, resultados de partidos, genera videos con IA
-# y los sube automáticamente a YouTube. Corre 4 veces al día.
+# v4.0: Ya no depende del Mundial. Cubre fútbol chileno (prioridad alta),
+# Champions, ligas europeas, Libertadores y mercado de fichajes.
+# Motor de VIRAL SCORE decide qué se publica. Corre 4 veces al día.
 # ════════════════════════════════════════════════════════════════════════
 
 on:
   schedule:
-    - cron: '0 9 * * *'   # 05:00 Chile — Resumen mañana (partidos noche anterior)
-    - cron: '0 15 * * *'  # 11:00 Chile — Mediodía (noticias del día)
-    - cron: '0 21 * * *'  # 17:00 Chile — Tarde (preview partidos de la noche)
-    - cron: '0 3 * * *'   # 23:00 Chile — Noche (resultados del día)
+    - cron: '0 12 * * *'  # 08:00 Chile — Resumen mañana + resultados de anoche
+    - cron: '0 16 * * *'  # 12:00 Chile — Mediodía: noticias + fichajes
+    - cron: '0 21 * * *'  # 17:00 Chile — Tarde: previas + fútbol chileno
+    - cron: '0 1 * * *'   # 21:00 Chile — Noche: resultados del día (prime time)
 
   workflow_dispatch:
     inputs:
@@ -26,7 +26,7 @@ on:
         required: false
         default: 'auto'
         type: choice
-        options: ['auto', 'noticias', 'partidos', 'predicciones', 'ranking']
+        options: ['auto', 'noticias', 'partidos', 'predicciones', 'ranking', 'chile', 'fichajes']
 
 permissions:
   contents: write
@@ -65,13 +65,13 @@ jobs:
         run: |
           npm install --no-save node-fetch@3 cheerio rss-parser
 
-      - name: 🔍 Buscar noticias del Mundial en internet
+      - name: 🔍 Buscar noticias de fútbol (Chile + Mundo)
         run: node scripts/fetch-news.js
 
-      - name: ⚽ Obtener partidos y resultados
+      - name: ⚽ Obtener partidos (Chile + Champions + ligas del mundo)
         env:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
-          COMPETITION_ID: ${{ secrets.COMPETITION_ID }}
+          COMPETITIONS: ${{ secrets.COMPETITIONS }}
         run: node scripts/fetch-matches.js
 
       - name: 🤖 Generar contenido único con IA
@@ -79,7 +79,6 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
-          COMPETITION_ID: ${{ secrets.COMPETITION_ID }}
           MAX_ITEMS: ${{ inputs.max_items || '4' }}
           MODO: ${{ inputs.modo || 'auto' }}
         run: |
@@ -179,12 +178,12 @@ jobs:
       - name: 📊 Resumen
         run: |
           echo "══════════════════════════════════════════════"
-          echo "📺 MUNDIAL 2026 TV — Reporte Automático"
+          echo "⚽ FOOTBALL AI STUDIO v4.0 — Reporte Automático"
           echo "══════════════════════════════════════════════"
           echo "🕐 Ejecución: $(date '+%Y-%m-%d %H:%M UTC')"
           echo "🔄 Run #${{ github.run_number }}"
           if [ "${{ needs.generate.outputs.hay_contenido }}" == "false" ]; then
-            echo "ℹ️ No había partidos/noticias nuevas sin cubrir hoy."
+            echo "ℹ️ No había contenido sobre el umbral viral hoy — se evita publicar relleno."
             echo "Esto es ESPERADO — evita publicar duplicados."
           elif [ "${{ needs.render-upload.result }}" == "success" ]; then
             echo "✅ Pipeline completado — videos publicados en YouTube"

@@ -82,7 +82,7 @@ function buildVideoMetadata(match) {
   const awayTeam = match.awayTeam || match.equipo2 || "Visitante";
 
   const tags = [
-    "FIFA World Cup 2026", "Mundial 2026", "World Cup", "FIFA",
+    "futbol", "futbol chileno", "primera division chile", "colo colo", "u de chile", "champions league", "fichajes",
     "Resultado Final", "Football", "Soccer", "Shorts",
     homeTeam, awayTeam,
     "MUNDIAL 2026 TV",

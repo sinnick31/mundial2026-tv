@@ -1,7 +1,7 @@
 {
-  "name": "mundial2026-shorts",
-  "version": "1.0.0",
-  "description": "Automatización de Shorts verticales con resultados, análisis y metadata SEO para el Mundial FIFA 2026.",
+  "name": "football-ai-studio",
+  "version": "4.0.0",
+  "description": "FOOTBALL AI STUDIO v4.0 — Fábrica automática de Shorts de fútbol 365 días al año: fútbol chileno (Primera A, B, Copa Chile), Champions, ligas europeas, Libertadores y fichajes. Motor de viral score + Gemini + Remotion + YouTube.",
   "repository": {
     "type": "git",
     "url": "https://github.com/sinnick31/mundial2026-tv.git"
@@ -35,7 +35,9 @@
     "generate:daily": "node scripts/generate-daily-content.js",
     "render:upload": "node scripts/render-and-upload.js",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "fetch:news": "node scripts/fetch-news.js",
+    "test:viral": "node -e \"const{calcularViralScore}=require('./scripts/viral-score');console.log(calcularViralScore({title:process.argv[1]||'Colo Colo golea y es lider',description:'',timestamp:new Date().toISOString()}))\""
   },
   "sideEffects": [
     "*.css"

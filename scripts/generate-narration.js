@@ -156,7 +156,7 @@ module.exports = { generarNarracion, construirGuion, pcmToWav };
 
 // ─── CLI de prueba ────────────────────────────────────────────────────────────
 if (require.main === module) {
-  const texto = process.argv[2] || 'Esta es una prueba de narración para Mundial 2026 TV.';
+  const texto = process.argv[2] || 'Esta es una prueba de narración para Football AI Studio.';
   const out = process.argv[3] || 'out/test-narracion.wav';
   generarNarracion(texto, out).then((r) => console.log(r));
 }
