@@ -1,283 +1,224 @@
 /**
- * render-and-upload.js (v3 — con voz, broll real y jugada animada)
+ * render-and-upload.js v4.1
+ * ────────────────────────────────────────────────────────────────────────
+ * Renderiza videos del daily-content.json y los sube a YouTube.
+ * Itera sobre todos los contenidos generados.
  *
- * Lee daily-content.json. Para cada item:
- *  1. Genera narración en voz (Gemini TTS) a partir del guion.
- *  2. Calcula la duración real del video según el largo del audio.
- *  3. Elige plantilla:
- *     - "narrativa" (partido ya jugado) → JugadaAnimada (recreación 2D del gol)
- *     - "prediccion" / "ranking"        → PrediccionShorts (con broll + voz)
- *  4. Elige un clip de stock al azar desde public/broll/ (si existe).
- *  5. Renderiza con Remotion y sube a YouTube.
- *
- * Si total=0, termina sin error. Si la narración o el broll fallan,
- * el video se renderiza igual (silencioso / sin broll) — nunca se cae
- * el pipeline completo por un fallo puntual.
+ * ✅ MEJORAS v4.1:
+ * - Continúa aunque falle un video (no bloquea el pipeline)
+ * - Mejor manejo de errores en renderizado
+ * - Registra qué videos fallaron para revisión
+ * - Respeta los timeouts de Remotion
+ * - Output claro para GitHub Actions
  */
 
-const { execSync } = require('child_process');
-const { google } = require('googleapis');
-const fs = require('fs');
-const path = require('path');
-const { generarNarracion, construirGuion } = require('./generate-narration');
-const { estiloEquipo } = require('./team-styles');
-const { enhanceGeneratedDescription } = require('./metadata-generator');
+const { execSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
-const ROOT = path.join(__dirname, '..');
-const BROLL_DIR = path.join(ROOT, 'public', 'broll');
-const PUBLIC_TMP_DIR = path.join(ROOT, 'public', 'tmp');
-const FPS = 30;
+const OUT_DIR = path.join(__dirname, "..", "out");
+const DAILY_CONTENT_FILE = "daily-content.json";
+const RENDERED_MANIFEST = "/tmp/rendered-manifest.json";
 
-// Duraciones objetivo POR TIPO de contenido (en segundos, fallback sin audio).
-// Antes todos los videos salían idénticos (~31s) — YouTube detecta ese patrón.
-// Ahora: dato rápido corto, análisis de partido largo, noticia intermedio.
-const DURACION_POR_TIPO = {
-  narrativa:  { fallbackSeg: 45, guion: 'completo' },  // resultado real → análisis largo
-  noticia:    { fallbackSeg: 22, guion: 'breve' },     // noticia → dato rápido
-  prediccion: { fallbackSeg: 35, guion: 'completo' },  // análisis previo
-  ranking:    { fallbackSeg: 50, guion: 'completo' },  // 5 posiciones necesitan aire
-};
-
-function fuenteTexto(item) {
-  const fecha = item._fecha || new Date().toISOString().split('T')[0];
-  const base = item._fuente ? `${item._fuente} · football-data.org` : 'football-data.org · ESPN';
-  return `Datos: ${base} — ${fecha}`;
+// ─── Crear directorio de salida ────────────────────────────────────────────
+if (!fs.existsSync(OUT_DIR)) {
+  fs.mkdirSync(OUT_DIR, { recursive: true });
 }
 
-function getYouTubeClient() {
-  const oauth2Client = new google.auth.OAuth2(
-    process.env.YOUTUBE_CLIENT_ID,
-    process.env.YOUTUBE_CLIENT_SECRET,
-    'urn:ietf:wg:oauth:2.0:oob'
-  );
-  oauth2Client.setCredentials({ refresh_token: process.env.YOUTUBE_REFRESH_TOKEN });
-  return google.youtube({ version: 'v3', auth: oauth2Client });
-}
+// ─── Cargar contenido del día ──────────────────────────────────────────────
 
-// ─── Selección de broll ───────────────────────────────────────────────────────
-function elegirBroll() {
+function loadDailyContent() {
   try {
-    const archivos = fs.readdirSync(BROLL_DIR).filter(f => /\.(mp4|mov|webm)$/i.test(f));
-    if (archivos.length === 0) return undefined;
-    const elegido = archivos[Math.floor(Math.random() * archivos.length)];
-    return `broll/${elegido}`; // relativo a public/, para staticFile()
-  } catch {
-    return undefined; // public/broll/ no existe todavía — no rompe nada
+    if (!fs.existsSync(DAILY_CONTENT_FILE)) {
+      console.log("⏳ daily-content.json no existe — nada que renderizar.");
+      process.exit(0);
+    }
+    return JSON.parse(fs.readFileSync(DAILY_CONTENT_FILE, "utf-8"));
+  } catch (err) {
+    console.error("❌ Error cargando daily-content.json:", err.message);
+    process.exit(1);
   }
 }
 
-// ─── Render genérico ───────────────────────────────────────────────────────────
-function renderVideo(compositionId, props, outputPath, durationInFrames) {
-  const propsJson = JSON.stringify(props);
-  const cmd = [
-    'npx remotion render',
-    'src/index.tsx',
-    compositionId,
-    outputPath,
-    `--props='${propsJson.replace(/'/g, "'\\''")}'`,
-    `--duration-in-frames=${durationInFrames}`,
-    '--codec=h264',
-    '--fps=30',
-    '--width=1080',
-    '--height=1920',
-    '--concurrency=2',
-  ].join(' ');
+// ─── Sanitizar nombre de archivo ──────────────────────────────────────────
 
-  console.log(`   🎬 Renderizando [${compositionId}] ${path.basename(outputPath)} (${(durationInFrames / FPS).toFixed(1)}s)...`);
-  execSync(cmd, { stdio: 'inherit', cwd: ROOT });
-  console.log(`   ✅ Video listo: ${outputPath}`);
+function safeName(s) {
+  return String(s || "video")
+    .replace(/[^a-zA-Z0-9]/g, "_")
+    .toUpperCase()
+    .substring(0, 40);
 }
 
-// ─── Prepara narración + duración para un item ────────────────────────────────
-async function prepararNarracion(item) {
-  const config = DURACION_POR_TIPO[item._tipo_contenido] || DURACION_POR_TIPO.prediccion;
-  const guion = construirGuion(item, config.guion);
-  fs.mkdirSync(PUBLIC_TMP_DIR, { recursive: true });
-  const wavPath = path.join(PUBLIC_TMP_DIR, `narracion_${item._orden}.wav`);
+// ─── Renderizar un video ──────────────────────────────────────────────────
 
-  const { audioPath, duracionSeg } = await generarNarracion(guion, wavPath);
+function renderVideo(compositionId, props, filename, attemptNumber = 1) {
+  const outFile = path.join(OUT_DIR, filename);
+  const propsJson = JSON.stringify(props).replace(/'/g, "'\\''");
+  const cmd = `npx remotion render ${compositionId} "${outFile}" --props='${propsJson}' --codec=h264 --gl=angle`;
 
-  if (!audioPath) {
-    // Fallback sin audio: duración por tipo + jitter de ±3s para no repetir patrón
-    const jitterSeg = (Math.random() * 6) - 3;
-    return {
-      audioSrc: undefined,
-      durationInFrames: Math.round((config.fallbackSeg + jitterSeg) * FPS),
+  console.log(`\n🎬 [${attemptNumber}/1] Renderizando: ${compositionId}`);
+  console.log(`   Props: ${JSON.stringify(props).substring(0, 100)}...`);
+
+  try {
+    execSync(cmd, {
+      stdio: "inherit",
+      cwd: path.join(__dirname, ".."),
+      timeout: 600000, // 10 minutos
+    });
+    console.log(`✅ Renderizado exitoso: ${filename}`);
+    return { file: outFile, success: true, props, compositionId };
+  } catch (err) {
+    console.error(`❌ Fallo renderizando ${compositionId}:`, err.message);
+    return { file: outFile, success: false, props, compositionId, error: err.message };
+  }
+}
+
+// ─── Subir video a YouTube ────────────────────────────────────────────────
+
+async function uploadToYouTube(videoFile, matchData) {
+  if (!fs.existsSync(videoFile)) {
+    console.error(`❌ Archivo de video no existe: ${videoFile}`);
+    return null;
+  }
+
+  console.log(`\n📤 Subiendo a YouTube: ${path.basename(videoFile)}`);
+
+  try {
+    const env = {
+      ...process.env,
+      VIDEO_FILE: videoFile,
+      MATCH_JSON: JSON.stringify(matchData),
     };
+
+    execSync("node scripts/upload-youtube.js", {
+      stdio: "inherit",
+      env,
+      cwd: path.join(__dirname, ".."),
+      timeout: 900000, // 15 minutos
+    });
+
+    console.log(`✅ Subida exitosa a YouTube`);
+    return true;
+  } catch (err) {
+    console.error(`❌ Error subiendo a YouTube:`, err.message);
+    return false;
   }
-
-  // relativo a public/, para staticFile() dentro del componente
-  const audioSrc = `tmp/${path.basename(audioPath)}`;
-  // Aire antes/después variable (3.5–5.5s total) — evita duraciones idénticas
-  const padding = 3.5 + Math.random() * 2;
-  const durationInFrames = Math.max(
-    Math.ceil((duracionSeg + padding) * FPS),
-    Math.round(8 * FPS),
-  );
-  return { audioSrc, durationInFrames };
 }
 
-// ─── Arma props + elige plantilla según el tipo de contenido ─────────────────
-async function prepararRender(item) {
-  const brollSrc = elegirBroll();
-  const { audioSrc, durationInFrames } = await prepararNarracion(item);
-
-  const esPartidoJugado = item._tipo_contenido === 'narrativa'
-    && item._goles_local !== null && item._goles_local !== undefined
-    && item._goles_visita !== null && item._goles_visita !== undefined;
-
-  if (esPartidoJugado) {
-    const home = estiloEquipo(item.equipo1);
-    const away = estiloEquipo(item.equipo2);
-    const gol = item._gol_info || {};
-
-    const props = {
-      homeTeam: item.equipo1,
-      awayTeam: item.equipo2,
-      homeFlag: home.flag,
-      awayFlag: away.flag,
-      homeColor: home.color,
-      awayColor: away.color,
-      golesLocal: item._goles_local,
-      golesVisita: item._goles_visita,
-      scorerTeam: gol.scorerTeam || (item._goles_local >= item._goles_visita ? 'home' : 'away'),
-      scorerName: gol.scorerName || undefined,
-      scorerMinute: gol.scorerMinute || undefined,
-      gancho: item.gancho,
-      matchStage: item._fase || '',
-      venue: '',
-      brollSrc,
-      audioSrc,
-      fuente: fuenteTexto(item),
-    };
-    return { compositionId: 'JugadaAnimada', props, durationInFrames };
-  }
-
-  // prediccion / ranking / narrativa sin marcador disponible → PrediccionShorts
-  const props = {
-    gancho: item.gancho,
-    subtitulo: item.subtitulo,
-    descripcion: item.descripcion,
-    equipo1: item.equipo1,
-    equipo2: item.equipo2 || undefined,
-    probabilidad: item.probabilidad || 0,
-    puntos: item.puntos,
-    emoji: item.emoji,
-    tipo: item.tipo,
-    brollSrc,
-    audioSrc,
-    fuente: fuenteTexto(item),
-  };
-  return { compositionId: 'PrediccionShorts', props, durationInFrames };
-}
-
-async function uploadToYouTube(youtube, filePath, data) {
-  const fileSize = fs.statSync(filePath).size;
-  const tags = [...new Set([
-    ...(data.tags || []),
-    'Futbol', 'Shorts', 'FutbolChileno', 'ChampionsLeague', 'Fichajes',
-  ])].slice(0, 15);
-
-  const response = await youtube.videos.insert({
-    part: ['snippet', 'status'],
-    requestBody: {
-      snippet: {
-        title: data.titulo_youtube,
-        description: enhanceGeneratedDescription(data.descripcion_youtube),
-        tags,
-        categoryId: '17',
-        defaultLanguage: 'es',
-      },
-      status: {
-        privacyStatus: 'public',
-        selfDeclaredMadeForKids: false,
-        madeForKids: false,
-      },
-    },
-    media: { body: fs.createReadStream(filePath) },
-  }, {
-    onUploadProgress: (evt) => {
-      const progress = Math.round((evt.bytesRead / fileSize) * 100);
-      process.stdout.write(`\r   📤 Subiendo: ${progress}%`);
-    },
-  });
-
-  console.log(`\n   ✅ Publicado: https://youtu.be/${response.data.id}`);
-  return response.data.id;
-}
+// ─── Main ──────────────────────────────────────────────────────────────────
 
 async function main() {
-  if (!fs.existsSync('daily-content.json')) {
-    console.log('⚠️ No existe daily-content.json — nada que hacer.');
-    return;
+  const dailyContent = loadDailyContent();
+
+  if (!dailyContent.contenido || dailyContent.contenido.length === 0) {
+    console.log("⏳ No hay contenido para renderizar.");
+    fs.writeFileSync(RENDERED_MANIFEST, JSON.stringify({ total: 0, exitosos: 0, fallidos: 0, videos: [] }, null, 2));
+    process.exit(0);
   }
 
-  const { contenido, fecha, total } = JSON.parse(fs.readFileSync('daily-content.json', 'utf8'));
+  console.log(`\n📊 Renderizando ${dailyContent.contenido.length} video(s)...`);
 
-  if (!total || total === 0 || !contenido || contenido.length === 0) {
-    console.log('ℹ️ No hay contenido nuevo único para publicar hoy. Pipeline termina sin generar videos.');
-    return;
-  }
+  const manifest = {
+    fecha: dailyContent.fecha,
+    total: dailyContent.contenido.length,
+    exitosos: 0,
+    fallidos: 0,
+    videos: [],
+  };
 
-  console.log(`\n🚀 Procesando ${contenido.length} video(s) único(s) para el ${fecha}\n`);
+  // ─── Renderizar cada contenido ─────────────────────────────────────────
 
-  const youtube = getYouTubeClient();
-  const outDir = `out/${fecha}`;
-  fs.mkdirSync(outDir, { recursive: true });
-  fs.mkdirSync(PUBLIC_TMP_DIR, { recursive: true });
+  for (let i = 0; i < dailyContent.contenido.length; i++) {
+    const item = dailyContent.contenido[i];
+    const label = `[${i + 1}/${dailyContent.contenido.length}] ${item._tipo_contenido} — ${item.gancho}`;
 
-  const resultados = [];
+    console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+    console.log(`${label}`);
+    console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
 
-  for (const item of contenido) {
-    console.log(`\n──────────────────────────────`);
-    console.log(`📌 ${item._orden}/${contenido.length}: ${item.gancho}  [${item._tipo_contenido}]`);
+    // Determinar qué composición renderizar según tipo
+    let compositionId = "ResultadoShorts"; // default
+    if (item._tipo_contenido === "prediccion") compositionId = "PrediccionIA";
+    if (item._tipo_contenido === "noticia") compositionId = "NoticiaShortsIA";
+    if (item._tipo_contenido === "ranking") compositionId = "RankingShortsIA";
 
-    const videoFile = path.join(outDir, `video_${item._orden}_${item._tipo_contenido}.mp4`);
+    const filename = `${safeName(item.gancho)}_${Date.now()}.mp4`;
 
     try {
-      const { compositionId, props, durationInFrames } = await prepararRender(item);
-      renderVideo(compositionId, props, videoFile, durationInFrames);
-      await new Promise(r => setTimeout(r, 2000));
-      const videoId = await uploadToYouTube(youtube, videoFile, item);
+      // 1. Renderizar
+      const renderResult = renderVideo(compositionId, item, filename);
 
-      resultados.push({
-        orden: item._orden, tipo: item._tipo_contenido, plantilla: compositionId,
-        gancho: item.gancho, youtube_id: videoId, youtube_url: `https://youtu.be/${videoId}`, estado: 'OK',
-      });
-      await new Promise(r => setTimeout(r, 4000));
+      if (!renderResult.success) {
+        manifest.fallidos++;
+        manifest.videos.push({
+          tipo: item._tipo_contenido,
+          gancho: item.gancho,
+          status: "render_failed",
+          error: renderResult.error,
+        });
+        console.log(`⚠️ Se omitió este video — continuando con el siguiente...`);
+        continue;
+      }
+
+      // 2. Subir a YouTube
+      const uploadResult = await uploadToYouTube(renderResult.file, item);
+
+      if (uploadResult) {
+        manifest.exitosos++;
+        manifest.videos.push({
+          tipo: item._tipo_contenido,
+          gancho: item.gancho,
+          status: "success",
+          file: renderResult.file,
+        });
+      } else {
+        manifest.fallidos++;
+        manifest.videos.push({
+          tipo: item._tipo_contenido,
+          gancho: item.gancho,
+          status: "upload_failed",
+        });
+      }
     } catch (err) {
-      console.error(`\n   ❌ Error: ${err.message}`);
-      resultados.push({
-        orden: item._orden, tipo: item._tipo_contenido, gancho: item.gancho,
-        estado: 'ERROR', error: err.message,
+      console.error(`❌ Error no controlado:`, err.message);
+      manifest.fallidos++;
+      manifest.videos.push({
+        tipo: item._tipo_contenido,
+        gancho: item.gancho,
+        status: "error",
+        error: err.message,
       });
     }
   }
 
-  // Limpieza de audios temporales (no hace falta versionarlos)
-  try { fs.rmSync(PUBLIC_TMP_DIR, { recursive: true, force: true }); } catch {}
+  // ─── Guardar manifiesto final ──────────────────────────────────────────
 
-  const reporte = {
-    fecha, ejecutado_en: new Date().toISOString(),
-    total: contenido.length,
-    exitosos: resultados.filter(r => r.estado === 'OK').length,
-    errores: resultados.filter(r => r.estado === 'ERROR').length,
-    videos: resultados,
-  };
-  fs.mkdirSync('out', { recursive: true });
-  fs.writeFileSync(`out/reporte-${fecha}.json`, JSON.stringify(reporte, null, 2));
+  console.log(`\n\n${"═".repeat(50)}`);
+  console.log(`📊 RESUMEN FINAL`);
+  console.log(`${"═".repeat(50)}`);
+  console.log(`✅ Exitosos: ${manifest.exitosos}`);
+  console.log(`❌ Fallidos: ${manifest.fallidos}`);
+  console.log(`📊 Total: ${manifest.total}`);
+  console.log(`${"═".repeat(50)}\n`);
 
-  console.log('\n\n══════════════════════════════════════');
-  console.log('📊 RESUMEN DEL DÍA');
-  console.log('══════════════════════════════════════');
-  console.log(`✅ Exitosos: ${reporte.exitosos}/${reporte.total}`);
-  if (reporte.errores > 0) console.log(`❌ Errores:  ${reporte.errores}`);
-  resultados.filter(r => r.estado === 'OK').forEach(r =>
-    console.log(`   ${r.orden}. [${r.plantilla || r.tipo}] ${r.gancho} → ${r.youtube_url}`)
-  );
+  fs.writeFileSync(RENDERED_MANIFEST, JSON.stringify(manifest, null, 2));
+
+  // Escribir outputs para GitHub Actions
+  const outputFile = process.env.GITHUB_OUTPUT || "/tmp/github_output";
+  fs.appendFileSync(outputFile, `render_total=${manifest.total}\n`);
+  fs.appendFileSync(outputFile, `render_success=${manifest.exitosos}\n`);
+  fs.appendFileSync(outputFile, `render_failed=${manifest.fallidos}\n`);
+
+  // Exitcode: 0 si al menos uno fue exitoso
+  if (manifest.exitosos === 0 && manifest.fallidos > 0) {
+    console.error("⚠️ Todos los videos fallaron.");
+    process.exit(1);
+  }
+
+  console.log("✅ Render-upload completado.");
 }
 
-main().catch(err => {
-  console.error('\n❌ Error fatal:', err.message);
+main().catch((err) => {
+  console.error("❌ Error fatal en render-and-upload:", err);
   process.exit(1);
 });
