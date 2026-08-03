@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": "537423",
-      "tipo_contenido": "narrativa",
-      "hook": "BRASIL AL LÍMITE: ¿QUÉ PASÓ?",
-      "titulo": "BRASIL SUFRE MÁS DE LA CUENTA: ¿Están listos para las Fases Finales?",
-      "fecha": "2026-07-01T00:11:53.164Z"
-    },
-    {
-      "match_id": "537415",
-      "tipo_contenido": "narrativa",
-      "hook": "LA DEFENSA ALEMANA: ¿QUÉ PASÓ?",
-      "titulo": "¿IMPREVISTO? EL COLAPSO DE ALEMANIA ANTE PARAGUAY EN LA FASE FINAL",
-      "fecha": "2026-07-01T00:12:03.686Z"
-    },
-    {
-      "match_id": "537418",
-      "tipo_contenido": "narrativa",
-      "hook": "EL GOLPE QUE DESTRUYÓ A HOLANDA",
-      "titulo": "¡INEXPLICABLE! ¿Qué le pasó a Holanda contra Marruecos en los LAST_32?",
-      "fecha": "2026-07-01T00:12:15.347Z"
-    },
-    {
-      "match_id": "espn-760490",
-      "tipo_contenido": "narrativa",
-      "hook": "NORUEGA: MISTERIO TÁCTICO DESCIFRADO",
-      "titulo": "¡Mundial 2026! ¿Cómo Noruega Desactivó a Costa de Marfil? ¡Análisis Exclusivo!",
-      "fecha": "2026-07-01T02:39:17.352Z"
-    },
-    {
       "match_id": "espn-760492",
       "tipo_contenido": "narrativa",
       "hook": "FRANCIA: MAESTRÍA TÁCTICA SIN IGUAL",
@@ -3499,6 +3471,34 @@
       "hook": "DEPENDENCIA DE EMPATES LA LIGA",
       "titulo": "Real Oviedo: 11 de sus 29 puntos son empates. ¿Estrategia de supervivencia?",
       "fecha": "2026-08-03T14:48:14.231Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "CATÓLICA GOLEADA, ¡ADIÓS AL TÍTULO!",
+      "titulo": "U. Católica fue goleada por Deportes Concepción: ¿Se complica el título?",
+      "fecha": "2026-08-03T17:52:33.451Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U. DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
+      "titulo": "Universidad de Chile confirma 9 duelos: ¿Calendario clave para la Primera División?",
+      "fecha": "2026-08-03T17:52:45.310Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO BAJA A TERCERA",
+      "titulo": "Ex Colo Colo baja a tercera división: ¿el fin de una carrera?",
+      "fecha": "2026-08-03T17:52:53.969Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "ranking",
+      "hook": "DEFENSA RESILIENTE LALIGA",
+      "titulo": "Getafe CF con 2.24 goles por derrota en La Liga: ¿La defensa más dura? 🛡️",
+      "fecha": "2026-08-03T17:53:12.057Z"
     }
   ]
 }
