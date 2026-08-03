@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-760492",
-      "tipo_contenido": "narrativa",
-      "hook": "FRANCIA: MAESTRÍA TÁCTICA SIN IGUAL",
-      "titulo": "Francia IMPARABLE en el Mundial 2026: ¿El SECRETO de su dominio ante Suecia?",
-      "fecha": "2026-07-01T02:39:26.193Z"
-    },
-    {
-      "match_id": "espn-760491",
-      "tipo_contenido": "prediccion",
-      "hook": "¡ADIÓS SUEÑO MEXICANO!",
-      "titulo": "¡SORPRESA MUNDIAL! 🚨 Ecuador ELIMINA a México ¿FIN DE UNA ERA?",
-      "fecha": "2026-07-01T02:39:38.203Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "PEORES TRASLADOS MUNDIAL 2026",
-      "titulo": "MUNDIAL 2026: TOP 5 PEORES TRASLADOS | ¿Qué equipos sufrirán más?",
-      "fecha": "2026-07-01T02:39:51.992Z"
-    },
-    {
-      "match_id": "espn-760495",
-      "tipo_contenido": "prediccion",
-      "hook": "¡INGLATERRA, DESPEDIDA DEL MUNDIAL!",
-      "titulo": "¡BOMBA! ¿INGLATERRA ELIMINADA por Congo DR en el Mundial 2026? 😱",
-      "fecha": "2026-07-01T07:08:40.733Z"
-    },
-    {
       "match_id": "espn-760493",
       "tipo_contenido": "prediccion",
       "hook": "SHOCK MUNDIALISTA: ADIÓS BÉLGICA",
@@ -3499,6 +3471,34 @@
       "hook": "DEFENSA RESILIENTE LALIGA",
       "titulo": "Getafe CF con 2.24 goles por derrota en La Liga: ¿La defensa más dura? 🛡️",
       "fecha": "2026-08-03T17:53:12.057Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO COLO: ¡NUEVO RÉCORD EN LIGA!",
+      "titulo": "Colo Colo vence a Everton y marca récord en Liga: ¿Impacta en el título?",
+      "fecha": "2026-08-03T22:00:25.151Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "CATÓLICA SE QUEDA SIN TÍTULO",
+      "titulo": "Universidad Católica cayó goleada: ¿Adiós al título?",
+      "fecha": "2026-08-03T22:00:38.233Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U DE CHILE: 9 PARTIDOS CONFIRMADOS",
+      "titulo": "La U ya tiene 9 fechas confirmadas: ¿Camino a la gloria o a un desafío intenso?",
+      "fecha": "2026-08-03T22:00:48.916Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "ranking",
+      "hook": "DOMINIO GOLEADOR POR VICTORIA",
+      "titulo": "FC Barcelona logra 1.90 GD/victoria: ¿es el más contundente de La Liga?",
+      "fecha": "2026-08-03T22:01:13.127Z"
     }
   ]
 }
