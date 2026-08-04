@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-760493",
-      "tipo_contenido": "prediccion",
-      "hook": "SHOCK MUNDIALISTA: ADIÓS BÉLGICA",
-      "titulo": "¡ALERTA MUNDIAL! 🚨 ¿Bélgica FRACTURADA? Senegal da el GOLPE en el Mundial 2026",
-      "fecha": "2026-07-01T07:08:52.461Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "FORTALEZAS DE LOCAL 2026",
-      "titulo": "¡TOP 5 FORTALEZAS DE LOCAL #Mundial2026! ¿Qué sede dará MÁS VENTAJA?",
-      "fecha": "2026-07-01T07:09:07.361Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "NEGOCIOS PENDIENTES 2026",
-      "titulo": "¡TOP 5: LOS NEGOCIOS PENDIENTES DEL MUNDIAL 2026! ¿Quién buscará revancha?",
-      "fecha": "2026-07-01T07:09:21.000Z"
-    },
-    {
-      "match_id": "espn-760494",
-      "tipo_contenido": "prediccion",
-      "hook": "¡EEUU, ADIÓS MUNDIAL!",
-      "titulo": "¡SHOCK EN CASA! ¿SERÁ ESTE EL ADIÓS DE EE.UU. AL MUNDIAL 2026?",
-      "fecha": "2026-07-01T11:51:17.966Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "VÍCTIMAS FORMATO 2026",
@@ -3499,6 +3471,34 @@
       "hook": "DOMINIO GOLEADOR POR VICTORIA",
       "titulo": "FC Barcelona logra 1.90 GD/victoria: ¿es el más contundente de La Liga?",
       "fecha": "2026-08-03T22:01:13.127Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FICHAJE CONFIRMADO PERO VA PRESTADO",
+      "titulo": "U. de Chile ficha y presta: ¿Busca minutos fuera de casa?",
+      "fecha": "2026-08-04T04:18:12.513Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO COLO MARCA RÉCORD EN PRIMERA",
+      "titulo": "Colo Colo bate récord en la Primera 2026 tras vencer a Everton: ¿Se viene la copa?",
+      "fecha": "2026-08-04T04:18:26.154Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U. DE CHILE: 9 PARTIDOS CONFIRMADOS",
+      "titulo": "U. de Chile con 9 partidos programados: ¿clave para el campeonato?",
+      "fecha": "2026-08-04T04:18:40.004Z"
+    },
+    {
+      "match_id": "espn-401850614",
+      "tipo_contenido": "prediccion",
+      "hook": "DATOS RELEVANTES AUSENTES",
+      "titulo": "Arsenal suma 23 goles en 8 partidos: ¿Qué métricas faltan para U. Católica vs Cobresal?",
+      "fecha": "2026-08-04T04:18:57.222Z"
     }
   ]
 }
