@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DOMINIO INICIAL MUNDIAL",
-      "titulo": "España 3-0 Austria: ¿El margen de victoria más contundente del Mundial 2026? 🏆",
-      "fecha": "2026-07-03T06:29:34.961Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EFICIENCIA EN LA RED",
-      "titulo": "España con +3 en goles: ¿la ventaja más clara del Mundial 2026?",
-      "fecha": "2026-07-03T06:29:55.367Z"
-    },
-    {
-      "match_id": "espn-760499",
-      "tipo_contenido": "prediccion",
-      "hook": "INCÓGNITA MUNDIAL 2026",
-      "titulo": "Australia y Egypt se enfrentan el 3 de julio: ¿La fecha clave para el avance en el Mundial?",
-      "fecha": "2026-07-03T11:26:24.159Z"
-    },
-    {
-      "match_id": "espn-760500",
-      "tipo_contenido": "prediccion",
-      "hook": "MUNDIAL 2026: FASE CRUCIAL",
-      "titulo": "Partido del 3 de julio (22:00Z): ¿Cómo impactará el horario a Argentina y Cabo Verde?",
-      "fecha": "2026-07-03T16:20:11.732Z"
-    },
-    {
       "match_id": "espn-760501",
       "tipo_contenido": "prediccion",
       "hook": "POTENCIAL DE GIRO INESPERADO",
@@ -3499,6 +3471,34 @@
       "hook": "NOMBRES LARGOS, ¿MÁS GRANDES?",
       "titulo": "FC Internazionale Milano con 24 caracteres: ¿Qué significa este inusual ranking inicial?",
       "fecha": "2026-08-05T22:07:59.076Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
+      "titulo": "Universidad de Chile ya tiene 9 partidos confirmados: ¿Calendario apretado para la U?",
+      "fecha": "2026-08-06T04:18:22.875Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO BAJA A TERCERA",
+      "titulo": "Ex Colo Colo a Tercera División: ¿Fin de carrera o nuevo desafío? 😮",
+      "fecha": "2026-08-06T04:18:36.156Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "MELE ROMPE EL SILENCIO TRAS COLGAR A COLO COLO",
+      "titulo": "Santiago Mele ROMPE EL SILENCIO tras fichar en Independiente: ¿Por qué NO llegó a Colo Colo? 🤫",
+      "fecha": "2026-08-06T04:18:45.782Z"
+    },
+    {
+      "match_id": "554956",
+      "tipo_contenido": "prediccion",
+      "hook": "ANÁLISIS DE LA TABLA DE PUNTOS",
+      "titulo": "Bayern Múnich: 89 puntos en 34 partidos, ¿clave de la consistencia?",
+      "fecha": "2026-08-06T04:19:07.718Z"
     }
   ]
 }
