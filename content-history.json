@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-760501",
-      "tipo_contenido": "prediccion",
-      "hook": "POTENCIAL DE GIRO INESPERADO",
-      "titulo": "Mundial 2026 el 4 de julio: ¿Colombia vs Ghana definirá un camino inesperado?",
-      "fecha": "2026-07-03T22:06:14.525Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EQUILIBRIO TOTAL MUNDIAL",
-      "titulo": "Australia 1-1 Egipto: ¿La igualdad ideal para empezar el Mundial? ⚖️",
-      "fecha": "2026-07-03T22:06:44.084Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EL NÚMERO UNO OCULTO",
-      "titulo": "El 1-1 de Australia vs Egipto: ¿el dato más repetido?",
-      "fecha": "2026-07-03T22:06:57.459Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EQUIPOS SIN VICTORIA MUNDIAL",
-      "titulo": "Australia y Egypt, 0 victorias tras 1 partido: ¿La tónica inicial? 🚫",
-      "fecha": "2026-07-03T22:07:35.955Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "FIESTA DE GOLES MUNDIAL",
@@ -3499,6 +3471,34 @@
       "hook": "ANÁLISIS DE LA TABLA DE PUNTOS",
       "titulo": "Bayern Múnich: 89 puntos en 34 partidos, ¿clave de la consistencia?",
       "fecha": "2026-08-06T04:19:07.718Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "LA ROJA GIRA EUROPA MUNDIAL",
+      "titulo": "La Roja jugará 4 partidos en Europa: ¿adiós a los amistosos 'chicha'?",
+      "fecha": "2026-08-06T14:21:20.814Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U DE CHILE: AGENDA CONFIRMADA",
+      "titulo": "Universidad de Chile confirma 9 partidos: ¿Qué viene para la U?",
+      "fecha": "2026-08-06T14:21:34.126Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO BAJA A TERCERA",
+      "titulo": "Ex Colo Colo aterriza en 3ra categoría: ¿El fin de una era?",
+      "fecha": "2026-08-06T14:21:45.585Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "ranking",
+      "hook": "EFICIENCIA DE TRIUNFOS BUNDESLIGA",
+      "titulo": "Bayern acumula 3.17 puntos por victoria: ¿la clave de su dominio?",
+      "fecha": "2026-08-06T14:22:03.674Z"
     }
   ]
 }
