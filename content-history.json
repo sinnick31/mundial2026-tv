@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "VOLUMEN DE GOL POR PARTIDO",
-      "titulo": "Marruecos y Canadá sumaron 3 goles en su partido: ¿El duelo más vibrante del Mundial hasta ahora?",
-      "fecha": "2026-07-05T06:38:41.695Z"
-    },
-    {
-      "match_id": "espn-760504",
-      "tipo_contenido": "prediccion",
-      "hook": "MUNDIAL 2026: FASE CRUCIAL",
-      "titulo": "Partido el 5 de julio de 2026 a las 20:00Z: ¿Clave el horario en el Mundial?",
-      "fecha": "2026-07-05T10:58:59.168Z"
-    },
-    {
-      "match_id": "espn-760505",
-      "tipo_contenido": "prediccion",
-      "hook": "ALTA TENSIÓN GLOBAL",
-      "titulo": "Mundial 2026, 6 de julio: ¿El choque de México y England definirá un camino?",
-      "fecha": "2026-07-05T22:04:40.061Z"
-    },
-    {
-      "match_id": "espn-760506",
-      "tipo_contenido": "prediccion",
-      "hook": "CLÁSICO SIN PRECEDENTES",
-      "titulo": "Mundial 2026, 6 de julio: ¿Portugal o España dejará su huella? ⚔️",
-      "fecha": "2026-07-06T07:09:04.137Z"
-    },
-    {
       "match_id": "espn-760507",
       "tipo_contenido": "prediccion",
       "hook": "MUNDIAL 2026: FECHA CLAVE",
@@ -3499,6 +3471,34 @@
       "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
       "titulo": "Flamengo sumó 16 puntos en 6 partidos: ¿Remo y Mineiro sin datos para el análisis?",
       "fecha": "2026-08-07T13:12:32.223Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "LA ROJA GIRA EUROPA MUNDIAL",
+      "titulo": "La Roja confirma 4 partidos en Europa: ¿Será suficiente para el Mundial?",
+      "fecha": "2026-08-07T16:55:53.105Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "CONFIRMADO: 9 PARTIDOS DE LA U!",
+      "titulo": "Universidad de Chile confirma 9 partidos: ¿Qué tan clave es este fixture para la Primera División? \ud83d",
+      "fecha": "2026-08-07T16:56:04.083Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO BAJA A TERCERA DIVISIÓN",
+      "titulo": "Ex Colo-Colo ficha en tercera categoría: ¿Adiós a la élite?",
+      "fecha": "2026-08-07T16:56:16.787Z"
+    },
+    {
+      "match_id": "554953",
+      "tipo_contenido": "prediccion",
+      "hook": "DATOS LIMITADOS PARA ANÁLISIS",
+      "titulo": "Coritiba vs Chapecoense: ¿Análisis sin datos de rendimiento?",
+      "fecha": "2026-08-07T16:56:31.901Z"
     }
   ]
 }
