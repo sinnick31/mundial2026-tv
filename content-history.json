@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-760507",
-      "tipo_contenido": "prediccion",
-      "hook": "MUNDIAL 2026: FECHA CLAVE",
-      "titulo": "Fecha 2026-07-07: ¿Quién se impondrá en este crucial duelo mundialista? ⚽️",
-      "fecha": "2026-07-06T12:37:11.897Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EL PESO DEL CERO Y EL UNO",
-      "titulo": "España ganó 1-0 a Portugal: ¿Cómo un gol decide tanto?",
-      "fecha": "2026-07-06T22:15:38.742Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "LOS NÚMEROS MÍNIMOS GANADORES",
-      "titulo": "España ganó 1-0 a Portugal: ¿cuál es el peso real de esos números?",
-      "fecha": "2026-07-06T22:16:12.805Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "VALOR DEL GOL EN PUNTOS",
-      "titulo": "España 1-0 Portugal: ¿Cuánto valen estos números en el Mundial 2026? 📊",
-      "fecha": "2026-07-06T22:16:46.374Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "EL 1-0 AL MICROSCOPIO",
@@ -3499,6 +3471,34 @@
       "hook": "DATOS LIMITADOS PARA ANÁLISIS",
       "titulo": "Coritiba vs Chapecoense: ¿Análisis sin datos de rendimiento?",
       "fecha": "2026-08-07T16:56:31.901Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "LA ROJA: ¡GIRA EUROPEA DE 4 PARTIDOS!",
+      "titulo": "La Roja jugará 4 partidos en Europa: ¿Listos para el Mundial? 🇨🇱",
+      "fecha": "2026-08-07T21:30:33.273Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
+      "titulo": "La U jugará 9 partidos: ¿Qué tan apretado viene el fixture para el Romántico Viajero?",
+      "fecha": "2026-08-07T21:30:45.759Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO CAE A TERCERA",
+      "titulo": "Ex Colo Colo pasa de Primera a 3ra División: ¿Fin de ciclo?",
+      "fecha": "2026-08-07T21:30:59.582Z"
+    },
+    {
+      "match_id": "554951",
+      "tipo_contenido": "prediccion",
+      "hook": "FACTORES CLAVE BRASILEIRÃO",
+      "titulo": "Flamengo con 16 puntos en 6 partidos: ¿Modelo para el Brasileirão?",
+      "fecha": "2026-08-07T21:31:22.540Z"
     }
   ]
 }
