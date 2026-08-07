@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-760502",
-      "tipo_contenido": "prediccion",
-      "hook": "HORARIO CLAVE MUNDIAL",
-      "titulo": "El partido Canadá vs Marruecos inicia a las 17:00Z: ¿Un horario clave en el Mundial?",
-      "fecha": "2026-07-04T10:49:58.192Z"
-    },
-    {
-      "match_id": "espn-760503",
-      "tipo_contenido": "prediccion",
-      "hook": "FASE MUNDIAL: PRESIÓN MÁXIMA",
-      "titulo": "El 4 de julio de 2026: ¿Un día clave para el futuro de Paraguay y France?",
-      "fecha": "2026-07-04T15:54:05.193Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "HUELLAS NUMÉRICAS MUNDIAL",
-      "titulo": "Marruecos anotó 3 goles a Canadá: ¿Qué números son clave en el Mundial?",
-      "fecha": "2026-07-04T22:00:23.825Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EXTREMOS GOLEADORES MUNDIAL",
-      "titulo": "Marruecos anotó 3 goles: ¿el ataque más efectivo del Mundial?",
-      "fecha": "2026-07-04T22:00:47.036Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "MÁRGENES MUNDIALES 2026",
@@ -3499,6 +3471,34 @@
       "hook": "EFICIENCIA GOL X RECIBIDO",
       "titulo": "Flamengo con 7.0 en ratio GF/GA: ¿El ataque más letal de Sudamérica?",
       "fecha": "2026-08-07T01:01:11.577Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "LA ROJA GIRA EUROPA MUNDIAL",
+      "titulo": "La Roja confirma 4 partidos en Europa: ¿Será suficiente para el Mundial?",
+      "fecha": "2026-08-07T03:53:55.776Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U. DE CHILE: CALENDARIO LISTO",
+      "titulo": "La U jugará 9 partidos clave: ¿Se viene la racha definitiva?",
+      "fecha": "2026-08-07T03:54:05.451Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO BAJA A TERCERA",
+      "titulo": "Un ex Colo Colo ficha en la 3ra División: ¿qué significa para su carrera?",
+      "fecha": "2026-08-07T03:54:16.954Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "ranking",
+      "hook": "MURO DEFENSIVO SUDAMERICANO",
+      "titulo": "Flamengo solo concede 0.33 goles/partido: ¿La defensa más sólida?",
+      "fecha": "2026-08-07T03:54:38.198Z"
     }
   ]
 }
