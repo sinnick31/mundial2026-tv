@@ -3,34 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "ranking",
-      "hook": "MÁRGENES MUNDIALES 2026",
-      "titulo": "El 0-3 de Marruecos a Canadá: ¿La mayor diferencia del torneo?",
-      "fecha": "2026-07-04T22:01:05.849Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "RESISTENCIA EN LA DERROTA",
-      "titulo": "Paraguay concedió solo 1 gol en la derrota: ¿Defensa sólida pese a todo?",
-      "fecha": "2026-07-05T06:37:21.091Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "FUERZA NUMÉRICA EN CADA PARTIDO",
-      "titulo": "Morocco 3 goles sin encajar: ¿Defensa y ataque ideales?",
-      "fecha": "2026-07-05T06:37:55.409Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "IMPACTO NETO DE GOLES",
-      "titulo": "Marruecos, con un +3 de gol: ¿lidera el ranking de impacto neto?",
-      "fecha": "2026-07-05T06:38:20.036Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
       "hook": "VOLUMEN DE GOL POR PARTIDO",
       "titulo": "Marruecos y Canadá sumaron 3 goles en su partido: ¿El duelo más vibrante del Mundial hasta ahora?",
       "fecha": "2026-07-05T06:38:41.695Z"
@@ -3499,6 +3471,34 @@
       "hook": "MURO DEFENSIVO SUDAMERICANO",
       "titulo": "Flamengo solo concede 0.33 goles/partido: ¿La defensa más sólida?",
       "fecha": "2026-08-07T03:54:38.198Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "LA ROJA GIRA 4 PARTIDOS EUROPA",
+      "titulo": "Gira Europea de La Roja con 4 partidos: ¿El camino al Mundial?",
+      "fecha": "2026-08-07T13:11:56.706Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "LA U: 9 PARTIDOS CONFIRMADOS",
+      "titulo": "Universidad de Chile: 9 partidos confirmados en Primera. ¿Aguantará la U el ritmo?",
+      "fecha": "2026-08-07T13:12:06.187Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO BAJA A TERCERA DIVISIÓN",
+      "titulo": "Ex Colo Colo aterriza en Tercera División: ¿Sorprende su decisión? 📉",
+      "fecha": "2026-08-07T13:12:16.589Z"
+    },
+    {
+      "match_id": "554958",
+      "tipo_contenido": "prediccion",
+      "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
+      "titulo": "Flamengo sumó 16 puntos en 6 partidos: ¿Remo y Mineiro sin datos para el análisis?",
+      "fecha": "2026-08-07T13:12:32.223Z"
     }
   ]
 }
