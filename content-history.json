@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "FIESTA DE GOLES MUNDIAL",
-      "titulo": "Argentina 3-2 a Cape Verde: ¿el inicio más explosivo del Mundial?",
-      "fecha": "2026-07-04T06:15:59.529Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "LA DEFENSA MENOS BATIDA",
-      "titulo": "Colombia es el único con 0 goles concedidos: ¿el muro del Mundial?",
-      "fecha": "2026-07-04T06:16:34.829Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "IMPACTO OFENSIVO RELATIVO",
-      "titulo": "Colombia anotó el 100% de los goles en su 1-0: ¿Es la más eficiente!",
-      "fecha": "2026-07-04T06:16:53.639Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DEFENSA POR MEJORAR TRAS GOL ANOTADO",
-      "titulo": "Cape Verde recibió 3 goles al anotar 2: ¿Defensa frágil post-gol?",
-      "fecha": "2026-07-04T06:17:13.239Z"
-    },
-    {
       "match_id": "espn-760502",
       "tipo_contenido": "prediccion",
       "hook": "HORARIO CLAVE MUNDIAL",
@@ -3499,6 +3471,34 @@
       "hook": "EFICIENCIA DE TRIUNFOS BUNDESLIGA",
       "titulo": "Bayern acumula 3.17 puntos por victoria: ¿la clave de su dominio?",
       "fecha": "2026-08-06T14:22:03.674Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U DE CHILE: CALENDARIO DE 9 PARTIDOS",
+      "titulo": "Universidad de Chile: 9 partidos ya tienen fecha. ¿La U lista para el sprint final?",
+      "fecha": "2026-08-07T01:00:27.544Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO BAJA A TERCERA",
+      "titulo": "Ex Colo Colo de 1ra a 3ra división: ¿Adiós a la élite?",
+      "fecha": "2026-08-07T01:00:39.922Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "ranking",
+      "hook": "DEFENSA EFICIENTE POR PUNTO",
+      "titulo": "Flamengo: 0.125 goles/punto en 6 partidos. ¿Cómo logra esa solidez?",
+      "fecha": "2026-08-07T01:00:58.395Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "ranking",
+      "hook": "EFICIENCIA GOL X RECIBIDO",
+      "titulo": "Flamengo con 7.0 en ratio GF/GA: ¿El ataque más letal de Sudamérica?",
+      "fecha": "2026-08-07T01:01:11.577Z"
     }
   ]
 }
