@@ -3,27 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "ranking",
-      "hook": "EFICIENCIA DEFENSIVA POR PARTIDO",
-      "titulo": "España no recibió goles en su 1-0 vs Portugal: ¿la defensa más sólida del Mundial? 🛡️",
-      "fecha": "2026-07-07T06:45:06.288Z"
-    },
-    {
-      "match_id": "espn-760509",
-      "tipo_contenido": "prediccion",
-      "hook": "DUELO SIN DATOS PREVIOS",
-      "titulo": "7 de julio en el Mundial 2026: ¿Argentina vs Egipto, un duelo incierto?",
-      "fecha": "2026-07-07T11:39:01.013Z"
-    },
-    {
-      "match_id": "espn-760508",
-      "tipo_contenido": "prediccion",
-      "hook": "DUELO MUNDIALISTA, FASE CLAVE",
-      "titulo": "Suiza vs Colombia el 7 de julio de 2026: ¿Quién avanzará de fase?",
-      "fecha": "2026-07-07T17:04:50.458Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
       "hook": "DEBUT MUNDIALISTA EN NÚMEROS",
       "titulo": "Argentina 3-2 Egipto: ¿Qué revelan los primeros goles? 📊",
       "fecha": "2026-07-07T22:14:21.354Z"
@@ -3499,6 +3478,27 @@
       "hook": "FALTA DE DATOS: ANÁLISIS COMPLEJO",
       "titulo": "Man City marcó 77 goles en 38 juegos: ¿Cruzeiro o Mirassol necesitan estos datos?",
       "fecha": "2026-08-08T02:57:55.306Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
+      "titulo": "U de Chile tiene 9 partidos confirmados: ¿calendario apretado para la Primera?",
+      "fecha": "2026-08-08T12:55:38.774Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO CAE A TERCERA",
+      "titulo": "Ex Colo Colo baja a tercera categoría: ¿un giro inesperado en su carrera?",
+      "fecha": "2026-08-08T12:55:48.910Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "MELE PLANTÓ A COLO COLO",
+      "titulo": "Santiago Mele confirmó que ‘plantó’ a Colo Colo: ¿Qué significa esto para el Cacique?",
+      "fecha": "2026-08-08T12:55:59.018Z"
     }
   ]
 }
