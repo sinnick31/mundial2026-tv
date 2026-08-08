@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DEBUT MUNDIALISTA EN NÚMEROS",
-      "titulo": "Argentina 3-2 Egipto: ¿Qué revelan los primeros goles? 📊",
-      "fecha": "2026-07-07T22:14:21.354Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "NÚMEROS ALTOS DEL DEBUT",
-      "titulo": "Argentina 3-2 Egipto: ¿Qué números del partido te sorprenden más? 🔢",
-      "fecha": "2026-07-07T22:15:18.617Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "RADIOGRAFÍA GOLEADORA DEBUT",
-      "titulo": "Argentina 3-2 Egypt: ¿Quién mostró más en goles?",
-      "fecha": "2026-07-07T22:16:21.019Z"
-    },
-    {
-      "match_id": "espn-760510",
-      "tipo_contenido": "prediccion",
-      "hook": "PASO CLAVE MUNDIAL",
-      "titulo": "El 9 de julio, Francia vs Marruecos: ¿Estrategia pura en el Mundial? ⚽️",
-      "fecha": "2026-07-08T05:47:05.604Z"
-    },
-    {
       "match_id": "537380",
       "tipo_contenido": "narrativa",
       "hook": "BÉLGICA ARRASÓ: INESPERADA SUPERIORIDAD",
@@ -3499,6 +3471,34 @@
       "hook": "MELE PLANTÓ A COLO COLO",
       "titulo": "Santiago Mele confirmó que ‘plantó’ a Colo Colo: ¿Qué significa esto para el Cacique?",
       "fecha": "2026-08-08T12:55:59.018Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U DE CHILE CONFIRMA 9 PARTIDOS",
+      "titulo": "U. de Chile confirma 9 partidos: ¿se juega la Primera División?",
+      "fecha": "2026-08-08T16:35:08.396Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO BAJA A TERCERA",
+      "titulo": "Ex Colo Colo a Tercera División: ¿Un paso esperado o sorpresivo para el crack?",
+      "fecha": "2026-08-08T16:35:18.625Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "MELE LE DIJO NO A COLO COLO",
+      "titulo": "Santiago Mele habló por 1ª vez de rechazar a Colo Colo: ¿Quién será el arquero del Cacique?",
+      "fecha": "2026-08-08T16:35:29.213Z"
+    },
+    {
+      "match_id": "554957",
+      "tipo_contenido": "prediccion",
+      "hook": "DATOS: ¿QUÉ REVELAN?",
+      "titulo": "Arsenal con 85 puntos en 38 partidos: ¿la clave para dominar cualquier liga?",
+      "fecha": "2026-08-08T16:35:51.964Z"
     }
   ]
 }
