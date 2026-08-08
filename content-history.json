@@ -1,34 +1,6 @@
 {
   "items": [
     {
-      "match_id": "537380",
-      "tipo_contenido": "narrativa",
-      "hook": "BÉLGICA ARRASÓ: INESPERADA SUPERIORIDAD",
-      "titulo": "Bélgica anotó 4 goles a USA: ¿superioridad o sorpresa táctica en octavos?",
-      "fecha": "2026-07-08T17:13:50.530Z"
-    },
-    {
-      "match_id": "537381",
-      "tipo_contenido": "narrativa",
-      "hook": "LA ÚLTIMA DECISIÓN CAMBIÓ TODO",
-      "titulo": "Argentina 3-2 Egipto en octavos: ¿el plan B de Scaloni los salvó?",
-      "fecha": "2026-07-08T17:14:02.479Z"
-    },
-    {
-      "match_id": "537382",
-      "tipo_contenido": "narrativa",
-      "hook": "ATAQUE SUIZO IMPARABLE: ¿CLAVE TÁCTICA?",
-      "titulo": "Suiza ganó 4-3 a Colombia en octavos: ¿defensa cafetera superada?",
-      "fecha": "2026-07-08T17:14:15.777Z"
-    },
-    {
-      "match_id": "537383",
-      "tipo_contenido": "prediccion",
-      "hook": "FORTALEZA DEFENSIVA MARROQUÍ",
-      "titulo": "Marruecos solo concedió 3 goles en grupo: ¿La clave ante Francia?",
-      "fecha": "2026-07-08T17:14:33.812Z"
-    },
-    {
       "match_id": "537384",
       "tipo_contenido": "prediccion",
       "hook": "DEFENSA ESPAÑOLA VS ATAQUE BELGA",
@@ -3499,6 +3471,34 @@
       "hook": "DATOS: ¿QUÉ REVELAN?",
       "titulo": "Arsenal con 85 puntos en 38 partidos: ¿la clave para dominar cualquier liga?",
       "fecha": "2026-08-08T16:35:51.964Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "U. DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
+      "titulo": "Universidad de Chile tiene 9 partidos en la agenda: ¿se define la Primera División?",
+      "fecha": "2026-08-08T21:22:00.236Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EX COLO COLO BAJA DE DIVISIÓN",
+      "titulo": "Ex Colo Colo baja a Tercera División: ¿Cómo afecta su legado?",
+      "fecha": "2026-08-08T21:22:11.654Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "MELE DIJO NO A COLO COLO",
+      "titulo": "Santiago Mele rompe el silencio sobre Colo Colo: ¿Fue clave para Vozinha?",
+      "fecha": "2026-08-08T21:22:21.887Z"
+    },
+    {
+      "match_id": "554950",
+      "tipo_contenido": "prediccion",
+      "hook": "RENDIMIENTO Y EFICIENCIA EN LA LIGA",
+      "titulo": "Arsenal sumó 85 puntos en 38 partidos: ¿clave del éxito en cualquier liga?",
+      "fecha": "2026-08-08T21:22:43.544Z"
     }
   ]
 }
