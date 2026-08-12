@@ -96,8 +96,6 @@ jobs:
           EVENTO: ${{ github.event_name }}
           CRON: ${{ github.event.schedule }}
         run: |
-          # En automático: resumen largo solo en el slot de 20:00 UTC.
-          # En ejecución manual, respeta el interruptor resumen_largo.
           RUN_LONGFORM=false
           if [ "$EVENTO" = "schedule" ] && [ "$CRON" = "0 20 * * *" ]; then RUN_LONGFORM=true; fi
           if [ "$EVENTO" = "workflow_dispatch" ] && [ "$LONGFORM_REQUESTED" = "true" ]; then RUN_LONGFORM=true; fi
@@ -250,3 +248,15 @@ jobs:
             echo "⚠️ Falló la selección editorial"
           fi
           echo "══════════════════════════════════════════════"
+          if [ "${{ needs.generate.result }}" != "success" ]; then
+            echo "❌ El job de generación no terminó correctamente."
+            exit 1
+          fi
+          if [ "${{ needs.render-upload.result }}" = "failure" ] || [ "${{ needs.render-upload.result }}" = "cancelled" ]; then
+            echo "❌ La publicación de Shorts no terminó correctamente."
+            exit 1
+          fi
+          if [ "${{ needs.longform.result }}" = "failure" ] || [ "${{ needs.longform.result }}" = "cancelled" ]; then
+            echo "❌ El resumen largo no terminó correctamente."
+            exit 1
+          fi
