@@ -1,32 +1,30 @@
-name: ⚽ FOOTBALL AI STUDIO v4.0 — Pipeline 365 días
+name: ⚽ REAL FOOTBALL NEWSROOM v5 — Chile 365
 
-# ════════════════════════════════════════════════════════════════════════
-# v4.0: Ya no depende del Mundial. Cubre fútbol chileno (prioridad alta),
-# Champions, ligas europeas, Libertadores y mercado de fichajes.
-# Motor de VIRAL SCORE decide qué se publica. Corre 4 veces al día.
-# ════════════════════════════════════════════════════════════════════════
+# Canal editorial de fútbol chileno con trazabilidad de fuentes.
+# La automatización NO inventa resultados, cifras, fichajes ni declaraciones.
+# Prioridad: 1) Colo-Colo, 2) fútbol chileno, 3) futbolistas chilenos en el exterior.
+# Se publican como máximo 3 Shorts/día para evitar una línea de producción masiva.
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # 08:00 Chile — Resumen mañana + resultados de anoche
-    - cron: '0 16 * * *'  # 12:00 Chile — Mediodía: noticias + fichajes
-    - cron: '0 21 * * *'  # 17:00 Chile — Tarde: previas + fútbol chileno
-    - cron: '0 1 * * *'   # 21:00 Chile — Noche: resultados del día (prime time)
+    - cron: '0 12 * * *'
+    - cron: '0 20 * * *'
+    - cron: '0 1 * * *'
 
   workflow_dispatch:
     inputs:
       max_items:
-        description: 'Máximo de videos a generar'
+        description: 'Máximo de videos en esta ejecución'
         required: false
-        default: '4'
+        default: '1'
         type: choice
-        options: ['1', '2', '3', '4', '5']
+        options: ['1', '2', '3']
       modo:
-        description: 'Modo de ejecución'
+        description: 'Enfoque editorial'
         required: false
         default: 'auto'
         type: choice
-        options: ['auto', 'noticias', 'partidos', 'predicciones', 'ranking', 'chile', 'fichajes']
+        options: ['auto', 'noticias', 'chile']
 
 permissions:
   contents: write
@@ -35,13 +33,10 @@ env:
   NODE_VERSION: '24'
 
 jobs:
-  # ══════════════════════════════════════════════════════════════════════
-  # JOB 1: BUSCAR NOTICIAS REALES EN INTERNET + GENERAR CONTENIDO CON IA
-  # ══════════════════════════════════════════════════════════════════════
   generate:
-    name: 🤖 Buscar noticias y generar contenido
+    name: 📰 Fuentes reales + selección editorial
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     outputs:
       hay_contenido: ${{ steps.gen.outputs.hay_contenido }}
       fecha: ${{ steps.gen.outputs.fecha }}
@@ -61,47 +56,56 @@ jobs:
       - name: 📥 Instalar dependencias
         run: npm ci
 
-      - name: 🌐 Instalar librerías de noticias
-        run: |
-          npm install --no-save node-fetch@3 cheerio rss-parser
+      - name: 🔍 Ingerir fuentes reales
+        run: node scripts/fetch-real-news.js
 
-      - name: 🔍 Buscar noticias de fútbol (Chile + Mundo)
-        run: node scripts/fetch-news.js
-
-      - name: ⚽ Obtener partidos (Chile + Champions + ligas del mundo)
+      - name: ⚽ Obtener datos estructurados de fútbol internacional
         env:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
           COMPETITIONS: ${{ secrets.COMPETITIONS }}
         run: node scripts/fetch-matches.js
 
-      - name: 🤖 Generar contenido único con IA
+      - name: 🧭 Generar paquete editorial source-locked
         id: gen
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
-          MAX_ITEMS: ${{ inputs.max_items || '4' }}
+          MAX_ITEMS: ${{ inputs.max_items || '1' }}
           MODO: ${{ inputs.modo || 'auto' }}
         run: |
-          node scripts/generate-daily-content.js
-          FECHA=$(date +%Y-%m-%d)
-          echo "fecha=$FECHA" >> $GITHUB_OUTPUT
-          TOTAL=$(node -e "const f=require('./daily-content.json');console.log(f.total||0)" 2>/dev/null || echo "0")
-          echo "📊 Videos únicos generados: $TOTAL"
+          node scripts/generate-real-content.js
+          FECHA=$(date -u +%Y-%m-%d)
+          echo "fecha=$FECHA" >> "$GITHUB_OUTPUT"
+          TOTAL=$(node -e "const f=require('./daily-content.json'); console.log(f.total||0)")
+          echo "📊 Piezas verificables seleccionadas: $TOTAL"
           if [ "$TOTAL" -gt 0 ]; then
-            echo "hay_contenido=true" >> $GITHUB_OUTPUT
+            echo "hay_contenido=true" >> "$GITHUB_OUTPUT"
           else
-            echo "hay_contenido=false" >> $GITHUB_OUTPUT
+            echo "hay_contenido=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: 💾 Commit historial y caché de noticias
+      - name: 🛡️ Validación editorial antes de publicar
+        if: steps.gen.outputs.hay_contenido == 'true'
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('daily-content.json','utf8'));
+          if (!data.total || !Array.isArray(data.contenido)) throw new Error('daily-content inválido');
+          for (const [i, item] of data.contenido.entries()) {
+            if (!item._fuente_url || !/^https?:\/\//.test(item._fuente_url)) throw new Error(`Pieza ${i+1}: falta URL de fuente`);
+            if (!item._fuente) throw new Error(`Pieza ${i+1}: falta fuente`);
+            if (!item.descripcion_youtube || item.descripcion_youtube.length < 120) throw new Error(`Pieza ${i+1}: descripción demasiado corta`);
+          }
+          console.log('✅ Source lock OK: toda pieza tiene fuente y URL verificable.');
+          NODE
+
+      - name: 💾 Guardar historial + caché
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add content-history.json news-cache.json 2>/dev/null || true
-          git diff --staged --quiet && echo "Sin cambios" || git commit -m "tarea: actualizar historial y caché de noticias [skip ci]"
-          git push || echo "Nada para pushear"
+          git diff --staged --quiet && echo "Sin cambios para guardar" || git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
+          git push || echo "Sin cambios que pushear"
 
-      - name: 💾 Guardar daily-content.json como artefacto
+      - name: 📦 Guardar paquete editorial
         if: steps.gen.outputs.hay_contenido == 'true'
         uses: actions/upload-artifact@v6
         with:
@@ -109,11 +113,8 @@ jobs:
           path: daily-content.json
           retention-days: 7
 
-  # ══════════════════════════════════════════════════════════════════════
-  # JOB 2: RENDER + SUBIR A YOUTUBE
-  # ══════════════════════════════════════════════════════════════════════
   render-upload:
-    name: 🎬 Renderizar y publicar en YouTube
+    name: 🎬 Render + publicación YouTube
     runs-on: ubuntu-latest
     needs: generate
     if: needs.generate.outputs.hay_contenido == 'true'
@@ -132,25 +133,25 @@ jobs:
       - name: 📥 Instalar dependencias
         run: npm ci
 
-      - name: 🌐 Instalar Chrome para Remotion
+      - name: 🌐 Preparar Remotion
         run: |
           npx remotion browser ensure
-          echo "REMOTION_CHROME_FLAGS=--no-sandbox --disable-setuid-sandbox" >> $GITHUB_ENV
+          echo "REMOTION_CHROME_FLAGS=--no-sandbox --disable-setuid-sandbox" >> "$GITHUB_ENV"
 
-      - name: 🎞️ Instalar ffmpeg (para procesar b-roll)
+      - name: 🎞️ Instalar ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: ⚽ Descargar b-roll real de fútbol (elimina el fondo negro)
+      - name: ⚽ Obtener b-roll real de apoyo
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: node scripts/fetch-broll.js
 
-      - name: 📥 Descargar daily-content.json
+      - name: 📥 Descargar paquete editorial
         uses: actions/download-artifact@v6
         with:
           name: contenido-diario-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
 
-      - name: 🎬 Renderizar y subir todos los videos
+      - name: 🎥 Renderizar + publicar
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
@@ -158,37 +159,32 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: node scripts/render-and-upload.js
 
-      - name: 💾 Backup de videos generados
-        uses: actions/upload-artifact@v6
+      - name: 💾 Backup del resultado
         if: always()
+        uses: actions/upload-artifact@v6
         with:
           name: videos-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
           path: out/
-          retention-days: 5
+          retention-days: 7
 
-  # ══════════════════════════════════════════════════════════════════════
-  # JOB 3: REPORTE FINAL
-  # ══════════════════════════════════════════════════════════════════════
   notify:
-    name: 📊 Reporte final del pipeline
+    name: 📊 Reporte final
     runs-on: ubuntu-latest
     needs: [generate, render-upload]
     if: always()
     steps:
-      - name: 📊 Resumen
+      - name: 📊 Estado del pipeline
         run: |
           echo "══════════════════════════════════════════════"
-          echo "⚽ FOOTBALL AI STUDIO v4.0 — Reporte Automático"
-          echo "══════════════════════════════════════════════"
-          echo "🕐 Ejecución: $(date '+%Y-%m-%d %H:%M UTC')"
-          echo "🔄 Run #${{ github.run_number }}"
-          if [ "${{ needs.generate.outputs.hay_contenido }}" == "false" ]; then
-            echo "ℹ️ No había contenido sobre el umbral viral hoy — se evita publicar relleno."
-            echo "Esto es ESPERADO — evita publicar duplicados."
-          elif [ "${{ needs.render-upload.result }}" == "success" ]; then
-            echo "✅ Pipeline completado — videos publicados en YouTube"
-            echo "📺 Canal: https://www.youtube.com/@mundial2026shorts"
+          echo "⚽ REAL FOOTBALL NEWSROOM v5"
+          echo "Run #${{ github.run_number }}"
+          echo "Generación: ${{ needs.generate.result }}"
+          echo "Publicación: ${{ needs.render-upload.result }}"
+          if [ "${{ needs.render-upload.result }}" == "success" ]; then
+            echo "✅ Contenido real publicado"
+          elif [ "${{ needs.generate.outputs.hay_contenido }}" == "false" ]; then
+            echo "ℹ️ No apareció una fuente suficientemente nueva/distinta. No se rellenó con IA."
           else
-            echo "⚠️ Errores en render/upload — revisar logs del job"
+            echo "⚠️ Revisar job de render/publicación"
           fi
           echo "══════════════════════════════════════════════"
