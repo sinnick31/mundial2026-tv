@@ -163,6 +163,12 @@ jobs:
           cache: 'npm'
       - name: 📥 Instalar dependencias
         run: npm ci
+      - name: 🔐 Validar autenticación de YouTube
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: node scripts/preflight-youtube-auth.js
       - name: 🌐 Preparar Remotion
         run: |
           npx remotion browser ensure
@@ -224,6 +230,12 @@ jobs:
           cache: 'npm'
       - name: 📥 Instalar dependencias
         run: npm ci
+      - name: 🔐 Validar autenticación de YouTube
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: node scripts/preflight-youtube-auth.js
       - name: 🌐 Preparar Remotion
         run: |
           npx remotion browser ensure
