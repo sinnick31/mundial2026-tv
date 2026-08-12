@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ÁLVAREZ SENTENCIA A SUIZA EN PRÓRROGA",
-      "titulo": "Julián Álvarez sentencia en prórroga: ¿es el delantero del Mundial 2026?",
-      "fecha": "2026-07-12T06:10:56.859Z"
-    },
-    {
       "match_id": "537388",
       "tipo_contenido": "prediccion",
       "hook": "EFECTIVIDAD GOLEADORA CLAVE",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Liga de Primera: Colo Colo mantiene su liderato, mientras…",
       "titulo": "COLO-COLO: Liga de Primera: Colo Colo mantiene su liderato, mientras…",
       "fecha": "2026-08-12T13:46:57.655Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Liga de Primera: Colo Colo mantiene su liderato, mientras…",
+      "titulo": "COLO-COLO: Liga de Primera: Colo Colo mantiene su liderato, mientras…",
+      "fecha": "2026-08-12T13:49:32.381Z"
     }
   ]
 }
