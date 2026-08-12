@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": "537388",
-      "tipo_contenido": "prediccion",
-      "hook": "EFECTIVIDAD GOLEADORA CLAVE",
-      "titulo": "Argentina anotó 3 goles a Suiza: ¿Presión ofensiva ante Inglaterra?",
-      "fecha": "2026-07-12T06:11:11.210Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "FRANCIA VS ESPAÑA EN VIVO",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Liga de Primera: Colo Colo mantiene su liderato, mientras…",
       "titulo": "COLO-COLO: Liga de Primera: Colo Colo mantiene su liderato, mientras…",
       "fecha": "2026-08-12T13:49:32.381Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo 2 – 1 La Calera: Crónica, resumen y goles del…",
+      "titulo": "COLO-COLO: Colo Colo 2 – 1 La Calera: Crónica, resumen y goles del…",
+      "fecha": "2026-08-12T14:12:08.220Z"
     }
   ]
 }
