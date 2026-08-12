@@ -11,8 +11,9 @@
  *  5. Renderiza con Remotion y sube a YouTube.
  *
  * Si total=0, termina sin error. Si la narración o el broll fallan,
- * el video se renderiza igual (silencioso / sin broll) — nunca se cae
- * el pipeline completo por un fallo puntual.
+ * el video se renderiza igual (silencioso / sin broll). Un fallo de
+ * renderizado o publicación SÍ hace fallar el job al final, para que
+ * GitHub Actions nunca marque como "success" una ejecución sin publicar.
  */
 
 const { execSync } = require('child_process');
@@ -28,14 +29,11 @@ const BROLL_DIR = path.join(ROOT, 'public', 'broll');
 const PUBLIC_TMP_DIR = path.join(ROOT, 'public', 'tmp');
 const FPS = 30;
 
-// Duraciones objetivo POR TIPO de contenido (en segundos, fallback sin audio).
-// Antes todos los videos salían idénticos (~31s) — YouTube detecta ese patrón.
-// Ahora: dato rápido corto, análisis de partido largo, noticia intermedio.
 const DURACION_POR_TIPO = {
-  narrativa:  { fallbackSeg: 45, guion: 'completo' },  // resultado real → análisis largo
-  noticia:    { fallbackSeg: 22, guion: 'breve' },     // noticia → dato rápido
-  prediccion: { fallbackSeg: 35, guion: 'completo' },  // análisis previo
-  ranking:    { fallbackSeg: 50, guion: 'completo' },  // 5 posiciones necesitan aire
+  narrativa:  { fallbackSeg: 45, guion: 'completo' },
+  noticia:    { fallbackSeg: 22, guion: 'breve' },
+  prediccion: { fallbackSeg: 35, guion: 'completo' },
+  ranking:    { fallbackSeg: 50, guion: 'completo' },
 };
 
 function fuenteTexto(item) {
@@ -54,19 +52,17 @@ function getYouTubeClient() {
   return google.youtube({ version: 'v3', auth: oauth2Client });
 }
 
-// ─── Selección de broll ───────────────────────────────────────────────────────
 function elegirBroll() {
   try {
     const archivos = fs.readdirSync(BROLL_DIR).filter(f => /\.(mp4|mov|webm)$/i.test(f));
     if (archivos.length === 0) return undefined;
     const elegido = archivos[Math.floor(Math.random() * archivos.length)];
-    return `broll/${elegido}`; // relativo a public/, para staticFile()
+    return `broll/${elegido}`;
   } catch {
-    return undefined; // public/broll/ no existe todavía — no rompe nada
+    return undefined;
   }
 }
 
-// ─── Render genérico ───────────────────────────────────────────────────────────
 function renderVideo(compositionId, props, outputPath, durationInFrames) {
   const propsJson = JSON.stringify(props);
   const cmd = [
@@ -88,7 +84,6 @@ function renderVideo(compositionId, props, outputPath, durationInFrames) {
   console.log(`   ✅ Video listo: ${outputPath}`);
 }
 
-// ─── Prepara narración + duración para un item ────────────────────────────────
 async function prepararNarracion(item) {
   const config = DURACION_POR_TIPO[item._tipo_contenido] || DURACION_POR_TIPO.prediccion;
   const guion = construirGuion(item, config.guion);
@@ -98,7 +93,6 @@ async function prepararNarracion(item) {
   const { audioPath, duracionSeg } = await generarNarracion(guion, wavPath);
 
   if (!audioPath) {
-    // Fallback sin audio: duración por tipo + jitter de ±3s para no repetir patrón
     const jitterSeg = (Math.random() * 6) - 3;
     return {
       audioSrc: undefined,
@@ -106,9 +100,7 @@ async function prepararNarracion(item) {
     };
   }
 
-  // relativo a public/, para staticFile() dentro del componente
   const audioSrc = `tmp/${path.basename(audioPath)}`;
-  // Aire antes/después variable (3.5–5.5s total) — evita duraciones idénticas
   const padding = 3.5 + Math.random() * 2;
   const durationInFrames = Math.max(
     Math.ceil((duracionSeg + padding) * FPS),
@@ -117,7 +109,6 @@ async function prepararNarracion(item) {
   return { audioSrc, durationInFrames };
 }
 
-// ─── Arma props + elige plantilla según el tipo de contenido ─────────────────
 async function prepararRender(item) {
   const brollSrc = elegirBroll();
   const { audioSrc, durationInFrames } = await prepararNarracion(item);
@@ -153,7 +144,6 @@ async function prepararRender(item) {
     return { compositionId: 'JugadaAnimada', props, durationInFrames };
   }
 
-  // prediccion / ranking / narrativa sin marcador disponible → PrediccionShorts
   const props = {
     gancho: item.gancho,
     subtitulo: item.subtitulo,
@@ -254,7 +244,6 @@ async function main() {
     }
   }
 
-  // Limpieza de audios temporales (no hace falta versionarlos)
   try { fs.rmSync(PUBLIC_TMP_DIR, { recursive: true, force: true }); } catch {}
 
   const reporte = {
@@ -275,6 +264,14 @@ async function main() {
   resultados.filter(r => r.estado === 'OK').forEach(r =>
     console.log(`   ${r.orden}. [${r.plantilla || r.tipo}] ${r.gancho} → ${r.youtube_url}`)
   );
+
+  // CRÍTICO: no dejar que GitHub Actions marque la ejecución como correcta
+  // cuando uno o más videos fallaron al renderizar o subir a YouTube.
+  if (reporte.errores > 0 || reporte.exitosos !== reporte.total) {
+    console.error(`\n❌ Publicación incompleta: ${reporte.exitosos}/${reporte.total} videos publicados.`);
+    process.exitCode = 1;
+    return;
+  }
 }
 
 main().catch(err => {
