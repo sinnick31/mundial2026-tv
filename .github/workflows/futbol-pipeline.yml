@@ -3,7 +3,7 @@ name: ⚽ REAL FOOTBALL NEWSROOM v5 — Chile 365
 # Canal editorial de fútbol chileno con trazabilidad de fuentes.
 # La automatización NO inventa resultados, cifras, fichajes ni declaraciones.
 # Prioridad: 1) Colo-Colo, 2) fútbol chileno, 3) futbolistas chilenos en el exterior.
-# Máximo 3 Shorts/día + resumen largo periódico para una estrategia de monetización más realista.
+# Máximo 3 Shorts/día + resumen largo periódico.
 
 on:
   push:
@@ -119,9 +119,10 @@ jobs:
           for (const [i, item] of data.contenido.entries()) {
             if (!item._fuente_url || !/^https?:\/\//.test(item._fuente_url)) throw new Error(`Pieza ${i+1}: falta URL de fuente`);
             if (!item._fuente) throw new Error(`Pieza ${i+1}: falta fuente`);
+            if (!item.titulo_youtube) throw new Error(`Pieza ${i+1}: falta título`);
             if (!item.descripcion_youtube || item.descripcion_youtube.length < 120) throw new Error(`Pieza ${i+1}: descripción demasiado corta`);
           }
-          console.log('✅ Source lock OK.');
+          console.log('✅ SOURCE LOCK OK: cada pieza tiene fuente, URL, título y descripción.');
           NODE
 
       - name: 💾 Guardar historial + caché
@@ -129,8 +130,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add content-history.json news-cache.json 2>/dev/null || true
-          git diff --staged --quiet && echo "Sin cambios para guardar" || git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
-          git push || echo "Sin cambios que pushear"
+          if git diff --staged --quiet; then
+            echo "Sin cambios para guardar"
+          else
+            git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
+            git push
+          fi
 
       - name: 📦 Guardar paquetes editoriales
         if: steps.gen.outputs.hay_contenido == 'true' || steps.longform.outputs.hay_longform == 'true'
@@ -179,6 +184,22 @@ jobs:
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: node scripts/render-and-upload.js
+      - name: 🔎 Verificar evidencia de publicación
+        run: |
+          REPORT="out/reporte-${{ needs.generate.outputs.fecha }}.json"
+          if [ ! -f "$REPORT" ]; then
+            echo "❌ No existe el reporte de publicación: $REPORT"
+            exit 1
+          fi
+          node - <<'NODE'
+          const fs = require('fs');
+          const report = JSON.parse(fs.readFileSync(process.env.REPORT, 'utf8'));
+          const publicados = (report.videos || []).filter(v => v.estado === 'OK' && v.youtube_id && v.youtube_url);
+          console.log(`📺 Evidencia YouTube: ${publicados.length}/${report.total} con video_id y URL`);
+          if (report.total > 0 && publicados.length !== report.total) process.exit(1);
+          NODE
+        env:
+          REPORT: out/reporte-${{ needs.generate.outputs.fecha }}.json
       - name: 💾 Backup Shorts
         if: always()
         uses: actions/upload-artifact@v6
@@ -240,10 +261,12 @@ jobs:
           echo "Generación: ${{ needs.generate.result }}"
           echo "Shorts: ${{ needs.render-upload.result }}"
           echo "Longform: ${{ needs.longform.result }}"
-          if [ "${{ needs.render-upload.result }}" == "success" ] || [ "${{ needs.longform.result }}" == "success" ]; then
-            echo "✅ Pipeline produjo contenido publicable"
-          elif [ "${{ needs.generate.result }}" == "success" ]; then
-            echo "ℹ️ No había una pieza suficientemente nueva/distinta para publicar."
+          if [ "${{ needs.render-upload.result }}" = "success" ]; then
+            echo "✅ Shorts publicados y verificados por reporte local"
+          elif [ "${{ needs.longform.result }}" = "success" ]; then
+            echo "✅ Resumen largo publicado correctamente"
+          elif [ "${{ needs.generate.result }}" = "success" ]; then
+            echo "ℹ️ Sin publicación nueva en esta ejecución."
           else
             echo "⚠️ Falló la selección editorial"
           fi
