@@ -1,27 +1,34 @@
 import { Composition, registerRoot } from 'remotion';
 import { PrediccionShorts, PrediccionProps } from './PrediccionShorts';
 import { JugadaAnimada, JugadaAnimadaProps, defaultJugadaProps } from './JugadaAnimada';
+import { ChileLongform, ChileLongformProps } from './ChileLongform';
 
 const PREVIEW_PROPS: PrediccionProps = {
-  gancho: '¡ARGENTINA ELIMINADA!',
-  subtitulo: 'La IA predice el mayor shock del Mundial 2026',
-  descripcion: 'Argentina quedará fuera en octavos de final ante Francia.',
-  equipo1: 'Argentina',
-  equipo2: 'Francia',
-  probabilidad: 67,
+  gancho: 'DATOS DEL FÚTBOL CHILENO',
+  subtitulo: 'Noticias reales, contexto y fuentes',
+  descripcion: 'Resumen editorial basado en fuentes deportivas verificables.',
+  equipo1: 'Chile',
+  equipo2: undefined,
+  probabilidad: 0,
   puntos: [
-    'Francia llega en su mejor momento con Mbappé imparable',
-    'Argentina con lesiones en defensa y mediocampo',
-    'El factor Francia como favorita histórica del torneo',
+    'Colo-Colo como prioridad editorial',
+    'Competencias chilenas',
+    'Futbolistas chilenos en el exterior',
   ],
-  emoji: '⚽',
-  tipo: 'eliminacion',
+  emoji: '🇨🇱',
+  tipo: 'noticia',
 };
 
-// Esta es la raíz que usa el pipeline real (render-and-upload.js apunta a
-// src/index.tsx explícitamente). Por eso AMBAS composiciones que se usan
-// en producción (PrediccionShorts y JugadaAnimada) deben estar registradas
-// acá, no solo en Root.tsx (que es para `remotion studio`).
+const LONGFORM_PROPS: ChileLongformProps = {
+  title: 'Resumen del fútbol chileno',
+  intro: 'Noticias reales, contexto y fuentes originales.',
+  sections: [
+    { orden: 1, titulo: 'Colo-Colo', cuerpo: 'Sección de prueba.', fuente: 'Fuentes del día', url: '' },
+    { orden: 2, titulo: 'Fútbol chileno', cuerpo: 'Sección de prueba.', fuente: 'Fuentes del día', url: '' },
+    { orden: 3, titulo: 'Chilenos en el exterior', cuerpo: 'Sección de prueba.', fuente: 'Fuentes del día', url: '' },
+  ],
+};
+
 const RemotionRoot: React.FC = () => {
   return (
     <>
@@ -42,6 +49,15 @@ const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={defaultJugadaProps}
+      />
+      <Composition
+        id="ChileLongform"
+        component={ChileLongform}
+        durationInFrames={3600}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={LONGFORM_PROPS}
       />
     </>
   );
