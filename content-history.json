@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "GUARDIANES DE GRUPO",
-      "titulo": "México y España: 0 goles en fase de grupos. ¿La defensa más sólida del Mundial?",
-      "fecha": "2026-07-11T21:58:04.743Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "SEMIFINALES MUNDIAL DEFINIDAS",
       "titulo": "El cuadro de semifinales del Mundial 2026 ya tiene cruces: ¿sorpresas o favoritos?",
@@ -3499,6 +3492,13 @@
       "hook": "MURALLAS SIN GOLES RECIBIDOS",
       "titulo": "Fluminense y Rivadavia tienen 0 goles concedidos: ¿solidez defensiva?",
       "fecha": "2026-08-12T13:18:11.350Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: U. de Chile vs Colo Colo: cómo comprar entradas para el…",
+      "titulo": "COLO-COLO: U. de Chile vs Colo Colo: cómo comprar entradas para el…",
+      "fecha": "2026-08-12T13:21:44.510Z"
     }
   ]
 }
