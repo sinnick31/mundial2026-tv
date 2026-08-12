@@ -2,18 +2,14 @@
  * render-and-upload.js (v3 — con voz, broll real y jugada animada)
  *
  * Lee daily-content.json. Para cada item:
- *  1. Genera narración en voz (Gemini TTS) a partir del guion.
+ *  1. Genera narración en voz a partir del guion basado en la noticia fuente.
  *  2. Calcula la duración real del video según el largo del audio.
- *  3. Elige plantilla:
- *     - "narrativa" (partido ya jugado) → JugadaAnimada (recreación 2D del gol)
- *     - "prediccion" / "ranking"        → PrediccionShorts (con broll + voz)
- *  4. Elige un clip de stock al azar desde public/broll/ (si existe).
+ *  3. Elige plantilla según tipo de contenido.
+ *  4. Elige un clip de apoyo desde public/broll/ (si existe).
  *  5. Renderiza con Remotion y sube a YouTube.
  *
- * Si total=0, termina sin error. Si la narración o el broll fallan,
- * el video se renderiza igual (silencioso / sin broll). Un fallo de
- * renderizado o publicación SÍ hace fallar el job al final, para que
- * GitHub Actions nunca marque como "success" una ejecución sin publicar.
+ * Los hechos deben venir del paquete editorial source-locked.
+ * Si falla la publicación, el job termina con error.
  */
 
 const { execSync } = require('child_process');
@@ -38,8 +34,8 @@ const DURACION_POR_TIPO = {
 
 function fuenteTexto(item) {
   const fecha = item._fecha || new Date().toISOString().split('T')[0];
-  const base = item._fuente ? `${item._fuente} · football-data.org` : 'football-data.org · ESPN';
-  return `Datos: ${base} — ${fecha}`;
+  const fuente = item._fuente || 'Fuente no especificada';
+  return `Fuente: ${fuente} — ${fecha}`;
 }
 
 function getYouTubeClient() {
@@ -165,7 +161,7 @@ async function uploadToYouTube(youtube, filePath, data) {
   const fileSize = fs.statSync(filePath).size;
   const tags = [...new Set([
     ...(data.tags || []),
-    'Futbol', 'Shorts', 'FutbolChileno', 'ChampionsLeague', 'Fichajes',
+    'Futbol', 'Shorts', 'FutbolChileno', 'ColoColo', 'LaRoja',
   ])].slice(0, 15);
 
   const response = await youtube.videos.insert({
@@ -231,15 +227,27 @@ async function main() {
       const videoId = await uploadToYouTube(youtube, videoFile, item);
 
       resultados.push({
-        orden: item._orden, tipo: item._tipo_contenido, plantilla: compositionId,
-        gancho: item.gancho, youtube_id: videoId, youtube_url: `https://youtu.be/${videoId}`, estado: 'OK',
+        orden: item._orden,
+        tipo: item._tipo_contenido,
+        plantilla: compositionId,
+        gancho: item.gancho,
+        fuente: item._fuente,
+        fuente_url: item._fuente_url,
+        youtube_id: videoId,
+        youtube_url: `https://youtu.be/${videoId}`,
+        estado: 'OK',
       });
       await new Promise(r => setTimeout(r, 4000));
     } catch (err) {
       console.error(`\n   ❌ Error: ${err.message}`);
       resultados.push({
-        orden: item._orden, tipo: item._tipo_contenido, gancho: item.gancho,
-        estado: 'ERROR', error: err.message,
+        orden: item._orden,
+        tipo: item._tipo_contenido,
+        gancho: item.gancho,
+        fuente: item._fuente,
+        fuente_url: item._fuente_url,
+        estado: 'ERROR',
+        error: err.message,
       });
     }
   }
@@ -247,7 +255,8 @@ async function main() {
   try { fs.rmSync(PUBLIC_TMP_DIR, { recursive: true, force: true }); } catch {}
 
   const reporte = {
-    fecha, ejecutado_en: new Date().toISOString(),
+    fecha,
+    ejecutado_en: new Date().toISOString(),
     total: contenido.length,
     exitosos: resultados.filter(r => r.estado === 'OK').length,
     errores: resultados.filter(r => r.estado === 'ERROR').length,
@@ -265,8 +274,6 @@ async function main() {
     console.log(`   ${r.orden}. [${r.plantilla || r.tipo}] ${r.gancho} → ${r.youtube_url}`)
   );
 
-  // CRÍTICO: no dejar que GitHub Actions marque la ejecución como correcta
-  // cuando uno o más videos fallaron al renderizar o subir a YouTube.
   if (reporte.errores > 0 || reporte.exitosos !== reporte.total) {
     console.error(`\n❌ Publicación incompleta: ${reporte.exitosos}/${reporte.total} videos publicados.`);
     process.exitCode = 1;
