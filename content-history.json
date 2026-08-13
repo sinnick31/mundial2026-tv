@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ARGENTINA O INGLATERRA: ¿HASTA LA FINAL?",
-      "titulo": "Mundial 2026: A 4 partidos de la reevaluación, ¿Argentina o Inglaterra en la final?",
-      "fecha": "2026-07-12T10:22:19.986Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "OFENSIVA SECUNDARIA MUNDIAL",
       "titulo": "Canadá anotó 8 goles como 2do de grupo: ¿Peligro para los líderes?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Terremoto en Colo Colo: la razón por la que arriesga la…",
       "titulo": "COLO-COLO: Terremoto en Colo Colo: la razón por la que arriesga la…",
       "fecha": "2026-08-12T20:51:37.878Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Terremoto en Colo Colo: la razón por la que arriesga la…",
+      "titulo": "COLO-COLO: Terremoto en Colo Colo: la razón por la que arriesga la…",
+      "fecha": "2026-08-13T03:28:24.911Z"
     }
   ]
 }
