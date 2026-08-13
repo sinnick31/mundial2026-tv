@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "OFENSIVA SECUNDARIA MUNDIAL",
-      "titulo": "Canadá anotó 8 goles como 2do de grupo: ¿Peligro para los líderes?",
-      "fecha": "2026-07-12T10:22:40.833Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "MUNDIAL 2030: ¿64 EQUIPOS?",
       "titulo": "Mundial 2030 con 64 equipos en estudio: ¿impacta el futuro de FIFA 2026?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Terremoto en Colo Colo: la razón por la que arriesga la…",
       "titulo": "COLO-COLO: Terremoto en Colo Colo: la razón por la que arriesga la…",
       "fecha": "2026-08-13T03:28:24.911Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo tiene un partido clave: Así se jugará la fecha…",
+      "titulo": "COLO-COLO: Colo Colo tiene un partido clave: Así se jugará la fecha…",
+      "fecha": "2026-08-13T13:19:02.897Z"
     }
   ]
 }
