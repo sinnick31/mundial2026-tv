@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "INVITOS NO LÍDERES",
-      "titulo": "Marruecos, invicto con 7 puntos, fue 2do en su grupo: ¿señal de potencial?",
-      "fecha": "2026-07-12T15:57:42.668Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "ALERTA MÁXIMA ARGENTINA-INGLATERRA ATLANTA",
       "titulo": "Semifinal Mundial 2026 en Atlanta: Argentina-Inglaterra con alerta máxima, ¿por qué?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: La fecha en la que Colo Colo podría ser campeón de la Liga…",
       "titulo": "COLO-COLO: La fecha en la que Colo Colo podría ser campeón de la Liga…",
       "fecha": "2026-08-14T13:13:56.993Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: La fecha en la que Colo Colo podría ser campeón de la Liga…",
+      "titulo": "COLO-COLO: La fecha en la que Colo Colo podría ser campeón de la Liga…",
+      "fecha": "2026-08-14T20:35:23.171Z"
     }
   ]
 }
