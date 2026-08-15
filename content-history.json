@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "HAALAND Y NORUEGA: MUNDIAL INOLVIDABLE",
-      "titulo": "Haaland liderará la carrera inolvidable de Noruega 🇳🇴: ¿Será histórica?",
-      "fecha": "2026-07-12T21:58:59.700Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "FUERA DEL FOCO ELITE",
       "titulo": "Canadá con GD +5: ¿el sublíder más peligroso del Mundial 2026?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: La fecha en la que Colo Colo podría ser campeón de la Liga…",
       "titulo": "COLO-COLO: La fecha en la que Colo Colo podría ser campeón de la Liga…",
       "fecha": "2026-08-15T12:42:57.549Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Sorpresa total: ANFP revela la camiseta de Colo Colo que…",
+      "titulo": "COLO-COLO: Sorpresa total: ANFP revela la camiseta de Colo Colo que…",
+      "fecha": "2026-08-15T20:27:18.849Z"
     }
   ]
 }
