@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "FUERA DEL FOCO ELITE",
-      "titulo": "Canadá con GD +5: ¿el sublíder más peligroso del Mundial 2026?",
-      "fecha": "2026-07-12T21:59:21.305Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "FRANCIA Y ESPAÑA A SEMIFINALES",
       "titulo": "Francia y España abren Semifinales 2026: ¿Cuál será la clave?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Sorpresa total: ANFP revela la camiseta de Colo Colo que…",
       "titulo": "COLO-COLO: Sorpresa total: ANFP revela la camiseta de Colo Colo que…",
       "fecha": "2026-08-15T20:27:18.849Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Sorpresa total: ANFP revela la camiseta de Colo Colo que…",
+      "titulo": "COLO-COLO: Sorpresa total: ANFP revela la camiseta de Colo Colo que…",
+      "fecha": "2026-08-16T02:23:05.796Z"
     }
   ]
 }
