@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CÉSAR RAMOS DICE ADIÓS MUNDIAL 2026",
-      "titulo": "César Ramos se despide del Mundial 2026: ¿un vacío en el arbitraje?",
-      "fecha": "2026-07-13T06:29:27.505Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "ATAQUE CON RIESGO",
       "titulo": "Suecia recibió 7 goles en fase de grupos: ¿defensa insostenible para su ataque?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Colo Colo goleó a Deportes Temuco por la Liga Femenina…",
       "titulo": "COLO-COLO: Colo Colo goleó a Deportes Temuco por la Liga Femenina…",
       "fecha": "2026-08-16T20:27:56.886Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo 2 – 2 O’Higgins en la Liga de Primera: goles,…",
+      "titulo": "COLO-COLO: Colo Colo 2 – 2 O’Higgins en la Liga de Primera: goles,…",
+      "fecha": "2026-08-17T02:21:24.304Z"
     }
   ]
 }
