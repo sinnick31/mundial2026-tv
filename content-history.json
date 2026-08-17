@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "ATAQUE CON RIESGO",
-      "titulo": "Suecia recibió 7 goles en fase de grupos: ¿defensa insostenible para su ataque?",
-      "fecha": "2026-07-13T06:29:54.696Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "FRANCIA VS ESPAÑA SEMIFINAL",
       "titulo": "Experto 19-7 elige semifinalistas: ¿Francia o España al Mundial 2026?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Colo Colo 2 – 2 O’Higgins en la Liga de Primera: goles,…",
       "titulo": "COLO-COLO: Colo Colo 2 – 2 O’Higgins en la Liga de Primera: goles,…",
       "fecha": "2026-08-17T02:21:24.304Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Javier Correa apunta sin filtro contra el arbitraje y la…",
+      "titulo": "COLO-COLO: Javier Correa apunta sin filtro contra el arbitraje y la…",
+      "fecha": "2026-08-17T12:50:28.075Z"
     }
   ]
 }
