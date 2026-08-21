@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "INVENCIBLES EN GRUPOS",
-      "titulo": "México 9 puntos en fase de grupos: ¿Su invicto vale el título?",
-      "fecha": "2026-07-13T22:02:14.854Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "QUINTERO: \"¿TE PIDO PERMISO?\"",
       "titulo": "Quintero dijo '¿Te pido permiso?' a las críticas: ¿polémica justificada?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: 👀🧤 Vozinha pudo llegar a otro club del fútbol chileno…",
       "titulo": "COLO-COLO: 👀🧤 Vozinha pudo llegar a otro club del fútbol chileno…",
       "fecha": "2026-08-20T20:32:59.790Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: ¿Juega Lucas Assadi ante Colo Colo? Esta es la postura…",
+      "titulo": "COLO-COLO: ¿Juega Lucas Assadi ante Colo Colo? Esta es la postura…",
+      "fecha": "2026-08-21T02:24:56.722Z"
     }
   ]
 }
