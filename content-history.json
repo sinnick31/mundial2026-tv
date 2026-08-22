@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "ATAQUES SIN LIDERAZGO",
-      "titulo": "Canadá anotó 8 goles en fase de grupos: ¿fue su ataque suficiente? ⚽️",
-      "fecha": "2026-07-14T05:40:31.807Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "MUNDIAL 2026: SEMIFINALES GRATIS",
       "titulo": "Mundial 2026: Semifinales GRATIS en streaming confirmado. ¿Cómo acceder?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: ¿A qué hora juega Colo Colo femenino vs Recoleta y qué…",
       "titulo": "COLO-COLO: ¿A qué hora juega Colo Colo femenino vs Recoleta y qué…",
       "fecha": "2026-08-22T02:17:17.541Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: ¿A qué hora juega Colo Colo femenino vs Recoleta y qué…",
+      "titulo": "COLO-COLO: ¿A qué hora juega Colo Colo femenino vs Recoleta y qué…",
+      "fecha": "2026-08-22T12:45:13.439Z"
     }
   ]
 }
