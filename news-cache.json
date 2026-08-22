@@ -1,16 +1,149 @@
 {
-  "ultima_actualizacion": "2026-08-22T12:45:06.907Z",
-  "total_hoy": 194,
+  "ultima_actualizacion": "2026-08-22T20:27:10.750Z",
+  "total_hoy": 198,
   "total_reciente": 140,
   "por_categoria": {
-    "colo_colo": 52,
-    "chile": 56,
-    "chilenos_exterior": 1,
-    "formativo": 5,
+    "colo_colo": 55,
+    "chile": 62,
+    "formativo": 4,
     "tercera": 1,
-    "internacional": 25
+    "internacional": 18
   },
   "noticias": [
+    {
+      "title": "Fútbol femenino en Chile: profesionalización en el papel, precariedad en el camarín - El Mostrador",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQREVkNm9hVnlTZy1BczRicjhfRDZvb2J6OEdkOTFhMkIwb1BCc2pNazVTckZELXRqYW1KUkwycUN5Ymk2WFJ2OE80SzM1cExCVnhQdERYMTNtd0dlQW1wQUt1cXllRDA5VzlGZ2UzM2VZc2dFRWVXX2g5U1VYQ1pEUHBLbGpVNW5GMlJtQ3liZUR4alZxNWNBM3dBa2dzeDV4d0dMcmtncUh5TW1MclhlYmVjN3dkZzdWOWxWbmt2cVJadEJVY0lWWk5PeVljZ0w1?oc=5\" target=\"_blank\">Fútbol femenino en Chile: profesionalización en el papel, precariedad en el camarín</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">El Mostrador</font>",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQREVkNm9hVnlTZy1BczRicjhfRDZvb2J6OEdkOTFhMkIwb1BCc2pNazVTckZELXRqYW1KUkwycUN5Ymk2WFJ2OE80SzM1cExCVnhQdERYMTNtd0dlQW1wQUt1cXllRDA5VzlGZ2UzM2VZc2dFRWVXX2g5U1VYQ1pEUHBLbGpVNW5GMlJtQ3liZUR4alZxNWNBM3dBa2dzeDV4d0dMcmtncUh5TW1MclhlYmVjN3dkZzdWOWxWbmt2cVJadEJVY0lWWk5PeVljZ0w1?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 19:47:03 GMT",
+      "timestamp": "2026-08-22T19:47:03.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": null,
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:1h(+15)"
+      ]
+    },
+    {
+      "title": "Assadi enfrenta la polémica por su ausencia en el Superclásico: “Jugar fue lo primero que le dije a mi agente” - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOaXhyWDlmSVo2Yk5nc3psMnExRGRsTTI3blFfUFY5NW5zVER6cW1EV1JULWI5UklxeElCUFVOdXk1WTBrdThjcXJFVzh2QVpFQmJrSHNlZzh6aklWTkhBYXVnMW9VdnJRbUMzeWlrTU15X3hCUVR3ZlJtMlJDd01tYThPaF8wRksxUmRURTliWjhxSnZVeTlrajJJaWVOZXExdWRxTXcyWS1pWlZyUlk0d2xzRjEwaURwX0wzNHRFZzhPdnBDZkNVa1EwMENyZUnSAdQBQVVfeXFMT0JuRjBOWm8zZFB6WVUxcFJVeW5PUE95cFQ5OW1kQXhPWExSejlkRFVPUlUtSDVqZjZmN2lDMElMSjhSbjVEamI2clNvczJheXQ2LVJCczV6aUVDWkFlOEJ0dndYWDVjb1h4M0tWSThMYUpmblpfUUZocmZmMl",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOaXhyWDlmSVo2Yk5nc3psMnExRGRsTTI3blFfUFY5NW5zVER6cW1EV1JULWI5UklxeElCUFVOdXk1WTBrdThjcXJFVzh2QVpFQmJrSHNlZzh6aklWTkhBYXVnMW9VdnJRbUMzeWlrTU15X3hCUVR3ZlJtMlJDd01tYThPaF8wRksxUmRURTliWjhxSnZVeTlrajJJaWVOZXExdWRxTXcyWS1pWlZyUlk0d2xzRjEwaURwX0wzNHRFZzhPdnBDZkNVa1EwMENyZUnSAdQBQVVfeXFMT0JuRjBOWm8zZFB6WVUxcFJVeW5PUE95cFQ5OW1kQXhPWExSejlkRFVPUlUtSDVqZjZmN2lDMElMSjhSbjVEamI2clNvczJheXQ2LVJCczV6aUVDWkFlOEJ0dndYWDVjb1h4M0tWSThMYUpmblpfUUZocmZmMlVoMlRXRnBqWG55eWpLY1ZKWVlwdGlMZ3JXak9EM0xKQXBjZFRIR1J0d3VJdG9hYTROY1JzaHgyOGxRM2JzS0lndV9RRVN0eVh1Z1MtcEx5dFdXbThGajg?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 18:32:42 GMT",
+      "timestamp": "2026-08-22T18:32:42.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": null,
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:2h(+15)",
+        "senal:\\b(polemica|var|expu(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "Fernando Ortiz se decide: la formación de Colo Colo para enfrentar a Universidad de Chile - bolavip.com",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxObFByekdkN0Mwd0ExQUo0NHBPRWY0ajZrWVNRMktjaHpZaXZwUTBVNjM4U2dPTDVSaFJYUEpuRU9NbklFVUFNS0Y2Ykh0a0xtVmVYcjRWUlZBSWgyQXpoTW1oMjJvWkJZN1JYdHpGcS1RUTFOcUdLLUJkSU5oYVlHbFJsYTB4TjAzaXZ0dW5rT0RtalBWc3dQVFBzeUY5QkZWanFTUTdQWkdBS2ZGQTNGOW5XYTlfamFRcWlSQtIBwgFBVV95cUxPdGcxR1BSci1HSHNoQzhUV1p5QUI1Z1JHSzhfY29od0xaMXFKUkpMa2dnaG8yQkJEUkN2QUxKaWVDUjhjRXF6ZnF4T1NkZmo3ZzJxMkJpWGdRV0lDMDhXUk5qUGNhRmFCbHdrNUZTWUNvN05RMUdaVGNyWnVTUUZXV3UxVjlkM0syUF8zTlZLb0",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObFByekdkN0Mwd0ExQUo0NHBPRWY0ajZrWVNRMktjaHpZaXZwUTBVNjM4U2dPTDVSaFJYUEpuRU9NbklFVUFNS0Y2Ykh0a0xtVmVYcjRWUlZBSWgyQXpoTW1oMjJvWkJZN1JYdHpGcS1RUTFOcUdLLUJkSU5oYVlHbFJsYTB4TjAzaXZ0dW5rT0RtalBWc3dQVFBzeUY5QkZWanFTUTdQWkdBS2ZGQTNGOW5XYTlfamFRcWlSQtIBwgFBVV95cUxPdGcxR1BSci1HSHNoQzhUV1p5QUI1Z1JHSzhfY29od0xaMXFKUkpMa2dnaG8yQkJEUkN2QUxKaWVDUjhjRXF6ZnF4T1NkZmo3ZzJxMkJpWGdRV0lDMDhXUk5qUGNhRmFCbHdrNUZTWUNvN05RMUdaVGNyWnVTUUZXV3UxVjlkM0syUF8zTlZLb05CdDJIQ2xrcGtUY1hBYzR1SDlvZV9Rc2tTUzNXNm51bEFDcFNSTWdUano4OEZISU9OZw?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 17:10:36 GMT",
+      "timestamp": "2026-08-22T17:10:36.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:3h(+10)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Se decide Ortiz: esta es la formación de Colo Colo para el Superclásico ante la U - AlAireLibre.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPMV9wMWU2VEpIMWZQQU9LLXBoUDNUWDgybTJEQW52RWI5N2pmZGxlc1FZYVRlTW1IZ0RqczlzcGxpTDk5cDRTN1RKRmZRUzZKT1VIeENsNWNhM1RHSTFHUXJJMnFNdThXNlZBRGtodFpxZjBSTzhjbnhBTXpwdEMtV05OcHRCd1oxbUxMamVRZGlheHZpQkNLY21CaFA4Umx5UXlEXw?oc=5\" target=\"_blank\">Se decide Ortiz: esta es la formación de Colo Colo para el Superclásico ante la U</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">AlAireLibre.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMV9wMWU2VEpIMWZQQU9LLXBoUDNUWDgybTJEQW52RWI5N2pmZGxlc1FZYVRlTW1IZ0RqczlzcGxpTDk5cDRTN1RKRmZRUzZKT1VIeENsNWNhM1RHSTFHUXJJMnFNdThXNlZBRGtodFpxZjBSTzhjbnhBTXpwdEMtV05OcHRCd1oxbUxMamVRZGlheHZpQkNLY21CaFA4Umx5UXlEXw?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 16:24:35 GMT",
+      "timestamp": "2026-08-22T16:24:35.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:4h(+10)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "¿Qué canal transmite el partido de Colo Colo Femenino vs Deportes Recoleta por la fecha 24 del Campeonato N... - Dale Albo",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxPUFFGR2h1Q3U0eERxSUVwZGZ5a0J0MkNVZjZ5LXQxVGQyajYtQi1fWC1Bb0ZWc3VVTW4yeDRxY0tWbVFqMHV3b3J1WFZLSEhNSlpnY1djbHV0cDBHUXJpZ2dlTUlYc1dlWXBHS21uRVRYS19fVGhZOG8zRUhMZVJEWko2bkpZQklCXy1WMmNzZTNNdGVGS2dpVGlfNmdvQXFLMVpLSFZRd3ZsSVJLTGhWWnZpYXRmTUlSZ2JWSzBlRDFtOHNOd0cwa3E4dzd0S2xwMVdiY0R1WWRGQXlCQzJiN2FmMUNkZG_SAewBQVVfeXFMUDBaNlplLTZLOE9QYVJTV1lqTVJ1eFp4TmJMbUVocjZLUWFXYVpqUWJaMU1teFd2ZXZUQzlIRi04YlpvZ2tiY0piSnl1T2FXS2ptaDVJbm9OR2toWHY0aERubFFwbE",
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPUFFGR2h1Q3U0eERxSUVwZGZ5a0J0MkNVZjZ5LXQxVGQyajYtQi1fWC1Bb0ZWc3VVTW4yeDRxY0tWbVFqMHV3b3J1WFZLSEhNSlpnY1djbHV0cDBHUXJpZ2dlTUlYc1dlWXBHS21uRVRYS19fVGhZOG8zRUhMZVJEWko2bkpZQklCXy1WMmNzZTNNdGVGS2dpVGlfNmdvQXFLMVpLSFZRd3ZsSVJLTGhWWnZpYXRmTUlSZ2JWSzBlRDFtOHNOd0cwa3E4dzd0S2xwMVdiY0R1WWRGQXlCQzJiN2FmMUNkZG_SAewBQVVfeXFMUDBaNlplLTZLOE9QYVJTV1lqTVJ1eFp4TmJMbUVocjZLUWFXYVpqUWJaMU1teFd2ZXZUQzlIRi04YlpvZ2tiY0piSnl1T2FXS2ptaDVJbm9OR2toWHY0aERubFFwbE5LbHRQV3JOVzlONUloc0VETnBlNjFGRU9DcTMwdTU4UXVaWDlQVDUybVltOFVyaGlfczkwZGRXSmVlNHI1RW43ZDBja0xqQS15dS1PMXYxQXhMYk8xdEpCaU13SkdMTGhPbzJ6N3RtcE5xZjQ0TTF1Wm9UcVFEdjFZN0ZoOGJHY1l1RDZKbGw?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 14:38:41 GMT",
+      "timestamp": "2026-08-22T14:38:41.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:6h(+10)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "El sorprendente dato para Colo-Colo y Universidad de Chile del árbitro del Superclásico - Puranoticia.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOZUdBRUxCRE5BTVZJU2hTMFZVWkNpTldCbVNUUDdlU2kxemYyWnBPbkhuam9iWVQ4ZE92dVk0b0UtVmE5bWg3VTZXcGVGVlhHN2c3QmlHaklzcGpuaEIxZzlpNzZZY3BnNHF2aXcxTlpld1NNdDJmR3FOZFJDemNOamp5cFFJeV8zSlhwNXlIblpCS0VuRzBTWEtKaWlZMkZrRk9oWXpKMzFOWm93ZS1n?oc=5\" target=\"_blank\">El sorprendente dato para Colo-Colo y Universidad de Chile del árbitro del Superclásico</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Puranoticia.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZUdBRUxCRE5BTVZJU2hTMFZVWkNpTldCbVNUUDdlU2kxemYyWnBPbkhuam9iWVQ4ZE92dVk0b0UtVmE5bWg3VTZXcGVGVlhHN2c3QmlHaklzcGpuaEIxZzlpNzZZY3BnNHF2aXcxTlpld1NNdDJmR3FOZFJDemNOamp5cFFJeV8zSlhwNXlIblpCS0VuRzBTWEtKaWlZMkZrRk9oWXpKMzFOWm93ZS1n?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 14:26:00 GMT",
+      "timestamp": "2026-08-22T14:26:00.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:6h(+10)",
+        "gigante:universidad de chile(+10)"
+      ]
+    },
+    {
+      "title": "Enorme registro: La tremenda estadística que ilusiona a Colo Colo para el Superclásico - Dale Albo",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxONnhaNkIyQS1ld2NhclQ0MVpJQXBNQ1F5SlNDbGhfUHhIUlEyYTh3NlZwS1pfVFBpazdvVExEZk5jdmpiSFRudkQweWtFQ25sczZUZDFva2tkeWZ5Z253anE2YkxTbTBLQ3FZNXhxQzFCVTdCalpySHpGRktDM2lnOWxCNmdDenN5Y3dLNi1hOU85cHBtdkVfazRkSGwybEdteUhycXliMHRTa3RRcDg1ZkMyZ1NsRGMxd0ZqYlV30gHDAUFVX3lxTE9XdlBqQ2xadGtVYXlBY2NyNnJNMC1WQ3RJUEhzTmhFLUZHcEZkMFpPMTkwazVGdnhnSkRueVVydkNFb2taZk83cDZMcDlxTE5Jby1nalN0XzVZNkFKRkR5ZzZpNXhUb1lscUVKWHhpSlBHWFU0QVJtbnZNN1g3SUlkY1lPOEZ2eGRpanl1ak",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONnhaNkIyQS1ld2NhclQ0MVpJQXBNQ1F5SlNDbGhfUHhIUlEyYTh3NlZwS1pfVFBpazdvVExEZk5jdmpiSFRudkQweWtFQ25sczZUZDFva2tkeWZ5Z253anE2YkxTbTBLQ3FZNXhxQzFCVTdCalpySHpGRktDM2lnOWxCNmdDenN5Y3dLNi1hOU85cHBtdkVfazRkSGwybEdteUhycXliMHRTa3RRcDg1ZkMyZ1NsRGMxd0ZqYlV30gHDAUFVX3lxTE9XdlBqQ2xadGtVYXlBY2NyNnJNMC1WQ3RJUEhzTmhFLUZHcEZkMFpPMTkwazVGdnhnSkRueVVydkNFb2taZk83cDZMcDlxTE5Jby1nalN0XzVZNkFKRkR5ZzZpNXhUb1lscUVKWHhpSlBHWFU0QVJtbnZNN1g3SUlkY1lPOEZ2eGRpanl1akpqVTY5SHV0MWZaU3p3dmpEcmFIamlIZmpGM3ZWMHhTT0tsX25uQTdVb2xiMm5tTGloU211cw?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 13:11:23 GMT",
+      "timestamp": "2026-08-22T13:11:23.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:7h(+10)",
+        "gigante:colo colo(+10)"
+      ]
+    },
     {
       "title": "Colo-Colo cede ante las críticas y anuncia cambio para el esperado regreso de Mirko Jozic - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi8gFBVV95cUxQTkl6ZG9XaUpVckI5MHV3aXJraWo3T2tUMTc1NXZUVVhlY0JkeGlFek5kczZLbV9nLVBFVFJxSG5SdjJPM1d4UUZVLVFpUXJ6WG5ScFM1eVR2NGpsbTl1clRDVEdRVjYyM1RJcHJsNDBaZ3lZVHhEbXNMVTZWNlZVcU11OWFReEdBeGVGMTYwb2VyWkQ5d3gxNnhTaXFFNXZZdTFWT3YtRzdRV25iRk1wNmx3TU5aZ0F3Q1NzUUxkcm0zVzYwMDNlRzY2bGlzYXdfMFQ0UUVYalRDQ3Jpak5SY1RfNXNraXR1VTVfUjdrcWlGZw?oc=5\" target=\"_blank\">Colo-Colo cede ante las críticas y anuncia cambio para el esperado regreso de Mirko Jozic</a>&nbsp;&n",
@@ -772,122 +905,6 @@
       ]
     },
     {
-      "title": "La declaración del técnico de la U sobre el Colo Colo de Fernando Ortiz antes del Superclásico - Dale Albo",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNTHcwcTY1bkZLSkRYZEJNZUNkUnZDZXlkZHhENjEteTcxNEhPdnpTLUYtS3hEeHU3MHpSQWJabFdpMkFxQ0dtazRhRndNTHdzYnNkNzRKejhtSzZCeWlISm9yRzR0aFc4U1FfSlhueTk4TDI0Q0FENlVOeWFoOUFHTVNONXlfNWdkRnBDN3FLdEMwYlNIQmlLQnBZNWwwNmxRMkpVV1ZHRFFIRllBVVZ4ZnVLbGJwQlVSdjdrd1BZV3FuZTI5b0RPYk9B0gHPAUFVX3lxTE01cDZxb2lrcWlnY21PRUdMa0lvV2VaT1BrYk1nY0xsU29FMnc4OG9oU2s4THBKel9Bb21fVEtfNXdWak50a19UUVd5ZFE1UW93aHdBeHRaYnBDaGVmRkFiS3pKcFg5dWdDa0RhbEdrZ25IVTgxSk1nLXBoYU02d0o0dG",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNTHcwcTY1bkZLSkRYZEJNZUNkUnZDZXlkZHhENjEteTcxNEhPdnpTLUYtS3hEeHU3MHpSQWJabFdpMkFxQ0dtazRhRndNTHdzYnNkNzRKejhtSzZCeWlISm9yRzR0aFc4U1FfSlhueTk4TDI0Q0FENlVOeWFoOUFHTVNONXlfNWdkRnBDN3FLdEMwYlNIQmlLQnBZNWwwNmxRMkpVV1ZHRFFIRllBVVZ4ZnVLbGJwQlVSdjdrd1BZV3FuZTI5b0RPYk9B0gHPAUFVX3lxTE01cDZxb2lrcWlnY21PRUdMa0lvV2VaT1BrYk1nY0xsU29FMnc4OG9oU2s4THBKel9Bb21fVEtfNXdWak50a19UUVd5ZFE1UW93aHdBeHRaYnBDaGVmRkFiS3pKcFg5dWdDa0RhbEdrZ25IVTgxSk1nLXBoYU02d0o0dG1jNTJaWDVJQWhjRlNFTkxQNEJyN193dFpIbjRZZ3M4R2RQS3IyNkF0dk1ZZUxMUExickpZZHltOW5CVzVWcUYxLU5KdUtvWmhKVUlBcw?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 19:29:48 GMT",
-      "timestamp": "2026-08-19T19:29:48.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:17h(+5)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "La decisión que golpea a Colo Colo de cara al Superclásico: decisión final - AS Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQVXVPQVBZYWZZdHc4dkxCY3NJNVFKbUIwOWZXaUIydDZIMGpKWk5aazkxUk52d2E3WEQ0QkpiY190VDhMYXB4cjNLTUxfaG5yLWtmeXVNUHY4cXh0TXBpQmdnNWNPMzBBck0xbXVwZG5UN1ZjU0J4U0FvazFIMWN4RUduc25UN0tNZzlsMVdSN2RlV0o5a21FRk0zVktGQnoydjM4TzV4bjhTa3BJd09GZ1FR0gHGAUFVX3lxTE5QY1A2b0FRb2JoY1gtcXctYWl1YTJ2eXVlbExzb0VqeXNSbEVsWnlKQktWbGpGQ1c3VTFDRTlqdkJPQm91Z1JvREdzd3otQk5BNlFfVGFOTEJER0E1aFlaU2hOaHp0Ry00X0hpaVE5TzNaZFdDNklwU3FiMXVlbEljRmRoY1VYMlJmc1JkVjNEVVdnd1F2MWtxbU",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVXVPQVBZYWZZdHc4dkxCY3NJNVFKbUIwOWZXaUIydDZIMGpKWk5aazkxUk52d2E3WEQ0QkpiY190VDhMYXB4cjNLTUxfaG5yLWtmeXVNUHY4cXh0TXBpQmdnNWNPMzBBck0xbXVwZG5UN1ZjU0J4U0FvazFIMWN4RUduc25UN0tNZzlsMVdSN2RlV0o5a21FRk0zVktGQnoydjM4TzV4bjhTa3BJd09GZ1FR0gHGAUFVX3lxTE5QY1A2b0FRb2JoY1gtcXctYWl1YTJ2eXVlbExzb0VqeXNSbEVsWnlKQktWbGpGQ1c3VTFDRTlqdkJPQm91Z1JvREdzd3otQk5BNlFfVGFOTEJER0E1aFlaU2hOaHp0Ry00X0hpaVE5TzNaZFdDNklwU3FiMXVlbEljRmRoY1VYMlJmc1JkVjNEVVdnd1F2MWtxbU9idzhxOGlUR1R6NlRlU2RtcGpQT09nZ2t4T2J2T2VFUllQSndJNWZQNUlmZw?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 19:16:59 GMT",
-      "timestamp": "2026-08-19T19:16:59.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:7h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "senal:\\b(clasific|eliminad(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "¿Es Universidad de Chile vs. Colo Colo el VERDADERO CLÁSICO del fútbol chileno? - TVN",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxQdGtzTU56WkxDSDM0cEVianVIdUVVSEEtb0tJNjgzODRRNFFZWkpJUE1mUUV0TWlzU3FNX0lnWDZhX2UtLWFlNDVKZnl1dnpkZFlkci1tQ09xZkdMZGx5TW55V3BKTnE1Q3doeG8yWGVuQ0lES0ZmNGFlUTI2cVp0Rl93cDhOZGJKbGZwZmhiSHpaY2dkNk54Y3ZRZVFmT3Q2b0YwZdIBqgFBVV95cUxQNDFpNUlENXBSOFUyUkpKZjZxa0FiVmZ5d25iUmdoWFhFMGk4ZGFBb0RtdmxzZXVIWjVYZDFYRGFnNjBHZlVuOHJqd1pZUkhMemd5QzR4bldQNURPVUJxMFRPMFJkUHFNR2R5aFlnNVlRTEVfMmVack90Q3U1WVV4UDUzOUxsZk56bWxHWVlySmd6OTJsRWtSUXBrS3E4ZDNBVTJTVmNMcl",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdGtzTU56WkxDSDM0cEVianVIdUVVSEEtb0tJNjgzODRRNFFZWkpJUE1mUUV0TWlzU3FNX0lnWDZhX2UtLWFlNDVKZnl1dnpkZFlkci1tQ09xZkdMZGx5TW55V3BKTnE1Q3doeG8yWGVuQ0lES0ZmNGFlUTI2cVp0Rl93cDhOZGJKbGZwZmhiSHpaY2dkNk54Y3ZRZVFmT3Q2b0YwZdIBqgFBVV95cUxQNDFpNUlENXBSOFUyUkpKZjZxa0FiVmZ5d25iUmdoWFhFMGk4ZGFBb0RtdmxzZXVIWjVYZDFYRGFnNjBHZlVuOHJqd1pZUkhMemd5QzR4bldQNURPVUJxMFRPMFJkUHFNR2R5aFlnNVlRTEVfMmVack90Q3U1WVV4UDUzOUxsZk56bWxHWVlySmd6OTJsRWtSUXBrS3E4ZDNBVTJTVmNMcldhQQ?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 18:41:00 GMT",
-      "timestamp": "2026-08-19T18:41:00.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Universidad de Chile",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:8h(+10)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Vidal fijo en Colo Colo: El nuevo XI que probó Ortiz - PrensaFútbol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1wbURkbUN5TzI5SlNaa3JZVnNhRGkxNVd4U2JXQ29vRWh6ZlVDRl9qZTkwQ0tOT2RTOEo4VV9CMXhBVnUtekwyS3g2WFc3WkphMm1vcW4waVVydUtmY216VE9va0dQdnFSOUV1VU1vdkFsa0VIV3lsVHJnbw?oc=5\" target=\"_blank\">Vidal fijo en Colo Colo: El nuevo XI que probó Ortiz</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1wbURkbUN5TzI5SlNaa3JZVnNhRGkxNVd4U2JXQ29vRWh6ZlVDRl9qZTkwQ0tOT2RTOEo4VV9CMXhBVnUtekwyS3g2WFc3WkphMm1vcW4waVVydUtmY216VE9va0dQdnFSOUV1VU1vdkFsa0VIV3lsVHJnbw?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 18:27:04 GMT",
-      "timestamp": "2026-08-19T18:27:04.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:8h(+10)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Club del fútbol chileno sufre resta de puntos y cae en la tabla: sentencia definitiva de la ANFP - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxPeTlEUjNkeENSNEhacTRkREtOZjNDdHJTclJJN2VnZU81RUt1WERNMU5kZFVnSzRpeS1zM2MyM2NTSkFGeVpMWGJsbkpsM3FBc2VrdW1oQURoNzd3T1p1VERPYlNMMURLOV9TcHB4UkQtRmQ3Y1NRekhmZURlbDc4QXZTNmZ3NW00QlYtdjVPQlJKN1lwN0MyUHNPY0QxRm9ZdE9KTWxxZ1k4eU53dFowZFFlYTg0YjZUai0zNFhNZ3h6NENjSE4xTWVjUHZ3YUXSAeMBQVVfeXFMTTUtOEo2WHg4TUZXQ0RkdDNyaTE3dzhiY1NjU0x0b0VZRE9lbHllUkpIVlJjX3pPSmZJNl9tODlIbVF5YUVBQi0yb0RMbDBYckxqSERrNDd6RTRwUG15VWZ5dzJnaUU1aDkyS1NMeTBzSEYzY1R0V2dSSnUxbk",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeTlEUjNkeENSNEhacTRkREtOZjNDdHJTclJJN2VnZU81RUt1WERNMU5kZFVnSzRpeS1zM2MyM2NTSkFGeVpMWGJsbkpsM3FBc2VrdW1oQURoNzd3T1p1VERPYlNMMURLOV9TcHB4UkQtRmQ3Y1NRekhmZURlbDc4QXZTNmZ3NW00QlYtdjVPQlJKN1lwN0MyUHNPY0QxRm9ZdE9KTWxxZ1k4eU53dFowZFFlYTg0YjZUai0zNFhNZ3h6NENjSE4xTWVjUHZ3YUXSAeMBQVVfeXFMTTUtOEo2WHg4TUZXQ0RkdDNyaTE3dzhiY1NjU0x0b0VZRE9lbHllUkpIVlJjX3pPSmZJNl9tODlIbVF5YUVBQi0yb0RMbDBYckxqSERrNDd6RTRwUG15VWZ5dzJnaUU1aDkyS1NMeTBzSEYzY1R0V2dSSnUxbkRqNW95RG1aMTJJZGN0aHdhbXVZaUlEYnZwQ3pMWklOOU9ZaGs1ejd1TWJfa3I4dDdtMkJXcDQxN04zU2pzcHY5MHhDQU5adHJkS3NaVkpFQkdPOVNJLTV4NkdyZURYSDBmWWRFVjg?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 17:40:10 GMT",
-      "timestamp": "2026-08-19T17:40:10.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": null,
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:9h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
-      "title": "Dejó Colo Colo y se sumó a Santiago Wanderers: \"Llamó la atención ya que mide 1,92 metros\" - TVN",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQZFZCVHpJenpHWHJQWGowQlJ1V1VoQktoQ2FCd01GNTExNEg1V1JmQW94Wkh3YVBiYVFDQmFRLWFpTHUzS3c5a0dwX2VsV3Jvd0N4b1VfaXAyd2c3Z3h1eGdpa2xJYTVGQjYtRDJyV3ZPUno1UDVVSnJMdTJKQzd4YkI0U08xNzlnMVRtX0J0dGlvZjRMZ0t6UEpLZ9IBoAFBVV95cUxNdGxuZ3h5WWNIQjNxXy10NFlhRG13R1NBNW5oZVBOcnNVVFIwTjlhX0pGRGxVMnpVNWpmVlhZRkNrSnRKRkYzeUdHUWVYTVh4ODlLRVNWOWRwS0s0aDZIWkhEX25JOEVJU0wzTWFWdlpnRlZoQno5eDhMaGdIdHpIdFd6a21VS3RmVm5NSThfVHpLaVU0N1hkQU5RVHJSN1Nx?oc=5\" target=\"_blank\"",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZFZCVHpJenpHWHJQWGowQlJ1V1VoQktoQ2FCd01GNTExNEg1V1JmQW94Wkh3YVBiYVFDQmFRLWFpTHUzS3c5a0dwX2VsV3Jvd0N4b1VfaXAyd2c3Z3h1eGdpa2xJYTVGQjYtRDJyV3ZPUno1UDVVSnJMdTJKQzd4YkI0U08xNzlnMVRtX0J0dGlvZjRMZ0t6UEpLZ9IBoAFBVV95cUxNdGxuZ3h5WWNIQjNxXy10NFlhRG13R1NBNW5oZVBOcnNVVFIwTjlhX0pGRGxVMnpVNWpmVlhZRkNrSnRKRkYzeUdHUWVYTVh4ODlLRVNWOWRwS0s0aDZIWkhEX25JOEVJU0wzTWFWdlpnRlZoQno5eDhMaGdIdHpIdFd6a21VS3RmVm5NSThfVHpLaVU0N1hkQU5RVHJSN1Nx?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 12:55:00 GMT",
-      "timestamp": "2026-08-19T12:55:00.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:13h(+5)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
       "title": "Vozinha, la gran novedad de Colo-Colo para el Superclásico ante la U - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxQbXc4MFlkMXRhZ3ZtbUV4VnV1c1ZtbUlkZnp1aFNUUHh1NHJxd0JZd2YzSV9fMXBxZnZXcU4xYUtuYXk5cG5DeWdxZ292cjdqSEk5dXRRbHNDTmplNGdRUEd3bjloQlJuQ1AwcUZVOU5wT0x5YXhMaHpQR0hsN1VfVzZjWS1VOGF3LTh5QWtnY25sV0pzdms4cFNQT0JjZ2hpaFk5MVdIdXVfclR6RVhmQTFZNkRZSWozTW5xbHQ0ejZzczhERkxQUlUzMlE1b2U4ME1MeA?oc=5\" target=\"_blank\">Vozinha, la gran novedad de Colo-Colo para el Superclásico ante la U</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En Cancha</font>",
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQbXc4MFlkMXRhZ3ZtbUV4VnV1c1ZtbUlkZnp1aFNUUHh1NHJxd0JZd2YzSV9fMXBxZnZXcU4xYUtuYXk5cG5DeWdxZ292cjdqSEk5dXRRbHNDTmplNGdRUEd3bjloQlJuQ1AwcUZVOU5wT0x5YXhMaHpQR0hsN1VfVzZjWS1VOGF3LTh5QWtnY25sV0pzdms4cFNQT0JjZ2hpaFk5MVdIdXVfclR6RVhmQTFZNkRZSWozTW5xbHQ0ejZzczhERkxQUlUzMlE1b2U4ME1MeA?oc=5",
@@ -904,6 +921,44 @@
         "categoria:colo_colo(+60)",
         "frescura:23h(+5)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "\"Le tiene que haber afectado la llegada de Vozinha\": Abordan la baja de rendimiento de Gabriel Maureira en Colo-Colo - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMigAJBVV95cUxOelJObGlYVmNlb2ZmOVVHR19zQlEwWDl3ckZoU0l2UDZqR1RBcEl1ZjByd0RVSmZCVmNVUzhzbEQtdVVmbWJlcWxJUTE0V1M0d0dlallTTU83OGVaTDNLazBNLWIxUmVuaDZrQkZURVpYSlJwVEV5NGdLYzNJTng5STRvbE1RMHhuek1iUzBpZG50ME44a0NKeF9FWVhmU3Zxb1B0Ui01VHVyYlp3TDdaVWhlVy1HNVdsUE1ZSFRZWkpsbWZoRUtWZm1SVFFfcFgycTdvNTQ2Vm84YTdQcGFESUU4M1B1TjIzUjhpZ1pRdE1RRkNWd0hzZWNSNy1tSkla?oc=5\" target=\"_blank\">\"Le tiene que haber afectado la llegada de Vozinha\": Abordan la baja de rendimiento",
+      "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOelJObGlYVmNlb2ZmOVVHR19zQlEwWDl3ckZoU0l2UDZqR1RBcEl1ZjByd0RVSmZCVmNVUzhzbEQtdVVmbWJlcWxJUTE0V1M0d0dlallTTU83OGVaTDNLazBNLWIxUmVuaDZrQkZURVpYSlJwVEV5NGdLYzNJTng5STRvbE1RMHhuek1iUzBpZG50ME44a0NKeF9FWVhmU3Zxb1B0Ui01VHVyYlp3TDdaVWhlVy1HNVdsUE1ZSFRZWkpsbWZoRUtWZm1SVFFfcFgycTdvNTQ2Vm84YTdQcGFESUU4M1B1TjIzUjhpZ1pRdE1RRkNWd0hzZWNSNy1tSkla?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 00:44:46 GMT",
+      "timestamp": "2026-08-22T00:44:46.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 96,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:20h(+5)",
+        "senal:\\b(lesion|baja|desca(+6)"
+      ]
+    },
+    {
+      "title": "Diez bombos (uno en Andes), un tifo de Star Wars con jugadores, una grúa y más: el plan de la U para recibir a Colo Colo - La Tercera",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi9gFBVV95cUxNUWM1eS1HSjNLZFdZbE9XaTgzZ19vOHNZNGx6RS16VEJLNFZxTVRGMnpUc01TSWthYnZyTWU3bUVqYko5c1hYZjNhM29pbk13Q0FBekg0Y0NuQTVkZ1JTY2V3N1Bmb2YyMzByd0ktMzBSSkJ1UXhxMmh3bm5DT0U5bmF0dm9fejZ6dEdOWnRnOC1DZlhUS2lhaFc2V280QnVmMHU1SC1takVnVHhhR0lFb1dFT0ZVd2VvdXFHdmFHWGUzejRXY1lLWWZ3azF3dnEwYlNiUVhfZHFJRTl6UDl2U3E3ekhvck9Ca3JQM01TaHZWRENhYmfSAZcCQVVfeXFMTWFKWUVtc0tlcWo2TVFnTUVJbVhRMzRlWjJJQmxFenpFT3lZY1BJMWFDVUxBa0hJRWNuRnlnV0dmaGljMG93WGZRTEFDU3lyallqM0tHcn",
+      "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNUWM1eS1HSjNLZFdZbE9XaTgzZ19vOHNZNGx6RS16VEJLNFZxTVRGMnpUc01TSWthYnZyTWU3bUVqYko5c1hYZjNhM29pbk13Q0FBekg0Y0NuQTVkZ1JTY2V3N1Bmb2YyMzByd0ktMzBSSkJ1UXhxMmh3bm5DT0U5bmF0dm9fejZ6dEdOWnRnOC1DZlhUS2lhaFc2V280QnVmMHU1SC1takVnVHhhR0lFb1dFT0ZVd2VvdXFHdmFHWGUzejRXY1lLWWZ3azF3dnEwYlNiUVhfZHFJRTl6UDl2U3E3ekhvck9Ca3JQM01TaHZWRENhYmfSAZcCQVVfeXFMTWFKWUVtc0tlcWo2TVFnTUVJbVhRMzRlWjJJQmxFenpFT3lZY1BJMWFDVUxBa0hJRWNuRnlnV0dmaGljMG93WGZRTEFDU3lyallqM0tHcnIyM1dXcWVXZG5Gdm5tVE00WjE3cF80RVFGOU5fbHp3aDhrZHhwSDBrcUQyQ3RQRG50NHAyUWRZakFoVTU0S0FpVWF2U285NWVOei1MeUNQb25IX3h5M0gwREV1cWpmcTJvSDA5OVdJRFNKTE5ESnhOakZza1c3d3JxZHZaSEw3SXlHc3NjdkY5SzlQSzBSekVrUXpqbnFMZHdCRXlmaDRSVzV4WlZNWlFlaHJVMTJLX216Qm9qNE1GOVVrN18yam9n?oc=5",
+      "pubDate": "Fri, 21 Aug 2026 17:30:00 GMT",
+      "timestamp": "2026-08-21T17:30:00.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 95,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:27h(+0)",
+        "gigante:colo colo(+10)"
       ]
     },
     {
@@ -1054,6 +1109,25 @@
         "frescura:7h(+10)",
         "senal:\\b(fichaje|traspaso|(+10)",
         "senal:\\b\\d+\\s*(goles|millo(+6)"
+      ]
+    },
+    {
+      "title": "Pronósticos Universidad de Chile vs Colo Colo: un Superclásico imperdible entre el líder y el escolta - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxQTThTaXNzbHJwQkltd1RwR3hjUU9kdWZIU0VuaFhUZUtvVVpSX1BaQnNmaVdwb0pMZlJjRDdRX05CS3dEMlJQQXJheGNNOERoSFEyM2JYbnEwQTI0ODdMbEhpNHpzVk1NT2ZNN2VkaXBzN3NVR3dOM21XNlFzSmlldVk1ZFZwa09GTFYwOVVQVUFBRUhKNTEzRDM3N0JqZlZR?oc=5\" target=\"_blank\">Pronósticos Universidad de Chile vs Colo Colo: un Superclásico imperdible entre el líder y el escolta</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">RedGol</font>",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTThTaXNzbHJwQkltd1RwR3hjUU9kdWZIU0VuaFhUZUtvVVpSX1BaQnNmaVdwb0pMZlJjRDdRX05CS3dEMlJQQXJheGNNOERoSFEyM2JYbnEwQTI0ODdMbEhpNHpzVk1NT2ZNN2VkaXBzN3NVR3dOM21XNlFzSmlldVk1ZFZwa09GTFYwOVVQVUFBRUhKNTEzRDM3N0JqZlZR?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 19:00:00 GMT",
+      "timestamp": "2026-08-22T19:00:00.000Z",
+      "fuente": "Google News — Liga de Primera",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 90,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)",
+        "gigante:colo colo(+10)"
       ]
     },
     {
@@ -1209,25 +1283,6 @@
       ]
     },
     {
-      "title": "¿Se va antes de jugar contra Colo Colo? Fernando Gago habla del futuro de Lucas Assadi - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOdXZ1am5TS1RLZlVMdk9sREpWZHpEcWlxQ2p0QVV5eTZqUE14VXE1WTlIOE1xOHdHTW1iQTQtUDlDT1I2dHI4b0FXNDZKeFdnUGowUGpPdENQTWdxSk13MVd5a0Z0bHNodzhfb3NWY0J5UEQ2MnpCaW9NRllyVm5qQUNMblJndkJCZ1lROHk3VGpmZm1lVnpKcHhfUmxweHVvdmhFN0JPUTNKMUxQeGtSTUF2bw?oc=5\" target=\"_blank\">¿Se va antes de jugar contra Colo Colo? Fernando Gago habla del futuro de Lucas Assadi</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">RedGol</font>",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOdXZ1am5TS1RLZlVMdk9sREpWZHpEcWlxQ2p0QVV5eTZqUE14VXE1WTlIOE1xOHdHTW1iQTQtUDlDT1I2dHI4b0FXNDZKeFdnUGowUGpPdENQTWdxSk13MVd5a0Z0bHNodzhfb3NWY0J5UEQ2MnpCaW9NRllyVm5qQUNMblJndkJCZ1lROHk3VGpmZm1lVnpKcHhfUmxweHVvdmhFN0JPUTNKMUxQeGtSTUF2bw?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 20:14:41 GMT",
-      "timestamp": "2026-08-19T20:14:41.000Z",
-      "fuente": "Google News — Liga de Primera",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 90,
-      "categoria": "chile",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 85,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:6h(+10)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
       "title": "Audax Italiano y Unión La Calera reparten puntos: así queda la tabla de la Liga de Primera - bolavip.com",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQRnBaX1puOExzQ0xVOUF1MFFiZDlxeVBIT0VTaXU1RXFjUmUyR1RPVlpHQlNjQ0E2ZTRpUEViMnZmVUhVTmVVcy1VTDM3QV8tZkNyMkMyZVJrcU1nR2NKOEphMExfSGtqbzU3YUoxZ25mZm1ZanlENkpyUldQemhZanlFVml4VmtwMTUtanZjcjNQbGFTdkVJTmdFN1NkOFVHQ0g2cV9hbW1GaHN2XzhTZkU2QjVCQVJ5WG40X1VR0gHDAUFVX3lxTFBsYjdIbFZuWkFta3JKTGNBSzkwWUpiUTk3MjFpSWY3ekNRa0tJX0lEOHNIcDgzTDU3c0h0ZnV6SVZhUHM1d0dMbkl3dENLYXdtMWVBRnN4UERxQXlVbFhrLVJSTTRta21kS0gxajc3TFFhVTM4NUMyYWZ4clFmWmxJQlRENEh1QnVrdEpJRz",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQRnBaX1puOExzQ0xVOUF1MFFiZDlxeVBIT0VTaXU1RXFjUmUyR1RPVlpHQlNjQ0E2ZTRpUEViMnZmVUhVTmVVcy1VTDM3QV8tZkNyMkMyZVJrcU1nR2NKOEphMExfSGtqbzU3YUoxZ25mZm1ZanlENkpyUldQemhZanlFVml4VmtwMTUtanZjcjNQbGFTdkVJTmdFN1NkOFVHQ0g2cV9hbW1GaHN2XzhTZkU2QjVCQVJ5WG40X1VR0gHDAUFVX3lxTFBsYjdIbFZuWkFta3JKTGNBSzkwWUpiUTk3MjFpSWY3ekNRa0tJX0lEOHNIcDgzTDU3c0h0ZnV6SVZhUHM1d0dMbkl3dENLYXdtMWVBRnN4UERxQXlVbFhrLVJSTTRta21kS0gxajc3TFFhVTM4NUMyYWZ4clFmWmxJQlRENEh1QnVrdEpJRzljenZlX2RzMFJjYk1rdVlueXc0S2ZGdTFZMkp1ektCVHJmeXZzYk1HSTZxSkhBTFluQnZqaw?oc=5",
@@ -1282,6 +1337,42 @@
         "categoria:chile(+40)",
         "frescura:8h(+10)",
         "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
+    {
+      "title": "Así va la TABLA DE POSICIONES de la Liga de Primera 2026 - Teletrece",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxQcHFMZTdjRmItdndBcUtTbTJkdk1YUFowWl9VQ19YNURYOXRucFFEMmxXeTJ0V25tTExfcUZuTVJqN051cXppbnVsdUw2RGttcjRRWGY0R1FJd3dmaWNiQUFiX0NOSHNQS1hqSnd2c0JzX3N4MmEzN05aaXVENk9EWmpvQ0xRSWJ2bXU4ZtIBjAFBVV95cUxQcHFMZTdjRmItdndBcUtTbTJkdk1YUFowWl9VQ19YNURYOXRucFFEMmxXeTJ0V25tTExfcUZuTVJqN051cXppbnVsdUw2RGttcjRRWGY0R1FJd3dmaWNiQUFiX0NOSHNQS1hqSnd2c0JzX3N4MmEzN05aaXVENk9EWmpvQ0xRSWJ2bXU4Zg?oc=5\" target=\"_blank\">Así va la TABLA DE POSICIONES de la Liga de P",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQcHFMZTdjRmItdndBcUtTbTJkdk1YUFowWl9VQ19YNURYOXRucFFEMmxXeTJ0V25tTExfcUZuTVJqN051cXppbnVsdUw2RGttcjRRWGY0R1FJd3dmaWNiQUFiX0NOSHNQS1hqSnd2c0JzX3N4MmEzN05aaXVENk9EWmpvQ0xRSWJ2bXU4ZtIBjAFBVV95cUxQcHFMZTdjRmItdndBcUtTbTJkdk1YUFowWl9VQ19YNURYOXRucFFEMmxXeTJ0V25tTExfcUZuTVJqN051cXppbnVsdUw2RGttcjRRWGY0R1FJd3dmaWNiQUFiX0NOSHNQS1hqSnd2c0JzX3N4MmEzN05aaXVENk9EWmpvQ0xRSWJ2bXU4Zg?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 19:00:00 GMT",
+      "timestamp": "2026-08-22T19:00:00.000Z",
+      "fuente": "Google News — Liga de Primera",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)"
+      ]
+    },
+    {
+      "title": "Pronóstico U. de Chile vs Colo-Colo de la Liga de Primera - sabes.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxQYmpOTGwxdWpMZzllcC1zaWxCWXBmR1FZa0xUMHdfaXZCdFJHTXNFWk5jVlB3anQ5OFpmMU1FUEtLSEYzYU9MVnAwS1dISDB5VzBQWVN5QmdZeDN5aDBEMGZVSUVYbS1RckFZUWMySUlRQ0pRc1lKRmRzdmxySVJvNU4zMDJvejF0WnJnNmV3?oc=5\" target=\"_blank\">Pronóstico U. de Chile vs Colo-Colo de la Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">sabes.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQYmpOTGwxdWpMZzllcC1zaWxCWXBmR1FZa0xUMHdfaXZCdFJHTXNFWk5jVlB3anQ5OFpmMU1FUEtLSEYzYU9MVnAwS1dISDB5VzBQWVN5QmdZeDN5aDBEMGZVSUVYbS1RckFZUWMySUlRQ0pRc1lKRmRzdmxySVJvNU4zMDJvejF0WnJnNmV3?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 18:39:51 GMT",
+      "timestamp": "2026-08-22T18:39:51.000Z",
+      "fuente": "Google News — Liga de Primera",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)"
       ]
     },
     {
@@ -1400,6 +1491,25 @@
       ]
     },
     {
+      "title": "Canal 13 anuncia el partido del fútbol chileno que va gratis esta semana en TV abierta: a qué hora es, fecha y - AS Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxQdGxBU2hNcndGTWlUV3Z6WFlLN2JBN1Z4d2txdkFNdTcxN3owZVFiQkowcGtUVVZKaUptOWhZUG5WWnRJSGJZS0UtM2tnWjJrTGJJNlVNZXo1WUFEcGc4a0Z5Qi16MkVoZDR4Ujg1VWNIMTNGMDlqd2hmOEJ3RUhfWjBhYTl1YzdGdTh3YTduQjl5SHJSVk0yenhQZGlFM3g2SV9zT3VKVVlaZ0hRamFkOUx0aURORzRwR0ZrUXRYR01xQjRCYkF2TUd4Y0tNSnNzWTdsN2UweFJQM2VTMXA0MGI0OEdTQ3pycTkySzV30gGCAkFVX3lxTFBaM0RIUlR3RmlfbWVzQjZkS1BuV3VULUd0S0NSMmt1QnFBLXpUdDRpTkpvQ3FHVVlUU3JnbUNYNERHVFZkVnBVaWowUVRZNWYxczZJQkM4TW1oVmFpbm",
+      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQdGxBU2hNcndGTWlUV3Z6WFlLN2JBN1Z4d2txdkFNdTcxN3owZVFiQkowcGtUVVZKaUptOWhZUG5WWnRJSGJZS0UtM2tnWjJrTGJJNlVNZXo1WUFEcGc4a0Z5Qi16MkVoZDR4Ujg1VWNIMTNGMDlqd2hmOEJ3RUhfWjBhYTl1YzdGdTh3YTduQjl5SHJSVk0yenhQZGlFM3g2SV9zT3VKVVlaZ0hRamFkOUx0aURORzRwR0ZrUXRYR01xQjRCYkF2TUd4Y0tNSnNzWTdsN2UweFJQM2VTMXA0MGI0OEdTQ3pycTkySzV30gGCAkFVX3lxTFBaM0RIUlR3RmlfbWVzQjZkS1BuV3VULUd0S0NSMmt1QnFBLXpUdDRpTkpvQ3FHVVlUU3JnbUNYNERHVFZkVnBVaWowUVRZNWYxczZJQkM4TW1oVmFpbmZMVDV3RHVrdlJucXdtTTdDeGU4TXRJTk1kVk9RdU9idTVYdzBuNEdsYjlwNEFia0VPWjlGUlR3ajc1Uk5QRGtyTVZyX0lCeXBfM2gtcG5sOTR1WHppQThBRWgzT0ltTTN6MjB2V1FVVFAzVDlhVWVTZXNSYl9BU2ZwcEtYZlZZMGdrcFNJQ0tLQUVuaHk1dkJrVDZ6aHRiMDJmRHU4Y2o1Um9yUQ?oc=5",
+      "pubDate": "Thu, 20 Aug 2026 20:41:46 GMT",
+      "timestamp": "2026-08-20T20:41:46.000Z",
+      "fuente": "Google News — Liga de Primera",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 77,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:48h(+0)",
+        "senal:\\b(oficial|confirmad(+12)"
+      ]
+    },
+    {
       "title": "Audax y Unión La Calera igualaron en opaco duelo de La Liga de Primera - BioBioChile",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOODNjTXQzbVE0Tk9KY2Mwb25kTndhc0xfQmh2NTVjTnA5R21USU82ZjY3ZXNJMnRGREpOb0dpZDVtdDVyQnJ1Wm81eU83RW44bUxyanZYT0tjazNhNnIzVkZCSEg5MzVvemtNTjJVQWhKOGVmTzU4cTFGNlhNRWk0VFlxeFNZWEdsNng0dnNYZDVldE52Mm5nS3dWeEVPQW1wNGJKTF9id0JZejNJNThCeHdnWFZwaVlaY2E4?oc=5\" target=\"_blank\">Audax y Unión La Calera igualaron en opaco duelo de La Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">BioBioChile</font>",
       "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOODNjTXQzbVE0Tk9KY2Mwb25kTndhc0xfQmh2NTVjTnA5R21USU82ZjY3ZXNJMnRGREpOb0dpZDVtdDVyQnJ1Wm81eU83RW44bUxyanZYT0tjazNhNnIzVkZCSEg5MzVvemtNTjJVQWhKOGVmTzU4cTFGNlhNRWk0VFlxeFNZWEdsNng0dnNYZDVldE52Mm5nS3dWeEVPQW1wNGJKTF9id0JZejNJNThCeHdnWFZwaVlaY2E4?oc=5",
@@ -1492,39 +1602,22 @@
       ]
     },
     {
-      "title": "Kike Acuña dice lo que muchos hinchas de Católica piensan tras el adiós en la Libertadores: “Es inalcanzable” - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxOM0NTV1BnVklOckdFdDFLSE9ZVXNrVEh4TzRTRDIxdkdNOUN1bG94MTZ5NVZpSFUxcVJxRm1vWGZqUENmeE0wYlEtY0U3dkVVQlo0Unp0c3d5NlVzaS1lUWc4bUp1cWxCRlVlTWE1SjFlM3lIQ1FMcXd5djlRWWItaVM1dmxLYktQLWpxTFgtWGVtUGszNUVXeHpn0gGfAUFVX3lxTE9nN3VFbmdGOEYwUFRBNHMtZkZWZkt1M21QaWtEYjdsazMwQTIzYndMV0JGY2tTSWtRbm1fNkk4SDBkOEc0SXhOQ2FiN2RfbHNrQjRRc05UQmlKbVpBVU1TMGtPNmNhY3dpVDFJdF9WOGFEYWF0R3FwU19SZ2xERmU3TEJzOURGYTQxR3NfNzdGMjhYRUZMV01xQmxBUThUSQ?oc=5\" target=\"_blank\">K",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOM0NTV1BnVklOckdFdDFLSE9ZVXNrVEh4TzRTRDIxdkdNOUN1bG94MTZ5NVZpSFUxcVJxRm1vWGZqUENmeE0wYlEtY0U3dkVVQlo0Unp0c3d5NlVzaS1lUWc4bUp1cWxCRlVlTWE1SjFlM3lIQ1FMcXd5djlRWWItaVM1dmxLYktQLWpxTFgtWGVtUGszNUVXeHpn0gGfAUFVX3lxTE9nN3VFbmdGOEYwUFRBNHMtZkZWZkt1M21QaWtEYjdsazMwQTIzYndMV0JGY2tTSWtRbm1fNkk4SDBkOEc0SXhOQ2FiN2RfbHNrQjRRc05UQmlKbVpBVU1TMGtPNmNhY3dpVDFJdF9WOGFEYWF0R3FwU19SZ2xERmU3TEJzOURGYTQxR3NfNzdGMjhYRUZMV01xQmxBUThUSQ?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 19:28:19 GMT",
-      "timestamp": "2026-08-19T19:28:19.000Z",
+      "title": "U. Católica vs Ñublense: Dónde ver EN VIVO y ONLINE partido por Liga de Primera - Chilevisión",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQcUxuV2JwdS1UNDVHQVZ1VlRUbzdpS3lCeVVZYjN4UHJVTTlLcS1aSVJJdFNWZmMySXhYVnRTZ0psUW1OYlI1MkpFN1QxSy10WmxjTUxiU0Y2ems2SmctQTZlTTVhdTlnTWx0c3BQUS11bVR4UE1TR1lKRFRNUVVwSGJWUFY2SEpYYk5TYlRkWjIyYlQySXdXdWp6UGxMakc0YTQwRmNBdmJpcUFNUlMzWm1jLUpoVkE5NEtLRFFSdkFsN2R5Tlc3bmZaYmVEZw?oc=5\" target=\"_blank\">U. Católica vs Ñublense: Dónde ver EN VIVO y ONLINE partido por Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Chilevisión</font>",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQcUxuV2JwdS1UNDVHQVZ1VlRUbzdpS3lCeVVZYjN4UHJVTTlLcS1aSVJJdFNWZmMySXhYVnRTZ0psUW1OYlI1MkpFN1QxSy10WmxjTUxiU0Y2ems2SmctQTZlTTVhdTlnTWx0c3BQUS11bVR4UE1TR1lKRFRNUVVwSGJWUFY2SEpYYk5TYlRkWjIyYlQySXdXdWp6UGxMakc0YTQwRmNBdmJpcUFNUlMzWm1jLUpoVkE5NEtLRFFSdkFsN2R5Tlc3bmZaYmVEZw?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 16:57:32 GMT",
+      "timestamp": "2026-08-22T16:57:32.000Z",
       "fuente": "Google News — Liga de Primera",
       "fuente_host": "news.google.com",
       "categoria_feed": "chile",
       "prioridad_fuente": 90,
       "categoria": "chile",
       "equipo_chile": "Universidad Católica",
-      "viral_score": 75,
+      "viral_score": 67,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:7h(+10)"
-      ]
-    },
-    {
-      "title": "Terremoto en el fútbol chileno: elenco sufre la resta de puntos y remece toda la tabla - bolavip.com",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPT1JsMHNmRjZmNVFYaVdKMmE0UFAzZGlpTGpwNDZWc200TDZQRU82dGhaelFkTzVIR3R5aGJKbElGTzRVemRyNTJwcjluOU42MTV1WFZod05xeTlRRWN6d09sT1BlTDRKNmtYSzR4LXl2WERWWjRqOUpkUFVscDF0WXhmeHBsU3gyOU5hV2dWNU1aV1M5cHpxU3lXMmpyd283akJTQ0RTSnVrOWhST2Nka2ZpWW1PZ2FkbUHSAb8BQVVfeXFMT1pMTHFWZ0IzbnRGMHB4Unl0N0hFODd6VURUcEw4eXpFa1NkTHJQVXlYT1RjWnI4b0d0S2E0cXFHUk5tdExYQ3pyVGtJQXV1SGF2Q3FZLXJ0cF9XMDFkcjBoaGtMRDNZWHB1TEVHXzF4WjZnZ2FxeDlqaXVBNzJBc2NGc0FsZDhCOVNCM1BTVUU4RW",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPT1JsMHNmRjZmNVFYaVdKMmE0UFAzZGlpTGpwNDZWc200TDZQRU82dGhaelFkTzVIR3R5aGJKbElGTzRVemRyNTJwcjluOU42MTV1WFZod05xeTlRRWN6d09sT1BlTDRKNmtYSzR4LXl2WERWWjRqOUpkUFVscDF0WXhmeHBsU3gyOU5hV2dWNU1aV1M5cHpxU3lXMmpyd283akJTQ0RTSnVrOWhST2Nka2ZpWW1PZ2FkbUHSAb8BQVVfeXFMT1pMTHFWZ0IzbnRGMHB4Unl0N0hFODd6VURUcEw4eXpFa1NkTHJQVXlYT1RjWnI4b0d0S2E0cXFHUk5tdExYQ3pyVGtJQXV1SGF2Q3FZLXJ0cF9XMDFkcjBoaGtMRDNZWHB1TEVHXzF4WjZnZ2FxeDlqaXVBNzJBc2NGc0FsZDhCOVNCM1BTVUU4RWNNNjhuWDdhWGZDeFFQVm1PNlVBblVybmtrRThySUtMM0NMUGZiLWNvNU14Rjg?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 19:27:50 GMT",
-      "timestamp": "2026-08-19T19:27:50.000Z",
-      "fuente": "Google News — Liga de Primera",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 90,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:7h(+10)"
+        "frescura:3h(+10)",
+        "penal(-8)"
       ]
     },
     {
@@ -1756,25 +1849,6 @@
       ]
     },
     {
-      "title": "Tabla Primera División: Liga Chilena Temporada 2026-27 - ESPN Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTE5MSVRsemZRbFdEUkJ6ZXpyVW1QMWw3Xy1ieEZrNWFjSnBFR2tMT1RrTzhQVURxZFkteVRVVWg2b0xmMWV5RTZxQmFOQ2dERUIybGFRYUZZUnYxSzBfOG0zVg?oc=5\" target=\"_blank\">Tabla Primera División: Liga Chilena Temporada 2026-27</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Chile</font>",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5MSVRsemZRbFdEUkJ6ZXpyVW1QMWw3Xy1ieEZrNWFjSnBFR2tMT1RrTzhQVURxZFkteVRVVWg2b0xmMWV5RTZxQmFOQ2dERUIybGFRYUZZUnYxSzBfOG0zVg?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 14:50:31 GMT",
-      "timestamp": "2026-08-19T14:50:31.000Z",
-      "fuente": "Google News — Copa de la Liga",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 73,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:30h(+0)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
       "title": "Ya fue presentado: Huachipato suma una nueva baja para el segundo semestre - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxNQnhGd0g2Y21OcXRJLXBpSnJuc0lLS2Zybk9tM3NvTUs1WkRTZ3Fkdkk4VHFSZy1JYTVCakRtZmFIeDVTMUNuNTNhNjJCSGdleHJwZ0NUeklwM1otdnZNOWRUbEFNLVJaeHNRRV9BRENncFNCLTRpX0F2cU9pN3JtMmhGN0F1dExhbFdmcl9kWTZ6bmxyeGJ2ZE5OSXotSDhjUEswcFhIT1QzTWpSam1kbDI1QV84bHBhVTdKZGFNM29pb1pJcVhCSFVQSmJGRmI5WnFWdl9HZlZxZw?oc=5\" target=\"_blank\">Ya fue presentado: Huachipato suma una nueva baja para el segundo semestre</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En Cancha</font>",
       "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNQnhGd0g2Y21OcXRJLXBpSnJuc0lLS2Zybk9tM3NvTUs1WkRTZ3Fkdkk4VHFSZy1JYTVCakRtZmFIeDVTMUNuNTNhNjJCSGdleHJwZ0NUeklwM1otdnZNOWRUbEFNLVJaeHNRRV9BRENncFNCLTRpX0F2cU9pN3JtMmhGN0F1dExhbFdmcl9kWTZ6bmxyeGJ2ZE5OSXotSDhjUEswcFhIT1QzTWpSam1kbDI1QV84bHBhVTdKZGFNM29pb1pJcVhCSFVQSmJGRmI5WnFWdl9HZlZxZw?oc=5",
@@ -1791,6 +1865,44 @@
         "categoria:chile(+40)",
         "frescura:25h(+0)",
         "senal:\\b(lesion|baja|desca(+6)"
+      ]
+    },
+    {
+      "title": "Video goles | ¿Cómo San Marcos de Arica perdió frente al colista? Rangers ganó por primera vez en el año - elmorrocotudo.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOR1hNUFFrbjdHRnA0eTNWdVk1VzVRckVvSF9sQXFUQ2JfMkk3QUFPQU1YamFCMm5YdFJDTk92VUdYUTdxUG1SV0NiRmRwNlVZdlRqUnJmLUh0YTlXZzBjUGd1bHBLLWJkM1dWbU5Sdm1kQ0hWc1g1Vnd1bHFXeWZIN1o2azQ5cUdESjJkS05NSmd4My1QYndLMzRfQ05XNzdFZnh6a2RMeFhFM2o3SWtiQlhPZzFpcEVreGhPUFdSZ284elRHU2tZWA?oc=5\" target=\"_blank\">Video goles | ¿Cómo San Marcos de Arica perdió frente al colista? Rangers ganó por primera vez en el año</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">elmorrocotudo.c",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOR1hNUFFrbjdHRnA0eTNWdVk1VzVRckVvSF9sQXFUQ2JfMkk3QUFPQU1YamFCMm5YdFJDTk92VUdYUTdxUG1SV0NiRmRwNlVZdlRqUnJmLUh0YTlXZzBjUGd1bHBLLWJkM1dWbU5Sdm1kQ0hWc1g1Vnd1bHFXeWZIN1o2azQ5cUdESjJkS05NSmd4My1QYndLMzRfQ05XNzdFZnh6a2RMeFhFM2o3SWtiQlhPZzFpcEVreGhPUFdSZ284elRHU2tZWA?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 15:47:48 GMT",
+      "timestamp": "2026-08-22T15:47:48.000Z",
+      "fuente": "Google News — Liga de Ascenso",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "categoria": "chile",
+      "equipo_chile": "San Marcos de Arica",
+      "viral_score": 87,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:5h(+10)",
+        "senal:\\b(record|historico|(+12)"
+      ]
+    },
+    {
+      "title": "Cobreloa y su probable formación para enfrentar a Unión Española en la Liga de Ascenso - bolavip.com",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPQVljdm5BVTNab0tTVVhDVmVfUTlldHJfVlplY3NRUEN5NGZqQXl5Z2RRSUh5ampaVnYtUjJ6Uk9leWpPVzJqY013dGxMQy1ZM1VCemNYcnpNMTk2RF9qZlpfclZUN1BJeVVHT01HQlNOd3Rud3Z6bzZlY1hzM2R4aEpPSGo1Wl82YnhQT3RwSGlZaW9LYlpFTGdwS3A3T3JISDAwVVBKc1I1MnJCTHhudW5MQ2lPS04zU3fSAb8BQVVfeXFMTVhxeXdfWVd5Zi03OTlROEZyRGVTc0t4Vkd2ckc3eEJ4dDMxT09PMGNZLV9VZW5EcERSU2xQWVQtaEN4Y0hmRWFCd1ZiSDZZTGd2cE5ma2xWT2FyWlZyN1h5b19qRFJ2cmhPMnVCVTBhWUxISzdlLXg3c25QQTJZMjl4dlRpSkpzbmF0b05xVUtPem",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQVljdm5BVTNab0tTVVhDVmVfUTlldHJfVlplY3NRUEN5NGZqQXl5Z2RRSUh5ampaVnYtUjJ6Uk9leWpPVzJqY013dGxMQy1ZM1VCemNYcnpNMTk2RF9qZlpfclZUN1BJeVVHT01HQlNOd3Rud3Z6bzZlY1hzM2R4aEpPSGo1Wl82YnhQT3RwSGlZaW9LYlpFTGdwS3A3T3JISDAwVVBKc1I1MnJCTHhudW5MQ2lPS04zU3fSAb8BQVVfeXFMTVhxeXdfWVd5Zi03OTlROEZyRGVTc0t4Vkd2ckc3eEJ4dDMxT09PMGNZLV9VZW5EcERSU2xQWVQtaEN4Y0hmRWFCd1ZiSDZZTGd2cE5ma2xWT2FyWlZyN1h5b19qRFJ2cmhPMnVCVTBhWUxISzdlLXg3c25QQTJZMjl4dlRpSkpzbmF0b05xVUtPem5ialdTTzNndWsybnpCdkdOSjNBcFJLTGlNNDJ4Sldub0NUc0NwQUFZY3lyWHM?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 15:46:57 GMT",
+      "timestamp": "2026-08-22T15:46:57.000Z",
+      "fuente": "Google News — Liga de Ascenso",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "categoria": "chile",
+      "equipo_chile": "Unión Española",
+      "viral_score": 85,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:5h(+10)",
+        "gigante:psg(+10)"
       ]
     },
     {
@@ -1813,6 +1925,42 @@
       ]
     },
     {
+      "title": "Primera B de Chile 2026: Calendario, partidos y resultados del Ascenso - Teletrece",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPZDg3Rkw4Q3hmbG1ydFdIc3BwV1pGeENwR1BjbElPTjJoQWV4S3FubWE0aWJLWjUxY2hHY2g4YjRyTUhUUnNsQTVaNzlzU0Z4cFNDRlFVWUI3amV2Ql8zN0FIOXlTaExDeExGLWV6cFdkRFllTmdwdzYweHBBSFFSdWhRWTNtWklEQnpSTDRaNU8ySFFYdEg4dm5NV2p1U0pVaTJneUV30gGmAUFVX3lxTE9kODdGTDhDeGZsbXJ0V0hzcHBXWkZ4Q3BHUGNsSU9OMmhBZXhLcW5tYTRpYktaNTFjaEdjaDhiNHJNSFRSc2xBNVo3OXNTRnhwU0NGUVVZQjdqZXZCXzM3QUg5eVNoTEN4TEYtZXpwV2REWWVOZ3B3NjB4cEFIUVJ1aFFZM21aSURCelJMNFo1TzJIUVh0SDh2bk1XanVTSlVpMmd5RX",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZDg3Rkw4Q3hmbG1ydFdIc3BwV1pGeENwR1BjbElPTjJoQWV4S3FubWE0aWJLWjUxY2hHY2g4YjRyTUhUUnNsQTVaNzlzU0Z4cFNDRlFVWUI3amV2Ql8zN0FIOXlTaExDeExGLWV6cFdkRFllTmdwdzYweHBBSFFSdWhRWTNtWklEQnpSTDRaNU8ySFFYdEg4dm5NV2p1U0pVaTJneUV30gGmAUFVX3lxTE9kODdGTDhDeGZsbXJ0V0hzcHBXWkZ4Q3BHUGNsSU9OMmhBZXhLcW5tYTRpYktaNTFjaEdjaDhiNHJNSFRSc2xBNVo3OXNTRnhwU0NGUVVZQjdqZXZCXzM3QUg5eVNoTEN4TEYtZXpwV2REWWVOZ3B3NjB4cEFIUVJ1aFFZM21aSURCelJMNFo1TzJIUVh0SDh2bk1XanVTSlVpMmd5RXc?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 19:26:00 GMT",
+      "timestamp": "2026-08-22T19:26:00.000Z",
+      "fuente": "Google News — Liga de Ascenso",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)"
+      ]
+    },
+    {
+      "title": "¿Cuándo y a qué hora juegan?: Deportes Puerto Montt vs Deportes Iquique - Radio Pauta 100.5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxOQVgzQW5OdDZvaGZRQU1MV0RKSnhIZDQ2d3BfWHNlSEhYWWhzbm01Y0Z3RFFfMi1FZnREYmJSWjZNa0lsdUJzVHpDUEtDSnB4NGxHSnB1ZFpNRHdoZC1qczQ1M1BBTDZ0bGtHWFNkMXV5bzJZZEFET0VOZlhYdTBqUEgydGtMZ3cwYnVHSmN1UnJFYWJzMzlRN1NNS2lFV0lGY2R2ZW13ZEkzU21rTWZqVGJPRUxITHVxcWlMQ1dndm5zcDUzSTNqZG9iQ3BrWUZfdmZ6WG9VeUNDblV2NnEtaEFn?oc=5\" target=\"_blank\">¿Cuándo y a qué hora juegan?: Deportes Puerto Montt vs Deportes Iquique</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Radio Pauta 10",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOQVgzQW5OdDZvaGZRQU1MV0RKSnhIZDQ2d3BfWHNlSEhYWWhzbm01Y0Z3RFFfMi1FZnREYmJSWjZNa0lsdUJzVHpDUEtDSnB4NGxHSnB1ZFpNRHdoZC1qczQ1M1BBTDZ0bGtHWFNkMXV5bzJZZEFET0VOZlhYdTBqUEgydGtMZ3cwYnVHSmN1UnJFYWJzMzlRN1NNS2lFV0lGY2R2ZW13ZEkzU21rTWZqVGJPRUxITHVxcWlMQ1dndm5zcDUzSTNqZG9iQ3BrWUZfdmZ6WG9VeUNDblV2NnEtaEFn?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 14:01:28 GMT",
+      "timestamp": "2026-08-22T14:01:28.000Z",
+      "fuente": "Google News — Liga de Ascenso",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "categoria": "chile",
+      "equipo_chile": "Deportes Iquique",
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:6h(+10)"
+      ]
+    },
+    {
       "title": "Los principales fichajes en el Mercado de Invierno en Liga de Ascenso - Pasión de Hincha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOaDMwUzkteFNBaXRJU0F1SnNCdEgwdEY4SGhVMHFScDRfLUphdGx2am9RTVFfdktuOWZxenc5UjJ0TDNHRWJwMUJPWmtQMFpmYTZ0aTJ0Z1ZhUGtFTEFtWGZyQk1wY1U1OEk1d2RhSjV4TEVaY2VaWGwxYVVJemNyWWJFSC1xQy1ORXAwQ2d5UGFrWUVmTV9fRjFnSDI?oc=5\" target=\"_blank\">Los principales fichajes en el Mercado de Invierno en Liga de Ascenso</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Pasión de Hincha</font>",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOaDMwUzkteFNBaXRJU0F1SnNCdEgwdEY4SGhVMHFScDRfLUphdGx2am9RTVFfdktuOWZxenc5UjJ0TDNHRWJwMUJPWmtQMFpmYTZ0aTJ0Z1ZhUGtFTEFtWGZyQk1wY1U1OEk1d2RhSjV4TEVaY2VaWGwxYVVJemNyWWJFSC1xQy1ORXAwQ2d5UGFrWUVmTV9fRjFnSDI?oc=5",
@@ -1828,6 +1976,43 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:6h(+10)"
+      ]
+    },
+    {
+      "title": "Rangers ganó después de 299 días: Jugadores emocionados hasta las lágrimas - tntsports.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5AFBVV95cUxNSy1FWkFGOXQ5bnZlRVcxZ1FvcGxNU1VLcHhTdHlJSGNRaHhLVUtETERwRXFEVzZqQ0YyNHdSWllOTnB3UVhfQ1RaN0I1ejVfUmhJR3Vqb1hXaHlKSFY5aVp3MmtqXzZubTZRY1NWbERNVXpwZWQ2RVpTQ0dxVThGclhBYW1rRkREYVNxbXVaeWVQMGVsY1l2Zng0WHU2Qk5OYXQyLUNwOXBtclBfQ2RQeVRrMkx2UGN0Q1hoUHNzVzYzZ1UtbzIyNkRYQk9lUEE5Q2I4Tmkyd2hWckRfY1BSMXlkTnTSAeoBQVVfeXFMTkxWT3F2RzN4dG5fMXo2QzJjcDZvRENFQXU4bFk0WUNRczFpTDhLSHdWa25uS3RLN1BhWnVTV3lOLTY0LVFpY19iRG84UUE3LUxvUFl3SlFQblNPOGVtaWxWTmN2QUpfUU",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNSy1FWkFGOXQ5bnZlRVcxZ1FvcGxNU1VLcHhTdHlJSGNRaHhLVUtETERwRXFEVzZqQ0YyNHdSWllOTnB3UVhfQ1RaN0I1ejVfUmhJR3Vqb1hXaHlKSFY5aVp3MmtqXzZubTZRY1NWbERNVXpwZWQ2RVpTQ0dxVThGclhBYW1rRkREYVNxbXVaeWVQMGVsY1l2Zng0WHU2Qk5OYXQyLUNwOXBtclBfQ2RQeVRrMkx2UGN0Q1hoUHNzVzYzZ1UtbzIyNkRYQk9lUEE5Q2I4Tmkyd2hWckRfY1BSMXlkTnTSAeoBQVVfeXFMTkxWT3F2RzN4dG5fMXo2QzJjcDZvRENFQXU4bFk0WUNRczFpTDhLSHdWa25uS3RLN1BhWnVTV3lOLTY0LVFpY19iRG84UUE3LUxvUFl3SlFQblNPOGVtaWxWTmN2QUpfUUlHLXU0ZzFJNzNqMTV2bmoybnZ6TkZiYmZBYXRDRWZjdVdaYzRWT3gwdGMzdk04V1l2X0pCbWR3OHVsYmNsWjA5eHpDWF9LbTYzZEVGN0t4TFo4aXBUMktLQUs3a1Rfb2Via1RSWWNEenFKVHM5M2FzWTI2eFRLSXZ5RUMwS2tEQXRn?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 02:58:16 GMT",
+      "timestamp": "2026-08-22T02:58:16.000Z",
+      "fuente": "Google News — Liga de Ascenso",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "categoria": "chile",
+      "equipo_chile": "Rangers",
+      "viral_score": 70,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:17h(+5)"
+      ]
+    },
+    {
+      "title": "Pronósticos Universidad de Chile vs Colo Colo: el clásico paraliza a la Liga de Primera - bolavip.com",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPT0JqS0wzM2czVnJtNXloX1dBNm4wNEszc21EeGMxekRXcnhOLU5mMktWZ0dvTzZXOE5lbFZCZ3J2di1lRFhfWEQtcUQyLVpPdG9IcXU0ODUzRVZ4RnNfdDJvbk51U25uWVM0WHJoaV9xVjR5UnZpX1RNWTFEbGRoaW1xOG1DRVBTSmMtNkQ1RVVnRjlvLUg0cXhLSGJpWFZjTV9wc2MyT0FxLUI0dl9BVlpCRThHS0FZVnRaOEg5MzBZMlpvOHBsZFdn?oc=5\" target=\"_blank\">Pronósticos Universidad de Chile vs Colo Colo: el clásico paraliza a la Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">bolavip.com</font>",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPT0JqS0wzM2czVnJtNXloX1dBNm4wNEszc21EeGMxekRXcnhOLU5mMktWZ0dvTzZXOE5lbFZCZ3J2di1lRFhfWEQtcUQyLVpPdG9IcXU0ODUzRVZ4RnNfdDJvbk51U25uWVM0WHJoaV9xVjR5UnZpX1RNWTFEbGRoaW1xOG1DRVBTSmMtNkQ1RVVnRjlvLUg0cXhLSGJpWFZjTV9wc2MyT0FxLUI0dl9BVlpCRThHS0FZVnRaOEg5MzBZMlpvOHBsZFdn?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 19:00:00 GMT",
+      "timestamp": "2026-08-22T19:00:00.000Z",
+      "fuente": "Google News — Supercopa",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 82,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 90,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)",
+        "gigante:colo colo(+10)"
       ]
     },
     {
@@ -2009,25 +2194,6 @@
       ]
     },
     {
-      "title": "Chilenos en el extranjero: dónde juegan hoy y cuántos minutos suman de verdad - elmagallanews.cl",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQb3NLekZEN0p2ZnZKa1hfVE5wTGhBakF1NlFTN2p2THJTMW1QM1JOcFN5V3ZWaE9Ic0p4R2tBRzJZblZXQ2pHVXNTcm90MzBwcWlFOEVRYWFLMkZyTHVMN1NINjRHYmZ0MXdIYlQ3SUJ0Q2h5Znp6Zl9XV1ZFNWtpSXJ5SVFwaXV5TFdHWE5fYkk0b1JtX2pGdDBvNEpYVEo0SGNtLVJIV1B0aG5COEJIM1FUY3FYTWJ2OGt1X0l3?oc=5\" target=\"_blank\">Chilenos en el extranjero: dónde juegan hoy y cuántos minutos suman de verdad</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">elmagallanews.cl</font>",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQb3NLekZEN0p2ZnZKa1hfVE5wTGhBakF1NlFTN2p2THJTMW1QM1JOcFN5V3ZWaE9Ic0p4R2tBRzJZblZXQ2pHVXNTcm90MzBwcWlFOEVRYWFLMkZyTHVMN1NINjRHYmZ0MXdIYlQ3SUJ0Q2h5Znp6Zl9XV1ZFNWtpSXJ5SVFwaXV5TFdHWE5fYkk0b1JtX2pGdDBvNEpYVEo0SGNtLVJIV1B0aG5COEJIM1FUY3FYTWJ2OGt1X0l3?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 16:46:28 GMT",
-      "timestamp": "2026-08-19T16:46:28.000Z",
-      "fuente": "Google News — Chilenos en Europa",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chilenos_exterior",
-      "prioridad_fuente": 78,
-      "categoria": "chilenos_exterior",
-      "equipo_chile": null,
-      "viral_score": 81,
-      "razones": [
-        "categoria:chilenos_exterior(+38)",
-        "frescura:10h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
       "title": "Manuel Pellegrini entrega contundente respuesta a la selección chilena: “No tengo ningún compromiso” - RedGol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxQaGpFdmh6dWg1VHhFNW40X3I4d1VlMUczMFpzdmFtRF9tUDZ5Q1dNaFY0aGttRk9HLTdQdDlqUE9sZjFFVHNkdDFURUlRM3FXSUc2eVk0R0pOTG4xZXJRWE52ZDJ0SDZxZnV2TTQ0cHBjb0E2TUZkLUNyeDRkMlRBeFp6OWQxNXZRNi1OanNZTHlqUWRLVlNQVGRjaWNMYWNMNHQxM0tVM25paDFPbUpRS2U2dDVfS0IxXzRPeVhzQVo0MHlsTTZIXzhuXzXSAdIBQVVfeXFMT2FZMTBaRTF3eWZVbkk1LUlwSm8xM1p2WGJuN0M1M3dnT0hPM2p0ek9Walo3MWZIWVR6b0FLaUd5SDhLdWdDUHhOaVF4Q1FSUXh4VEIzNVhMYlZwZkVvVUgxSHNiTEFqbHJnc08tV3dhVWdXTTRHNDJKQWwwYkFvQ1",
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQaGpFdmh6dWg1VHhFNW40X3I4d1VlMUczMFpzdmFtRF9tUDZ5Q1dNaFY0aGttRk9HLTdQdDlqUE9sZjFFVHNkdDFURUlRM3FXSUc2eVk0R0pOTG4xZXJRWE52ZDJ0SDZxZnV2TTQ0cHBjb0E2TUZkLUNyeDRkMlRBeFp6OWQxNXZRNi1OanNZTHlqUWRLVlNQVGRjaWNMYWNMNHQxM0tVM25paDFPbUpRS2U2dDVfS0IxXzRPeVhzQVo0MHlsTTZIXzhuXzXSAdIBQVVfeXFMT2FZMTBaRTF3eWZVbkk1LUlwSm8xM1p2WGJuN0M1M3dnT0hPM2p0ek9Walo3MWZIWVR6b0FLaUd5SDhLdWdDUHhOaVF4Q1FSUXh4VEIzNVhMYlZwZkVvVUgxSHNiTEFqbHJnc08tV3dhVWdXTTRHNDJKQWwwYkFvQ1BkbjFucUlZSWZuUWZIRC1lb0F2WG1oTWVmNUwwNDV3V2hNMzNzRWcwRFgxdE1ya3lob3FiSENnMVJ1bVZISU0yZWdBRGlqV3RsZFNPdWFnOEh3?oc=5",
@@ -2062,24 +2228,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:7h(+10)"
-      ]
-    },
-    {
-      "title": "Selección Chilena: Historia, Copas América y Nuevos Desafíos - elquehaydecierto.cl",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTVczeGt2UE9hdEdkVXdSRHVRLWswZTBEaUR4cDk3OEw3c2k0dVFtNXJRVU9SbHNYSDFDY21DSVkzbzhieTVHTG5JQTRWVUhHQlF5bllrTS1pMzdiRTdLc0R6eWpVRTI4MEpVblFnWGR4c29HclQ0ZEU3TDA2VlJiSzd5RFMyM2k4MEFmaFdqMDkwZXpUZEROczB5WHJRaXZBYTduRFJaSW9pZw?oc=5\" target=\"_blank\">Selección Chilena: Historia, Copas América y Nuevos Desafíos</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">elquehaydecierto.cl</font>",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTVczeGt2UE9hdEdkVXdSRHVRLWswZTBEaUR4cDk3OEw3c2k0dVFtNXJRVU9SbHNYSDFDY21DSVkzbzhieTVHTG5JQTRWVUhHQlF5bllrTS1pMzdiRTdLc0R6eWpVRTI4MEpVblFnWGR4c29HclQ0ZEU3TDA2VlJiSzd5RFMyM2k4MEFmaFdqMDkwZXpUZEROczB5WHJRaXZBYTduRFJaSW9pZw?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 20:14:48 GMT",
-      "timestamp": "2026-08-19T20:14:48.000Z",
-      "fuente": "Google News — La Roja",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 78,
-      "categoria": "chile",
-      "equipo_chile": "Selección Chilena",
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:6h(+10)"
       ]
     },
     {
@@ -2137,25 +2285,6 @@
         "categoria:formativo(+22)",
         "frescura:4h(+10)",
         "gigante:la roja(+10)"
-      ]
-    },
-    {
-      "title": "Colo Colo recupera a Felipe Raipán para el Superclásico: Selección Sub 16 lo libera - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNMzVCMXFHaVFfWnprNW5ZQ3UyX0h6bVEtNmtfTUo3Y1FweVYteGg3MWJETmhJWV9OWVRRbzliWmZqc1J4VEpxVk1BNGw3M1dwaFRCTDZBaGNVQVAwTk9RSTNLbTFqWVM2ZFRQdk9ySnd3VmpmdE9Kd2FaWGpxOTFHb1loclRtSjFoY1gzLXU5ZnVtYmdCRjUyOGJBMWVUOUowX19oYW9vQXNNN3RFY3IyeWptWmNtS1hVRWdWblJtYnAybm_SAcgBQVVfeXFMTmptejBhajE4SEF3MUo0VV9QbTZFcGdXWHdvaXFzMHkxd2dIQ2RfVDJ1eTNVVVJyNnlKZHJDenI0QnY4TE5icUZsQ3BCLUNWSGJSVHladEFqdzBHNU9wSjZDbzdEU2xXU0pyVFhKVnpVdlZnNWpQTDFYRzBtTXFYTkZ3VDZQam5hdE",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNMzVCMXFHaVFfWnprNW5ZQ3UyX0h6bVEtNmtfTUo3Y1FweVYteGg3MWJETmhJWV9OWVRRbzliWmZqc1J4VEpxVk1BNGw3M1dwaFRCTDZBaGNVQVAwTk9RSTNLbTFqWVM2ZFRQdk9ySnd3VmpmdE9Kd2FaWGpxOTFHb1loclRtSjFoY1gzLXU5ZnVtYmdCRjUyOGJBMWVUOUowX19oYW9vQXNNN3RFY3IyeWptWmNtS1hVRWdWblJtYnAybm_SAcgBQVVfeXFMTmptejBhajE4SEF3MUo0VV9QbTZFcGdXWHdvaXFzMHkxd2dIQ2RfVDJ1eTNVVVJyNnlKZHJDenI0QnY4TE5icUZsQ3BCLUNWSGJSVHladEFqdzBHNU9wSjZDbzdEU2xXU0pyVFhKVnpVdlZnNWpQTDFYRzBtTXFYTkZ3VDZQam5hdEMzaEZPQXB5aFlXRXJSQ2l4T2N1dWpsT1g1N1BXM3EzVjZ4U09Pcy1hUUttaG1IRjFDTDUzUldPZFgzd2xkYTM?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 15:33:23 GMT",
-      "timestamp": "2026-08-19T15:33:23.000Z",
-      "fuente": "Google News — Selecciones juveniles",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "formativo",
-      "prioridad_fuente": 65,
-      "categoria": "formativo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 67,
-      "razones": [
-        "categoria:formativo(+22)",
-        "frescura:11h(+10)",
-        "gigante:colo colo(+10)"
       ]
     },
     {
@@ -2273,6 +2402,25 @@
       ]
     },
     {
+      "title": "Con técnico argentino, Liga de Quito avanzó a los cuartos de final de la Copa Libertadores - Olé",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcmdQYWF0ZUwxMkw0WVZwRHVsSXpBM0U1SHBYejNGY3p6dS1pblpweXhRbDFzVE96UzlUTGlwOE9OZEhwWWhfUGwzUEZTQmdCdmNOb0Z6WjI5WU82WE9ocXVJSXV1T1ZPNWpfbDY3aXpZX2JQVXBXLUppUThKZGZrenU4WVNaNm12ODVGdDI3WFhtUmRDb1RCOVZjZ3dMX2ZDc0JrOENGeER1b3Q4VE16OVJGRFR4MjFEd3lXVTR0Rkx5UFM4VDlscE5ma3h6MVBL?oc=5\" target=\"_blank\">Con técnico argentino, Liga de Quito avanzó a los cuartos de final de la Copa Libertadores</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Olé</font>",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcmdQYWF0ZUwxMkw0WVZwRHVsSXpBM0U1SHBYejNGY3p6dS1pblpweXhRbDFzVE96UzlUTGlwOE9OZEhwWWhfUGwzUEZTQmdCdmNOb0Z6WjI5WU82WE9ocXVJSXV1T1ZPNWpfbDY3aXpZX2JQVXBXLUppUThKZGZrenU4WVNaNm12ODVGdDI3WFhtUmRDb1RCOVZjZ3dMX2ZDc0JrOENGeER1b3Q4VE16OVJGRFR4MjFEd3lXVTR0Rkx5UFM4VDlscE5ma3h6MVBL?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 19:25:46 GMT",
+      "timestamp": "2026-08-22T19:25:46.000Z",
+      "fuente": "Google News — Libertadores",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 35,
+      "categoria": "internacional",
+      "equipo_chile": null,
+      "viral_score": 56,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:1h(+15)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
+    {
       "title": "Fernando Cornejo héroe en Libertadores: marcó el penal que metió a Liga de Quito en cuartos - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPdkJuNmdQYXlPVDNHN0x6RGZiVmNySF9XbGpKY1dwX1NIcUdOTFQ1bThQMmFkYlBLQ1dTNzNBRTYwZWMtLXFBZ0M2VGsxeGpld3VEaENlam5mTzhOZE83Q0NqaWh3UEFjTVF2Umh1VTctR3ZGVm13TEJpbzlqclZ5dUkzemQ3SjBfM29PVUI2VGljWHN4QVViTGtkMy1TcVBMb0N2X1dNU2ZaNUVxWDY0R0Q5VHRRejU3TV9VeUhWcFllaHZKazJLeXFaTWNKU3ZjUFE4TW9SSWFCOXM?oc=5\" target=\"_blank\">Fernando Cornejo héroe en Libertadores: marcó el penal que metió a Liga de Quito en cuartos</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En ",
       "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPdkJuNmdQYXlPVDNHN0x6RGZiVmNySF9XbGpKY1dwX1NIcUdOTFQ1bThQMmFkYlBLQ1dTNzNBRTYwZWMtLXFBZ0M2VGsxeGpld3VEaENlam5mTzhOZE83Q0NqaWh3UEFjTVF2Umh1VTctR3ZGVm13TEJpbzlqclZ5dUkzemQ3SjBfM29PVUI2VGljWHN4QVViTGtkMy1TcVBMb0N2X1dNU2ZaNUVxWDY0R0Q5VHRRejU3TV9VeUhWcFllaHZKazJLeXFaTWNKU3ZjUFE4TW9SSWFCOXM?oc=5",
@@ -2384,6 +2532,24 @@
         "categoria:internacional(+8)",
         "frescura:6h(+10)",
         "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
+    {
+      "title": "Independiente del Valle vs. Tolima, todo lo que tenés que saber del duelo de la Copa Libertadores - DSports",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxNRWR1ZTlKR1hWazloNVROQUZDREhVblpiTk1YR1JmZHhBXzNVVjhKeWl1b0dQLTlrSmRqbXV2NjFXTXpPc2pGNVRRdGJrcjhlbkJzQWg2akVVRTRnc1NJcXRDdzZFUWZublpULUVOdDBtOUVweFJpbDk3MDQwNWJ4S3pLSFFvUHdMUWQ0Sng1SV9iaDhEbTVuV01Kb0lZdHF5SzVKT09pNFNEM3BHNWE0T3dpazhrSzBWNXR5RnlkVWlUX0tOWmRWdFBsTFpMblplaXl4NWg0SzR4VklTVFZDNTU2d1BTZmfSAewBQVVfeXFMTTh5NVhkdUFIM0xPQlptZ1FfT2dxX2VaWnh6U3pEaG1NcEs2LUc2b3ZZZEZIMTViSVJvbnpnVGk3ZEZ3MExRQm15ZG9rOURYSjBVbW0zcXRpM2plYU5nMVViNWhXSG",
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNRWR1ZTlKR1hWazloNVROQUZDREhVblpiTk1YR1JmZHhBXzNVVjhKeWl1b0dQLTlrSmRqbXV2NjFXTXpPc2pGNVRRdGJrcjhlbkJzQWg2akVVRTRnc1NJcXRDdzZFUWZublpULUVOdDBtOUVweFJpbDk3MDQwNWJ4S3pLSFFvUHdMUWQ0Sng1SV9iaDhEbTVuV01Kb0lZdHF5SzVKT09pNFNEM3BHNWE0T3dpazhrSzBWNXR5RnlkVWlUX0tOWmRWdFBsTFpMblplaXl4NWg0SzR4VklTVFZDNTU2d1BTZmfSAewBQVVfeXFMTTh5NVhkdUFIM0xPQlptZ1FfT2dxX2VaWnh6U3pEaG1NcEs2LUc2b3ZZZEZIMTViSVJvbnpnVGk3ZEZ3MExRQm15ZG9rOURYSjBVbW0zcXRpM2plYU5nMVViNWhXSGxZLWxDQ2NLZFBUbnc1T0lmbXk4TmhDb3Z1NFdJVXRlRzNyN0hXQTRIWW1fVmpQUUU4WXEzLW1oQUs0Wm9BTHZCRGlDWW1oSWpwMXFKejZiX1IyT3ZrSXp4ZHh6RmVTR1hjcU51czJJSUR3R0xFUUhMQ3JiWjlkNjV0ZDJKMzhzcmR5VE84dDc?oc=5",
+      "pubDate": "Sat, 22 Aug 2026 18:53:34 GMT",
+      "timestamp": "2026-08-22T18:53:34.000Z",
+      "fuente": "Google News — Libertadores",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 35,
+      "categoria": "internacional",
+      "equipo_chile": null,
+      "viral_score": 48,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:2h(+15)"
       ]
     },
     {
@@ -2511,173 +2677,6 @@
         "categoria:internacional(+8)",
         "frescura:23h(+5)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
-      "title": "Dura caída de Jorge Almirón y Vicente Pizarro: Rosario Central eliminado de la Libertadores - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNSFRKbmFNVWdIUHZQQmlWWmN1TnFiN01aaDM0VERXeGdCbjA1MFVHenF5cHBNcnh1M0FSUUlwTGFfTWtKSGo3RWlPU2ZkOUNmX0VrRjJxT2FOUjZmSmlIXzRGLXJYN2k3LTdIbUNaMTFKajdiaElxYTE1d2E2V2ROWjNYZHg2ZGFRaTRWM3RmOTJjUlcxck9fV3BqT0IwX0YxV2ZKTFMxaUJ0SURwbldCU3FxblZvOGNKd3NUTzhHZHRUMzR40gHKAUFVX3lxTFBLb1RqbGJXR3JMMm9rbmRRZ2hSdFgwWTUyenJSZDBzZ2NZWlVxd05MQUNtcnQtV21rYTVDWlp0NXlLWDJIREtGRTlucWdkbUJtNkRyTFFTbUNkSzRwUnhtUDctMzNvOWJVUFNyLXNsd2FoeVU3NmtrNV8tUzBabk1qVG5XQUprQm",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNSFRKbmFNVWdIUHZQQmlWWmN1TnFiN01aaDM0VERXeGdCbjA1MFVHenF5cHBNcnh1M0FSUUlwTGFfTWtKSGo3RWlPU2ZkOUNmX0VrRjJxT2FOUjZmSmlIXzRGLXJYN2k3LTdIbUNaMTFKajdiaElxYTE1d2E2V2ROWjNYZHg2ZGFRaTRWM3RmOTJjUlcxck9fV3BqT0IwX0YxV2ZKTFMxaUJ0SURwbldCU3FxblZvOGNKd3NUTzhHZHRUMzR40gHKAUFVX3lxTFBLb1RqbGJXR3JMMm9rbmRRZ2hSdFgwWTUyenJSZDBzZ2NZWlVxd05MQUNtcnQtV21rYTVDWlp0NXlLWDJIREtGRTlucWdkbUJtNkRyTFFTbUNkSzRwUnhtUDctMzNvOWJVUFNyLXNsd2FoeVU3NmtrNV8tUzBabk1qVG5XQUprQmk2X1ZKQ2g0eWtaX1BhcDdfTHRjejljci1vcDF6SGtxN0JWZjFDXzRvTDhkUUc5Q1NONGVaV2dlZUVOYjAxMmNLbGc?oc=5",
-      "pubDate": "Fri, 21 Aug 2026 02:25:32 GMT",
-      "timestamp": "2026-08-21T02:25:32.000Z",
-      "fuente": "Google News — Libertadores",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 35,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 46,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:18h(+5)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "Un chileno le da la clasificación a su equipo a cuartos de Copa Libertadores: ¡gran definición! - AS Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPMVVFRnZ1dm5OSEtKNHV0VkVvZXJZYU5jM0Vibk9UaHdWMVJHMW9vVGozQ250eHdSeGJjR3dFMUhrZkMyOFlfMk9yNnpSTlQ3SG1Jbm1vYllja1NtWEdOdElPSXpSbGpNdHFqQW1adGtXSFdNTkFFZGZkMGFaUkw5ZXpFUkpwT3VHQzQ3bElnNkxYWWpIQTh5QjJMakdSSjQ2Z3MwUE9mTVhuVEphcFFnM0d1OTVSOHdxSWpjUFRFN0thQWk1MVdMQUZXMNIB3wFBVV95cUxQSVJqamFuRF9FQmtMcTFhbGljNjBhbFhQUTdJUUxNTlhMeXBPU2NYUUZqOERxQ1J5UlpyZC05RkczZXhkZldFUkEwa2tENngzUzdkSmpmXzVmb1pNdkk1bFRuX2gyT0MzM21MSzR0bXRLRmkxRVUweGt0SDFxWk41bD",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMVVFRnZ1dm5OSEtKNHV0VkVvZXJZYU5jM0Vibk9UaHdWMVJHMW9vVGozQ250eHdSeGJjR3dFMUhrZkMyOFlfMk9yNnpSTlQ3SG1Jbm1vYllja1NtWEdOdElPSXpSbGpNdHFqQW1adGtXSFdNTkFFZGZkMGFaUkw5ZXpFUkpwT3VHQzQ3bElnNkxYWWpIQTh5QjJMakdSSjQ2Z3MwUE9mTVhuVEphcFFnM0d1OTVSOHdxSWpjUFRFN0thQWk1MVdMQUZXMNIB3wFBVV95cUxQSVJqamFuRF9FQmtMcTFhbGljNjBhbFhQUTdJUUxNTlhMeXBPU2NYUUZqOERxQ1J5UlpyZC05RkczZXhkZldFUkEwa2tENngzUzdkSmpmXzVmb1pNdkk1bFRuX2gyT0MzM21MSzR0bXRLRmkxRVUweGt0SDFxWk41bDJabzhZVkxzZnNDbVFWaXgtN2pCSXU5YzdsV2FSTUw2ZGZjNGkyd1RzeEVGTGlsMmR5NUF5a25meUQzcG9GZmVDQTBCSVR1aEdwcjk3d1BfMm9Da3ByTmpyN2RPenRR?oc=5",
-      "pubDate": "Fri, 21 Aug 2026 00:50:38 GMT",
-      "timestamp": "2026-08-21T00:50:38.000Z",
-      "fuente": "Google News — Libertadores",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 35,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 46,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:20h(+5)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "Vicente Pizarro fue suplente: Corinthians superó con lo justo a Rosario y avanzó en Copa Libertadores - BioBioChile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMisAJBVV95cUxPY21teDdXQjh6OUdqUWFmNmhod0oxUVJJWWVCdE83RkVKcTZvcVpDRy12VGtxdVhRS3VER2tVYjViS3pxS2VBb1hVZjFOcmExS2E3VG9Kbi1OU25nLTZDb1ZkYlM4NnVOM2hER0Fqdkt6a3pzSzAtb3JQVWg2ZUR1UHlFZHZiT3RPa0FWTjFaTHRyLVJzcUpuTk1YU1Nnb1VyNkx6YzRULXdxbUtjbGtqLW1aRnlqbWJiamtzWXZuODgzZHgzbE5DX2dTdkliZndMdWRsM2M0SFlNckZ4eE5uejBQaDdpa09ld1g3TFBNdzlmQzhKQ1VBZ1NBdjFkOE5xNEVpYkFjUGtnRUdhNmJQWTFGSlNzZ1BvZGs5Z29fUDJGYVZmYWJEYVpxRHh2d0My?oc=5\" target=\"_blank\">Vicente Pizarro fue",
-      "link": "https://news.google.com/rss/articles/CBMisAJBVV95cUxPY21teDdXQjh6OUdqUWFmNmhod0oxUVJJWWVCdE83RkVKcTZvcVpDRy12VGtxdVhRS3VER2tVYjViS3pxS2VBb1hVZjFOcmExS2E3VG9Kbi1OU25nLTZDb1ZkYlM4NnVOM2hER0Fqdkt6a3pzSzAtb3JQVWg2ZUR1UHlFZHZiT3RPa0FWTjFaTHRyLVJzcUpuTk1YU1Nnb1VyNkx6YzRULXdxbUtjbGtqLW1aRnlqbWJiamtzWXZuODgzZHgzbE5DX2dTdkliZndMdWRsM2M0SFlNckZ4eE5uejBQaDdpa09ld1g3TFBNdzlmQzhKQ1VBZ1NBdjFkOE5xNEVpYkFjUGtnRUdhNmJQWTFGSlNzZ1BvZGs5Z29fUDJGYVZmYWJEYVpxRHh2d0My?oc=5",
-      "pubDate": "Fri, 21 Aug 2026 02:48:15 GMT",
-      "timestamp": "2026-08-21T02:48:15.000Z",
-      "fuente": "Google News — Libertadores",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 35,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 38,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:18h(+5)"
-      ]
-    },
-    {
-      "title": "Caputto y el ’Mono’ Sánchez emocionan a Coquimbo tras duro adiós en la Libertadores: \"Duele el alma\" - BioBioChile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMirgJBVV95cUxNdXhCenUtQkVCT3ktQS1XN1J4WVhaclQxMVdsanE4MXZ4aXdaN2N0MnByTmNvMmFNTXBwNlpBRERPbE5WZ0MwcU5KYngxZUdNVWU5OGZRNHRZU1ZtbVdUMGkyUlItdFRDT0tEWWFtRU42TFdfTlVEQkFBeVpBM3pzWlQ1VVBsYlJSenJ5Mk1sbkhQRUp0MjFrUGZjQU1ZVWM2b3ZsNHRKRTFxbXRHY3ZGV1NHclVNLW12ZkF3NVdza1V0ekx6SEtVdklicWJKQWlqNmgwTG5VN3hXWW9rc0tPcS1KRVZjcjRWQUV2V2ZHLUdtS1BvV1VBaS1ReDh2Rm5zakh2VF9rUGxwSWpDenlXVzBzNk9LaDFUbHNuZkdfMG05eF9fM0FBa3ZBVDdSQQ?oc=5\" target=\"_blank\">Caputto y el ’Mono’ S",
-      "link": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNdXhCenUtQkVCT3ktQS1XN1J4WVhaclQxMVdsanE4MXZ4aXdaN2N0MnByTmNvMmFNTXBwNlpBRERPbE5WZ0MwcU5KYngxZUdNVWU5OGZRNHRZU1ZtbVdUMGkyUlItdFRDT0tEWWFtRU42TFdfTlVEQkFBeVpBM3pzWlQ1VVBsYlJSenJ5Mk1sbkhQRUp0MjFrUGZjQU1ZVWM2b3ZsNHRKRTFxbXRHY3ZGV1NHclVNLW12ZkF3NVdza1V0ekx6SEtVdklicWJKQWlqNmgwTG5VN3hXWW9rc0tPcS1KRVZjcjRWQUV2V2ZHLUdtS1BvV1VBaS1ReDh2Rm5zakh2VF9rUGxwSWpDenlXVzBzNk9LaDFUbHNuZkdfMG05eF9fM0FBa3ZBVDdSQQ?oc=5",
-      "pubDate": "Thu, 20 Aug 2026 13:32:16 GMT",
-      "timestamp": "2026-08-20T13:32:16.000Z",
-      "fuente": "Google News — Libertadores",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 35,
-      "categoria": "internacional",
-      "equipo_chile": "Coquimbo Unido",
-      "viral_score": 33,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:47h(+0)"
-      ]
-    },
-    {
-      "title": "El mensaje de Joaquín Correa, verdugo de la UC en Libertadores, a Alexis Sánchez y Arturo Vidal - Cooperativa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi9gFBVV95cUxObUNweS1wV011S05iVFBaRjlPMTg1OXVtdFdZRjJpdmc2TjE4cDd4bDhFMGFkMzhkbmY1LWlZajlWalVnYktVYkRyblBBUnc5ZG1LUm5HSHhiQmhzOGVfa0EyWTEyRVlPblo5NHE5eExocXV6RkNyMDVRaEZBckNKUjl2elYxSzA2Z3AtbWszakZ2dDlPN1BGdkFVNEkxYnYxTXdia2NaM2dBQmRfMnlVd0plVHBXTUpqR0RLZkRaTUEyZHB6blQ5V3Q1dzBrN3lwY0FpMlJJd2ZsWjRqc1BGdkZENjFjLWpleW1rQndqcnR1bE83RkHSAYwBQVVfeXFMTl9fdmt3aS1LMEtNYTlDUHdzbm5ZSERURFl6RklVZmFDUEEzVzZkZXRGdDZnc2p3dm1jRzk0TGc3S0RDTGhneEQ2YnhCNy1EdHlKN0NsTl",
-      "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxObUNweS1wV011S05iVFBaRjlPMTg1OXVtdFdZRjJpdmc2TjE4cDd4bDhFMGFkMzhkbmY1LWlZajlWalVnYktVYkRyblBBUnc5ZG1LUm5HSHhiQmhzOGVfa0EyWTEyRVlPblo5NHE5eExocXV6RkNyMDVRaEZBckNKUjl2elYxSzA2Z3AtbWszakZ2dDlPN1BGdkFVNEkxYnYxTXdia2NaM2dBQmRfMnlVd0plVHBXTUpqR0RLZkRaTUEyZHB6blQ5V3Q1dzBrN3lwY0FpMlJJd2ZsWjRqc1BGdkZENjFjLWpleW1rQndqcnR1bE83RkHSAYwBQVVfeXFMTl9fdmt3aS1LMEtNYTlDUHdzbm5ZSERURFl6RklVZmFDUEEzVzZkZXRGdDZnc2p3dm1jRzk0TGc3S0RDTGhneEQ2YnhCNy1EdHlKN0NsTllVWHhjVmZpRF9rZWRvS2tVeU1uZEtJbVRJTkdFVDB5NDdPbEJYMG1VN3VqdGI0SGN2WnB1WjE?oc=5",
-      "pubDate": "Wed, 19 Aug 2026 18:03:00 GMT",
-      "timestamp": "2026-08-19T18:03:00.000Z",
-      "fuente": "Google News — Libertadores",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 35,
-      "categoria": "internacional",
-      "equipo_chile": "Universidad Católica",
-      "viral_score": 33,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:50h(-10)",
-        "gigante:alexis sanchez(+10)"
-      ]
-    },
-    {
-      "title": "El juicio de la historia de la UC tras la eliminación en la Libertadores: “Buljubasich pone la cara, pero hay un directorio” - La Tercera",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi_AFBVV95cUxOS3BENXNhQU55LWlLQkVqUHRYZ3ZKUlBSdG1OVHR5QXlPNFViZFJKc0UxcUt5VEFBbURrYnhic05EZDNDaXhxXzU3N1dZeGR0YkhYektmcFh2enk0TkdqOVl2aThlb2drTDBkSEM4a1dDM3NTUHBBd28tRmtySS1GbzV5NlN5bksxUk5oSldtcEJNWjBoazMwZjRiWTJNOUhYWmIzcUp0MmxadGxVbW1pYmszN1dCakhVcXkydGo3b0ZlelJLanBsLTNLWG5OcmFPR2JuUmZnNkl0WGpjX0drNExWdlFXVlRSUjBuYzJ0dHptUVVBY0ltbU04dGTSAZ4CQVVfeXFMTjhDR0dtVllnd0hBRzZrNjBqZGVxalJDbTZFS2VpS2pVWjZZTFYzcXhubzhmOEtqcXpQUGZkNXk0N2F3UTUydFVTTllDT1A1am",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOS3BENXNhQU55LWlLQkVqUHRYZ3ZKUlBSdG1OVHR5QXlPNFViZFJKc0UxcUt5VEFBbURrYnhic05EZDNDaXhxXzU3N1dZeGR0YkhYektmcFh2enk0TkdqOVl2aThlb2drTDBkSEM4a1dDM3NTUHBBd28tRmtySS1GbzV5NlN5bksxUk5oSldtcEJNWjBoazMwZjRiWTJNOUhYWmIzcUp0MmxadGxVbW1pYmszN1dCakhVcXkydGo3b0ZlelJLanBsLTNLWG5OcmFPR2JuUmZnNkl0WGpjX0drNExWdlFXVlRSUjBuYzJ0dHptUVVBY0ltbU04dGTSAZ4CQVVfeXFMTjhDR0dtVllnd0hBRzZrNjBqZGVxalJDbTZFS2VpS2pVWjZZTFYzcXhubzhmOEtqcXpQUGZkNXk0N2F3UTUydFVTTllDT1A1amd2YzVSOXBfQWNlb0t1cDNnWmxtcjRkcUI2ZENYaWlyaWtkYmh2ZjJ2S2R4dXFlR2g4Q1NQcUtxaDJ0N0h3YktmcUhoZjNGU2MxMUk5VHR2UnRvZWFUZW5DekdZWXhpWTZZOXAwN2V5aTJNRVRMcFZaYjEzNThQblhleENTZ0NrbzI0ZDNMQXJ0VlFMaF9SNmxNS2NzdmlVVFdteFh4ZGd3RWhxU0djTjlSMzZyVGJWNS1fMldjRWN4c1VUcjZBSDlRTzZEOW1fTmF1TnAxUQ?oc=5",
-      "pubDate": "Fri, 21 Aug 2026 11:11:56 GMT",
-      "timestamp": "2026-08-21T11:11:56.000Z",
-      "fuente": "Google News — Libertadores",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 35,
-      "categoria": "internacional",
-      "equipo_chile": "Universidad Católica",
-      "viral_score": 31,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:9h(+10)",
-        "penal(-12)"
-      ]
-    },
-    {
-      "title": "Liga Quito vs Mirassol: estadísticas previas y datos en directo | Copa Libertadores 2026 - AS Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPV1ZWa1hVODlSLUhGUC1pQVkzN19DQ3BMbzktaG5IcklQaWVPRkJ1SkNyQ2JwT212RVd1cWNGNXV5cjN1SDQ2TElzdEduWTBZYjd2emNRcjlwd3RsNUNaSDZ1eWxDYXVnVkJUNUlmYVMyQmdyZWRFUEM1NTdIcTgya3hjUS13WmJhOTV2WjdKUGY1aWltWWtxRzJYcW82NGs?oc=5\" target=\"_blank\">Liga Quito vs Mirassol: estadísticas previas y datos en directo | Copa Libertadores 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">AS Chile</font>",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPV1ZWa1hVODlSLUhGUC1pQVkzN19DQ3BMbzktaG5IcklQaWVPRkJ1SkNyQ2JwT212RVd1cWNGNXV5cjN1SDQ2TElzdEduWTBZYjd2emNRcjlwd3RsNUNaSDZ1eWxDYXVnVkJUNUlmYVMyQmdyZWRFUEM1NTdIcTgya3hjUS13WmJhOTV2WjdKUGY1aWltWWtxRzJYcW82NGs?oc=5",
-      "pubDate": "Thu, 20 Aug 2026 04:07:40 GMT",
-      "timestamp": "2026-08-20T04:07:40.000Z",
-      "fuente": "Google News — Libertadores",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 35,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 23,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:57h(-10)"
-      ]
-    },
-    {
-      "title": "El ’aguerrido’ Coquimbo se despidió de Copa Libertadores: cayó en los penales con Platense - BioBioChile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiggJBVV95cUxPOFlzTkpZb280V1JaMDM5cFgwRTNBMXV1RmZ1ZW4yajZoaGNwR1c4ZXgwMi1wQ3VScGFQeS1qUDhEWlJjUGhHaWZTMDNwa2UzZ05sSzRPb3JMcktpdTlIVFVDbzFUY1RKajVDM2hZVDRFa1NHMmZZSTRCY3ZZSmd0ZUhUZjNlNml0MzdYT0k1TjVIY3gtSzdQNHA1SVE5NXhFN3Q0TTVXU2d5Mmx2ajdtQmxiU1drV2pZc2p0OWZyN1BYdVBmS1k1QXdHX3ZfX1dndWhQR0ZQTURadHF5ZEd2b1NIcWFOUDhNak8tM3BBb01XQmZaRVk1VW9VVnFmT1JUQWc?oc=5\" target=\"_blank\">El ’aguerrido’ Coquimbo se despidió de Copa Libertadores: cayó en los penales co",
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPOFlzTkpZb280V1JaMDM5cFgwRTNBMXV1RmZ1ZW4yajZoaGNwR1c4ZXgwMi1wQ3VScGFQeS1qUDhEWlJjUGhHaWZTMDNwa2UzZ05sSzRPb3JMcktpdTlIVFVDbzFUY1RKajVDM2hZVDRFa1NHMmZZSTRCY3ZZSmd0ZUhUZjNlNml0MzdYT0k1TjVIY3gtSzdQNHA1SVE5NXhFN3Q0TTVXU2d5Mmx2ajdtQmxiU1drV2pZc2p0OWZyN1BYdVBmS1k1QXdHX3ZfX1dndWhQR0ZQTURadHF5ZEd2b1NIcWFOUDhNak8tM3BBb01XQmZaRVk1VW9VVnFmT1JUQWc?oc=5",
-      "pubDate": "Thu, 20 Aug 2026 00:45:59 GMT",
-      "timestamp": "2026-08-20T00:45:59.000Z",
-      "fuente": "Google News — Libertadores",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 35,
-      "categoria": "internacional",
-      "equipo_chile": "Coquimbo Unido",
-      "viral_score": 23,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:50h(-10)"
-      ]
-    },
-    {
-      "title": "Rumores del mercado de fichajes: el giro del Atlético de Madrid con Álvarez; Messi, Endrick y más - Sports Illustrated",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOSUF4RWJjb2F3NG5MNndmbm1KZWt4cWJhUHk3Yi1XeUhfaDMwTXZHR2thUDJiS2V2Q3lmLU9UajdFUTZRV2gwdFBoRzQxempiVWpyZzZDTGZ1dElOeUpLSDQ5QnJEQ3J6d3ZtVzdpa3FXaEdqRTV5MmppcEo5YW9qUHp3d3FjcGVCSU5KNGxZa3h4Y3JkUG1sd2xyaW5FLWk3dkZhR1VmWnQ4NUpEbGFXRHFxUHUtcXYteWIzQmFjMUhta1Mz?oc=5\" target=\"_blank\">Rumores del mercado de fichajes: el giro del Atlético de Madrid con Álvarez; Messi, Endrick y más</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Sports Illustrated</font>",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSUF4RWJjb2F3NG5MNndmbm1KZWt4cWJhUHk3Yi1XeUhfaDMwTXZHR2thUDJiS2V2Q3lmLU9UajdFUTZRV2gwdFBoRzQxempiVWpyZzZDTGZ1dElOeUpLSDQ5QnJEQ3J6d3ZtVzdpa3FXaEdqRTV5MmppcEo5YW9qUHp3d3FjcGVCSU5KNGxZa3h4Y3JkUG1sd2xyaW5FLWk3dkZhR1VmWnQ4NUpEbGFXRHFxUHUtcXYteWIzQmFjMUhta1Mz?oc=5",
-      "pubDate": "Sat, 22 Aug 2026 09:51:09 GMT",
-      "timestamp": "2026-08-22T09:51:09.000Z",
-      "fuente": "Google News — Champions",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 30,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 58,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:3h(+15)",
-        "gigante:messi(+10)"
       ]
     }
   ]
