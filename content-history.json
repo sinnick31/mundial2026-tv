@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "MÁQUINAS GOLEADORAS IMPERFECTAS",
-      "titulo": "Holanda y Alemania sumaron 10 goles: ¿su ataque basta sin los 9 puntos?",
-      "fecha": "2026-07-14T16:12:33.275Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "PORRO LLEVA A ESPAÑA A LA FINAL",
       "titulo": "Pedro Porro marca ante Francia: ¿Héroe inesperado en la final del Mundial 2026?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: ¿Pierde la localía? El motivo que obliga a Colo Colo a…",
       "titulo": "COLO-COLO: ¿Pierde la localía? El motivo que obliga a Colo Colo a…",
       "fecha": "2026-08-24T20:34:50.436Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Con Vozinha: la probable formación de Colo Colo vs Unión…",
+      "titulo": "COLO-COLO: Con Vozinha: la probable formación de Colo Colo vs Unión…",
+      "fecha": "2026-08-25T02:20:00.994Z"
     }
   ]
 }
