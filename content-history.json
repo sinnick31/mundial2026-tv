@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DEFENSAS BLINDADAS: GRUPO Y MÁS",
-      "titulo": "España 0 Goles Concedidos en Grupos y Semifinales: ¿La Defensa Campeona?",
-      "fecha": "2026-07-14T22:04:00.099Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "ARGENTINA VS. INGLATERRA EN VIVO",
       "titulo": "Argentina vs. Inglaterra EN VIVO: ¿ya calienta el ambiente en el Mundial 2026?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Colo Colo informa la venta de entradas ante Audax Italiano…",
       "titulo": "COLO-COLO: Colo Colo informa la venta de entradas ante Audax Italiano…",
       "fecha": "2026-08-26T02:26:43.645Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo informa la venta de entradas ante Audax Italiano…",
+      "titulo": "COLO-COLO: Colo Colo informa la venta de entradas ante Audax Italiano…",
+      "fecha": "2026-08-26T12:58:45.625Z"
     }
   ]
 }
