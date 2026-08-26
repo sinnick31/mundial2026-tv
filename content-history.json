@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ENTRADAS FINAL MUNDIAL 2026",
-      "titulo": "MetLife Stadium acoge la Final 2026: ¿España, Inglaterra o Argentina en la lucha?",
-      "fecha": "2026-07-14T22:03:32.243Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "DEFENSAS BLINDADAS: GRUPO Y MÁS",
       "titulo": "España 0 Goles Concedidos en Grupos y Semifinales: ¿La Defensa Campeona?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: La ANFP libera los audios del VAR tras el polémico penal…",
       "titulo": "COLO-COLO: La ANFP libera los audios del VAR tras el polémico penal…",
       "fecha": "2026-08-25T20:33:20.840Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo informa la venta de entradas ante Audax Italiano…",
+      "titulo": "COLO-COLO: Colo Colo informa la venta de entradas ante Audax Italiano…",
+      "fecha": "2026-08-26T02:26:43.645Z"
     }
   ]
 }
