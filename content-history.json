@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CALENDARIO MUNDIAL HOY",
-      "titulo": "Calendario del 15 de julio de 2026 🗓️: ¿Día crucial para quiénes?",
-      "fecha": "2026-07-15T10:44:57.998Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "ÉLITE DE GOLAZOS",
       "titulo": "Alemania y Países Bajos con 10 Goles a Favor: ¿Son la ofensiva más potente?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Gonzalo Jara apuesta fuerte por este jugador de Colo Colo:…",
       "titulo": "COLO-COLO: Gonzalo Jara apuesta fuerte por este jugador de Colo Colo:…",
       "fecha": "2026-08-28T12:37:09.583Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Los árbitros para el partido de Colo Colo vs Audax…",
+      "titulo": "COLO-COLO: Los árbitros para el partido de Colo Colo vs Audax…",
+      "fecha": "2026-08-28T21:55:26.601Z"
     }
   ]
 }
