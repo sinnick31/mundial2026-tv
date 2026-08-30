@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "PORTERÍAS CERRADAS",
-      "titulo": "España 0 goles en 4 partidos: ¿La defensa campeona del Mundial?",
-      "fecha": "2026-07-15T16:19:35.092Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "MESSI LLEVA A ARGENTINA A LA FINAL",
       "titulo": "Messi lidera la remontada de Argentina: ¿su última obra maestra mundialista?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Colo Colo vs Audax Italiano: cuándo juegan, formaciones y…",
       "titulo": "COLO-COLO: Colo Colo vs Audax Italiano: cuándo juegan, formaciones y…",
       "fecha": "2026-08-29T22:30:21.280Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo vs Audax Italiano: cuándo juegan, formaciones y…",
+      "titulo": "COLO-COLO: Colo Colo vs Audax Italiano: cuándo juegan, formaciones y…",
+      "fecha": "2026-08-30T06:23:01.755Z"
     }
   ]
 }
