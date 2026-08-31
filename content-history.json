@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ARGENTINA GANA 2-1 A INGLATERRA: ¡FINAL!",
-      "titulo": "Argentina venció 2-1 a Inglaterra: ¿Quién será el campeón del mundo?",
-      "fecha": "2026-07-15T22:07:18.787Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "DOMINIO ABSOLUTO MUNDIAL",
       "titulo": "España 0 goles recibidos en 3 partidos: ¿Defensa clave para el triunfo?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver…",
       "titulo": "COLO-COLO: Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver…",
       "fecha": "2026-08-30T22:32:48.208Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver…",
+      "titulo": "COLO-COLO: Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver…",
+      "fecha": "2026-08-31T06:50:55.463Z"
     }
   ]
 }
