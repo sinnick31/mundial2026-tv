@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DOMINIO ABSOLUTO MUNDIAL",
-      "titulo": "España 0 goles recibidos en 3 partidos: ¿Defensa clave para el triunfo?",
-      "fecha": "2026-07-15T22:07:52.523Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "ARGENTINA EN LA FINAL DEL MUNDIAL",
       "titulo": "Messi y Lautaro protagonistas en la final: ¿Argentina imparable para 2026?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver…",
       "titulo": "COLO-COLO: Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver…",
       "fecha": "2026-08-31T06:50:55.463Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo volvió a estirar su ventaja como líder y la U…",
+      "titulo": "COLO-COLO: Colo Colo volvió a estirar su ventaja como líder y la U…",
+      "fecha": "2026-08-31T18:57:24.494Z"
     }
   ]
 }
