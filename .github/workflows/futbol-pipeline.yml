@@ -1,9 +1,9 @@
-name: ⚽ REAL FOOTBALL NEWSROOM v5 — Chile 365
+name: ⚽ REAL FOOTBALL NEWSROOM v6 — Chile 365
 
 # Canal editorial de fútbol chileno con trazabilidad de fuentes.
-# La automatización NO inventa resultados, cifras, fichajes ni declaraciones.
-# Prioridad: 1) Colo-Colo, 2) fútbol chileno, 3) futbolistas chilenos en el exterior.
-# Máximo 3 Shorts/día + resumen largo periódico.
+# No se inventan resultados, cifras, fichajes ni declaraciones.
+# Cadencia agresiva pero controlada: 2 Shorts por ejecución, 3 ejecuciones/día
+# y 1 resumen largo diario. Esto prioriza calidad + horas de reproducción.
 
 on:
   push:
@@ -17,15 +17,15 @@ on:
       max_items:
         description: 'Máximo de Shorts en esta ejecución'
         required: false
-        default: '1'
+        default: '2'
         type: choice
-        options: ['1', '2', '3']
+        options: ['1', '2']
       modo:
         description: 'Enfoque editorial'
         required: false
-        default: 'auto'
+        default: 'chile'
         type: choice
-        options: ['auto', 'noticias', 'chile']
+        options: ['chile', 'auto', 'noticias']
       resumen_largo:
         description: 'Generar también resumen horizontal largo'
         required: false
@@ -44,51 +44,44 @@ env:
 
 jobs:
   generate:
-    name: 📰 Fuentes reales + selección editorial
+    name: 📰 Fuentes reales + selección editorial Chile
     runs-on: ubuntu-latest
     timeout-minutes: 20
     outputs:
       hay_contenido: ${{ steps.gen.outputs.hay_contenido }}
       hay_longform: ${{ steps.longform.outputs.hay_longform }}
       fecha: ${{ steps.gen.outputs.fecha }}
-
     steps:
       - name: 📦 Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-
       - name: ⚙️ Configurar Node.js
         uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-
       - name: 📥 Instalar dependencias
         run: npm ci
-
       - name: 🔍 Ingerir fuentes reales
         run: node scripts/fetch-real-news.js
-
       - name: ⚽ Obtener datos estructurados de fútbol internacional
         env:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
           COMPETITIONS: ${{ secrets.COMPETITIONS }}
         run: node scripts/fetch-matches.js
-
       - name: 🧭 Generar paquete editorial source-locked
         id: gen
         env:
-          MAX_ITEMS: ${{ inputs.max_items || '1' }}
-          MODO: ${{ inputs.modo || 'auto' }}
+          MAX_ITEMS: ${{ inputs.max_items || '2' }}
+          MODO: ${{ inputs.modo || 'chile' }}
         run: |
           node scripts/generate-real-content.js
           FECHA=$(date -u +%Y-%m-%d)
           echo "fecha=$FECHA" >> "$GITHUB_OUTPUT"
           TOTAL=$(node -e "const f=require('./daily-content.json'); console.log(f.total||0)")
-          echo "📊 Piezas verificables seleccionadas: $TOTAL"
+          echo "📊 Piezas seleccionadas: $TOTAL"
           if [ "$TOTAL" -gt 0 ]; then echo "hay_contenido=true" >> "$GITHUB_OUTPUT"; else echo "hay_contenido=false" >> "$GITHUB_OUTPUT"; fi
-
       - name: 🧭 Generar resumen largo
         id: longform
         env:
@@ -100,15 +93,10 @@ jobs:
           if [ "$EVENTO" = "schedule" ] && [ "$CRON" = "0 20 * * *" ]; then RUN_LONGFORM=true; fi
           if [ "$EVENTO" = "workflow_dispatch" ] && [ "$LONGFORM_REQUESTED" = "true" ]; then RUN_LONGFORM=true; fi
           if [ "$EVENTO" = "push" ]; then RUN_LONGFORM=true; fi
-          if [ "$RUN_LONGFORM" = "true" ]; then
-            node scripts/generate-longform-content.js
-          else
-            printf '%s\n' '{"fecha":"'"$(date -u +%Y-%m-%d)'"'","total":0,"contenido":null}' > daily-longform.json
-          fi
+          if [ "$RUN_LONGFORM" = "true" ]; then node scripts/generate-longform-content.js; else printf '%s\n' '{"fecha":"'"$(date -u +%Y-%m-%d)'"'","total":0,"contenido":null}' > daily-longform.json; fi
           TOTAL=$(node -e "const f=require('./daily-longform.json'); console.log(f.total||0)")
           echo "Resumen largo: $TOTAL fuentes"
           if [ "$TOTAL" -gt 0 ]; then echo "hay_longform=true" >> "$GITHUB_OUTPUT"; else echo "hay_longform=false" >> "$GITHUB_OUTPUT"; fi
-
       - name: 🛡️ Validación editorial antes de publicar
         if: steps.gen.outputs.hay_contenido == 'true'
         run: |
@@ -120,23 +108,17 @@ jobs:
             if (!item._fuente_url || !/^https?:\/\//.test(item._fuente_url)) throw new Error(`Pieza ${i+1}: falta URL de fuente`);
             if (!item._fuente) throw new Error(`Pieza ${i+1}: falta fuente`);
             if (!item.titulo_youtube) throw new Error(`Pieza ${i+1}: falta título`);
-            if (!item.descripcion_youtube || item.descripcion_youtube.length < 120) throw new Error(`Pieza ${i+1}: descripción demasiado corta`);
+            if (!item.narracion || item.narracion.length < 180) throw new Error(`Pieza ${i+1}: falta narración editorial original`);
+            if (!item.descripcion_youtube || item.descripcion_youtube.length < 180) throw new Error(`Pieza ${i+1}: descripción demasiado corta`);
           }
-          console.log('✅ SOURCE LOCK OK: cada pieza tiene fuente, URL, título y descripción.');
+          console.log('✅ SOURCE LOCK + NARRACIÓN EDITORIAL OK');
           NODE
-
       - name: 💾 Guardar historial + caché
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add content-history.json news-cache.json 2>/dev/null || true
-          if git diff --staged --quiet; then
-            echo "Sin cambios para guardar"
-          else
-            git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
-            git push
-          fi
-
+          if git diff --staged --quiet; then echo "Sin cambios para guardar"; else git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"; git push; fi
       - name: 📦 Guardar paquetes editoriales
         if: steps.gen.outputs.hay_contenido == 'true' || steps.longform.outputs.hay_longform == 'true'
         uses: actions/upload-artifact@v6
@@ -191,21 +173,17 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: node scripts/render-and-upload.js
       - name: 🔎 Verificar evidencia de publicación
+        env:
+          REPORT: out/reporte-${{ needs.generate.outputs.fecha }}.json
         run: |
-          REPORT="out/reporte-${{ needs.generate.outputs.fecha }}.json"
-          if [ ! -f "$REPORT" ]; then
-            echo "❌ No existe el reporte de publicación: $REPORT"
-            exit 1
-          fi
+          if [ ! -f "$REPORT" ]; then echo "❌ No existe el reporte de publicación: $REPORT"; exit 1; fi
           node - <<'NODE'
           const fs = require('fs');
           const report = JSON.parse(fs.readFileSync(process.env.REPORT, 'utf8'));
           const publicados = (report.videos || []).filter(v => v.estado === 'OK' && v.youtube_id && v.youtube_url);
-          console.log(`📺 Evidencia YouTube: ${publicados.length}/${report.total} con video_id y URL`);
+          console.log(`📺 Evidencia YouTube: ${publicados.length}/${report.total}`);
           if (report.total > 0 && publicados.length !== report.total) process.exit(1);
           NODE
-        env:
-          REPORT: out/reporte-${{ needs.generate.outputs.fecha }}.json
       - name: 💾 Backup Shorts
         if: always()
         uses: actions/upload-artifact@v6
@@ -268,30 +246,13 @@ jobs:
       - name: 📊 Estado del pipeline
         run: |
           echo "══════════════════════════════════════════════"
-          echo "⚽ REAL FOOTBALL NEWSROOM v5"
+          echo "⚽ REAL FOOTBALL NEWSROOM v6"
           echo "Run #${{ github.run_number }}"
           echo "Generación: ${{ needs.generate.result }}"
           echo "Shorts: ${{ needs.render-upload.result }}"
           echo "Longform: ${{ needs.longform.result }}"
-          if [ "${{ needs.render-upload.result }}" = "success" ]; then
-            echo "✅ Shorts publicados y verificados por reporte local"
-          elif [ "${{ needs.longform.result }}" = "success" ]; then
-            echo "✅ Resumen largo publicado correctamente"
-          elif [ "${{ needs.generate.result }}" = "success" ]; then
-            echo "ℹ️ Sin publicación nueva en esta ejecución."
-          else
-            echo "⚠️ Falló la selección editorial"
-          fi
-          echo "══════════════════════════════════════════════"
-          if [ "${{ needs.generate.result }}" != "success" ]; then
-            echo "❌ El job de generación no terminó correctamente."
-            exit 1
-          fi
-          if [ "${{ needs.render-upload.result }}" = "failure" ] || [ "${{ needs.render-upload.result }}" = "cancelled" ]; then
-            echo "❌ La publicación de Shorts no terminó correctamente."
-            exit 1
-          fi
-          if [ "${{ needs.longform.result }}" = "failure" ] || [ "${{ needs.longform.result }}" = "cancelled" ]; then
-            echo "❌ El resumen largo no terminó correctamente."
-            exit 1
-          fi
+          if [ "${{ needs.generate.result }}" = "success" ] && [ "${{ needs.render-upload.result }}" = "success" ]; then echo "✅ Shorts publicados y verificados"; fi
+          if [ "${{ needs.longform.result }}" = "success" ]; then echo "✅ Resumen largo publicado"; fi
+          if [ "${{ needs.generate.result }}" != "success" ]; then echo "❌ Falló la generación"; exit 1; fi
+          if [ "${{ needs.render-upload.result }}" = "failure" ] || [ "${{ needs.render-upload.result }}" = "cancelled" ]; then echo "❌ Falló la publicación de Shorts"; exit 1; fi
+          if [ "${{ needs.longform.result }}" = "failure" ] || [ "${{ needs.longform.result }}" = "cancelled" ]; then echo "❌ Falló el resumen largo"; exit 1; fi
