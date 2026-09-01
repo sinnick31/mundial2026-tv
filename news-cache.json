@@ -1,15 +1,15 @@
 {
-  "ultima_actualizacion": "2026-09-01T20:42:19.909Z",
-  "total_hoy": 189,
+  "ultima_actualizacion": "2026-09-01T20:46:32.230Z",
+  "total_hoy": 185,
   "total_reciente": 140,
   "por_categoria": {
-    "colo_colo": 49,
+    "colo_colo": 50,
     "chile": 44,
     "chilenos_exterior": 1,
     "femenino": 2,
     "formativo": 2,
     "tercera": 4,
-    "internacional": 38
+    "internacional": 37
   },
   "noticias": [
     {
@@ -396,6 +396,26 @@
       "razones": [
         "categoria:colo_colo(+60)",
         "frescura:2h(+15)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "¿Cuándo puede ser campeón Colo Colo? El partido que podría coronar al Cacique y darle la 35 - tecache.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPSmM0d200WmxPU3p1LUJQRG1mcktZN2NtajFPWFNjV3p6Z2hhRWItQ01FY09ic0szalVfSk9naWJQTGF4cmJUaHhobGdoRjR6YlB2RmRGcWQ0aTdVaWJuRHBhZTAtVnI5cDhZeTlhU3Fkek43eWNfQ2RtV28tN01JSnhldzROTDlVLThSY2NHTTREZGtjRzRBdjJKTUlqcEI0YjhpeTVsam84TklteW9zc3JObkdKa0E?oc=5\" target=\"_blank\">¿Cuándo puede ser campeón Colo Colo? El partido que podría coronar al Cacique y darle la 35</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">tecache.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPSmM0d200WmxPU3p1LUJQRG1mcktZN2NtajFPWFNjV3p6Z2hhRWItQ01FY09ic0szalVfSk9naWJQTGF4cmJUaHhobGdoRjR6YlB2RmRGcWQ0aTdVaWJuRHBhZTAtVnI5cDhZeTlhU3Fkek43eWNfQ2RtV28tN01JSnhldzROTDlVLThSY2NHTTREZGtjRzRBdjJKTUlqcEI0YjhpeTVsam84TklteW9zc3JObkdKa0E?oc=5",
+      "pubDate": "Mon, 31 Aug 2026 17:07:18 GMT",
+      "timestamp": "2026-08-31T17:07:18.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:28h(+0)",
         "senal:\\b(clasific|eliminad(+8)",
         "gigante:colo colo(+10)"
       ]
@@ -2361,6 +2381,24 @@
       ]
     },
     {
+      "title": "El mejor Zampedri de la historia - AS Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE5DOG00QWt5TmJFejAwSkVGNGhYam1zS2FNUWZLMGNRbWxHUUdBSEhKVUV0djhGbnc5NkRJVWMzS2kxdThuTy0ybGRqMGRkQnlLSTdIM0F1S1YtbDZHZHJFdlA2THFCQ1NNeUpleUlqTkRxa0NNVmlPdGJzTdIBjwFBVV95cUxOcDhsaWpmbmlFdEMyRFdnUEQyMWhPLWpZLTRiWmtIdGNDLXJHYnNHRTRxN2tLcjkzbGZtb3RZRUNCeldIa0xocnc2WFQ0SGxrbEo0ZGU4MExWWFpkRGVxVklsRHEtdVRiU3lRVjlIX3ZxV3dMQVlyczdzMDhpcXI1QnFKbXhZNXFvZ1luei02QQ?oc=5\" target=\"_blank\">El mejor Zampedri de la historia</a>&nbsp;&nbsp;<font color=\"#6f6",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5DOG00QWt5TmJFejAwSkVGNGhYam1zS2FNUWZLMGNRbWxHUUdBSEhKVUV0djhGbnc5NkRJVWMzS2kxdThuTy0ybGRqMGRkQnlLSTdIM0F1S1YtbDZHZHJFdlA2THFCQ1NNeUpleUlqTkRxa0NNVmlPdGJzTdIBjwFBVV95cUxOcDhsaWpmbmlFdEMyRFdnUEQyMWhPLWpZLTRiWmtIdGNDLXJHYnNHRTRxN2tLcjkzbGZtb3RZRUNCeldIa0xocnc2WFQ0SGxrbEo0ZGU4MExWWFpkRGVxVklsRHEtdVRiU3lRVjlIX3ZxV3dMQVlyczdzMDhpcXI1QnFKbXhZNXFvZ1luei02QQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 18:53:41 GMT",
+      "timestamp": "2026-09-01T18:53:41.000Z",
+      "fuente": "Google News — Libertadores",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 35,
+      "categoria": "internacional",
+      "equipo_chile": null,
+      "viral_score": 48,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:2h(+15)"
+      ]
+    },
+    {
       "title": "Sede confirmada: Colo-Colo y la U conocen dónde se jugará la Libertadores Femenina 2026 - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi9AFBVV95cUxNM3UteWthSXUzRlQ3cDV0cnNvZ08zOVpUckZVc1lxSWlDZUY3S2VHd3BtZHQ0RHdocGg4NTY2Uy13WEdqaVJfVHpiVzR6c2RDUEM4VGdnckdIenZYVkhVRER3SXpha25Tc09CcVhfT2xvWTBGTm51WGZkbE9zWFgyZVgyZEowM3J6a0s5UFV2VXFMU0JmQXlSNDFWUTY3SEh3Z1ZGMnRGc1hFTTRPNHJRbEFCRFNsS1hPWTIzbUhKeUMzZWpFb1VZWEVKR0ZUallURVoxbGJuVWMtd1RJMHViY1RqVjZ6VDFZWm5ldGxGamtON0F3?oc=5\" target=\"_blank\">Sede confirmada: Colo-Colo y la U conocen dónde se jugará la Libertadores Femenina 2026</a>&nbsp;&n",
       "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNM3UteWthSXUzRlQ3cDV0cnNvZ08zOVpUckZVc1lxSWlDZUY3S2VHd3BtZHQ0RHdocGg4NTY2Uy13WEdqaVJfVHpiVzR6c2RDUEM4VGdnckdIenZYVkhVRER3SXpha25Tc09CcVhfT2xvWTBGTm51WGZkbE9zWFgyZVgyZEowM3J6a0s5UFV2VXFMU0JmQXlSNDFWUTY3SEh3Z1ZGMnRGc1hFTTRPNHJRbEFCRFNsS1hPWTIzbUhKeUMzZWpFb1VZWEVKR0ZUallURVoxbGJuVWMtd1RJMHViY1RqVjZ6VDFZWm5ldGxGamtON0F3?oc=5",
@@ -2630,44 +2668,6 @@
         "categoria:internacional(+8)",
         "frescura:1h(+15)",
         "senal:\\b(fichaje|traspaso|(+10)"
-      ]
-    },
-    {
-      "title": "Champions League 2026-27: Calendario del Porto y Santiago Gimenez - TUDN",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxQNHpPbk5tb296VjJEU29zcXUyV0c4Wk8tdlE2THRnOWhuN3RidGNBY01lblMwR0gtRGtscG45Z1RQZzQ4ZjU0bWVkU1dNaUZnV0gtd2dhZnlfY1RzUkhhUXA1cTFZWXBtdTUzV1NubnB1MzFpOVc4TGlEZDJudm9ETktNcFhJTDRKekp4eG1adjZoUXUybk0yQnlrdjVoNGJWekVDRHhOWXFHYkZ6OWVJTUNpUnQ2N01CcDBEOS1pd0FxU3V1el9lU29hZXZsOHNuRDVyODBGVWhwZw?oc=5\" target=\"_blank\">Champions League 2026-27: Calendario del Porto y Santiago Gimenez</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TUDN</font>",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQNHpPbk5tb296VjJEU29zcXUyV0c4Wk8tdlE2THRnOWhuN3RidGNBY01lblMwR0gtRGtscG45Z1RQZzQ4ZjU0bWVkU1dNaUZnV0gtd2dhZnlfY1RzUkhhUXA1cTFZWXBtdTUzV1NubnB1MzFpOVc4TGlEZDJudm9ETktNcFhJTDRKekp4eG1adjZoUXUybk0yQnlrdjVoNGJWekVDRHhOWXFHYkZ6OWVJTUNpUnQ2N01CcDBEOS1pd0FxU3V1el9lU29hZXZsOHNuRDVyODBGVWhwZw?oc=5",
-      "pubDate": "Mon, 31 Aug 2026 22:13:11 GMT",
-      "timestamp": "2026-08-31T22:13:11.000Z",
-      "fuente": "Google News — Champions",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 30,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 56,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:1h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
-      "title": "Calendario Champions League 2026-27: así se juega la fase liga - clarosports.com",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOVmt4MC1BN3BRM3MtZGlZLWFFX2t0RGsxZTBXWmRoeTIyWWxXNlliVmRzUmo2aTR3OTZTLTFfRWlYSGhBX2ZmcmpRRm4tRk5iV2luNHc5dUxQZmxwV1BsS21LZ3VYbWg1cS1NMjh0QzNZa3Fuc1YtNGZnRmlSczYybXQzelZGTkMwZ0ZCdnYyNzl3dXRUdlI4UFRveC03STNENzZ5Mi0tSDB1eXdvd3V6R0ZMdGs?oc=5\" target=\"_blank\">Calendario Champions League 2026-27: así se juega la fase liga</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">clarosports.com</font>",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVmt4MC1BN3BRM3MtZGlZLWFFX2t0RGsxZTBXWmRoeTIyWWxXNlliVmRzUmo2aTR3OTZTLTFfRWlYSGhBX2ZmcmpRRm4tRk5iV2luNHc5dUxQZmxwV1BsS21LZ3VYbWg1cS1NMjh0QzNZa3Fuc1YtNGZnRmlSczYybXQzelZGTkMwZ0ZCdnYyNzl3dXRUdlI4UFRveC03STNENzZ5Mi0tSDB1eXdvd3V6R0ZMdGs?oc=5",
-      "pubDate": "Mon, 31 Aug 2026 17:16:05 GMT",
-      "timestamp": "2026-08-31T17:16:05.000Z",
-      "fuente": "Google News — Champions",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 30,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 56,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:2h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
       ]
     }
   ]
