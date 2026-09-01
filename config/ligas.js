@@ -167,7 +167,7 @@ const RSS_FEEDS = [
   { name: 'Google News — Tercera B', url: gnews('"Tercera B" Chile futbol'), lang: 'es', categoria: 'tercera', prioridad: 50 },
 
   // 🌎 CHILENOS EN EL EXTERIOR: múltiples geografías para no depender de una sola liga
-  { name: 'Google News — Chilenos en Europa', url: gnews('"futbolistas chilenos" Europa OR España OR Italia OR Inglaterra OR Francia'), lang: 'es', gl: 'ES', categoria: 'chilenos_exterior', prioridad: 78 },
+  { name: 'Google News — Chilenos en Europa', url: gnews('"futbolistas chilenos" Europa OR España OR Italia OR Inglaterra OR Francia'), lang: 'es', gl: 'ES', categoria: 'chilenos_exterior', prioridad: 70 },
   { name: 'Google News — Chilenos en Sudamérica', url: gnews('"futbolistas chilenos" Argentina OR Brasil OR Uruguay OR Paraguay'), lang: 'es', gl: 'AR', categoria: 'chilenos_exterior', prioridad: 72 },
   { name: 'Google News — Chilenos en Norteamérica', url: gnews('"futbolistas chilenos" México OR MLS OR Estados Unidos'), lang: 'es', gl: 'US', categoria: 'chilenos_exterior', prioridad: 65 },
   { name: 'Google News — Chilenos en el extranjero', url: gnews('"futbolistas chilenos" OR "jugador chileno" extranjero'), lang: 'es', gl: 'CL', categoria: 'chilenos_exterior', prioridad: 80 },
