@@ -18,13 +18,7 @@ function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (_) { return fallback; }
 }
 function clean(s = '') {
-  return String(s)
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/\s+/g, ' ')
-    .trim();
+  return String(s).replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
 }
 function normalize(s = '') {
   return clean(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -39,23 +33,12 @@ function isColo(item) {
 }
 function isChileCompetition(item) {
   const t = normalize(`${item.title} ${item.description}`);
-  return [
-    'liga de primera', 'primera division', 'campeonato nacional', 'liga de ascenso',
-    'primera b', 'segunda division', 'liga 2d', 'copa chile', 'copa de la liga',
-    'supercopa de chile', 'liga femenina', 'ascenso femenino', 'tercera a', 'tercera b',
-    'futbol formativo', 'futsal', 'anfp', 'anfa',
-  ].some(k => t.includes(k));
+  return ['liga de primera', 'primera division', 'campeonato nacional', 'liga de ascenso', 'primera b', 'segunda division', 'liga 2d', 'copa chile', 'copa de la liga', 'supercopa de chile', 'liga femenina', 'ascenso femenino', 'tercera a', 'tercera b', 'futbol formativo', 'futsal', 'anfp', 'anfa'].some(k => t.includes(k));
 }
 function isChileanAbroad(item) {
   if (item.categoria === 'chilenos_exterior') return true;
   const t = normalize(`${item.title} ${item.description}`);
-  return [
-    'futbolista chileno', 'futbolistas chilenos', 'jugador chileno', 'jugadores chilenos',
-    'chileno en el extranjero', 'chilenos en el extranjero', 'alexis sanchez', 'ben brereton',
-    'dario osorio', 'marcelino nunez', 'gabriel suazo', 'guillermo maripan',
-    'victor davila', 'lucas assadi', 'lucas cepeda', 'alexander aravena',
-    'felipe mora', 'maximiliano falcon',
-  ].some(k => t.includes(k));
+  return ['futbolista chileno', 'futbolistas chilenos', 'jugador chileno', 'jugadores chilenos', 'chileno en el extranjero', 'chilenos en el extranjero', 'alexis sanchez', 'ben brereton', 'dario osorio', 'marcelino nunez', 'gabriel suazo', 'guillermo maripan', 'victor davila', 'lucas assadi', 'lucas cepeda', 'alexander aravena', 'felipe mora', 'maximiliano falcon'].some(k => t.includes(k));
 }
 function importance(item) {
   let score = Number(item.viral_score || 0);
@@ -100,12 +83,7 @@ function titleFor(item, type) {
 function buildNarration(item, type, resumen) {
   const title = clean(item.title);
   const sourceName = clean(item.fuente || item.fuente_host || 'la fuente original');
-  return [
-    `${labelFor(type)}. ${title}.`,
-    `El dato confirmado por ${sourceName} es el siguiente: ${resumen}`,
-    editorialAngle(type),
-    closingQuestion(type),
-  ].join(' ');
+  return [`${labelFor(type)}. ${title}.`, `El dato confirmado por ${sourceName} es el siguiente: ${resumen}`, editorialAngle(type), closingQuestion(type)].join(' ');
 }
 function buildItem(item, type, order) {
   const title = clean(item.title);
@@ -113,11 +91,7 @@ function buildItem(item, type, order) {
   const fuente = item.fuente || item.fuente_host || 'Fuente deportiva';
   const fuenteUrl = item.link;
   const angle = editorialAngle(type);
-  const tags = [
-    'FutbolChileno',
-    type === 'chilenos_exterior' ? 'ChilenosPorElMundo' : type === 'colo_colo' ? 'ColoColo' : 'CampeonatoChileno',
-    'Chile', 'Futbol', 'Shorts',
-  ];
+  const tags = ['FutbolChileno', type === 'chilenos_exterior' ? 'ChilenosPorElMundo' : type === 'colo_colo' ? 'ColoColo' : 'CampeonatoChileno', 'Chile', 'Futbol', 'Shorts'];
   return {
     tipo: 'sorpresa',
     gancho: `${labelFor(type)}: ${clean(title).slice(0, 80)}`,
@@ -126,23 +100,11 @@ function buildItem(item, type, order) {
     equipo1: item.equipo_chile || (type === 'chilenos_exterior' ? 'Chile' : 'Fútbol chileno'),
     equipo2: null,
     probabilidad: 0,
-    puntos: [
-      `Hecho confirmado: ${title}`,
-      `Contexto: ${resumen}`,
-      `Lectura editorial: ${angle}`,
-      `Cierre: ${closingQuestion(type)}`,
-    ],
+    puntos: [`Hecho confirmado: ${title}`, `Contexto: ${resumen}`, `Lectura editorial: ${angle}`, `Cierre: ${closingQuestion(type)}`],
     narracion: buildNarration(item, type, resumen),
     emoji: type === 'colo_colo' ? '⚪⚫' : type === 'chilenos_exterior' ? '🇨🇱🌎' : '🇨🇱⚽',
     titulo_youtube: titleFor(item, type),
-    descripcion_youtube: [
-      `Esta edición de ${labelFor(type).toLowerCase()} parte de un hecho publicado y añade contexto editorial propio.`,
-      `Hecho: ${title}`,
-      `Lectura del canal: ${angle}`,
-      `Fuente original: ${fuente} — ${fuenteUrl}`,
-      `Fecha de la fuente: ${item.pubDate || item.timestamp || FECHA}`,
-      '#FutbolChileno #Chile #Futbol #Shorts',
-    ].join('\n\n'),
+    descripcion_youtube: [`Esta edición de ${labelFor(type).toLowerCase()} parte de un hecho publicado y añade contexto editorial propio.`, `Hecho: ${title}`, `Lectura del canal: ${angle}`, `Fuente original: ${fuente} — ${fuenteUrl}`, `Fecha de la fuente: ${item.pubDate || item.timestamp || FECHA}`, '#FutbolChileno #Chile #Futbol #Shorts'].join('\n\n'),
     tags,
     _tipo_contenido: 'noticia',
     _match_id: null,
@@ -158,10 +120,7 @@ function buildItem(item, type, order) {
 function main() {
   const news = readJson('news-cache.json', { noticias: [] });
   const history = loadHistory();
-  const candidates = Array.isArray(news.noticias)
-    ? news.noticias.filter(n => ageHours(n) <= 72 && n.link)
-    : [];
-
+  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => ageHours(n) <= 72 && n.link) : [];
   if (!candidates.length) {
     fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, total: 0, contenido: [] }, null, 2));
     console.log('⚠️ No hay fuentes recientes con URL verificable. No se publica relleno.');
@@ -172,11 +131,7 @@ function main() {
   const picks = [];
   const addPick = (predicate, type) => {
     if (picks.length >= MAX_ITEMS) return;
-    const item = candidates
-      .filter(predicate)
-      .filter(n => !usedLinks.has(n.link))
-      .filter(n => !hasSimilarHook(history, n.title, 'noticia'))
-      .sort((a, b) => importance(b) - importance(a))[0];
+    const item = candidates.filter(predicate).filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia')).sort((a, b) => importance(b) - importance(a))[0];
     if (!item) return;
     usedLinks.add(item.link);
     picks.push(buildItem(item, type, picks.length + 1));
@@ -184,19 +139,14 @@ function main() {
 
   if (MODO === 'auto' || MODO === 'chile' || MODO === 'noticias') addPick(isColo, 'colo_colo');
   if (picks.length < MAX_ITEMS && (MODO === 'auto' || MODO === 'chile' || MODO === 'noticias')) addPick(isChileCompetition, 'chile');
-  if (picks.length < MAX_ITEMS && (MODO === 'auto' || MODO === 'noticias')) addPick(isChileanAbroad, 'chilenos_exterior');
+  if (picks.length < MAX_ITEMS && (MODO === 'auto' || MODO === 'chile' || MODO === 'noticias')) addPick(isChileanAbroad, 'chilenos_exterior');
 
   if (picks.length < MAX_ITEMS) {
-    candidates
-      .filter(n => !usedLinks.has(n.link))
-      .filter(n => !hasSimilarHook(history, n.title, 'noticia'))
-      .sort((a, b) => importance(b) - importance(a))
-      .slice(0, MAX_ITEMS - picks.length)
-      .forEach(n => {
-        if (picks.length >= MAX_ITEMS) return;
-        usedLinks.add(n.link);
-        picks.push(buildItem(n, typeFor(n), picks.length + 1));
-      });
+    candidates.filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia')).sort((a, b) => importance(b) - importance(a)).slice(0, MAX_ITEMS - picks.length).forEach(n => {
+      if (picks.length >= MAX_ITEMS) return;
+      usedLinks.add(n.link);
+      picks.push(buildItem(n, typeFor(n), picks.length + 1));
+    });
   }
 
   if (!picks.length) {
@@ -205,23 +155,9 @@ function main() {
     return;
   }
 
-  picks.forEach(item => registrar(history, {
-    matchId: null,
-    tipoContenido: 'noticia',
-    hook: item.gancho,
-    titulo: item.titulo_youtube,
-  }));
+  picks.forEach(item => registrar(history, { matchId: null, tipoContenido: 'noticia', hook: item.gancho, titulo: item.titulo_youtube }));
   saveHistory(history);
-
-  fs.writeFileSync('daily-content.json', JSON.stringify({
-    fecha: FECHA,
-    generado_en: new Date().toISOString(),
-    total: picks.length,
-    modo: MODO,
-    politica: 'SOURCE_LOCKED_EDITORIAL_V6',
-    contenido: picks,
-  }, null, 2));
-
+  fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, generado_en: new Date().toISOString(), total: picks.length, modo: MODO, politica: 'SOURCE_LOCKED_EDITORIAL_V6', contenido: picks }, null, 2));
   console.log(`✅ ${picks.length} piezas reales seleccionadas`);
   picks.forEach((p, i) => console.log(`${i + 1}. [${p._fuente}] ${p.titulo_youtube}`));
 }
