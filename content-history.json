@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ARGENTINA Y ESPAÑA: ¿FINAL 2026?",
-      "titulo": "16 de julio: ¿Messi y España preparan la final del Mundial 2026 con 2 años de anticipo?",
-      "fecha": "2026-07-16T16:15:51.401Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "YAMAL VS MESSI MUNDIAL 2026",
-      "titulo": "19 años de diferencia entre Messi y Yamal en final 2026: ¿Duelo generacional definitivo?",
-      "fecha": "2026-07-16T16:16:02.658Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "MAESTROS DE LA INVICTABILIDAD",
       "titulo": "Argentina ganó 2-1 a England: ¿Quiénes más se mantienen invictos?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo Colo volvió a estirar su ventaja como líder y la U sigue golpeada: Así está",
       "titulo": "FÚTBOL CHILENO: Colo Colo volvió a estirar su ventaja como líder y la U sigue… | Lo que cambia",
       "fecha": "2026-09-01T20:49:02.172Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Calendario de Colo Colo en septiembre: solo dos partidos confirmados y la Copa C",
+      "titulo": "COLO-COLO: Calendario de Colo Colo en septiembre: solo dos partidos confirmados… | Lo que se sabe",
+      "fecha": "2026-09-01T22:29:12.559Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: ¡Invencibles! Colo Colo golea 5-1 a Audax Italiano por la Liga de Primera - chil",
+      "titulo": "FÚTBOL CHILENO: ¡Invencibles! Colo Colo golea 5-1 a Audax Italiano por la Liga… | Lo que cambia",
+      "fecha": "2026-09-01T22:29:12.559Z"
     }
   ]
 }
