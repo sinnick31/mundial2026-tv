@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "MALDICIÓN: BALÓN DE ORO NO GANA MUNDIAL",
-      "titulo": "0% Balones de Oro campeones Mundiales: ¿Racha seguirá en 2026?",
-      "fecha": "2026-07-16T05:47:39.696Z"
-    },
-    {
       "match_id": "537390",
       "tipo_contenido": "prediccion",
       "hook": "DEFENSA SÓLIDA ESPAÑA",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: La 35 es cosa de tiempo: Cuándo podría Colo Colo…",
       "titulo": "COLO-COLO: La 35 es cosa de tiempo: Cuándo podría Colo Colo…",
       "fecha": "2026-09-01T06:09:28.209Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo más cerca del título y cerrada lucha por Chile…",
+      "titulo": "COLO-COLO: Colo Colo más cerca del título y cerrada lucha por Chile…",
+      "fecha": "2026-09-01T16:18:22.076Z"
     }
   ]
 }

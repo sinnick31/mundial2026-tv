@@ -1,17 +1,137 @@
 {
-  "ultima_actualizacion": "2026-09-01T06:09:25.307Z",
-  "total_hoy": 198,
-  "total_reciente": 126,
+  "ultima_actualizacion": "2026-09-01T16:18:19.311Z",
+  "total_hoy": 203,
+  "total_reciente": 140,
   "por_categoria": {
-    "colo_colo": 41,
-    "chile": 36,
+    "colo_colo": 45,
+    "chile": 44,
     "chilenos_exterior": 1,
     "femenino": 1,
-    "formativo": 1,
-    "tercera": 3,
+    "formativo": 2,
+    "tercera": 4,
     "internacional": 43
   },
   "noticias": [
+    {
+      "title": "En Colo Colo esperan bajar la 35 en el Monumental luego de doce años: “Sería extraordinario” - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxNSTR3VXoteDhnNXNBMG42ZloyUVAxLXBQal9aREQtNWdYVGpqd3JxVndhUkYzdF9ScGZTN0l3QkxYSFh4NFhfVk8yTElGV1BuaUNrQkQ5MHV0R3picl9jMmRhT0xsYVA3Zzg2SFU2c05lYkpRaDVwWkdzd1RsQnl0N2RPQWJHSTZpdHd0WVR5MHo4TTFRQ1VSNU4xTdIBoAFBVV95cUxOYzNEWC1RQXB1cXVFZUVQdV94WnUzTFk1UDlnWWttdlZqUEEtVk9tdngza204UHhxX1VDb285eXNZNEs0c2lWVExkV0pTamt2SnBwWnBIM19PZkk3Smh5ZHJXeUVRNS00VDJKY1hrN3RfeWpXY1Rrb1hMSFFqZUNnMlR6M3dkemRuREQxQnNrOFJPVnlYeV80RkVCRTJZdkpQ?oc=5\" target=\"_blank\"",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSTR3VXoteDhnNXNBMG42ZloyUVAxLXBQal9aREQtNWdYVGpqd3JxVndhUkYzdF9ScGZTN0l3QkxYSFh4NFhfVk8yTElGV1BuaUNrQkQ5MHV0R3picl9jMmRhT0xsYVA3Zzg2SFU2c05lYkpRaDVwWkdzd1RsQnl0N2RPQWJHSTZpdHd0WVR5MHo4TTFRQ1VSNU4xTdIBoAFBVV95cUxOYzNEWC1RQXB1cXVFZUVQdV94WnUzTFk1UDlnWWttdlZqUEEtVk9tdngza204UHhxX1VDb285eXNZNEs0c2lWVExkV0pTamt2SnBwWnBIM19PZkk3Smh5ZHJXeUVRNS00VDJKY1hrN3RfeWpXY1Rrb1hMSFFqZUNnMlR6M3dkemRuREQxQnNrOFJPVnlYeV80RkVCRTJZdkpQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 15:12:08 GMT",
+      "timestamp": "2026-09-01T15:12:08.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:1h(+15)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Ya entrenó con el primer equipo: La nueva incorporación de Colo Colo - TVN",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxOMU9RS21JRWptQzlMQzVTejRncWVXaWhITEJZLUxMVHFCLUNSamZUOEFWMEpheTNnMTB3T2VxTWdrQjQ1NW1EdzBqdVdYWFR0NmxFX1RpTmEtQlVjTGp4LXFHU0MwNzZTWkpIX2cyWlA5TXBuQk9GVjF4WG1qbGFhcFduSnluZ9IBiwFBVV95cUxOcnRNOWFteGpvWW5MdVhnUzlwaVBiWTNOSTdnYlI3d2ZqMkJ5dlJmbEh6QUNnU1gzUmRiOUdoZEJEY01WbG9mX1psWHg5WFIwdXF1YXlONlNKWkZaNzRjZlE4MmNlNktDUUZCVWd5TE9JajlLUVlzTGF1LTdXbUdpR1A0SEpGSTZkWHNv?oc=5\" target=\"_blank\">Ya entrenó con el primer equipo: La nueva incorporación",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOMU9RS21JRWptQzlMQzVTejRncWVXaWhITEJZLUxMVHFCLUNSamZUOEFWMEpheTNnMTB3T2VxTWdrQjQ1NW1EdzBqdVdYWFR0NmxFX1RpTmEtQlVjTGp4LXFHU0MwNzZTWkpIX2cyWlA5TXBuQk9GVjF4WG1qbGFhcFduSnluZ9IBiwFBVV95cUxOcnRNOWFteGpvWW5MdVhnUzlwaVBiWTNOSTdnYlI3d2ZqMkJ5dlJmbEh6QUNnU1gzUmRiOUdoZEJEY01WbG9mX1psWHg5WFIwdXF1YXlONlNKWkZaNzRjZlE4MmNlNktDUUZCVWd5TE9JajlLUVlzTGF1LTdXbUdpR1A0SEpGSTZkWHNv?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 12:38:00 GMT",
+      "timestamp": "2026-09-01T12:38:00.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:4h(+10)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Colo Colo es virtualmente campeón del fútbol chileno: esta es la fecha más temprana posible en que levantará l - AS Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi6gFBVV95cUxOT3dqOVF4T0dVUXV6S3BNQUVna1VZdUw4aklHMnBMSG1STExWN29RV1RUTEU3RlJVSjZ2cU9kRGpTcXNQTVkyZEJwVG9rMjIwdVhrTTZDVEtSR1dNUFAtSG5Sd0RtbjNlRm1BZ2FtbU9ValJGS0NNM2c0aTBNamtUQTVBRU5ka1RBbHp5OXloWlg0U0FWQjBpVmdSVmJEV1lCZU9wZUZCcEpYek1ZYUdSOW1NLVlXX1A0enBaRk1nSkZwUzhSbUtXM25VTldxSTBUOEZ2d0xrNVp3UkE0bk5hMHgwOXpZQ3FWM3fSAf4BQVVfeXFMUEpRSEhYWjBQLWRPN09tX3JrZ3dpUjYzUzZTdUQ2RXQ5OWNrWjd6alQ1eWZrYnNCZjdiNVNwRk5wc0x1WExPei05TWxGX0UwNGllY0VLSWJJWWZycjVtalZoNG",
+      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOT3dqOVF4T0dVUXV6S3BNQUVna1VZdUw4aklHMnBMSG1STExWN29RV1RUTEU3RlJVSjZ2cU9kRGpTcXNQTVkyZEJwVG9rMjIwdVhrTTZDVEtSR1dNUFAtSG5Sd0RtbjNlRm1BZ2FtbU9ValJGS0NNM2c0aTBNamtUQTVBRU5ka1RBbHp5OXloWlg0U0FWQjBpVmdSVmJEV1lCZU9wZUZCcEpYek1ZYUdSOW1NLVlXX1A0enBaRk1nSkZwUzhSbUtXM25VTldxSTBUOEZ2d0xrNVp3UkE0bk5hMHgwOXpZQ3FWM3fSAf4BQVVfeXFMUEpRSEhYWjBQLWRPN09tX3JrZ3dpUjYzUzZTdUQ2RXQ5OWNrWjd6alQ1eWZrYnNCZjdiNVNwRk5wc0x1WExPei05TWxGX0UwNGllY0VLSWJJWWZycjVtalZoNG5MUURRd1VOam84R0J4TVpJelBhZXNYMDFpTW05cjlKNEtTazc4UHNRSG5FaHJyR3N0RTdzM1lKZlg2N3B4RWhFdE00SUNadDVxY3Y2RWJyQXBicjYyYkxzMi1QRkdzZGtyWVNzVXo4NWhLN0txWkh6R0RMVHlCZmVWUTktYkpQVWhNM1lpRjcwY1c3UEVPYUVKV0RmRlpjX050X2c?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 12:30:37 GMT",
+      "timestamp": "2026-09-01T12:30:37.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:4h(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Noticias de Colo Colo hoy 1 de septiembre: Tensión por Arturo Vidal, la calculadora del título y alivio médico - AlAireLibre.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRTIxY3NlaWp5RlpKbURJVm1idmNNVDN0bXJBTng1b1VHazQ2RDI2ZXhHMzdhYVE3TGszeDEwY3JCVS02cFB5bWNDQUMtTlloYkhHaTNJTkhCeW5mY3JQSUVjWEltWjNDYTg5SWluT3dLODVhWjVRdDY5dXVwdHByWEh1bkNpWFctbHphR0VVbmhpaVdYTHJGcVpTdmlWNENQeTBWNGs3TnhHX3hYcW1JOEtmZ1N0UVRSdTM0?oc=5\" target=\"_blank\">Noticias de Colo Colo hoy 1 de septiembre: Tensión por Arturo Vidal, la calculadora del título y alivio médico</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">AlAireLibre.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRTIxY3NlaWp5RlpKbURJVm1idmNNVDN0bXJBTng1b1VHazQ2RDI2ZXhHMzdhYVE3TGszeDEwY3JCVS02cFB5bWNDQUMtTlloYkhHaTNJTkhCeW5mY3JQSUVjWEltWjNDYTg5SWluT3dLODVhWjVRdDY5dXVwdHByWEh1bkNpWFctbHphR0VVbmhpaVdYTHJGcVpTdmlWNENQeTBWNGs3TnhHX3hYcW1JOEtmZ1N0UVRSdTM0?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 12:28:42 GMT",
+      "timestamp": "2026-09-01T12:28:42.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:4h(+10)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Colo Colo más cerca del título y cerrada lucha por Chile 2: la tabla de Liga de Primera tras fecha 21 - BioBioChile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4AFBVV95cUxQY2tYbE1QeTJJYnNSVW9qZy12emNtM0Z2RkVNZWtoa3ZILUpDSDRCTzZfNXVDb2JONG1hSFBZUFRlLTlubXZCeVpIakNOZnJCYXNlbnFRb2psb0s3WjNCZGI0Si1ka1VaR3pSLXh1cG55c1ktaVZNSVRvWmFpMDRva2l1QnZxWkR3R3VPVUcyQVZkUzEtMzdxdUlZUWR0cm05ejg5Q3Y3c21XdmM5d0ZIV1kxQVMtazFiZDE2MXlCUk5VU21FRmo3WG9wanU3OUVHRHo1dmNzUENId2I5MTk1TQ?oc=5\" target=\"_blank\">Colo Colo más cerca del título y cerrada lucha por Chile 2: la tabla de Liga de Primera tras fecha 21</a>&nbsp;&nbsp;<font co",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQY2tYbE1QeTJJYnNSVW9qZy12emNtM0Z2RkVNZWtoa3ZILUpDSDRCTzZfNXVDb2JONG1hSFBZUFRlLTlubXZCeVpIakNOZnJCYXNlbnFRb2psb0s3WjNCZGI0Si1ka1VaR3pSLXh1cG55c1ktaVZNSVRvWmFpMDRva2l1QnZxWkR3R3VPVUcyQVZkUzEtMzdxdUlZUWR0cm05ejg5Q3Y3c21XdmM5d0ZIV1kxQVMtazFiZDE2MXlCUk5VU21FRmo3WG9wanU3OUVHRHo1dmNzUENId2I5MTk1TQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 11:37:29 GMT",
+      "timestamp": "2026-09-01T11:37:29.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:5h(+10)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "En Universidad Católica se rinden ante Colo Colo en la carrera por el título: “Está muy escapado” - bolavip.com",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPNWlqazk3SUVVTnQtOUdSYlVZcENyRU85V0l5ODl3OENtcHgwT051Mnlzb3cwXzltQ3pTWlh0S0dTLU1pbmsyTFJyemZoS2RyV3dLNEM4VHM1bG4tSmp2Uk5jOTlGTjE1c29xaVV4X204SWtlbk10Z1N4Nkc2MXlOdXJOaEdEZERfcjN3S1JtT3dqVWhwbTNGSWxnTG1IeHdJbmg0cVdlMGNGcTY1SnRLa19aYzR6VzNYanl1YnFvak1iQkVWSFHSAcsBQVVfeXFMT1lpTGg1U2luUHVMMHpiVU9zakFnSFA5SFZ2YzRiQTJoY1pGN09QcEZVUUR4OHFOd29zWDBOdmJaYWgwaklFUmxncU1WWC1TWHEwQXUtSnl4ZFo2cHFvRmQyaTJSQ3lLLXNHNEtoQk1PeEVnZklFUzJhbHdxY29vV2N1Mmxrc1",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPNWlqazk3SUVVTnQtOUdSYlVZcENyRU85V0l5ODl3OENtcHgwT051Mnlzb3cwXzltQ3pTWlh0S0dTLU1pbmsyTFJyemZoS2RyV3dLNEM4VHM1bG4tSmp2Uk5jOTlGTjE1c29xaVV4X204SWtlbk10Z1N4Nkc2MXlOdXJOaEdEZERfcjN3S1JtT3dqVWhwbTNGSWxnTG1IeHdJbmg0cVdlMGNGcTY1SnRLa19aYzR6VzNYanl1YnFvak1iQkVWSFHSAcsBQVVfeXFMT1lpTGg1U2luUHVMMHpiVU9zakFnSFA5SFZ2YzRiQTJoY1pGN09QcEZVUUR4OHFOd29zWDBOdmJaYWgwaklFUmxncU1WWC1TWHEwQXUtSnl4ZFo2cHFvRmQyaTJSQ3lLLXNHNEtoQk1PeEVnZklFUzJhbHdxY29vV2N1Mmxrc1BRdFBKdGM1WVZBSjNwVl9CdzYxUTNuRmRncUdPbXpuQ2E1ZXFjaXdFTzV1b3ZTSWZqdFA5LW1palYzVlo0Mk1FZnM4SmM?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 06:27:27 GMT",
+      "timestamp": "2026-09-01T06:27:27.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Universidad Católica",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:10h(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
     {
       "title": "Tribunal de Disciplina toma decisión sobre denuncia que arriesgaba una resta de puntos para Colo-Colo - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi_wFBVV95cUxQTGd5dWNBZTFLckxOX0xBeWdRMjFRZ1hEei03bmtNaGl1RDRjR0xmNnV1STUweHB5R1g3SHBCaTFwaTRlQ2xjS21fRHMzSm1DaWpuUDJGbGdFVTE5NGh5YllzTzhBLUZJTkxQeVZRSkdISmFUX0RsYnBvbWZYTTJVZ0ZmU1NTRGU2eXd6eXEzaERkcFZuZVI0ZnJoa3c2VXBZQjFnQW5ncm9lR0RrRUNYSUE0N3ZzQnJyeENqRHEwMXBJTXRHckM1dWRzc1JvaE1kM3hMR1FqQWZlZEdzdjhudFZVQmRhZ3BDRVZhOFF1QkR1QmFFYWtnWVR5bWVzY0k?oc=5\" target=\"_blank\">Tribunal de Disciplina toma decisión sobre denuncia que arriesgaba una resta de punt",
@@ -220,6 +340,26 @@
         "frescura:9h(+10)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Le preguntan a Fernando Ortiz por el futuro de Arturo Vidal en Colo Colo y sorprende con su respuesta - bolavip.com",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPYWkwcUFFSVByNjRDTUQxOTc3R0FtWGIyeEg0UGcwc2VuVVNNNkFuWm9DckVlRjZCdlpYSU4yYi1OU281Q1c1YnFYWmQyRC1Cck00bWl1S1Q3enE2cDBIWVZpdVpMcmhZMUE0R1B6UU5KOE12VXBNR0dNMEtkdHN0TkdyeGtaVUVaLUk0cjRZLWxmYnA1X295Z2xlZy10SFpFanBWdU1GNHBhQl9BQ1pOZGpfVU82eXhxZ0FmNUJFLUIwUlZ2SFNXM1psaG1fZ9IB0wFBVV95cUxPLWozUHg3dHpvTzMyU1JqNXRyajhDdk44U2ltZTQ1MmF0QkZ6REozOWhMVzZMR2VxcFpRY3NtUVFMY2E3VkplM1Fkd0Y5LURWN1djS1hLVEZmNkE0Tmd4U2owYVdwSUh0VjRmbldiTkhPN1BKeVJsZ1BqWXJ0TU",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPYWkwcUFFSVByNjRDTUQxOTc3R0FtWGIyeEg0UGcwc2VuVVNNNkFuWm9DckVlRjZCdlpYSU4yYi1OU281Q1c1YnFYWmQyRC1Cck00bWl1S1Q3enE2cDBIWVZpdVpMcmhZMUE0R1B6UU5KOE12VXBNR0dNMEtkdHN0TkdyeGtaVUVaLUk0cjRZLWxmYnA1X295Z2xlZy10SFpFanBWdU1GNHBhQl9BQ1pOZGpfVU82eXhxZ0FmNUJFLUIwUlZ2SFNXM1psaG1fZ9IB0wFBVV95cUxPLWozUHg3dHpvTzMyU1JqNXRyajhDdk44U2ltZTQ1MmF0QkZ6REozOWhMVzZMR2VxcFpRY3NtUVFMY2E3VkplM1Fkd0Y5LURWN1djS1hLVEZmNkE0Tmd4U2owYVdwSUh0VjRmbldiTkhPN1BKeVJsZ1BqWXJ0TUQ3YVNpbk5pZFo4aGtabWtaVmFUemI5ZzJGUEdIOW5DekplZE42WmJiYUdxQ2x5NE5hMkQtcFcwckIwLUNTdkZaaUYwZC03TFF2S3VKRlBLRzN0cGpN?oc=5",
+      "pubDate": "Mon, 31 Aug 2026 14:07:04 GMT",
+      "timestamp": "2026-08-31T14:07:04.000Z",
+      "fuente": "Google News — Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:26h(+0)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:colo colo(+10)"
       ]
     },
@@ -629,88 +769,6 @@
       ]
     },
     {
-      "title": "Colo Colo vs Audax Italiano: cuándo juegan, formaciones y dónde ver el partido de la Liga de Primera - 365Scores",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxNOFRqeDU1d3dBd2VtdkxHeV9fdlBqNlVRWWM0X3YyRU50a2FweUpFMHM2c0JMblByTEN3TThER2VFdUF5M0xfUnpKMVJDaGQ1QTUxWC1WM0c1cHhkdUtNRmZQZmUyS1kzTVVHeko5dlNvM1RZVGZsZ1ZGZkI0ZEtDYg?oc=5\" target=\"_blank\">Colo Colo vs Audax Italiano: cuándo juegan, formaciones y dónde ver el partido de la Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">365Scores</font>",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOFRqeDU1d3dBd2VtdkxHeV9fdlBqNlVRWWM0X3YyRU50a2FweUpFMHM2c0JMblByTEN3TThER2VFdUF5M0xfUnpKMVJDaGQ1QTUxWC1WM0c1cHhkdUtNRmZQZmUyS1kzTVVHeko5dlNvM1RZVGZsZ1ZGZkI0ZEtDYg?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 16:03:42 GMT",
-      "timestamp": "2026-08-29T16:03:42.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:6h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)",
-        "penal(-8)"
-      ]
-    },
-    {
-      "title": "Colo Colo vs Audax: horario, TV y previa por la Liga de Primera - 365Scores",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxNOFRqeDU1d3dBd2VtdkxHeV9fdlBqNlVRWWM0X3YyRU50a2FweUpFMHM2c0JMblByTEN3TThER2VFdUF5M0xfUnpKMVJDaGQ1QTUxWC1WM0c1cHhkdUtNRmZQZmUyS1kzTVVHeko5dlNvM1RZVGZsZ1ZGZkI0ZEtDYg?oc=5\" target=\"_blank\">Colo Colo vs Audax: horario, TV y previa por la Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">365Scores</font>",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOFRqeDU1d3dBd2VtdkxHeV9fdlBqNlVRWWM0X3YyRU50a2FweUpFMHM2c0JMblByTEN3TThER2VFdUF5M0xfUnpKMVJDaGQ1QTUxWC1WM0c1cHhkdUtNRmZQZmUyS1kzTVVHeko5dlNvM1RZVGZsZ1ZGZkI0ZEtDYg?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 16:03:42 GMT",
-      "timestamp": "2026-08-29T16:03:42.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:0h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)",
-        "penal(-8)"
-      ]
-    },
-    {
-      "title": "Ni rebeldía ni pataleta: filtran el aplaudido gesto de Vidal con compañeros de Colo Colo por los contratos - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOU1A5U1hZRFk0dGFRM2g4MGFHT3RjZFVjQzlFTkRYYm84dGd4M3ZLNEZvVm56R09lMGVSMk5JNmNXWFYwRVFZYVE2ckVKSUJ5VkFSdDNyRFVJaHp5UWNYR1B2ZHNJVGQxNzVhUk1mekp2bF9OdkI5SVZCQzNmTENZbHhNQkQ2TXNKd2ZucXpFWG9HVkxZV0ZqQUlOZWl1bW9ONElHQmppeGxQRjhSbENtRFhSTVNmcmZiZ2lqNi0xdDY3T1oxTG96UWRnSkLSAdIBQVVfeXFMTzYySlRlV0lpcHJzM1BzYUUzcXVjUFAyekZybWZNdVktQVFnaUh0R291WllnczVHSk56QlU5RXJVVl9NTm14dDd5VkFzYTNCTHFvM1BwbFpfV2MtWFgyd0FSN2lQMDF3UnF2X0NvRE5QSUxFWjU1d1M2Rm9YMkVIeE",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOU1A5U1hZRFk0dGFRM2g4MGFHT3RjZFVjQzlFTkRYYm84dGd4M3ZLNEZvVm56R09lMGVSMk5JNmNXWFYwRVFZYVE2ckVKSUJ5VkFSdDNyRFVJaHp5UWNYR1B2ZHNJVGQxNzVhUk1mekp2bF9OdkI5SVZCQzNmTENZbHhNQkQ2TXNKd2ZucXpFWG9HVkxZV0ZqQUlOZWl1bW9ONElHQmppeGxQRjhSbENtRFhSTVNmcmZiZ2lqNi0xdDY3T1oxTG96UWRnSkLSAdIBQVVfeXFMTzYySlRlV0lpcHJzM1BzYUUzcXVjUFAyekZybWZNdVktQVFnaUh0R291WllnczVHSk56QlU5RXJVVl9NTm14dDd5VkFzYTNCTHFvM1BwbFpfV2MtWFgyd0FSN2lQMDF3UnF2X0NvRE5QSUxFWjU1d1M2Rm9YMkVIeElhWkVSQzBpYjJ5d0lqMm0xeWIwWHZMZWFfanJiOTEtWHFvUFRWcE1Ccnd5TElldHRqSG8zOVBrN005bnhHWjBIdVMtSlEtNGl4aWNDTmFLOGR3?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 13:40:32 GMT",
-      "timestamp": "2026-08-29T13:40:32.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:3h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "El negocio de 4 millones de dólares que deberá hacer Colo-Colo para la temporada 2027 - En Cancha",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi7AFBVV95cUxPTEdNV19wSVh2WlJQRDBxMWwtaUlCYW1hYWp2bkpnUHVBaVJiMUZ6dmRIRi1yV0NPemFlLTJZdVZscEdISXowMERVeXI2ZktDSVZzeVNZektqbmwyTU9kdDNJQk5sOGJrNDkyaTlYQk1wQW54RE0wZEY4Q3dORjEwYWduTnBxWGtmWm1fRl9SWGxOSnJPUUh2RmNzTzZYRjRtM2JXVzROTWhYeHBXd1JvT0VGMlVLZUg2OWpfWFl2LUdRUENPNkJ4bzJKd1RUR2NXR3ZGOFBNSDkwZnRFNmthbmU1aWh2ZS1JZ2tPaw?oc=5\" target=\"_blank\">El negocio de 4 millones de dólares que deberá hacer Colo-Colo para la temporada 2027</a>&nbsp;&nbsp;<font co",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPTEdNV19wSVh2WlJQRDBxMWwtaUlCYW1hYWp2bkpnUHVBaVJiMUZ6dmRIRi1yV0NPemFlLTJZdVZscEdISXowMERVeXI2ZktDSVZzeVNZektqbmwyTU9kdDNJQk5sOGJrNDkyaTlYQk1wQW54RE0wZEY4Q3dORjEwYWduTnBxWGtmWm1fRl9SWGxOSnJPUUh2RmNzTzZYRjRtM2JXVzROTWhYeHBXd1JvT0VGMlVLZUg2OWpfWFl2LUdRUENPNkJ4bzJKd1RUR2NXR3ZGOFBNSDkwZnRFNmthbmU1aWh2ZS1JZ2tPaw?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 11:10:25 GMT",
-      "timestamp": "2026-08-29T11:10:25.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:5h(+10)",
-        "senal:\\b(fichaje|traspaso|(+10)",
-        "senal:\\b\\d+\\s*(goles|millo(+6)"
-      ]
-    },
-    {
       "title": "Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver en vivo la Liga de Primera - 365Scores",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE5LeXNreDFBendNUDRVQ1ZNR1VzWlhnQ20wdkVaM0FXSF9iemFvRVpjeThhT3ZQMGl4cmluOGx2cTg0dndRbFUxRkxyWjVTbHdmNjZHMXFYbG1NV3liMGRHTHhlM1FGZkU0RzNlUm8wU0tfc2ItZ05mU0lGMkY?oc=5\" target=\"_blank\">Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver en vivo la Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">365Scores</font>",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5LeXNreDFBendNUDRVQ1ZNR1VzWlhnQ20wdkVaM0FXSF9iemFvRVpjeThhT3ZQMGl4cmluOGx2cTg0dndRbFUxRkxyWjVTbHdmNjZHMXFYbG1NV3liMGRHTHhlM1FGZkU0RzNlUm8wU0tfc2ItZ05mU0lGMkY?oc=5",
@@ -785,21 +843,39 @@
       ]
     },
     {
-      "title": "Colo-Colo arrasa otra vez: resultados y tabla de posiciones de la Liga Femenina - En Cancha",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxOcnlqQTRFSW9yYXZiUXBEeTRJd2lXSlczUERYTmFpaEY2WTA1VjlRUUItYkZBRV9WMVV5UzJaZVg3a1pYSTRpaXFFamdveW9oNHl0VkJ5VXExd2VXa3dJeE5hNk1xRWxtNUMxdmJzUUNacFUyQnFtbGliREJwMUpWcTg0aWdiRWRObWNEUm41am05NGYwWk5mUnNOMkVLVGc2dkl4WFd2NjhOT1NpTGZmakw2enl3NjdDWWx1YmpqeGJVVVZMN0NBekxsdEtlcklscmUtNmdGNHQwc2JUNmlXT09UNU1iZy1CZ1VF?oc=5\" target=\"_blank\">Colo-Colo arrasa otra vez: resultados y tabla de posiciones de la Liga Femenina</a>&nbsp;&nbsp;<font color=\"#6f",
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOcnlqQTRFSW9yYXZiUXBEeTRJd2lXSlczUERYTmFpaEY2WTA1VjlRUUItYkZBRV9WMVV5UzJaZVg3a1pYSTRpaXFFamdveW9oNHl0VkJ5VXExd2VXa3dJeE5hNk1xRWxtNUMxdmJzUUNacFUyQnFtbGliREJwMUpWcTg0aWdiRWRObWNEUm41am05NGYwWk5mUnNOMkVLVGc2dkl4WFd2NjhOT1NpTGZmakw2enl3NjdDWWx1YmpqeGJVVVZMN0NBekxsdEtlcklscmUtNmdGNHQwc2JUNmlXT09UNU1iZy1CZ1VF?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 12:31:00 GMT",
-      "timestamp": "2026-08-29T12:31:00.000Z",
+      "title": "\"Hay tensión e incomodidad\": Inesperado conflicto comienza a tomar fuerza en Colo-Colo - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi6AFBVV95cUxNajNJQjh0bHNFRE40Tm1DSmVIbWR5SE8zN1JuUTJlckpvM1drZDd0eEVwWHFzTndDMjd6QW9MT054YTJPTVYzMmVxekpheHVlenF5ampoaFFOa3NaZmpjVndvLTg3elJRUXFrSXpMcmZOVUhkR0RaRlMzdW1ZOFV0MUZHZ01WeHFjcGlKMzc5bFhITDRnTGdRUmN0N0NCN2RTZlJ0SU5xSGtJNXN2N1I4UUhMV1lFdjNwaGpXX3Z3YXVHOFJlUWgwblNVNVlfRW1xZ1V6WWM4ZmJ2UHpDQWdlS2Z2LTB4ZlBX?oc=5\" target=\"_blank\">\"Hay tensión e incomodidad\": Inesperado conflicto comienza a tomar fuerza en Colo-Colo</a>&nbsp;&nbsp;<font color=\"",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNajNJQjh0bHNFRE40Tm1DSmVIbWR5SE8zN1JuUTJlckpvM1drZDd0eEVwWHFzTndDMjd6QW9MT054YTJPTVYzMmVxekpheHVlenF5ampoaFFOa3NaZmpjVndvLTg3elJRUXFrSXpMcmZOVUhkR0RaRlMzdW1ZOFV0MUZHZ01WeHFjcGlKMzc5bFhITDRnTGdRUmN0N0NCN2RTZlJ0SU5xSGtJNXN2N1I4UUhMV1lFdjNwaGpXX3Z3YXVHOFJlUWgwblNVNVlfRW1xZ1V6WWM4ZmJ2UHpDQWdlS2Z2LTB4ZlBX?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 01:41:37 GMT",
+      "timestamp": "2026-09-01T01:41:37.000Z",
       "fuente": "Google News — Colo-Colo",
       "fuente_host": "news.google.com",
       "categoria_feed": "colo_colo",
       "prioridad_fuente": 100,
       "categoria": "colo_colo",
       "equipo_chile": "Colo-Colo",
-      "viral_score": 95,
+      "viral_score": 90,
       "razones": [
         "categoria:colo_colo(+60)",
-        "frescura:10h(+10)"
+        "frescura:15h(+5)"
+      ]
+    },
+    {
+      "title": "Fútbol femenino - csdcolocolo.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxQcWc0RC1hLUQzSVViOFRpWkZST3czQUo4OFd1bENUM2xBMzFVWTJXQUNUQUZMTC1rMF9QN0hnek4td2pRNGpYcng1MmUxMGJRRVVIM3psb3NubHNXb3FzMEtzMVBvYWl5MWFrN2FFRUlRWUxMOTExZVctQ1pITi1aNFM0ckhmTlZwQl83bzhXY0ZSVkU?oc=5\" target=\"_blank\">Fútbol femenino</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">csdcolocolo.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQcWc0RC1hLUQzSVViOFRpWkZST3czQUo4OFd1bENUM2xBMzFVWTJXQUNUQUZMTC1rMF9QN0hnek4td2pRNGpYcng1MmUxMGJRRVVIM3psb3NubHNXb3FzMEtzMVBvYWl5MWFrN2FFRUlRWUxMOTExZVctQ1pITi1aNFM0ckhmTlZwQl83bzhXY0ZSVkU?oc=5",
+      "pubDate": "Mon, 31 Aug 2026 12:54:18 GMT",
+      "timestamp": "2026-08-31T12:54:18.000Z",
+      "fuente": "CSD Colo-Colo",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 100,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 85,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:27h(+0)"
       ]
     },
     {
@@ -824,6 +900,26 @@
       ]
     },
     {
+      "title": "Calendario de Colo Colo en septiembre: solo dos partidos confirmados y la Copa Chile en suspenso - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQWnNlV3ZKREVzWDZQdWliYkg2eTNrRDJnQXNCb0xzZ1VsZjYyR0RPdnEyT3NiNE51UzZ5dUVpQkU4QlFUdUJlVThZWTVBOEl2Y2FIQWRJbVB5U0ZnLWEyQlZ0SWhhZmF6b05kTGE3UDZUN1RyUmNtU0ViVjR1OHJqRWhfT0J0czY5SDRMOUU4S0ZfTlFsT3EwNXJBNGVBM2x4d3U1TEJvamJMXy1UenVESEJMcW9rTEVYRnJscjk0RdIBxAFBVV95cUxQekg1NE9CeGg1MGR2OU9KUXZOVmh5aWltMTEwbnBJcDNfekg0RXBhWmxrX3hmTTh3V0ZUYmg2aXhYczRkekEzbkxiQ19yRF9rQXFxRkVNc1pBMDBjQUo2ZzdHSlZwWk1oQ3o0Vi1Ca3VvOHFRTHk4TDJtdHZYcjhSZkpVV1I4eTNBT1R3RX",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWnNlV3ZKREVzWDZQdWliYkg2eTNrRDJnQXNCb0xzZ1VsZjYyR0RPdnEyT3NiNE51UzZ5dUVpQkU4QlFUdUJlVThZWTVBOEl2Y2FIQWRJbVB5U0ZnLWEyQlZ0SWhhZmF6b05kTGE3UDZUN1RyUmNtU0ViVjR1OHJqRWhfT0J0czY5SDRMOUU4S0ZfTlFsT3EwNXJBNGVBM2x4d3U1TEJvamJMXy1UenVESEJMcW9rTEVYRnJscjk0RdIBxAFBVV95cUxQekg1NE9CeGg1MGR2OU9KUXZOVmh5aWltMTEwbnBJcDNfekg0RXBhWmxrX3hmTTh3V0ZUYmg2aXhYczRkekEzbkxiQ19yRF9rQXFxRkVNc1pBMDBjQUo2ZzdHSlZwWk1oQ3o0Vi1Ca3VvOHFRTHk4TDJtdHZYcjhSZkpVV1I4eTNBT1R3RXFSbVFQUGVoVmlWRmVHZlJISXFKZ0NkdEl4WWRiNmYtY1FZYzBlSTE5UXNOMnozRjJPLW1Fa1dv?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 14:15:34 GMT",
+      "timestamp": "2026-09-01T14:15:34.000Z",
+      "fuente": "Google News — Liga de Primera",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 98,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
       "title": "Se complica el Chile 2: Universidad de Chile cayó 1-2 ante U. de Concepción en Liga de Primera - Chilevisión",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxNWUt6T1RfaXRCZXhueFN4UUxCZVpfR3B6dXN3NkRNMzJDVEJrWVUxTWNHcVFwRV9VT0dRVlV4Y1Z4MVQ0anFlVThGY2pVWVAxWllHNGh0VW9FeHo2blJTemZrM2M3WVgyYkdidmlYUU0zaWFOajZMN2QxLVFBWVEwVUFzVjVYcGVOdDl6WHY5bnJKTjdKOEZyNVBFNE1zYWJuZzdQMnNSb1FVa3RxdGhCSVpaTTBtNEthTEpXSlM2QUphbDAxcjhYQjQzM2tGbXdNTWREakxUOUluc0V2aHhaWHp3?oc=5\" target=\"_blank\">Se complica el Chile 2: Universidad de Chile cayó 1-2 ante U. de Concepción en Liga de Primera</a>&nbsp;&nbsp;<font color=\"",
       "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNWUt6T1RfaXRCZXhueFN4UUxCZVpfR3B6dXN3NkRNMzJDVEJrWVUxTWNHcVFwRV9VT0dRVlV4Y1Z4MVQ0anFlVThGY2pVWVAxWllHNGh0VW9FeHo2blJTemZrM2M3WVgyYkdidmlYUU0zaWFOajZMN2QxLVFBWVEwVUFzVjVYcGVOdDl6WHY5bnJKTjdKOEZyNVBFNE1zYWJuZzdQMnNSb1FVa3RxdGhCSVpaTTBtNEthTEpXSlM2QUphbDAxcjhYQjQzM2tGbXdNTWREakxUOUluc0V2aHhaWHp3?oc=5",
@@ -841,6 +937,26 @@
         "frescura:1h(+15)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:universidad de chile(+10)"
+      ]
+    },
+    {
+      "title": "La cuenta más alegre de Colo Colo: cuándo los albos pueden asegurar el título de la Liga de Primera - La Tercera",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxPNUQ0aFlpa2hzbkliWVBhbTNiLWVkYkktY3ByYzg3VG9aeUI5Ym9tS0FoWGpjODNWbHVsVlF3QzRYdGFZV282RFIwZFVBU3R5el9wc0M3TUpWMFgzREF2T0ZPZmVySWM5SGMzOWdjYmNBZk9mUUdNOFFHOUVnZnQ0dGgwLU1Qa1lQR1AzZXB4ZlNlRlhOWGJkSG5sN1NPdENFeWFfYzNqUFZvR3VaREd1bW1iOUhjZEZjN3lfTlhGczRPejE2WGZKQ2ZFOGRNcVE1NnNEQ1VYWWxjVE55WnFZ0gGAAkFVX3lxTE43T1loZm82dGpUMExBOFM3eXRGRFFIWjZKVndYMlkyWUVwa2UzSF9ZT2NsOGVkSXVxUmRpRUR6MjZZbERLMlQzdlJON0xzTE1ZWUZ2NXNwUXNPRDZYMDZJN1lqbUZZTVY0S1BBWn",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPNUQ0aFlpa2hzbkliWVBhbTNiLWVkYkktY3ByYzg3VG9aeUI5Ym9tS0FoWGpjODNWbHVsVlF3QzRYdGFZV282RFIwZFVBU3R5el9wc0M3TUpWMFgzREF2T0ZPZmVySWM5SGMzOWdjYmNBZk9mUUdNOFFHOUVnZnQ0dGgwLU1Qa1lQR1AzZXB4ZlNlRlhOWGJkSG5sN1NPdENFeWFfYzNqUFZvR3VaREd1bW1iOUhjZEZjN3lfTlhGczRPejE2WGZKQ2ZFOGRNcVE1NnNEQ1VYWWxjVE55WnFZ0gGAAkFVX3lxTE43T1loZm82dGpUMExBOFM3eXRGRFFIWjZKVndYMlkyWUVwa2UzSF9ZT2NsOGVkSXVxUmRpRUR6MjZZbERLMlQzdlJON0xzTE1ZWUZ2NXNwUXNPRDZYMDZJN1lqbUZZTVY0S1BBWnRMMmNWalFjWHNfcEZoUzA2aDlsWE1GX2R0MUllVzlOVF9LNm9Td3hMeTdwZXAzZm5HV19QdEQybW15cXl1MjA3bzFPbzRNMk41RGJoTUNOT3QtQTdkZzFVMlNPWmlqckplNm51Z3pMSkhHYnc1TGotYWozSFlNLVN3MUpiMGVIUkRCZ1dPRnNDSGszS01fYlBfNHM?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 11:16:14 GMT",
+      "timestamp": "2026-09-01T11:16:14.000Z",
+      "fuente": "Google News — Liga de Primera",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 93,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:5h(+10)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
       ]
     },
     {
@@ -883,11 +999,30 @@
       ]
     },
     {
-      "title": "U. de Concepción vs Universidad de Chile: cuándo juegan, formaciones y canales de transmisión - 365Scores",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxOR1V3VlBDaTJfSGhzWDJOOHFqbXJuRS01NjlxZF83TVdFNEZKdjQzeFg2dGVDV0hNb3FIR2luaS1leWxlTUZ2aDJ6dnV6emlTOElmeXVPMVYwN3Y5NDVSSHdiSDViMEE1Q08tV01LTUdjV3pLa09HVGFMeHR5a1h6cQ?oc=5\" target=\"_blank\">U. de Concepción vs Universidad de Chile: cuándo juegan, formaciones y canales de transmisión</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">365Scores</font>",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOR1V3VlBDaTJfSGhzWDJOOHFqbXJuRS01NjlxZF83TVdFNEZKdjQzeFg2dGVDV0hNb3FIR2luaS1leWxlTUZ2aDJ6dnV6emlTOElmeXVPMVYwN3Y5NDVSSHdiSDViMEE1Q08tV01LTUdjV3pLa09HVGFMeHR5a1h6cQ?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 16:14:14 GMT",
-      "timestamp": "2026-08-29T16:14:14.000Z",
+      "title": "Bloqueo a las casas de apuestas online en Chile: estos son los clubes del fútbol chileno que no tienen ese auspiciador - adnradio.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi6AFBVV95cUxNanJvYUFXR1piN01NcnZpQUlKN2Vmd3JFYWtqMXY4Mk8wYXMxRlpHcWRsdmRrUlBFcDBtZlo2SGxILWtFR2M4dTJHWUluRjZuczlfRWUzTWN3aFJNR0c1ZVJ3cTJKRGI3M0xTZVNrTU5uYWZpOGF2X2lyOGhjZjhiMm1oUXVqLWtzdm9ZZlAwa0hCLXRtZ0xHOUlJR29iemNfRDExUHVGMkI0MEtYOWcyWVV6aHQxUVNwMUJSNndwSHJDdDVaSmdoTE5WV1RZZXVZb3k5WnBITzJPNkYxZm5hMnJaN0RGZW140gH8AUFVX3lxTE1yME1fYTJ0MllLd09YcDAyRzFtU28wbG00YWV0eG52R1VuT3ZEaGVfUDJNRC10Qlh1OFBuWXdWT3pGNFpRaTZLbVNiQUExOFdVTm1mcmIxV3p0SjZWTDM4dWN4Yk",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNanJvYUFXR1piN01NcnZpQUlKN2Vmd3JFYWtqMXY4Mk8wYXMxRlpHcWRsdmRrUlBFcDBtZlo2SGxILWtFR2M4dTJHWUluRjZuczlfRWUzTWN3aFJNR0c1ZVJ3cTJKRGI3M0xTZVNrTU5uYWZpOGF2X2lyOGhjZjhiMm1oUXVqLWtzdm9ZZlAwa0hCLXRtZ0xHOUlJR29iemNfRDExUHVGMkI0MEtYOWcyWVV6aHQxUVNwMUJSNndwSHJDdDVaSmdoTE5WV1RZZXVZb3k5WnBITzJPNkYxZm5hMnJaN0RGZW140gH8AUFVX3lxTE1yME1fYTJ0MllLd09YcDAyRzFtU28wbG00YWV0eG52R1VuT3ZEaGVfUDJNRC10Qlh1OFBuWXdWT3pGNFpRaTZLbVNiQUExOFdVTm1mcmIxV3p0SjZWTDM4dWN4YkdxZ0I4LVZIeHNBY0xUVmlBWUFpaFYyUWttN0Y4c0dJdXFLTnFrUENza3EzR1JKNTFHWkMzMkx2UGMwcTBuNU1KSlBxcFBvZzliajJGQXFlVEtlRE84TXBCVWJPY3Fxbm5tcmppeC0tZVNCbmJzcWN0cFJIanNodi1XTm9YUUZ3S2RSYjJFR2NxcUp0bXBhWjZKWkc2WHZXRw?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 14:58:52 GMT",
+      "timestamp": "2026-09-01T14:58:52.000Z",
+      "fuente": "Google News — Liga de Primera",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "Universidad de Chile realizará reunión doble ante Coquimbo: el femenino de preliminar - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOUFJyN3k1NjBUaXF4WkZXUmhoWmJxTkpvZlQzcVItMWplX0N3TWxlcFpXVTB4WEFqZ2dQOGtrWmZjeTI2aUdwT3g3QmltWGVkbi1HVHBudWwzX243emNnLXhaSVFUbEIxZ1VXN2k2SzRaMkpqZUhkbU1adV9FeEVQM0gycnB6T29VX2ttblpnYm5sb19Vd3NLRk8xLVJDdng2SU02S21Nck9QcmJjZjhTU9IBtgFBVV95cUxPMU43NndFVTBGSDdWeVBoU2I4eHg1SEJUWkFRYnpYUDJNTm9zdHhKa01qUnZ5MndzSmZ0aWNMa3J6WEJ6YWdFalFnOTZIMXN6OXNqOTJ1aHhfSUw2aURXNmlLOUpEbDBEaHFYZzQ0SVUwWnM1ZnJ3MHVLUWlVNm1iWWtMMWEzZGdoaUVSNmduSHNBZ0N6bnVQRm5oRC",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUFJyN3k1NjBUaXF4WkZXUmhoWmJxTkpvZlQzcVItMWplX0N3TWxlcFpXVTB4WEFqZ2dQOGtrWmZjeTI2aUdwT3g3QmltWGVkbi1HVHBudWwzX243emNnLXhaSVFUbEIxZ1VXN2k2SzRaMkpqZUhkbU1adV9FeEVQM0gycnB6T29VX2ttblpnYm5sb19Vd3NLRk8xLVJDdng2SU02S21Nck9QcmJjZjhTU9IBtgFBVV95cUxPMU43NndFVTBGSDdWeVBoU2I4eHg1SEJUWkFRYnpYUDJNTm9zdHhKa01qUnZ5MndzSmZ0aWNMa3J6WEJ6YWdFalFnOTZIMXN6OXNqOTJ1aHhfSUw2aURXNmlLOUpEbDBEaHFYZzQ0SVUwWnM1ZnJ3MHVLUWlVNm1iWWtMMWEzZGdoaUVSNmduSHNBZ0N6bnVQRm5oRC1ZWXc0RmVHd3RZc1lNN3YzUDBTOXlZUHFTQQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 12:58:24 GMT",
+      "timestamp": "2026-09-01T12:58:24.000Z",
       "fuente": "Google News — Liga de Primera",
       "fuente_host": "news.google.com",
       "categoria_feed": "chile",
@@ -897,8 +1032,27 @@
       "viral_score": 85,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:6h(+10)",
+        "frescura:3h(+10)",
         "gigante:universidad de chile(+10)"
+      ]
+    },
+    {
+      "title": "Tensión, distancia con Aránguiz y el golpe del Superclásico: el manejo de Fernando Gago que alejó a la U del título - La Tercera",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8wFBVV95cUxPenRBLWxvb3E3RnQydUZudGZxanhiSENtSGg1c1JJWlhoMVd3YmRxTS11c0kxU2lxX1NVSE5DM0lOcGJzbGhxVktiRllLUHVxRHNxdEdJblFtZXdrTmlUR1htZlEtR3EtNFpBNVE0aWp4UGhzZTZpeGk2dXIxUjRvVzhqQy1GN2piSWZtdmxNQy11Mi0yWTktcHN2ODE0a3BiZzVCSlNfZVVaSzE5QXhCSkkzQmJZZTIyVHljWk9yZEI3QXNDSnJDNFZOTHlOQ2FBLUkzRlBfNUdPcTAxc2NVc0JRcXNaY3RxdEQtVkxUN2RqT3fSAZQCQVVfeXFMT0sxaFQwbm9LZnJEcjdjX0drZ2hWdzllVmxLNlRqWjRDYS03ZHNaaTJQNVlyMkVvYUtPTzZiOWFmb3g4dldsZFQwVzdlOE9rMF9wYmluUS1MaW",
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPenRBLWxvb3E3RnQydUZudGZxanhiSENtSGg1c1JJWlhoMVd3YmRxTS11c0kxU2lxX1NVSE5DM0lOcGJzbGhxVktiRllLUHVxRHNxdEdJblFtZXdrTmlUR1htZlEtR3EtNFpBNVE0aWp4UGhzZTZpeGk2dXIxUjRvVzhqQy1GN2piSWZtdmxNQy11Mi0yWTktcHN2ODE0a3BiZzVCSlNfZVVaSzE5QXhCSkkzQmJZZTIyVHljWk9yZEI3QXNDSnJDNFZOTHlOQ2FBLUkzRlBfNUdPcTAxc2NVc0JRcXNaY3RxdEQtVkxUN2RqT3fSAZQCQVVfeXFMT0sxaFQwbm9LZnJEcjdjX0drZ2hWdzllVmxLNlRqWjRDYS03ZHNaaTJQNVlyMkVvYUtPTzZiOWFmb3g4dldsZFQwVzdlOE9rMF9wYmluUS1MaWE1UjZjZnBMV1RmTFZ0c0pPUW9uYlAyNXcwQ0xjTGFwemRmd3VWRTJPbHZFUmZSODliZy03cnZOeWhLTjdBVDcxQ29INXowY0xiUHhmamUtQ1pzemhiVnEwb1hNUGFNWW9zc04zZjdDaW10bmxwQTNLaGxWVkp2N29leEh0NGFRaTd4SXlZZjRiNmNLOUZnNWpiT2dsZDFYWS1HTXMyMmFHaWhIeDNnZFdQVzdCY21DUFdLOVNIMjZJc0Fi?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 11:16:11 GMT",
+      "timestamp": "2026-09-01T11:16:11.000Z",
+      "fuente": "Google News — Liga de Primera",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 83,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:5h(+10)",
+        "senal:\\b(clasific|eliminad(+8)"
       ]
     },
     {
@@ -959,6 +1113,24 @@
       ]
     },
     {
+      "title": "A punto de caer un nuevo DT en Primera División: “Les pido respeto en estos momentos” - bolavip.com",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPMjRvSlNxM29JTF9hM29fbGtUUDRVLU9XbzZXbFhKNG8xMG9PSzRVeHRJN013R1J1dWlTV2k1Q1h0VWJwTnI4SzdtUnRidVRSV2FiLU9nSy1nejJ2d0VBYzdDNVlDSEFQZWVjdnlJV2lxdnRNS1NKc21BaEIteTNhaFJ3MmM2clR0QnljeF81bVhEeFQ3RXpkaE5NUlhWbVFzY1dGd0d0MjBzbHAyUkpKcEI2RGLSAboBQVVfeXFMTzJ4RHlYbTBrWHVIWWxCR2hST3h2Y0FGMWFxc25WSFFId0ltMk5HcEpNTnhVcllRQV9KZzUzb24xckNtTGswWEF2M2NFdzNPZnhBM3N4d0daYUNGaWdfLUkySW5uSGJlNFh5U1MwS0dFT292OXdEZkNQM291aFdaWDI5NHFlMUc2U3M5aUtQZDQzaldlc0JqLU",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMjRvSlNxM29JTF9hM29fbGtUUDRVLU9XbzZXbFhKNG8xMG9PSzRVeHRJN013R1J1dWlTV2k1Q1h0VWJwTnI4SzdtUnRidVRSV2FiLU9nSy1nejJ2d0VBYzdDNVlDSEFQZWVjdnlJV2lxdnRNS1NKc21BaEIteTNhaFJ3MmM2clR0QnljeF81bVhEeFQ3RXpkaE5NUlhWbVFzY1dGd0d0MjBzbHAyUkpKcEI2RGLSAboBQVVfeXFMTzJ4RHlYbTBrWHVIWWxCR2hST3h2Y0FGMWFxc25WSFFId0ltMk5HcEpNTnhVcllRQV9KZzUzb24xckNtTGswWEF2M2NFdzNPZnhBM3N4d0daYUNGaWdfLUkySW5uSGJlNFh5U1MwS0dFT292OXdEZkNQM291aFdaWDI5NHFlMUc2U3M5aUtQZDQzaldlc0JqLUZzay1jeEx6aXdLMGcxVklWazJQclRzX0pqeHoxUXZqOXVR?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 13:47:47 GMT",
+      "timestamp": "2026-09-01T13:47:47.000Z",
+      "fuente": "Google News — Liga de Primera",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+15)"
+      ]
+    },
+    {
       "title": "Ganó la mejor universidad: Fútbol UdeC doblegó a la U. de Chile en Collao - Sala de Prensa",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxQbTEyaGpsMFVXemZfS3NOeS1Od3p2VG9KazExaEprN2JjSm1KMU9oVnNnNjR2T1VLS1M1NFVVU3RobWl4UXp1ZmdrN2RZVkFvb3ZHZ244NHg5Y2FLb0dMbzBGWUc1dC10dGlVcGZjcjNTMFJ0VnF3bjVIa1o1eXU3XzJBdFVYX0VYTjByQjBuaHFyUWtvalFhM2tQZ2JmekNqSGc?oc=5\" target=\"_blank\">Ganó la mejor universidad: Fútbol UdeC doblegó a la U. de Chile en Collao</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Sala de Prensa</font>",
       "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbTEyaGpsMFVXemZfS3NOeS1Od3p2VG9KazExaEprN2JjSm1KMU9oVnNnNjR2T1VLS1M1NFVVU3RobWl4UXp1ZmdrN2RZVkFvb3ZHZ244NHg5Y2FLb0dMbzBGWUc1dC10dGlVcGZjcjNTMFJ0VnF3bjVIa1o1eXU3XzJBdFVYX0VYTjByQjBuaHFyUWtvalFhM2tQZ2JmekNqSGc?oc=5",
@@ -1013,24 +1185,6 @@
       ]
     },
     {
-      "title": "¿Quiénes juegan HOY?: Todos los partidos de la Liga de Primera de este sábado 29 de agosto - Teletrece",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOd0wxZkFHbmJRNVFrZVhWTjR3ekhja2k3dXAwUXJJLWV3R240clpwQnR4Uk9rUkVUTHNxNUE2QnVxbEQwZXhsMlJWWnpld3psTUZWQkFHRWtfQzJ5SXlBY05zN3VDSDVZcU9ldHFXR0U1WG9JRHVPSXNnM053cHhMOGxHbDdSUnlzc3kyREQ3cHpwa0FDOHFaTHJ3Z1dLMjhYWWo1b09EZG5uVjBPLURfVDYxUkI5RDI0cGwwVdIBvAFBVV95cUxOd0wxZkFHbmJRNVFrZVhWTjR3ekhja2k3dXAwUXJJLWV3R240clpwQnR4Uk9rUkVUTHNxNUE2QnVxbEQwZXhsMlJWWnpld3psTUZWQkFHRWtfQzJ5SXlBY05zN3VDSDVZcU9ldHFXR0U1WG9JRHVPSXNnM053cHhMOGxHbDdSUnlzc3kyREQ3cH",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOd0wxZkFHbmJRNVFrZVhWTjR3ekhja2k3dXAwUXJJLWV3R240clpwQnR4Uk9rUkVUTHNxNUE2QnVxbEQwZXhsMlJWWnpld3psTUZWQkFHRWtfQzJ5SXlBY05zN3VDSDVZcU9ldHFXR0U1WG9JRHVPSXNnM053cHhMOGxHbDdSUnlzc3kyREQ3cHpwa0FDOHFaTHJ3Z1dLMjhYWWo1b09EZG5uVjBPLURfVDYxUkI5RDI0cGwwVdIBvAFBVV95cUxOd0wxZkFHbmJRNVFrZVhWTjR3ekhja2k3dXAwUXJJLWV3R240clpwQnR4Uk9rUkVUTHNxNUE2QnVxbEQwZXhsMlJWWnpld3psTUZWQkFHRWtfQzJ5SXlBY05zN3VDSDVZcU9ldHFXR0U1WG9JRHVPSXNnM053cHhMOGxHbDdSUnlzc3kyREQ3cHpwa0FDOHFaTHJ3Z1dLMjhYWWo1b09EZG5uVjBPLURfVDYxUkI5RDI0cGwwVQ?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 15:40:00 GMT",
-      "timestamp": "2026-08-29T15:40:00.000Z",
-      "fuente": "Google News — Liga de Primera",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 90,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)"
-      ]
-    },
-    {
       "title": "Universidad Católica vs. O'Higgins: ¿Dónde ver EN VIVO por la Liga de Primera Mercado Libre 2026? - tntsports.cl",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxQUHl2TDNGNjNLb0Q0WnNEWUxKUE5ZTDljbWUwcGd3U1JCWTBBSm9yVlFVV1RLS1RBZEFPRWtST25sbmZHemFYV0EzeThIbUZDdER6cU55d1pQU1dOMFFnSFk4VEh1a2FFSVlBUVBmLTJjMGRvVkVseTZqNm5sdmN4TU52TnBvUXE0SnlUX1ppWV9DUjVjNnFyaTRsSVZVdzVuVXA3eWt1ZTR2TmV0VnlWdzRPcnNzRTdhQXJrUS1uV1JVdFpQWE1MQlRRU0Fsa0N5OUNVMlU4eTV6bDliZ0pR0gHkAUFVX3lxTFB1aEJOMDFoNmFWT1hCdmZKYkhsQ2w3U0VWRi1icUI2Q1RzRGY5Qm1DLUgwMWZDWnkxdGlpQ2VhdVBacVk5RGNZNmoyT00zaHdNVm1WNTlvZlNRdUt5cC04OFdnZFhXTDUzZmRqXz",
       "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQUHl2TDNGNjNLb0Q0WnNEWUxKUE5ZTDljbWUwcGd3U1JCWTBBSm9yVlFVV1RLS1RBZEFPRWtST25sbmZHemFYV0EzeThIbUZDdER6cU55d1pQU1dOMFFnSFk4VEh1a2FFSVlBUVBmLTJjMGRvVkVseTZqNm5sdmN4TU52TnBvUXE0SnlUX1ppWV9DUjVjNnFyaTRsSVZVdzVuVXA3eWt1ZTR2TmV0VnlWdzRPcnNzRTdhQXJrUS1uV1JVdFpQWE1MQlRRU0Fsa0N5OUNVMlU4eTV6bDliZ0pR0gHkAUFVX3lxTFB1aEJOMDFoNmFWT1hCdmZKYkhsQ2w3U0VWRi1icUI2Q1RzRGY5Qm1DLUgwMWZDWnkxdGlpQ2VhdVBacVk5RGNZNmoyT00zaHdNVm1WNTlvZlNRdUt5cC04OFdnZFhXTDUzZmRqXzRjLTVxNmpGTEFyOW5tTGh3ZzhKY25ORllyc21DWG5paXNHanNjTE1WdzZBMVpUc2dKMkhWTWpGYzFlbFJ5OXBZY0ZGYUJBRW5ELU9FNHh2R2lwdndyN0dYTjdrN00yZDFaX0RQTGN4dDFLcjBRTWZ2M01tcVB1cQ?oc=5",
@@ -1066,26 +1220,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:7h(+10)"
-      ]
-    },
-    {
-      "title": "Partidos del fútbol chileno hoy 29 de agosto: ¿qué duelos se juegan y dónde ver en vivo, por TV y online? - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxNS19GY04xUUt0WkxyUk1UblRLbENHMlMxT3JtQzB1U3dIakg4NDNNWURwV1JQS0VVUGl1VkZpWlBaeUVHb3ZEaFZndnpRaGJNNEZnQ29OalhyQWNCbC1fXzR3TmdyWngzUWx0eEF6dmVQSnpEaWlQRE1wcTBTSUtJWHVkcjV5X0ZGRGtxUGVPdGN3VExmbVRBVHFhaVhneUdSeTFrQjBzd1lCV0ZKVUtGOF95bWdaQjE1amtKVUdHbHBOS3FxYm9leTFaTGNXNURTQ2530gHnAUFVX3lxTE1vc3hERXhjTTFVeTRfRl9KZ0lzODlWNmxMWnd4Mlg1cGhmdE9iOXdVWWEtMk1YSXJ4c2dVSFphYzdOVWdBaWR3N0IxSHk0ekptdkh3b0h3UXF4YVdoNlJLRFVPMkNCNnpELW5sNzhWakZ0c0ZJNHE1dD",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNS19GY04xUUt0WkxyUk1UblRLbENHMlMxT3JtQzB1U3dIakg4NDNNWURwV1JQS0VVUGl1VkZpWlBaeUVHb3ZEaFZndnpRaGJNNEZnQ29OalhyQWNCbC1fXzR3TmdyWngzUWx0eEF6dmVQSnpEaWlQRE1wcTBTSUtJWHVkcjV5X0ZGRGtxUGVPdGN3VExmbVRBVHFhaVhneUdSeTFrQjBzd1lCV0ZKVUtGOF95bWdaQjE1amtKVUdHbHBOS3FxYm9leTFaTGNXNURTQ2530gHnAUFVX3lxTE1vc3hERXhjTTFVeTRfRl9KZ0lzODlWNmxMWnd4Mlg1cGhmdE9iOXdVWWEtMk1YSXJ4c2dVSFphYzdOVWdBaWR3N0IxSHk0ekptdkh3b0h3UXF4YVdoNlJLRFVPMkNCNnpELW5sNzhWakZ0c0ZJNHE1dDFZZkllSUYtUGczLVB2VWF4ZmliN2lHcTA5WGstN3JLRFlXWkZReVl4SHFnaWIwNW9pZnhsS0tvQm5wa3NBaVI1U1FwU1o2RUl0NlBOeTFQU2x0WWRzQ1o3cUZiVEd5SEZZSjh3WXh2RkoyaFQxOA?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 11:05:57 GMT",
-      "timestamp": "2026-08-29T11:05:57.000Z",
-      "fuente": "Google News — Liga de Primera",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 90,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:11h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "penal(-8)"
       ]
     },
     {
@@ -1242,6 +1376,26 @@
       ]
     },
     {
+      "title": "Tabla de posiciones: Colo Colo golea a Audax Italiano y queda cada vez más cerca del título - Dale Albo",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNOWVtbnFQMmc0RHBhYlBwTnhPMWZCX3RMZkVkazM0cjlIZFlRb3gxSDJWQXBDU0FaZjlLVDRWSUhhdFhZemNJczhRdTJibjVFNEt3OUZrMlR5b0FVMThaSUVGRFJXMEdZa1hXVThqY3hwTGZXN3h0TjdKQTAzY2FMTUJDVlFpejlGM1lLZ01DVldQT2N6RGVpWHU1RjlsSlVnekJRT1ZlU05HZFliVzJKMmhBSGRGYXdDYVZHREpwTFp4TXBG0gHKAUFVX3lxTFBOelBkLW9seXl3SWJ2M3k3VG1NRkZ1UmtrWE1mWDR6QWtnUHJTMVB0VWVaU05jWWxXTGJLWGwzOFd3QUt5dXNVczFCYU8tYkQ0ekNvLXZ4eTZqUXRPQTllU1U2THpHZXBZVW5jczR5WHlycE04QUJpNWFtck51bFlZMXlrdGZ6QW",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNOWVtbnFQMmc0RHBhYlBwTnhPMWZCX3RMZkVkazM0cjlIZFlRb3gxSDJWQXBDU0FaZjlLVDRWSUhhdFhZemNJczhRdTJibjVFNEt3OUZrMlR5b0FVMThaSUVGRFJXMEdZa1hXVThqY3hwTGZXN3h0TjdKQTAzY2FMTUJDVlFpejlGM1lLZ01DVldQT2N6RGVpWHU1RjlsSlVnekJRT1ZlU05HZFliVzJKMmhBSGRGYXdDYVZHREpwTFp4TXBG0gHKAUFVX3lxTFBOelBkLW9seXl3SWJ2M3k3VG1NRkZ1UmtrWE1mWDR6QWtnUHJTMVB0VWVaU05jWWxXTGJLWGwzOFd3QUt5dXNVczFCYU8tYkQ0ekNvLXZ4eTZqUXRPQTllU1U2THpHZXBZVW5jczR5WHlycE04QUJpNWFtck51bFlZMXlrdGZ6QWhTYUdmOWlxbGV1Ym1lMVFmZHZ1SFMzY0tmTkxFVkhCLUFpOERQUU1sSVBxS2hDblVHYzNhREN4d1JFQ01VYXF6dmc?oc=5",
+      "pubDate": "Sun, 30 Aug 2026 23:28:48 GMT",
+      "timestamp": "2026-08-30T23:28:48.000Z",
+      "fuente": "Google News — Copa Chile",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 83,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:41h(+0)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
       "title": "U. de Chile sufre por duplicado: U. Católica celebró en el Clásico femenino - PrensaFútbol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE1UVmF1cUhyamowVEZUSnFOWHExbm9IbUFQUF9jako2V3F0T19FaWoyNlhHUmp0Ynoyd0JEQWpwelFxVUV2YWlOVF9oQUhycERzd3F3blR0VnZRUHlpa3hvWnlpVUc3TnFzVUVmdTJCb1RQVXFUU3FoZVBkaGw?oc=5\" target=\"_blank\">U. de Chile sufre por duplicado: U. Católica celebró en el Clásico femenino</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1UVmF1cUhyamowVEZUSnFOWHExbm9IbUFQUF9jako2V3F0T19FaWoyNlhHUmp0Ynoyd0JEQWpwelFxVUV2YWlOVF9oQUhycERzd3F3blR0VnZRUHlpa3hvWnlpVUc3TnFzVUVmdTJCb1RQVXFUU3FoZVBkaGw?oc=5",
@@ -1313,6 +1467,25 @@
         "frescura:8h(+10)",
         "senal:\\b(record|historico|(+12)",
         "senal:\\b\\d+\\s*(goles|millo(+6)"
+      ]
+    },
+    {
+      "title": "Cobreloa y Wanderers luchan mano a mano por el cupo directo: así está la tabla de la Liga de Ascenso - BioBioChile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgJBVV95cUxNRDFHMW1BN29XT3NzOHJwWUF1UmFpck1GekppNkc0WUZXUFNZS0Z6NEgybmNyakJ2ODk2X0IxbjhyY3pfaWp3YXpNc0w1UXQwT1JCYnowNW1VbklPZnY0TUNiaGgwU3Rjc2FrcE5KMTV4cU5JQkF5YVRDY2ZOWEt4ZGxoVkdTT3FXY2ZIQTBIMEhlOU9BVUdSOFBTVnBzRnBhRDNfVEhqek9fZkJGV3otZzMxWWs2TFhUaW5hbnh2NFhrT003ei1tTWh4cVp3RzVFYTdHWk5fWU4wSDVROTNPOXVyZTJuOUpnSTJNaUNsNjhsZ3dxZGUwTzdYX202ODdzMHJuRElUM1dBU2wyZ2lqSHBn?oc=5\" target=\"_blank\">Cobreloa y Wanderers luchan mano a mano por el cupo directo",
+      "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNRDFHMW1BN29XT3NzOHJwWUF1UmFpck1GekppNkc0WUZXUFNZS0Z6NEgybmNyakJ2ODk2X0IxbjhyY3pfaWp3YXpNc0w1UXQwT1JCYnowNW1VbklPZnY0TUNiaGgwU3Rjc2FrcE5KMTV4cU5JQkF5YVRDY2ZOWEt4ZGxoVkdTT3FXY2ZIQTBIMEhlOU9BVUdSOFBTVnBzRnBhRDNfVEhqek9fZkJGV3otZzMxWWs2TFhUaW5hbnh2NFhrT003ei1tTWh4cVp3RzVFYTdHWk5fWU4wSDVROTNPOXVyZTJuOUpnSTJNaUNsNjhsZ3dxZGUwTzdYX202ODdzMHJuRElUM1dBU2wyZ2lqSHBn?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 14:18:55 GMT",
+      "timestamp": "2026-09-01T14:18:55.000Z",
+      "fuente": "Google News — Liga de Ascenso",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "categoria": "chile",
+      "equipo_chile": "Santiago Wanderers",
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
       ]
     },
     {
@@ -1462,6 +1635,24 @@
       ]
     },
     {
+      "title": "Cobreloa venció a San Marcos y comparte liderato del Ascenso - PrensaFútbol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE1Ed1BvejJTaFFpWmZMcElRQ2xYeWp0SjFET0Mtd3Nrby10eVFvZTIwRFlpdXJGd1R5aWtpTXFzaHJvdExZeS1qUnZrV1dDazFfdHluSHFKeWlhVGliZEVnOWVVTWtMcGdEUWE0QlZOakt0NXROdVVwWXFIUlpUUQ?oc=5\" target=\"_blank\">Cobreloa venció a San Marcos y comparte liderato del Ascenso</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1Ed1BvejJTaFFpWmZMcElRQ2xYeWp0SjFET0Mtd3Nrby10eVFvZTIwRFlpdXJGd1R5aWtpTXFzaHJvdExZeS1qUnZrV1dDazFfdHluSHFKeWlhVGliZEVnOWVVTWtMcGdEUWE0QlZOakt0NXROdVVwWXFIUlpUUQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 01:51:56 GMT",
+      "timestamp": "2026-09-01T01:51:56.000Z",
+      "fuente": "Google News — Liga de Ascenso",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "categoria": "chile",
+      "equipo_chile": "Cobreloa",
+      "viral_score": 70,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:14h(+5)"
+      ]
+    },
+    {
       "title": "“Es más completo”: histórico de La Roja elige al mejor entre Javier Correa y Zampedri - RedGol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQQm83RmJ1bUUybHQ2aFJtSnI4MHdZaXJweVZDd1FLMVlZVWJqaWxSSnZMYV9rNzRZVVFwU2hiSXdkaUZIM3VJQ1pUZWpCeHkxYXljTVdzOXhjS3BYbDhFU1lYWUotWW9rTFluVi1yYTlrelhNY0l6ZEoxbzhPVzlXMjhvcGRRbGRTQkU3TWZkSUdfb3Q4NzhKRFlzMjB5TGM1cGF0X2JmNGZFdG9WM2fSAbMBQVVfeXFMUGlhalNMUFQtYXFmNmdLQkpYbTNlUG02d2RIZ0RUTmRXUVpMMGdRenVmLV9kY0puMS1GOVVsVEVyV1BGYmRRWTNEOHc1RF92eU1XQlVBdUpHeU9xZlVHQzF3dmxSaFpmWFBXbXRXUWtsN3NFUmNVeUZmdnJDdVpHWXpfN1BCVThaY08zVnViT3hXQ0lPdjBlUDdkMTd2Xz",
       "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQm83RmJ1bUUybHQ2aFJtSnI4MHdZaXJweVZDd1FLMVlZVWJqaWxSSnZMYV9rNzRZVVFwU2hiSXdkaUZIM3VJQ1pUZWpCeHkxYXljTVdzOXhjS3BYbDhFU1lYWUotWW9rTFluVi1yYTlrelhNY0l6ZEoxbzhPVzlXMjhvcGRRbGRTQkU3TWZkSUdfb3Q4NzhKRFlzMjB5TGM1cGF0X2JmNGZFdG9WM2fSAbMBQVVfeXFMUGlhalNMUFQtYXFmNmdLQkpYbTNlUG02d2RIZ0RUTmRXUVpMMGdRenVmLV9kY0puMS1GOVVsVEVyV1BGYmRRWTNEOHc1RF92eU1XQlVBdUpHeU9xZlVHQzF3dmxSaFpmWFBXbXRXUWtsN3NFUmNVeUZmdnJDdVpHWXpfN1BCVThaY08zVnViT3hXQ0lPdjBlUDdkMTd2XzRfMDVJOU9fNlRHN3lzVW56bGJaVjQ?oc=5",
@@ -1480,6 +1671,42 @@
         "senal:\\b(record|historico|(+12)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "Ni Alexis ni Vidal: Claudio Palma elige a Chupete Suazo como su favorito de la Generación Dorada - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPWmdSaDZPNGVCdlozMXRURFAzNEUxUUx5SWJDbUh6eHpUWFhubGJPUzEtb3FDZTlNWGFYQzhQcjhGRzNHN3UzOFFUbnppQkJocE0xMWNyMGF6eFZ0M05nSTZhaHlGVTBPdXRqNUN1Q2pwWmlncXVtQjBUSFF6ck9qZmNMTE9qT0p4VTVJX2ljNU5DbG9zaElsZm5TTXVvbE9hWUtJYVA2SnVfanBTVmZ3Qmgzb1FHVVhuaktibWh4bnRRdTh5bVloQlNR0gHPAUFVX3lxTE4wNDI4dWFsak9JVDNYN2djVTBkazNIdHJ5UGx2Q0V2d1JRUEMtT0hUdER0ejVnT19jYTYwMDVzS2hsMGVyaEljdG01S1hvd1JBZm5Mc016TlJDUzFNQklnMG9IMTBvQW9BZDQzV0lzaERjTUhrWDVCdlpDd0g2OGlZLW",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWmdSaDZPNGVCdlozMXRURFAzNEUxUUx5SWJDbUh6eHpUWFhubGJPUzEtb3FDZTlNWGFYQzhQcjhGRzNHN3UzOFFUbnppQkJocE0xMWNyMGF6eFZ0M05nSTZhaHlGVTBPdXRqNUN1Q2pwWmlncXVtQjBUSFF6ck9qZmNMTE9qT0p4VTVJX2ljNU5DbG9zaElsZm5TTXVvbE9hWUtJYVA2SnVfanBTVmZ3Qmgzb1FHVVhuaktibWh4bnRRdTh5bVloQlNR0gHPAUFVX3lxTE4wNDI4dWFsak9JVDNYN2djVTBkazNIdHJ5UGx2Q0V2d1JRUEMtT0hUdER0ejVnT19jYTYwMDVzS2hsMGVyaEljdG01S1hvd1JBZm5Mc016TlJDUzFNQklnMG9IMTBvQW9BZDQzV0lzaERjTUhrWDVCdlpDd0g2OGlZLWRwQ3N4d0x6UDZlZURObDJuRHdkVXFvaHNORDhDbkE0LUpYNnhFaEtlMHMyd2ktS2FGbGpiczdxazZvbmRVT3N0WmlXdE80M3JmbFY3SQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 13:49:06 GMT",
+      "timestamp": "2026-09-01T13:49:06.000Z",
+      "fuente": "Google News — La Roja",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 78,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)"
+      ]
+    },
+    {
+      "title": "Claudio Bravo cuenta la verdad sobre Bielsa: “Si no estaba Bonini, las relaciones se hubiesen roto” - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNTTZBSzZKU3ZUb3hYV3pFTlNKLW0wT1BScnRtbmxTZERpV2xsMnVZQnl3UkxBYVI5UThuMXZNNjRaQVpheXM1RjltaHRDZExXTXNEQVlUUTBBb29GQk5DSFNzdVlOQVlkc0pCRGZWeEs4N21UcENyOEMwWVlRbG11OHluMGp3djludEV0TXIxcVotUmJ0Rk9wOGpkbFoyZU5INi0yemd2djR1eGNfT1JvR1NvWDFkOFZySUg5VTZOZFNvRkhOTUVfQzN30gHPAUFVX3lxTFBxRTdFQlQ5RGhtSkRkaDBQZzVBUVJ1TFlXdWVZb0xvMGZCRWw1QjB5WDZ4TEQ1Y1NFQWR5YkVvZFdVcXdySFlIMy1mSVpmZnRkNUNKMTdfSkRTb3JkRE55WU5CZVJWRmJwb29MTjZRZENFNzZkUDIyTG8tZ3VlU0Nlcl",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNTTZBSzZKU3ZUb3hYV3pFTlNKLW0wT1BScnRtbmxTZERpV2xsMnVZQnl3UkxBYVI5UThuMXZNNjRaQVpheXM1RjltaHRDZExXTXNEQVlUUTBBb29GQk5DSFNzdVlOQVlkc0pCRGZWeEs4N21UcENyOEMwWVlRbG11OHluMGp3djludEV0TXIxcVotUmJ0Rk9wOGpkbFoyZU5INi0yemd2djR1eGNfT1JvR1NvWDFkOFZySUg5VTZOZFNvRkhOTUVfQzN30gHPAUFVX3lxTFBxRTdFQlQ5RGhtSkRkaDBQZzVBUVJ1TFlXdWVZb0xvMGZCRWw1QjB5WDZ4TEQ1Y1NFQWR5YkVvZFdVcXdySFlIMy1mSVpmZnRkNUNKMTdfSkRTb3JkRE55WU5CZVJWRmJwb29MTjZRZENFNzZkUDIyTG8tZ3VlU0Nlclk4b3VzLThNb2R0dGRGdjFyQ19OVmVaVFNndEI1NzUxNzI0T05HZTVNSFVrdk94cU12aXQtZjhpOS1UV0RQdEVlVXc2WUUyOS1SeHp6Yw?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 13:12:00 GMT",
+      "timestamp": "2026-09-01T13:12:00.000Z",
+      "fuente": "Google News — La Roja",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 78,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+10)"
       ]
     },
     {
@@ -1516,6 +1743,25 @@
       "razones": [
         "categoria:femenino(+28)",
         "frescura:3h(+15)"
+      ]
+    },
+    {
+      "title": "La nómina de La Roja Sub-20 para el microciclo de septiembre - Contragolpe",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPLUdIcHV4LUt4MHJ4bDJGV2dOQXJnODlNX3BkRjRXSTFodTdhdHNEdmx3RkF0em9yZGk4SlQtLXVtVFpJMzNJaFJBb3hsaXBSZHhtWmR1bzhNM2NWM0JlQ1hyU0dOTTdGWkhVRzI5QWNSTGpIV0Q2RThDVTRYSGZfNE1jUVo2S3JmY3haOWhMYWQ0UQ?oc=5\" target=\"_blank\">La nómina de La Roja Sub-20 para el microciclo de septiembre</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Contragolpe</font>",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPLUdIcHV4LUt4MHJ4bDJGV2dOQXJnODlNX3BkRjRXSTFodTdhdHNEdmx3RkF0em9yZGk4SlQtLXVtVFpJMzNJaFJBb3hsaXBSZHhtWmR1bzhNM2NWM0JlQ1hyU0dOTTdGWkhVRzI5QWNSTGpIV0Q2RThDVTRYSGZfNE1jUVo2S3JmY3haOWhMYWQ0UQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 16:03:54 GMT",
+      "timestamp": "2026-09-01T16:03:54.000Z",
+      "fuente": "Google News — Selecciones juveniles",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "formativo",
+      "prioridad_fuente": 65,
+      "categoria": "formativo",
+      "equipo_chile": "Selección Chilena",
+      "viral_score": 72,
+      "razones": [
+        "categoria:formativo(+22)",
+        "frescura:0h(+15)",
+        "gigante:la roja(+10)"
       ]
     },
     {
@@ -1574,6 +1820,24 @@
         "categoria:tercera(+20)",
         "frescura:7h(+10)",
         "senal:\\b\\d+\\s*(goles|millo(+6)"
+      ]
+    },
+    {
+      "title": "Inter Concepción: el azulinegro penquista a punto de salvar la categoría en Tercera B - Pasión de Hincha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOaTZ3aFNncFc3dWR4TjZfQUtPRXBET3l1YzlMZnE4OWJoOTI5OEdoMkVlbzZBdzNUbkpOSFItTEpvQ0Q1SnlMV3RFVzUwRHdCSWJMRnI1VVM2SEJGSFdEVXU5VGI4VWZfOWkwYVhEc1Rkd2R5LUVYb2FxemRiVW5XVDlsLTlveEwwNFZac1VjdjFsbTJSSE8xSzh3Z0kwY21jQUo4U1RuMFM5TFMxOFBwUQ?oc=5\" target=\"_blank\">Inter Concepción: el azulinegro penquista a punto de salvar la categoría en Tercera B</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Pasión de Hincha</font>",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOaTZ3aFNncFc3dWR4TjZfQUtPRXBET3l1YzlMZnE4OWJoOTI5OEdoMkVlbzZBdzNUbkpOSFItTEpvQ0Q1SnlMV3RFVzUwRHdCSWJMRnI1VVM2SEJGSFdEVXU5VGI4VWZfOWkwYVhEc1Rkd2R5LUVYb2FxemRiVW5XVDlsLTlveEwwNFZac1VjdjFsbTJSSE8xSzh3Z0kwY21jQUo4U1RuMFM5TFMxOFBwUQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 06:25:36 GMT",
+      "timestamp": "2026-09-01T06:25:36.000Z",
+      "fuente": "Google News — Tercera B",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "tercera",
+      "prioridad_fuente": 50,
+      "categoria": "tercera",
+      "equipo_chile": null,
+      "viral_score": 55,
+      "razones": [
+        "categoria:tercera(+20)",
+        "frescura:10h(+10)"
       ]
     },
     {
@@ -1736,6 +2000,25 @@
       ]
     },
     {
+      "title": "No solo la UC y la U: Los equipos que pelean por el Chile 2 y los millones que hay en juego - Chilevisión",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUDFIaUtCQllIemg3V1plVG9FTG9tMHV0bi1BYnV5OUt0WmVkQ2dWUGMwX2JSTEVzUVVJM1FrTG13ZkVEdDN6ODAza0tlSlA3N0VHMzhnV29vTGlDNnlmVElXbW5CTkxRRWR5UXhhbmQzRUdrUEVyLVVNb1NSbThqcXRnUER5MDExYlQzRUtrREgzQ2lzUHVWQzNEWjZSYVh2dUV3Q2VIOHE2VzJWaU1jVW1DVUh6Um5haFplNWc3bUE?oc=5\" target=\"_blank\">No solo la UC y la U: Los equipos que pelean por el Chile 2 y los millones que hay en juego</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Chilevisión</font>",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUDFIaUtCQllIemg3V1plVG9FTG9tMHV0bi1BYnV5OUt0WmVkQ2dWUGMwX2JSTEVzUVVJM1FrTG13ZkVEdDN6ODAza0tlSlA3N0VHMzhnV29vTGlDNnlmVElXbW5CTkxRRWR5UXhhbmQzRUdrUEVyLVVNb1NSbThqcXRnUER5MDExYlQzRUtrREgzQ2lzUHVWQzNEWjZSYVh2dUV3Q2VIOHE2VzJWaU1jVW1DVUh6Um5haFplNWc3bUE?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 15:13:41 GMT",
+      "timestamp": "2026-09-01T15:13:41.000Z",
+      "fuente": "Google News — Libertadores",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 35,
+      "categoria": "internacional",
+      "equipo_chile": "Universidad Católica",
+      "viral_score": 58,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:1h(+15)",
+        "senal:\\b(fichaje|traspaso|(+10)"
+      ]
+    },
+    {
       "title": "Universidad Católica recibió castigo tras su participación en Copa Libertadores - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi5gFBVV95cUxQZ2xZVHl2Q3FnNV9CSUZuXzRCVThrYnhocXVPQUg2eVFpU0F5RkV0MGptY251bGs5ZWcwNExZMktCRmNTeEN5MVV2SUxlT20tZnl2Qkc5UmcyTzY4a3RPRng0elh0OTR6QXdRMm02U0VrUlpNUGZyX2lmNk1id01VSXB6MXh2MFkzZ2NURXRaVHhBcXpLbTNyaDVHUDV3QkJ0SE9rRm8ybTh1dTJuV3hiRFRkWjhneEVGUHRrS2Nrc1lKRVdfc1RWN3Q3ekFPUVVGUm1TU3BaQTVmcVpsNFFPRTB1dW55QQ?oc=5\" target=\"_blank\">Universidad Católica recibió castigo tras su participación en Copa Libertadores</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">",
       "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQZ2xZVHl2Q3FnNV9CSUZuXzRCVThrYnhocXVPQUg2eVFpU0F5RkV0MGptY251bGs5ZWcwNExZMktCRmNTeEN5MVV2SUxlT20tZnl2Qkc5UmcyTzY4a3RPRng0elh0OTR6QXdRMm02U0VrUlpNUGZyX2lmNk1id01VSXB6MXh2MFkzZ2NURXRaVHhBcXpLbTNyaDVHUDV3QkJ0SE9rRm8ybTh1dTJuV3hiRFRkWjhneEVGUHRrS2Nrc1lKRVdfc1RWN3Q3ekFPUVVGUm1TU3BaQTVmcVpsNFFPRTB1dW55QQ?oc=5",
@@ -1812,6 +2095,44 @@
       ]
     },
     {
+      "title": "La ruta a la Copa Libertadores: el complejo fixture que marcará el futuro de la U y la UC en la lucha por el Chile 2 - latercera.com",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi9gFBVV95cUxNSnNyb0VUcDliNjVlaWtEdmdMSmJrUm0yV2tlVXdfWExidVdrcTJLempIQTJGX2lRd0YxUk82RndxbklPUFFSQlktUWFuZThianNUbzNKQ0VFZTF2NXc0STBaZTdBMlVnMVk2RHNkeEpoV2l6RVRrSm1Zc0lSNGFubF9mdTVVeHhwdmx1cVhpazF3OG9wN3BqWnhWbEs3MXpoN0JHd3FucWNzSUZJNzlOTzZQeFhmZ1ZUQmtGeUNnckZ5X2dnU0VlMVU0bm5yX3pScnhhX2o2T3lrYzRKN0N1NWRucFd2WnJ1eXVPa0UxeklPWFBMRUHSAZcCQVVfeXFMUGpaYk1DZlFBZ1dDX2VFaGVyZDBTLWlITXl4dlFvaWpDZk0xcEo2bDFjcTJEY1JXVEYwSk5ZdGVwcWM4ZWV5RmlwOVBVMGYxMm9Qc3VyR1",
+      "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNSnNyb0VUcDliNjVlaWtEdmdMSmJrUm0yV2tlVXdfWExidVdrcTJLempIQTJGX2lRd0YxUk82RndxbklPUFFSQlktUWFuZThianNUbzNKQ0VFZTF2NXc0STBaZTdBMlVnMVk2RHNkeEpoV2l6RVRrSm1Zc0lSNGFubF9mdTVVeHhwdmx1cVhpazF3OG9wN3BqWnhWbEs3MXpoN0JHd3FucWNzSUZJNzlOTzZQeFhmZ1ZUQmtGeUNnckZ5X2dnU0VlMVU0bm5yX3pScnhhX2o2T3lrYzRKN0N1NWRucFd2WnJ1eXVPa0UxeklPWFBMRUHSAZcCQVVfeXFMUGpaYk1DZlFBZ1dDX2VFaGVyZDBTLWlITXl4dlFvaWpDZk0xcEo2bDFjcTJEY1JXVEYwSk5ZdGVwcWM4ZWV5RmlwOVBVMGYxMm9Qc3VyR1ltOTdqelR2Q3BaODlrdzl6aS1RZDVsVXhiTmZWQm5FbGQ3UzVhaVVMaUtxMG9nMlQ3TWE0MGtpbTdGVDFuMU1RdTFENWxvRUV4OXFPUDlGV2ZyUm1vWUpNaHJQdGFwUUlwelZyYzBuZkxKUF9uSFJNY2xFRXhlMUNXblZvOG9OZ1ZYbVEyVDlwNW5fbmZ0SmV5OWpzSDJJTlIzRW1vT2lSbzMwV3JGa1paNzM4QWhoV2E4c2pYN2o4SDlfeXV3WWNr?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 14:33:28 GMT",
+      "timestamp": "2026-09-01T14:33:28.000Z",
+      "fuente": "Google News — Libertadores",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 35,
+      "categoria": "internacional",
+      "equipo_chile": "Universidad Católica",
+      "viral_score": 56,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:2h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "Brasil vuelve a dominar la Libertadores, pero sus equipos ya no meten tanto miedo: por qué esta vez puede haber un campeón de otro país - ESPN Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxNOXJwQVgyblptekdwMDhYSWNyM29sZ0p0V2dCUktNYTZYNkRXZmFid0VFaHRpSkF2RUtMR0dfd2tUQ3d0S0xQUmF1ZGh6TDZTTzU5enhQaXhOMFU2WHRvR25FblJsczc0ZWZjSjR5djFia1pBQ0ppcmxhbVg1d3l2VEE1SmNXblZrc0QtbHVZNFZReWt2WmNvTXRndVZjY19lNnhCTGh5ZjFlU2p3N2pBdlJwUWdhODlxSjRrTmd4NTdBSy1PcDFMcVIxdlc1bjJvOXVEckxwMlM?oc=5\" target=\"_blank\">Brasil vuelve a dominar la Libertadores, pero sus equipos ya no meten tanto miedo: por qué esta vez puede haber un campeón de otro país<",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNOXJwQVgyblptekdwMDhYSWNyM29sZ0p0V2dCUktNYTZYNkRXZmFid0VFaHRpSkF2RUtMR0dfd2tUQ3d0S0xQUmF1ZGh6TDZTTzU5enhQaXhOMFU2WHRvR25FblJsczc0ZWZjSjR5djFia1pBQ0ppcmxhbVg1d3l2VEE1SmNXblZrc0QtbHVZNFZReWt2WmNvTXRndVZjY19lNnhCTGh5ZjFlU2p3N2pBdlJwUWdhODlxSjRrTmd4NTdBSy1PcDFMcVIxdlc1bjJvOXVEckxwMlM?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 13:26:00 GMT",
+      "timestamp": "2026-09-01T13:26:00.000Z",
+      "fuente": "Google News — Libertadores",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 35,
+      "categoria": "internacional",
+      "equipo_chile": null,
+      "viral_score": 56,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:3h(+15)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
+    {
       "title": "Vélez Sarsfield cumple 32 años de su primera Copa Libertadores - PrimerTiempo.CO",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxPTk5VSzVkaVdJc014WFZrcFg2Q1pENWRqTlRCa01FMnFuT0c2aXRRRGtCbXhEMkdVemlWN0ZLOTFIVi1nVk02ejVrM2p4RFJwaXlrSlpSaGRFMnNZb3diVmEtRi1ReFpYVlpXTFlFZ0taOGlIQ0FtTFkwUnZScW9UZkpFdUhiVWxLVFpsUllfR3VrLUhQVEU0R1Vn?oc=5\" target=\"_blank\">Vélez Sarsfield cumple 32 años de su primera Copa Libertadores</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrimerTiempo.CO</font>",
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPTk5VSzVkaVdJc014WFZrcFg2Q1pENWRqTlRCa01FMnFuT0c2aXRRRGtCbXhEMkdVemlWN0ZLOTFIVi1nVk02ejVrM2p4RFJwaXlrSlpSaGRFMnNZb3diVmEtRi1ReFpYVlpXTFlFZ0taOGlIQ0FtTFkwUnZScW9UZkpFdUhiVWxLVFpsUllfR3VrLUhQVEU0R1Vn?oc=5",
@@ -1869,6 +2190,25 @@
       ]
     },
     {
+      "title": "A semanas de su eliminación: el castigo de la Conmebol a la UC por la Copa Libertadores - latercera.com",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxNMzVmeUV4X2FBQ1N4VUZFdWEzQTFUbGhMTzVqWHZvbFRWZ0JVYmt5a1RhUXJMb09WWE5jTHhxTURjNGxGNFR1LV9FY2xTREtnQUdBNlNpaFlWbEROM3J2WWl2ZnF2eWY5dmlvLXluc2dmRFJBcFNGNHlvMmo0bVV3czZUc3R1OE5pMnZyZFBGYU9LajBFVzBkZEtISEJyRDhmOXI5bElGcjBHcElySW9VWkNHLXAyc2F4RUV2cEVrN2ZfeENPTy1LdGVqQnQxR03SAfABQVVfeXFMTWFWNmY2RzRxMGFCUUVpcXlmbVhGZXhLek1jbGVkYktlVUZONjY3SjBTYmhBRVBKSzRfaHNSVFZFaVpna3AwYzZsekpyMVRyQVp2eGtzeTA2MHZYS0hYdHN1ai1sMm1HV011a0pzclJPckNQUW5sWF94WllNQk",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNMzVmeUV4X2FBQ1N4VUZFdWEzQTFUbGhMTzVqWHZvbFRWZ0JVYmt5a1RhUXJMb09WWE5jTHhxTURjNGxGNFR1LV9FY2xTREtnQUdBNlNpaFlWbEROM3J2WWl2ZnF2eWY5dmlvLXluc2dmRFJBcFNGNHlvMmo0bVV3czZUc3R1OE5pMnZyZFBGYU9LajBFVzBkZEtISEJyRDhmOXI5bElGcjBHcElySW9VWkNHLXAyc2F4RUV2cEVrN2ZfeENPTy1LdGVqQnQxR03SAfABQVVfeXFMTWFWNmY2RzRxMGFCUUVpcXlmbVhGZXhLek1jbGVkYktlVUZONjY3SjBTYmhBRVBKSzRfaHNSVFZFaVpna3AwYzZsekpyMVRyQVp2eGtzeTA2MHZYS0hYdHN1ai1sMm1HV011a0pzclJPckNQUW5sWF94WllNQkI2Y3JITFA5cUZReF9wcVVfX2hWSXpfMFEtS2YxWXpJN3FCMjVROERONHNfbmV3QXZNZnhQWC1ZTDJ5aHR6SEV4ZHZOM1d6Y3ZlWnhyVWZ6WXdQWU9uREpmanljN1BsREI2QkNjX2t2SXJLdU1kODcyVGNi?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 11:16:22 GMT",
+      "timestamp": "2026-09-01T11:16:22.000Z",
+      "fuente": "Google News — Libertadores",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 35,
+      "categoria": "internacional",
+      "equipo_chile": "Universidad Católica",
+      "viral_score": 51,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:5h(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
       "title": "Al Tano Ortiz le preguntan por llegar a la final de la Libertadores: “Este equipo no tiene techo” - RedGol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQOGQzb1Jxdk0yT3NFMUxOZzJFblE4MXlQazhId2xZUktvWnQ0VGd2VVVqUGNNQVZkSzBmRVJ5eWhDNWJ6UDdueWRuZWpEVXFpWkJoeDdTczBoaHhLTTVVcG9LenZ4U0lmRlRxQU5TV25STC14Z0RRWkhxeTNSSzg0SzlNTGJkazdBZ3Nvb3pjMWxMejBuellTMUFNdThYdFlpdjdBeTlUa01OTWVpTnVEbUV3S1d4TnZaclFxS9IBwgFBVV95cUxOUkRNcXRVNjZVVk5nN29uSUU3akltVWs5S0h6TUZzLVZUdGc2RUFQX2JFeGUtNFZOaU41Sjc5Y08yanZTelZueXZEOEg2ZXZNM0dxb3lVd3BXTFVDeVhhUi1MSGpRV1haWE9zR1lrRlVZaEF5MGZtU1Y4ekpBZWJxY29haHNFaXFUVkM0MmZWTn",
       "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOGQzb1Jxdk0yT3NFMUxOZzJFblE4MXlQazhId2xZUktvWnQ0VGd2VVVqUGNNQVZkSzBmRVJ5eWhDNWJ6UDdueWRuZWpEVXFpWkJoeDdTczBoaHhLTTVVcG9LenZ4U0lmRlRxQU5TV25STC14Z0RRWkhxeTNSSzg0SzlNTGJkazdBZ3Nvb3pjMWxMejBuellTMUFNdThYdFlpdjdBeTlUa01OTWVpTnVEbUV3S1d4TnZaclFxS9IBwgFBVV95cUxOUkRNcXRVNjZVVk5nN29uSUU3akltVWs5S0h6TUZzLVZUdGc2RUFQX2JFeGUtNFZOaU41Sjc5Y08yanZTelZueXZEOEg2ZXZNM0dxb3lVd3BXTFVDeVhhUi1MSGpRV1haWE9zR1lrRlVZaEF5MGZtU1Y4ekpBZWJxY29haHNFaXFUVkM0MmZWTnRaT1JBNnZkeDZoSVRnNGEySFVadmlFY21LRWV5Rm1jSVVFV0x2Rmo0ekh3bURncldCUQ?oc=5",
@@ -1923,6 +2263,24 @@
         "categoria:internacional(+8)",
         "frescura:5h(+10)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "Sede confirmada: Colo-Colo y la U conocen dónde se jugará la Libertadores Femenina 2026 - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi9AFBVV95cUxNM3UteWthSXUzRlQ3cDV0cnNvZ08zOVpUckZVc1lxSWlDZUY3S2VHd3BtZHQ0RHdocGg4NTY2Uy13WEdqaVJfVHpiVzR6c2RDUEM4VGdnckdIenZYVkhVRER3SXpha25Tc09CcVhfT2xvWTBGTm51WGZkbE9zWFgyZVgyZEowM3J6a0s5UFV2VXFMU0JmQXlSNDFWUTY3SEh3Z1ZGMnRGc1hFTTRPNHJRbEFCRFNsS1hPWTIzbUhKeUMzZWpFb1VZWEVKR0ZUallURVoxbGJuVWMtd1RJMHViY1RqVjZ6VDFZWm5ldGxGamtON0F3?oc=5\" target=\"_blank\">Sede confirmada: Colo-Colo y la U conocen dónde se jugará la Libertadores Femenina 2026</a>&nbsp;&n",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNM3UteWthSXUzRlQ3cDV0cnNvZ08zOVpUckZVc1lxSWlDZUY3S2VHd3BtZHQ0RHdocGg4NTY2Uy13WEdqaVJfVHpiVzR6c2RDUEM4VGdnckdIenZYVkhVRER3SXpha25Tc09CcVhfT2xvWTBGTm51WGZkbE9zWFgyZVgyZEowM3J6a0s5UFV2VXFMU0JmQXlSNDFWUTY3SEh3Z1ZGMnRGc1hFTTRPNHJRbEFCRFNsS1hPWTIzbUhKeUMzZWpFb1VZWEVKR0ZUallURVoxbGJuVWMtd1RJMHViY1RqVjZ6VDFZWm5ldGxGamtON0F3?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 14:07:42 GMT",
+      "timestamp": "2026-09-01T14:07:42.000Z",
+      "fuente": "Google News — Libertadores",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 35,
+      "categoria": "internacional",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 48,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:2h(+15)"
       ]
     },
     {
@@ -2035,21 +2393,21 @@
       ]
     },
     {
-      "title": "No solo Buljubasich: adelantan otra salida en U Católica tras el remezón del adiós en Copa Libertadores - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQR1Y0emlod1QxRl9TU1JIVzJFMnVaNE5uVHlXSkZBWURYQ1hPM1dpLU91ZjFwcmd0R2JnOEpTamxZcXJ1elVNVVdILXktUmQ1OGVZekU1TS1qLWtsbGRadmV6RTVuX3QwbHRBQzhZWmgxbm10Yzc3QmVBSjF4d1RSMW5KbTZVandJNXctb2dfcWdvRG9GaFloNEpmd2JzanN6eldWS0ptY0tVbjhYbTdCR0RDblBhQURhNUF3cTY3STdvUnRHR1Zfc2tn0gHPAUFVX3lxTE9xNVZHTDZwenhWeFVVSklLRjVZVlVYRmZYbDR1RkhKLUlYTE5IaV9uYmlZaVgzNk0ya1NROVAtRmE5OWhWRHFXZDZJenNVZ0FHa3hPNlJxLWFYaUp2aEthTi1FWU5YYy1pdjF3VDJSMmhRMHRJaTR0eDdqdmpJNFRfRV",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQR1Y0emlod1QxRl9TU1JIVzJFMnVaNE5uVHlXSkZBWURYQ1hPM1dpLU91ZjFwcmd0R2JnOEpTamxZcXJ1elVNVVdILXktUmQ1OGVZekU1TS1qLWtsbGRadmV6RTVuX3QwbHRBQzhZWmgxbm10Yzc3QmVBSjF4d1RSMW5KbTZVandJNXctb2dfcWdvRG9GaFloNEpmd2JzanN6eldWS0ptY0tVbjhYbTdCR0RDblBhQURhNUF3cTY3STdvUnRHR1Zfc2tn0gHPAUFVX3lxTE9xNVZHTDZwenhWeFVVSklLRjVZVlVYRmZYbDR1RkhKLUlYTE5IaV9uYmlZaVgzNk0ya1NROVAtRmE5OWhWRHFXZDZJenNVZ0FHa3hPNlJxLWFYaUp2aEthTi1FWU5YYy1pdjF3VDJSMmhRMHRJaTR0eDdqdmpJNFRfRVdrbmhCc09hX3BxSHhUSDhlZXY2SzBMak1IVk9uSF9PX0xiWHlVRTl3TVJSdnFNblVTeDF3M1BvLXhVTnNqeFg2b19ubVBYNDBGZHVqUQ?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 14:57:27 GMT",
-      "timestamp": "2026-08-29T14:57:27.000Z",
+      "title": "Por qué Estudiantes puede pelear por la Libertadores ante los gigantes de Brasil - ESPN Deportes",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxPVEd1YkNtMFg3UUY0dUdPV3hqMnVlM0owRWs0OWlNaVhIbU9RWXFkN2E4bjR4WWhjNHZ4cUNHXzd5UWhBZFF2Vm1wRW85WnlvbVl0MUZJWDVhWFlOcUM5Z2EtUmhyVzVSbVlqVnJOSjdKaVdDcG8tSEdWZHgtSGplNkpPTUtaVzVhV3pTZDhoSTRkeER3cXlaY0hfcnhHUVJYallKU3hxaWZxUEVrNXhJZ3FtaG5rQlgtS0RHVkJ1QTE4bGRha180aWRwTnpxaVNNTXcxY3FKdTZLbkwxbV9F?oc=5\" target=\"_blank\">Por qué Estudiantes puede pelear por la Libertadores ante los gigantes de Brasil</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Depo",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPVEd1YkNtMFg3UUY0dUdPV3hqMnVlM0owRWs0OWlNaVhIbU9RWXFkN2E4bjR4WWhjNHZ4cUNHXzd5UWhBZFF2Vm1wRW85WnlvbVl0MUZJWDVhWFlOcUM5Z2EtUmhyVzVSbVlqVnJOSjdKaVdDcG8tSEdWZHgtSGplNkpPTUtaVzVhV3pTZDhoSTRkeER3cXlaY0hfcnhHUVJYallKU3hxaWZxUEVrNXhJZ3FtaG5rQlgtS0RHVkJ1QTE4bGRha180aWRwTnpxaVNNTXcxY3FKdTZLbkwxbV9F?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 13:09:00 GMT",
+      "timestamp": "2026-09-01T13:09:00.000Z",
       "fuente": "Google News — Libertadores",
       "fuente_host": "news.google.com",
       "categoria_feed": "internacional",
       "prioridad_fuente": 35,
       "categoria": "internacional",
-      "equipo_chile": "Universidad Católica",
-      "viral_score": 48,
+      "equipo_chile": null,
+      "viral_score": 43,
       "razones": [
         "categoria:internacional(+8)",
-        "frescura:1h(+15)"
+        "frescura:3h(+10)"
       ]
     },
     {
@@ -2143,42 +2501,22 @@
       ]
     },
     {
-      "title": "Calendario de la Champions 26-27: horarios de los partidos de Real Madrid, Barcelona, Atlético, Villarreal y Betis - MARCA",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi6gFBVV95cUxPa1NXRC1RVnNsWWVBZ2pkMnFsQ3dfdi02RjZEWDhTZ244SlhRVjNkM2RRWkJkSFlhUE1XLUFoV3pFcGc2NllpLTJBVklNWE5XejlmdXNJX1NVTGdhQWJsZHhaNFZsVXRNcW41VDhVYXZrREtnUHk2dUt5T0JXTTRWT2tjejNhbUlLQmRxWDFJRlRrVXlHdnR4SWdmOG1oRWdBUmI2Tm1TN0pubVB5dzl3VVdlZ0tnYVo3d2FpWlE4R0xNbFdyLXNjX2oxallOWWl5TXlLUndkdmo0ZGI4b25NZ05MMnY1OVRKY3fSAeoBQVVfeXFMTmRzaDkwT0o4UE9Dc3JaRWdxSUM5dlpON096RExZTW5RWmFSM3NwVF9EMmwxMDFDUHlxUVBEVFE3czdHTDJ1ZFJVZWxsbEVteFU0V3FHbEJtcVEyaUVuYXVtXz",
-      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPa1NXRC1RVnNsWWVBZ2pkMnFsQ3dfdi02RjZEWDhTZ244SlhRVjNkM2RRWkJkSFlhUE1XLUFoV3pFcGc2NllpLTJBVklNWE5XejlmdXNJX1NVTGdhQWJsZHhaNFZsVXRNcW41VDhVYXZrREtnUHk2dUt5T0JXTTRWT2tjejNhbUlLQmRxWDFJRlRrVXlHdnR4SWdmOG1oRWdBUmI2Tm1TN0pubVB5dzl3VVdlZ0tnYVo3d2FpWlE4R0xNbFdyLXNjX2oxallOWWl5TXlLUndkdmo0ZGI4b25NZ05MMnY1OVRKY3fSAeoBQVVfeXFMTmRzaDkwT0o4UE9Dc3JaRWdxSUM5dlpON096RExZTW5RWmFSM3NwVF9EMmwxMDFDUHlxUVBEVFE3czdHTDJ1ZFJVZWxsbEVteFU0V3FHbEJtcVEyaUVuYXVtXzkwX1l0a3BLNEZOMHAyb2dTXzB1V0hPQTFRQW1aOG1QN294VHZkVU8yaXdRVVRoTUs1eXlfOG0ybmpmSlJXM3d3UHpJRmlZMUlzVDQxemUtYnFXNUxsSGF5Z2hrdmo1dUdfbXhSbWZ5WFBmaWtUS1dOUm1FclZCWEo0MDZ4VE95ejNKeXRicnRB?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 11:37:43 GMT",
-      "timestamp": "2026-08-29T11:37:43.000Z",
+      "title": "Atlético de Madrid y Juventus se disputan el fichaje de Tagliafico - ESPN Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNeXlrMFQ4OFJ2YlQwSERreVhPaFVDTFZSWUV5cWJYZlpKMVNGcVVRWFBwdXUyek5EN2FYNGN1WklRQkNBNHRDa3dwbnpXN2tBWVFCaXN5TGZnaWZJb3BURTlBTng5SUFXM0RWUzhHRHRHdkR6MkQ1SzFZT0M2LXh4czFTUS0tbFRyaDllV2NheElhcUpfbHNJWUxWWGE1VWs?oc=5\" target=\"_blank\">Atlético de Madrid y Juventus se disputan el fichaje de Tagliafico</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Chile</font>",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNeXlrMFQ4OFJ2YlQwSERreVhPaFVDTFZSWUV5cWJYZlpKMVNGcVVRWFBwdXUyek5EN2FYNGN1WklRQkNBNHRDa3dwbnpXN2tBWVFCaXN5TGZnaWZJb3BURTlBTng5SUFXM0RWUzhHRHRHdkR6MkQ1SzFZT0M2LXh4czFTUS0tbFRyaDllV2NheElhcUpfbHNJWUxWWGE1VWs?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 14:50:40 GMT",
+      "timestamp": "2026-09-01T14:50:40.000Z",
       "fuente": "Google News — Champions",
       "fuente_host": "news.google.com",
       "categoria_feed": "internacional",
       "prioridad_fuente": 30,
       "categoria": "internacional",
       "equipo_chile": null,
-      "viral_score": 61,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:5h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:real madrid(+10)"
-      ]
-    },
-    {
-      "title": "¿Cuándo y contra qué rival debuta el Manchester City en la UEFA Champions League 2026/27? - Sports Illustrated",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQbkNzU3YxMlFSOHcya1RzZnp3eFJMcVRDckJqVEgtaG5lakNsM2ljYWxhRDlIM3gxaEV2eGd2QlE2OV8xcWZ1LVdlbnRCekFXQXUzeEs1YjhzU19adlZVLTJNRHR6cVlFTjVGbFkzY01aNkxLZzRuQVYtdkhnc1BtV1Q3clp0NVZfZ0pNUy1kUXdTNC11aWZGY2FBemQ4a09CMWM4M3NmS0hZUEFZQXY2TlhpQWt1YzRpVk5V?oc=5\" target=\"_blank\">¿Cuándo y contra qué rival debuta el Manchester City en la UEFA Champions League 2026/27?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Sports Illustrated</font>",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQbkNzU3YxMlFSOHcya1RzZnp3eFJMcVRDckJqVEgtaG5lakNsM2ljYWxhRDlIM3gxaEV2eGd2QlE2OV8xcWZ1LVdlbnRCekFXQXUzeEs1YjhzU19adlZVLTJNRHR6cVlFTjVGbFkzY01aNkxLZzRuQVYtdkhnc1BtV1Q3clp0NVZfZ0pNUy1kUXdTNC11aWZGY2FBemQ4a09CMWM4M3NmS0hZUEFZQXY2TlhpQWt1YzRpVk5V?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 14:34:04 GMT",
-      "timestamp": "2026-08-29T14:34:04.000Z",
-      "fuente": "Google News — Champions",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 30,
-      "categoria": "internacional",
-      "equipo_chile": "Universidad de Chile",
       "viral_score": 58,
       "razones": [
         "categoria:internacional(+8)",
-        "frescura:2h(+15)",
-        "gigante:manchester city(+10)"
+        "frescura:1h(+15)",
+        "senal:\\b(fichaje|traspaso|(+10)"
       ]
     },
     {
@@ -2258,25 +2596,6 @@
       ]
     },
     {
-      "title": "Aquí está el calendario de la UEFA Champions League 2026-27: fechas, horarios y todos los partidos - ESPN Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQdXh0NU9BangtbEdYelZVUjVwRTByME9VV0pYdXpvVjYxTGtiZHJUM1RsdG5BSjFJU1JnNEw5T0xWY051ZzBNakc3ZmRqQ01zUnZUcmhlbzQ5bngyVFUwQTlKbE5xbWF4ZkFKMEZPT2xHc3I5TDBySzJwc1dvR3p0WXBoUEJrZzhtUEdKM3Y3aE04VDY5MVJlVUpiUmlaQ3VwVy1jcThNWW5INXlLcGs1cnBWLVhfczFrVm1WaENMM3A?oc=5\" target=\"_blank\">Aquí está el calendario de la UEFA Champions League 2026-27: fechas, horarios y todos los partidos</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Chile</font>",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQdXh0NU9BangtbEdYelZVUjVwRTByME9VV0pYdXpvVjYxTGtiZHJUM1RsdG5BSjFJU1JnNEw5T0xWY051ZzBNakc3ZmRqQ01zUnZUcmhlbzQ5bngyVFUwQTlKbE5xbWF4ZkFKMEZPT2xHc3I5TDBySzJwc1dvR3p0WXBoUEJrZzhtUEdKM3Y3aE04VDY5MVJlVUpiUmlaQ3VwVy1jcThNWW5INXlLcGs1cnBWLVhfczFrVm1WaENMM3A?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 11:40:34 GMT",
-      "timestamp": "2026-08-29T11:40:34.000Z",
-      "fuente": "Google News — Champions",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 30,
-      "categoria": "internacional",
-      "equipo_chile": "Universidad de Chile",
-      "viral_score": 51,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:5h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
       "title": "La historia del equipo que jugará la Champions League y tiene solo 10 años de antigüedad - DSports",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxNVy15WS1ad3ZESzZXay1yd3BlWTBZVWhtZ2Zjd2ZkRTVhU1J5NEpCWG56NnV0SDdBaV9oTUEyb1dNZXVrQXV5Rmk3UVJjMmJORmI1RGNmdW1NbzFEb3F3R0c1bkVKUEpLYlQ2VTNpa3UyZU1yYUdlZDdqRmJXVk1JWXBKZ2lZOGIwaFZnU1lIaDlXNm9paVB2MTdUZWtjRVhzaXMyTXFKVGFGT0tucGlscElsWG9fMVFxaU1yLTZSZVNXd0ZqWWh5eDRYMnFkdXBzeHNPaUxhcWloVFBh0gHiAUFVX3lxTE5McE9UMnBid2trOXk2MnUzX1ZLeTJ4S2o1WndycnIwNXN6REJESGdiX3lzSUpQUEhBZVFmMVNZREFrMXFXMFJBZGVoZ1o0d3lEb0FFMHBUcC03MHRQLWp2NGhoVzE2SmdWeW9TVUF1Zm",
       "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNVy15WS1ad3ZESzZXay1yd3BlWTBZVWhtZ2Zjd2ZkRTVhU1J5NEpCWG56NnV0SDdBaV9oTUEyb1dNZXVrQXV5Rmk3UVJjMmJORmI1RGNmdW1NbzFEb3F3R0c1bkVKUEpLYlQ2VTNpa3UyZU1yYUdlZDdqRmJXVk1JWXBKZ2lZOGIwaFZnU1lIaDlXNm9paVB2MTdUZWtjRVhzaXMyTXFKVGFGT0tucGlscElsWG9fMVFxaU1yLTZSZVNXd0ZqWWh5eDRYMnFkdXBzeHNPaUxhcWloVFBh0gHiAUFVX3lxTE5McE9UMnBid2trOXk2MnUzX1ZLeTJ4S2o1WndycnIwNXN6REJESGdiX3lzSUpQUEhBZVFmMVNZREFrMXFXMFJBZGVoZ1o0d3lEb0FFMHBUcC03MHRQLWp2NGhoVzE2SmdWeW9TVUF1Zm90bVA3V0p4Y0xuVG5ISG9ZWXBsQjA2c2Jld3VONmw0SzVPdXUwbWtFYVRUNTl3ZFNlLVdBWjlzMk5IVmV5VzI3YnpaM3AyUXNaZ3VJNDVBVHpSOXBsR0MtTkI0YmxvT3haeVJ5c01DNXVoU3lNdWJfdmc?oc=5",
@@ -2347,61 +2666,6 @@
       "razones": [
         "categoria:internacional(+8)",
         "frescura:5h(+10)"
-      ]
-    },
-    {
-      "title": "Así queda todo el calendario de la fase liga de la Champions League, jornada por jornada - Mundo Deportivo",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPa3pfV1UyU2I5bFlKRzI4MlBTRi10U3MwMnlUd01SMlZ0aUV0WXZVeWltaWJzM2RhdmYxejlxa1RoRVdYV3FWQXptYm53SnNmc0ZxZ2tFN05FQjFTYzg2WWkwRUZlS1d3OV9FaEhXYUdwcXVWcExMVTF5Ukxfd0NDTEpPS29xNTdnQmNwY3JjRFNLTmhJMUg3MjA5N2NCRFlUYi1oVFVYMkxyOEs5a0JqYmZpcmJoTkp3RC1HQ0JCVzRDY0xoMVBJYlh1blZVZWhtYkQ3SmpRT2U2SGPSAegBQVVfeXFMUFZQS3h4Q3pmZV9qUldvUlJlSVYxMlBRNlBhd2MzSFF4ZjVOUXNnRkxzWnlwei1LVHpkY0YwUDRuTC1mVUhTdGZOVVZPTE1CU3FvcHdKOF9CRkZlZmxXREktRVg4QzBBZTUtVFd6MFVuZz",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPa3pfV1UyU2I5bFlKRzI4MlBTRi10U3MwMnlUd01SMlZ0aUV0WXZVeWltaWJzM2RhdmYxejlxa1RoRVdYV3FWQXptYm53SnNmc0ZxZ2tFN05FQjFTYzg2WWkwRUZlS1d3OV9FaEhXYUdwcXVWcExMVTF5Ukxfd0NDTEpPS29xNTdnQmNwY3JjRFNLTmhJMUg3MjA5N2NCRFlUYi1oVFVYMkxyOEs5a0JqYmZpcmJoTkp3RC1HQ0JCVzRDY0xoMVBJYlh1blZVZWhtYkQ3SmpRT2U2SGPSAegBQVVfeXFMUFZQS3h4Q3pmZV9qUldvUlJlSVYxMlBRNlBhd2MzSFF4ZjVOUXNnRkxzWnlwei1LVHpkY0YwUDRuTC1mVUhTdGZOVVZPTE1CU3FvcHdKOF9CRkZlZmxXREktRVg4QzBBZTUtVFd6MFVuZzljRmlQWHNiM0tTUGtneWtCQ0NtMkZiWFRQMHdZWnB2M1NxQ3ZPdFdGOEctSHF6ajlnOEFONlBvc2ZRbUd5X3lDTW5Zb1F0NlgtekRBZGU5VW1Qa3hIa0dRTEdvNzEwMjRmUWtad3lLX0JhczZuU2J2eVNjQnNpQg?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 11:25:19 GMT",
-      "timestamp": "2026-08-29T11:25:19.000Z",
-      "fuente": "Google News — Champions",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 30,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 43,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:5h(+10)"
-      ]
-    },
-    {
-      "title": "Champions League 2026/27: fixture completo, partidos, fechas, horarios y dónde ver en vivo - ESPN Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxORTZEVUpXQzBvbFFIXzJ4cVd5amNwbjFDcXk3SGZvcE1zX2NlNG9lc3dybllLRERDQ1plTmFkYU9hM2VRY3JnekpnWEdnU2Z3b1pvbDd0MzZZUld0N1U1QkRhZkVWaHdHbmZ5VjBHYnRtVzJQSHAtVGdjRm5ETWJNOFBKUzJGdG9lWElwNURHLUlDUkhXNi1XRmcyQjBpY3RmempxSjZDSDM4a0hvb3ZKdHp3MA?oc=5\" target=\"_blank\">Champions League 2026/27: fixture completo, partidos, fechas, horarios y dónde ver en vivo</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Chile</font>",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORTZEVUpXQzBvbFFIXzJ4cVd5amNwbjFDcXk3SGZvcE1zX2NlNG9lc3dybllLRERDQ1plTmFkYU9hM2VRY3JnekpnWEdnU2Z3b1pvbDd0MzZZUld0N1U1QkRhZkVWaHdHbmZ5VjBHYnRtVzJQSHAtVGdjRm5ETWJNOFBKUzJGdG9lWElwNURHLUlDUkhXNi1XRmcyQjBpY3RmempxSjZDSDM4a0hvb3ZKdHp3MA?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 16:23:16 GMT",
-      "timestamp": "2026-08-29T16:23:16.000Z",
-      "fuente": "Google News — Champions",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 30,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 25,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:30h(+0)",
-        "penal(-8)"
-      ]
-    },
-    {
-      "title": "Calendario de la Champions League 2026/27: todas las fechas, horarios y partidos de la fase liga por equipo - Diario AS",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4AFBVV95cUxQdWptT1BoMVdnVEJWOWRqTzV0LTVhY2ExS1hrV09vc1R2RjhzWTVNc3dNSDRXUlotTFprc3FBMG84REpjYlpkU21KOG9uM0ZJai1yN3RpZnppckduMGh4cGlmNVU4RE5hX29fSTZzeVRLeW9aSG1KQlpyVHd0LUp2SXdPSW1LVWNUdFZWNkNqakhRQTRSNzRveTZHMnZlSW9ycFc3ZUdLSk5xOEUxYnlfYWdmT01aU202blNacnFweUp3OVoxcUNWa1RaX0doc2ZnYS1zZTdRVkZRWnVLVXN5adIB9AFBVV95cUxPaFdyVHFRU0tvdnBMRHpZeElxMUkwcUF5a1VWTnlZSmFzZHdRSVBDY0tTWGIwRkNLWmNJMnozcGNkbTlTUzk5UTJjUVkydEd5TjVESDFXX25uMGhaSWwtSlNLcWxsS2V4Sm53RH",
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQdWptT1BoMVdnVEJWOWRqTzV0LTVhY2ExS1hrV09vc1R2RjhzWTVNc3dNSDRXUlotTFprc3FBMG84REpjYlpkU21KOG9uM0ZJai1yN3RpZnppckduMGh4cGlmNVU4RE5hX29fSTZzeVRLeW9aSG1KQlpyVHd0LUp2SXdPSW1LVWNUdFZWNkNqakhRQTRSNzRveTZHMnZlSW9ycFc3ZUdLSk5xOEUxYnlfYWdmT01aU202blNacnFweUp3OVoxcUNWa1RaX0doc2ZnYS1zZTdRVkZRWnVLVXN5adIB9AFBVV95cUxPaFdyVHFRU0tvdnBMRHpZeElxMUkwcUF5a1VWTnlZSmFzZHdRSVBDY0tTWGIwRkNLWmNJMnozcGNkbTlTUzk5UTJjUVkydEd5TjVESDFXX25uMGhaSWwtSlNLcWxsS2V4Sm53RHdTMGhYeVNMT1hxTEp2aks2Tk5IRnRUVEdIbk5ldjNUUUVjdmRKYTZZZGFiTXNWLVl2S05oUktjZzZEZFJsbUZzdE5xSW5BRmtRYXhpQkdkdlpIaDFFWXY1SnhDVGpMRF9yWTBoNmh0Q1VySEU1RzlFNjJSR2Z0REVnOUYySEc3SThFSjEtc0hC?oc=5",
-      "pubDate": "Sat, 29 Aug 2026 11:05:23 GMT",
-      "timestamp": "2026-08-29T11:05:23.000Z",
-      "fuente": "Google News — Champions",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 30,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 23,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:56h(-10)"
       ]
     }
   ]
