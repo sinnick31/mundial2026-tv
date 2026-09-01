@@ -1,7 +1,7 @@
 {
   "name": "football-ai-studio",
   "version": "4.0.0",
-  "description": "FOOTBALL AI STUDIO v4.0 — Fábrica automática de Shorts de fútbol 365 días al año: fútbol chileno (Primera A, B, Copa Chile), Champions, ligas europeas, Libertadores y fichajes. Motor de viral score + Gemini + Remotion + YouTube.",
+  "description": "FOOTBALL AI STUDIO v4.0 — Fábrica automática de Shorts de fútbol 365 días al año: fútbol chileno (Primera A, B, Copa Chile), Champions, ligas europeas, Libertadores y fichajes.",
   "repository": {
     "type": "git",
     "url": "https://github.com/sinnick31/mundial2026-tv.git"
@@ -37,7 +37,7 @@
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
     "fetch:news": "node scripts/fetch-news.js",
-    "test:viral": "node -e \"const{calcularViralScore}=require('./scripts/viral-score');console.log(calcularViralScore({title:process.argv[1]||'Colo Colo golea y es lider',description:'',timestamp:new Date().toISOString()}))\""
+    "test:viral": "node -e \"const{calcularViralScore}=require('./scripts/viral-score');const result=calcularViralScore({title:process.argv[1]||'Colo Colo golea y es lider',description:'',timestamp:new Date().toISOString()});console.log(JSON.stringify(result,null,2));\" "
   },
   "sideEffects": [
     "*.css"
