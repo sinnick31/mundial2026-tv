@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "MURALLAS IMPENETRABLES",
-      "titulo": "México y España con 0 goles en fase de grupos: ¿La defensa ganará el Mundial?",
-      "fecha": "2026-07-16T10:54:00.892Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ARGENTINA EN LA FINAL 2026",
-      "titulo": "Sports Illustrated publica ruta de Argentina a la final 2026: ¿Realista?",
-      "fecha": "2026-07-16T16:15:38.391Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "ARGENTINA Y ESPAÑA: ¿FINAL 2026?",
       "titulo": "16 de julio: ¿Messi y España preparan la final del Mundial 2026 con 2 años de anticipo?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo Colo más cerca del título y cerrada lucha por Chile 2: la tabla de Liga de ",
       "titulo": "FÚTBOL CHILENO: Colo Colo más cerca del título y cerrada lucha por Chile 2: la… | Lo que cambia",
       "fecha": "2026-09-01T20:46:34.973Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: La 35 es cosa de tiempo: Cuándo podría Colo Colo consagrarse campeón de la Liga ",
+      "titulo": "COLO-COLO: La 35 es cosa de tiempo: Cuándo podría Colo Colo consagrarse campeón… | Lo que se sabe",
+      "fecha": "2026-09-01T20:49:02.172Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo Colo volvió a estirar su ventaja como líder y la U sigue golpeada: Así está",
+      "titulo": "FÚTBOL CHILENO: Colo Colo volvió a estirar su ventaja como líder y la U sigue… | Lo que cambia",
+      "fecha": "2026-09-01T20:49:02.172Z"
     }
   ]
 }
