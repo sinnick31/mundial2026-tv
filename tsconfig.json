@@ -1,17 +1,1 @@
-{
-  "compilerOptions": {
-    "target": "ES2018",
-    "module": "commonjs",
-    "jsx": "react-jsx",
-    "strict": true,
-    "noEmit": true,
-    "lib": ["es2015", "dom"],
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noUnusedLocals": true,
-    "resolveJsonModule": true
-  },
-  "include": ["src/**/*", "config/**/*.js", "scripts/**/*.js"],
-  "exclude": ["node_modules", "dist", "out"]
-}
+{\n  \"compilerOptions\": {\n    \"target\": \"ES2018\",\n    \"module\": \"commonjs\",\n    \"jsx\": \"react-jsx\",\n    \"strict\": true,\n    \"noEmit\": true,\n    \"lib\": [\"es2015\", \"dom\"],\n    \"esModuleInterop\": true,\n    \"skipLibCheck\": true,\n    \"forceConsistentCasingInFileNames\": true,\n    \"noUnusedLocals\": true,\n    \"resolveJsonModule\": true\n  },\n  \"include\": [\"src/**/*\", \"config/**/*.js\", \"scripts/**/*.js\"],\n  \"exclude\": [\"node_modules\", \"dist\", \"out\"]\n}
