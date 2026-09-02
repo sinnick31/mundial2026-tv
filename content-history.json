@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "JAMES CAMBIA DE LOOK RADICALMENTE",
-      "titulo": "James Rodríguez cambió de look post-Mundial: ¿Nuevo ciclo para el 10?",
-      "fecha": "2026-07-16T22:07:44.004Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "KANE: INGLATERRA DESGARRADA TRAS DERROTA",
-      "titulo": "Harry Kane revela el sentir de Inglaterra: ¿Superará la decepción del Mundial 2026?",
-      "fecha": "2026-07-16T22:07:55.408Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "COSECHA PERFECTA GRUPOS",
       "titulo": "México sumó 9 puntos perfectos: ¿Será la sorpresa final del Mundial 2026? 🏆",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver en vivo la Liga de Pri",
       "titulo": "FÚTBOL CHILENO: Qué canal pasa Colo Colo vs Audax Italiano hoy: dónde ver en… | Lo que cambia",
       "fecha": "2026-09-02T05:35:40.993Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo recibe nuevo golpe: ANFP presenta denuncia y esto es lo que se sabe - ",
+      "titulo": "COLO-COLO: Colo Colo recibe nuevo golpe: ANFP presenta denuncia y esto es lo… | Lo que se sabe",
+      "fecha": "2026-09-02T16:15:06.000Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: La cuenta más alegre de Colo Colo: cuándo los albos pueden asegurar el título de",
+      "titulo": "FÚTBOL CHILENO: La cuenta más alegre de Colo Colo: cuándo los albos pueden… | Lo que cambia",
+      "fecha": "2026-09-02T16:15:06.000Z"
     }
   ]
 }
