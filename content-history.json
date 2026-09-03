@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "LÍDERES GRUPO GOLEADORES",
-      "titulo": "Países Bajos y Alemania con 10 goles: ¿Es el ataque la clave del liderato?",
-      "fecha": "2026-07-17T05:49:09.024Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "FINALISSIMA 2026 CANCELADA",
-      "titulo": "Finalissima 2026 entre Argentina y España CANCELADA: ¿impacta el camino al Mundial? 🏆",
-      "fecha": "2026-07-17T10:41:36.025Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "FINAL MUNDIAL 2026 DEFINIDA",
       "titulo": "Final Mundial 2026 definida: ¿Qué esperar del partido decisivo?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Copa Chile 2026, programación oficial: revisa fechas, horarios y sedes de las 8 ",
       "titulo": "FÚTBOL CHILENO: Copa Chile 2026, programación oficial: revisa fechas, horarios y… | Lo que cambia",
       "fecha": "2026-09-03T05:35:24.916Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Con Vozinha y Vidal a la cabeza: plantel de Colo Colo se cuadra en apoyo a Corre",
+      "titulo": "COLO-COLO: Con Vozinha y Vidal a la cabeza: plantel de Colo Colo se cuadra en… | Lo que se sabe",
+      "fecha": "2026-09-03T16:04:38.280Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo-Colo sufre con nueva denuncia de la ANFP: pide suspensión que iría de 6 mes",
+      "titulo": "FÚTBOL CHILENO: Colo-Colo sufre con nueva denuncia de la ANFP: pide suspensión… | Lo que cambia",
+      "fecha": "2026-09-03T16:04:38.280Z"
     }
   ]
 }
