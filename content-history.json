@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "FINAL MUNDIAL 2026 DEFINIDA",
-      "titulo": "Final Mundial 2026 definida: ¿Qué esperar del partido decisivo?",
-      "fecha": "2026-07-17T10:41:50.891Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "SIN MESSI, QUÉ HARÍA ARGENTINA?",
-      "titulo": "Diario AS apunta a Messi: ¿Argentina lista para 2026 sin él?",
-      "fecha": "2026-07-17T10:42:05.140Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "DEFENSAS SECUNDARIAS FUERTES",
       "titulo": "Ivory Coast solo recibió 2 goles en 3 partidos: ¿La defensa más sólida sin ganar grupo?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo-Colo sufre con nueva denuncia de la ANFP: pide suspensión que iría de 6 mes",
       "titulo": "FÚTBOL CHILENO: Colo-Colo sufre con nueva denuncia de la ANFP: pide suspensión… | Lo que cambia",
       "fecha": "2026-09-03T16:04:38.280Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Jonathan Villagra es baja por lesión en Colo Colo vs Huachipato por la Liga de P",
+      "titulo": "COLO-COLO: Jonathan Villagra es baja por lesión en Colo Colo vs Huachipato por… | Lo que se sabe",
+      "fecha": "2026-09-03T22:29:33.738Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Con Colo Colo vs Huachipato: la programación de la fecha 22 de la Liga de Primer",
+      "titulo": "FÚTBOL CHILENO: Con Colo Colo vs Huachipato: la programación de la fecha 22 de… | Lo que cambia",
+      "fecha": "2026-09-03T22:29:33.738Z"
     }
   ]
 }
