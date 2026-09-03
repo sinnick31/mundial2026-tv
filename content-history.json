@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "FIFA CONFIRMA ÁRBITRO FINAL MUNDIAL 2026",
-      "titulo": "Final España vs. Argentina 2026: FIFA confirma árbitro, ¿quién será el elegido?",
-      "fecha": "2026-07-17T05:48:35.419Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ESPAÑA VS ARGENTINA FINAL 2026",
-      "titulo": "RTVE.es proyecta España vs Argentina para el Mundial 2026: ¿El duelo definitivo?",
-      "fecha": "2026-07-17T05:48:47.043Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "LÍDERES GRUPO GOLEADORES",
       "titulo": "Países Bajos y Alemania con 10 goles: ¿Es el ataque la clave del liderato?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo-Colo sufre con nueva denuncia de la ANFP: pide suspensión que iría de 6 mes",
       "titulo": "FÚTBOL CHILENO: Colo-Colo sufre con nueva denuncia de la ANFP: pide suspensión… | Lo que cambia",
       "fecha": "2026-09-02T22:30:53.411Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: \"Lo vendimos a Colo Colo\": La llamativa respuesta del DT de AIK por ausencia de ",
+      "titulo": "COLO-COLO: \"Lo vendimos a Colo Colo\": La llamativa respuesta del DT de AIK por… | Lo que se sabe",
+      "fecha": "2026-09-03T05:35:24.916Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Copa Chile 2026, programación oficial: revisa fechas, horarios y sedes de las 8 ",
+      "titulo": "FÚTBOL CHILENO: Copa Chile 2026, programación oficial: revisa fechas, horarios y… | Lo que cambia",
+      "fecha": "2026-09-03T05:35:24.916Z"
     }
   ]
 }
