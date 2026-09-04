@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "INVENCIBLES DEL EMPATE",
-      "titulo": "Cape Verde e Irán sumaron 3 empates invictos: ¿Subestimamos su resistencia? 🤝",
-      "fecha": "2026-07-17T16:13:27.612Z"
-    },
-    {
-      "match_id": "espn-401881169",
-      "tipo_contenido": "narrativa",
-      "hook": "DEFENSA SÓLIDA DETERMINÓ EL PASO",
-      "titulo": "Antofagasta 1-0 Cobresal en Copa Chile: ¿La defensa fue clave? 🤔",
-      "fecha": "2026-07-17T17:28:16.580Z"
-    },
-    {
       "match_id": "espn-401881702",
       "tipo_contenido": "narrativa",
       "hook": "EL ENIGMA DEL ÚNICO GOL",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde ver por TV y str",
       "titulo": "FÚTBOL CHILENO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde… | Lo que cambia",
       "fecha": "2026-09-04T16:00:30.407Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde ver por TV y str",
+      "titulo": "COLO-COLO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde ver… | Lo que se sabe",
+      "fecha": "2026-09-04T22:14:34.351Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Los octavos de final de la Copa Chile tienen fecha y hora: cuándo y con quién ju",
+      "titulo": "FÚTBOL CHILENO: Los octavos de final de la Copa Chile tienen fecha y hora:… | Lo que cambia",
+      "fecha": "2026-09-04T22:14:34.351Z"
     }
   ]
 }
