@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CHIVAS CEDE 5 JUGADORES",
-      "titulo": "Chivas cede 5 jugadores para el Mundial 2026: ¿Inversión millonaria?",
-      "fecha": "2026-07-17T16:12:51.011Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "SUPERMERCADOS CAMBIAN HORARIO POR FINAL",
-      "titulo": "Carrefour, Alcampo y BM cambian horario el 19 de julio: ¿locura por el Mundial?",
-      "fecha": "2026-07-17T16:13:04.970Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "INVENCIBLES DEL EMPATE",
       "titulo": "Cape Verde e Irán sumaron 3 empates invictos: ¿Subestimamos su resistencia? 🤝",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde ver por TV y str",
       "titulo": "FÚTBOL CHILENO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde… | Lo que cambia",
       "fecha": "2026-09-04T05:43:34.934Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Tabla de posiciones: Así queda la Liga Femenina tras goleada de Colo Colo ante I",
+      "titulo": "COLO-COLO: Tabla de posiciones: Así queda la Liga Femenina tras goleada de Colo… | Lo que se sabe",
+      "fecha": "2026-09-04T16:00:30.407Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde ver por TV y str",
+      "titulo": "FÚTBOL CHILENO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde… | Lo que cambia",
+      "fecha": "2026-09-04T16:00:30.407Z"
     }
   ]
 }
