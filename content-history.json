@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ESPINOLA: ¿EL PLAN B DE COLO COLO?",
-      "titulo": "Juan Espínola, ¿el 'plan B' de Colo Colo en el pórtico?",
-      "fecha": "2026-07-17T17:28:52.829Z"
-    },
-    {
-      "match_id": "espn-401881700",
-      "tipo_contenido": "narrativa",
-      "hook": "UN GOL DECIDIÓ TODO",
-      "titulo": "Deportes Temuco 0 goles ante Huachipato: ¿qué falló en la ofensiva? 🥅",
-      "fecha": "2026-07-17T21:43:59.041Z"
-    },
-    {
       "match_id": "espn-401862897",
       "tipo_contenido": "narrativa",
       "hook": "EMPATE ESTRATÉGICO: LA BATALLA TÁCTICA",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Lo confirmó Ortiz: ‘Vozinha’ jugará su primer partido de liga con Colo Colo tras",
       "titulo": "FÚTBOL CHILENO: Lo confirmó Ortiz: ‘Vozinha’ jugará su primer partido de liga… | Lo que cambia",
       "fecha": "2026-09-05T05:29:11.710Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde ver por TV y str",
+      "titulo": "COLO-COLO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde ver… | Lo que se sabe",
+      "fecha": "2026-09-05T14:51:11.220Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Josimar va a atajar”: Fernando Ortiz confirmó debut de Vozinha en Liga de Prime",
+      "titulo": "FÚTBOL CHILENO: “Josimar va a atajar”: Fernando Ortiz confirmó debut de Vozinha… | Lo que cambia",
+      "fecha": "2026-09-05T14:51:11.220Z"
     }
   ]
 }
