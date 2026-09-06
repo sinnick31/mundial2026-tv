@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554770",
-      "tipo_contenido": "narrativa",
-      "hook": "BAHIA APLASTÓ RIVAL: ESTRATEGIA INMEJORABLE",
-      "titulo": "Bahia marcó 2 goles a Chapecoense: ¿dominio total?",
-      "fecha": "2026-07-18T03:59:22.806Z"
-    },
-    {
-      "match_id": "554925",
-      "tipo_contenido": "narrativa",
-      "hook": "DUELO TÁCTICO SIN GANADOR CLARO",
-      "titulo": "Fluminense 1-1 Bragantino: ¿Resultado justo en el Brasileirão?",
-      "fecha": "2026-07-18T13:25:09.846Z"
-    },
-    {
       "match_id": "554927",
       "tipo_contenido": "narrativa",
       "hook": "DEFENSA DE HIERRO MIRASSOL SORPRENDE",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo Colo reserva el Estadio Nacional para enfrentar a Audax Italiano por Copa C",
       "titulo": "FÚTBOL CHILENO: Colo Colo reserva el Estadio Nacional para enfrentar a Audax… | Lo que cambia",
       "fecha": "2026-09-06T05:42:45.785Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo vs. Huachipato: Cuándo juegan, a qué hora y dónde ver EN VIVO la Liga ",
+      "titulo": "COLO-COLO: Colo Colo vs. Huachipato: Cuándo juegan, a qué hora y dónde ver EN… | Lo que se sabe",
+      "fecha": "2026-09-06T15:11:15.691Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo Colo visita a Huachipato por la Liga de Primera: horario y quién transmite ",
+      "titulo": "FÚTBOL CHILENO: Colo Colo visita a Huachipato por la Liga de Primera: horario y… | Lo que cambia",
+      "fecha": "2026-09-06T15:11:15.691Z"
     }
   ]
 }
