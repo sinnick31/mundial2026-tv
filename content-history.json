@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: REFUERZO 3RA OPCIÓN",
-      "titulo": "Refuerzo de la U: tercera opción y el más barato. ¿La billetera pesa más?",
-      "fecha": "2026-07-17T21:44:32.711Z"
-    },
-    {
-      "match_id": "554921",
-      "tipo_contenido": "narrativa",
-      "hook": "ESTRATEGIA GANADORA BOTAFOGO ANTE SANTOS",
-      "titulo": "Botafogo 2-1 Santos: ¿Qué clave táctica definió el Brasileirão?",
-      "fecha": "2026-07-18T03:59:10.896Z"
-    },
-    {
       "match_id": "554770",
       "tipo_contenido": "narrativa",
       "hook": "BAHIA APLASTÓ RIVAL: ESTRATEGIA INMEJORABLE",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde ver por TV y str",
       "titulo": "FÚTBOL CHILENO: Huachipato vs. Colo Colo: horario, posibles formaciones y dónde… | Lo que cambia",
       "fecha": "2026-09-05T21:59:12.661Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Alerta en Colo Colo: Fernando Ortiz podría perder a sus dos arqueros para la Cop",
+      "titulo": "COLO-COLO: Alerta en Colo Colo: Fernando Ortiz podría perder a sus dos arqueros… | Lo que se sabe",
+      "fecha": "2026-09-06T05:42:45.784Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo Colo reserva el Estadio Nacional para enfrentar a Audax Italiano por Copa C",
+      "titulo": "FÚTBOL CHILENO: Colo Colo reserva el Estadio Nacional para enfrentar a Audax… | Lo que cambia",
+      "fecha": "2026-09-06T05:42:45.785Z"
     }
   ]
 }
