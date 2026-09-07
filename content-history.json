@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "AUBAMEYANG AL DEPORTIVO: OFICIAL",
-      "titulo": "Aubameyang firma por 2 años con el Deportivo: ¿Revolución en Riazor?",
-      "fecha": "2026-07-18T16:59:29.553Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "LA FÓRMULA MUNDIAL 2030 CHILE",
-      "titulo": "Mundial 2030 en la mira de La Roja: ¿qué fórmula ilusiona a Chile?",
-      "fecha": "2026-07-18T16:59:41.044Z"
-    },
-    {
       "match_id": "espn-401850602",
       "tipo_contenido": "prediccion",
       "hook": "INFORMACIÓN LIMITADA: ANÁLISIS COMPLEJO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
       "titulo": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen… | Lo que cambia",
       "fecha": "2026-09-07T05:52:41.004Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: ¿Qué canal transmite el partido de Colo Colo vs Universidad Católica por la Liga",
+      "titulo": "COLO-COLO: ¿Qué canal transmite el partido de Colo Colo vs Universidad Católica… | Lo que se sabe",
+      "fecha": "2026-09-07T17:33:17.255Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
+      "titulo": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen… | Lo que cambia",
+      "fecha": "2026-09-07T17:33:17.255Z"
     }
   ]
 }
