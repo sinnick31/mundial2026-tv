@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850602",
-      "tipo_contenido": "prediccion",
-      "hook": "INFORMACIÓN LIMITADA: ANÁLISIS COMPLEJO",
-      "titulo": "CERO puntos para todos en la tabla: ¿Cómo proyectar La Calera vs Everton CD?",
-      "fecha": "2026-07-18T17:00:03.609Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CONTRERAS ELOGIA A VIDAL",
-      "titulo": "Contreras elogia a Vidal en encuentro de 'cracks': ¿Vuelve el King?",
-      "fecha": "2026-07-18T21:42:17.080Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "HISTÓRICO COLO COLO CUESTIONA INTERÉS VOZINHA",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
       "titulo": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen… | Lo que cambia",
       "fecha": "2026-09-07T17:33:17.255Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo mira al 2027: los tres nuevos equipos que llegan a la Liga Femenina - ",
+      "titulo": "COLO-COLO: Colo Colo mira al 2027: los tres nuevos equipos que llegan a la Liga… | Lo que se sabe",
+      "fecha": "2026-09-07T22:39:07.784Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
+      "titulo": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen… | Lo que cambia",
+      "fecha": "2026-09-07T22:39:07.784Z"
     }
   ]
 }
