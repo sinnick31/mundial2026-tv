@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "HISTÓRICO COLO COLO CUESTIONA INTERÉS VOZINHA",
-      "titulo": "Histórico de Colo Colo critica interés por Vozinha: ¿Tiene razón el ídolo?",
-      "fecha": "2026-07-18T21:42:28.233Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO: EL PLAN SILENCIOSO",
-      "titulo": "El \"plan silencioso\" de Colo Colo: ¿Qué buscan los Albos?",
-      "fecha": "2026-07-18T21:42:42.315Z"
-    },
-    {
       "match_id": "espn-401850597",
       "tipo_contenido": "prediccion",
       "hook": "INCERTIDUMBRE INICIAL DE LIGA",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
       "titulo": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen… | Lo que cambia",
       "fecha": "2026-09-07T22:39:07.784Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
+      "titulo": "COLO-COLO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del… | Lo que se sabe",
+      "fecha": "2026-09-08T05:48:26.489Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al debut de Vozinha",
+      "titulo": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al… | Lo que cambia",
+      "fecha": "2026-09-08T05:48:26.489Z"
     }
   ]
 }
