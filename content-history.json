@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850597",
-      "tipo_contenido": "prediccion",
-      "hook": "INCERTIDUMBRE INICIAL DE LIGA",
-      "titulo": "Todos los equipos de la liga tienen 0 puntos: ¿Impacta a Colo Colo vs Limache?",
-      "fecha": "2026-07-18T21:43:05.038Z"
-    },
-    {
-      "match_id": "espn-760516",
-      "tipo_contenido": "narrativa",
-      "hook": "INGLATERRA DESARMÓ DEFENSA FRANCESA",
-      "titulo": "Inglaterra anotó 6 goles a Francia: ¿Por qué la defensa gala colapsó?",
-      "fecha": "2026-07-19T04:25:15.475Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "CONTRERAS ELOGIA A VIDAL EN DUELO DE CRACKS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al debut de Vozinha",
       "titulo": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al… | Lo que cambia",
       "fecha": "2026-09-08T05:48:26.489Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
+      "titulo": "COLO-COLO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del… | Lo que se sabe",
+      "fecha": "2026-09-08T16:18:24.451Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al debut de Vozinha",
+      "titulo": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al… | Lo que cambia",
+      "fecha": "2026-09-08T16:18:24.451Z"
     }
   ]
 }
