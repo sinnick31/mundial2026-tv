@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CONTRERAS ELOGIA A VIDAL EN DUELO DE CRACKS",
-      "titulo": "Brayan Contreras elogia a Arturo Vidal: ¿Un mensaje de unión en Colo-Colo?",
-      "fecha": "2026-07-19T04:25:24.706Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO ENFRENTA A MILLONARIOS",
-      "titulo": "Colo Colo en El Campín para la Noche Embajadora: ¿cómo afecta su pretemporada?",
-      "fecha": "2026-07-19T04:25:36.568Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "ATAQUE EXPLOSIVO RECIENTE",
       "titulo": "England anotó 6 goles a Francia en el Mundial: ¿La mayor potencia ofensiva?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al debut de Vozinha",
       "titulo": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al… | Lo que cambia",
       "fecha": "2026-09-08T16:18:24.451Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
+      "titulo": "COLO-COLO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del… | Lo que se sabe",
+      "fecha": "2026-09-08T22:28:27.136Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al debut de Vozinha",
+      "titulo": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al… | Lo que cambia",
+      "fecha": "2026-09-08T22:28:27.136Z"
     }
   ]
 }
