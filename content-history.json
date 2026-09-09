@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO: DOS AMARILLAS SIN ROJA!",
-      "titulo": "Jugador Colo Colo vio 2 amarillas y NO fue expulsado! ¿Qué pasó?",
-      "fecha": "2026-07-19T13:25:51.892Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CONTRERAS ELOGIA A VIDAL EN DUELO CRACKS",
-      "titulo": "Contreras elogia a Vidal junto a Ureña: ¿El camarín albo se fortalece con el 'Rey'?",
-      "fecha": "2026-07-19T13:26:06.694Z"
-    },
-    {
       "match_id": "espn-401879301",
       "tipo_contenido": "prediccion",
       "hook": "ARSENAL: INICIO DE INCERTIDUMBRE",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al debut de Vozinha",
       "titulo": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al… | Lo que cambia",
       "fecha": "2026-09-09T05:50:07.198Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Arturo Vidal encuentra al nuevo ‘Alexis Sánchez’ del fútbol chileno: es su compa",
+      "titulo": "COLO-COLO: Arturo Vidal encuentra al nuevo ‘Alexis Sánchez’ del fútbol chileno:… | Lo que se sabe",
+      "fecha": "2026-09-09T16:13:33.138Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
+      "titulo": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen… | Lo que cambia",
+      "fecha": "2026-09-09T16:13:33.138Z"
     }
   ]
 }
