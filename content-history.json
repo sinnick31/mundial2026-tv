@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "ATAQUE EXPLOSIVO RECIENTE",
-      "titulo": "England anotó 6 goles a Francia en el Mundial: ¿La mayor potencia ofensiva?",
-      "fecha": "2026-07-19T04:26:01.652Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO-COLO FICHA ARQUERO MUNDIALISTA",
-      "titulo": "Colo-Colo ficha arquero mundialista: ¿el fin de la incertidumbre en el arco albo?",
-      "fecha": "2026-07-19T13:25:37.021Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "COLO COLO: DOS AMARILLAS SIN ROJA!",
       "titulo": "Jugador Colo Colo vio 2 amarillas y NO fue expulsado! ¿Qué pasó?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al debut de Vozinha",
       "titulo": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al… | Lo que cambia",
       "fecha": "2026-09-08T22:28:27.136Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
+      "titulo": "COLO-COLO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del… | Lo que se sabe",
+      "fecha": "2026-09-09T05:50:07.197Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al debut de Vozinha",
+      "titulo": "FÚTBOL CHILENO: “Solo pasó un susto”: la reacción de la prensa internacional al… | Lo que cambia",
+      "fecha": "2026-09-09T05:50:07.198Z"
     }
   ]
 }
