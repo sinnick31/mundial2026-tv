@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401879301",
-      "tipo_contenido": "prediccion",
-      "hook": "ARSENAL: INICIO DE INCERTIDUMBRE",
-      "titulo": "Arsenal empató 1-1 con PSG: ¿cómo afecta su inicio en Premier League?",
-      "fecha": "2026-07-19T13:26:27.889Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO FICHA ARQUERO MUNDIALISTA",
-      "titulo": "Colo Colo confirma arquero mundialista: ¿El Cacique va por todo este semestre?",
-      "fecha": "2026-07-19T16:59:32.541Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "EVITÓ ROJA TRAS DOS AMARILLAS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen del partido | Lig",
       "titulo": "FÚTBOL CHILENO: Huachipato - Colo Colo en vivo hoy: goles, resultado y resumen… | Lo que cambia",
       "fecha": "2026-09-09T16:13:33.138Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: “Solo pasó un susto”: la reacción de la prensa internacional al debut de Vozinha",
+      "titulo": "COLO-COLO: “Solo pasó un susto”: la reacción de la prensa internacional al… | Lo que se sabe",
+      "fecha": "2026-09-09T22:22:32.609Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: La evaluación de Fernando Ortiz al debut de Vozinha con Colo Colo en la Liga de ",
+      "titulo": "FÚTBOL CHILENO: La evaluación de Fernando Ortiz al debut de Vozinha con Colo… | Lo que cambia",
+      "fecha": "2026-09-09T22:22:32.609Z"
     }
   ]
 }
