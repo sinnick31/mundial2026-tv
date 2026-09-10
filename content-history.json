@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401882926",
-      "tipo_contenido": "prediccion",
-      "hook": "INICIO LALIGA INCÓGNITA",
-      "titulo": "LaLiga el 15 de agosto: ¿cómo debutan Alavés y Getafe sin tabla de forma?",
-      "fecha": "2026-07-19T17:00:17.119Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO FICHA ARQUERO MUNDIALISTA",
-      "titulo": "Colo Colo suma un arquero mundialista: ¿impactará en la Copa Chile y Primera División?",
-      "fecha": "2026-07-19T21:43:32.053Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "ARQUERO MUNDIALISTA LLEGA A COLO COLO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo Colo cambia de estadio para la Copa Chile: ya definió dónde recibirá a Auda",
       "titulo": "FÚTBOL CHILENO: Colo Colo cambia de estadio para la Copa Chile: ya definió dónde… | Lo que cambia",
       "fecha": "2026-09-10T05:44:50.475Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: La programación de la fecha 23 de la Liga de Primera: cuándo juegan Colo Colo, l",
+      "titulo": "COLO-COLO: La programación de la fecha 23 de la Liga de Primera: cuándo juegan… | Lo que se sabe",
+      "fecha": "2026-09-10T16:04:52.481Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Romeo Santos y Prince Royce ponen \"en problemas\" a Colo Colo en la Copa Chile - ",
+      "titulo": "FÚTBOL CHILENO: Romeo Santos y Prince Royce ponen \"en problemas\" a Colo Colo en… | Lo que cambia",
+      "fecha": "2026-09-10T16:04:52.481Z"
     }
   ]
 }
