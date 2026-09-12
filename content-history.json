@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401874070",
-      "tipo_contenido": "prediccion",
-      "hook": "DESAFÍO ANALÍTICO POR DATOS",
-      "titulo": "FC Barcelona con 94 puntos en La Liga: ¿Cómo analizar Fluminense sin datos similares?",
-      "fecha": "2026-07-20T14:16:04.191Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CHILE SIN MUNDIAL 2030 POR FIFA",
-      "titulo": "FIFA advierte a Chile por 'histórica costumbre': ¿Peligra el Mundial 2030?",
-      "fecha": "2026-07-20T18:05:18.492Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "ROMANO EN EL MERCADO DE COLO COLO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: ¿Básico o Premium? La señal de TNT Sports que transmite Antofagasta vs. Cobreloa",
       "titulo": "FÚTBOL CHILENO: ¿Básico o Premium? La señal de TNT Sports que transmite… | Lo que cambia",
       "fecha": "2026-09-12T05:31:41.291Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en portería para Copa Chil",
+      "titulo": "COLO-COLO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en portería… | Lo que se sabe",
+      "fecha": "2026-09-12T15:16:14.669Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: La programación de la fecha 23 de la Liga de Primera: cuándo juegan Colo Colo, l",
+      "titulo": "FÚTBOL CHILENO: La programación de la fecha 23 de la Liga de Primera: cuándo… | Lo que cambia",
+      "fecha": "2026-09-12T15:16:14.669Z"
     }
   ]
 }
