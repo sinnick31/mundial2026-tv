@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ROMANO EN EL MERCADO DE COLO COLO",
-      "titulo": "Romano actualiza mercado de Colo-Colo por Mele y Vozinha: ¿Se arma un equipazo?",
-      "fecha": "2026-07-20T18:05:27.523Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ROMERO: DT LO LLAMA \"DESGRACIA\"",
-      "titulo": "Lucas Romero en la U: DT en México lo llama 'desgracia'. ¿Por qué falló?",
-      "fecha": "2026-07-20T18:05:37.909Z"
-    },
-    {
       "match_id": "espn-401874152",
       "tipo_contenido": "prediccion",
       "hook": "DATOS INSUFICIENTES: ANÁLISIS COMPLEJO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: La programación de la fecha 23 de la Liga de Primera: cuándo juegan Colo Colo, l",
       "titulo": "FÚTBOL CHILENO: La programación de la fecha 23 de la Liga de Primera: cuándo… | Lo que cambia",
       "fecha": "2026-09-12T15:16:14.669Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en portería para Copa Chil",
+      "titulo": "COLO-COLO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en portería… | Lo que se sabe",
+      "fecha": "2026-09-12T22:02:45.544Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: La programación de la fecha 23 de la Liga de Primera: cuándo juegan Colo Colo, l",
+      "titulo": "FÚTBOL CHILENO: La programación de la fecha 23 de la Liga de Primera: cuándo… | Lo que cambia",
+      "fecha": "2026-09-12T22:02:45.544Z"
     }
   ]
 }
