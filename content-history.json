@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ROMERO, REFUERZO FALLIDO EN LA U",
-      "titulo": "Lucas Romero, el refuerzo fallido de la U: ¿qué reveló su DT?",
-      "fecha": "2026-07-20T14:15:36.433Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ARQUERO MUNDIALISTA LLEGA A COLO COLO",
-      "titulo": "Colo Colo ficha a arquero mundialista: ¿Quién defenderá el arco albo ahora?",
-      "fecha": "2026-07-20T14:15:47.301Z"
-    },
-    {
       "match_id": "espn-401874070",
       "tipo_contenido": "prediccion",
       "hook": "DESAFÍO ANALÍTICO POR DATOS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Mario Salas a detalles de volver a dirigir en la Primera División del fútbol chi",
       "titulo": "FÚTBOL CHILENO: Mario Salas a detalles de volver a dirigir en la Primera… | Lo que cambia",
       "fecha": "2026-09-11T22:21:31.770Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: La programación de la fecha 23 de la Liga de Primera: cuándo juegan Colo Colo, l",
+      "titulo": "COLO-COLO: La programación de la fecha 23 de la Liga de Primera: cuándo juegan… | Lo que se sabe",
+      "fecha": "2026-09-12T05:31:41.291Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: ¿Básico o Premium? La señal de TNT Sports que transmite Antofagasta vs. Cobreloa",
+      "titulo": "FÚTBOL CHILENO: ¿Básico o Premium? La señal de TNT Sports que transmite… | Lo que cambia",
+      "fecha": "2026-09-12T05:31:41.291Z"
     }
   ]
 }
