@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401874145",
-      "tipo_contenido": "prediccion",
-      "hook": "NÚMEROS CLAVE PARA ENTENDER FÚTBOL",
-      "titulo": "FC Barcelona sumó 94 puntos en 38 jornadas: ¿Cómo se construye la élite del fútbol?",
-      "fecha": "2026-07-20T21:57:22.526Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO: ¡ULTIMÁTUM POR VALDÉS!",
-      "titulo": "Colo Colo fija un PLAZO para Valdés: ¿Llegará el volante de La Roja al Monumental?",
-      "fecha": "2026-07-21T01:42:38.768Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "THOMPSON SE ALEJA DE COLO COLO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en portería para Copa Chil",
       "titulo": "FÚTBOL CHILENO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en… | Lo que cambia",
       "fecha": "2026-09-13T15:52:19.689Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va el partido d",
+      "titulo": "COLO-COLO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va… | Lo que se sabe",
+      "fecha": "2026-09-13T22:15:35.952Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en portería para Copa Chil",
+      "titulo": "FÚTBOL CHILENO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en… | Lo que cambia",
+      "fecha": "2026-09-13T22:15:35.952Z"
     }
   ]
 }
