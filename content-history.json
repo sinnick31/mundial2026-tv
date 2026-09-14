@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "THOMPSON SE ALEJA DE COLO COLO",
-      "titulo": "Jordhy Thompson: ¿Opción menos para el Cacique?",
-      "fecha": "2026-07-21T01:42:50.685Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "VÉLEZ RESPONDE POR VALDÉS",
-      "titulo": "Vélez responde por Diego Valdés: ¿Colo Colo pagará el monto exigido?",
-      "fecha": "2026-07-21T01:43:03.196Z"
-    },
-    {
       "match_id": "554920",
       "tipo_contenido": "prediccion",
       "hook": "DESAFÍO EN JORNADA TEMPRANA",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en portería para Copa Chil",
       "titulo": "FÚTBOL CHILENO: Noticias de Colo Colo hoy 12 de septiembre: Luz verde en… | Lo que cambia",
       "fecha": "2026-09-13T22:15:35.952Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Se acabó la racha de Vozinha: Colo Colo rescata empate tras autogol de Deportes ",
+      "titulo": "COLO-COLO: Se acabó la racha de Vozinha: Colo Colo rescata empate tras autogol… | Lo que se sabe",
+      "fecha": "2026-09-14T05:58:12.004Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo Colo 1 – 1 Concepción: Crónica y resumen de la fecha 23 de la Liga de Prime",
+      "titulo": "FÚTBOL CHILENO: Colo Colo 1 – 1 Concepción: Crónica y resumen de la fecha 23 de… | Lo que cambia",
+      "fecha": "2026-09-14T05:58:12.004Z"
     }
   ]
 }
