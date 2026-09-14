@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO FIJA PLAZO POR DIEGO VALDÉS",
-      "titulo": "Colo Colo fija un plazo por Valdés: ¿Lograrán cerrar el fichaje a tiempo?",
-      "fecha": "2026-07-21T04:19:04.623Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "THOMPSON SE ALEJA DE COLO COLO",
-      "titulo": "Jordhy Thompson se aleja de Colo Colo: ¿Quién será el próximo en la lista?",
-      "fecha": "2026-07-21T04:19:16.309Z"
-    },
-    {
       "match_id": "554924",
       "tipo_contenido": "prediccion",
       "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va el partido d",
       "titulo": "FÚTBOL CHILENO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo… | Lo que cambia",
       "fecha": "2026-09-14T17:55:24.219Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va el partido d",
+      "titulo": "COLO-COLO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va… | Lo que se sabe",
+      "fecha": "2026-09-14T23:01:12.045Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Los puntos que necesita Colo Colo para ser campeón y cuándo vuelve la Liga de Pr",
+      "titulo": "FÚTBOL CHILENO: Los puntos que necesita Colo Colo para ser campeón y cuándo… | Lo que cambia",
+      "fecha": "2026-09-14T23:01:12.045Z"
     }
   ]
 }
