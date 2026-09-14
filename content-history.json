@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554920",
-      "tipo_contenido": "prediccion",
-      "hook": "DESAFÍO EN JORNADA TEMPRANA",
-      "titulo": "Arsenal sumó 24 puntos en 8 partidos: ¿La brecha temprana es clave para Mineiro?",
-      "fecha": "2026-07-21T01:43:27.618Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "LA U: 9 PARTIDOS CONFIRMADOS",
-      "titulo": "9 partidos de la U confirmados en Primera: ¿fixture para despegar o sufrir?",
-      "fecha": "2026-07-21T04:18:56.727Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "COLO COLO FIJA PLAZO POR DIEGO VALDÉS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo Colo 1 – 1 Concepción: Crónica y resumen de la fecha 23 de la Liga de Prime",
       "titulo": "FÚTBOL CHILENO: Colo Colo 1 – 1 Concepción: Crónica y resumen de la fecha 23 de… | Lo que cambia",
       "fecha": "2026-09-14T05:58:12.004Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Posiciones de Colo Colo: La diferencia hoy con U. de Chile en la Liga de Primera",
+      "titulo": "COLO-COLO: Posiciones de Colo Colo: La diferencia hoy con U. de Chile en la… | Lo que se sabe",
+      "fecha": "2026-09-14T17:55:24.219Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va el partido d",
+      "titulo": "FÚTBOL CHILENO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo… | Lo que cambia",
+      "fecha": "2026-09-14T17:55:24.219Z"
     }
   ]
 }
