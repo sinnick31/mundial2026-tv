@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CASO VALDÉS: ¡COLO COLO DEBE PAGAR!",
-      "titulo": "Caso Valdés entra en fase final: ¿cuánto deberá pagar Colo-Colo?",
-      "fecha": "2026-07-21T14:01:49.354Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO PONE FECHA LÍMITE POR VALDÉS",
-      "titulo": "Colo Colo fija fecha límite por Diego Valdés: ¿Llegará el crack de La Roja al Monumental?",
-      "fecha": "2026-07-21T14:01:58.514Z"
-    },
-    {
       "match_id": "554926",
       "tipo_contenido": "prediccion",
       "hook": "ÉLITE EUROPEA: ¿EJEMPLO?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: ¿Cuándo vuelve Colo Colo a jugar por la Liga de Primera 2026 en su lucha por el ",
       "titulo": "FÚTBOL CHILENO: ¿Cuándo vuelve Colo Colo a jugar por la Liga de Primera 2026 en… | Lo que cambia",
       "fecha": "2026-09-15T05:59:25.384Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Felipe Raipán es la nueva baja de Colo Colo en la Copa Chile: fue citado a La Ro",
+      "titulo": "COLO-COLO: Felipe Raipán es la nueva baja de Colo Colo en la Copa Chile: fue… | Lo que se sabe",
+      "fecha": "2026-09-15T16:35:36.924Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va el partido d",
+      "titulo": "FÚTBOL CHILENO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo… | Lo que cambia",
+      "fecha": "2026-09-15T16:35:36.925Z"
     }
   ]
 }
