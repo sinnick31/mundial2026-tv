@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CÓRDOVA SE BAJA DEL MUNDIAL 2030",
-      "titulo": "Nicolás Córdova descarta a Chile del Mundial 2030: ¿Pesimismo o realidad?",
-      "fecha": "2026-07-21T17:22:12.984Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO FIJA FECHA LÍMITE",
-      "titulo": "Colo Colo fija plazo por Diego Valdés: ¿Última chance de fichar?",
-      "fecha": "2026-07-21T17:22:26.384Z"
-    },
-    {
       "match_id": "554928",
       "tipo_contenido": "prediccion",
       "hook": "DÉFICIT DE DATOS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va el partido d",
       "titulo": "FÚTBOL CHILENO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo… | Lo que cambia",
       "fecha": "2026-09-15T22:46:42.287Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va el partido d",
+      "titulo": "COLO-COLO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va… | Lo que se sabe",
+      "fecha": "2026-09-16T05:49:44.048Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: VIDEO| ¡Una rápida recuperación! El jugador de Colo Colo que podría estar dispon",
+      "titulo": "FÚTBOL CHILENO: VIDEO ¡Una rápida recuperación! El jugador de Colo Colo que… | Lo que cambia",
+      "fecha": "2026-09-16T05:49:44.048Z"
     }
   ]
 }
