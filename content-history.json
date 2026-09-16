@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554928",
-      "tipo_contenido": "prediccion",
-      "hook": "DÉFICIT DE DATOS",
-      "titulo": "São Paulo vs Paranaense - 2026-07-23: ¿Sin estadísticas previas en el Brasileirão?",
-      "fecha": "2026-07-21T17:22:42.483Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U. DE CHILE: FICHAJE Y RETIRO",
-      "titulo": "U. de Chile: un fichaje y un retiro agitan al club, ¿fin de ciclo?",
-      "fecha": "2026-07-21T21:58:00.344Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "U DE CHILE: FECHAS CONFIRMADAS!",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: VIDEO| ¡Una rápida recuperación! El jugador de Colo Colo que podría estar dispon",
       "titulo": "FÚTBOL CHILENO: VIDEO ¡Una rápida recuperación! El jugador de Colo Colo que… | Lo que cambia",
       "fecha": "2026-09-16T05:49:44.048Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va el partido d",
+      "titulo": "COLO-COLO: Colo Colo - Deportes Concepción en vivo: goles, resultado y cómo va… | Lo que se sabe",
+      "fecha": "2026-09-16T16:28:13.981Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Ojo: Colo Colo y UC en 8vos de Copa Chile no van por TV - PrensaFútbol",
+      "titulo": "FÚTBOL CHILENO: Ojo: Colo Colo y UC en 8vos de Copa Chile no van por TV -… | Lo que cambia",
+      "fecha": "2026-09-16T16:28:13.981Z"
     }
   ]
 }
