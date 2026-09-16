@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: FECHAS CONFIRMADAS!",
-      "titulo": "Universidad de Chile ya tiene 9 partidos confirmados 🔵: ¿La recta final soñada o un desafío?",
-      "fecha": "2026-07-21T21:58:09.792Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "MELE: DOLOR DE CABEZA PARA COLO COLO",
-      "titulo": "Santiago Mele: ¿Por qué su fichaje es un dolor de cabeza para Colo Colo?",
-      "fecha": "2026-07-21T21:58:19.686Z"
-    },
-    {
       "match_id": "554922",
       "tipo_contenido": "prediccion",
       "hook": "DATOS FALTANTES CLAVE",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Ojo: Colo Colo y UC en 8vos de Copa Chile no van por TV - PrensaFútbol",
       "titulo": "FÚTBOL CHILENO: Ojo: Colo Colo y UC en 8vos de Copa Chile no van por TV -… | Lo que cambia",
       "fecha": "2026-09-16T16:28:13.981Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: VIDEO| ¡Una rápida recuperación! El jugador de Colo Colo que podría estar dispon",
+      "titulo": "COLO-COLO: VIDEO ¡Una rápida recuperación! El jugador de Colo Colo que podría… | Lo que se sabe",
+      "fecha": "2026-09-16T22:46:01.485Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: El salvavidas que recibe Fernando Ortiz en Colo Colo para la Copa Chile - RedGol",
+      "titulo": "FÚTBOL CHILENO: El salvavidas que recibe Fernando Ortiz en Colo Colo para la… | Lo que cambia",
+      "fecha": "2026-09-16T22:46:01.485Z"
     }
   ]
 }
