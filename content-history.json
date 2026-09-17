@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554771",
-      "tipo_contenido": "prediccion",
-      "hook": "TEMPORADA INICIANDO",
-      "titulo": "Temporada Brasileirão inicia con 0 partidos: ¿Preparación clave para Botafogo vs Vitória?",
-      "fecha": "2026-07-22T04:22:33.646Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U. DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
-      "titulo": "Universidad de Chile: 9 partidos confirmados. ¿Podrá mantener el liderato?",
-      "fecha": "2026-07-22T14:04:20.958Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "U. DE CHILE: FICHAJE Y RETIRO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: ¿Gabriel Maureira o Fernando de Paul? El panorama en el arco de Colo Colo para l",
       "titulo": "FÚTBOL CHILENO: ¿Gabriel Maureira o Fernando de Paul? El panorama en el arco de… | Lo que cambia",
       "fecha": "2026-09-17T16:33:59.372Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: VIDEO| ¡Una rápida recuperación! El jugador de Colo Colo que podría estar dispon",
+      "titulo": "COLO-COLO: VIDEO ¡Una rápida recuperación! El jugador de Colo Colo que podría… | Lo que se sabe",
+      "fecha": "2026-09-17T22:44:38.190Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: El error de Marcelino Núñez que condicionó la eliminación de Ipswich Town en la ",
+      "titulo": "FÚTBOL CHILENO: El error de Marcelino Núñez que condicionó la eliminación de… | Lo que cambia",
+      "fecha": "2026-09-17T22:44:38.190Z"
     }
   ]
 }
