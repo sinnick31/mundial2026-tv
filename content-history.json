@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: CALENDARIO CONFIRMADO",
-      "titulo": "Universidad de Chile: 9 partidos ya con fecha. ¿Podrá la U manejar este calendario?",
-      "fecha": "2026-07-22T04:22:01.782Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ARÁNGUIZ Y ZALDIVIA VUELVEN A LA U",
-      "titulo": "U de Chile celebra a Aránguiz y Zaldivia: ¿llega el repunte azul?",
-      "fecha": "2026-07-22T04:22:14.383Z"
-    },
-    {
       "match_id": "554771",
       "tipo_contenido": "prediccion",
       "hook": "TEMPORADA INICIANDO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: VIDEO| ¡Una rápida recuperación! El jugador de Colo Colo que podría estar dispon",
       "titulo": "FÚTBOL CHILENO: VIDEO ¡Una rápida recuperación! El jugador de Colo Colo que… | Lo que cambia",
       "fecha": "2026-09-17T05:56:02.830Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: VIDEO| ¡Una rápida recuperación! El jugador de Colo Colo que podría estar dispon",
+      "titulo": "COLO-COLO: VIDEO ¡Una rápida recuperación! El jugador de Colo Colo que podría… | Lo que se sabe",
+      "fecha": "2026-09-17T16:33:59.372Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: ¿Gabriel Maureira o Fernando de Paul? El panorama en el arco de Colo Colo para l",
+      "titulo": "FÚTBOL CHILENO: ¿Gabriel Maureira o Fernando de Paul? El panorama en el arco de… | Lo que cambia",
+      "fecha": "2026-09-17T16:33:59.372Z"
     }
   ]
 }
