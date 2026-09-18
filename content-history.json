@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U. DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
-      "titulo": "Universidad de Chile confirma 9 partidos: ¿El Bulla resistirá el ritmo?",
-      "fecha": "2026-07-22T17:21:48.978Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U. DE CHILE: DEFENSA, FICHAJE, RETIRO",
-      "titulo": "U. de Chile con 3 decisiones clave: ¿Cambios en el plantel? 🔵",
-      "fecha": "2026-07-22T17:22:00.760Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "GOL GANADOR INELUDIBLE",
       "titulo": "Deportes Concepcion anotó 2 goles en Copa Chile: ¿El ataque más efectivo? ⚽",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: VIDEO| ¡Una rápida recuperación! El jugador de Colo Colo que podría estar dispon",
       "titulo": "FÚTBOL CHILENO: VIDEO ¡Una rápida recuperación! El jugador de Colo Colo que… | Lo que cambia",
       "fecha": "2026-09-18T16:05:30.019Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: La llave de Colo Colo y Audax por Copa Chile se jugará por completo en el Nacion",
+      "titulo": "COLO-COLO: La llave de Colo Colo y Audax por Copa Chile se jugará por completo… | Lo que se sabe",
+      "fecha": "2026-09-18T22:24:37.119Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: La programación de los octavos de final de la Copa Chile 2026 - Cooperativa",
+      "titulo": "FÚTBOL CHILENO: La programación de los octavos de final de la Copa Chile 2026 -… | Lo que cambia",
+      "fecha": "2026-09-18T22:24:37.119Z"
     }
   ]
 }
