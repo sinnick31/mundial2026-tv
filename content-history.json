@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "GOL GANADOR INELUDIBLE",
-      "titulo": "Deportes Concepcion anotó 2 goles en Copa Chile: ¿El ataque más efectivo? ⚽",
-      "fecha": "2026-07-22T17:22:19.328Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ALEXIS SÁNCHEZ SUENA EN LA U",
-      "titulo": "Alexis Sánchez en La U: ¿Qué exige el 'Niño Maravilla' para llegar? 🔵️",
-      "fecha": "2026-07-22T21:59:11.654Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "SARTOR SACUDE AZUL AZUL Y REFUERZOS",
       "titulo": "Los Tenores analizaron el 'Caso Sartor': ¿problema para la U?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: La programación de los octavos de final de la Copa Chile 2026 - Cooperativa",
       "titulo": "FÚTBOL CHILENO: La programación de los octavos de final de la Copa Chile 2026 -… | Lo que cambia",
       "fecha": "2026-09-18T22:24:37.119Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: “Veía a Arturo Vidal por la TV y ahora pude jugar con él, es un sueño... Agradez",
+      "titulo": "COLO-COLO: “Veía a Arturo Vidal por la TV y ahora pude jugar con él, es un… | Lo que se sabe",
+      "fecha": "2026-09-19T05:37:23.022Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Retorno prometedor en la U: Gago recupera a joven alternativa para Copa Chile - ",
+      "titulo": "FÚTBOL CHILENO: Retorno prometedor en la U: Gago recupera a joven alternativa… | Lo que cambia",
+      "fecha": "2026-09-19T05:37:23.022Z"
     }
   ]
 }
