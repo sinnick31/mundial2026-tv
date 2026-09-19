@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "SARTOR SACUDE AZUL AZUL Y REFUERZOS",
-      "titulo": "Los Tenores analizaron el 'Caso Sartor': ¿problema para la U?",
-      "fecha": "2026-07-22T21:59:28.704Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "SE HARTARON EN LA U: FICHAJE Y RETIRO",
-      "titulo": "Universidad de Chile confirma un fichaje: ¿La solución a sus problemas?",
-      "fecha": "2026-07-22T21:59:44.677Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "VALLAS INVICTAS MÁS EFICIENTES",
       "titulo": "Deportes Concepcion ganó 2-0 en Copa Chile: ¿Rendimiento defensivo élite?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Retorno prometedor en la U: Gago recupera a joven alternativa para Copa Chile - ",
       "titulo": "FÚTBOL CHILENO: Retorno prometedor en la U: Gago recupera a joven alternativa… | Lo que cambia",
       "fecha": "2026-09-19T05:37:23.022Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo Femenino ya tiene fixture en Copa Libertadores 2026: fechas, horarios ",
+      "titulo": "COLO-COLO: Colo Colo Femenino ya tiene fixture en Copa Libertadores 2026:… | Lo que se sabe",
+      "fecha": "2026-09-19T15:38:38.985Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Primera B de Chile 2026: Calendario, partidos y resultados del Ascenso - Teletre",
+      "titulo": "FÚTBOL CHILENO: Primera B de Chile 2026: Calendario, partidos y resultados del… | Lo que cambia",
+      "fecha": "2026-09-19T15:38:38.985Z"
     }
   ]
 }
