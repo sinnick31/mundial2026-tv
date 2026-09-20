@@ -1,15 +1,15 @@
 {
-  "ultima_actualizacion": "2026-09-20T05:56:00.628Z",
-  "total_hoy": 171,
-  "total_reciente": 128,
+  "ultima_actualizacion": "2026-09-20T15:43:17.552Z",
+  "total_hoy": 190,
+  "total_reciente": 130,
   "por_categoria": {
-    "colo_colo": 27,
-    "chile": 46,
-    "femenino": 3,
+    "colo_colo": 24,
+    "chile": 45,
+    "femenino": 2,
     "chilenos_exterior": 1,
-    "formativo": 28,
-    "tercera": 5,
-    "internacional": 18
+    "formativo": 36,
+    "tercera": 3,
+    "internacional": 19
   },
   "noticias": [
     {
@@ -458,65 +458,6 @@
       ]
     },
     {
-      "title": "Colo Colo alista ofensiva ante Conmebol por castigo: ’Cacique’ quiere público local en Libertadores - BioBioChile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMihgJBVV95cUxNVFhpZV9pdzZVM21oNE4xZHNWRmNJczhHOVNycGVpRWQweXo0bUtqSTVwdE00dTVDRWlJd1VwQ0FPb0t6cG82cGhtelA0eVFHbEdJZnEtdmZrYUtVdHlPVlo5SDlpeW1BcVdyaTMwWTF1X1ZLM0g4R21pc21ZRGtvT1M5QmxGRGhaTDQ5T2JZWXUzYzc1bWpGODBXb20xMHpDZHZyMHFrbHQxS25kSENPX2l5Q1RWMjJZTDBCdDZaMlFCTFFRYklXQnUtWW1jbUtiQXd2V1VmZlRUVnhta0tRekVpT21vaXBCcmxBSk5mdjNXbXVtZkVIdjdoMlFIUmxqQW5tQ0t3?oc=5\" target=\"_blank\">Colo Colo alista ofensiva ante Conmebol por castigo: ’Cacique’ quiere públi",
-      "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNVFhpZV9pdzZVM21oNE4xZHNWRmNJczhHOVNycGVpRWQweXo0bUtqSTVwdE00dTVDRWlJd1VwQ0FPb0t6cG82cGhtelA0eVFHbEdJZnEtdmZrYUtVdHlPVlo5SDlpeW1BcVdyaTMwWTF1X1ZLM0g4R21pc21ZRGtvT1M5QmxGRGhaTDQ5T2JZWXUzYzc1bWpGODBXb20xMHpDZHZyMHFrbHQxS25kSENPX2l5Q1RWMjJZTDBCdDZaMlFCTFFRYklXQnUtWW1jbUtiQXd2V1VmZlRUVnhta0tRekVpT21vaXBCcmxBSk5mdjNXbXVtZkVIdjdoMlFIUmxqQW5tQ0t3?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 13:26:19 GMT",
-      "timestamp": "2026-09-17T13:26:19.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:3h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Fue campeón con Colo-Colo, la U, la UC y ahora logra histórico ascenso con el club de su ciudad: \"Hay muchas emociones\" - En Cancha",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8wFBVV95cUxQcWcySndwM1liNWxvMWkycUthODRuSGNNZDVSeVpSa1FDYlNubGtiZ3hDbXRfNlF1Q1l3bWtSX1pjS3laNk5HanVqVkZxOHdfd0MweEN1Z0FpdmdsUkNXVHVleVZ3Wl96Smw0TTIxeTQ4ZjVxeGxjbUhkbS1JVG5NbGZDRmFnVnNZYjVHQlBYTGZRajNvVVZMRWFNT1R0TzJUbm14MmJobzFVZXpMY2wzSy12MXhhU2VUbFhnNS1VbEFJTVQwdTNSUThUbU13V1JhcnlYMERIV1AwV3NqalN3Zi1ERnFucjVGY1ctQU9QbWd1REE?oc=5\" target=\"_blank\">Fue campeón con Colo-Colo, la U, la UC y ahora logra histórico ascenso con el club de su ciudad: \"Ha",
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQcWcySndwM1liNWxvMWkycUthODRuSGNNZDVSeVpSa1FDYlNubGtiZ3hDbXRfNlF1Q1l3bWtSX1pjS3laNk5HanVqVkZxOHdfd0MweEN1Z0FpdmdsUkNXVHVleVZ3Wl96Smw0TTIxeTQ4ZjVxeGxjbUhkbS1JVG5NbGZDRmFnVnNZYjVHQlBYTGZRajNvVVZMRWFNT1R0TzJUbm14MmJobzFVZXpMY2wzSy12MXhhU2VUbFhnNS1VbEFJTVQwdTNSUThUbU13V1JhcnlYMERIV1AwV3NqalN3Zi1ERnFucjVGY1ctQU9QbWd1REE?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 12:44:00 GMT",
-      "timestamp": "2026-09-17T12:44:00.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Universidad Católica",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:4h(+10)",
-        "senal:\\b(record|historico|(+12)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "El movimiento que Colo Colo prepara ante la Conmebol para recibir “perdonazo” en la Copa Libertadores - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQUWp3Zk1PQlVMTVJJbzJRWldoTGZhRi12S0RQcU9LM1BxQXI5eUVkVHpXbGgycVdOTDNOeU0yMll5bXVIQVRDSkNrVFpCVk4xZEZ3UXdXRXNvXzh0ZTNXSFd4QlM1Z2p4RXdiVVBRMnBtRV91cmROZ0hIbGNhaVo4QkVDSFByM29maWNfN1BTRkN5WWZXMDkzZ0RUUlJCRGFJa0pXanlBM1Z1alowRkcyUW13N3FxOEdiRndrRktkV2R1MTIt0gHKAUFVX3lxTE5lTW52VkUxdGhvNE9GTnFMRnljMlRHYzNUUkhJWHIzT051YUpTcW5rNlFJNF9HdUx0amRfU29YRl9ncEpYQnVJTFIzLTBDdTctQkpRYXlsN1hCTTFaSUNCR0N5RFZPaFlGQ1lWallRWXk0MUdfOTZ6VFNsOHcyUDRSMFJEX1dmZ1",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQUWp3Zk1PQlVMTVJJbzJRWldoTGZhRi12S0RQcU9LM1BxQXI5eUVkVHpXbGgycVdOTDNOeU0yMll5bXVIQVRDSkNrVFpCVk4xZEZ3UXdXRXNvXzh0ZTNXSFd4QlM1Z2p4RXdiVVBRMnBtRV91cmROZ0hIbGNhaVo4QkVDSFByM29maWNfN1BTRkN5WWZXMDkzZ0RUUlJCRGFJa0pXanlBM1Z1alowRkcyUW13N3FxOEdiRndrRktkV2R1MTIt0gHKAUFVX3lxTE5lTW52VkUxdGhvNE9GTnFMRnljMlRHYzNUUkhJWHIzT051YUpTcW5rNlFJNF9HdUx0amRfU29YRl9ncEpYQnVJTFIzLTBDdTctQkpRYXlsN1hCTTFaSUNCR0N5RFZPaFlGQ1lWallRWXk0MUdfOTZ6VFNsOHcyUDRSMFJEX1dmZ19fLWtUa1dDVnk2WWVYN3p4Rzk3bWViM3hMYUx6Ni03azBhY3F5UG5uTUt1Mi0zMDVBM0tBd1BIeWMtSWhkN2k2WkE?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 10:25:39 GMT",
-      "timestamp": "2026-09-17T10:25:39.000Z",
-      "fuente": "Google News — Colo-Colo",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 100,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:6h(+10)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
       "title": "Estuvo en Colo-Colo, en la UC y en plenas Fiestas Patrias dejó Chile para firmar su primer contrato en Europa - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi8wFBVV95cUxPMmxySkVZWmhKdWdXWXYwNzEtcC16ODNvQ2NyZTZpRnJNSDFJN2pYTnQzeXNGUUM1eTZRNE8tNXFTMmRESlFJQUQxa2tINjNidkk3QXdMZWxuTXdEdUw5TEJXcnhiaDYxckJvWVViMFVwME5acWlQQ0RBaHl4UzQ1ZmdCTFQ5eXZVaENSaU9LN2xCZ1N2OTd1cnRfLVJSYmltNl9MT2Y0SVVvMDlqOHh6aXJUYnNGSjgyNk1jQ2hGMlVzYTVBSlV1aHFPejdILVpwMTc3WG4xT3RuWVZIR2RRQjQxb1dGQ1dyUHlaUkxRVkdKcGM?oc=5\" target=\"_blank\">Estuvo en Colo-Colo, en la UC y en plenas Fiestas Patrias dejó Chile para firmar su primer contrato ",
       "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPMmxySkVZWmhKdWdXWXYwNzEtcC16ODNvQ2NyZTZpRnJNSDFJN2pYTnQzeXNGUUM1eTZRNE8tNXFTMmRESlFJQUQxa2tINjNidkk3QXdMZWxuTXdEdUw5TEJXcnhiaDYxckJvWVViMFVwME5acWlQQ0RBaHl4UzQ1ZmdCTFQ5eXZVaENSaU9LN2xCZ1N2OTd1cnRfLVJSYmltNl9MT2Y0SVVvMDlqOHh6aXJUYnNGSjgyNk1jQ2hGMlVzYTVBSlV1aHFPejdILVpwMTc3WG4xT3RuWVZIR2RRQjQxb1dGQ1dyUHlaUkxRVkdKcGM?oc=5",
@@ -630,24 +571,6 @@
         "categoria:chile(+40)",
         "frescura:10h(+10)",
         "gigante:universidad de chile(+10)"
-      ]
-    },
-    {
-      "title": "Dirige en la Liga de Primera y exige a Nico Córdova por sobre Pellegrini en la banca de Chile: “Lo merece” - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxNYjlFam9peFZtemtZTTVtdEsxdktvZUtId193NUhYazNSbnI0RnZUdDZlSmRNVE1jNGJYelByRjJsU3FxRWFERVFKYmw5YWVkbExEZXBhWVRfUjZPSDVzWk5BOGZpV1NFRlRTb1l6MWhIUGxHUU15S0NoYm54OVFPak43MUhZYjBYeDRfdDVaTDB5UVR6ZWdIVEF0TldTUmJsd0tRcFA5SThvZ2JMUEVVdWk5NkFOb25fREd4Nk5oaTN5VWttWkgxQmQxR084bVlHVno2MNIB2gFBVV95cUxNTVROaUZrRW5STEd2ZUJ6TWNDZUl4d0ZQOGtPaHl5ZFAtSkZkb05TdENtSHBzblBzN2VmVzFsV2MwLS1YbTlwREpmUHNFclNndktTQ1BtdGJkeVlsbmMwZ0hiQW1RdmwzT280Y1JEdUxkMUtZOGxrQk",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNYjlFam9peFZtemtZTTVtdEsxdktvZUtId193NUhYazNSbnI0RnZUdDZlSmRNVE1jNGJYelByRjJsU3FxRWFERVFKYmw5YWVkbExEZXBhWVRfUjZPSDVzWk5BOGZpV1NFRlRTb1l6MWhIUGxHUU15S0NoYm54OVFPak43MUhZYjBYeDRfdDVaTDB5UVR6ZWdIVEF0TldTUmJsd0tRcFA5SThvZ2JMUEVVdWk5NkFOb25fREd4Nk5oaTN5VWttWkgxQmQxR084bVlHVno2MNIB2gFBVV95cUxNTVROaUZrRW5STEd2ZUJ6TWNDZUl4d0ZQOGtPaHl5ZFAtSkZkb05TdENtSHBzblBzN2VmVzFsV2MwLS1YbTlwREpmUHNFclNndktTQ1BtdGJkeVlsbmMwZ0hiQW1RdmwzT280Y1JEdUxkMUtZOGxrQktDMEljLXV5OUFZZnlRdWFwcHVIUWg3blJWR0RpOVVRMTc3VUZmejBqdnYzaVhaSEZLZkxZaVcyWUo0RnBhOTVEYklzLUt6SnM1NXhRVUJrVGU2SFZBRTgtNDBySjRnd1ZUZw?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 15:36:12 GMT",
-      "timestamp": "2026-09-17T15:36:12.000Z",
-      "fuente": "Google News — Liga de Primera",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 90,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)"
       ]
     },
     {
@@ -780,27 +703,6 @@
       ]
     },
     {
-      "title": "¡Una nueva baja! Universidad de Chile pierde a un nuevo jugador para la llave de Copa Chile ante Everton - El Periscopio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPZzNPMHEyenlKdEFlWFhxVTFLR2xEanN6Qk4xVF9FTjA3OURpVVlyLXE2a3NFcXhQSHdFZERIVEV3NFM0X1NKamFEbWE2SGtpbDAxUDJvam5QN0FNR0ZTVk55WEhhYzVwb2NGZmVPZE5YUHpnUk5UcVlfdGIweUxmdVB5OTVNeHBaZk90ZHVWLXNRVTZtRGRaZE85c21BVmlieEtzU1JsM0wyYlkybUpCcTRmNTVBVjREa21kZ2g2UmV0cm8ycmVJOGhoRlA2MjN0UUdVdWphSjdOc3M?oc=5\" target=\"_blank\">¡Una nueva baja! Universidad de Chile pierde a un nuevo jugador para la llave de Copa Chile ante Everton</a>&nbsp;&nbsp;<font color=",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPZzNPMHEyenlKdEFlWFhxVTFLR2xEanN6Qk4xVF9FTjA3OURpVVlyLXE2a3NFcXhQSHdFZERIVEV3NFM0X1NKamFEbWE2SGtpbDAxUDJvam5QN0FNR0ZTVk55WEhhYzVwb2NGZmVPZE5YUHpnUk5UcVlfdGIweUxmdVB5OTVNeHBaZk90ZHVWLXNRVTZtRGRaZE85c21BVmlieEtzU1JsM0wyYlkybUpCcTRmNTVBVjREa21kZ2g2UmV0cm8ycmVJOGhoRlA2MjN0UUdVdWphSjdOc3M?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 12:31:51 GMT",
-      "timestamp": "2026-09-17T12:31:51.000Z",
-      "fuente": "Google News — Copa Chile",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Universidad de Chile",
-      "viral_score": 89,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:28h(+0)",
-        "senal:\\b(lesion|baja|desca(+6)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:universidad de chile(+10)"
-      ]
-    },
-    {
       "title": "Ahora parece Van Basten: Salomón Rodríguez lleva más goles que Javier Correa y Maximiliano Romero en 2026 - RedGol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSEpLbVRzY2M1amRSWGlkQW9hNW9tY1RRU3Zxc1o2dGhmNV93QU5mbzRaUnlRXzVhSklVeXhFTW5tZE8zUjIydFBWOUc3OC1HUGs1eXljcFZZLW5lNGlWMTVEY3J2c2JJMXRIeHhTQ3ptQUJsVnBoeG55VFVqVFI3WkdOV1ZsZlBueGlwbHp6NjZIMTllRUY5dDBWckVSOHA4VUY1aDdIOV9hRktobi1uWlpVX19iTXRTNEZjdXlyOTVrUGlYTnZRV05MbmhKRGh30gHQAUFVX3lxTFBISkttVHNjYzVqZFJYaWRBb2E1b21jVFFTdnFzWjZ0aGY1X3dBTmZvNFpSeVFfNWFKSVV5eEVNbm1kTzNSMjJ0UFY5Rzc4LUdQazV5eWNwVlktbmU0aVYxNURjcnZzYkkxdEh4eFNDem1BQmxWcGh4bnlUVW",
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSEpLbVRzY2M1amRSWGlkQW9hNW9tY1RRU3Zxc1o2dGhmNV93QU5mbzRaUnlRXzVhSklVeXhFTW5tZE8zUjIydFBWOUc3OC1HUGs1eXljcFZZLW5lNGlWMTVEY3J2c2JJMXRIeHhTQ3ptQUJsVnBoeG55VFVqVFI3WkdOV1ZsZlBueGlwbHp6NjZIMTllRUY5dDBWckVSOHA4VUY1aDdIOV9hRktobi1uWlpVX19iTXRTNEZjdXlyOTVrUGlYTnZRV05MbmhKRGh30gHQAUFVX3lxTFBISkttVHNjYzVqZFJYaWRBb2E1b21jVFFTdnFzWjZ0aGY1X3dBTmZvNFpSeVFfNWFKSVV5eEVNbm1kTzNSMjJ0UFY5Rzc4LUdQazV5eWNwVlktbmU0aVYxNURjcnZzYkkxdEh4eFNDem1BQmxWcGh4bnlUVWpUUjdaR05XVmxmUG54aXBseno2NkgxOWVFRjl0MFZyRVI4cDhVRjVoN0g5X2FGS2huLW5aWlVfX2JNdFM0RmN1eXI5NWtQaVhOdlFXTkxuaEpEaHc?oc=5",
@@ -858,6 +760,25 @@
       ]
     },
     {
+      "title": "Mazazo para U de Chile: Charles Aránguiz ve truncado su regreso tras aplaudida movida dieciochera - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNTkJjaGdNNTJZZXVhaUtmZTdyTUNLM1B0ZUZnekVVRURZWm84dTAtckVJUlVVMzZOaVdINERpaUFGZE5HLVhiREsweFBnQXkwdUJsUHFPeHVBTF9oYjlwUU9VTDJ0aW5QdWJ1R1pOZVQyS3dOQnJBNU1KeEFfbjU1bTAyb1hURzRyRF9ldFdfeFBRcjBwTWNaSXFHSm0ta1hXeTJ2dkxLX01hMTYtT21UblJranJqVmJfeDYzbEg5VDfSAcYBQVVfeXFMUHVRU18yUG5Bc0FHby01dl9vVVRsTU80Z2JBTlBuZ1dtRlhCLWFmLVFrYjZ0UmJ6b3dVUDNZNUN3U21Famc1T043N1MyMnhxQlBYS2VTb01qNmRHM01WN0JQUktlb3NqaE9QVWRkSV9lSkNJSXRJSndxaTdJSlVZYzNxSEl1Z3ZreGJHU1",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNTkJjaGdNNTJZZXVhaUtmZTdyTUNLM1B0ZUZnekVVRURZWm84dTAtckVJUlVVMzZOaVdINERpaUFGZE5HLVhiREsweFBnQXkwdUJsUHFPeHVBTF9oYjlwUU9VTDJ0aW5QdWJ1R1pOZVQyS3dOQnJBNU1KeEFfbjU1bTAyb1hURzRyRF9ldFdfeFBRcjBwTWNaSXFHSm0ta1hXeTJ2dkxLX01hMTYtT21UblJranJqVmJfeDYzbEg5VDfSAcYBQVVfeXFMUHVRU18yUG5Bc0FHby01dl9vVVRsTU80Z2JBTlBuZ1dtRlhCLWFmLVFrYjZ0UmJ6b3dVUDNZNUN3U21Famc1T043N1MyMnhxQlBYS2VTb01qNmRHM01WN0JQUktlb3NqaE9QVWRkSV9lSkNJSXRJSndxaTdJSlVZYzNxSEl1Z3ZreGJHU1hucHF2SWN3NDNaYmhTMmJ1Yk9RbkxrblkyS3ZhLTEzRmFWb3lIcU1FXzk0bE9XaV82V1ZVZkl1S2FB?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 12:19:04 GMT",
+      "timestamp": "2026-09-20T12:19:04.000Z",
+      "fuente": "Google News — Copa Chile",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 85,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+10)",
+        "gigante:u de chile(+10)"
+      ]
+    },
+    {
       "title": "Real Madrid vs. Santiago Wanderers Sub 20: A qué hora juegan y dónde ver EN VIVO la Copa Intercontinental - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi8gFBVV95cUxNMy0zR3gxS3pFbUUwcWdLbE9KZjlaV0F3NE5GeXdLQklaM1QxVjRWNFVxRXg1aFF1SlBBSXNoY09DM1dybmVxYXM3SHJWWkpFVWJtd1J6amZyMDV1Y3czNDJlMmZDZGd1X29oYlBTaVg5Z0RIU3BIWk5zLWZvZnNZMVdRb2x5QjJPYzlVQUNReXBjb3I4S3ZUMlU5WTJ4YmRNQTNIdC1UU0Z0azU2dGdUWEU5OUthRlJJY1ZsQkpsS3FfUGIyYk1VQktUZGNvLVJ3U2FfOUZjZWQxZk5Gc2cxbVFEM2NEMzlGYzBYRE1OMmU1UQ?oc=5\" target=\"_blank\">Real Madrid vs. Santiago Wanderers Sub 20: A qué hora juegan y dónde ver EN VIVO la Copa Intercontine",
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNMy0zR3gxS3pFbUUwcWdLbE9KZjlaV0F3NE5GeXdLQklaM1QxVjRWNFVxRXg1aFF1SlBBSXNoY09DM1dybmVxYXM3SHJWWkpFVWJtd1J6amZyMDV1Y3czNDJlMmZDZGd1X29oYlBTaVg5Z0RIU3BIWk5zLWZvZnNZMVdRb2x5QjJPYzlVQUNReXBjb3I4S3ZUMlU5WTJ4YmRNQTNIdC1UU0Z0azU2dGdUWEU5OUthRlJJY1ZsQkpsS3FfUGIyYk1VQktUZGNvLVJ3U2FfOUZjZWQxZk5Gc2cxbVFEM2NEMzlGYzBYRE1OMmU1UQ?oc=5",
@@ -898,6 +819,24 @@
       ]
     },
     {
+      "title": "La U sigue sin recuperar a una de sus figuras y crece la duda para Copa Chile - AlAireLibre.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPVzZBRmlZRVhHMmhHQjR4T1J2akJRcUJSUDQ5b2lWYVFrNFh2WW5MS2FlMnpjSDRjM0dyOURZMlZ3NWR3STh6YU9VZ3hNSVl1UnBFaUJJLUctLXp6dmhFRlMxSnhyUUc4bmZvTWFDSm84a3htV2NGNnpzdDhJcEhlZ2NoNm5wc1hWLTFBdmFMLVBxUQ?oc=5\" target=\"_blank\">La U sigue sin recuperar a una de sus figuras y crece la duda para Copa Chile</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">AlAireLibre.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVzZBRmlZRVhHMmhHQjR4T1J2akJRcUJSUDQ5b2lWYVFrNFh2WW5MS2FlMnpjSDRjM0dyOURZMlZ3NWR3STh6YU9VZ3hNSVl1UnBFaUJJLUctLXp6dmhFRlMxSnhyUUc4bmZvTWFDSm84a3htV2NGNnpzdDhJcEhlZ2NoNm5wc1hWLTFBdmFMLVBxUQ?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 14:21:21 GMT",
+      "timestamp": "2026-09-20T14:21:21.000Z",
+      "fuente": "Google News — Copa Chile",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)"
+      ]
+    },
+    {
       "title": "La llave de Colo Colo y Audax por Copa Chile se jugará por completo en el Nacional - Cooperativa",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi7AFBVV95cUxPbTRDdGY3czVwNlpfRDdzNm9MenRaV1hid3poVGVqQjJpSzlPblFCajJaN0NOQ2twQ2Zobi1GUWdGZE11b2tKbk13UmNFbVVLZk5VeWFGU2hfSy12WWZuYjVVUENGM2tUTkFqQ2dKeWp6V1pTRk00dEFfQlZZTHNYdTg5RWlSM3JXNXVHYkhXWDZRbGp5MkRaRUhrNGtORTV2UFF3Tk4zU0I2UUFYcnJtbkk4WW1JcWNXU0IzaVNPcldZcVVJTVFaQTFNenFLcFZLOWZPdFJOMG9XMTJmazI0YURPdjY2d2U2SmhFeNIBjAFBVV95cUxQVEhWRG95MFUyR1RXVGtjS3lnWnJHcUtteFp1Zk9kQkJMN0ZpdnNvQVZIZFdmNjBLY1Q3bV9FOVJ3TzZFVWhsNHFBaEJXclNacUlEeUlocUpHVld5R2pVdW",
       "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPbTRDdGY3czVwNlpfRDdzNm9MenRaV1hid3poVGVqQjJpSzlPblFCajJaN0NOQ2twQ2Zobi1GUWdGZE11b2tKbk13UmNFbVVLZk5VeWFGU2hfSy12WWZuYjVVUENGM2tUTkFqQ2dKeWp6V1pTRk00dEFfQlZZTHNYdTg5RWlSM3JXNXVHYkhXWDZRbGp5MkRaRUhrNGtORTV2UFF3Tk4zU0I2UUFYcnJtbkk4WW1JcWNXU0IzaVNPcldZcVVJTVFaQTFNenFLcFZLOWZPdFJOMG9XMTJmazI0YURPdjY2d2U2SmhFeNIBjAFBVV95cUxQVEhWRG95MFUyR1RXVGtjS3lnWnJHcUtteFp1Zk9kQkJMN0ZpdnNvQVZIZFdmNjBLY1Q3bV9FOVJ3TzZFVWhsNHFBaEJXclNacUlEeUlocUpHVld5R2pVdWtaMVVwVHpYcTFybndIMnNFZWt5MkFhbjRZVlhKTnJqcEN4LTJVVjI3dXhVTw?oc=5",
@@ -914,24 +853,6 @@
         "categoria:chile(+40)",
         "frescura:21h(+5)",
         "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Gonzalo Fouillioux aplaude a esta promesa de la Selección Chilena: “Un gran proyecto” - bolavip.com",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOVnZoMHA3aEMxYnVXdldpV1NpZTV2RUIyNXdNMUJWRktDdkRDTUJnUDRnUmc1MER4T0Nsb2o2Zy1BanBLa2M1QlZOTDNfUG1pc045V0lRVlVZZGFCSDFjMklVYUl6TzZud2p5RU1QMXR1N3l1c19zZHI5d09PR0U5Qm1meERxbGRGSEVLelNfbmd4T0RvMTUtUjNXQ3BKZlFFS29FZmFpOXowWjI0d0Q4ekE1NFpZbkEwNWdyLTZ2Y9IBxAFBVV95cUxNRzBJM1JGME1sTkRPOFdNcXVkSFVPd0xUSEZKTmZGWFZDekR4cDBNWmJ4dXNzUDBGZGZCSUF4N2Y3a09wdGd1T19QaS1CbURxb0FEWmJraHRucU1laXhaVkZJYUlkYXNIajRKZF9ZTDk2YWVqZkt3aTczMUVwYktmS3VBLTlySEN1TGF5TG",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVnZoMHA3aEMxYnVXdldpV1NpZTV2RUIyNXdNMUJWRktDdkRDTUJnUDRnUmc1MER4T0Nsb2o2Zy1BanBLa2M1QlZOTDNfUG1pc045V0lRVlVZZGFCSDFjMklVYUl6TzZud2p5RU1QMXR1N3l1c19zZHI5d09PR0U5Qm1meERxbGRGSEVLelNfbmd4T0RvMTUtUjNXQ3BKZlFFS29FZmFpOXowWjI0d0Q4ekE1NFpZbkEwNWdyLTZ2Y9IBxAFBVV95cUxNRzBJM1JGME1sTkRPOFdNcXVkSFVPd0xUSEZKTmZGWFZDekR4cDBNWmJ4dXNzUDBGZGZCSUF4N2Y3a09wdGd1T19QaS1CbURxb0FEWmJraHRucU1laXhaVkZJYUlkYXNIajRKZF9ZTDk2YWVqZkt3aTczMUVwYktmS3VBLTlySEN1TGF5TGVzZmJ5MjNNUjBwd0xSS1FVSm9OUXlKLVJIbTE3UW0xZmVYR2NwekdNeUNfT1NGNUZ4RlotNlps?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 15:35:49 GMT",
-      "timestamp": "2026-09-17T15:35:49.000Z",
-      "fuente": "Google News — Copa de la Liga",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Selección Chilena",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)"
       ]
     },
     {
@@ -954,6 +875,42 @@
       ]
     },
     {
+      "title": "La U mira de cerca a Charles Aránguiz: su presencia ante Everton por Copa Chile sigue en duda - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi9wFBVV95cUxOU0hoalJsZXlsNUE4SE1ZR3V0MlI5S0QtdDFsMEk0RVRKV01aRjc1OThQRDRpQkt3enYyMkM0eFpWem9vRkZoay1Kcm41LWotV0daRG4tdXc1VXlQcWxpUGpGN0N3RnRaWHZFalFqSVVNZTFYR1lNX2ZZTmVNMlU4SnZTX2JVWUQwWFJsZjlkMi15Y2tYeDE5VkdTeHlHdHJmUmJLT1QybDIyZkpGX0VRc2ljd1VlVlY0ZTJMdk8tNFRVUjlsbHQ3NExKOHcwZVpUVzFXLUt1WnRFbnBQR3RaSUhiY0E0WXB0Mm5uTDZnMnZqZy0yZUdv?oc=5\" target=\"_blank\">La U mira de cerca a Charles Aránguiz: su presencia ante Everton por Copa Chile sigue en duda</",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOU0hoalJsZXlsNUE4SE1ZR3V0MlI5S0QtdDFsMEk0RVRKV01aRjc1OThQRDRpQkt3enYyMkM0eFpWem9vRkZoay1Kcm41LWotV0daRG4tdXc1VXlQcWxpUGpGN0N3RnRaWHZFalFqSVVNZTFYR1lNX2ZZTmVNMlU4SnZTX2JVWUQwWFJsZjlkMi15Y2tYeDE5VkdTeHlHdHJmUmJLT1QybDIyZkpGX0VRc2ljd1VlVlY0ZTJMdk8tNFRVUjlsbHQ3NExKOHcwZVpUVzFXLUt1WnRFbnBQR3RaSUhiY0E0WXB0Mm5uTDZnMnZqZy0yZUdv?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 12:38:54 GMT",
+      "timestamp": "2026-09-20T12:38:54.000Z",
+      "fuente": "Google News — Copa Chile",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+10)"
+      ]
+    },
+    {
+      "title": "El fútbol en pausa por Fiestas Patrias: ¿cuándo vuelven a jugar los equipos del Biobío? - Diario Concepción",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQMnVZSG8xNlZISTJSVEVuNnhfTnpmcFV5TFp6MFhTeDhwQjZWM3p6OEtNeXR3cmJZbTNmWkF5enRzSlYtNnBJVjJZQ3NEdWNSbTByY3ZRRUhxalRyQWcyeTNPRlRqaThaMUdQZU5pTVhaS18zbE1NYldEOUEtWW1Edk1GQ2plX0VoYVV1TjkxcU5MSEZLRG5JbkRDamdQOWYyeHlJREZLSkZKcUNGQ3FMT3d3bkFTWXVnTEdsZEJaYkN2YWJCZEF4YWNaYlRWc1Y1NGtmVnNzQ0vSAeABQVVfeXFMTm1nLWl3ZmNJZTMtYldPeENZVGZlUDZvQklKSXhGbzlQOG9PN05vdGNhblNXMVFzb3VpOHFEdnBUQkRBeERWZTFnSmx2MmFwZGZtUUJWY3dzNnFReTVrcUxDZFRucHQ2NUZKNGhxZEF6TnpRZF",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQMnVZSG8xNlZISTJSVEVuNnhfTnpmcFV5TFp6MFhTeDhwQjZWM3p6OEtNeXR3cmJZbTNmWkF5enRzSlYtNnBJVjJZQ3NEdWNSbTByY3ZRRUhxalRyQWcyeTNPRlRqaThaMUdQZU5pTVhaS18zbE1NYldEOUEtWW1Edk1GQ2plX0VoYVV1TjkxcU5MSEZLRG5JbkRDamdQOWYyeHlJREZLSkZKcUNGQ3FMT3d3bkFTWXVnTEdsZEJaYkN2YWJCZEF4YWNaYlRWc1Y1NGtmVnNzQ0vSAeABQVVfeXFMTm1nLWl3ZmNJZTMtYldPeENZVGZlUDZvQklKSXhGbzlQOG9PN05vdGNhblNXMVFzb3VpOHFEdnBUQkRBeERWZTFnSmx2MmFwZGZtUUJWY3dzNnFReTVrcUxDZFRucHQ2NUZKNGhxZEF6TnpRZFh5eGYzUTFXZlVrTjBPN2ZWZFNKVFI5NWE5TEtPdEZBNnB1Q3UyXzZxLUFCbzB2Sl9qc1AzMERrY0pVdHJOWHRyc0FkQ3FnblczaDJDc3dubUVIaG15SU9qeHB2cVdBME1jbU1zcWpvUTVkNlY?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 08:36:14 GMT",
+      "timestamp": "2026-09-20T08:36:14.000Z",
+      "fuente": "Google News — Copa Chile",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:7h(+10)"
+      ]
+    },
+    {
       "title": "Chile vs. Perú, Juegos Suramericanos 2026: sigue aquí EN VIVO y ONLINE el partido - TVN",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVVowRnRFQ3hnbTNfUW1XYm5RbFBZNmxzelNoU0xoSFBxNGlXa2VXeFJ6SU9HMjNaNDJna1poY3BMV2F3WGQ3aTZoaGtVU3JuS25iZTBjQnZKMThrbmdzUTFLMHJiQTFHZFNjbVNDMXdsRXhaekdqWnJCU3JKTWRzd29lSFdYNkpTaEx5VnVfTTNNQWRSX0JPZUFSdlNobndodW93bGw3eFMxTnRWQlVMcmxxdjFLUERt0gG-AUFVX3lxTE1wUnlXdE9DQUllUUFDcHRDTFdoRXFnT1ljU1dSZ2NaN0E0Zm55LWpVQVNZNHAyOVZzenRSTGVkR1dFX1ZoNkczU0VoUVFZWFRJeFE1amExYVROd1RfWEhNZjFwRGdSVnk0azV1alRZQ2Q3UXZmYzJJYS1ndUFRaEh4dHJubW82bDVqZTF3Q0kwNnB2N2",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVVowRnRFQ3hnbTNfUW1XYm5RbFBZNmxzelNoU0xoSFBxNGlXa2VXeFJ6SU9HMjNaNDJna1poY3BMV2F3WGQ3aTZoaGtVU3JuS25iZTBjQnZKMThrbmdzUTFLMHJiQTFHZFNjbVNDMXdsRXhaekdqWnJCU3JKTWRzd29lSFdYNkpTaEx5VnVfTTNNQWRSX0JPZUFSdlNobndodW93bGw3eFMxTnRWQlVMcmxxdjFLUERt0gG-AUFVX3lxTE1wUnlXdE9DQUllUUFDcHRDTFdoRXFnT1ljU1dSZ2NaN0E0Zm55LWpVQVNZNHAyOVZzenRSTGVkR1dFX1ZoNkczU0VoUVFZWFRJeFE1amExYVROd1RfWEhNZjFwRGdSVnk0azV1alRZQ2Q3UXZmYzJJYS1ndUFRaEh4dHJubW82bDVqZTF3Q0kwNnB2N2V0dHNlRjlhVlpKX1JwSXZRUmZnVXhrZGF3cW9Zelo0MGdEVmdPRzFINFE?oc=5",
@@ -969,25 +926,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:5h(+10)"
-      ]
-    },
-    {
-      "title": "Con Colo-Colo en lo más alto y 6 clubes de Primera B: los equipos que más público han llevado al estadio - encancha.cl",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8wFBVV95cUxPWUdqR0Nkb1J4SHpHNmhEOXBMZjR2NWNPczRHYW5PYldIeXJranFfSE40YjVYbEJSWk8tcjkyRzRPdUt5NkVQVjNtN3k0c0tZcWktTjFlQi1sOUZZOVlpYnZaaEZWU0ZqTEZUaVlYcWpiaW1Oam9GSU42UG5PZ3dBdWhDZlNuY3kxN2dGZmZlYVpVTUtqeE9LSGZsclAtUW9vWU9lQm9kNDZRTUJzYnljdldubjkxZmZ6OWpERkFoV3ZwZXJLM0x1Z3lFa0Q3dmExNkhrNUFZS3F5VGpvbTUyanR6amlkVnNwLUxuTXZWNVluVDQ?oc=5\" target=\"_blank\">Con Colo-Colo en lo más alto y 6 clubes de Primera B: los equipos que más público han llevado al est",
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPWUdqR0Nkb1J4SHpHNmhEOXBMZjR2NWNPczRHYW5PYldIeXJranFfSE40YjVYbEJSWk8tcjkyRzRPdUt5NkVQVjNtN3k0c0tZcWktTjFlQi1sOUZZOVlpYnZaaEZWU0ZqTEZUaVlYcWpiaW1Oam9GSU42UG5PZ3dBdWhDZlNuY3kxN2dGZmZlYVpVTUtqeE9LSGZsclAtUW9vWU9lQm9kNDZRTUJzYnljdldubjkxZmZ6OWpERkFoV3ZwZXJLM0x1Z3lFa0Q3dmExNkhrNUFZS3F5VGpvbTUyanR6amlkVnNwLUxuTXZWNVluVDQ?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 14:26:00 GMT",
-      "timestamp": "2026-09-17T14:26:00.000Z",
-      "fuente": "Google News — Copa Chile",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 73,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:32h(+0)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
       ]
     },
     {
@@ -1026,25 +964,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:21h(+5)"
-      ]
-    },
-    {
-      "title": "Everton vs Ipswich Town: a qué hora juegan, qué canal transmite y cómo ver a Marcelino Núñez en Chile - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxOaEZlZHlseUQ1d29NUmFKbTJ6ZDluTGw5ZFZaZllPdVB0UGJ2VmJueURLSXFNNmJIS2cwQW11M0JzX1Vaa1hQUmk3b0M1bm9IcWdzY3JhVFNLYk9MVWotUmdWcVVVWW1vM3ZfbldNMzRmcHBiazdUZThjU01NOWg3VktjZVhaWnVyU0Q5U1BCSjFVWFlpWm5UUzNNeWpabEtudnVKV0RlT0tydU5GdzZkRnVEWUw2NWhvODcyQWNpUzNZdm1IR2NNYXBJT2k3eUUx0gHkAUFVX3lxTE1wNWYyS2V1RGVGRTZvaFVlWVItTThCeUYtTUs2MFRfVkNnMUo4YjFmR3p0QUd4NGp6NWVLRTdVN0NVbDhOODRUa1RSRnNXSkF4YmFSUXZfMmM0bU9VZlEwYl82VE5IdV9RYnhsckQybDUweG1yNzVna2N5SG",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOaEZlZHlseUQ1d29NUmFKbTJ6ZDluTGw5ZFZaZllPdVB0UGJ2VmJueURLSXFNNmJIS2cwQW11M0JzX1Vaa1hQUmk3b0M1bm9IcWdzY3JhVFNLYk9MVWotUmdWcVVVWW1vM3ZfbldNMzRmcHBiazdUZThjU01NOWg3VktjZVhaWnVyU0Q5U1BCSjFVWFlpWm5UUzNNeWpabEtudnVKV0RlT0tydU5GdzZkRnVEWUw2NWhvODcyQWNpUzNZdm1IR2NNYXBJT2k3eUUx0gHkAUFVX3lxTE1wNWYyS2V1RGVGRTZvaFVlWVItTThCeUYtTUs2MFRfVkNnMUo4YjFmR3p0QUd4NGp6NWVLRTdVN0NVbDhOODRUa1RSRnNXSkF4YmFSUXZfMmM0bU9VZlEwYl82VE5IdV9RYnhsckQybDUweG1yNzVna2N5SGFNOEc2aWZoZ0pwaTJvRElwSW9ub3o4ZEZQNThDU2JvR3ljaG45d1lfYnVkYWlraERHWWt4b29FUzhfYU94MHZzcTZ1NW9hTjRPZmtaNXBldEdrdHdSSURDVlpJQnlZdXV3SjVmcFBXLQ?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 13:26:44 GMT",
-      "timestamp": "2026-09-17T13:26:44.000Z",
-      "fuente": "Google News — Copa de la Liga",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Everton",
-      "viral_score": 67,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:3h(+10)",
-        "penal(-8)"
       ]
     },
     {
@@ -1276,22 +1195,39 @@
       ]
     },
     {
-      "title": "Selección Chilena frena exigencia de Lanús por Matías Sepúlveda para la fecha FIFA - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQamVzMjVfbVRPZ19ENGIycGpWTy1SczFpaEFZN284ZGRDXzItWFh2Q3EyMElDSzhnQVhvZ3FZYkF1eXVYa0tRRXdWVXdfMExpcG1Rbi1mSDl1NFhqSV9nRkhtVjlGSjVPdlBKYnVmcWplajc0VVVqcXZmMkpfOWNidVVRT1FYTHhIUXNkVGRzONIBlAFBVV95cUxNc0lsY0x3czhlZXQtdVd5bS1fUm1sbUt3NEx1RjNJUlQtZllGQVJKTHZfdkFfTG1rRUJJUTI5cExLS1ZodmNkUTFBcmJHUWdXQmdzdXBzbkZtVlEtVEU3WEw0bTA3ZDB1Vng2dWFCbnBBMDJaTGFrdGdPelZGZy1xQkd4YjVhSUZWNnNGTW9CTVJjODNz?oc=5\" target=\"_blank\">Selección Chilena frena exigenc",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQamVzMjVfbVRPZ19ENGIycGpWTy1SczFpaEFZN284ZGRDXzItWFh2Q3EyMElDSzhnQVhvZ3FZYkF1eXVYa0tRRXdWVXdfMExpcG1Rbi1mSDl1NFhqSV9nRkhtVjlGSjVPdlBKYnVmcWplajc0VVVqcXZmMkpfOWNidVVRT1FYTHhIUXNkVGRzONIBlAFBVV95cUxNc0lsY0x3czhlZXQtdVd5bS1fUm1sbUt3NEx1RjNJUlQtZllGQVJKTHZfdkFfTG1rRUJJUTI5cExLS1ZodmNkUTFBcmJHUWdXQmdzdXBzbkZtVlEtVEU3WEw0bTA3ZDB1Vng2dWFCbnBBMDJaTGFrdGdPelZGZy1xQkd4YjVhSUZWNnNGTW9CTVJjODNz?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 13:30:26 GMT",
-      "timestamp": "2026-09-17T13:30:26.000Z",
+      "title": "Chile a semifinales: ¿cuándo y contra quién es su próximo partido en los Odesur 2026? - bolavip.com",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQXzRISXdoMTMteFVnMzZITmZ2SzFWT0lSWGlkM09vWVMwcU9XWW93V2o3b3lTLW9VRUdNcEZiWFkyYS1BOFZxaU9lSmVTaWxibzdvUzIwTTJuUy1CaThzbWZnUjEzNHRjaU02VDBvMXJHYWFOelhDTU16dUd4VW52RWNDUVNZdkN2SHpOMmowUnJYTTh3R3dHRG5kSUZVbUxnQjZXZnE1NkpwZDVYNFpjVnVoRDZQeDZZeUxGRm00TdIBxAFBVV95cUxOMG5NZFF0TlhjYU1QbEZnbnY3YzZQSkJxQVQ5cmtPRHB2QWZ4aTFzQ0RHLTlNYVZESmoybUdwT1ZEdDFiOXJtWDdqOE9ObkJsbEJkM2tmWUFDNkwwRDA0OFM3UGNUMVFEYjVxaXhfVnN0Y1VNbndwZVJxR1NEYUtSTFZVdEs1Sm5JRGdZQl",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQXzRISXdoMTMteFVnMzZITmZ2SzFWT0lSWGlkM09vWVMwcU9XWW93V2o3b3lTLW9VRUdNcEZiWFkyYS1BOFZxaU9lSmVTaWxibzdvUzIwTTJuUy1CaThzbWZnUjEzNHRjaU02VDBvMXJHYWFOelhDTU16dUd4VW52RWNDUVNZdkN2SHpOMmowUnJYTTh3R3dHRG5kSUZVbUxnQjZXZnE1NkpwZDVYNFpjVnVoRDZQeDZZeUxGRm00TdIBxAFBVV95cUxOMG5NZFF0TlhjYU1QbEZnbnY3YzZQSkJxQVQ5cmtPRHB2QWZ4aTFzQ0RHLTlNYVZESmoybUdwT1ZEdDFiOXJtWDdqOE9ObkJsbEJkM2tmWUFDNkwwRDA0OFM3UGNUMVFEYjVxaXhfVnN0Y1VNbndwZVJxR1NEYUtSTFZVdEs1Sm5JRGdZQlVrT3BRdEkwNHFNcEV1bWxwc0M4eVprR3UtMEZBV0ZpMzlHUUZ3emxVTllBZUtYZUZPaFZjSGJC?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 15:35:34 GMT",
+      "timestamp": "2026-09-20T15:35:34.000Z",
+      "fuente": "Google News — La Roja",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 78,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:0h(+15)"
+      ]
+    },
+    {
+      "title": "La selección chilena recupera la memoria: vence a Colombia y va por medallas en los Juegos Suramericanos - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxNQ3VYaS13RTk0MGc4aWc3SUR6ZWJYUzVNeFp0Mk5lNUtLR1JRN1NXdWRaaGFwOEZIWEpHU25DUVI2UlBHSVQ0Um1UNklIbDRRUnVzeDhxMFVkd1BwWDY0TDRUTGxVdjVfSk8xRGE3eVdtbkFDWmpKanF4a21JclQzVjFDNUhJRjVFTlpXdm4td1RoR3FhbWljYnFpUzV5ckR1Vk0wbUpSTm9nM1BOWUZrNVhsVy1tSlNsNFU4eEp5bjdtZElVTGJSNlBsNUV3OUdwenVwRdIB2gFBVV95cUxPTHVQMHEzSThkcGZPRW5oeVB1WjJHWnFEMUxNVHlseG9HUHVZZVZFRmUyeWttMjZIVlpHcXpRaFEwZ2ZfcXZaTDNnRVV4ajVadlFIMXh0WHdSTmlRNzAyaFBRMnlId01zbFctWUdma3ZJdmRtb09KQn",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNQ3VYaS13RTk0MGc4aWc3SUR6ZWJYUzVNeFp0Mk5lNUtLR1JRN1NXdWRaaGFwOEZIWEpHU25DUVI2UlBHSVQ0Um1UNklIbDRRUnVzeDhxMFVkd1BwWDY0TDRUTGxVdjVfSk8xRGE3eVdtbkFDWmpKanF4a21JclQzVjFDNUhJRjVFTlpXdm4td1RoR3FhbWljYnFpUzV5ckR1Vk0wbUpSTm9nM1BOWUZrNVhsVy1tSlNsNFU4eEp5bjdtZElVTGJSNlBsNUV3OUdwenVwRdIB2gFBVV95cUxPTHVQMHEzSThkcGZPRW5oeVB1WjJHWnFEMUxNVHlseG9HUHVZZVZFRmUyeWttMjZIVlpHcXpRaFEwZ2ZfcXZaTDNnRVV4ajVadlFIMXh0WHdSTmlRNzAyaFBRMnlId01zbFctWUdma3ZJdmRtb09KQnZsZ19aVU1PT0J0azlGS25lVTJKYXZsdUpaTHIzMGpPNVlsTFc5dERmNHBoZEJjSnZ3ZS1iVmNlb2I3NW1pMmRSRWtMQVJ4dEItRU9MUE5kbGNnMUV6aTZjTTBncEtxcVllQQ?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 15:15:56 GMT",
+      "timestamp": "2026-09-20T15:15:56.000Z",
       "fuente": "Google News — La Roja",
       "fuente_host": "news.google.com",
       "categoria_feed": "chile",
       "prioridad_fuente": 78,
       "categoria": "chile",
       "equipo_chile": "Selección Chilena",
-      "viral_score": 83,
+      "viral_score": 80,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:3h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+        "frescura:0h(+15)"
       ]
     },
     {
@@ -1348,24 +1284,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:7h(+10)"
-      ]
-    },
-    {
-      "title": "“Lista de sucesión A”: Nicolás Córdova revela 39 jugadores del recambio para la selección chilena - AS Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOc2FLbklMMnF4ekgxYjlQNU1uLW1UQ293dzZ2SkFWd3E1Y1JlbEVsVXdtWmR3QjhyMFZONGhJZkduMEpDeWVVdzM0amRxclhqaHpHN19pZkVkNncyd2wzajJSYXNPa0FXd2locjF6TUJpMFJXNlRLU04wcFA0dGRmZjlTZkZsRW9TdjB4MUV4M1VsaWNrVkszVlZTd19HLWZSQkhsbmNrdDNNbzhVVHpWZkdtWTBLUTBxblJSNEQ4WkJpZVE5aEYzdFdNbmJNUdIB4gFBVV95cUxQcWxnR3RpMUdWcTgwb3hXcWxDZDkySzM2djB1ZURWLVJHV3pleUlBYnF1bVlmaDdsMEwyQzdwbjNDb2l6RlVkbjAzNW83bks0RlBLWFhfNURONUFoV1hYNGh4aUktU1NJYWhBVXhqSUx4ZkpSRUxPa0xXOWkyaG",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOc2FLbklMMnF4ekgxYjlQNU1uLW1UQ293dzZ2SkFWd3E1Y1JlbEVsVXdtWmR3QjhyMFZONGhJZkduMEpDeWVVdzM0amRxclhqaHpHN19pZkVkNncyd2wzajJSYXNPa0FXd2locjF6TUJpMFJXNlRLU04wcFA0dGRmZjlTZkZsRW9TdjB4MUV4M1VsaWNrVkszVlZTd19HLWZSQkhsbmNrdDNNbzhVVHpWZkdtWTBLUTBxblJSNEQ4WkJpZVE5aEYzdFdNbmJNUdIB4gFBVV95cUxQcWxnR3RpMUdWcTgwb3hXcWxDZDkySzM2djB1ZURWLVJHV3pleUlBYnF1bVlmaDdsMEwyQzdwbjNDb2l6RlVkbjAzNW83bks0RlBLWFhfNURONUFoV1hYNGh4aUktU1NJYWhBVXhqSUx4ZkpSRUxPa0xXOWkyaGFHX3ZlSU5INnEtZzBWckpRblJfUmFXeEpWVDY3eUNaRG12UlVvcUJQdkx4Uzk2eGR0T3ZoOUxnUUpsR3UyTkhDNkRrNXRxN1NQaHpNaHk3Yi0tSDBkMnYyWGpBUk54UklhUFl3?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 13:18:12 GMT",
-      "timestamp": "2026-09-17T13:18:12.000Z",
-      "fuente": "Google News — La Roja",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 78,
-      "categoria": "chile",
-      "equipo_chile": "Selección Chilena",
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:3h(+10)"
       ]
     },
     {
@@ -1444,24 +1362,6 @@
       ]
     },
     {
-      "title": "Falló el Tribunal y se confirmó el rival de Colo-Colo en los Playoffs - En Cancha",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxOZVl5dzFvSmt4NFdOdld4UVg3eXMwQmVlelVucDJNaU0xM2UxQ0l5Qzl3QnZ1YkZDUk5xQ0toQmFMNXE0VFFlZnl4WDVuWkpnZW9OcXVhcW1QN0ZIcVZJRDJSVlpMN2h4UTVFYWthWHMyV0JwYWl0NDJwb1pZcWRodTM3bzJMRHAyeHhkNVJEcmdDU0NwYmZzMW51RlNRR05xRzBfbjYwemRMYzJRQjRfbkp0YjdzbE5zdmlTN3dtbXhmUjl4dS1xNEMteXVvaG1oaDVTWHN3dWloenp1d1lN?oc=5\" target=\"_blank\">Falló el Tribunal y se confirmó el rival de Colo-Colo en los Playoffs</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En Cancha</font>",
-      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOZVl5dzFvSmt4NFdOdld4UVg3eXMwQmVlelVucDJNaU0xM2UxQ0l5Qzl3QnZ1YkZDUk5xQ0toQmFMNXE0VFFlZnl4WDVuWkpnZW9OcXVhcW1QN0ZIcVZJRDJSVlpMN2h4UTVFYWthWHMyV0JwYWl0NDJwb1pZcWRodTM3bzJMRHAyeHhkNVJEcmdDU0NwYmZzMW51RlNRR05xRzBfbjYwemRMYzJRQjRfbkp0YjdzbE5zdmlTN3dtbXhmUjl4dS1xNEMteXVvaG1oaDVTWHN3dWloenp1d1lN?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 12:41:06 GMT",
-      "timestamp": "2026-09-17T12:41:06.000Z",
-      "fuente": "Google News — Liga Femenina",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "femenino",
-      "prioridad_fuente": 75,
-      "categoria": "femenino",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 63,
-      "razones": [
-        "categoria:femenino(+28)",
-        "frescura:4h(+10)"
-      ]
-    },
-    {
       "title": "“Los futbolistas chilenos se alimentan muy mal... Lo viví en la U, se comían un completo después de entrenar” - AS Chile",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxQZ1ZESkhFMnhaNUZyckd6TzZRSVVpVEM1ZThNako3R1pLeUk0SkROR2NxTHoyVEljSVhubmF5aWp5MmJrc3BFMmRNTWZyOVFETVRwcWVDeGRzc1BjMGliU2FKcUwtU2dfRTFZSUpWbTZrX0tFODBDcEVJRDJRMnMxTnBrZUx4YjBnQjcxQ3N0Yng2aFA0RWo2bWhWVWtXek1QS2tmc1djWEE0bFphckE2Zm9QSC11dzdCMTBfelN1LXI2NDZtcDFteEpMUmxrbTE2emd4b1NwRW95d9IB7gFBVV95cUxNZ2o5ZnFobnB1bzg3RTN1LVU3amFoajJpYmEzWVB0NHpfUWJzVVJoRUhJeEVxdTNzODNKdVZmUl9yM0t5X1B1eGpQdGFNd3doc1ozQkVJanROUk5zWFlIcUNlX1RyalBBRFBYRWVOeWZ5Y0",
       "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQZ1ZESkhFMnhaNUZyckd6TzZRSVVpVEM1ZThNako3R1pLeUk0SkROR2NxTHoyVEljSVhubmF5aWp5MmJrc3BFMmRNTWZyOVFETVRwcWVDeGRzc1BjMGliU2FKcUwtU2dfRTFZSUpWbTZrX0tFODBDcEVJRDJRMnMxTnBrZUx4YjBnQjcxQ3N0Yng2aFA0RWo2bWhWVWtXek1QS2tmc1djWEE0bFphckE2Zm9QSC11dzdCMTBfelN1LXI2NDZtcDFteEpMUmxrbTE2emd4b1NwRW95d9IB7gFBVV95cUxNZ2o5ZnFobnB1bzg3RTN1LVU3amFoajJpYmEzWVB0NHpfUWJzVVJoRUhJeEVxdTNzODNKdVZmUl9yM0t5X1B1eGpQdGFNd3doc1ozQkVJanROUk5zWFlIcUNlX1RyalBBRFBYRWVOeWZ5Y0VoaVluUUZYbjloeG4xX1MwVTNhMHU3VHJVcTBGYkMtQ0NTZTV5RFAxVGl5NnB0WFg2ZmlHQTBNcUFZd1ZaVzhmaG9JR0laZzRvTWt0VHVGUmlrcUhJczBudkpXWTJfZHB4Uy1KNXlTTnFUeDVGV1lXMzJhT1N1SVYzaGhR?oc=5",
@@ -1502,23 +1402,82 @@
       ]
     },
     {
-      "title": "Revive la goleada de la Roja Sub 20 sobre Panamá en los Suramericanos 2026 - TVN",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVTBsQ3I3X1VnTVRkeGZROVMyQVBiRXN5bUhYbHV2U242Y1Z2dy10Q1VLRGdaMTgtZG5zSDRuYUdLVU93OTd4NE9nSno2bHJNc1BtdnBBSEttYi1TWTBicjJLZ21TUm5hMldwX0xHcjFyNGZSM3J2eU52QVIwR3hTdW15QmdOMHp2QWxGb2llZ3pWZklmT0c0VndybHM5WkdOeExNb0hQcDVjdk9SUE96Snc1QU0tQnNaVDJ5X0E0ekxrUQ?oc=5\" target=\"_blank\">Revive la goleada de la Roja Sub 20 sobre Panamá en los Suramericanos 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TVN</font>",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVTBsQ3I3X1VnTVRkeGZROVMyQVBiRXN5bUhYbHV2U242Y1Z2dy10Q1VLRGdaMTgtZG5zSDRuYUdLVU93OTd4NE9nSno2bHJNc1BtdnBBSEttYi1TWTBicjJLZ21TUm5hMldwX0xHcjFyNGZSM3J2eU52QVIwR3hTdW15QmdOMHp2QWxGb2llZ3pWZklmT0c0VndybHM5WkdOeExNb0hQcDVjdk9SUE96Snc1QU0tQnNaVDJ5X0E0ekxrUQ?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 11:30:00 GMT",
-      "timestamp": "2026-09-17T11:30:00.000Z",
+      "title": "La Roja Sub 20 venció a Colombia y clasificó a semis - PrensaFútbol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxQNnEyMlljakxRaUYwUnZSc0xmQnZhZWNQU29UUHpKbFRiR2xuam1VQ1Zwb1E1b0V3M1ZDczRETTZ3WkJ6RjdfRnBKcWN4cC1veXQ3emVXYThhOUh2MkxicnVueTdBLWh1NW8xYzlFQ1BxekNQbzdfQjZYUlFhNzc0bg?oc=5\" target=\"_blank\">La Roja Sub 20 venció a Colombia y clasificó a semis</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQNnEyMlljakxRaUYwUnZSc0xmQnZhZWNQU29UUHpKbFRiR2xuam1VQ1Zwb1E1b0V3M1ZDczRETTZ3WkJ6RjdfRnBKcWN4cC1veXQ3emVXYThhOUh2MkxicnVueTdBLWh1NW8xYzlFQ1BxekNQbzdfQjZYUlFhNzc0bg?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 15:36:45 GMT",
+      "timestamp": "2026-09-20T15:36:45.000Z",
       "fuente": "Google News — Selecciones juveniles",
       "fuente_host": "news.google.com",
       "categoria_feed": "formativo",
       "prioridad_fuente": 65,
       "categoria": "formativo",
       "equipo_chile": "Selección Chilena",
-      "viral_score": 84,
+      "viral_score": 80,
       "razones": [
         "categoria:formativo(+22)",
-        "frescura:5h(+10)",
-        "senal:\\b(goleada|hat.?tric(+9)",
+        "frescura:0h(+15)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "¡Por las medallas! La Roja sub 20 avanzó a semis de los Sudamericanos tras vencer a Colombia - Cooperativa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi-gFBVV95cUxOSmtXbV9ONDROYWNXQXctVU5BdUp4R0FvUnY1OTZGVWdMSG5ESGlhNnlfZHNub0JxUzRFS2R0X3d3QnhBWGhlOUxGWXd0ZHpfWXhSZXVVazdXZkpxYk5YelI3UEltWk9mbUNadWVXZVA2U1pOMURzZGpwZzVrLV9EZHh4eEVSRFFCQzdPcXQxY0U5ak5lenJPRW9mRENrRkhsSGlwTEE2Qm53MXNYUVd3UUFpQnpZREJSYTZ6cG83SDVhaHlRNmVKdUlCS1MzV2RvUDRoYUFFNzRpeE9uSTVEcUVScTRuNU80ZVF0YXVOV3RpOGh6Nlc3bDRn0gGMAUFVX3lxTE9qenhIRnY4aVhLNlMwb2dCaXlUZHY3RHpaYTJvamtlaDdGVVo5TEtyT3VoTUViZUNRV3VEREZrdUFZTWg0ZmxGWHZYVlpWakpaWH",
+      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOSmtXbV9ONDROYWNXQXctVU5BdUp4R0FvUnY1OTZGVWdMSG5ESGlhNnlfZHNub0JxUzRFS2R0X3d3QnhBWGhlOUxGWXd0ZHpfWXhSZXVVazdXZkpxYk5YelI3UEltWk9mbUNadWVXZVA2U1pOMURzZGpwZzVrLV9EZHh4eEVSRFFCQzdPcXQxY0U5ak5lenJPRW9mRENrRkhsSGlwTEE2Qm53MXNYUVd3UUFpQnpZREJSYTZ6cG83SDVhaHlRNmVKdUlCS1MzV2RvUDRoYUFFNzRpeE9uSTVEcUVScTRuNU80ZVF0YXVOV3RpOGh6Nlc3bDRn0gGMAUFVX3lxTE9qenhIRnY4aVhLNlMwb2dCaXlUZHY3RHpaYTJvamtlaDdGVVo5TEtyT3VoTUViZUNRV3VEREZrdUFZTWg0ZmxGWHZYVlpWakpaWHlZdld3QVlEa05VMk96TkJlRF9XZUFZSng2SHJoYmFlbmhLR3g0VkJqYXJQYjVnZ3ZvY0NtUXZrVzVf?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 14:59:00 GMT",
+      "timestamp": "2026-09-20T14:59:00.000Z",
+      "fuente": "Google News — Selecciones juveniles",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "formativo",
+      "prioridad_fuente": 65,
+      "categoria": "formativo",
+      "equipo_chile": "Selección Chilena",
+      "viral_score": 80,
+      "razones": [
+        "categoria:formativo(+22)",
+        "frescura:1h(+15)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "La Roja Sub 20 vence a Colombia y espera a un rival en las semifinales - tntsports.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRDhlQ3E4ZXVST1o3RzcwcExERnpUY2toNHpmVnE0eXRCZmRQdHBfWWJyejhabDZrb2VKUEdjRVJNdHdsdVJPQ3JwWXhKcVV4bW5HLUxHWlVOUWlFNnVhcmhYUS13eVdDc3lWdVNud2FsaHVkaDJaVGRWb3pCTEEwVnFYckw3ajh1cmQ4ZURmd0U4Qm96YU53WU1IMVpLN09LNkNtMTNqSzEwV0l4Q3pBanRJc0FpT3dR0gG-AUFVX3lxTE9nOVBvenR2d3hsRl9fenhfSmF5NFdFMjNuSktuQ01YN0NualRaVkFSZ1BKMEx5OFRIaTNncjl6Ym9HZm5KY01SdF91OTh0NmNmbnU4S1g0Vmo4RXU5UHIzTXMweGNBQVk3X2FKZkRWTkwycWJHVng4Z0x2UlZIWDNGX0lHS3NUX3djTDVuQjNka0NFQ1",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRDhlQ3E4ZXVST1o3RzcwcExERnpUY2toNHpmVnE0eXRCZmRQdHBfWWJyejhabDZrb2VKUEdjRVJNdHdsdVJPQ3JwWXhKcVV4bW5HLUxHWlVOUWlFNnVhcmhYUS13eVdDc3lWdVNud2FsaHVkaDJaVGRWb3pCTEEwVnFYckw3ajh1cmQ4ZURmd0U4Qm96YU53WU1IMVpLN09LNkNtMTNqSzEwV0l4Q3pBanRJc0FpT3dR0gG-AUFVX3lxTE9nOVBvenR2d3hsRl9fenhfSmF5NFdFMjNuSktuQ01YN0NualRaVkFSZ1BKMEx5OFRIaTNncjl6Ym9HZm5KY01SdF91OTh0NmNmbnU4S1g0Vmo4RXU5UHIzTXMweGNBQVk3X2FKZkRWTkwycWJHVng4Z0x2UlZIWDNGX0lHS3NUX3djTDVuQjNka0NFQ1RWVDRFdkFPRXI4d1VEVDJnSVREOEx1VHlNRTFLZ3FfM0praDVYVW5sTXc?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 14:55:00 GMT",
+      "timestamp": "2026-09-20T14:55:00.000Z",
+      "fuente": "Google News — Selecciones juveniles",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "formativo",
+      "prioridad_fuente": 65,
+      "categoria": "formativo",
+      "equipo_chile": "Selección Chilena",
+      "viral_score": 80,
+      "razones": [
+        "categoria:formativo(+22)",
+        "frescura:1h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "La Roja Sub 20 va por una medalla: supera a Colombia y clasifica a las semifinales de los Juegos Suramericanos - La Tercera",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxOQy03NVB2OHBpRzVEVVEtbFFkczMzYXFwQVZNVWVmWFhvdHlKMWlsTHJSWFota21wUUUwV2NxVU4xODBtZVpNSEVTWndFZ0xlQkhaX3dkaVlkXzJqbTBiTHpJMDltSHp3TlRsaU5HUkJnbFlNLVZrN05WVmdtcEpUOHhnWjhhWGlLRkhiZG1WaXZNVWF0WXBod2YxZVg4WDIzNVNScnZKZGtaYXRHQ1p1ZDhuR2dIeEJybU96MUowOVBzYTBsS3pGdWR5RV91Y1ZMTXV0S2NreGhQakFpWDF4bDRvc0NIRkxZaHNBdkdn0gGPAkFVX3lxTE5VZjhzbTZLMURhZ1ZheVlPN0tKZE9Sdy05OWhRREM0M1cyUERRQnJGYTM4LWpyRWN1UEM5VnQ5a2lZanF0SXNQU09FdXY3UFgzWXNfeG5LRXlhWW1oQz",
+      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOQy03NVB2OHBpRzVEVVEtbFFkczMzYXFwQVZNVWVmWFhvdHlKMWlsTHJSWFota21wUUUwV2NxVU4xODBtZVpNSEVTWndFZ0xlQkhaX3dkaVlkXzJqbTBiTHpJMDltSHp3TlRsaU5HUkJnbFlNLVZrN05WVmdtcEpUOHhnWjhhWGlLRkhiZG1WaXZNVWF0WXBod2YxZVg4WDIzNVNScnZKZGtaYXRHQ1p1ZDhuR2dIeEJybU96MUowOVBzYTBsS3pGdWR5RV91Y1ZMTXV0S2NreGhQakFpWDF4bDRvc0NIRkxZaHNBdkdn0gGPAkFVX3lxTE5VZjhzbTZLMURhZ1ZheVlPN0tKZE9Sdy05OWhRREM0M1cyUERRQnJGYTM4LWpyRWN1UEM5VnQ5a2lZanF0SXNQU09FdXY3UFgzWXNfeG5LRXlhWW1oQzROUU9rd3ZHOFVxSlJWOXJva0ZXZUVISzYyU0c1bm8zTUZ1RVJIMWxRX0k1eGNJQ1BDdElhc3Q3UndCeVhRajR0SUdmakZ2bmE3a3BWUEJYU1d1cE9GaWQ3RVpkUml3QXhibkFldXBCZEQyZnhLYWRyZG5pUDBicWkzLVU0bkhyYXZicXdyTEJQTDg3b3NOQU5wMXdyZEhUZ09uVTZjcFdZNTlNMmJwZlc0RTVSZ2tEYms?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 14:52:34 GMT",
+      "timestamp": "2026-09-20T14:52:34.000Z",
+      "fuente": "Google News — Selecciones juveniles",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "formativo",
+      "prioridad_fuente": 65,
+      "categoria": "formativo",
+      "equipo_chile": "Selección Chilena",
+      "viral_score": 80,
+      "razones": [
+        "categoria:formativo(+22)",
+        "frescura:1h(+15)",
+        "senal:\\b(clasific|eliminad(+8)",
         "gigante:la roja(+10)"
       ]
     },
@@ -1560,6 +1519,26 @@
         "frescura:1h(+15)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "Debutó a los 16 años en O’Higgins: viral golazo de mitad de cancha de Joaquín Muñoz para Chile en los Suram... - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxNbnU5ejRwZWJUekFKeUpuY09MT3BzaFduWmFUeW9xS3h2YlM2YVV2Y1NBYXFkaXFCQWJLTWZnRXJVUEJqSW1mVWliOUhIOHFLVm5xQWhaWU5zSFM4cHotSlphbGJ2V1A1UVR4VUhNc2hVVllwaHdaN21MU2gydmJmTF92bHhwa0J2NjJsN2ZFS1hkdXYxaFdHVUxYQ0xUUkNKSzlSNUZsN3Fpdk5kZm1raG5ULVgxQXlqdGZ6QkJZWXFMQmc4Y2lCN0diR3d3NUNiOG5tWHFMVDdkMG5iUzdoaTJ30gHnAUFVX3lxTFBUdVZVQXFhUlZiNFlCUjNqSXUwMnI0X28xTnQyMUJDR0IxQ1FYczhNT09Tek9BcnF2SmRlVnhxaUJ1UWFuVEYyNTlVcW9PNDk3VWE1RE8wQlVxam45U2NpZjNHVkZ0OE9TX3",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNbnU5ejRwZWJUekFKeUpuY09MT3BzaFduWmFUeW9xS3h2YlM2YVV2Y1NBYXFkaXFCQWJLTWZnRXJVUEJqSW1mVWliOUhIOHFLVm5xQWhaWU5zSFM4cHotSlphbGJ2V1A1UVR4VUhNc2hVVllwaHdaN21MU2gydmJmTF92bHhwa0J2NjJsN2ZFS1hkdXYxaFdHVUxYQ0xUUkNKSzlSNUZsN3Fpdk5kZm1raG5ULVgxQXlqdGZ6QkJZWXFMQmc4Y2lCN0diR3d3NUNiOG5tWHFMVDdkMG5iUzdoaTJ30gHnAUFVX3lxTFBUdVZVQXFhUlZiNFlCUjNqSXUwMnI0X28xTnQyMUJDR0IxQ1FYczhNT09Tek9BcnF2SmRlVnhxaUJ1UWFuVEYyNTlVcW9PNDk3VWE1RE8wQlVxam45U2NpZjNHVkZ0OE9TX3ZDT2hORFh2cHkxSHV2VENtbW1fcHg3eEF1MVlQa1lXamZ5d3pBTlp5cVpyQWZzSWpDdVgzWWpTTG1jWWJfT2pvMnI5LWd6Qy1WXzdIOVIxVXBnWkN5dC0yRUpsOGZDMnR3Q3ZYS1hRWndfSjhrQTk1SnJNTFp6M3Vmcm1kRQ?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 13:42:56 GMT",
+      "timestamp": "2026-09-20T13:42:56.000Z",
+      "fuente": "Google News — Selecciones juveniles",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "formativo",
+      "prioridad_fuente": 65,
+      "categoria": "formativo",
+      "equipo_chile": null,
+      "viral_score": 76,
+      "razones": [
+        "categoria:formativo(+22)",
+        "frescura:2h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "senal:\\b\\d+\\s*(goles|millo(+6)"
       ]
     },
     {
@@ -1619,6 +1598,63 @@
         "categoria:formativo(+22)",
         "frescura:5h(+10)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "VIDEO: El golazo de La Roja Sub 20 desde mitad de cancha para luchar por la medalla - tntsports.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOSTdIcS1jckVHYmZsV3NNR0JPWDJZcEp5YUZkalZxNl9MWklMUTdDb09VeS15cndyRlFDOWR1V2lkMGpjQ3hRWjB1WjBWN2ZNVHlPSHkzME5fbW1JajF1RGhaeGQycEpDYWRZeFc2QWZlSW04aUw0N2ZsYTZULURLY2UtS2RTcUJYeEJGa25lWEpGUU1oU2R4Z1dfX2JJSmZzeFhYeWV1cHhtQUp6YVYxVDBLYy1JcXhyaEFwcFpSTkR5di1kM3VWYmhPbFdnQdIBzgFBVV95cUxOSTdIcS1jckVHYmZsV3NNR0JPWDJZcEp5YUZkalZxNl9MWklMUTdDb09VeS15cndyRlFDOWR1V2lkMGpjQ3hRWjB1WjBWN2ZNVHlPSHkzME5fbW1JajF1RGhaeGQycEpDYWRZeFc2QWZlSW04aUw0N2ZsYTZULU",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSTdIcS1jckVHYmZsV3NNR0JPWDJZcEp5YUZkalZxNl9MWklMUTdDb09VeS15cndyRlFDOWR1V2lkMGpjQ3hRWjB1WjBWN2ZNVHlPSHkzME5fbW1JajF1RGhaeGQycEpDYWRZeFc2QWZlSW04aUw0N2ZsYTZULURLY2UtS2RTcUJYeEJGa25lWEpGUU1oU2R4Z1dfX2JJSmZzeFhYeWV1cHhtQUp6YVYxVDBLYy1JcXhyaEFwcFpSTkR5di1kM3VWYmhPbFdnQdIBzgFBVV95cUxOSTdIcS1jckVHYmZsV3NNR0JPWDJZcEp5YUZkalZxNl9MWklMUTdDb09VeS15cndyRlFDOWR1V2lkMGpjQ3hRWjB1WjBWN2ZNVHlPSHkzME5fbW1JajF1RGhaeGQycEpDYWRZeFc2QWZlSW04aUw0N2ZsYTZULURLY2UtS2RTcUJYeEJGa25lWEpGUU1oU2R4Z1dfX2JJSmZzeFhYeWV1cHhtQUp6YVYxVDBLYy1JcXhyaEFwcFpSTkR5di1kM3VWYmhPbFdnQQ?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 14:14:37 GMT",
+      "timestamp": "2026-09-20T14:14:37.000Z",
+      "fuente": "Google News — Selecciones juveniles",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "formativo",
+      "prioridad_fuente": 65,
+      "categoria": "formativo",
+      "equipo_chile": "Selección Chilena",
+      "viral_score": 72,
+      "razones": [
+        "categoria:formativo(+22)",
+        "frescura:1h(+15)",
+        "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "El impresionante golazo de La Roja Sub 20 que va directo al Puskas: ¡de primera y de mitad de cancha! - ADN Radio",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQNFQ1LWtRMThZekdtOGRYWjM2T3dHanAwSlF5R29XaHp3dG1sZ1lhMmN2VUc1Z3kxaEpBTU1Ua0MweGo1SUJ3dkExU2hyS1BicGVfZkxyNFp1VkNmbjRLYlA3dEdmRWNFU3E3TjdjNnNpQzBQYmI0OG9jUkNwLW9mbkFHMWNEb1JHVTdFVnMwUlpuTjVEYzRTbWdEZTBUUTRZaERsYktQOE1pZjcxSjQyYmMxTVRfWGpXdElVVktYVHNuemFUVlRCakpaeGpsZ3PSAeMBQVVfeXFMTzFYX3NHZWc3ekFiNFMybGVLSFNKUklrM3B2QkphU3FDTTlEWnN4ZXFCV18xaldXZHZTQlVacGZ6aTVZVzMzRFdTeGRZRzlWRzAyOVJpdGc4YTRMNjRQMjJ3VV8wSHZyOE1SdmdJQV9uQ2tNZXhIbWVBWUNvWD",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQNFQ1LWtRMThZekdtOGRYWjM2T3dHanAwSlF5R29XaHp3dG1sZ1lhMmN2VUc1Z3kxaEpBTU1Ua0MweGo1SUJ3dkExU2hyS1BicGVfZkxyNFp1VkNmbjRLYlA3dEdmRWNFU3E3TjdjNnNpQzBQYmI0OG9jUkNwLW9mbkFHMWNEb1JHVTdFVnMwUlpuTjVEYzRTbWdEZTBUUTRZaERsYktQOE1pZjcxSjQyYmMxTVRfWGpXdElVVktYVHNuemFUVlRCakpaeGpsZ3PSAeMBQVVfeXFMTzFYX3NHZWc3ekFiNFMybGVLSFNKUklrM3B2QkphU3FDTTlEWnN4ZXFCV18xaldXZHZTQlVacGZ6aTVZVzMzRFdTeGRZRzlWRzAyOVJpdGc4YTRMNjRQMjJ3VV8wSHZyOE1SdmdJQV9uQ2tNZXhIbWVBWUNvWDVmdEMtdHpheXZCSnZQeVh1bTJlV0V6S2FILXdsb2xocDhxUGd1TTlfYUVRYkV3YTR2NV80T3M2T1B6OW90bmt6VXZBMUZ6OXFNRC1MeHRHaFBQdGlOd3U1cHlGN0hOWWlsWUJOa0E?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 13:49:05 GMT",
+      "timestamp": "2026-09-20T13:49:05.000Z",
+      "fuente": "Google News — Selecciones juveniles",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "formativo",
+      "prioridad_fuente": 65,
+      "categoria": "formativo",
+      "equipo_chile": "Selección Chilena",
+      "viral_score": 72,
+      "razones": [
+        "categoria:formativo(+22)",
+        "frescura:2h(+15)",
+        "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "La Roja sub 20 se juega ante Colombia el pase a semis de los Juegos Sudamericanos - Cooperativa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi-gFBVV95cUxOdVhHdmJvV2R2SkYxbmM4N2IyaXktbFRUX21TVzdKTlZObmhXTENjbGxUbDJIYmdqM0VScFFYVlk5TmNiWFdkdXBfVWQwemVpTDB1d1p1R2RENS13cWdSMWdBQjVHQV9MYXhpczhoaWZubk5qcUVhVTBHYWt5YVVLRzM3cVNobVMtMGVWRndPU2tQYV9WYkZacTctSHlaQ1hFZHlkRXYzckdvM25XWVI5ampoUm5qVl9tT0NKVG8xaC1VZUpVTGVTa08zMkZLTV9CbjJoSENZQXhXbUtyUFA5ZHY0b1ZlcExqeHk1ZlZtWDRvQ0h2dG5MdDJ30gGMAUFVX3lxTFBhUG5ZV0IzcUtkcEVoU3lCMjg5QmF4SWplLUp2TUdwMmVjeEQ4TFdIWHVFdVpOWHJUbW0xYUZfQUdRRmpPaXJSMHJBc0JQRVRrYV",
+      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOdVhHdmJvV2R2SkYxbmM4N2IyaXktbFRUX21TVzdKTlZObmhXTENjbGxUbDJIYmdqM0VScFFYVlk5TmNiWFdkdXBfVWQwemVpTDB1d1p1R2RENS13cWdSMWdBQjVHQV9MYXhpczhoaWZubk5qcUVhVTBHYWt5YVVLRzM3cVNobVMtMGVWRndPU2tQYV9WYkZacTctSHlaQ1hFZHlkRXYzckdvM25XWVI5ampoUm5qVl9tT0NKVG8xaC1VZUpVTGVTa08zMkZLTV9CbjJoSENZQXhXbUtyUFA5ZHY0b1ZlcExqeHk1ZlZtWDRvQ0h2dG5MdDJ30gGMAUFVX3lxTFBhUG5ZV0IzcUtkcEVoU3lCMjg5QmF4SWplLUp2TUdwMmVjeEQ4TFdIWHVFdVpOWHJUbW0xYUZfQUdRRmpPaXJSMHJBc0JQRVRrYVJoS3RMMG5hY2tjb2lzV19MZ1BOX01LNVBSR1dnOXFIUk5EMEFlVkF2TXhCWi1QU0FOVnN4WGprTm5P?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 13:16:15 GMT",
+      "timestamp": "2026-09-20T13:16:15.000Z",
+      "fuente": "Google News — Selecciones juveniles",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "formativo",
+      "prioridad_fuente": 65,
+      "categoria": "formativo",
+      "equipo_chile": "Selección Chilena",
+      "viral_score": 72,
+      "razones": [
+        "categoria:formativo(+22)",
+        "frescura:2h(+15)",
         "gigante:la roja(+10)"
       ]
     },
@@ -1932,6 +1968,24 @@
       ]
     },
     {
+      "title": "Con uno de los mejores goles del torneo: Chile Sub 20 vence a Colombia y va por medallas en los Juegos Odesur 2026 - ADN Radio",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4wFBVV95cUxQc2xGSjVRRGdzbUF5MjRoSnJnU3hJOXBSZHJiUDFNR053VTc5Z3MtM05VSkdQanJmRHZ5ZGxka041ZUdmU0pzaFU3dkpyT2p5MGI1N1MyYTRjYU02YU1XTU04d0dCeGo0TV9RMTNWRElURFdyUDB0VGdOYk1mUXZxTVRDOTFCV0pYVmF3VDgwdXpzNlB1YUJKSVNraGVicVdaanlOWjdXSjQ5VnJuRHlLbFVhUVhGdUVsOFphWE51NFJseS1HM3Z3YVNHTEtHbkVkR0FOeUk5UVY1TmtYVkxib2pWd9IB9wFBVV95cUxPaVotXzZGU3lkdWJuRG1hd2xBS05fam9BcllSdy0weDdEa3ozSGlSYXNGZ1JJUlFwUVl2bDBDVWZhQWd6bWxkR0NLc0o4TThRVmFUZERNRjJGa2xENXBJSmNtTWpFNmdTYj",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQc2xGSjVRRGdzbUF5MjRoSnJnU3hJOXBSZHJiUDFNR053VTc5Z3MtM05VSkdQanJmRHZ5ZGxka041ZUdmU0pzaFU3dkpyT2p5MGI1N1MyYTRjYU02YU1XTU04d0dCeGo0TV9RMTNWRElURFdyUDB0VGdOYk1mUXZxTVRDOTFCV0pYVmF3VDgwdXpzNlB1YUJKSVNraGVicVdaanlOWjdXSjQ5VnJuRHlLbFVhUVhGdUVsOFphWE51NFJseS1HM3Z3YVNHTEtHbkVkR0FOeUk5UVY1TmtYVkxib2pWd9IB9wFBVV95cUxPaVotXzZGU3lkdWJuRG1hd2xBS05fam9BcllSdy0weDdEa3ozSGlSYXNGZ1JJUlFwUVl2bDBDVWZhQWd6bWxkR0NLc0o4TThRVmFUZERNRjJGa2xENXBJSmNtTWpFNmdTYjZwSFN1NWlVRGVsS2dBN0tyeUw4THpsc3BCTTdMZURVYWZTMXF4MFBHbHRNZEVfUjZaSXZvb0N6NGF6dk5MX0pRSW1KTkJCWHAyMzdPbF9RZFVjTGhNNXBLMk9nNkJDUWVoNkJRMmNuRElEckd6TFpQeDhtR3hXbmhhM2VMMnQ2NEtxY0RlMlZITGliR09F?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 14:59:04 GMT",
+      "timestamp": "2026-09-20T14:59:04.000Z",
+      "fuente": "Google News — Selecciones juveniles",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "formativo",
+      "prioridad_fuente": 65,
+      "categoria": "formativo",
+      "equipo_chile": null,
+      "viral_score": 62,
+      "razones": [
+        "categoria:formativo(+22)",
+        "frescura:1h(+15)"
+      ]
+    },
+    {
       "title": "La Roja femenina sub 20 SI, la Roja masculina sub 20 NO - Todofutbol.cl",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxOTUg5ZnZrYWZzSV8zX2tCczg2ME84M3FkVExKTHgxOUFHaUxqZnhsVkxaN05KdWk5LWJjeUg5Uktwcng5YWxjVjhYQ0NiT0dpN2ZPT2YtVXhaekdEc1J3TGl5RXZMcnVWSFJSR0kyZFAxc0lCZWs3Wm9MUFdyUGcwUnE5bFpwN2xJYXVBbXhyRS1QTlZzS3RwdUdYZw?oc=5\" target=\"_blank\">La Roja femenina sub 20 SI, la Roja masculina sub 20 NO</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Todofutbol.cl</font>",
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOTUg5ZnZrYWZzSV8zX2tCczg2ME84M3FkVExKTHgxOUFHaUxqZnhsVkxaN05KdWk5LWJjeUg5Uktwcng5YWxjVjhYQ0NiT0dpN2ZPT2YtVXhaekdEc1J3TGl5RXZMcnVWSFJSR0kyZFAxc0lCZWs3Wm9MUFdyUGcwUnE5bFpwN2xJYXVBbXhyRS1QTlZzS3RwdUdYZw?oc=5",
@@ -2043,43 +2097,6 @@
         "categoria:tercera(+20)",
         "frescura:17h(+5)",
         "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "Fue campeón de América con Chile y hoy ascendió al equipo de su ciudad natal en el fútbol amateur: “Tomé la decisión con el corazón” - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi-AFBVV95cUxORzRocDc3OWZBN3lrbTVCUHVaNWd6cFdtM1d1aU9CVm0ycUd1YVJEQWZPTWZMLXhmR1FoSmpOenlBRmdCVENoVWs2cDBiRXpfOHVvWTQ4ZjdZUFdtN1llblA0WG9DSmxuRlRnNjFZajdnVWxON2pnZVZET0ZLc2FyRy11MkdLdl95TW02SXdjUEpKSkVOTmw3bTFqQlV1b2xiVzlIek9BaFVNUy0yMGNCSFNrOEsxWDU1bWl0bUNNNUdkRG0xbWhOa2RSTUMycl9zYXI2TWI5UFhGWWo3U2I3ZUdTUEEyYWVlODA1VTRyOUEtZ2lYRUttQdIBjAJBVV95cUxNTzlqZHdES0oxbGc2a09uUEdGaXVvVFN1R3JpT3dKS2tpakNULWlvTWg0aEwxTnVGRjlBc0huejhRVG5ZT2ZBRUlycDN3NGFTenJNQ2",
-      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxORzRocDc3OWZBN3lrbTVCUHVaNWd6cFdtM1d1aU9CVm0ycUd1YVJEQWZPTWZMLXhmR1FoSmpOenlBRmdCVENoVWs2cDBiRXpfOHVvWTQ4ZjdZUFdtN1llblA0WG9DSmxuRlRnNjFZajdnVWxON2pnZVZET0ZLc2FyRy11MkdLdl95TW02SXdjUEpKSkVOTmw3bTFqQlV1b2xiVzlIek9BaFVNUy0yMGNCSFNrOEsxWDU1bWl0bUNNNUdkRG0xbWhOa2RSTUMycl9zYXI2TWI5UFhGWWo3U2I3ZUdTUEEyYWVlODA1VTRyOUEtZ2lYRUttQdIBjAJBVV95cUxNTzlqZHdES0oxbGc2a09uUEdGaXVvVFN1R3JpT3dKS2tpakNULWlvTWg0aEwxTnVGRjlBc0huejhRVG5ZT2ZBRUlycDN3NGFTenJNQ2xaUE1BNVFqYWlzYnR0R2g4V1ZwbVVSSjhMODR0eXQ1YzdjYlhWWmZ5dEQ3Rk9GMzdfMWxndmtKbUFOcFd6QnNDRWpWUWRiNHdpVWxQc29sdk16b2l6QmhNby1BdDZzVTFjUGl4R3lHWjBSN2EtTUczUXNzX0ZwcGJQV0ppRTRzY1NwWVAzc3A1N0hFc2tDNVBVS2NILTVHTnViVHkzUFRnRzcydDczeUUtRFQ2M0lKalhtaTRhQ3Bh?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 13:36:46 GMT",
-      "timestamp": "2026-09-17T13:36:46.000Z",
-      "fuente": "Google News — Tercera A",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "tercera",
-      "prioridad_fuente": 55,
-      "categoria": "tercera",
-      "equipo_chile": null,
-      "viral_score": 53,
-      "razones": [
-        "categoria:tercera(+20)",
-        "frescura:33h(+0)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "Paulo Garcés rebosa orgullo tras el ascenso a Tercera A con Buenos Aires de Parral: “Tomé esta decisión con... - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxQMDlIaE5xWC1kRzJXZHFvZ0IzRWtIWkdEYktMV1RDX25EQi1LWmxwNGd5V0l6S2ZHdmhmVVUzR2xrM0o1cmhWalpXUWlqSmRrQVhRdnZRaDZoMEpPOWUwaXJ3aUdUMnpzeG5NOWFOWUh5ODYwM0gzWlRrLVZ1U1UtQlNmZ0pSRXB4NjUwcjkxRHdvZGt4LWtSMFdNX21xNU5rT2tqSENOaklERVhueGcwNmEyQUZocjRtNVJVQmJxZ1QwbzBRMlJLZzlEaHVxWnI5VUJYTW1MQ29DWXNH0gHcAUFVX3lxTFAwOUhoTnFYLWRHMldkcW9nQjNFa0haR0RiS0xXVENfbkRCLUtabHA0Z3lXSXpLZkd2aGZVVTNHbGszSjVyaFZqWldRaWpKZGtBWFF2dlFoNmgwSk85ZTBpcndpR1QyenN4bk05YU5ZSH",
-      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQMDlIaE5xWC1kRzJXZHFvZ0IzRWtIWkdEYktMV1RDX25EQi1LWmxwNGd5V0l6S2ZHdmhmVVUzR2xrM0o1cmhWalpXUWlqSmRrQVhRdnZRaDZoMEpPOWUwaXJ3aUdUMnpzeG5NOWFOWUh5ODYwM0gzWlRrLVZ1U1UtQlNmZ0pSRXB4NjUwcjkxRHdvZGt4LWtSMFdNX21xNU5rT2tqSENOaklERVhueGcwNmEyQUZocjRtNVJVQmJxZ1QwbzBRMlJLZzlEaHVxWnI5VUJYTW1MQ29DWXNH0gHcAUFVX3lxTFAwOUhoTnFYLWRHMldkcW9nQjNFa0haR0RiS0xXVENfbkRCLUtabHA0Z3lXSXpLZkd2aGZVVTNHbGszSjVyaFZqWldRaWpKZGtBWFF2dlFoNmgwSk85ZTBpcndpR1QyenN4bk05YU5ZSHk4NjAzSDNaVGstVnVTVS1CU2ZnSlJFcHg2NTByOTFEd29ka3gta1IwV01fbXE1TmtPa2pIQ05qSURFWG54ZzA2YTJBRmhyNG01UlVCYnFnVDBvMFEyUktnOURodXFacjlVQlhNbUxDb0NZc0c?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 13:32:29 GMT",
-      "timestamp": "2026-09-17T13:32:29.000Z",
-      "fuente": "Google News — Tercera A",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "tercera",
-      "prioridad_fuente": 55,
-      "categoria": "tercera",
-      "equipo_chile": null,
-      "viral_score": 45,
-      "razones": [
-        "categoria:tercera(+20)",
-        "frescura:33h(+0)"
       ]
     },
     {
@@ -2236,26 +2253,6 @@
       ]
     },
     {
-      "title": "Pintadas contra Memphis Depay en Brasil por su penal errado ante Estudiantes: “Salario de millones, fútbol ... - bolavip.com",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxNWVY2aFJpNEdzMVp4Zmk1TEktSVlZQTJHS2g5U1lvcHlwaVJ0V3pEYkRMZWdQczgtT0w4XzZvLXVQTDdQNDFxSzVIZldaalRZSlBVMFlnX19fazUxVWRJSXl3UXdvaWN4TGdnS1hTUnBBUE1tR09TMV94WnVKcTVlRjFnQ2J6QURORWNJMmNVMDh2c3hFVzVjejlxdDZFYkwxMlBrY3l5RHRzUUNNQzdyZWxmMmt2R3FGdW9iM1ZETnV3blpYam9MVGRHSDZDdWhpN0x3dlB1amlkTURNdU5RZTV0Und4MFZJUDYw0gHwAUFVX3lxTFBwOGg2UEY4OFRjVktoWFJ4OEFtVVJIbUhQaWtPMzU4aE9mQ2RtTFcyYUZrMmt3d0xTQVgzdHJudDAwLVh0X3p5Yy1NTENxVW5QeFBvUXRMM1VGeENELWpfMX",
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNWVY2aFJpNEdzMVp4Zmk1TEktSVlZQTJHS2g5U1lvcHlwaVJ0V3pEYkRMZWdQczgtT0w4XzZvLXVQTDdQNDFxSzVIZldaalRZSlBVMFlnX19fazUxVWRJSXl3UXdvaWN4TGdnS1hTUnBBUE1tR09TMV94WnVKcTVlRjFnQ2J6QURORWNJMmNVMDh2c3hFVzVjejlxdDZFYkwxMlBrY3l5RHRzUUNNQzdyZWxmMmt2R3FGdW9iM1ZETnV3blpYam9MVGRHSDZDdWhpN0x3dlB1amlkTURNdU5RZTV0Und4MFZJUDYw0gHwAUFVX3lxTFBwOGg2UEY4OFRjVktoWFJ4OEFtVVJIbUhQaWtPMzU4aE9mQ2RtTFcyYUZrMmt3d0xTQVgzdHJudDAwLVh0X3p5Yy1NTENxVW5QeFBvUXRMM1VGeENELWpfMXhCVXg1LXJWMS1HM1NlY1Rpc2p0VzBzRmFZS3ZOMXdONWRRbVdZcVM1M01yZjh4MUZZMWZ1eXM2b01tMEtES1dGSmtKRHNkOUNVcy0tcEFLZ2RhdWdZSGN5aWppV3RURGluNGJwc2pPZlVPMGx6YjFVUGdvcEN4S21OcGV0cUhJYmtYSWplb2k5aVAzWEJQag?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 14:02:27 GMT",
-      "timestamp": "2026-09-17T14:02:27.000Z",
-      "fuente": "Google News — Libertadores",
-      "fuente_host": "news.google.com",
-      "categoria_feed": "internacional",
-      "prioridad_fuente": 35,
-      "categoria": "internacional",
-      "equipo_chile": null,
-      "viral_score": 41,
-      "razones": [
-        "categoria:internacional(+8)",
-        "frescura:56h(-10)",
-        "senal:\\b(fichaje|traspaso|(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
       "title": "Así se jugarán las semifinales de la Copa Libertadores y Sudamericana: cruces confirmados, fechas y horarios - ADN Radio",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxOVTRGU2hOQzRjS291NjRWNWFDcGF1UzFCWUpmX25XV1VQWmVxSWVRa2FUS0cteXE2eFdXbzhicUczWVZKc1QzUnAyX3c0enhKTVBwSVdrRURpWnN2VWZMMlpxMzVQUFdCRFpNRklqWHQyNE1CaGcxWEdJRi1LQ0VMdElKYkRuZzAzUVVHSFJmODN5M1VTTXZtNlEtVTNsMk1KZjFmT05ybUZxdUdKb0dXMTFWMWgxamMzdS1qVDZNWTVZVDY1d1dUT2JHQ2ZoeVhVeEwtc1ZKb2k5QdIB7gFBVV95cUxNZy15LXpQc1EyUDNPel9XaFBCSXdGRXZmVGRUVHZhZWxTNmczdTFPWTJBc04xdVBnclc2Y0pld1N5ZkRocnVTQllVQXJtVTNvMGlIMk5qNDByTzk3ME1na3gtS3JkQlo0TV9TSHMtVmNaUH",
       "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOVTRGU2hOQzRjS291NjRWNWFDcGF1UzFCWUpmX25XV1VQWmVxSWVRa2FUS0cteXE2eFdXbzhicUczWVZKc1QzUnAyX3c0enhKTVBwSVdrRURpWnN2VWZMMlpxMzVQUFdCRFpNRklqWHQyNE1CaGcxWEdJRi1LQ0VMdElKYkRuZzAzUVVHSFJmODN5M1VTTXZtNlEtVTNsMk1KZjFmT05ybUZxdUdKb0dXMTFWMWgxamMzdS1qVDZNWTVZVDY1d1dUT2JHQ2ZoeVhVeEwtc1ZKb2k5QdIB7gFBVV95cUxNZy15LXpQc1EyUDNPel9XaFBCSXdGRXZmVGRUVHZhZWxTNmczdTFPWTJBc04xdVBnclc2Y0pld1N5ZkRocnVTQllVQXJtVTNvMGlIMk5qNDByTzk3ME1na3gtS3JkQlo0TV9TSHMtVmNaUHBneU5YZ0FKRENObUh6LWZZaEI4ZEV3RmJnbTFKb1ZsZnZxMk13ZENZdzZRNmJ1Qk1jZ29adnpBQy1FT193T0RPeGxhN1pBRzc1VDFpVkFoVnVsWmRDVktBWDZkVnVqUHVreWllb2JFVmFLNV8zLXpvS3BCOGRUVkJjbWhn?oc=5",
@@ -2328,6 +2325,24 @@
       ]
     },
     {
+      "title": "Alineaciones Flamengo vs Independiente del Valle, Copa Libertadores 2026 - AS Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNbG55cmZ2SDRwRHhOR1hDaXBTSTNuazRtWVY1eEZfVE5lT0U4Yi11ZDdieFRGS2ctdHdMeUlYTFd5eFJiNXpjLTRQV0hHbGV3MDRTV2FicmZYZzg2VGlpVkVZeS11R0d0cmUyU2lVQ0h0WTlmTWlOcGxEUmhocDdQam5keTVlTzJ2Qm5CRDhVbXlHeWpSamlSSTZheGJUcEhBYmhHU1ZIZVNPZnhIemt1eA?oc=5\" target=\"_blank\">Alineaciones Flamengo vs Independiente del Valle, Copa Libertadores 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">AS Chile</font>",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbG55cmZ2SDRwRHhOR1hDaXBTSTNuazRtWVY1eEZfVE5lT0U4Yi11ZDdieFRGS2ctdHdMeUlYTFd5eFJiNXpjLTRQV0hHbGV3MDRTV2FicmZYZzg2VGlpVkVZeS11R0d0cmUyU2lVQ0h0WTlmTWlOcGxEUmhocDdQam5keTVlTzJ2Qm5CRDhVbXlHeWpSamlSSTZheGJUcEhBYmhHU1ZIZVNPZnhIemt1eA?oc=5",
+      "pubDate": "Fri, 18 Sep 2026 00:12:25 GMT",
+      "timestamp": "2026-09-18T00:12:25.000Z",
+      "fuente": "Google News — Libertadores",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 35,
+      "categoria": "internacional",
+      "equipo_chile": null,
+      "viral_score": 23,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:64h(-10)"
+      ]
+    },
+    {
       "title": "El calendario de los próximos 5 partidos del FC Barcelona tras vencer 3-1 al Sevilla - Sports Illustrated",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPSFRvNmU4YUVCNWdhZmRIVWdBYUxIV1BseXh5VlFSLVRNamJEWHg5S01mN3NVTVVhZUpTOVpHamY5eTNfSEUwQ1ZOZUFhVUpsVi1KRk16ck1sSXZHWnlvTzV4VGtEWEFaN1AtRWtNaG1HdHBERDE1MExGbFdTb2kzTkFpdTNUYng5b0lyMk50MXpMc3V5OUVnNU96d2w2amI2bXJUczhQMTFranRjN1Y4bXJxby15bDg?oc=5\" target=\"_blank\">El calendario de los próximos 5 partidos del FC Barcelona tras vencer 3-1 al Sevilla</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Sports Illustrated</font>",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPSFRvNmU4YUVCNWdhZmRIVWdBYUxIV1BseXh5VlFSLVRNamJEWHg5S01mN3NVTVVhZUpTOVpHamY5eTNfSEUwQ1ZOZUFhVUpsVi1KRk16ck1sSXZHWnlvTzV4VGtEWEFaN1AtRWtNaG1HdHBERDE1MExGbFdTb2kzTkFpdTNUYng5b0lyMk50MXpMc3V5OUVnNU96d2w2amI2bXJUczhQMTFranRjN1Y4bXJxby15bDg?oc=5",
@@ -2366,6 +2381,25 @@
         "frescura:1h(+15)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:messi(+10)"
+      ]
+    },
+    {
+      "title": "Cómo recibió la hinchada del Atlético Madrid a Julián Álvarez en el derbi - ESPN Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTUUxWG1ZNEotb0o2TGxodTN2NkQwSlF6MlBVYlhBQUtXMW1TNHpMYWQ4X29VeGpQSlBnMjV1UHRQZzJ1UVEwTEoxVWlISzhUc0RmcTN5MTd2YUtkZXVuck9aNWR4Mk1RMXRxa3k1ZzRkXzJFVmc5RmhYaXdtVjg2Q0lsbFFIV1dZdGZtb2hvMHRJUFEzcWxhMzRBU3JrVTFRTl8zSVFIOEoxR3VzVlNiX2w4Z05hSGxtZC1oT3hwSWY?oc=5\" target=\"_blank\">Cómo recibió la hinchada del Atlético Madrid a Julián Álvarez en el derbi</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Chile</font>",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTUUxWG1ZNEotb0o2TGxodTN2NkQwSlF6MlBVYlhBQUtXMW1TNHpMYWQ4X29VeGpQSlBnMjV1UHRQZzJ1UVEwTEoxVWlISzhUc0RmcTN5MTd2YUtkZXVuck9aNWR4Mk1RMXRxa3k1ZzRkXzJFVmc5RmhYaXdtVjg2Q0lsbFFIV1dZdGZtb2hvMHRJUFEzcWxhMzRBU3JrVTFRTl8zSVFIOEoxR3VzVlNiX2w4Z05hSGxtZC1oT3hwSWY?oc=5",
+      "pubDate": "Sun, 20 Sep 2026 14:49:01 GMT",
+      "timestamp": "2026-09-20T14:49:01.000Z",
+      "fuente": "Google News — Champions",
+      "fuente_host": "news.google.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 30,
+      "categoria": "internacional",
+      "equipo_chile": null,
+      "viral_score": 56,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:1h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
       ]
     },
     {

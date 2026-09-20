@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DEFENSAS MÁS GOLEADAS BUNDESLIGA",
-      "titulo": "Heidenheim encajó 72 goles: ¿La peor defensa de Bundesliga?",
-      "fecha": "2026-07-23T04:20:45.315Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ARIAS VUELVE A SONAR EN COLO COLO",
-      "titulo": "Gabriel Arias en la órbita de Colo Colo: ¿Será el nuevo arquero del Cacique?",
-      "fecha": "2026-07-23T14:10:26.009Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "VALDÉS Y COLO-COLO: HABLA VÉLEZ",
       "titulo": "DT de Vélez habló sobre Valdés: ¿Frustra el sueño de Colo-Colo?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Universidad de Chile: ¿Qué deben mejorar los azules en lo futbolístico para gana",
       "titulo": "FÚTBOL CHILENO: Universidad de Chile: ¿Qué deben mejorar los azules en lo… | Lo que cambia",
       "fecha": "2026-09-20T05:56:03.903Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Hernández, Ulloa y Román ganan desafío de la Paya Alba en Colo Colo recordando l",
+      "titulo": "COLO-COLO: Hernández, Ulloa y Román ganan desafío de la Paya Alba en Colo Colo… | Lo que se sabe",
+      "fecha": "2026-09-20T15:43:20.799Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: La U sigue sin recuperar a una de sus figuras y crece la duda para Copa Chile - ",
+      "titulo": "FÚTBOL CHILENO: La U sigue sin recuperar a una de sus figuras y crece la duda… | Lo que cambia",
+      "fecha": "2026-09-20T15:43:20.799Z"
     }
   ]
 }
