@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "VALDÉS Y COLO-COLO: HABLA VÉLEZ",
-      "titulo": "DT de Vélez habló sobre Valdés: ¿Frustra el sueño de Colo-Colo?",
-      "fecha": "2026-07-23T14:10:37.712Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ALEXIS SÁNCHEZ SUENA EN LA U",
-      "titulo": "Alexis Sánchez pone una condición para llegar a la U: ¿Cuál es?",
-      "fecha": "2026-07-23T14:10:46.174Z"
-    },
-    {
       "match_id": "554930",
       "tipo_contenido": "prediccion",
       "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: La U sigue sin recuperar a una de sus figuras y crece la duda para Copa Chile - ",
       "titulo": "FÚTBOL CHILENO: La U sigue sin recuperar a una de sus figuras y crece la duda… | Lo que cambia",
       "fecha": "2026-09-20T15:43:20.799Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo recupera a Javier Correa y Arturo Vidal para los octavos de la Copa Ch",
+      "titulo": "COLO-COLO: Colo Colo recupera a Javier Correa y Arturo Vidal para los octavos… | Lo que se sabe",
+      "fecha": "2026-09-20T22:17:33.279Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: El rompecabezas de Fernando Ortiz para Copa Chile: 10 bajas confirmadas en Colo-",
+      "titulo": "FÚTBOL CHILENO: El rompecabezas de Fernando Ortiz para Copa Chile: 10 bajas… | Lo que cambia",
+      "fecha": "2026-09-20T22:17:33.279Z"
     }
   ]
 }
