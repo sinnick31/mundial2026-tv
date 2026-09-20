@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CASO SARTOR REMECE AZUL AZUL Y REFUERZOS",
-      "titulo": "El 'Caso Sartor' remece a Azul Azul: ¿Impactará los refuerzos de Colo Colo y la UC?",
-      "fecha": "2026-07-23T04:20:00.770Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U. DE CHILE: FICHAJE Y RETIRO!",
-      "titulo": "La U anuncia 1 fichaje y 1 retiro: ¿Crisis o renovación en el plantel?",
-      "fecha": "2026-07-23T04:20:13.594Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "DEFENSAS MÁS GOLEADAS BUNDESLIGA",
       "titulo": "Heidenheim encajó 72 goles: ¿La peor defensa de Bundesliga?",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: ¡Una nueva baja! Universidad de Chile pierde a un nuevo jugador para la llave de",
       "titulo": "FÚTBOL CHILENO: ¡Una nueva baja! Universidad de Chile pierde a un nuevo jugador… | Lo que cambia",
       "fecha": "2026-09-19T22:14:59.845Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Golpe para Colo Colo: Vozinha deja Chile y se perderá duelos claves - tecache.cl",
+      "titulo": "COLO-COLO: Golpe para Colo Colo: Vozinha deja Chile y se perderá duelos claves… | Lo que se sabe",
+      "fecha": "2026-09-20T05:56:03.903Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Universidad de Chile: ¿Qué deben mejorar los azules en lo futbolístico para gana",
+      "titulo": "FÚTBOL CHILENO: Universidad de Chile: ¿Qué deben mejorar los azules en lo… | Lo que cambia",
+      "fecha": "2026-09-20T05:56:03.903Z"
     }
   ]
 }
