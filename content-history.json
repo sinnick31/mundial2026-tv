@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554930",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
-      "titulo": "Falta de Datos: ¿Cómo analizar Paranaense vs Internacional sin estadísticas?",
-      "fecha": "2026-07-23T14:11:30.097Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ARIAS VUELVE A LA ÓRBITA ALBA",
-      "titulo": "Gabriel Arias vuelve a la órbita de Colo Colo: ¿Será el arquero que necesita el Cacique?",
-      "fecha": "2026-07-23T17:24:33.958Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "VALDÉS: ¡HABLA EL DT DE VÉLEZ!",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: El rompecabezas de Fernando Ortiz para Copa Chile: 10 bajas confirmadas en Colo-",
       "titulo": "FÚTBOL CHILENO: El rompecabezas de Fernando Ortiz para Copa Chile: 10 bajas… | Lo que cambia",
       "fecha": "2026-09-20T22:17:33.279Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: ¿Cuándo y dónde ver el duelo de ida entre Audax Italiano y Colo Colo por la Copa",
+      "titulo": "COLO-COLO: ¿Cuándo y dónde ver el duelo de ida entre Audax Italiano y Colo Colo… | Lo que se sabe",
+      "fecha": "2026-09-21T06:02:10.211Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Tras el receso de Fiestas Patrias: ¿cuándo juega Universidad de Chile por Copa C",
+      "titulo": "FÚTBOL CHILENO: Tras el receso de Fiestas Patrias: ¿cuándo juega Universidad de… | Lo que cambia",
+      "fecha": "2026-09-21T06:02:10.211Z"
     }
   ]
 }
