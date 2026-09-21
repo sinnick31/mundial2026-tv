@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "VALDÉS: ¡HABLA EL DT DE VÉLEZ!",
-      "titulo": "DT de Vélez se pronuncia sobre Valdés: ¿Qué dijo del pase a Colo Colo?",
-      "fecha": "2026-07-23T17:24:44.011Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ALEXIS SÁNCHEZ EN LA U: SU CONDICIÓN",
-      "titulo": "Alexis Sánchez pide condición para la U: ¿qué significa para el Bulla?",
-      "fecha": "2026-07-23T17:24:52.413Z"
-    },
-    {
       "match_id": "554938",
       "tipo_contenido": "prediccion",
       "hook": "DATOS IRRELEVANTES, ANÁLISIS COMPLEJO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Tras el receso de Fiestas Patrias: ¿cuándo juega Universidad de Chile por Copa C",
       "titulo": "FÚTBOL CHILENO: Tras el receso de Fiestas Patrias: ¿cuándo juega Universidad de… | Lo que cambia",
       "fecha": "2026-09-21T06:02:10.211Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Copa Chile vuelve esta semana: programación y cruces de octavos de final con Col",
+      "titulo": "COLO-COLO: Copa Chile vuelve esta semana: programación y cruces de octavos de… | Lo que se sabe",
+      "fecha": "2026-09-21T18:02:49.390Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Audax Italiano vs Colo Colo: cuándo juegan, formaciones y dónde ver los octavos ",
+      "titulo": "FÚTBOL CHILENO: Audax Italiano vs Colo Colo: cuándo juegan, formaciones y dónde… | Lo que cambia",
+      "fecha": "2026-09-21T18:02:49.390Z"
     }
   ]
 }
