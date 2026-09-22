@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "JOZIC REGRESA A CHILE CON COLO COLO",
-      "titulo": "Mirko Jozic regresa a Colo Colo: ¿Cómo impactará este histórico retorno en el Monumental?",
-      "fecha": "2026-07-24T04:21:03.412Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ALEXIS SÁNCHEZ SUENA EN LA U",
-      "titulo": "Alexis Sánchez: ¿cuál es la condición que pone para ir a la U? 🇨🇱",
-      "fecha": "2026-07-24T04:21:17.589Z"
-    },
-    {
       "match_id": "espn-401881699",
       "tipo_contenido": "prediccion",
       "hook": "DATOS IRRELEVANTES: ANÁLISIS IMPOSIBLE",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Dudas y certezas en el Monumental: Colo Colo recupera a figuras para la Copa Chi",
       "titulo": "FÚTBOL CHILENO: Dudas y certezas en el Monumental: Colo Colo recupera a figuras… | Lo que cambia",
       "fecha": "2026-09-22T16:35:39.309Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Minuto a minuto: Audax Italiano recibe a Colo Colo por la ida de los octavos de ",
+      "titulo": "COLO-COLO: Minuto a minuto: Audax Italiano recibe a Colo Colo por la ida de los… | Lo que se sabe",
+      "fecha": "2026-09-22T22:49:18.338Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: A qué hora juega Colo Colo vs Audax Italiano: dónde ver y cómo seguir el partido",
+      "titulo": "FÚTBOL CHILENO: A qué hora juega Colo Colo vs Audax Italiano: dónde ver y cómo… | Lo que cambia",
+      "fecha": "2026-09-22T22:49:18.338Z"
     }
   ]
 }
