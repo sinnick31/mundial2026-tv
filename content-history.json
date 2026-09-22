@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO OFICIALIZA REGRESO DE MIRKO JOZIC",
-      "titulo": "Colo Colo oficializa regreso de Mirko Jozic: ¿qué impacto tendrá su visita?",
-      "fecha": "2026-07-23T21:58:55.635Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "DT DE VÉLEZ HABLA DE VALDÉS",
-      "titulo": "DT de Vélez ya se pronunció sobre Valdés: ¿se aleja del Monumental?",
-      "fecha": "2026-07-23T21:59:07.679Z"
-    },
-    {
       "match_id": "554939",
       "tipo_contenido": "prediccion",
       "hook": "DATOS INSUFICIENTES",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Dudas y certezas en el Monumental: Colo Colo recupera a figuras para la Copa Chi",
       "titulo": "FÚTBOL CHILENO: Dudas y certezas en el Monumental: Colo Colo recupera a figuras… | Lo que cambia",
       "fecha": "2026-09-21T23:05:08.373Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Dudas y certezas en el Monumental: Colo Colo recupera a figuras para la Copa Chi",
+      "titulo": "COLO-COLO: Dudas y certezas en el Monumental: Colo Colo recupera a figuras para… | Lo que se sabe",
+      "fecha": "2026-09-22T05:58:00.659Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Con solo un partido en el 2026: Villanueva será el arquero de Colo Colo en Copa ",
+      "titulo": "FÚTBOL CHILENO: Con solo un partido en el 2026: Villanueva será el arquero de… | Lo que cambia",
+      "fecha": "2026-09-22T05:58:00.659Z"
     }
   ]
 }
