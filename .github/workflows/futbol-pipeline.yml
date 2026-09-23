@@ -122,11 +122,26 @@ jobs:
             echo "Sin cambios para guardar"
           else
             git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
-            # El pipeline puede tardar mientras otra ejecución actualiza main.
-            # Rebase antes de publicar para evitar non-fast-forward.
-            git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
+            # main puede avanzar entre fetch y push. Reintentar con rebase
+            # hasta integrar el último estado remoto antes de publicar.
+            for intento in 1 2 3; do
+              echo "🔄 Sincronización con origin/main, intento $intento/3"
+              git fetch origin main
+              git rebase origin/main || {
+                echo "❌ Rebase falló. Abortando para no sobrescribir cambios remotos."
+                git rebase --abort || true
+                exit 1
+              }
+              if git push origin HEAD:main; then
+                echo "✅ Historial y caché publicados en main"
+                break
+              fi
+              if [ "$intento" -eq 3 ]; then
+                echo "❌ No se pudo publicar después de 3 intentos."
+                exit 1
+              fi
+              sleep 3
+            done
           fi
       - name: 📦 Guardar paquetes editoriales
         if: steps.gen.outputs.hay_contenido == 'true' || steps.longform.outputs.hay_longform == 'true'
