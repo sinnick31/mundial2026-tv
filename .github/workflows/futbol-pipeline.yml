@@ -8,6 +8,9 @@ name: ⚽ REAL FOOTBALL NEWSROOM v6 — Chile 365
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'content-history.json'
+      - 'news-cache.json'
   schedule:
     - cron: '0 12 * * *'
     - cron: '0 20 * * *'
