@@ -126,76 +126,11 @@ jobs:
             exit 0
           fi
 
-          # Guardar exactamente lo generado por esta ejecución.
-          cp content-history.json /tmp/content-history.generated.json
-          cp news-cache.json /tmp/news-cache.generated.json
+          git add content-history.json news-cache.json
+          git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
+          git push origin HEAD:main
+          echo "✅ Historial y caché publicados en main"
 
-          for intento in 1 2 3; do
-            echo "🔄 Sincronización segura con origin/main, intento $intento/3"
-            git fetch origin main
-            git reset --hard origin/main
-
-            # Reaplicar siempre los archivos generados después de posicionarnos sobre main.
-            cp /tmp/content-history.generated.json content-history.json
-            cp /tmp/news-cache.generated.json news-cache.json
-
-            node - <<'NODE'
-            const fs = require('fs');
-            const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
-
-            const generatedHistory = read('/tmp/content-history.generated.json');
-            const currentHistory = read('content-history.json');
-
-            // currentHistory es origin/main tras el reset. Se conserva su historial
-            // y se agregan los elementos nuevos de esta ejecución.
-            const all = [
-              ...(Array.isArray(currentHistory.items) ? currentHistory.items : []),
-              ...(Array.isArray(generatedHistory.items) ? generatedHistory.items : [])
-            ];
-
-            const seen = new Set();
-            const items = all.filter(item => {
-              const key = JSON.stringify(item);
-              if (seen.has(key)) return false;
-              seen.add(key);
-              return true;
-            }).sort((x, y) =>
-              String(x.fecha || '').localeCompare(String(y.fecha || ''))
-            );
-
-            fs.writeFileSync(
-              'content-history.json',
-              JSON.stringify(
-                { ...currentHistory, ...generatedHistory, items },
-                null,
-                2
-              ) + '\\n'
-            );
-
-            // El caché representa las fuentes de esta ejecución.
-            fs.copyFileSync('/tmp/news-cache.generated.json', 'news-cache.json');
-            NODE
-
-            git add content-history.json news-cache.json
-
-            if git diff --cached --quiet; then
-              echo "Sin cambios después de fusionar con origin/main"
-              exit 0
-            fi
-
-            git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
-
-            if git push origin HEAD:main; then
-              echo "✅ Historial y caché publicados en main"
-              exit 0
-            fi
-
-            echo "⚠️ main avanzó durante el push. Reintentando desde el último estado remoto..."
-            sleep 2
-          done
-
-          echo "❌ No se pudo publicar historial/caché después de 3 intentos."
-          exit 1
       - name: 📦 Guardar paquetes editoriales
         if: steps.gen.outputs.hay_contenido == 'true' || steps.longform.outputs.hay_longform == 'true'
         uses: actions/upload-artifact@v6
