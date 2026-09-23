@@ -120,73 +120,80 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add content-history.json news-cache.json 2>/dev/null || true
-          if git diff --staged --quiet; then
+
+          if git diff --quiet -- content-history.json news-cache.json; then
             echo "Sin cambios para guardar"
-          else
-            git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
-            # main puede avanzar entre fetch y push. Reintentar con rebase
-            # hasta integrar el último estado remoto antes de publicar.
-            cp content-history.json /tmp/content-history.generated.json
-            cp news-cache.json /tmp/news-cache.generated.json
-
-            for intento in 1 2 3; do
-              echo "🔄 Sincronización con origin/main, intento $intento/3"
-              git fetch origin main
-
-              if git rebase origin/main; then
-                :
-              else
-                echo "⚠️ Conflicto en memoria editorial. Resolviendo automáticamente..."
-                git checkout --ours content-history.json news-cache.json 2>/dev/null || true
-
-                node - <<'NODE'
-                const fs = require('fs');
-                const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
-
-                const remoteHistory = read('content-history.json');
-                const generatedHistory = read('/tmp/content-history.generated.json');
-                const all = [
-                  ...(Array.isArray(remoteHistory.items) ? remoteHistory.items : []),
-                  ...(Array.isArray(generatedHistory.items) ? generatedHistory.items : [])
-                ];
-                const seen = new Set();
-                const items = all.filter(item => {
-                  const key = JSON.stringify(item);
-                  if (seen.has(key)) return false;
-                  seen.add(key);
-                  return true;
-                }).sort((a,b) =>
-                  String(a.fecha || '').localeCompare(String(b.fecha || ''))
-                );
-
-                fs.writeFileSync(
-                  'content-history.json',
-                  JSON.stringify({ ...remoteHistory, ...generatedHistory, items }, null, 2) + '\\n'
-                );
-                fs.copyFileSync('/tmp/news-cache.generated.json', 'news-cache.json');
-                NODE
-
-                git add content-history.json news-cache.json
-                GIT_EDITOR=true git rebase --continue || {
-                  echo "❌ No se pudo completar el rebase después de resolver el conflicto."
-                  git rebase --abort || true
-                  exit 1
-                }
-              fi
-
-              if git push origin HEAD:main; then
-                echo "✅ Historial y caché publicados en main"
-                break
-              fi
-
-              if [ "$intento" -eq 3 ]; then
-                echo "❌ No se pudo publicar después de 3 intentos."
-                exit 1
-              fi
-              sleep 3
-            done
+            exit 0
           fi
+
+          # Guardar exactamente lo generado por esta ejecución.
+          cp content-history.json /tmp/content-history.generated.json
+          cp news-cache.json /tmp/news-cache.generated.json
+
+          for intento in 1 2 3; do
+            echo "🔄 Sincronización segura con origin/main, intento $intento/3"
+            git fetch origin main
+
+            # Partir siempre desde el estado remoto actual.
+            git checkout origin/main -- content-history.json news-cache.json
+
+            node - <<'NODE'
+            const fs = require('fs');
+            const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+
+            const remoteHistory = read('content-history.json');
+            const generatedHistory = read('/tmp/content-history.generated.json');
+
+            const all = [
+              ...(Array.isArray(remoteHistory.items) ? remoteHistory.items : []),
+              ...(Array.isArray(generatedHistory.items) ? generatedHistory.items : [])
+            ];
+
+            const seen = new Set();
+            const items = all.filter(item => {
+              const key = JSON.stringify(item);
+              if (seen.has(key)) return false;
+              seen.add(key);
+              return true;
+            }).sort((a, b) =>
+              String(a.fecha || '').localeCompare(String(b.fecha || ''))
+            );
+
+            fs.writeFileSync(
+              'content-history.json',
+              JSON.stringify(
+                { ...remoteHistory, ...generatedHistory, items },
+                null,
+                2
+              ) + '\n'
+            );
+
+            // El caché representa las fuentes de esta ejecución.
+            fs.copyFileSync('/tmp/news-cache.generated.json', 'news-cache.json');
+            NODE
+
+            git add content-history.json news-cache.json
+
+            if git diff --cached --quiet; then
+              echo "Sin cambios después de fusionar con origin/main"
+              exit 0
+            fi
+
+            git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
+
+            # Evitar sobrescribir cambios que hayan llegado mientras trabajábamos.
+            if git push origin HEAD:main; then
+              echo "✅ Historial y caché publicados en main"
+              exit 0
+            fi
+
+            echo "⚠️ main avanzó durante el push. Reintentando con el último estado remoto..."
+            git reset --hard origin/main
+            sleep 2
+          done
+
+          echo "❌ No se pudo publicar historial/caché después de 3 intentos."
+          exit 1
       - name: 📦 Guardar paquetes editoriales
         if: steps.gen.outputs.hay_contenido == 'true' || steps.longform.outputs.hay_longform == 'true'
         uses: actions/upload-artifact@v6
