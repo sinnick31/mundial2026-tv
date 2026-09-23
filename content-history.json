@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "VUELVE JOZIC A CHILE CON COLO COLO",
-      "titulo": "Mirko Jozic vuelve oficialmente a Chile: ¿cuándo será su reencuentro con la hinchada?",
-      "fecha": "2026-07-24T17:39:30.575Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: CALENDARIO DE 9 PARTIDOS LISTO!",
-      "titulo": "U de Chile tiene 9 partidos confirmados: ¿Qué se juega en Primera?",
-      "fecha": "2026-07-24T17:39:41.481Z"
-    },
-    {
       "match_id": "554933",
       "tipo_contenido": "prediccion",
       "hook": "FUERZA VISITANTE CELESTE",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Fernando Ortiz palpita el Colo Colo vs Audax por Copa Chile y llama a tener cuid",
       "titulo": "FÚTBOL CHILENO: Fernando Ortiz palpita el Colo Colo vs Audax por Copa Chile y… | Lo que cambia",
       "fecha": "2026-09-23T17:22:06.555Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Dudas y certezas en el Monumental: Colo Colo recupera a figuras para la Copa Chi",
+      "titulo": "COLO-COLO: Dudas y certezas en el Monumental: Colo Colo recupera a figuras para… | Lo que se sabe",
+      "fecha": "2026-09-23T17:28:04.831Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Solo un partido en 2026: Fernando Ortiz confirma el portero titular de Colo Colo",
+      "titulo": "FÚTBOL CHILENO: Solo un partido en 2026: Fernando Ortiz confirma el portero… | Lo que cambia",
+      "fecha": "2026-09-23T17:28:04.831Z"
     }
   ]
 }
