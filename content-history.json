@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ALEXIS PONE CONDICIÓN A LA U",
-      "titulo": "Alexis Sánchez suena en la U: ¿Cuál es la condición clave para su llegada?",
-      "fecha": "2026-07-24T13:52:40.373Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "MIRKO JOZIC REGRESA: ¡FECHA OFICIAL!",
-      "titulo": "Colo Colo oficializa fecha de Mirko Jozic: ¿Vuelve la mística del 91?",
-      "fecha": "2026-07-24T13:52:52.465Z"
-    },
-    {
       "match_id": "espn-401881698",
       "tipo_contenido": "prediccion",
       "hook": "CONSISTENCIA EN FASE GRUPOS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Hasta con palos: hinchas de Colo Colo se pelearon entre ellos en duelo de Copa C",
       "titulo": "FÚTBOL CHILENO: Hasta con palos: hinchas de Colo Colo se pelearon entre ellos en… | Lo que cambia",
       "fecha": "2026-09-23T05:43:07.198Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Uno a Uno: Colo Colo iguala con Audax y mantiene en suspenso la clasificación en",
+      "titulo": "COLO-COLO: Uno a Uno: Colo Colo iguala con Audax y mantiene en suspenso la… | Lo que se sabe",
+      "fecha": "2026-09-23T16:26:50.999Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Audax Italiano vs Colo Colo: Dónde ver EN VIVO y ONLINE partido de ida por Copa ",
+      "titulo": "FÚTBOL CHILENO: Audax Italiano vs Colo Colo: Dónde ver EN VIVO y ONLINE partido… | Lo que cambia",
+      "fecha": "2026-09-23T16:26:50.999Z"
     }
   ]
 }
