@@ -133,19 +133,23 @@ jobs:
           for intento in 1 2 3; do
             echo "🔄 Sincronización segura con origin/main, intento $intento/3"
             git fetch origin main
+            git reset --hard origin/main
 
-            # Partir siempre desde el estado remoto actual.
-            git checkout origin/main -- content-history.json news-cache.json
+            # Reaplicar siempre los archivos generados después de posicionarnos sobre main.
+            cp /tmp/content-history.generated.json content-history.json
+            cp /tmp/news-cache.generated.json news-cache.json
 
             node - <<'NODE'
             const fs = require('fs');
             const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
 
-            const remoteHistory = read('content-history.json');
             const generatedHistory = read('/tmp/content-history.generated.json');
+            const currentHistory = read('content-history.json');
 
+            // currentHistory es origin/main tras el reset. Se conserva su historial
+            // y se agregan los elementos nuevos de esta ejecución.
             const all = [
-              ...(Array.isArray(remoteHistory.items) ? remoteHistory.items : []),
+              ...(Array.isArray(currentHistory.items) ? currentHistory.items : []),
               ...(Array.isArray(generatedHistory.items) ? generatedHistory.items : [])
             ];
 
@@ -155,17 +159,17 @@ jobs:
               if (seen.has(key)) return false;
               seen.add(key);
               return true;
-            }).sort((a, b) =>
-              String(a.fecha || '').localeCompare(String(b.fecha || ''))
+            }).sort((x, y) =>
+              String(x.fecha || '').localeCompare(String(y.fecha || ''))
             );
 
             fs.writeFileSync(
               'content-history.json',
               JSON.stringify(
-                { ...remoteHistory, ...generatedHistory, items },
+                { ...currentHistory, ...generatedHistory, items },
                 null,
                 2
-              ) + '\n'
+              ) + '\\n'
             );
 
             // El caché representa las fuentes de esta ejecución.
@@ -181,14 +185,12 @@ jobs:
 
             git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
 
-            # Evitar sobrescribir cambios que hayan llegado mientras trabajábamos.
             if git push origin HEAD:main; then
               echo "✅ Historial y caché publicados en main"
               exit 0
             fi
 
-            echo "⚠️ main avanzó durante el push. Reintentando con el último estado remoto..."
-            git reset --hard origin/main
+            echo "⚠️ main avanzó durante el push. Reintentando desde el último estado remoto..."
             sleep 2
           done
 
