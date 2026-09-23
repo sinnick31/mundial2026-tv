@@ -118,7 +118,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add content-history.json news-cache.json 2>/dev/null || true
-          if git diff --staged --quiet; then echo "Sin cambios para guardar"; else git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"; git push; fi
+          if git diff --staged --quiet; then
+            echo "Sin cambios para guardar"
+          else
+            git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
+            # El pipeline puede tardar mientras otra ejecución actualiza main.
+            # Rebase antes de publicar para evitar non-fast-forward.
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
       - name: 📦 Guardar paquetes editoriales
         if: steps.gen.outputs.hay_contenido == 'true' || steps.longform.outputs.hay_longform == 'true'
         uses: actions/upload-artifact@v6
