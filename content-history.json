@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401881699",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS IRRELEVANTES: ANÁLISIS IMPOSIBLE",
-      "titulo": "Datos de Flamengo (16 puntos) y Coquimbo Unido: ¿Análisis para Ñublense vs Rangers imposible?",
-      "fecha": "2026-07-24T04:21:40.090Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "ARIAS VUELVE A LA ÓRBITA ALBA",
-      "titulo": "Gabriel Arias vuelve a la órbita de Colo Colo: ¿será el elegido?",
-      "fecha": "2026-07-24T13:52:26.683Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "ALEXIS PONE CONDICIÓN A LA U",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: A qué hora juega Colo Colo vs Audax Italiano: dónde ver y cómo seguir el partido",
       "titulo": "FÚTBOL CHILENO: A qué hora juega Colo Colo vs Audax Italiano: dónde ver y cómo… | Lo que cambia",
       "fecha": "2026-09-22T22:49:18.338Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Audax Italiano 0 - Colo Colo 0: goles, resultado y resumen del partido | Copa Ch",
+      "titulo": "COLO-COLO: Audax Italiano 0 - Colo Colo 0: goles, resultado y resumen del… | Lo que se sabe",
+      "fecha": "2026-09-23T05:43:07.198Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Hasta con palos: hinchas de Colo Colo se pelearon entre ellos en duelo de Copa C",
+      "titulo": "FÚTBOL CHILENO: Hasta con palos: hinchas de Colo Colo se pelearon entre ellos en… | Lo que cambia",
+      "fecha": "2026-09-23T05:43:07.198Z"
     }
   ]
 }
