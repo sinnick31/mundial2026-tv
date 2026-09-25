@@ -3,20 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "JOZIC VUELVE A COLO COLO",
-      "titulo": "Colo Colo oficializa el regreso de Mirko Jozic: ¿Qué significa para el Monumental? 🎉",
-      "fecha": "2026-07-25T16:59:55.838Z"
-    },
-    {
-      "match_id": "espn-401850599",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS INSUFICIENTES CHILE",
-      "titulo": "Arsenal lideró con 85 puntos: ¿Cómo analizar Huachipato vs Cobresal sin datos específicos?",
-      "fecha": "2026-07-25T17:00:32.345Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "U. DE CHILE PAUSA FICHAJE GAUTHIER",
       "titulo": "U. de Chile en pausa por Valentín Gauthier: ¿se frustra el fichaje?",
       "fecha": "2026-07-25T21:45:20.494Z"
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: La gran sorpresa de Audax Italiano para buscar el golpe ante Colo Colo en la Cop",
       "titulo": "FÚTBOL CHILENO: La gran sorpresa de Audax Italiano para buscar el golpe ante… | Lo que cambia",
       "fecha": "2026-09-25T16:52:33.315Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: El mensaje de Colo Colo por el fallecimiento de Reinaldo Sánchez, expresidente d",
+      "titulo": "COLO-COLO: El mensaje de Colo Colo por el fallecimiento de Reinaldo Sánchez,… | Lo que se sabe",
+      "fecha": "2026-09-25T23:11:11.136Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Cuándo juegan Colo Colo vs. Audax Italiano por la vuelta de octavos de final de ",
+      "titulo": "FÚTBOL CHILENO: Cuándo juegan Colo Colo vs. Audax Italiano por la vuelta de… | Lo que cambia",
+      "fecha": "2026-09-25T23:11:11.136Z"
     }
   ]
 }
