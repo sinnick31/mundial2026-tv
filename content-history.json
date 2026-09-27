@@ -3,20 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: CALENDARIO CONFIRMADO",
-      "titulo": "Universidad de Chile: 9 partidos confirmados. ¿Ruta al título?",
-      "fecha": "2026-07-26T04:31:23.597Z"
-    },
-    {
-      "match_id": "554934",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
-      "titulo": "Arsenal con 85 puntos en Premier League: ¿Qué significa esto para el Brasileirão?",
-      "fecha": "2026-07-26T04:31:41.038Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "U. CATÓLICA SE ALEJA DE REFUERZO",
       "titulo": "Refuerzo \"No es opción\" para la UC: ¿Cambia planes del Tati?",
       "fecha": "2026-07-26T13:37:38.007Z"
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: El mensaje de Colo Colo por el fallecimiento de Reinaldo Sánchez, expresidente d",
       "titulo": "FÚTBOL CHILENO: El mensaje de Colo Colo por el fallecimiento de Reinaldo… | Lo que cambia",
       "fecha": "2026-09-26T22:33:02.686Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo tiene rival confirmado para su nuevo desafío de Copa Chile: juega en P",
+      "titulo": "COLO-COLO: Colo Colo tiene rival confirmado para su nuevo desafío de Copa… | Lo que se sabe",
+      "fecha": "2026-09-27T06:26:33.917Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Se acabó el misterio: Colo Colo ya conoce a su rival en los cuartos de final de ",
+      "titulo": "FÚTBOL CHILENO: Se acabó el misterio: Colo Colo ya conoce a su rival en los… | Lo que cambia",
+      "fecha": "2026-09-27T06:26:33.917Z"
     }
   ]
 }
