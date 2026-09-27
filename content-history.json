@@ -3,20 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "U DE CHILE PAUSA FICHAJE GAUTHIER",
-      "titulo": "Valentín Gauthier: su fichaje por la U en pausa, ¿llega al final?",
-      "fecha": "2026-07-26T13:38:01.585Z"
-    },
-    {
-      "match_id": "espn-401850603",
-      "tipo_contenido": "prediccion",
-      "hook": "EQUILIBRIO, PERO NO TANTO",
-      "titulo": "Ñublense y Palestino con 52 puntos: ¿Quién inclinará la balanza?",
-      "fecha": "2026-07-26T13:38:19.888Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "GARNERO: ¿UC SE BAJA DEL TÍTULO?",
       "titulo": "Garnero responde sobre la UC: ¿Pierden opciones de título?",
       "fecha": "2026-07-26T17:02:44.231Z"
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo Colo ya tiene fechas para enfrentar a Puerto Montt por los cuartos de Copa ",
       "titulo": "FÚTBOL CHILENO: Colo Colo ya tiene fechas para enfrentar a Puerto Montt por los… | Lo que cambia",
       "fecha": "2026-09-27T16:40:19.519Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Ganó, pero no alcanzó: Ñublense fue eliminado y Puerto Montt será rival de Colo ",
+      "titulo": "COLO-COLO: Ganó, pero no alcanzó: Ñublense fue eliminado y Puerto Montt será… | Lo que se sabe",
+      "fecha": "2026-09-27T22:53:34.448Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: ¿Colo Colo y la selección chilena? La llamativa última decisión oficial de la AN",
+      "titulo": "FÚTBOL CHILENO: ¿Colo Colo y la selección chilena? La llamativa última decisión… | Lo que cambia",
+      "fecha": "2026-09-27T22:53:34.448Z"
     }
   ]
 }
