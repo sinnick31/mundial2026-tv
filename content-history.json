@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "LA U: ¡9 PARTIDOS CONFIRMADOS!",
-      "titulo": "La U tiene 9 partidos clave por Liga Primera: ¿un calendario brutal o la chance de escapar?",
-      "fecha": "2026-07-26T17:03:02.792Z"
-    },
-    {
-      "match_id": "espn-401850596",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS PREMIER, ANÁLISIS CHILE",
-      "titulo": "Arsenal FC lidera con 85 puntos: ¿Cómo afecta al fútbol chileno?",
-      "fecha": "2026-07-26T17:03:34.771Z"
-    },
-    {
       "match_id": "espn-401850596",
       "tipo_contenido": "prediccion",
       "hook": "DATOS INSUFICIENTES: ANÁLISIS COMPLEJO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: ¿Colo Colo o la selección chilena? Polémica por horarios de Copa Chile junto a a",
       "titulo": "FÚTBOL CHILENO: ¿Colo Colo o la selección chilena? Polémica por horarios de Copa… | Lo que cambia",
       "fecha": "2026-09-28T06:33:16.109Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Ortiz pidió castigo para La U y Everton por incidentes: DT de Colo Colo criticó ",
+      "titulo": "COLO-COLO: Ortiz pidió castigo para La U y Everton por incidentes: DT de Colo… | Lo que se sabe",
+      "fecha": "2026-09-28T19:26:10.330Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Puerto Montt vs Colo Colo: cuándo juegan, formaciones y dónde ver por Copa Chile",
+      "titulo": "FÚTBOL CHILENO: Puerto Montt vs Colo Colo: cuándo juegan, formaciones y dónde… | Lo que cambia",
+      "fecha": "2026-09-28T19:26:10.330Z"
     }
   ]
 }
