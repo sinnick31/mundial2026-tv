@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554936",
-      "tipo_contenido": "narrativa",
-      "hook": "AJUSTES DE MINEIRO CAMBIARON EL PARTIDO",
-      "titulo": "Mineiro ganó 2-1 al Palmeiras: ¿Fue una victoria táctica en el Brasileirão?",
-      "fecha": "2026-07-27T04:41:55.191Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "GARNERO RESPONDE POR TÍTULO UC",
-      "titulo": "Garnero responde sobre título de la UC: ¿Colo Colo saca ventaja?",
-      "fecha": "2026-07-27T04:42:06.991Z"
-    },
-    {
       "match_id": "554937",
       "tipo_contenido": "narrativa",
       "hook": "DEFENSA SÓLIDA GARANTIZÓ TRIUNFO AZUL",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Puerto Montt vs. Colo Colo por Copa Chile: A qué hora y dónde ver EN VIVO por TV",
       "titulo": "FÚTBOL CHILENO: Puerto Montt vs. Colo Colo por Copa Chile: A qué hora y dónde… | Lo que cambia",
       "fecha": "2026-09-29T17:52:50.711Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Puerto Montt 0 - Colo Colo 1: crónica, goles, resumen y resultado de la Copa Chi",
+      "titulo": "COLO-COLO: Puerto Montt 0 - Colo Colo 1: crónica, goles, resumen y resultado de… | Lo que se sabe",
+      "fecha": "2026-09-29T23:33:29.766Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Ha sido un cambio muy grande: pasé de Colo Colo, donde lo tenía todo, a la Terc",
+      "titulo": "FÚTBOL CHILENO: “Ha sido un cambio muy grande: pasé de Colo Colo, donde lo tenía… | Lo que cambia",
+      "fecha": "2026-09-29T23:33:29.766Z"
     }
   ]
 }
