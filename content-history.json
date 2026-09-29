@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850596",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS INSUFICIENTES: ANÁLISIS COMPLEJO",
-      "titulo": "Arsenal sumó 85 puntos en 38 partidos: ¿Qué revela la ausencia de datos chilenos?",
-      "fecha": "2026-07-26T21:52:08.746Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "GARNERO HABLA DE UC, COLO COLO OYE",
-      "titulo": "Garnero responde sobre la UC: ¿Qué significa para Colo-Colo en el torneo?",
-      "fecha": "2026-07-26T21:52:20.596Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "CATÓLICA SE ALEJA DE REFUERZO INTERNACIONAL",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Puerto Montt vs Colo Colo: cuándo juegan, formaciones y dónde ver por Copa Chile",
       "titulo": "FÚTBOL CHILENO: Puerto Montt vs Colo Colo: cuándo juegan, formaciones y dónde… | Lo que cambia",
       "fecha": "2026-09-28T19:26:10.330Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Fernando Ortiz define el equipo de Colo Colo para buscar ventaja ante Puerto Mon",
+      "titulo": "COLO-COLO: Fernando Ortiz define el equipo de Colo Colo para buscar ventaja… | Lo que se sabe",
+      "fecha": "2026-09-29T00:16:49.073Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Con Jozic como testigo de las jóvenes promesas albas: el lado B de la clasificac",
+      "titulo": "FÚTBOL CHILENO: Con Jozic como testigo de las jóvenes promesas albas: el lado B… | Lo que cambia",
+      "fecha": "2026-09-29T00:16:49.073Z"
     }
   ]
 }
