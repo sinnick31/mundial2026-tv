@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850420",
-      "tipo_contenido": "narrativa",
-      "hook": "SOLIDEZ CONCEPCIONISTA DETIENE A O'HIGGINS",
-      "titulo": "Deportes Concepcion 2-0 O'Higgins: ¿Cuál fue la clave táctica del León?",
-      "fecha": "2026-07-27T04:41:33.073Z"
-    },
-    {
-      "match_id": "554935",
-      "tipo_contenido": "narrativa",
-      "hook": "COMPARTEN PUNTOS, ¿QUÉ FUE CLAVE?",
-      "titulo": "Grêmio 1-1 Fluminense en Brasileirão: ¿igualdad táctica o faltó ambición?",
-      "fecha": "2026-07-27T04:41:44.574Z"
-    },
-    {
       "match_id": "554936",
       "tipo_contenido": "narrativa",
       "hook": "AJUSTES DE MINEIRO CAMBIARON EL PARTIDO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Colo Colo entra en una etapa clave: cuartos de Copa Chile y regreso de la liga e",
       "titulo": "FÚTBOL CHILENO: Colo Colo entra en una etapa clave: cuartos de Copa Chile y… | Lo que cambia",
       "fecha": "2026-09-29T06:42:42.840Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: “Ha sido un cambio muy grande: pasé de Colo Colo, donde lo tenía todo, a la Terc",
+      "titulo": "COLO-COLO: “Ha sido un cambio muy grande: pasé de Colo Colo, donde lo tenía… | Lo que se sabe",
+      "fecha": "2026-09-29T17:52:50.711Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Puerto Montt vs. Colo Colo por Copa Chile: A qué hora y dónde ver EN VIVO por TV",
+      "titulo": "FÚTBOL CHILENO: Puerto Montt vs. Colo Colo por Copa Chile: A qué hora y dónde… | Lo que cambia",
+      "fecha": "2026-09-29T17:52:50.711Z"
     }
   ]
 }
