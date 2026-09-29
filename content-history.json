@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CATÓLICA SE ALEJA DE REFUERZO INTERNACIONAL",
-      "titulo": "Refuerzo internacional no es opción para la UC: ¿Cambia la estrategia de fichajes?",
-      "fecha": "2026-07-26T21:52:31.519Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U. DE CHILE: 9 PARTIDOS CONFIRMADOS",
-      "titulo": "U. de Chile: 9 partidos ya con fecha. ¿Ruta definida para la Copa?",
-      "fecha": "2026-07-26T21:52:40.679Z"
-    },
-    {
       "match_id": "espn-401850420",
       "tipo_contenido": "narrativa",
       "hook": "SOLIDEZ CONCEPCIONISTA DETIENE A O'HIGGINS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Con Jozic como testigo de las jóvenes promesas albas: el lado B de la clasificac",
       "titulo": "FÚTBOL CHILENO: Con Jozic como testigo de las jóvenes promesas albas: el lado B… | Lo que cambia",
       "fecha": "2026-09-29T00:16:49.073Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Lo dirigió Jozic y Pekerman: la historia del DT de Puerto Montt que desafía a Co",
+      "titulo": "COLO-COLO: Lo dirigió Jozic y Pekerman: la historia del DT de Puerto Montt que… | Lo que se sabe",
+      "fecha": "2026-09-29T06:42:42.840Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo Colo entra en una etapa clave: cuartos de Copa Chile y regreso de la liga e",
+      "titulo": "FÚTBOL CHILENO: Colo Colo entra en una etapa clave: cuartos de Copa Chile y… | Lo que cambia",
+      "fecha": "2026-09-29T06:42:42.840Z"
     }
   ]
 }
