@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554948",
-      "tipo_contenido": "prediccion",
-      "hook": "EMPATES RECIENTES: ¿QUIÉN DESBLOQUEA?",
-      "titulo": "São Paulo 1-1 Flamengo: ¿Cómo afectan los empates al Clásico?",
-      "fecha": "2026-07-27T17:44:16.980Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DOMINIO NETO EN EL CAMPO",
-      "titulo": "Barça con +59 en GD: ¿El dominio total de La Liga?",
-      "fecha": "2026-07-27T17:44:28.582Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "VOZINHA A COLO-COLO: INTERMEDIARIO CLAVE",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Con gol agónico de Pastrán: Colo Colo venció a Pto. Montt en Chinquihue y roza l",
       "titulo": "FÚTBOL CHILENO: Con gol agónico de Pastrán: Colo Colo venció a Pto. Montt en… | Lo que cambia",
       "fecha": "2026-09-30T23:35:09.810Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: “Ha sido un cambio muy grande: pasé de Colo Colo, donde lo tenía todo, a la Terc",
+      "titulo": "COLO-COLO: “Ha sido un cambio muy grande: pasé de Colo Colo, donde lo tenía… | Lo que se sabe",
+      "fecha": "2026-10-01T07:03:11.899Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: ¿Encontró su puesto? El destacado rendimiento de Jeyson Rojas en Colo Colo por C",
+      "titulo": "FÚTBOL CHILENO: ¿Encontró su puesto? El destacado rendimiento de Jeyson Rojas en… | Lo que cambia",
+      "fecha": "2026-10-01T07:03:11.899Z"
     }
   ]
 }
