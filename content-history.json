@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLOCLO DESCARTA REFUERZO: SIN CONVERSACIÓN",
-      "titulo": "Colo Colo: 'No hay ninguna conversación' por refuerzo, ¿malas noticias para el Cacique?",
-      "fecha": "2026-07-28T17:36:37.512Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO-COLO HIZO HISTORIA EN 93 AÑOS",
-      "titulo": "Colo Colo en 93 años de liga: ¿Cómo logró este récord histórico?",
-      "fecha": "2026-07-28T17:36:49.148Z"
-    },
-    {
       "match_id": "554946",
       "tipo_contenido": "prediccion",
       "hook": "LA INCÓGNITA DEL CLÁSICO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: El principal cambio que prepara Colo Colo para revancha por Copa Chile: “Nos cos",
       "titulo": "FÚTBOL CHILENO: El principal cambio que prepara Colo Colo para revancha por Copa… | Lo que cambia",
       "fecha": "2026-10-02T23:38:06.549Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Alerta en Colo Colo: analizan cambio de estadio en partido clave por la Liga de ",
+      "titulo": "COLO-COLO: Alerta en Colo Colo: analizan cambio de estadio en partido clave por… | Lo que se sabe",
+      "fecha": "2026-10-03T06:17:06.255Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para la revancha en Co",
+      "titulo": "FÚTBOL CHILENO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para… | Lo que cambia",
+      "fecha": "2026-10-03T06:17:06.255Z"
     }
   ]
 }
