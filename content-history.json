@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "MELE REVELA SU RECHAZO A COLO-COLO",
-      "titulo": "Mele habla por 1ª vez de Colo Colo: ¿Por qué no firmó?",
-      "fecha": "2026-07-28T21:57:24.622Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "GUERRERO ADVIERTE A COLO COLO POR TÍTULO",
-      "titulo": "Maximiliano Guerrero advierte a Colo Colo: ¿Cómo afecta la carrera por el título?",
-      "fecha": "2026-07-28T21:57:36.289Z"
-    },
-    {
       "match_id": "554949",
       "tipo_contenido": "prediccion",
       "hook": "AMBOS LLEGAN EN DUDAS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para la revancha en Co",
       "titulo": "FÚTBOL CHILENO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para… | Lo que cambia",
       "fecha": "2026-10-03T15:59:00.925Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Los estadios que son opción para recibir el Colo Colo vs Palestino por la Liga d",
+      "titulo": "COLO-COLO: Los estadios que son opción para recibir el Colo Colo vs Palestino… | Lo que se sabe",
+      "fecha": "2026-10-03T22:47:38.081Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para la revancha en Co",
+      "titulo": "FÚTBOL CHILENO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para… | Lo que cambia",
+      "fecha": "2026-10-03T22:47:38.081Z"
     }
   ]
 }
