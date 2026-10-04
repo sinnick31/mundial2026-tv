@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "JUGADOR DESCARTADO PARA COLO COLO",
-      "titulo": "Colo Colo: 'ninguna conversación' por refuerzo. ¿Qué significa para el Cacique?",
-      "fecha": "2026-07-29T04:17:11.190Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "VOZINHA A COLO COLO: SOLUCIÓN DE EMERGENCIA",
-      "titulo": "Vozinha llega a Colo Colo: ¿la solución de emergencia para volar?",
-      "fecha": "2026-07-29T04:17:23.251Z"
-    },
-    {
       "match_id": "554945",
       "tipo_contenido": "prediccion",
       "hook": "SIN DATOS CLAVE",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: El calendario de Colo Colo en octubre: Copa Chile, visitas al norte y las Albas ",
       "titulo": "FÚTBOL CHILENO: El calendario de Colo Colo en octubre: Copa Chile, visitas al… | Lo que cambia",
       "fecha": "2026-10-04T06:44:31.117Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para la revancha en Co",
+      "titulo": "COLO-COLO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para la… | Lo que se sabe",
+      "fecha": "2026-10-04T16:42:15.616Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Nos va a favorecer muchísimo”: la gran ventaja que celebran en Colo-Colo para s",
+      "titulo": "FÚTBOL CHILENO: “Nos va a favorecer muchísimo”: la gran ventaja que celebran en… | Lo que cambia",
+      "fecha": "2026-10-04T16:42:15.616Z"
     }
   ]
 }
