@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554943",
-      "tipo_contenido": "prediccion",
-      "hook": "ANÁLISIS SIN DATOS",
-      "titulo": "Tabla de posiciones marca 0 PJ: ¿Corinthians vs Paranaense sin estadísticas?",
-      "fecha": "2026-07-29T14:19:59.041Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "EX COLO COLO A TERCERA",
-      "titulo": "Ex Colo Colo confirma llegada a Tercera División: ¿Decisión esperada?",
-      "fecha": "2026-07-29T17:16:31.141Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "VALDÉS DA PASO CLAVE A COLO COLO",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Repasa la victoria y los goles del triunfo de Colo Colo sobre la U en el Supercl",
       "titulo": "FÚTBOL CHILENO: Repasa la victoria y los goles del triunfo de Colo Colo sobre la… | Lo que cambia",
       "fecha": "2026-10-05T06:45:18.780Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo y Deportes Puerto Montt definirán un nuevo semifinalista de la Copa Ch",
+      "titulo": "COLO-COLO: Colo Colo y Deportes Puerto Montt definirán un nuevo semifinalista… | Lo que se sabe",
+      "fecha": "2026-10-05T20:24:57.549Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo Colo y su probable formación para enfrentar a Deportes Puerto Montt en la C",
+      "titulo": "FÚTBOL CHILENO: Colo Colo y su probable formación para enfrentar a Deportes… | Lo que cambia",
+      "fecha": "2026-10-05T20:24:57.549Z"
     }
   ]
 }
