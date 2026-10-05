@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "MELE RECHAZÓ A COLO COLO",
-      "titulo": "Santiago Mele plantó a Colo Colo: ¿Por qué eligió otro destino?",
-      "fecha": "2026-07-29T14:19:31.736Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "MELE A INDEPENDIENTE: COLO COLO LO PERDIÓ",
-      "titulo": "Santiago Mele ya es de Independiente: ¿Colo Colo lo dejó escapar?",
-      "fecha": "2026-07-29T14:19:40.887Z"
-    },
-    {
       "match_id": "554943",
       "tipo_contenido": "prediccion",
       "hook": "ANÁLISIS SIN DATOS",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para la revancha en Co",
       "titulo": "FÚTBOL CHILENO: “Se va a notar mucho”: Colo Colo apela al “factor cancha” para… | Lo que cambia",
       "fecha": "2026-10-04T22:55:41.200Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Con Colo Colo, la U y Católica adentro: Así serán las semifinales en Liga Femeni",
+      "titulo": "COLO-COLO: Con Colo Colo, la U y Católica adentro: Así serán las semifinales en… | Lo que se sabe",
+      "fecha": "2026-10-05T06:45:18.780Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Repasa la victoria y los goles del triunfo de Colo Colo sobre la U en el Supercl",
+      "titulo": "FÚTBOL CHILENO: Repasa la victoria y los goles del triunfo de Colo Colo sobre la… | Lo que cambia",
+      "fecha": "2026-10-05T06:45:18.780Z"
     }
   ]
 }
