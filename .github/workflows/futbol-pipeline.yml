@@ -1,9 +1,4 @@
-name: ⚽ REAL FOOTBALL NEWSROOM v6 — Chile 365
-
-# Canal editorial de fútbol chileno con trazabilidad de fuentes.
-# No se inventan resultados, cifras, fichajes ni declaraciones.
-# Cadencia agresiva pero controlada: 2 Shorts por ejecución, 3 ejecuciones/día
-# y 1 resumen largo diario. Esto prioriza calidad + horas de reproducción.
+name: ⚽ MUNDIAL2026SHORTS v7 — Newsroom
 
 on:
   push:
@@ -12,15 +7,15 @@ on:
       - 'content-history.json'
       - 'news-cache.json'
   schedule:
-    - cron: '0 12 * * *'
-    - cron: '0 20 * * *'
-    - cron: '0 1 * * *'
+    - cron: '0 15 * * *'
+    - cron: '0 19 * * *'
+    - cron: '0 23 * * *'
   workflow_dispatch:
     inputs:
       max_items:
-        description: 'Máximo de Shorts en esta ejecución'
+        description: 'Shorts máximos'
         required: false
-        default: '2'
+        default: '1'
         type: choice
         options: ['1', '2']
       modo:
@@ -29,14 +24,9 @@ on:
         default: 'chile'
         type: choice
         options: ['chile', 'auto', 'noticias']
-      resumen_largo:
-        description: 'Generar también resumen horizontal largo'
-        required: false
-        default: true
-        type: boolean
 
 concurrency:
-  group: real-football-newsroom-${{ github.ref }}
+  group: mundial2026shorts-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -47,224 +37,156 @@ env:
 
 jobs:
   generate:
-    name: 📰 Fuentes reales + selección editorial Chile
+    name: 📰 Detectar noticia + guion original
     runs-on: ubuntu-latest
     timeout-minutes: 20
     outputs:
       hay_contenido: ${{ steps.gen.outputs.hay_contenido }}
-      hay_longform: ${{ steps.longform.outputs.hay_longform }}
       fecha: ${{ steps.gen.outputs.fecha }}
     steps:
-      - name: 📦 Checkout
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - name: ⚙️ Configurar Node.js
-        uses: actions/setup-node@v5
+
+      - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-      - name: 📥 Instalar dependencias
-        run: npm ci
-      - name: 🔍 Ingerir fuentes reales
+          cache: npm
+
+      - run: npm ci
+
+      - name: 🔎 Ingerir fuentes verificables
         run: node scripts/fetch-real-news.js
-      - name: ⚽ Obtener datos estructurados de fútbol internacional
+
+      - name: ⚽ Obtener datos estructurados
         env:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
           COMPETITIONS: ${{ secrets.COMPETITIONS }}
         run: node scripts/fetch-matches.js
-      - name: 🧭 Generar paquete editorial source-locked
+
+      - name: 🧠 Seleccionar SOLO historias con valor
         id: gen
         env:
-          MAX_ITEMS: ${{ inputs.max_items || '2' }}
+          MAX_ITEMS: ${{ inputs.max_items || '1' }}
           MODO: ${{ inputs.modo || 'chile' }}
         run: |
           node scripts/generate-real-content.js
           FECHA=$(date -u +%Y-%m-%d)
           echo "fecha=$FECHA" >> "$GITHUB_OUTPUT"
           TOTAL=$(node -e "const f=require('./daily-content.json'); console.log(f.total||0)")
-          echo "📊 Piezas seleccionadas: $TOTAL"
+          echo "Piezas seleccionadas: $TOTAL"
           if [ "$TOTAL" -gt 0 ]; then echo "hay_contenido=true" >> "$GITHUB_OUTPUT"; else echo "hay_contenido=false" >> "$GITHUB_OUTPUT"; fi
-      - name: 🧭 Generar resumen largo
-        id: longform
-        env:
-          LONGFORM_REQUESTED: ${{ inputs.resumen_largo || 'false' }}
-          EVENTO: ${{ github.event_name }}
-          CRON: ${{ github.event.schedule }}
-        run: |
-          RUN_LONGFORM=false
-          if [ "$EVENTO" = "schedule" ] && [ "$CRON" = "0 20 * * *" ]; then RUN_LONGFORM=true; fi
-          if [ "$EVENTO" = "workflow_dispatch" ] && [ "$LONGFORM_REQUESTED" = "true" ]; then RUN_LONGFORM=true; fi
-          if [ "$EVENTO" = "push" ]; then RUN_LONGFORM=true; fi
-          if [ "$RUN_LONGFORM" = "true" ]; then node scripts/generate-longform-content.js; else printf '%s\n' '{"fecha":"'"$(date -u +%Y-%m-%d)'"'","total":0,"contenido":null}' > daily-longform.json; fi
-          TOTAL=$(node -e "const f=require('./daily-longform.json'); console.log(f.total||0)")
-          echo "Resumen largo: $TOTAL fuentes"
-          if [ "$TOTAL" -gt 0 ]; then echo "hay_longform=true" >> "$GITHUB_OUTPUT"; else echo "hay_longform=false" >> "$GITHUB_OUTPUT"; fi
-      - name: 🛡️ Validación editorial antes de publicar
+
+      - name: 🛡️ Bloqueo editorial
         if: steps.gen.outputs.hay_contenido == 'true'
         run: |
           node - <<'NODE'
-          const fs = require('fs');
-          const data = JSON.parse(fs.readFileSync('daily-content.json','utf8'));
-          if (!data.total || !Array.isArray(data.contenido)) throw new Error('daily-content inválido');
-          for (const [i, item] of data.contenido.entries()) {
-            if (!item._fuente_url || !/^https?:\/\//.test(item._fuente_url)) throw new Error(`Pieza ${i+1}: falta URL de fuente`);
-            if (!item._fuente) throw new Error(`Pieza ${i+1}: falta fuente`);
-            if (!item.titulo_youtube) throw new Error(`Pieza ${i+1}: falta título`);
-            if (!item.narracion || item.narracion.length < 180) throw new Error(`Pieza ${i+1}: falta narración editorial original`);
-            if (!item.descripcion_youtube || item.descripcion_youtube.length < 180) throw new Error(`Pieza ${i+1}: descripción demasiado corta`);
+          const fs=require('fs');
+          const d=JSON.parse(fs.readFileSync('daily-content.json','utf8'));
+          if(!d.total || !Array.isArray(d.contenido)) throw new Error('daily-content inválido');
+          for(const [i,x] of d.contenido.entries()){
+            if(!x._fuente_url || !/^https?:\/\//.test(x._fuente_url)) throw new Error('Pieza '+(i+1)+': URL de fuente ausente');
+            if(!x._fuente) throw new Error('Pieza '+(i+1)+': fuente ausente');
+            if(!x.titulo_youtube) throw new Error('Pieza '+(i+1)+': título ausente');
+            if(!x.narracion || x.narracion.length<180) throw new Error('Pieza '+(i+1)+': narración original insuficiente');
           }
-          console.log('✅ SOURCE LOCK + NARRACIÓN EDITORIAL OK');
+          console.log('SOURCE LOCK + ORIGINALIDAD OK');
           NODE
-      - name: 💾 Guardar historial + caché
+
+      - name: 💾 Guardar memoria editorial
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          if git diff --quiet -- content-history.json news-cache.json; then
-            echo "Sin cambios para guardar"
-            exit 0
+          git add content-history.json news-cache.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "chore: actualizar memoria editorial [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
 
-          git add content-history.json news-cache.json
-          git commit -m "chore: actualizar fuentes y memoria editorial [skip ci]"
-          git push origin HEAD:main
-          echo "✅ Historial y caché publicados en main"
-
-      - name: 📦 Guardar paquetes editoriales
-        if: steps.gen.outputs.hay_contenido == 'true' || steps.longform.outputs.hay_longform == 'true'
+      - name: 📦 Entregar paquete
+        if: steps.gen.outputs.hay_contenido == 'true'
         uses: actions/upload-artifact@v6
         with:
-          name: contenido-diario-${{ steps.gen.outputs.fecha }}-${{ github.run_number }}
-          path: |
-            daily-content.json
-            daily-longform.json
+          name: contenido-${{ steps.gen.outputs.fecha }}-${{ github.run_number }}
+          path: daily-content.json
           retention-days: 7
 
-  render-upload:
-    name: 🎬 Render + Shorts YouTube
+  publish:
+    name: 🎬 Render + publicar Short
     runs-on: ubuntu-latest
     needs: generate
     if: needs.generate.outputs.hay_contenido == 'true'
     timeout-minutes: 60
     steps:
-      - name: 📦 Checkout
-        uses: actions/checkout@v5
-      - name: ⚙️ Configurar Node.js
-        uses: actions/setup-node@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-      - name: 📥 Instalar dependencias
-        run: npm ci
-      - name: 🔐 Validar autenticación de YouTube
+          cache: npm
+      - run: npm ci
+
+      - name: 🔐 Comprobar YouTube OAuth
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: node scripts/preflight-youtube-auth.js
+
       - name: 🌐 Preparar Remotion
         run: |
           npx remotion browser ensure
           echo "REMOTION_CHROME_FLAGS=--no-sandbox --disable-setuid-sandbox" >> "$GITHUB_ENV"
+
       - name: 🎞️ Instalar ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: ⚽ Obtener b-roll real de apoyo
-        env:
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-        run: node scripts/fetch-broll.js
-      - name: 📥 Descargar paquete editorial
+
+      - name: 📥 Descargar paquete
         uses: actions/download-artifact@v6
         with:
-          name: contenido-diario-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
-      - name: 🎥 Renderizar + publicar Shorts
+          name: contenido-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
+
+      - name: 🎥 Renderizar + publicar
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: node scripts/render-and-upload.js
-      - name: 🔎 Verificar evidencia de publicación
+
+      - name: 🔎 Verificar publicación
         env:
           REPORT: out/reporte-${{ needs.generate.outputs.fecha }}.json
         run: |
-          if [ ! -f "$REPORT" ]; then echo "❌ No existe el reporte de publicación: $REPORT"; exit 1; fi
+          test -f "$REPORT"
           node - <<'NODE'
-          const fs = require('fs');
-          const report = JSON.parse(fs.readFileSync(process.env.REPORT, 'utf8'));
-          const publicados = (report.videos || []).filter(v => v.estado === 'OK' && v.youtube_id && v.youtube_url);
-          console.log(`📺 Evidencia YouTube: ${publicados.length}/${report.total}`);
-          if (report.total > 0 && publicados.length !== report.total) process.exit(1);
+          const fs=require('fs');
+          const r=JSON.parse(fs.readFileSync(process.env.REPORT,'utf8'));
+          const ok=(r.videos||[]).filter(v=>v.estado==='OK'&&v.youtube_id&&v.youtube_url);
+          console.log('YouTube: '+ok.length+'/'+r.total);
+          if(r.total>0 && ok.length!==r.total) process.exit(1);
           NODE
-      - name: 💾 Backup Shorts
+
+      - name: 💾 Backup
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: shorts-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
+          name: short-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
           path: out/
           retention-days: 7
 
-  longform:
-    name: 🎥 Resumen largo 16:9
+  report:
+    name: 📊 Estado final
     runs-on: ubuntu-latest
-    needs: generate
-    if: needs.generate.outputs.hay_longform == 'true'
-    timeout-minutes: 60
-    steps:
-      - name: 📦 Checkout
-        uses: actions/checkout@v5
-      - name: ⚙️ Configurar Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-      - name: 📥 Instalar dependencias
-        run: npm ci
-      - name: 🔐 Validar autenticación de YouTube
-        env:
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-        run: node scripts/preflight-youtube-auth.js
-      - name: 🌐 Preparar Remotion
-        run: |
-          npx remotion browser ensure
-          echo "REMOTION_CHROME_FLAGS=--no-sandbox --disable-setuid-sandbox" >> "$GITHUB_ENV"
-      - name: 📥 Descargar paquete editorial
-        uses: actions/download-artifact@v6
-        with:
-          name: contenido-diario-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
-      - name: 🎥 Renderizar + publicar resumen largo
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-        run: node scripts/render-longform.js
-      - name: 💾 Backup resumen largo
-        if: always()
-        uses: actions/upload-artifact@v6
-        with:
-          name: longform-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
-          path: out/
-          retention-days: 14
-
-  notify:
-    name: 📊 Reporte final
-    runs-on: ubuntu-latest
-    needs: [generate, render-upload, longform]
+    needs: [generate, publish]
     if: always()
     steps:
-      - name: 📊 Estado del pipeline
-        run: |
-          echo "══════════════════════════════════════════════"
-          echo "⚽ REAL FOOTBALL NEWSROOM v6"
-          echo "Run #${{ github.run_number }}"
+      - run: |
+          echo "MUNDIAL2026SHORTS v7"
           echo "Generación: ${{ needs.generate.result }}"
-          echo "Shorts: ${{ needs.render-upload.result }}"
-          echo "Longform: ${{ needs.longform.result }}"
-          if [ "${{ needs.generate.result }}" = "success" ] && [ "${{ needs.render-upload.result }}" = "success" ]; then echo "✅ Shorts publicados y verificados"; fi
-          if [ "${{ needs.longform.result }}" = "success" ]; then echo "✅ Resumen largo publicado"; fi
-          if [ "${{ needs.generate.result }}" != "success" ]; then echo "❌ Falló la generación"; exit 1; fi
-          if [ "${{ needs.render-upload.result }}" = "failure" ] || [ "${{ needs.render-upload.result }}" = "cancelled" ]; then echo "❌ Falló la publicación de Shorts"; exit 1; fi
-          if [ "${{ needs.longform.result }}" = "failure" ] || [ "${{ needs.longform.result }}" = "cancelled" ]; then echo "❌ Falló el resumen largo"; exit 1; fi
+          echo "Publicación: ${{ needs.publish.result }}"
+          if [ "${{ needs.generate.result }}" != "success" ]; then exit 1; fi
+          if [ "${{ needs.publish.result }}" = "failure" ] || [ "${{ needs.publish.result }}" = "cancelled" ]; then exit 1; fi
