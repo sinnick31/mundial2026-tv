@@ -34,8 +34,6 @@ permissions:
 
 env:
   NODE_VERSION: '24'
-  GIT_USER_NAME: 'github-actions[bot]'
-  GIT_USER_EMAIL: 'github-actions[bot]@users.noreply.github.com'
 
 jobs:
   generate:
@@ -53,15 +51,8 @@ jobs:
 
       - name: 🔧 Configurar Git
         run: |
-          git config --global user.name "${{ env.GIT_USER_NAME }}"
-          git config --global user.email "${{ env.GIT_USER_EMAIL }}"
-
-      - name: 🔄 Sincronizar con el último main
-        run: |
-          git fetch origin main --prune
-          git reset --hard origin/main
-          git clean -fd
-          echo "✅ Repositorio sincronizado con origin/main"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - uses: actions/setup-node@v5
         with:
@@ -113,60 +104,47 @@ jobs:
         run: |
           echo "🔍 Verificando cambios en archivos de memoria..."
           
-          if ! git diff --quiet content-history.json news-cache.json 2>/dev/null; then
-            echo "📝 Cambios detectados, preparando commit..."
-            git add content-history.json news-cache.json
+          # Verificar si hay cambios
+          if git diff --quiet content-history.json news-cache.json 2>/dev/null; then
+            echo "ℹ️  Sin cambios en memoria editorial"
+            exit 0
+          fi
+          
+          echo "📝 Cambios detectados..."
+          
+          # Agregar cambios
+          git add content-history.json news-cache.json
+          
+          # Crear commit local
+          git commit -m "chore: actualizar memoria editorial [skip ci]" --no-verify || exit 0
+          
+          echo "🔄 Sincronizando cambios con origin/main..."
+          
+          # Usar force-with-lease para evitar rebase, pero respetar cambios remotos
+          # Si hay conflicto, hacer push de nuestra versión
+          for attempt in 1 2 3; do
+            echo "Intento $attempt/3..."
             
-            if ! git commit -m "chore: actualizar memoria editorial [skip ci]" --no-verify 2>/dev/null; then
-              echo "⚠️  Sin cambios nuevos para commit"
+            if git push origin HEAD:main --force-with-lease; then
+              echo "✅ Push exitoso"
               exit 0
             fi
             
-            echo "🔄 Intentando sincronizar con origin/main sin rebase..."
+            # Si push falla, hacer fetch e intentar de nuevo
+            git fetch origin main
             
-            # Estrategia 1: Merge seguro con --no-rebase
-            if git pull --no-rebase origin main --strategy=ours 2>/dev/null; then
-              echo "✅ Merge exitoso con estrategia 'ours'"
-              if git push origin HEAD:main; then
-                echo "✅ Push exitoso"
-              else
-                echo "⚠️  Push fallido, sincronizando..."
-                git fetch origin main
-                git reset --hard origin/main
-              fi
-            else
-              echo "⚠️  Merge fallido, resolviendo con estrategia de resolución..."
-              
-              # Abort el merge fallido
-              git merge --abort 2>/dev/null || true
-              
-              # Resolver: preferir nuestra versión
+            if ! git diff --quiet origin/main -- content-history.json news-cache.json; then
+              echo "Hay cambios remotos conflictivos, resolviendo..."
+              # Preferir nuestra versión y reintentar commit
               git checkout --ours content-history.json news-cache.json
               git add content-history.json news-cache.json
               git commit --amend --no-edit --no-verify 2>/dev/null || true
-              
-              # Reintentar merge
-              if git pull --no-rebase origin main --strategy=ours 2>/dev/null; then
-                echo "✅ Merge exitoso tras resolver conflictos"
-                if git push origin HEAD:main; then
-                  echo "✅ Push exitoso"
-                else
-                  echo "⚠️  Push fallido, sincronizando..."
-                  git fetch origin main
-                  git reset --hard origin/main
-                fi
-              else
-                # Último recurso: sincronizar con remote
-                echo "⚠️  Merge persistente, usando versión remota"
-                git merge --abort 2>/dev/null || true
-                git fetch origin main
-                git reset --hard origin/main
-                echo "ℹ️  Repositorio sincronizado con origin/main"
-              fi
             fi
-          else
-            echo "ℹ️  Sin cambios en archivos de memoria editorial"
-          fi
+            
+            sleep 2
+          done
+          
+          echo "⚠️  Push no pudo completarse, pero cambios locales están guardados"
 
       - name: 📦 Entregar paquete
         if: steps.gen.outputs.hay_contenido == 'true'
