@@ -13,7 +13,7 @@
  */
 
 const { execSync } = require('child_process');
-const { google } = require('googleapis');
+const { getAuthenticatedYouTube } = require('./youtube-auth');
 const fs = require('fs');
 const path = require('path');
 const { generarNarracion, construirGuion } = require('./generate-narration');
@@ -38,14 +38,9 @@ function fuenteTexto(item) {
   return `Fuente: ${fuente} — ${fecha}`;
 }
 
-function getYouTubeClient() {
-  const oauth2Client = new google.auth.OAuth2(
-    process.env.YOUTUBE_CLIENT_ID,
-    process.env.YOUTUBE_CLIENT_SECRET,
-    'urn:ietf:wg:oauth:2.0:oob'
-  );
-  oauth2Client.setCredentials({ refresh_token: process.env.YOUTUBE_REFRESH_TOKEN });
-  return google.youtube({ version: 'v3', auth: oauth2Client });
+async function getYouTubeClient() {
+  const { youtube } = await getAuthenticatedYouTube();
+  return youtube;
 }
 
 function elegirBroll() {
@@ -207,7 +202,7 @@ async function main() {
 
   console.log(`\n🚀 Procesando ${contenido.length} video(s) único(s) para el ${fecha}\n`);
 
-  const youtube = getYouTubeClient();
+  const youtube = await getYouTubeClient();
   const outDir = `out/${fecha}`;
   fs.mkdirSync(outDir, { recursive: true });
   fs.mkdirSync(PUBLIC_TMP_DIR, { recursive: true });
