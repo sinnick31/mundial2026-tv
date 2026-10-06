@@ -26,6 +26,7 @@ on:
         options: ['chile', 'auto', 'noticias']
 
 concurrency:
+  # Ejecuciones serializadas: nunca hacemos rebase de la memoria editorial.
   group: mundial2026shorts-${{ github.ref }}
   cancel-in-progress: false
 
