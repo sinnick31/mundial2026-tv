@@ -168,11 +168,12 @@ jobs:
           cache: npm
       - run: npm ci
 
-      - name: 🔐 Comprobar YouTube OAuth
+      - name: 🔐 Validar YouTube OAuth v8
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
         run: node scripts/preflight-youtube-auth.js
 
       - name: 🌐 Preparar Remotion
