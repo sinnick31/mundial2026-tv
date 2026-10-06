@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554944",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS AUSENTES, JUEGO INCIERTO",
-      "titulo": "Tabla sin datos para Brasileirão: ¿cómo analizar Coritiba-Cruzeiro?",
-      "fecha": "2026-07-29T17:17:11.695Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "EX COLO COLO EN TERCERA DIVISIÓN",
-      "titulo": "Ex Colo Colo deja Primera y ficha en 3ra categoría: ¿Por qué el descenso?",
-      "fecha": "2026-07-29T21:52:29.314Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "CLARK NO ES HINCHA DE LA U",
@@ -3499,6 +3485,20 @@
       "hook": "FÚTBOL CHILENO: Gago no da por perdido el título de la Liga de Primera para la U y analiza el re",
       "titulo": "FÚTBOL CHILENO: Gago no da por perdido el título de la Liga de Primera para la U… | Lo que cambia",
       "fecha": "2026-10-06T01:14:39.472Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Colo Colo enfrenta a Deportes Puerto Montt por el paso a semifinales de la Copa ",
+      "titulo": "COLO-COLO: Colo Colo enfrenta a Deportes Puerto Montt por el paso a semifinales… | Lo que se sabe",
+      "fecha": "2026-10-06T07:24:26.678Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Gago no da por perdido el título de la Liga de Primera para la U y analiza el re",
+      "titulo": "FÚTBOL CHILENO: Gago no da por perdido el título de la Liga de Primera para la U… | Lo que cambia",
+      "fecha": "2026-10-06T07:24:26.678Z"
     }
   ]
 }
