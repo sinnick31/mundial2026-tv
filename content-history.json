@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "MELE REVELA POR QUÉ RECHAZÓ A COLO COLO",
-      "titulo": "Santiago Mele revela por qué 'plantó' a Colo Colo: ¿un giro inesperado para el Cacique?",
-      "fecha": "2026-07-30T14:10:55.279Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "MÁQUINAS GOLEADORAS BUNDESLIGA",
       "titulo": "Bayern con 3.59 goles/partido: ¿La ofensiva imparable? ⚽",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Fernando Gago lanza advertencia a Colo Colo antes del regreso de la Liga de Prim",
       "titulo": "COLO-COLO: Fernando Gago lanza advertencia a Colo Colo antes del regreso de la… | Lo que se sabe",
       "fecha": "2026-10-07T01:58:43.621Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto Montt por Cop",
+      "titulo": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto… | Lo que se sabe",
+      "fecha": "2026-10-07T22:15:17.539Z"
     }
   ]
 }
