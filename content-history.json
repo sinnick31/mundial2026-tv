@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "MÁQUINAS GOLEADORAS BUNDESLIGA",
-      "titulo": "Bayern con 3.59 goles/partido: ¿La ofensiva imparable? ⚽",
-      "fecha": "2026-07-30T14:11:15.116Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "JORDHY THOMPSON ROMPE EL SILENCIO",
       "titulo": "Jordhy Thompson: ¿Qué dijo sobre su frustrado fichaje en Colo Colo?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto Montt por Cop",
       "titulo": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto… | Lo que se sabe",
       "fecha": "2026-10-07T22:15:17.539Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto Montt por Cop",
+      "titulo": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto… | Lo que se sabe",
+      "fecha": "2026-10-07T23:33:45.326Z"
     }
   ]
 }
