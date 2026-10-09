@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "MICHAEL CLARK NO ES HINCHA DE LA U",
-      "titulo": "Michael Clark, presidente de la U, no es azul: ¿es común en el fútbol chileno?",
-      "fecha": "2026-07-30T22:00:59.107Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "EFICIENCIA DEFENSIVA TOP",
       "titulo": "Bayern tiene 2.47 puntos/gol encajado: ¿es la defensa clave de su éxito?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: ¿Dardo para Marcelino? El mensaje de Gabriel Suazo en las redes sociales tras…",
       "titulo": "FÚTBOL CHILENO: ¿Dardo para Marcelino? El mensaje de Gabriel Suazo en las redes… | Lo que cambia",
       "fecha": "2026-10-09T20:11:00.938Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo-Colo y Huachipato arrasan: los 5 clubes de Primera que ya cumplieron el…",
+      "titulo": "FÚTBOL CHILENO: Colo-Colo y Huachipato arrasan: los 5 clubes de Primera que ya… | Lo que cambia",
+      "fecha": "2026-10-09T20:23:35.022Z"
     }
   ]
 }
