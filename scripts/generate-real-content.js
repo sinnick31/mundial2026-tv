@@ -42,8 +42,9 @@ function isChileanAbroad(item) {
 }
 function importance(item) {
   let score = Number(item.viral_score || 0);
-  if (isColo(item)) score += 100;
-  if (isChileCompetition(item)) score += 50;
+  if (isColo(item)) score += 28;
+  if (isChileCompetition(item)) score += 55;
+  if (item.categoria === 'internacional') score += 24;
   if (isChileanAbroad(item)) score += 45;
   score += Math.max(0, 48 - ageHours(item)) / 4;
   score += Number(item.prioridad_fuente || 0) / 2;
