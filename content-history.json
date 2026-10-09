@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EFICIENCIA POR VICTORIA EN BUNDESLIGA",
-      "titulo": "Bayern 3.178 puntos/victoria: ¿El equipo más eficiente en Bundesliga?",
-      "fecha": "2026-07-30T17:29:25.245Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "THOMPSON ROMPE SILENCIO POR FICHAJE FRUSTRADO",
       "titulo": "Jordhy Thompson se pronuncia sobre Colo Colo: ¿futuro en el aire?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto Montt por Cop",
       "titulo": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto… | Lo que se sabe",
       "fecha": "2026-10-08T23:43:57.015Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto Montt por Cop",
+      "titulo": "COLO-COLO: Revelan la fecha y horario de la reanudación de Colo Colo - Puerto… | Lo que se sabe",
+      "fecha": "2026-10-09T19:40:10.988Z"
     }
   ]
 }
