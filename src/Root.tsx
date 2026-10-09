@@ -50,16 +50,16 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={{
-          gancho: "¡ARGENTINA ELIMINADA!",
-          subtitulo: "La IA predice el mayor shock del Mundial 2026",
-          descripcion: "Argentina quedará fuera en octavos de final ante Francia.",
-          equipo1: "Argentina",
-          equipo2: "Francia",
-          probabilidad: 67,
+          gancho: "ÚLTIMA HORA DEL FÚTBOL",
+          subtitulo: "Noticias de fútbol chileno y mundial",
+          descripcion: "Resumen editorial con fuente, fecha y contexto verificados antes de publicar.",
+          equipo1: "Fútbol chileno",
+          equipo2: "Fútbol mundial",
+          probabilidad: 0,
           puntos: [
-            "Francia llega en su mejor momento con Mbappé imparable",
-            "Argentina con lesiones en defensa y mediocampo",
-            "El factor Francia como favorita histórica del torneo",
+            "Hechos confirmados desde una fuente identificable",
+            "Fecha de publicación separada de la fecha del partido",
+            "Análisis editorial propio, separado de los hechos",
           ],
           emoji: "⚽",
           tipo: "eliminacion",
