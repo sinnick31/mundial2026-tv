@@ -80,10 +80,17 @@ function titleFor(item, type) {
   const short = base.length > room ? `${base.slice(0, room - 1).replace(/\s+\S*$/, '')}…` : base;
   return `${label}: ${short}${suffix}`.slice(0, 100);
 }
+function fechaPublicacion(item) {
+  const raw = item.pubDate || item.timestamp;
+  if (!raw || Number.isNaN(Date.parse(raw))) return null;
+  return new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(raw));
+}
 function buildNarration(item, type, resumen) {
   const title = clean(item.title);
   const sourceName = clean(item.fuente || item.fuente_host || 'la fuente original');
-  return [`${labelFor(type)}. ${title}.`, `El dato confirmado por ${sourceName} es el siguiente: ${resumen}`, editorialAngle(type), closingQuestion(type)].join(' ');
+  const fecha = fechaPublicacion(item);
+  const fechaTexto = fecha ? `La publicación de ${sourceName} está fechada el ${fecha}. Esta es la fecha de publicación de la fuente, no necesariamente la fecha del partido.` : 'La fecha de publicación no pudo verificarse con los datos disponibles, por lo que no se afirma una fecha de partido.';
+  return [`${labelFor(type)}.`, title, `Según ${sourceName}: ${resumen}`, fechaTexto, editorialAngle(type), closingQuestion(type)].join(' ');
 }
 function buildItem(item, type, order) {
   const title = clean(item.title);
@@ -91,6 +98,7 @@ function buildItem(item, type, order) {
   const fuente = item.fuente || item.fuente_host || 'Fuente deportiva';
   const fuenteUrl = item.link;
   const angle = editorialAngle(type);
+  const fechaPub = fechaPublicacion(item);
   const tags = ['FutbolChileno', type === 'chilenos_exterior' ? 'ChilenosPorElMundo' : type === 'colo_colo' ? 'ColoColo' : 'CampeonatoChileno', 'Chile', 'Futbol', 'Shorts'];
   return {
     tipo: 'sorpresa',
@@ -100,11 +108,11 @@ function buildItem(item, type, order) {
     equipo1: item.equipo_chile || (type === 'chilenos_exterior' ? 'Chile' : 'Fútbol chileno'),
     equipo2: null,
     probabilidad: 0,
-    puntos: [`Hecho confirmado: ${title}`, `Contexto: ${resumen}`, `Lectura editorial: ${angle}`, `Cierre: ${closingQuestion(type)}`],
+    puntos: [`HECHO PUBLICADO: ${title}`, `CONTEXTO DE LA FUENTE: ${resumen}`, fechaPub ? `PUBLICADO EL ${fechaPub} (fecha de publicación, no necesariamente fecha del partido)` : 'FECHA: la fuente no entrega una fecha de publicación verificable; no inventar fecha del partido', `ANÁLISIS EDITORIAL: ${angle}`, `SIGUIENTE DATO A COMPROBAR: ${closingQuestion(type)}`],
     narracion: buildNarration(item, type, resumen),
     emoji: type === 'colo_colo' ? '⚪⚫' : type === 'chilenos_exterior' ? '🇨🇱🌎' : '🇨🇱⚽',
     titulo_youtube: titleFor(item, type),
-    descripcion_youtube: [`Esta edición de ${labelFor(type).toLowerCase()} parte de un hecho publicado y añade contexto editorial propio.`, `Hecho: ${title}`, `Lectura del canal: ${angle}`, `Fuente original: ${fuente} — ${fuenteUrl}`, `Fecha de la fuente: ${item.pubDate || item.timestamp || FECHA}`, '#FutbolChileno #Chile #Futbol #Shorts'].join('\n\n'),
+    descripcion_youtube: [`Esta edición de ${labelFor(type).toLowerCase()} parte de un hecho publicado y añade contexto editorial propio.`, `Hecho: ${title}`, `Lectura del canal: ${angle}`, `Fuente original: ${fuente} — ${fuenteUrl}`, `Fecha de publicación de la fuente: ${fechaPub || 'no verificada'}. No confundir con fecha del partido.`, '#FutbolChileno #Chile #Futbol #Shorts'].join('\n\n'),
     tags,
     _tipo_contenido: 'noticia',
     _match_id: null,
@@ -112,6 +120,7 @@ function buildItem(item, type, order) {
     _fuente: fuente,
     _fuente_url: fuenteUrl,
     _fecha: FECHA,
+    _fecha_publicacion_fuente: fechaPub,
     _orden: order,
     _categoria_editorial: type,
   };
