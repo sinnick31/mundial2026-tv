@@ -145,7 +145,7 @@ async function main() {
   const recientes = [...fresh, ...previous]
     .filter(n => {
       const ageH = (now - new Date(n.timestamp || now).getTime()) / 36e5;
-      return ageH <= 72;
+      return n.fecha_publicacion_verificada !== false && ageH <= 72;
     })
     .sort((a, b) => (b.prioridad_fuente || 0) - (a.prioridad_fuente || 0) || (b.viral_score || 0) - (a.viral_score || 0) || new Date(b.timestamp) - new Date(a.timestamp))
     .slice(0, 140);
