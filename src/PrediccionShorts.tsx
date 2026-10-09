@@ -79,8 +79,8 @@ const BrollLayer: React.FC<{ brollSrc?: string; opacity?: number }> = ({ brollSr
 };
 
 // ─── Fase 1: HOOK (0–2s) ─────────────────────────────────────────────────────
-const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionProps['tipo']; emoji: string; brollSrc?: string }> = ({
-  gancho, subtitulo, tipo, emoji, brollSrc,
+const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionProps['tipo']; emoji: string; brollSrc?: string; etiquetaSeccion?: string }> = ({
+  gancho, subtitulo, tipo, emoji, brollSrc, etiquetaSeccion,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -190,7 +190,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
           letterSpacing: 1,
           fontFamily: "'Arial Black', sans-serif",
         }}>
-          ⚽ {props.etiquetaSeccion || 'FÚTBOL CHILENO'}
+          ⚽ {etiquetaSeccion || 'FÚTBOL CHILENO'}
         </div>
       </div>
     </AbsoluteFill>
@@ -439,6 +439,7 @@ export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
         <HookPhase
           gancho={props.gancho} subtitulo={props.subtitulo}
           tipo={props.tipo} emoji={props.emoji} brollSrc={props.brollSrc}
+          etiquetaSeccion={props.etiquetaSeccion}
         />
       </Sequence>
 
