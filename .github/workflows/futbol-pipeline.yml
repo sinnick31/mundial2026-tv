@@ -196,6 +196,7 @@ jobs:
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
         run: node scripts/render-and-upload.js
 
       - name: 🔎 Verificar publicación
