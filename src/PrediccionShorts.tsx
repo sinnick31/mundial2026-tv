@@ -384,10 +384,10 @@ const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
           lineHeight: 1.1, fontFamily: "'Arial Black', sans-serif",
           textShadow: `0 0 30px ${colores.acento}66`,
         }}>
-          ¿Crees que esto pasará?
+          ¿Qué te parece esta noticia?
         </div>
         <div style={{ fontSize: 38, color: '#ffffffaa', marginTop: 12, fontFamily: "'Arial', sans-serif" }}>
-          Deja tu predicción en los comentarios 👇
+          Deja tu opinión con respeto en los comentarios 👇
         </div>
       </div>
 
@@ -406,7 +406,7 @@ const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
 
       <div style={{ opacity: interpolate(frame, [50, 70], [0, 1], { extrapolateRight: 'clamp' }), textAlign: 'center' }}>
         <div style={{ fontSize: 30, color: colores.acento, fontWeight: 700, fontFamily: "'Arial', sans-serif" }}>
-          🔔 Síguenos para más noticias y análisis de fútbol
+          🔔 Síguenos para más noticias verificadas y análisis de fútbol
         </div>
         <div style={{ fontSize: 26, color: '#ffffff66', marginTop: 8, fontFamily: "'Arial', sans-serif" }}>
           {props.etiquetaCanal || '@MUNDIAL2026SHORTS'}
