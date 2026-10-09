@@ -65,10 +65,10 @@ function parseFeed(xml) {
     const description = getTag(block, 'description');
     const link = getTag(block, 'link');
     const pubDate = getTag(block, 'pubDate');
-    const sourceTag = (block.match(/<source\\b([^>]*)>([\\s\\S]*?)<\\/source>/i) || []);
+    const sourceTag = (block.match(/<source\b([^>]*)>([\s\S]*?)<\/source>/i) || []);
     const sourceAttrs = sourceTag[1] || '';
     const sourceName = decodeXml(sourceTag[2] || '');
-    const sourceUrlMatch = sourceAttrs.match(/\\burl=[\"']([^\"']+)[\"']/i);
+    const sourceUrlMatch = sourceAttrs.match(/\burl=["']([^"']+)["']/i);
     const sourceUrl = sourceUrlMatch ? sourceUrlMatch[1] : null;
     const validDate = Boolean(pubDate && !Number.isNaN(Date.parse(pubDate)));
     if (!title || !link) continue;
