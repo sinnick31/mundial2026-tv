@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EFICIENCIA DEFENSIVA TOP",
-      "titulo": "Bayern tiene 2.47 puntos/gol encajado: ¿es la defensa clave de su éxito?",
-      "fecha": "2026-07-30T22:01:16.551Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "LA ROJA ANUNCIA AMISTOSO MUNDIALISTA",
       "titulo": "La Roja jugará con selección mundialista: ¿Quién es el mejor rival posible? 🇨🇱",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Colo-Colo y Huachipato arrasan: los 5 clubes de Primera que ya cumplieron el…",
       "titulo": "FÚTBOL CHILENO: Colo-Colo y Huachipato arrasan: los 5 clubes de Primera que ya… | Lo que cambia",
       "fecha": "2026-10-09T20:23:35.022Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: “Él quedaba libre”: la revelación de Bichi Borghi sobre el millonario gesto de…",
+      "titulo": "FÚTBOL CHILENO: “Él quedaba libre”: la revelación de Bichi Borghi sobre el… | Lo que cambia",
+      "fecha": "2026-10-09T23:09:48.188Z"
     }
   ]
 }
