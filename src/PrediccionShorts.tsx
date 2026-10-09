@@ -1,6 +1,7 @@
 import {
   AbsoluteFill,
   Audio,
+  Img,
   Easing,
   Loop,
   OffthreadVideo,
@@ -28,6 +29,10 @@ export interface PrediccionProps {
   audioSrc?: string;
   /** Crédito de fuentes de datos, ej: "Datos: football-data.org · ESPN — 02 jul 2026" */
   fuente?: string;
+  fechaPublicacion?: string;
+  imagenEquipoSrc?: string;
+  imagenEquipoCredito?: string;
+  etiquetaCanal?: string;
 }
 
 /** Crédito de fuente persistente — señal de legitimidad para el algoritmo y el espectador */
@@ -195,7 +200,8 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
 const HeaderBlock: React.FC<{
   descripcion: string; equipo1: string; equipo2?: string;
   probabilidad: number; tipo: PrediccionProps['tipo'];
-}> = ({ descripcion, equipo1, equipo2, probabilidad, tipo }) => {
+  imagenEquipoSrc?: string; imagenEquipoCredito?: string;
+}> = ({ descripcion, equipo1, equipo2, probabilidad, tipo, imagenEquipoSrc, imagenEquipoCredito }) => {
   const frame = useCurrentFrame();
   const colores = COLORES[tipo] || COLORES.sorpresa;
   const headerOpacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: 'clamp' });
@@ -234,22 +240,32 @@ const HeaderBlock: React.FC<{
         {descripcion}
       </div>
 
-      <div style={{ opacity: interpolate(frame, [15, 35], [0, 1], { extrapolateRight: 'clamp' }) }}>
-        <div style={{
-          display: 'flex', justifyContent: 'space-between', marginBottom: 10,
-          fontSize: 26, fontWeight: 700, color: '#ffffffaa', fontFamily: "'Arial', sans-serif",
-        }}>
-          <span>Probabilidad según la IA</span>
-          <span style={{ color: colores.acento }}>{Math.round(barWidth)}%</span>
-        </div>
-        <div style={{ width: '100%', height: 18, background: '#ffffff15', borderRadius: 99, overflow: 'hidden' }}>
+{probabilidad > 0 && (
+        <div style={{ opacity: interpolate(frame, [15, 35], [0, 1], { extrapolateRight: 'clamp' }) }}>
           <div style={{
-            width: `${barWidth}%`, height: '100%', borderRadius: 99,
-            background: `linear-gradient(90deg, ${colores.acento}, ${colores.acento2})`,
-            boxShadow: `0 0 20px ${colores.acento}88`,
-          }} />
+            display: 'flex', justifyContent: 'space-between', marginBottom: 10,
+            fontSize: 26, fontWeight: 700, color: '#ffffffaa', fontFamily: "'Arial', sans-serif",
+          }}>
+            <span>Estimación editorial, no un dato oficial</span>
+            <span style={{ color: colores.acento }}>{Math.round(barWidth)}%</span>
+          </div>
+          <div style={{ width: '100%', height: 18, background: '#ffffff15', borderRadius: 99, overflow: 'hidden' }}>
+            <div style={{
+              width: `${barWidth}%`, height: '100%', borderRadius: 99,
+              background: `linear-gradient(90deg, ${colores.acento}, ${colores.acento2})`,
+              boxShadow: `0 0 20px ${colores.acento}88`,
+            }} />
+          </div>
         </div>
-      </div>
+      )}
+      {imagenEquipoSrc && (
+        <div style={{ width: '100%', marginTop: 4 }}>
+          <div style={{ width: '100%', height: 440, borderRadius: 24, overflow: 'hidden', border: '2px solid #ffffff35', background: '#111' }}>
+            <Img src={imagenEquipoSrc} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          </div>
+          {imagenEquipoCredito && <div style={{ marginTop: 8, fontSize: 18, color: '#ffffff99', textAlign: 'right' }}>Imagen: {imagenEquipoCredito}</div>}
+        </div>
+      )}
     </AbsoluteFill>
   );
 };
@@ -308,8 +324,8 @@ const PuntoFullscreen: React.FC<{
 const ContentPhase: React.FC<{
   descripcion: string; equipo1: string; equipo2?: string;
   probabilidad: number; puntos: string[]; tipo: PrediccionProps['tipo'];
-  durationInFrames: number; brollSrc?: string;
-}> = ({ descripcion, equipo1, equipo2, probabilidad, puntos, tipo, durationInFrames, brollSrc }) => {
+  durationInFrames: number; brollSrc?: string; imagenEquipoSrc?: string; imagenEquipoCredito?: string;
+}> = ({ descripcion, equipo1, equipo2, probabilidad, puntos, tipo, durationInFrames, brollSrc, imagenEquipoSrc, imagenEquipoCredito }) => {
   const HEADER_FRAMES = Math.round(durationInFrames * 0.34);
   const puntosFrames = Math.max(durationInFrames - HEADER_FRAMES, 30);
   const perPunto = Math.max(Math.floor(puntosFrames / Math.max(puntos.length, 1)), 20);
@@ -322,12 +338,13 @@ const ContentPhase: React.FC<{
           <HeaderBlock
             descripcion={descripcion} equipo1={equipo1} equipo2={equipo2}
             probabilidad={probabilidad} tipo={tipo}
+            imagenEquipoSrc={imagenEquipoSrc} imagenEquipoCredito={imagenEquipoCredito}
           />
           <div style={{
             position: 'absolute', bottom: 50, left: 0, right: 0, textAlign: 'center',
             fontSize: 22, color: '#ffffff66', fontFamily: "'Arial', sans-serif",
           }}>
-            🤖 Predicción generada por Inteligencia Artificial
+            Análisis editorial · Fuentes indicadas en pantalla
           </div>
         </AbsoluteFill>
       </Sequence>
@@ -388,10 +405,10 @@ const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
 
       <div style={{ opacity: interpolate(frame, [50, 70], [0, 1], { extrapolateRight: 'clamp' }), textAlign: 'center' }}>
         <div style={{ fontSize: 30, color: colores.acento, fontWeight: 700, fontFamily: "'Arial', sans-serif" }}>
-          🔔 Síguenos para más predicciones del Mundial 2026
+          🔔 Síguenos para más noticias y análisis de fútbol
         </div>
         <div style={{ fontSize: 26, color: '#ffffff66', marginTop: 8, fontFamily: "'Arial', sans-serif" }}>
-          @MUNDIAL2026TV
+          {props.etiquetaCanal || '@MUNDIAL2026SHORTS'}
         </div>
       </div>
     </AbsoluteFill>
@@ -415,7 +432,7 @@ export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
         <Audio src={props.audioSrc.startsWith('http') ? props.audioSrc : staticFile(props.audioSrc)} />
       )}
 
-      <CreditoFuente fuente={props.fuente} />
+      <CreditoFuente fuente={[props.fechaPublicacion ? `Fuente publicada: ${props.fechaPublicacion}` : '', props.fuente || ''].filter(Boolean).join(' · ')} />
 
       <Sequence from={0} durationInFrames={HOOK_END}>
         <HookPhase
@@ -429,6 +446,7 @@ export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
           descripcion={props.descripcion} equipo1={props.equipo1} equipo2={props.equipo2}
           probabilidad={props.probabilidad} puntos={props.puntos} tipo={props.tipo}
           durationInFrames={CONTENT_END - HOOK_END} brollSrc={props.brollSrc}
+          imagenEquipoSrc={props.imagenEquipoSrc} imagenEquipoCredito={props.imagenEquipoCredito}
         />
       </Sequence>
 
