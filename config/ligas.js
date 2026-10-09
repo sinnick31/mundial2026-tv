@@ -139,9 +139,9 @@ function gnews(q, lang = 'es', gl = 'CL') {
 
 const RSS_FEEDS = [
   // ⭐ COLO-COLO, fuente editorial dominante
-  { name: 'Google News — Colo-Colo', url: gnews('"Colo-Colo" futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 100 },
-  { name: 'Google News — Colo-Colo oficial', url: gnews('"Colo-Colo" sitio oficial'), lang: 'es', categoria: 'colo_colo', prioridad: 100 },
-  { name: 'CSD Colo-Colo', url: gnews('site:csdcolocolo.cl futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 100 },
+  { name: 'Google News — Colo-Colo', url: gnews('"Colo-Colo" futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
+  { name: 'Google News — Colo-Colo oficial', url: gnews('"Colo-Colo" sitio oficial'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
+  { name: 'Google News — CSD Colo-Colo', url: gnews('site:csdcolocolo.cl futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
 
   // 🇨🇱 COMPETICIONES PROFESIONALES
   { name: 'Google News — Liga de Primera', url: gnews('"Liga de Primera" Chile futbol'), lang: 'es', categoria: 'chile', prioridad: 90 },
@@ -175,9 +175,26 @@ const RSS_FEEDS = [
   // 🇨🇱 SELECCIÓN MAYOR
   { name: 'Google News — La Roja', url: gnews('"La Roja" selección chilena futbol'), lang: 'es', categoria: 'chile', prioridad: 78 },
 
-  // 🌍 INTERNACIONAL SOLO COMO APOYO
-  { name: 'Google News — Libertadores', url: gnews('Copa Libertadores futbol'), lang: 'es', gl: 'AR', categoria: 'internacional', prioridad: 35 },
-  { name: 'Google News — Champions', url: gnews('Champions League futbol'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 30 },
+  // 🌍 FÚTBOL INTERNACIONAL: cobertura global, no solo como relleno
+  { name: 'Google News — Champions League', url: gnews('"Champions League" futbol', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 52 },
+  { name: 'Google News — Premier League', url: gnews('"Premier League" futbol', 'es', 'GB'), lang: 'es', gl: 'GB', categoria: 'internacional', prioridad: 48 },
+  { name: 'Google News — LaLiga', url: gnews('LaLiga futbol', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 48 },
+  { name: 'Google News — Serie A', url: gnews('"Serie A" futbol Italia', 'es', 'IT'), lang: 'es', gl: 'IT', categoria: 'internacional', prioridad: 44 },
+  { name: 'Google News — Bundesliga', url: gnews('Bundesliga futbol', 'es', 'DE'), lang: 'es', gl: 'DE', categoria: 'internacional', prioridad: 42 },
+  { name: 'Google News — Ligue 1', url: gnews('"Ligue 1" futbol', 'es', 'FR'), lang: 'es', gl: 'FR', categoria: 'internacional', prioridad: 40 },
+  { name: 'Google News — Fútbol argentino', url: gnews('futbol argentino Liga Profesional Boca River', 'es', 'AR'), lang: 'es', gl: 'AR', categoria: 'internacional', prioridad: 48 },
+  { name: 'Google News — Fútbol brasileño', url: gnews('Brasileirao futbol Flamengo Palmeiras', 'es', 'BR'), lang: 'es', gl: 'BR', categoria: 'internacional', prioridad: 45 },
+  { name: 'Google News — Copa Libertadores', url: gnews('"Copa Libertadores" futbol', 'es', 'AR'), lang: 'es', gl: 'AR', categoria: 'internacional', prioridad: 52 },
+  { name: 'Google News — Copa Sudamericana', url: gnews('"Copa Sudamericana" futbol', 'es', 'AR'), lang: 'es', gl: 'AR', categoria: 'internacional', prioridad: 48 },
+  { name: 'Google News — MLS y fútbol mexicano', url: gnews('MLS Liga MX futbol', 'es', 'MX'), lang: 'es', gl: 'MX', categoria: 'internacional', prioridad: 35 },
+  { name: 'Google News — Fútbol femenino internacional', url: gnews('futbol femenino Champions League selecciones', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 34 },
+  { name: 'Google News — FIFA y selecciones', url: gnews('FIFA selecciones futbol internacional', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 40 },
+  { name: 'Google News — Mercado internacional', url: gnews('fichajes futbol oficial traspasos Europa', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 42 },
+  // 🏟️ Fuentes de búsqueda para torneos chilenos de menor cobertura
+  { name: 'Google News — ANFP oficial', url: gnews('site:anfp.cl futbol campeonato', 'es', 'CL'), lang: 'es', categoria: 'chile', prioridad: 94 },
+  { name: 'Google News — Campeonato Chileno oficial', url: gnews('site:campeonatochileno.cl noticias', 'es', 'CL'), lang: 'es', categoria: 'chile', prioridad: 92 },
+  { name: 'Google News — ANFA y fútbol amateur', url: gnews('ANFA Tercera División A Tercera División B Chile futbol', 'es', 'CL'), lang: 'es', categoria: 'tercera', prioridad: 68 },
+  { name: 'Google News — Fútbol de regiones', url: gnews('futbol chileno regional clubes campeonato Chile', 'es', 'CL'), lang: 'es', categoria: 'chile', prioridad: 58 },
 ];
 
 const KEYWORDS_FUTBOL = [
