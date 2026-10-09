@@ -34,6 +34,7 @@ const SENALES_VIRALES = [
   { re: /\d+\s*[-x]\s*\d+/, pts: 8 },              // marcador "3-1"
   { re: /\b\d+\s*(goles|millones|partidos|anos|puntos)\b/, pts: 6 }, // cifra concreta
   { re: /\b(clasific|eliminad|campeon|titulo|final)\w*/, pts: 8 },
+  { re: /\b(ultima hora|sorpresa|inesperad|vuelve|queda fuera|se pierde|da la vuelta|remontada)\w*/, pts: 6 },
 ];
 
 // ─── Clubes/figuras que mueven audiencia ────────────────────────────────────
@@ -41,10 +42,10 @@ const GIGANTES = [
   'colo colo', 'u de chile', 'universidad de chile', 'universidad catolica',
   'real madrid', 'barcelona', 'manchester city', 'liverpool', 'arsenal',
   'bayern', 'psg', 'boca', 'river', 'messi', 'mbappe', 'haaland',
-  'vinicius', 'lamine yamal', 'alexis sanchez', 'la roja',
+  'vinicius', 'lamine yamal', 'alexis sanchez', 'la roja', 'inter miami', 'flamengo', 'palmeiras', 'boca juniors', 'river plate', 'inter de milan', 'atletico de madrid', 'arsenal', 'chelsea', 'manchester united', 'tottenham',
 ];
 
-// ─── Contenido que YouTube NO distribuye (institucional/genérico) ───────────
+// ─── Penalizaciones editoriales para titulares poco atractivos o poco noticiosos ──
 const PENALIZACIONES = [
   { re: /\b(comunicado|directorio|asamblea|federacion anuncia|anfp informa)\b/, pts: -12 },
   { re: /\b(entradas|tickets|donde ver|horario|como ver)\b/, pts: -8 },
