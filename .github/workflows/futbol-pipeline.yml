@@ -177,6 +177,9 @@ jobs:
       - name: 🧪 Validar render y TypeScript antes de publicar
         run: |
           node --check scripts/render-and-upload.js
+          # Si tsconfig.json/eslint.config.js se corrompen (p. ej. con "\n" literales), tsc ignora la
+          # config y reporta cientos de errores falsos en node_modules/@types. Fallar aquí con un mensaje claro.
+          node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))" || { echo "::error file=tsconfig.json::tsconfig.json no es JSON válido (¿saltos de línea escapados?)"; exit 1; }
           npx tsc --noEmit
 
       - name: 🔐 Validar YouTube OAuth v8

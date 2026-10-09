@@ -1,1 +1,5 @@
-import { makeConfig } from '@remotion/eslint-config-flat';\n\nexport default makeConfig({\n  remotionDir: undefined,\n});\n
+import { makeConfig } from '@remotion/eslint-config-flat';
+
+export default makeConfig({
+  remotionDir: undefined,
+});

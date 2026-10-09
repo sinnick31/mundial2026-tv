@@ -5,7 +5,7 @@ import { loadFont as loadRoboto } from "@remotion/google-fonts/Roboto";
 const { fontFamily: oswald } = loadOswald("normal", { weights: ["400", "700"], subsets: ["latin"] });
 const { fontFamily: roboto } = loadRoboto("normal", { weights: ["300", "400", "700"], subsets: ["latin"] });
 
-export interface EstadisticaViralProps {
+export type EstadisticaViralProps = {
   emoji: string;
   bigNumber: string;
   bigLabel: string;
@@ -16,7 +16,7 @@ export interface EstadisticaViralProps {
   teamFlag?: string;
   teamName?: string;
   category: string;
-}
+};
 
 export const defaultEstadisticaProps: EstadisticaViralProps = {
   emoji: "🔥",

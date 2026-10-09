@@ -2,9 +2,7 @@ import {
   AbsoluteFill,
   Easing,
   interpolate,
-  Sequence,
   useCurrentFrame,
-  useVideoConfig,
 } from "remotion";
 import { loadFont as loadOswald } from "@remotion/google-fonts/Oswald";
 import { loadFont as loadRoboto } from "@remotion/google-fonts/Roboto";
@@ -12,7 +10,7 @@ import { loadFont as loadRoboto } from "@remotion/google-fonts/Roboto";
 const { fontFamily: oswald } = loadOswald("normal", { weights: ["400", "700"], subsets: ["latin"] });
 const { fontFamily: roboto } = loadRoboto("normal", { weights: ["300", "400", "700"], subsets: ["latin"] });
 
-export interface PrediccionIAProps {
+export type PrediccionIAProps = {
   homeTeam: string;
   awayTeam: string;
   homeFlag: string;
@@ -28,7 +26,7 @@ export interface PrediccionIAProps {
   matchDate: string;
   matchStage: string;
   venue: string;
-}
+};
 
 export const defaultPrediccionProps: PrediccionIAProps = {
   homeTeam: "BRASIL",
@@ -412,13 +410,11 @@ export const PrediccionIA: React.FC<PrediccionIAProps> = (props) => {
   const {
     homeTeam, awayTeam, homeFlag, awayFlag, homeColor, awayColor,
     predictedHome, predictedAway, winner, confidence,
-    reasoning, keyFactor, matchDate, matchStage, venue,
+    reasoning, keyFactor, matchDate, matchStage,
   } = props;
 
   const frame = useCurrentFrame();
 
-  const T_BADGE      = 0;
-  const T_MATCHUP    = 30;
   const T_DIV1       = 75;
   const T_ANALYSIS   = 90;
   const T_SCORE      = 90 + Math.ceil(reasoning.length / 1.8) + 15;

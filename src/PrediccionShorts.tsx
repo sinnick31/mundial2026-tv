@@ -13,7 +13,7 @@ import {
   spring,
 } from 'remotion';
 
-export interface PrediccionProps {
+export type PrediccionProps = {
   gancho: string;        // "¡ARGENTINA ELIMINADA!"
   subtitulo: string;     // "Esta es mi predicción del Mundial 2026"
   descripcion: string;   // Predicción generada por Gemini
@@ -34,7 +34,7 @@ export interface PrediccionProps {
   imagenEquipoCredito?: string;
   etiquetaCanal?: string;
   etiquetaSeccion?: string;
-}
+};
 
 /** Crédito de fuente persistente — señal de legitimidad para el algoritmo y el espectador */
 export const CreditoFuente: React.FC<{ fuente?: string }> = ({ fuente }) => {
@@ -333,7 +333,7 @@ const ContentPhase: React.FC<{
 
   return (
     <AbsoluteFill>
-      <Sequence from={0} durationInFrames={HEADER_FRAMES}>
+      <Sequence  durationInFrames={HEADER_FRAMES}>
         <AbsoluteFill style={{ background: `linear-gradient(180deg, #0a1420 0%, #050505 100%)` }}>
           <BrollLayer brollSrc={brollSrc} opacity={0.4} />
           <HeaderBlock
@@ -360,7 +360,7 @@ const ContentPhase: React.FC<{
 };
 
 // ─── Fase 3: CTA ──────────────────────────────────────────────────────────────
-const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
+const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo']; etiquetaCanal?: string }> = ({ tipo, etiquetaCanal }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const colores = COLORES[tipo] || COLORES.sorpresa;
@@ -409,7 +409,7 @@ const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo'] }> = ({ tipo }) => {
           🔔 Síguenos para más noticias verificadas y análisis de fútbol
         </div>
         <div style={{ fontSize: 26, color: '#ffffff66', marginTop: 8, fontFamily: "'Arial', sans-serif" }}>
-          {props.etiquetaCanal || '@MUNDIAL2026SHORTS'}
+          {etiquetaCanal || '@MUNDIAL2026SHORTS'}
         </div>
       </div>
     </AbsoluteFill>
@@ -435,7 +435,7 @@ export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
 
       <CreditoFuente fuente={[props.fechaPublicacion ? `Fuente publicada: ${props.fechaPublicacion}` : '', props.fuente || ''].filter(Boolean).join(' · ')} />
 
-      <Sequence from={0} durationInFrames={HOOK_END}>
+      <Sequence  durationInFrames={HOOK_END}>
         <HookPhase
           gancho={props.gancho} subtitulo={props.subtitulo}
           tipo={props.tipo} emoji={props.emoji} brollSrc={props.brollSrc}
@@ -453,7 +453,7 @@ export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
       </Sequence>
 
       <Sequence from={CONTENT_END} durationInFrames={durationInFrames - CONTENT_END}>
-        <CTAPhase tipo={props.tipo} />
+        <CTAPhase tipo={props.tipo} etiquetaCanal={props.etiquetaCanal} />
       </Sequence>
     </AbsoluteFill>
   );

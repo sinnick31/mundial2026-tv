@@ -1,6 +1,6 @@
 import { Composition, registerRoot } from 'remotion';
 import { PrediccionShorts, PrediccionProps } from './PrediccionShorts';
-import { JugadaAnimada, JugadaAnimadaProps, defaultJugadaProps } from './JugadaAnimada';
+import { JugadaAnimada, defaultJugadaProps } from './JugadaAnimada';
 import { ChileLongform, ChileLongformProps } from './ChileLongform';
 
 const PREVIEW_PROPS: PrediccionProps = {

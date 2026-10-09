@@ -18,7 +18,7 @@ const { fontFamily: roboto } = loadRoboto("normal", {
 });
 
 // ── Types ──────────────────────────────────────────────────────────────────
-export interface ResultadoShortsProps {
+export type ResultadoShortsProps = {
   /** Nombre del equipo local */
   homeTeam: string;
   /** Nombre del equipo visitante */
@@ -43,7 +43,7 @@ export interface ResultadoShortsProps {
   venue: string;
   /** Ciudad */
   city: string;
-}
+};
 
 // ── Defaults para preview en Remotion Studio ──────────────────────────────
 export const defaultProps: ResultadoShortsProps = {
@@ -63,7 +63,6 @@ export const defaultProps: ResultadoShortsProps = {
 
 // ── Helpers de animación ───────────────────────────────────────────────────
 const easeOut = Easing.bezier(0.16, 1, 0.3, 1);
-const easeIn = Easing.bezier(0.4, 0, 1, 1);
 
 function fadeIn(frame: number, start: number, dur = 20) {
   return interpolate(frame, [start, start + dur], [0, 1], {
@@ -604,8 +603,6 @@ const TeamCard: React.FC<{
   const opacityScore = fadeIn(frame, scoreStartAt, 20);
   const displayScore = countUp(frame, scoreStartAt, score, 30);
 
-  const isLeft = side === "left";
-
   return (
     <div
       style={{
@@ -910,7 +907,6 @@ export const ResultadoShorts: React.FC<ResultadoShortsProps> = (props) => {
   const frame = useCurrentFrame();
 
   // Tiempos de animación (en frames a 30fps)
-  const T_LOGO = 0;
   const T_DIVIDER1 = 45;
   const T_BADGE = 65;
   const T_TEAMS = 90;

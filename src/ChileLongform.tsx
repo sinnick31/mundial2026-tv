@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, Audio, staticFile, useCurrentFrame, interpolate } from 'remotion';
 
 export interface ChileLongformSection {
   orden: number;

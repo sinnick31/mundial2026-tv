@@ -17,7 +17,7 @@ import { CreditoFuente } from "./PrediccionShorts";
 const { fontFamily: oswald } = loadOswald("normal", { weights: ["400", "700"], subsets: ["latin"] });
 const { fontFamily: roboto } = loadRoboto("normal", { weights: ["300", "400", "700"], subsets: ["latin"] });
 
-export interface JugadaAnimadaProps {
+export type JugadaAnimadaProps = {
   homeTeam: string;
   awayTeam: string;
   homeFlag: string;
@@ -40,7 +40,7 @@ export interface JugadaAnimadaProps {
   audioSrc?: string;
   /** Crédito de fuentes de datos, ej: "Datos: football-data.org · ESPN — 02 jul 2026" */
   fuente?: string;
-}
+};
 
 export const defaultJugadaProps: JugadaAnimadaProps = {
   homeTeam: "BRASIL",
@@ -329,7 +329,7 @@ export const JugadaAnimada: React.FC<JugadaAnimadaProps> = (props) => {
 
       <CreditoFuente fuente={fuente} />
 
-      <Sequence from={0} durationInFrames={T_INTRO}>
+      <Sequence  durationInFrames={T_INTRO}>
         <IntroPhase
           homeTeam={homeTeam} awayTeam={awayTeam} homeFlag={homeFlag} awayFlag={awayFlag}
           homeColor={homeColor} awayColor={awayColor} matchStage={matchStage} gancho={gancho}
