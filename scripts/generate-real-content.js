@@ -69,15 +69,17 @@ function typeFor(item) {
 function editorialAngle(type) {
   if (type === 'colo_colo') return 'Por qué esta noticia importa ahora para Colo-Colo y qué conviene seguir en las próximas horas.';
   if (type === 'chilenos_exterior') return 'Qué cambia para el futbolista chileno involucrado y qué habrá que mirar en su próximo partido o decisión.';
+  if (type === 'internacional') return 'Qué impacto tiene esta noticia en su liga, torneo o equipo, separando el hecho confirmado de la interpretación editorial.';
   return 'Qué significa esta noticia dentro de la competencia chilena y cuál es el siguiente dato que puede cambiar el escenario.';
 }
 function closingQuestion(type) {
   if (type === 'colo_colo') return 'La pregunta queda abierta: ¿qué debería ser lo siguiente que mire el hincha albo?';
   if (type === 'chilenos_exterior') return 'Ahora queda seguir su próximo partido y comprobar si esta tendencia se sostiene.';
+  if (type === 'internacional') return '¿Qué liga o torneo internacional deberíamos seguir con más detalle en el próximo resumen?';
   return 'La próxima fecha puede entregar la pista clave para confirmar si esta noticia realmente mueve el campeonato.';
 }
 function labelFor(type) {
-  return type === 'colo_colo' ? 'COLO-COLO' : type === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : 'FÚTBOL CHILENO';
+  return type === 'colo_colo' ? 'COLO-COLO' : type === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : type === 'internacional' ? 'FÚTBOL MUNDIAL' : 'FÚTBOL CHILENO';
 }
 function ganchoFor(item, type) {
   const title = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
@@ -117,7 +119,7 @@ function buildItem(item, type, order) {
   const tags = ['FutbolChileno', type === 'chilenos_exterior' ? 'ChilenosPorElMundo' : type === 'colo_colo' ? 'ColoColo' : 'CampeonatoChileno', 'Chile', 'Futbol', 'Shorts'];
   return {
     tipo: 'sorpresa',
-    gancho: `${labelFor(type)}: ${clean(title).slice(0, 80)}`,
+    gancho: ganchoFor(item, type),
     subtitulo: angle,
     descripcion: `${resumen} ${angle}`,
     equipo1: item.equipo_chile || (type === 'chilenos_exterior' ? 'Chile' : 'Fútbol chileno'),
@@ -161,9 +163,16 @@ function main() {
     picks.push(buildItem(item, type, picks.length + 1));
   };
 
-  if (MODO === 'auto' || MODO === 'chile' || MODO === 'noticias') addPick(isColo, 'colo_colo');
-  if (picks.length < MAX_ITEMS && (MODO === 'auto' || MODO === 'chile' || MODO === 'noticias')) addPick(isChileCompetition, 'chile');
-  if (picks.length < MAX_ITEMS && (MODO === 'auto' || MODO === 'chile' || MODO === 'noticias')) addPick(isChileanAbroad, 'chilenos_exterior');
+  const modoEditorial = ['auto', 'chile', 'noticias'].includes(MODO);
+  // Rotación diaria: Chile tiene prioridad, pero el canal no se convierte en uno de un solo club.
+  if (modoEditorial) {
+    const ciclo = Number(FECHA.slice(-2)) % 3;
+    if (ciclo === 0) addPick(isColo, 'colo_colo');
+    addPick(n => isChileCompetition(n) && !isColo(n), 'chile');
+    if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
+    if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
+    if (picks.length < MAX_ITEMS && ciclo !== 0) addPick(isColo, 'colo_colo');
+  }
 
   if (picks.length < MAX_ITEMS) {
     candidates.filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia')).sort((a, b) => importance(b) - importance(a)).slice(0, MAX_ITEMS - picks.length).forEach(n => {
