@@ -190,6 +190,20 @@ const RSS_FEEDS = [
   { name: 'Google News — Fútbol femenino internacional', url: gnews('futbol femenino Champions League selecciones', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 34 },
   { name: 'Google News — FIFA y selecciones', url: gnews('FIFA selecciones futbol internacional', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 40 },
   { name: 'Google News — Mercado internacional', url: gnews('fichajes futbol oficial traspasos Europa', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 42 },
+  // 🌐 COBERTURA MUNDIAL AMPLIADA: distintas regiones, torneos y fútbol femenino
+  { name: 'Google News — Fútbol africano y CAF', url: gnews('CAF Champions League futbol selecciones africanas', 'es', 'ZA'), lang: 'es', gl: 'ZA', categoria: 'internacional', prioridad: 35 },
+  { name: 'Google News — Fútbol asiático y AFC', url: gnews('AFC Champions League futbol selecciones asiaticas', 'es', 'SG'), lang: 'es', gl: 'SG', categoria: 'internacional', prioridad: 34 },
+  { name: 'Google News — CONCACAF', url: gnews('CONCACAF Champions Cup futbol selecciones', 'es', 'MX'), lang: 'es', gl: 'MX', categoria: 'internacional', prioridad: 35 },
+  { name: 'Google News — Fútbol portugués', url: gnews('Primeira Liga Portugal futbol Benfica Porto Sporting', 'es', 'PT'), lang: 'es', gl: 'PT', categoria: 'internacional', prioridad: 34 },
+  { name: 'Google News — Fútbol neerlandés', url: gnews('Eredivisie futbol Ajax PSV Feyenoord', 'es', 'NL'), lang: 'es', gl: 'NL', categoria: 'internacional', prioridad: 32 },
+  { name: 'Google News — Fútbol turco', url: gnews('Super Lig Turquía futbol Galatasaray Fenerbahce Besiktas', 'es', 'TR'), lang: 'es', gl: 'TR', categoria: 'internacional', prioridad: 31 },
+  { name: 'Google News — Fútbol saudí y Asia occidental', url: gnews('Saudi Pro League futbol fichajes resultados', 'es', 'SA'), lang: 'es', gl: 'SA', categoria: 'internacional', prioridad: 31 },
+  { name: 'Google News — Fútbol femenino mundial', url: gnews('futbol femenino mundial selecciones ligas Champions noticias', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 38 },
+  { name: 'Google News — Selecciones nacionales', url: gnews('selecciones nacionales futbol partidos resultados FIFA UEFA CONMEBOL', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 38 },
+  { name: 'Google News — Historias virales de fútbol', url: gnews('futbol viral record remontada polemica gol historico', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 36 },
+  { name: 'Google News — Entrenadores y cambios técnicos', url: gnews('futbol entrenador destituido nombramiento oficial clubes', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 35 },
+  { name: 'Google News — Fichajes confirmados', url: gnews('fichaje oficial confirmado futbol clubes 2026', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 37 },
+
   // 🏟️ Fuentes de búsqueda para torneos chilenos de menor cobertura
   { name: 'Google News — ANFP oficial', url: gnews('site:anfp.cl futbol campeonato', 'es', 'CL'), lang: 'es', categoria: 'chile', prioridad: 94 },
   { name: 'Google News — Campeonato Chileno oficial', url: gnews('site:campeonatochileno.cl noticias', 'es', 'CL'), lang: 'es', categoria: 'chile', prioridad: 92 },
