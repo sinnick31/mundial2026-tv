@@ -35,6 +35,11 @@ function isChileCompetition(item) {
   const t = normalize(`${item.title} ${item.description}`);
   return ['liga de primera', 'primera division', 'campeonato nacional', 'liga de ascenso', 'primera b', 'segunda division', 'liga 2d', 'copa chile', 'copa de la liga', 'supercopa de chile', 'liga femenina', 'ascenso femenino', 'tercera a', 'tercera b', 'futbol formativo', 'futsal', 'anfp', 'anfa'].some(k => t.includes(k));
 }
+function isInternational(item) {
+  if (item.categoria === 'internacional') return true;
+  const t = normalize(String(item.title || '') + ' ' + String(item.description || ''));
+  return ['champions league', 'premier league', 'laliga', 'la liga', 'serie a', 'bundesliga', 'ligue 1', 'brasileirao', 'liga mx', 'mls', 'copa libertadores', 'copa sudamericana', 'fifa', 'uefa', 'conmebol', 'mundial de clubes', 'futbol argentino'].some(k => t.includes(k));
+}
 function isChileanAbroad(item) {
   if (item.categoria === 'chilenos_exterior') return true;
   const t = normalize(`${item.title} ${item.description}`);
@@ -58,6 +63,7 @@ function snippet(item) {
 function typeFor(item) {
   if (isColo(item)) return 'colo_colo';
   if (isChileanAbroad(item)) return 'chilenos_exterior';
+  if (isInternational(item)) return 'internacional';
   return 'chile';
 }
 function editorialAngle(type) {
@@ -72,6 +78,14 @@ function closingQuestion(type) {
 }
 function labelFor(type) {
   return type === 'colo_colo' ? 'COLO-COLO' : type === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : 'FÚTBOL CHILENO';
+}
+function ganchoFor(item, type) {
+  const title = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
+  const clipped = title.length > 74 ? title.slice(0, 71).replace(/\s+\S*$/, '') + '…' : title;
+  if (type === 'colo_colo') return ('OJO, HINCHA ALBO: ' + clipped).slice(0, 100);
+  if (type === 'chilenos_exterior') return ('CHILENOS POR EL MUNDO: ' + clipped).slice(0, 100);
+  if (type === 'internacional') return ('FÚTBOL MUNDIAL: ' + clipped).slice(0, 100);
+  return ('ATENCIÓN, FÚTBOL CHILENO: ' + clipped).slice(0, 100);
 }
 function titleFor(item, type) {
   const base = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
