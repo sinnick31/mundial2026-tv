@@ -35,7 +35,8 @@ function isChileCompetition(item) {
   const t = normalize(`${item.title} ${item.description}`);
   const cat = normalize(item.categoria_feed || item.categoria || '');
   const feedChile = ['chile', 'femenino', 'formativo', 'futsal', 'tercera'].includes(cat);
-  return feedChile || ['liga de primera', 'primera division', 'campeonato nacional', 'liga de ascenso', 'primera b', 'segunda division', 'liga 2d', 'copa chile', 'copa de la liga', 'supercopa de chile', 'liga femenina', 'ascenso femenino', 'tercera a', 'tercera b', 'futbol formativo', 'futsal', 'anfp', 'anfa'].some(k => t.includes(k));
+  // Si una fuente internacional menciona un club chileno, el tema nacional también cuenta.
+  return feedChile || Boolean(item.equipo_chile) || ['liga de primera', 'primera division', 'campeonato nacional', 'liga de ascenso', 'primera b', 'segunda division', 'liga 2d', 'copa chile', 'copa de la liga', 'supercopa de chile', 'liga femenina', 'ascenso femenino', 'tercera a', 'tercera b', 'futbol formativo', 'futsal', 'anfp', 'anfa'].some(k => t.includes(k));
 }
 function isInternational(item) {
   if (item.categoria_feed === 'internacional' || item.categoria === 'internacional') return true;
