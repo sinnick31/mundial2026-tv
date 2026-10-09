@@ -33,7 +33,7 @@ const DURACION_POR_TIPO = {
 };
 
 function fuenteTexto(item) {
-  const fecha = item._fecha || new Date().toISOString().split('T')[0];
+  const fecha = item._fecha_publicacion_fuente || item._fecha || 'fecha no verificada';
   const fuente = item._fuente || 'Fuente no especificada';
   return `Fuente: ${fuente} — ${fecha}`;
 }
@@ -41,6 +41,21 @@ function fuenteTexto(item) {
 async function getYouTubeClient() {
   const { youtube } = await getAuthenticatedYouTube();
   return youtube;
+}
+
+
+function imagenAutorizadaParaEquipo(nombreEquipo) {
+  // TEAM_IMAGES_JSON: {"Colo-Colo":{"url":"https://...","credit":"Club/autor","rights":"authorized"}}
+  // Solo usar recursos cuyo operador haya confirmado los derechos de uso.
+  try {
+    const catalogo = JSON.parse(process.env.TEAM_IMAGES_JSON || '{}');
+    const key = Object.keys(catalogo).find(k => k.toLowerCase() === String(nombreEquipo || '').toLowerCase());
+    const item = key ? catalogo[key] : null;
+    if (!item || item.rights !== 'authorized' || !/^https:\/\//i.test(item.url || '')) return {};
+    return { imagenEquipoSrc: item.url, imagenEquipoCredito: item.credit || 'Crédito no indicado' };
+  } catch {
+    return {};
+  }
 }
 
 function elegirBroll() {
@@ -135,7 +150,9 @@ async function prepararRender(item) {
     return { compositionId: 'JugadaAnimada', props, durationInFrames };
   }
 
+  const imagen = imagenAutorizadaParaEquipo(item.equipo1);
   const props = {
+    ...imagen,
     gancho: item.gancho,
     subtitulo: item.subtitulo,
     descripcion: item.descripcion,
@@ -148,6 +165,8 @@ async function prepararRender(item) {
     brollSrc,
     audioSrc,
     fuente: fuenteTexto(item),
+    fechaPublicacion: item._fecha_publicacion_fuente || undefined,
+    etiquetaCanal: '@MUNDIAL2026SHORTS',
   };
   return { compositionId: 'PrediccionShorts', props, durationInFrames };
 }
