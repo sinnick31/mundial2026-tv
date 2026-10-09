@@ -65,9 +65,15 @@ function parseFeed(xml) {
     const description = getTag(block, 'description');
     const link = getTag(block, 'link');
     const pubDate = getTag(block, 'pubDate');
+    const sourceTag = (block.match(/<source\\b([^>]*)>([\\s\\S]*?)<\\/source>/i) || []);
+    const sourceAttrs = sourceTag[1] || '';
+    const sourceName = decodeXml(sourceTag[2] || '');
+    const sourceUrlMatch = sourceAttrs.match(/\\burl=[\"']([^\"']+)[\"']/i);
+    const sourceUrl = sourceUrlMatch ? sourceUrlMatch[1] : null;
+    const validDate = Boolean(pubDate && !Number.isNaN(Date.parse(pubDate)));
     if (!title || !link) continue;
-    const ts = pubDate && !Number.isNaN(Date.parse(pubDate)) ? new Date(pubDate).toISOString() : new Date().toISOString();
-    items.push({ title, description: description.slice(0, 500), link, pubDate, timestamp: ts });
+    const ts = validDate ? new Date(pubDate).toISOString() : null;
+    items.push({ title, description: description.slice(0, 500), link, pubDate: validDate ? pubDate : null, timestamp: ts, fecha_publicacion_verificada: validDate, fuente_original: sourceName || null, fuente_url_original: sourceUrl });
   }
   return items;
 }
@@ -117,8 +123,8 @@ async function main() {
         .slice(0, 12)
         .map(item => ({
           ...item,
-          fuente: feed.name,
-          fuente_host: sourceKey(item.link),
+          fuente: item.fuente_original || feed.name,
+          fuente_host: sourceKey(item.fuente_url_original || item.link),
           categoria_feed: feed.categoria,
           prioridad_fuente: feed.prioridad || 0,
         }));
