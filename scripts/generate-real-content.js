@@ -33,10 +33,12 @@ function isColo(item) {
 }
 function isChileCompetition(item) {
   const t = normalize(`${item.title} ${item.description}`);
-  return ['liga de primera', 'primera division', 'campeonato nacional', 'liga de ascenso', 'primera b', 'segunda division', 'liga 2d', 'copa chile', 'copa de la liga', 'supercopa de chile', 'liga femenina', 'ascenso femenino', 'tercera a', 'tercera b', 'futbol formativo', 'futsal', 'anfp', 'anfa'].some(k => t.includes(k));
+  const cat = normalize(item.categoria_feed || item.categoria || '');
+  const feedChile = ['chile', 'femenino', 'formativo', 'futsal', 'tercera'].includes(cat);
+  return feedChile || ['liga de primera', 'primera division', 'campeonato nacional', 'liga de ascenso', 'primera b', 'segunda division', 'liga 2d', 'copa chile', 'copa de la liga', 'supercopa de chile', 'liga femenina', 'ascenso femenino', 'tercera a', 'tercera b', 'futbol formativo', 'futsal', 'anfp', 'anfa'].some(k => t.includes(k));
 }
 function isInternational(item) {
-  if (item.categoria === 'internacional') return true;
+  if (item.categoria_feed === 'internacional' || item.categoria === 'internacional') return true;
   const t = normalize(String(item.title || '') + ' ' + String(item.description || ''));
   return ['champions league', 'premier league', 'laliga', 'la liga', 'serie a', 'bundesliga', 'ligue 1', 'brasileirao', 'liga mx', 'mls', 'copa libertadores', 'copa sudamericana', 'fifa', 'uefa', 'conmebol', 'mundial de clubes', 'futbol argentino'].some(k => t.includes(k));
 }
@@ -49,8 +51,9 @@ function importance(item) {
   let score = Number(item.viral_score || 0);
   if (isColo(item)) score += 28;
   if (isChileCompetition(item)) score += 55;
-  if (item.categoria === 'internacional') score += 24;
+  if (isInternational(item) && !isChileCompetition(item)) score += 24;
   if (isChileanAbroad(item)) score += 45;
+  // La noticia más reciente tiene ventaja, pero no desplaza automáticamente una noticia local importante.
   score += Math.max(0, 48 - ageHours(item)) / 4;
   score += Number(item.prioridad_fuente || 0) / 2;
   return score;
@@ -83,11 +86,22 @@ function labelFor(type) {
 }
 function ganchoFor(item, type) {
   const title = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
-  const clipped = title.length > 74 ? title.slice(0, 71).replace(/\s+\S*$/, '') + '…' : title;
-  if (type === 'colo_colo') return ('OJO, HINCHA ALBO: ' + clipped).slice(0, 100);
-  if (type === 'chilenos_exterior') return ('CHILENOS POR EL MUNDO: ' + clipped).slice(0, 100);
-  if (type === 'internacional') return ('FÚTBOL MUNDIAL: ' + clipped).slice(0, 100);
-  return ('ATENCIÓN, FÚTBOL CHILENO: ' + clipped).slice(0, 100);
+  const t = normalize(title);
+  // El gancho usa una señal que ya está en el titular: no añade rumores ni afirmaciones nuevas.
+  let prefix = '';
+  if (/\b(oficial|confirmado|confirma)\b/.test(t)) prefix = 'ES OFICIAL: ';
+  else if (/\b(ultimo momento|ultima hora|urgente)\b/.test(t)) prefix = 'ÚLTIMA HORA: ';
+  else if (/\b(remontada|remonta|goleada|hat.?trick|triplete|record|historico)\b/.test(t)) prefix = 'EL DATO QUE MARCA LA JORNADA: ';
+  else if (/\b(fichaje|traspaso|refuerzo|renovacion)\b/.test(t)) prefix = 'MERCADO DE PASES: ';
+  else if (/\b(clasifica|clasificado|eliminado|final|campeon|titulo)\w*/.test(t)) prefix = 'SE JUEGA ALGO GRANDE: ';
+  else if (/\b(lesion|baja|descartado|sancion|suspendido)\w*/.test(t)) prefix = 'ATENCIÓN A ESTA NOTICIA: ';
+  else if (type === 'colo_colo') prefix = 'COLO-COLO: LA CLAVE ES ';
+  else if (type === 'chilenos_exterior') prefix = 'CHILENOS POR EL MUNDO: ';
+  else if (type === 'internacional') prefix = 'FÚTBOL MUNDIAL: ';
+  else prefix = 'FÚTBOL CHILENO: ';
+  const maxTitle = Math.max(20, 96 - prefix.length);
+  const clipped = title.length > maxTitle ? title.slice(0, maxTitle - 1).replace(/\s+\S*$/, '') + '…' : title;
+  return (prefix + clipped).slice(0, 100);
 }
 function titleFor(item, type) {
   const base = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
@@ -164,14 +178,29 @@ function main() {
   };
 
   const modoEditorial = ['auto', 'chile', 'noticias'].includes(MODO);
-  // Rotación diaria: Chile tiene prioridad, pero el canal no se convierte en uno de un solo club.
+  // Tres ventanas diarias: dos priorizan Chile; una reserva espacio al fútbol mundial.
+  // En ejecuciones manuales fuera de esas horas se usa el día del mes para mantener rotación.
   if (modoEditorial) {
-    const ciclo = Number(FECHA.slice(-2)) % 3;
-    if (ciclo === 0) addPick(isColo, 'colo_colo');
-    addPick(n => isChileCompetition(n) && !isColo(n), 'chile');
-    if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
-    if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
-    if (picks.length < MAX_ITEMS && ciclo !== 0) addPick(isColo, 'colo_colo');
+    const utcHour = new Date().getUTCHours();
+    const scheduledHours = [15, 19, 23];
+    const scheduledSlot = scheduledHours.indexOf(utcHour);
+    const slot = scheduledSlot >= 0 ? scheduledSlot : (new Date().getUTCDate() % 3);
+    if (slot === 0) {
+      addPick(n => isChileCompetition(n) && !isColo(n), 'chile');
+      if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
+      if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
+      if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
+    } else if (slot === 1) {
+      addPick(n => isInternational(n) && !isChileanAbroad(n), 'internacional');
+      if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
+      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n), 'chile');
+      if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
+    } else {
+      addPick(isChileanAbroad, 'chilenos_exterior');
+      addPick(n => isChileCompetition(n) && !isColo(n), 'chile');
+      if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
+      if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
+    }
   }
 
   if (picks.length < MAX_ITEMS) {
