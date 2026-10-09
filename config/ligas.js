@@ -190,6 +190,11 @@ const RSS_FEEDS = [
   { name: 'Google News — Fútbol femenino internacional', url: gnews('futbol femenino Champions League selecciones', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 34 },
   { name: 'Google News — FIFA y selecciones', url: gnews('FIFA selecciones futbol internacional', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 40 },
   { name: 'Google News — Mercado internacional', url: gnews('fichajes futbol oficial traspasos Europa', 'es', 'ES'), lang: 'es', gl: 'ES', categoria: 'internacional', prioridad: 42 },
+  // 🏟️ BÚSQUEDAS AGRUPADAS POR CLUB: mejora la cobertura de equipos fuera del foco habitual
+  { name: 'Google News — Clubes Liga de Primera', url: gnews('("Colo-Colo" OR "Universidad de Chile" OR "Universidad Católica" OR Palestino OR "Audax Italiano" OR "Unión Española" OR O\'Higgins OR Cobresal OR Everton OR Huachipato OR "Coquimbo Unido" OR "Deportes Iquique" OR Ñublense OR "Unión La Calera" OR "Deportes Limache" OR "Deportes La Serena") futbol', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 89 },
+  { name: 'Google News — Clubes Liga de Ascenso', url: gnews('("Santiago Wanderers" OR Cobreloa OR "Deportes Copiapó" OR "San Marcos de Arica" OR Rangers OR "Curicó Unido" OR Magallanes OR "Deportes Antofagasta" OR "Universidad de Concepción" OR Recoleta OR "San Luis de Quillota" OR "Deportes Santa Cruz" OR "Santiago Morning" OR "Deportes Concepción" OR "Deportes Temuco" OR "Unión San Felipe") futbol', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 86 },
+  { name: 'Google News — Clubes y torneos femeninos chilenos', url: gnews('futbol femenino Chile Colo-Colo Universidad de Chile Universidad Católica Coquimbo Everton Antofagasta O\'Higgins', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'femenino', prioridad: 76 },
+
   // 🌐 COBERTURA MUNDIAL AMPLIADA: distintas regiones, torneos y fútbol femenino
   { name: 'Google News — Fútbol africano y CAF', url: gnews('CAF Champions League futbol selecciones africanas', 'es', 'ZA'), lang: 'es', gl: 'ZA', categoria: 'internacional', prioridad: 35 },
   { name: 'Google News — Fútbol asiático y AFC', url: gnews('AFC Champions League futbol selecciones asiaticas', 'es', 'SG'), lang: 'es', gl: 'SG', categoria: 'internacional', prioridad: 34 },
