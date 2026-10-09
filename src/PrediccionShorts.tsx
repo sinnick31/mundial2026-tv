@@ -33,6 +33,7 @@ export interface PrediccionProps {
   imagenEquipoSrc?: string;
   imagenEquipoCredito?: string;
   etiquetaCanal?: string;
+  etiquetaSeccion?: string;
 }
 
 /** Crédito de fuente persistente — señal de legitimidad para el algoritmo y el espectador */
@@ -189,7 +190,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
           letterSpacing: 1,
           fontFamily: "'Arial Black', sans-serif",
         }}>
-          ⚽ FÚTBOL CHILENO
+          ⚽ {props.etiquetaSeccion || 'FÚTBOL CHILENO'}
         </div>
       </div>
     </AbsoluteFill>
