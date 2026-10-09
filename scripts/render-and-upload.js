@@ -49,7 +49,9 @@ function imagenAutorizadaParaEquipo(nombreEquipo) {
   // Solo usar recursos cuyo operador haya confirmado los derechos de uso.
   try {
     const catalogo = JSON.parse(process.env.TEAM_IMAGES_JSON || '{}');
-    const key = Object.keys(catalogo).find(k => k.toLowerCase() === String(nombreEquipo || '').toLowerCase());
+    const normalizarEquipo = valor => String(valor || '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/[^a-z0-9]/g, '');
+    const buscado = normalizarEquipo(nombreEquipo);
+    const key = Object.keys(catalogo).find(k => normalizarEquipo(k) === buscado);
     const item = key ? catalogo[key] : null;
     if (!item || item.rights !== 'authorized' || !/^https:\/\//i.test(item.url || '')) return {};
     return { imagenEquipoSrc: item.url, imagenEquipoCredito: item.credit || 'Crédito no indicado' };
