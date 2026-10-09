@@ -189,7 +189,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
           letterSpacing: 1,
           fontFamily: "'Arial Black', sans-serif",
         }}>
-          ⚽ MUNDIAL 2026
+          ⚽ FÚTBOL CHILENO
         </div>
       </div>
     </AbsoluteFill>
