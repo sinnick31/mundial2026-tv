@@ -61,6 +61,12 @@ jobs:
 
       - run: npm ci
 
+      - name: 🧪 Validar scripts de noticias
+        run: |
+          node --check scripts/fetch-real-news.js
+          node --check scripts/generate-real-content.js
+          node --check scripts/viral-score.js
+
       - name: 🔎 Ingerir fuentes verificables
         run: node scripts/fetch-real-news.js
 
@@ -167,6 +173,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci
+
+      - name: 🧪 Validar render y TypeScript antes de publicar
+        run: |
+          node --check scripts/render-and-upload.js
+          npx tsc --noEmit
 
       - name: 🔐 Validar YouTube OAuth v8
         env:
