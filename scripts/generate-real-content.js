@@ -178,6 +178,7 @@ function buildItem(item, type, order) {
     _fuente_url: fuenteUrl,
     _fecha: FECHA,
     _fecha_publicacion_fuente: fechaPub,
+    _timestamp_fuente: item.timestamp || null,
     _orden: order,
     _categoria_editorial: type,
   };
