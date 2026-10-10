@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "THOMPSON ROMPE SILENCIO TRAS FICHAJE FRUSTRADO",
-      "titulo": "Jordhy Thompson rompe el silencio: ¿qué pasó con su fichaje en Colo Colo? 🎙️",
-      "fecha": "2026-07-31T04:28:01.082Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "RESISTENCIA EN FASE DE GRUPOS",
       "titulo": "Estudiantes LP, 1 derrota: ¿la revelación defensiva del torneo?",
@@ -3499,6 +3492,13 @@
       "hook": "SE JUEGA ALGO GRANDE: Colo Colo quiere remecer el mercado chileno fichando a un campeón de la…",
       "titulo": "FÚTBOL MUNDIAL: Colo Colo quiere remecer el mercado chileno fichando a un… | Lo que cambia",
       "fecha": "2026-10-10T19:07:44.526Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: Posible formación de Colo Colo ante Coquimbo Unido por la Liga de Primera -…",
+      "titulo": "FÚTBOL MUNDIAL: Posible formación de Colo Colo ante Coquimbo Unido por la Liga… | Lo que cambia",
+      "fecha": "2026-10-10T22:24:36.069Z"
     }
   ]
 }
