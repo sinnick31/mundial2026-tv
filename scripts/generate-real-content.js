@@ -121,8 +121,33 @@ function buildNarration(item, type, resumen) {
   const title = clean(item.title);
   const sourceName = clean(item.fuente || item.fuente_host || 'la fuente original');
   const fecha = fechaPublicacion(item);
-  const fechaTexto = fecha ? `La publicación de ${sourceName} está fechada el ${fecha}. Esta es la fecha de publicación de la fuente, no necesariamente la fecha del partido.` : 'La fecha de publicación no pudo verificarse con los datos disponibles, por lo que no se afirma una fecha de partido.';
-  return [`${labelFor(type)}.`, title, `Según ${sourceName}: ${resumen}`, fechaTexto, editorialAngle(type), closingQuestion(type)].join(' ');
+  const fechaTexto = fecha
+    ? `La fuente publicó esta información el ${fecha}; esa fecha corresponde a la publicación, no necesariamente al partido.`
+    : 'No tenemos una fecha de publicación suficientemente clara, así que no vamos a inventar cuándo ocurrió.';
+  const apertura = type === 'colo_colo'
+    ? 'Vamos con la información que interesa al hincha albo.'
+    : type === 'chilenos_exterior'
+      ? 'Atención a lo que pasa con los futbolistas chilenos fuera del país.'
+      : type === 'internacional'
+        ? 'Vamos al fútbol internacional, con el dato y su contexto.'
+        : 'Vamos al fútbol chileno, donde cada detalle puede cambiar la lectura de la fecha.';
+  const contexto = type === 'colo_colo'
+    ? 'Para el hincha de Colo-Colo, lo importante ahora es separar lo que está publicado de lo que todavía falta confirmar.'
+    : type === 'chilenos_exterior'
+      ? 'Para seguir esta historia, el próximo dato relevante será la información oficial del club, del jugador o del siguiente partido.'
+      : type === 'internacional'
+        ? 'El titular es el punto de partida; el impacto real dependerá de los próximos datos confirmados.'
+        : 'En el campeonato chileno, el contexto y la próxima actualización importan tanto como el titular.';
+  return [
+    apertura,
+    title,
+    `¿Qué sabemos hasta ahora? ${sourceName} informa lo siguiente: ${resumen}`,
+    fechaTexto,
+    contexto,
+    editorialAngle(type),
+    'En este canal distinguimos los hechos publicados de las interpretaciones: si no está confirmado por la fuente, no lo presentamos como oficial.',
+    closingQuestion(type)
+  ].join(' ');
 }
 function buildItem(item, type, order) {
   const title = clean(item.title);
