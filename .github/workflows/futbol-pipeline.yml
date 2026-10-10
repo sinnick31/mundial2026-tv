@@ -15,7 +15,7 @@ on:
       max_items:
         description: 'Shorts máximos'
         required: false
-        default: '1'
+        default: '2'
         type: choice
         options: ['1', '2']
       modo:
@@ -79,7 +79,7 @@ jobs:
       - name: 🧠 Seleccionar SOLO historias con valor
         id: gen
         env:
-          MAX_ITEMS: ${{ inputs.max_items || '1' }}
+          MAX_ITEMS: ${{ inputs.max_items || '2' }}
           MODO: ${{ inputs.modo || 'chile' }}
         run: |
           node scripts/generate-real-content.js
