@@ -198,7 +198,7 @@ function buildChileRoundup(items, order) {
     'Cada tema tiene su propia fuente y el estado de la información puede cambiar. Por eso distinguimos los anuncios oficiales de las versiones que todavía necesitan confirmación.',
     '¿Cuál de estas noticias puede mover más la próxima fecha? Te leemos en los comentarios.'
   ].join(' ');
-  const title = 'FÚTBOL CHILENO: Colo-Colo y los otros equipos, en 1 minuto';
+  const title = 'FÚTBOL CHILENO: ' + stories.length + ' noticias de los otros equipos';
   const description = [
     'Resumen editorial de noticias del fútbol chileno, con fuentes enlazadas y contexto propio.',
     ...sourceLines,
@@ -206,8 +206,8 @@ function buildChileRoundup(items, order) {
   ].join('\n\n');
   return {
     tipo: 'sorpresa',
-    gancho: '¡OJO, HINCHA! Esto se mueve en el fútbol chileno',
-    subtitulo: 'Colo-Colo primero y el resto del campeonato en un solo resumen.',
+    gancho: '¡ATENCIÓN, HINCHA! ' + stories.length + ' noticias de los otros equipos',
+    subtitulo: 'Un resumen con noticias de los demás clubes chilenos en un solo vídeo.',
     descripcion: narration,
     equipo1: 'Fútbol chileno',
     equipo2: null,
