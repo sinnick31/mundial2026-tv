@@ -15,7 +15,7 @@ on:
       max_items:
         description: 'Shorts máximos'
         required: false
-        default: '1'
+        default: '2'
         type: choice
         options: ['1', '2']
       modo:
@@ -79,7 +79,7 @@ jobs:
       - name: 🧠 Seleccionar SOLO historias con valor
         id: gen
         env:
-          MAX_ITEMS: ${{ inputs.max_items || '1' }}
+          MAX_ITEMS: ${{ inputs.max_items || '2' }}
           MODO: ${{ inputs.modo || 'chile' }}
         run: |
           node scripts/generate-real-content.js
@@ -89,21 +89,11 @@ jobs:
           echo "Piezas seleccionadas: $TOTAL"
           if [ "$TOTAL" -gt 0 ]; then echo "hay_contenido=true" >> "$GITHUB_OUTPUT"; else echo "hay_contenido=false" >> "$GITHUB_OUTPUT"; fi
 
-      - name: 🛡️ Bloqueo editorial
+      - name: 🛡️ Gate editorial (fuente, actualidad y guion)
         if: steps.gen.outputs.hay_contenido == 'true'
         run: |
-          node - <<'NODE'
-          const fs=require('fs');
-          const d=JSON.parse(fs.readFileSync('daily-content.json','utf8'));
-          if(!d.total || !Array.isArray(d.contenido)) throw new Error('daily-content inválido');
-          for(const [i,x] of d.contenido.entries()){
-            if(!x._fuente_url || !/^https?:\/\//.test(x._fuente_url)) throw new Error('Pieza '+(i+1)+': URL de fuente ausente');
-            if(!x._fuente) throw new Error('Pieza '+(i+1)+': fuente ausente');
-            if(!x.titulo_youtube) throw new Error('Pieza '+(i+1)+': título ausente');
-            if(!x.narracion || x.narracion.length<180) throw new Error('Pieza '+(i+1)+': narración original insuficiente');
-          }
-          console.log('✅ SOURCE LOCK + ORIGINALIDAD OK');
-          NODE
+          node --check scripts/editorial-quality-gate.js
+          node scripts/editorial-quality-gate.js
 
       - name: 💾 Guardar memoria editorial
         continue-on-error: true
