@@ -184,6 +184,54 @@ function buildItem(item, type, order) {
   };
 }
 
+function buildChileRoundup(items, order) {
+  const stories = items.slice(0, 4);
+  const first = stories[0];
+  const sourceLines = stories.map((n, i) => `${i + 1}. ${clean(n.title)} — ${clean(n.fuente || n.fuente_host || 'Fuente deportiva')}: ${n.link}`);
+  const bullets = stories.map((n, i) => {
+    const detail = snippet(n);
+    return `Noticia ${i + 1}: ${clean(n.title)}. ${detail} Según ${clean(n.fuente || n.fuente_host || 'la fuente original')}.`;
+  });
+  const narration = [
+    'Esto es el resumen del fútbol chileno: varias noticias, al grano y sin vender humo.',
+    ...bullets,
+    'Cada tema tiene su propia fuente y el estado de la información puede cambiar. Por eso distinguimos los anuncios oficiales de las versiones que todavía necesitan confirmación.',
+    '¿Cuál de estas noticias puede mover más la próxima fecha? Te leemos en los comentarios.'
+  ].join(' ');
+  const title = 'FÚTBOL CHILENO: Colo-Colo y los otros equipos, en 1 minuto';
+  const description = [
+    'Resumen editorial de noticias del fútbol chileno, con fuentes enlazadas y contexto propio.',
+    ...sourceLines,
+    '#FutbolChileno #ColoColo #CampeonatoChileno #Shorts'
+  ].join('\n\n');
+  return {
+    tipo: 'sorpresa',
+    gancho: '¡OJO, HINCHA! Esto se mueve en el fútbol chileno',
+    subtitulo: 'Colo-Colo primero y el resto del campeonato en un solo resumen.',
+    descripcion: narration,
+    equipo1: 'Fútbol chileno',
+    equipo2: null,
+    probabilidad: 0,
+    puntos: stories.map((n, i) => `NOTICIA ${i + 1}: ${clean(n.title)} | Fuente: ${clean(n.fuente || n.fuente_host || 'Fuente deportiva')} | ${n.link}`),
+    narracion: narration,
+    emoji: '🇨🇱⚽',
+    titulo_youtube: title,
+    descripcion_youtube: description,
+    tags: ['FutbolChileno', 'ColoColo', 'CampeonatoChileno', 'PrimeraB', 'CopaChile', 'Chile', 'Shorts'],
+    _tipo_contenido: 'noticia',
+    _match_id: null,
+    _noticia_original: stories.map(n => clean(n.title)).join(' | '),
+    _fuente: clean(first.fuente || first.fuente_host || 'Fuente deportiva'),
+    _fuente_url: first.link,
+    _fuentes_adicionales: stories.map(n => ({ fuente: clean(n.fuente || n.fuente_host || 'Fuente deportiva'), url: n.link, titular: clean(n.title), timestamp: n.timestamp || null })),
+    _fecha: FECHA,
+    _fecha_publicacion_fuente: fechaPublicacion(first),
+    _timestamp_fuente: first.timestamp || null,
+    _orden: order,
+    _categoria_editorial: 'resumen_futbol_chileno',
+  };
+}
+
 function main() {
   const news = readJson('news-cache.json', { noticias: [] });
   const history = loadHistory();
@@ -207,7 +255,33 @@ function main() {
   const modoEditorial = ['auto', 'chile', 'noticias'].includes(MODO);
   // Tres ventanas diarias: dos priorizan Chile; una reserva espacio al fútbol mundial.
   // En ejecuciones manuales fuera de esas horas se usa el día del mes para mantener rotación.
-  if (modoEditorial) {
+  if (MODO === 'chile') {
+    // Estrategia principal: pieza propia de Colo-Colo + un solo resumen con los demás equipos chilenos.
+    const colos = candidates.filter(isColo)
+      .filter(n => !usedLinks.has(n.link))
+      .filter(n => !hasSimilarHook(history, n.title, 'noticia'))
+      .sort((a, b) => importance(b) - importance(a));
+    if (colos.length && picks.length < MAX_ITEMS) {
+      const item = colos[0];
+      usedLinks.add(item.link);
+      picks.push(buildItem(item, 'colo_colo', picks.length + 1));
+    }
+
+    if (picks.length < MAX_ITEMS) {
+      const otherChile = candidates.filter(n => isChileCompetition(n) && !isColo(n))
+        .filter(n => !usedLinks.has(n.link))
+        .sort((a, b) => importance(b) - importance(a));
+      const roundup = [];
+      for (const item of otherChile) {
+        if (hasSimilarHook(history, item.title, 'noticia')) continue;
+        if (roundup.some(n => similitud(n.title, item.title) >= 0.55)) continue;
+        roundup.push(item);
+        usedLinks.add(item.link);
+        if (roundup.length >= 4) break;
+      }
+      if (roundup.length) picks.push(buildChileRoundup(roundup, picks.length + 1));
+    }
+  } else if (modoEditorial) {
     const utcHour = new Date().getUTCHours();
     const scheduledHours = [15, 19, 23];
     const scheduledSlot = scheduledHours.indexOf(utcHour);
@@ -230,7 +304,7 @@ function main() {
     }
   }
 
-  if (picks.length < MAX_ITEMS) {
+  if (MODO !== 'chile' && picks.length < MAX_ITEMS) {
     candidates.filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia')).sort((a, b) => importance(b) - importance(a)).slice(0, MAX_ITEMS - picks.length).forEach(n => {
       if (picks.length >= MAX_ITEMS) return;
       usedLinks.add(n.link);
