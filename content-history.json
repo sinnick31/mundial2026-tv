@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "RESISTENCIA EN FASE DE GRUPOS",
-      "titulo": "Estudiantes LP, 1 derrota: ¿la revelación defensiva del torneo?",
-      "fecha": "2026-07-31T04:28:26.000Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "LA ROJA ANUNCIA AMISTOSO CLAVE",
       "titulo": "La Roja confirma amistoso mundialista: ¿A qué grande enfrentará?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Posible formación de Colo Colo ante Coquimbo Unido por la Liga de Primera -…",
       "titulo": "FÚTBOL MUNDIAL: Posible formación de Colo Colo ante Coquimbo Unido por la Liga… | Lo que cambia",
       "fecha": "2026-10-10T22:24:36.069Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo-Colo tomó una decisión con los hinchas para la reanudación ante Puerto…",
+      "titulo": "FÚTBOL CHILENO: Colo-Colo tomó una decisión con los hinchas para la reanudación… | Lo que cambia",
+      "fecha": "2026-10-11T01:29:08.240Z"
     }
   ]
 }
