@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EFICIENCIA PUNTOS GRUPOS",
-      "titulo": "Flamengo: 2.67 puntos/partido en grupos, ¿su dominación es abrumadora?",
-      "fecha": "2026-07-31T14:17:11.900Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "LA ROJA AMISTOSO MUNDIALISTA OFICIAL",
       "titulo": "La Roja oficializa amistoso 🇨🇱 con mundialista: ¿Quién debería ser titular?",
@@ -3499,6 +3492,13 @@
       "hook": "SE JUEGA ALGO GRANDE: A Vidal le preguntan por el título y apunta directo a la ANFP: su frase…",
       "titulo": "FÚTBOL CHILENO: A Vidal le preguntan por el título y apunta directo a la ANFP:… | Lo que cambia",
       "fecha": "2026-10-12T02:00:29.608Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Universidad de Chile se da un festín con Ñublense y se aferra al Chile 2: así…",
+      "titulo": "FÚTBOL CHILENO: Universidad de Chile se da un festín con Ñublense y se aferra al… | Lo que cambia",
+      "fecha": "2026-10-12T22:23:27.528Z"
     }
   ]
 }
