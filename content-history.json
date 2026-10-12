@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "THOMPSON ROMPE SILENCIO TRAS FRUSTRADO FICHAJE",
-      "titulo": "Jordhy Thompson rompió el silencio tras su frustrado fichaje: ¿Qué dijo del Cacique?",
-      "fecha": "2026-07-31T14:16:49.383Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "EFICIENCIA PUNTOS GRUPOS",
       "titulo": "Flamengo: 2.67 puntos/partido en grupos, ¿su dominación es abrumadora?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: El Barbón no tuvo piedad y le dio una clase de fútbol al líder Colo-Colo - El…",
       "titulo": "FÚTBOL CHILENO: El Barbón no tuvo piedad y le dio una clase de fútbol al líder… | Lo que cambia",
       "fecha": "2026-10-11T22:46:56.058Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "SE JUEGA ALGO GRANDE: A Vidal le preguntan por el título y apunta directo a la ANFP: su frase…",
+      "titulo": "FÚTBOL CHILENO: A Vidal le preguntan por el título y apunta directo a la ANFP:… | Lo que cambia",
+      "fecha": "2026-10-12T02:00:29.608Z"
     }
   ]
 }
