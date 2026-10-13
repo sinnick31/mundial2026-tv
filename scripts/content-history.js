@@ -88,9 +88,14 @@ function normalizeSourceUrl(value) {
 }
 
 /** Detecta una fuente ya publicada, aunque cambie el gancho o el título de YouTube. */
+function titleTokens(value) {
+  const stop = new Set(['para', 'como', 'donde', 'cuando', 'desde', 'hasta', 'sobre', 'tras', 'ante', 'entre', 'este', 'esta', 'estos', 'estas', 'futbol', 'mundial', 'noticia', 'oficial', 'horario', 'tv', 'ver', 'por', 'con', 'del', 'las', 'los', 'una', 'uno', 'que', 'sus', 'mas']);
+  return new Set(normalize(value).split(' ').filter(word => word.length > 3 && !stop.has(word)));
+}
+
 function hasSeenSource(history, sourceUrl, title, diasVentana = 30) {
   const url = normalizeSourceUrl(sourceUrl);
-  const titleNorm = normalize(title || '');
+  const tokens = titleTokens(title || '');
   const limite = Date.now() - diasVentana * 24 * 60 * 60 * 1000;
 
   return history.items.some(i => {
@@ -99,9 +104,11 @@ function hasSeenSource(history, sourceUrl, title, diasVentana = 30) {
     const previousUrl = normalizeSourceUrl(i.source_url || i.fuente_url || '');
     if (url && previousUrl && url === previousUrl) return true;
 
-    // Compatibilidad con el historial antiguo que no guardaba la URL de la fuente.
-    const previousTitle = normalize(i.titulo || '');
-    return Boolean(titleNorm && previousTitle && titleNorm === previousTitle);
+    // Compatibilidad con historial antiguo: compara el titular original con el título publicado.
+    const previousTokens = titleTokens(i.titulo || '');
+    if (tokens.size < 3 || previousTokens.size < 3) return false;
+    const shared = [...tokens].filter(token => previousTokens.has(token)).length;
+    return shared / Math.min(tokens.size, previousTokens.size) >= 0.8;
   });
 }
 
