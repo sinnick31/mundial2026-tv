@@ -21,9 +21,9 @@ on:
       modo:
         description: 'Enfoque editorial'
         required: false
-        default: 'chile'
+        default: 'mixto'
         type: choice
-        options: ['chile', 'auto', 'noticias']
+        options: ['mixto', 'chile', 'auto', 'noticias']
 
 concurrency:
   group: mundial2026shorts-${{ github.ref }}
@@ -80,7 +80,7 @@ jobs:
         id: gen
         env:
           MAX_ITEMS: ${{ inputs.max_items || '1' }}
-          MODO: ${{ inputs.modo || 'chile' }}
+          MODO: ${{ inputs.modo || 'mixto' }}
         run: |
           node scripts/generate-real-content.js
           FECHA=$(date -u +%Y-%m-%d)
@@ -202,6 +202,11 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           name: contenido-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
+
+      - name: 🛡️ Validar derechos audiovisuales antes del render
+        run: |
+          node --check scripts/check-media-rights.js
+          node scripts/check-media-rights.js
 
       - name: 🎥 Renderizar + publicar
         env:
