@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "THOMPSON ROMPE SILENCIO COLO COLO",
-      "titulo": "Jordhy Thompson habla de su fichaje frustrado: ¿se cierra la puerta de Colo Colo?",
-      "fecha": "2026-07-31T17:40:14.700Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "PUNTOS POR GOL CONCEDIDO",
       "titulo": "Flamengo logra 8.0 puntos por gol concedido: ¿defensa de acero?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Corinthians vs. Colo Colo: Horario, posibles formaciones y dónde ver por TV y…",
       "titulo": "FÚTBOL MUNDIAL: Corinthians vs. Colo Colo: Horario, posibles formaciones y dónde… | Lo que cambia",
       "fecha": "2026-10-13T03:20:23.189Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo-Colo y la U a la cancha: grupos, horarios, TV y todo lo que hay que saber…",
+      "titulo": "FÚTBOL CHILENO: Colo-Colo y la U a la cancha: grupos, horarios, TV y todo lo que… | Lo que cambia",
+      "fecha": "2026-10-13T15:01:31.742Z"
     }
   ]
 }
