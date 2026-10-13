@@ -61,6 +61,9 @@ jobs:
 
       - run: npm ci
 
+      - name: 🧪 Probar deduplicación editorial
+        run: node --test scripts/pipeline-guards.test.js
+
       - name: 🧪 Validar scripts de noticias
         run: |
           node --check scripts/fetch-real-news.js
