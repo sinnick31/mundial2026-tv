@@ -24,7 +24,10 @@ function normalize(s = '') {
   return clean(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 function ageHours(item) {
-  const ts = new Date(item.timestamp || Date.now()).getTime();
+  const raw = item.timestamp || item.pubDate || item.publishedAt;
+  if (!raw) return Infinity;
+  const ts = Date.parse(raw);
+  if (!Number.isFinite(ts) || ts > Date.now() + 6 * 60 * 60 * 1000) return Infinity;
   return Math.max(0, (Date.now() - ts) / 36e5);
 }
 function isColo(item) {
@@ -205,7 +208,7 @@ function main() {
   }
 
   if (picks.length < MAX_ITEMS) {
-    candidates.filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia')).sort((a, b) => importance(b) - importance(a)).slice(0, MAX_ITEMS - picks.length).forEach(n => {
+    candidates.filter(n => !usedLinks.has(n.link)).filter(n => !hasSeenSource(history, n.link, n.title)).sort((a, b) => importance(b) - importance(a)).slice(0, MAX_ITEMS - picks.length).forEach(n => {
       if (picks.length >= MAX_ITEMS) return;
       usedLinks.add(n.link);
       picks.push(buildItem(n, typeFor(n), picks.length + 1));
