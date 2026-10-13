@@ -53,7 +53,16 @@ function imagenAutorizadaParaEquipo(nombreEquipo) {
     const buscado = normalizarEquipo(nombreEquipo);
     const key = Object.keys(catalogo).find(k => normalizarEquipo(k) === buscado);
     const item = key ? catalogo[key] : null;
-    if (!item || item.rights !== 'authorized' || !/^https:\/\//i.test(item.url || '')) return {};
+    const vigente = !item?.valid_until || (Number.isFinite(Date.parse(item.valid_until)) && Date.parse(item.valid_until) >= Date.now());
+    if (
+      !item ||
+      item.rights !== 'authorized' ||
+      item.youtube_allowed !== true ||
+      item.monetization_allowed !== true ||
+      !item.evidence_reference ||
+      !vigente ||
+      !/^https:\/\//i.test(item.url || '')
+    ) return {};
     return { imagenEquipoSrc: item.url, imagenEquipoCredito: item.credit || 'Crédito no indicado' };
   } catch {
     return {};
@@ -62,11 +71,27 @@ function imagenAutorizadaParaEquipo(nombreEquipo) {
 
 function elegirBroll() {
   try {
-    const archivos = fs.readdirSync(BROLL_DIR).filter(f => /\.(mp4|mov|webm)$/i.test(f));
-    if (archivos.length === 0) return undefined;
+    const manifestPath = path.join(BROLL_DIR, 'rights-manifest.json');
+    if (!fs.existsSync(manifestPath)) return undefined;
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    const assets = Array.isArray(manifest.assets) ? manifest.assets : [];
+    const archivos = assets.filter(item => {
+      if (!item || item.rights_status !== 'authorized' ||
+          item.youtube_allowed !== true || item.monetization_allowed !== true ||
+          !item.evidence_reference ||
+          !['.mp4', '.mov', '.webm'].some(ext => String(item.file || '').toLowerCase().endsWith(ext))) return false;
+      if (item.valid_until) {
+        const expiry = Date.parse(item.valid_until);
+        if (!Number.isFinite(expiry) || expiry < Date.now()) return false;
+      }
+      const full = path.resolve(BROLL_DIR, item.file);
+      return full.startsWith(BROLL_DIR + path.sep) && fs.existsSync(full);
+    });
+    if (!archivos.length) return undefined;
     const elegido = archivos[Math.floor(Math.random() * archivos.length)];
-    return `broll/${elegido}`;
-  } catch {
+    return 'broll/' + elegido.file;
+  } catch (err) {
+    console.warn('🛡️ No se usará B-roll: manifiesto de derechos ausente o inválido.');
     return undefined;
   }
 }

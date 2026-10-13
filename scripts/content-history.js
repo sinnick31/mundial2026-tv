@@ -74,12 +74,51 @@ function hasSimilarHook(history, hook, tipoContenido, diasVentana = 14) {
   });
 }
 
-function registrar(history, { matchId, tipoContenido, hook, titulo }) {
+function normalizeSourceUrl(value) {
+  try {
+    const u = new URL(String(value));
+    u.hash = '';
+    for (const key of [...u.searchParams.keys()]) {
+      if (/^(utm_|fbclid$|gclid$|ref$)/i.test(key)) u.searchParams.delete(key);
+    }
+    return u.toString().replace(/\/$/, '');
+  } catch {
+    return String(value || '').trim();
+  }
+}
+
+/** Detecta una fuente ya publicada, aunque cambie el gancho o el título de YouTube. */
+function titleTokens(value) {
+  const stop = new Set(['para', 'como', 'donde', 'cuando', 'desde', 'hasta', 'sobre', 'tras', 'ante', 'entre', 'este', 'esta', 'estos', 'estas', 'futbol', 'mundial', 'noticia', 'oficial', 'horario', 'tv', 'ver', 'por', 'con', 'del', 'las', 'los', 'una', 'uno', 'que', 'sus', 'mas']);
+  return new Set(normalize(value).split(' ').filter(word => word.length > 3 && !stop.has(word)));
+}
+
+function hasSeenSource(history, sourceUrl, title, diasVentana = 30) {
+  const url = normalizeSourceUrl(sourceUrl);
+  const tokens = titleTokens(title || '');
+  const limite = Date.now() - diasVentana * 24 * 60 * 60 * 1000;
+
+  return history.items.some(i => {
+    const fecha = new Date(i.fecha || 0).getTime();
+    if (!Number.isFinite(fecha) || fecha < limite) return false;
+    const previousUrl = normalizeSourceUrl(i.source_url || i.fuente_url || '');
+    if (url && previousUrl && url === previousUrl) return true;
+
+    // Compatibilidad con historial antiguo: compara el titular original con el título publicado.
+    const previousTokens = titleTokens(i.titulo || '');
+    if (tokens.size < 3 || previousTokens.size < 3) return false;
+    const shared = [...tokens].filter(token => previousTokens.has(token)).length;
+    return shared / Math.min(tokens.size, previousTokens.size) >= 0.8;
+  });
+}
+
+function registrar(history, { matchId, tipoContenido, hook, titulo, sourceUrl }) {
   history.items.push({
     match_id: matchId ? String(matchId) : null,
     tipo_contenido: tipoContenido,
     hook,
     titulo,
+    source_url: sourceUrl ? normalizeSourceUrl(sourceUrl) : null,
     fecha: new Date().toISOString(),
   });
 }
@@ -89,6 +128,7 @@ module.exports = {
   saveHistory,
   hasMatch,
   hasSimilarHook,
+  hasSeenSource,
   registrar,
   normalize,
 };

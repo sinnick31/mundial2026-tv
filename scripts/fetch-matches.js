@@ -136,6 +136,15 @@ async function getMatchesFromESPN() {
     try {
       const data = await httpGet(`https://site.api.espn.com/apis/site/v2/sports/soccer/${liga.slug}/scoreboard`);
       for (const e of data.events || []) {
+        // ESPN can return events outside the current match window. Do not label
+        // an old World Cup final or a distant fixture as a recent result.
+        const eventMs = Date.parse(e.date || '');
+        if (!Number.isFinite(eventMs)) continue;
+        const nowMs = Date.now();
+        const eventStatus = e.status?.type;
+        if (eventStatus?.completed && eventMs < nowMs - 48 * 60 * 60 * 1000) continue;
+        if (!eventStatus?.completed && eventMs > nowMs + 5 * 24 * 60 * 60 * 1000) continue;
+
         const comp = e.competitions?.[0];
         const teams = comp?.competitors || [];
         const home = teams.find((t) => t.homeAway === 'home') || teams[0] || {};
