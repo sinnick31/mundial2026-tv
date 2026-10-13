@@ -8,7 +8,7 @@
  */
 
 const fs = require('fs');
-const { loadHistory, saveHistory, hasSimilarHook, registrar } = require('./content-history');
+const { loadHistory, saveHistory, hasSimilarHook, hasSeenSource, registrar } = require('./content-history');
 
 const MAX_ITEMS = Math.min(parseInt(process.env.MAX_ITEMS || '2', 10), 2);
 const MODO = process.env.MODO || 'auto';
@@ -172,13 +172,13 @@ function main() {
   const picks = [];
   const addPick = (predicate, type) => {
     if (picks.length >= MAX_ITEMS) return;
-    const item = candidates.filter(predicate).filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia')).sort((a, b) => importance(b) - importance(a))[0];
+    const item = candidates.filter(predicate).filter(n => !usedLinks.has(n.link)).filter(n => !hasSeenSource(history, n.link, n.title)).sort((a, b) => importance(b) - importance(a))[0];
     if (!item) return;
     usedLinks.add(item.link);
     picks.push(buildItem(item, type, picks.length + 1));
   };
 
-  const modoEditorial = ['auto', 'chile', 'noticias'].includes(MODO);
+  const modoEditorial = ['auto', 'chile', 'noticias', 'mixto'].includes(MODO);
   // Tres ventanas diarias: dos priorizan Chile; una reserva espacio al fútbol mundial.
   // En ejecuciones manuales fuera de esas horas se usa el día del mes para mantener rotación.
   if (modoEditorial) {
@@ -218,7 +218,7 @@ function main() {
     return;
   }
 
-  picks.forEach(item => registrar(history, { matchId: null, tipoContenido: 'noticia', hook: item.gancho, titulo: item.titulo_youtube }));
+  picks.forEach(item => registrar(history, { matchId: null, tipoContenido: 'noticia', hook: item.gancho, titulo: item._noticia_original || item.titulo_youtube, sourceUrl: item._fuente_url }));
   saveHistory(history);
   fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, generado_en: new Date().toISOString(), total: picks.length, modo: MODO, politica: 'SOURCE_LOCKED_EDITORIAL_V6', contenido: picks }, null, 2));
   console.log(`✅ ${picks.length} piezas reales seleccionadas`);
