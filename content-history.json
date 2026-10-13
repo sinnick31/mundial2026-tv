@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "PUNTOS POR GOL CONCEDIDO",
-      "titulo": "Flamengo logra 8.0 puntos por gol concedido: ¿defensa de acero?",
-      "fecha": "2026-07-31T17:40:34.709Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "LA ROJA CONFIRMA AMISTOSO MUNDIALISTA",
       "titulo": "La Roja confirma amistoso ante selección mundialista: ¿Quién será el rival?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Colo-Colo y la U a la cancha: grupos, horarios, TV y todo lo que hay que saber…",
       "titulo": "FÚTBOL CHILENO: Colo-Colo y la U a la cancha: grupos, horarios, TV y todo lo que… | Lo que cambia",
       "fecha": "2026-10-13T15:01:31.742Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: La U goleó, Colo Colo cayó y el descenso no se mueve: Así quedó la Liga de…",
+      "titulo": "FÚTBOL MUNDIAL: La U goleó, Colo Colo cayó y el descenso no se mueve: Así quedó… | Lo que cambia",
+      "fecha": "2026-10-13T20:30:52.760Z"
     }
   ]
 }
