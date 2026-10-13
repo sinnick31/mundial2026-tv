@@ -78,7 +78,8 @@ function elegirBroll() {
     const archivos = assets.filter(item => {
       if (!item || item.rights_status !== 'authorized' ||
           item.youtube_allowed !== true || item.monetization_allowed !== true ||
-          !item.evidence_reference || !/\.(mp4|mov|webm)$/i.test(item.file || '')) return false;
+          !item.evidence_reference ||
+          !['.mp4', '.mov', '.webm'].some(ext => String(item.file || '').toLowerCase().endsWith(ext))) return false;
       if (item.valid_until) {
         const expiry = Date.parse(item.valid_until);
         if (!Number.isFinite(expiry) || expiry < Date.now()) return false;
@@ -88,7 +89,7 @@ function elegirBroll() {
     });
     if (!archivos.length) return undefined;
     const elegido = archivos[Math.floor(Math.random() * archivos.length)];
-    return `broll/${elegido.file.replace(/\\\\/g, '/')}`;
+    return 'broll/' + elegido.file;
   } catch (err) {
     console.warn('🛡️ No se usará B-roll: manifiesto de derechos ausente o inválido.');
     return undefined;
