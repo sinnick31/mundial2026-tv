@@ -1,14 +1,34 @@
 {
-  "ultima_actualizacion": "2026-10-12T22:23:24.611Z",
-  "total_hoy": 529,
+  "ultima_actualizacion": "2026-10-13T01:13:58.128Z",
+  "total_hoy": 487,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 95,
-    "colo_colo": 43,
-    "femenino": 1,
-    "chilenos_exterior": 1
+    "chile": 94,
+    "colo_colo": 46
   },
   "noticias": [
+    {
+      "title": "Everton vs Deportes La Serena - Campeonato Chileno",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPNzRKZVhIQ3owQmxGNkNzLWE0aXBNYVljUUpmV1hLM3NmRXVWQVhhcld5YmswMnRCWmRORHZVVndRcF9vTDFrYTZlMUEzdm1hYUdWS1dYOG9udmxJRUI0dDNIblZ1QkQyeUNNRGxuWFNQQ05mRklxR3hCbVdBbTcyeDYyWQ?oc=5\" target=\"_blank\">Everton vs Deportes La Serena</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Campeonato Chileno</font>",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPNzRKZVhIQ3owQmxGNkNzLWE0aXBNYVljUUpmV1hLM3NmRXVWQVhhcld5YmswMnRCWmRORHZVVndRcF9vTDFrYTZlMUEzdm1hYUdWS1dYOG9udmxJRUI0dDNIblZ1QkQyeUNNRGxuWFNQQ05mRklxR3hCbVdBbTcyeDYyWQ?oc=5",
+      "pubDate": "Sun, 11 Oct 2026 23:35:26 GMT",
+      "timestamp": "2026-10-11T23:35:26.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Campeonato Chileno",
+      "fuente_url_original": "https://www.campeonatochileno.cl",
+      "fuente": "Campeonato Chileno",
+      "fuente_host": "campeonatochileno.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 92,
+      "categoria": "chile",
+      "equipo_chile": "Everton",
+      "viral_score": 73,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:26h(+0)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
     {
       "title": "Huachipato vs O’Higgins - Campeonato Chileno",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE5ZTWVnMG1Pd3BrQ1RmVWdndHVMSlpSZ2RJQzZJRnRNWkUtOVFhMUVBTzFfbjBDcjZCUHViZUNRX3l1b0pMWmc5REJMdVpQb1VrbGZpaTMzN0c0TWhiOHRxRGRyWjRCWnlDZU5GZE1ldzdQR0U5WDhlYmR3?oc=5\" target=\"_blank\">Huachipato vs O’Higgins</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Campeonato Chileno</font>",
@@ -581,6 +601,50 @@
       ]
     },
     {
+      "title": "Deportes Iquique celebró y agudizó la crisis de Unión Española en la Liga de Ascenso - Cooperativa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8AFBVV95cUxNVDhSS2pncklZelpiRnltendPeml0UnRIRDJEbGg5RFg1ajRLSjhDZWh2NjR1V2NCblBaNzZwYldzSmFwUDVRaUtwdXR4TThIZXJldXk4aFJ0RUJKNC1COF9sV20tVHlpa2hoU2huMUpjTEozc1M1OVduaG80a1Nwc1NIWmk5NWVUNXY3ekZ6cGZ2SXpwMDZRZG5fcUNGcWRiXzQ2YWhGeTJOMThNNWRUYkVnTVQ2LUJWX3YwLXE2b25tRDRxM2hoM0tGUElYTTd3aVhMOW1wemJhS25CUDJGekRZclAwd19QTHdTNlBQbTjSAYwBQVVfeXFMTUJTX3FVYTNjanlBanBiNXFZQ2xwWTZENFBYWmtfUzlPRTVFZmN2SlFDd2EzMUNNZUxrUURHdWlDeWZMS0p4UTRzcjF0OVR3OVlwdE9ScTRBOEJnR1",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNVDhSS2pncklZelpiRnltendPeml0UnRIRDJEbGg5RFg1ajRLSjhDZWh2NjR1V2NCblBaNzZwYldzSmFwUDVRaUtwdXR4TThIZXJldXk4aFJ0RUJKNC1COF9sV20tVHlpa2hoU2huMUpjTEozc1M1OVduaG80a1Nwc1NIWmk5NWVUNXY3ekZ6cGZ2SXpwMDZRZG5fcUNGcWRiXzQ2YWhGeTJOMThNNWRUYkVnTVQ2LUJWX3YwLXE2b25tRDRxM2hoM0tGUElYTTd3aVhMOW1wemJhS25CUDJGekRZclAwd19QTHdTNlBQbTjSAYwBQVVfeXFMTUJTX3FVYTNjanlBanBiNXFZQ2xwWTZENFBYWmtfUzlPRTVFZmN2SlFDd2EzMUNNZUxrUURHdWlDeWZMS0p4UTRzcjF0OVR3OVlwdE9ScTRBOEJnR1k3VVpsZE1hQTF0TDUtVDdCX3JvLUFTZkhaaE0wLUxCdnFkcWp1NEZZejFFRWNlRXU?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 23:23:00 GMT",
+      "timestamp": "2026-10-12T23:23:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Cooperativa",
+      "fuente_url_original": "https://www.cooperativa.cl",
+      "fuente": "Cooperativa",
+      "fuente_host": "cooperativa.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "categoria": "chile",
+      "equipo_chile": "Unión Española",
+      "viral_score": 89,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)",
+        "senal:\\b(crisis|despedido|(+9)"
+      ]
+    },
+    {
+      "title": "Unión Española perdió 1-0 ante Deportes Iquique - El Rancagüino",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxPWFZHNWcwQlN4a2tYQWw1dVM3eUFaNFpZQ2ZTVjNoUGo2RmJmNHNnZUQ4Q0VNTzQyZVU2UWtyLUxyVTFERnBqaVZfTGdXU2ZhcjU2X05yNlM5V2xFN2wtbjYyd3FMd2pBZ2ZjMWtVMDFKcFp0YUJ3RjJaWG4xT0NoclhnWHZ2eFl1SzJXOGREbUduelE5T0hYQ0duWi1sVmJ2d1BnLXNPMzRkeFUwSVlIU2tickZrZTdoVTBOV1ZpTUtnOGlLMTZLcVhMcVB2S3ZGR3A3U1JKaw?oc=5\" target=\"_blank\">Unión Española perdió 1-0 ante Deportes Iquique</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">El Rancagüino</font>",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPWFZHNWcwQlN4a2tYQWw1dVM3eUFaNFpZQ2ZTVjNoUGo2RmJmNHNnZUQ4Q0VNTzQyZVU2UWtyLUxyVTFERnBqaVZfTGdXU2ZhcjU2X05yNlM5V2xFN2wtbjYyd3FMd2pBZ2ZjMWtVMDFKcFp0YUJ3RjJaWG4xT0NoclhnWHZ2eFl1SzJXOGREbUduelE5T0hYQ0duWi1sVmJ2d1BnLXNPMzRkeFUwSVlIU2tickZrZTdoVTBOV1ZpTUtnOGlLMTZLcVhMcVB2S3ZGR3A3U1JKaw?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 22:33:00 GMT",
+      "timestamp": "2026-10-12T22:33:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "El Rancagüino",
+      "fuente_url_original": "https://www.elrancaguino.cl",
+      "fuente": "El Rancagüino",
+      "fuente_host": "elrancaguino.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "categoria": "chile",
+      "equipo_chile": "Unión Española",
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
       "title": "Deportes Limache y Palestino igualaron en un intenso y atractivo duelo de La Liga de Primera - BioBioChile",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiiAJBVV95cUxOZXAzcmYwVU9fM3VNZUJGUl9vZF80UzNFMTVqTGI0TDFsQTFwN0hJOFU1Z2MyZU9zQmo2QzBRV2pBbmNJcDE1ejBOX0o1YW1kLWNpSUxkMno1TUNZU0NTZW9zcmlEQUg5cTM2aXZNbnFDS3RwTW12anhJenRNZ3NwbGdIOGVXZGtxNElqaTZHSjV3cEUtbEg4Qzk3TUk4U2ZDRFdYd2pRVDk2QTRheDZPT3d4TWJfMjN3QzRHbUh4YVdhT0REMTU4MUVnRmlZOHRHcktMWGx3X012N0VEay0tQzJKYmhsZG5ZN1RQVjBVYmRNZ3hLSEdPSnMzUXV4UlVrc1JFeE9PQjg?oc=5\" target=\"_blank\">Deportes Limache y Palestino igualaron en un intenso y atractivo duelo d",
       "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOZXAzcmYwVU9fM3VNZUJGUl9vZF80UzNFMTVqTGI0TDFsQTFwN0hJOFU1Z2MyZU9zQmo2QzBRV2pBbmNJcDE1ejBOX0o1YW1kLWNpSUxkMno1TUNZU0NTZW9zcmlEQUg5cTM2aXZNbnFDS3RwTW12anhJenRNZ3NwbGdIOGVXZGtxNElqaTZHSjV3cEUtbEg4Qzk3TUk4U2ZDRFdYd2pRVDk2QTRheDZPT3d4TWJfMjN3QzRHbUh4YVdhT0REMTU4MUVnRmlZOHRHcktMWGx3X012N0VEay0tQzJKYmhsZG5ZN1RQVjBVYmRNZ3hLSEdPSnMzUXV4UlVrc1JFeE9PQjg?oc=5",
@@ -887,27 +951,6 @@
       ]
     },
     {
-      "title": "Deportes Limache vs. Palestino en vivo: cómo llegan al partido - TyC Sports",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPOHJCQmRieE9EMUJTQ1Y3bnRiYWNiSl9wMnhOS1FGVWJnQW5XNTZIUXVwUUhKaEtjeGVpODcxOHlCbEJ1bll0VEJsSW9Belp2OXdhVmNrNVFqM1NWcVd0QVBUNFZsRS1qcU9UUjllSnFJQ3BOQzk5T3did0V3QlpWNWd6bkR4b3h2OHNCY013NWx1T0w2ek9wS1p5cklhVkFnVTdqUWtQcWt1alVtRlVGbWZ3ZGVvWThGa2dCS3JrdDhnVFRXX3Bv?oc=5\" target=\"_blank\">Deportes Limache vs. Palestino en vivo: cómo llegan al partido</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TyC Sports</font>",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPOHJCQmRieE9EMUJTQ1Y3bnRiYWNiSl9wMnhOS1FGVWJnQW5XNTZIUXVwUUhKaEtjeGVpODcxOHlCbEJ1bll0VEJsSW9Belp2OXdhVmNrNVFqM1NWcVd0QVBUNFZsRS1qcU9UUjllSnFJQ3BOQzk5T3did0V3QlpWNWd6bkR4b3h2OHNCY013NWx1T0w2ek9wS1p5cklhVkFnVTdqUWtQcWt1alVtRlVGbWZ3ZGVvWThGa2dCS3JrdDhnVFRXX3Bv?oc=5",
-      "pubDate": "Fri, 09 Oct 2026 23:00:26 GMT",
-      "timestamp": "2026-10-09T23:00:26.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "TyC Sports",
-      "fuente_url_original": "https://www.tycsports.com",
-      "fuente": "TyC Sports",
-      "fuente_host": "tycsports.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 89,
-      "categoria": "chile",
-      "equipo_chile": "Palestino",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:0h(+15)"
-      ]
-    },
-    {
       "title": "Deportes Limache y Palestino empataron en emocionante duelo de la Primera División - Canal 9 Bío Bío Televisión",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxNdVJkNV9SVF9aaGlwVFBLZUpFYmNBMWRHNlZkTHllbHVlQXY3WWpwS0VwUTNJbUxibEg4dURabS1lR0s0S3JZS3pyQVBXUTBEMkhLSUFvemt0VEJ2bjI2UkpFN0xhU2lFNEI3U1VDNk1XQkpuMW1lRlZpMHdSdlZ1My10U29KYXRNNjRHTUxsTFF3TVFFMUFGMjNuakhZODNRcXBNMmxSSGZYR2FBanlDZzhFVGVqaUdkNGI2ODRyeFN2NlFnNG53YTZ4TzlyM3dP?oc=5\" target=\"_blank\">Deportes Limache y Palestino empataron en emocionante duelo de la Primera División</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Canal 9 Bío Bío Televisión<",
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNdVJkNV9SVF9aaGlwVFBLZUpFYmNBMWRHNlZkTHllbHVlQXY3WWpwS0VwUTNJbUxibEg4dURabS1lR0s0S3JZS3pyQVBXUTBEMkhLSUFvemt0VEJ2bjI2UkpFN0xhU2lFNEI3U1VDNk1XQkpuMW1lRlZpMHdSdlZ1My10U29KYXRNNjRHTUxsTFF3TVFFMUFGMjNuakhZODNRcXBNMmxSSGZYR2FBanlDZzhFVGVqaUdkNGI2ODRyeFN2NlFnNG53YTZ4TzlyM3dP?oc=5",
@@ -1098,6 +1141,29 @@
       ]
     },
     {
+      "title": "Corinthians vs. Colo Colo: Horario, posibles formaciones y dónde ver por TV y streaming la Copa Libertadores Femenina - PrensaFútbol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxQVzY0SVU4WHBvR0xzZ3M3QlcyalloQXBiMDA1MzNoWkU1aUtOb216WnVyWWxqTmNsYTM3N0hGTndpVWFCa1J0dW1qMDdHUHN6aVVpdmxhR2NiNzFSaURKeFYzZ3FUeVZwQmhJM3pCWGVqTDd0TkZnLURiRnBBbDFLMg?oc=5\" target=\"_blank\">Corinthians vs. Colo Colo: Horario, posibles formaciones y dónde ver por TV y streaming la Copa Libertadores Femenina</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVzY0SVU4WHBvR0xzZ3M3QlcyalloQXBiMDA1MzNoWkU1aUtOb216WnVyWWxqTmNsYTM3N0hGTndpVWFCa1J0dW1qMDdHUHN6aVVpdmxhR2NiNzFSaURKeFYzZ3FUeVZwQmhJM3pCWGVqTDd0TkZnLURiRnBBbDFLMg?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 23:38:23 GMT",
+      "timestamp": "2026-10-12T23:38:23.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "PrensaFútbol",
+      "fuente_url_original": "https://www.prensafutbol.cl",
+      "fuente": "PrensaFútbol",
+      "fuente_host": "prensafutbol.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:2h(+15)",
+        "gigante:colo colo(+10)",
+        "penal(-8)"
+      ]
+    },
+    {
       "title": "Set y partido: Universidad de Chile golea por 6-0 a Ñublense y sigue a la caza de Colo Colo - RedGol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZ0h5TWNSZEF1UVJvZzJrbTFFLW0zZ1hqMk9zVnc5U0toUEROSWFvU0U3Ykc4eEdzeWFwQ0k0c255ZXZ6QTV4NG5QS3hSZVN3ejN6N1FVNzVsYVptbF9kZ1B5dUx6bkVlbkprbDBQeURmNERCR3ZwOTNQekpBR0pOcTJoZTJ6Z2h0bnNCLXU4d3U2SnEtNElMWHI0c29tTnpiQWJPZmZFWVpqMnBEVldaUHNiMXNYMC1rbFBUU0ZNb1FTWms4RVVhSVRQTExDZnpf0gHWAUFVX3lxTE9tY2h1RmhfUmY1LVFhZDFfT3I2XzBzSGlHVkNPMmtqWlhyY1M5YzUyVXltVVhZX0w1azU4Y1BIZjBVbFpac01NVDdROFlXS2hWNHhweVdtSjVXcW9VYko3eERpelhxQ090VW9SSjlfSjdhblYzVElCYjZ0X0",
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZ0h5TWNSZEF1UVJvZzJrbTFFLW0zZ1hqMk9zVnc5U0toUEROSWFvU0U3Ykc4eEdzeWFwQ0k0c255ZXZ6QTV4NG5QS3hSZVN3ejN6N1FVNzVsYVptbF9kZ1B5dUx6bkVlbkprbDBQeURmNERCR3ZwOTNQekpBR0pOcTJoZTJ6Z2h0bnNCLXU4d3U2SnEtNElMWHI0c29tTnpiQWJPZmZFWVpqMnBEVldaUHNiMXNYMC1rbFBUU0ZNb1FTWms4RVVhSVRQTExDZnpf0gHWAUFVX3lxTE9tY2h1RmhfUmY1LVFhZDFfT3I2XzBzSGlHVkNPMmtqWlhyY1M5YzUyVXltVVhZX0w1azU4Y1BIZjBVbFpac01NVDdROFlXS2hWNHhweVdtSjVXcW9VYko3eERpelhxQ090VW9SSjlfSjdhblYzVElCYjZ0X09LR29qOGJ2QXVuYkxvbXlFNTVmLThJdXA4T1dZYkdfY0UyNE5VMWlqV3FmeGoyOVBCVDhHSUd2Nnl4ZWpTQ1ZmcGxneEF4VDhONmxfYXhSdDY0VVluZDMxakE?oc=5",
@@ -1166,6 +1232,29 @@
       ]
     },
     {
+      "title": "9 puntos de diferencia y 6 partidos por jugar: las finales que le quedan a Colo-Colo y la U en la Liga de Primera - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi_wFBVV95cUxPRW5XVVdiUFdJQUFzRGpUb2lZUDJqT0FDWlZkUFliT0daNDQxdUJ0N0NkdTZxREhud2dQd1Excm1nN2JnM241MUUwVVM3cDNDX25ETjBmWHg1aEM5RzViSlRnY0FESDJVeXVQLXA3UUlyS0M4dnBKS3ZteW1MTFctWDFzQVFtRXJ0U0RiQnZyMVN1aDBKVUlSNG82Qnhrem51MTE5N0xyNEQxYVZfUFNPb3JscUxndTkzeWhYdVpnOGtLRmRvR2RlcVpIMnBleTcwX1B4Zno4VTJDZGExVjdlOWxsTEZuWWZDUV96YmFGaFNSWUpuWGhqNzZPeURiZW8?oc=5\" target=\"_blank\">9 puntos de diferencia y 6 partidos por jugar: las finales que le quedan a Colo-Colo",
+      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPRW5XVVdiUFdJQUFzRGpUb2lZUDJqT0FDWlZkUFliT0daNDQxdUJ0N0NkdTZxREhud2dQd1Excm1nN2JnM241MUUwVVM3cDNDX25ETjBmWHg1aEM5RzViSlRnY0FESDJVeXVQLXA3UUlyS0M4dnBKS3ZteW1MTFctWDFzQVFtRXJ0U0RiQnZyMVN1aDBKVUlSNG82Qnhrem51MTE5N0xyNEQxYVZfUFNPb3JscUxndTkzeWhYdVpnOGtLRmRvR2RlcVpIMnBleTcwX1B4Zno4VTJDZGExVjdlOWxsTEZuWWZDUV96YmFGaFNSWUpuWGhqNzZPeURiZW8?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 22:01:58 GMT",
+      "timestamp": "2026-10-12T22:01:58.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "En Cancha",
+      "fuente_url_original": "https://www.encancha.cl",
+      "fuente": "En Cancha",
+      "fuente_host": "encancha.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:3h(+10)",
+        "senal:\\b\\d+\\s*(goles|millo(+6)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
+    {
       "title": "Mientras Arturo Vidal presiona por su renovación: esto respondió Aníbal Mosa en Colo Colo - RedGol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTNPLW1DQnNMd3dZLUh3b29Zb0pmQkZwUllUajlfZWhmeEQwajdqeHNLTng1N0ctMk5RTWYyVUlvaGVnRGgwSjJhSExiVlotTWpmT3FyTGltbjBNMVg0R3YwRkFmQUVRRTBIenhkb0VHRFktM2tOU1JQWTRIeFhIeDlvRE93dnpLWlFrZUVCV3BfQXVYWi05SXpveXlOaGNqWXRaRmprd3dhbUtnZmxKc1JJRUlOUdIBuwFBVV95cUxQb0s0ejhjM1dXY0RWS1pBczd6LWVGZC13dU56Z21vRFJuem5GYkdHN1dFTVBCZ1ZfRGdBQXFDRGYycUtEaHdveGZ1MUZ5N1ljc25XWXZ2RlJqTEdjMHowVGdLUDlza0hWcWkwMG9Xd2dXbVBHVUJwb0U1WGhKeTFpTzl3TmJtdGlYcnBTU1ZVekVTckdndk",
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTNPLW1DQnNMd3dZLUh3b29Zb0pmQkZwUllUajlfZWhmeEQwajdqeHNLTng1N0ctMk5RTWYyVUlvaGVnRGgwSjJhSExiVlotTWpmT3FyTGltbjBNMVg0R3YwRkFmQUVRRTBIenhkb0VHRFktM2tOU1JQWTRIeFhIeDlvRE93dnpLWlFrZUVCV3BfQXVYWi05SXpveXlOaGNqWXRaRmprd3dhbUtnZmxKc1JJRUlOUdIBuwFBVV95cUxQb0s0ejhjM1dXY0RWS1pBczd6LWVGZC13dU56Z21vRFJuem5GYkdHN1dFTVBCZ1ZfRGdBQXFDRGYycUtEaHdveGZ1MUZ5N1ljc25XWXZ2RlJqTEdjMHowVGdLUDlza0hWcWkwMG9Xd2dXbVBHVUJwb0U1WGhKeTFpTzl3TmJtdGlYcnBTU1ZVekVTckdndklrZ1o4OUJoU1F5T3VGLWdpUURtelhNR0lJdGRJNHR3UGhwRmZj?oc=5",
@@ -1184,6 +1273,30 @@
       "razones": [
         "categoria:colo_colo(+60)",
         "frescura:1h(+15)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Solo 3 arcos en cero en 21 partidos: el duro momento de Gabriel Maureira en Colo Colo - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOYmpzSWxMVHNZdVl3UU42U2N1THJiQnV5Uy1BYVdhX2drT1lSZENaaFViaGs2b0ZncVlySTE1RWRWdkltOWRNdnozaGRMbUgzR2p0N0dybmd0NExVMUpjNEJCdHZyUnc1ODdJNzlnWVE5SG5rVkVrdVBqRGFTLWNtXzdFLU8wZ2F4X01jWWlhUy1obFhDNXFnYnJmeVhLWGl3c21QRFJGRXJkQU52M1liWtIBtgFBVV95cUxQanRWdXNwN0FoRGRka2kzUS10TWdwU1ZhdldEOExSRHdCZDVVNWZoMFhsM0E3RlVrYV96dWRnQjMyaXlTMFdsOWV4VzEyQUxXMFl1ZWZ5OHFCdlpXZ1Eza3BMdXNQeEFvTHk1R24zS3dvV1k2S1hUbl9hRlFOYnRMOWNac05FbGpWSWhFUTY5ME5XUjl3QnlmZko3V2",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOYmpzSWxMVHNZdVl3UU42U2N1THJiQnV5Uy1BYVdhX2drT1lSZENaaFViaGs2b0ZncVlySTE1RWRWdkltOWRNdnozaGRMbUgzR2p0N0dybmd0NExVMUpjNEJCdHZyUnc1ODdJNzlnWVE5SG5rVkVrdVBqRGFTLWNtXzdFLU8wZ2F4X01jWWlhUy1obFhDNXFnYnJmeVhLWGl3c21QRFJGRXJkQU52M1liWtIBtgFBVV95cUxQanRWdXNwN0FoRGRka2kzUS10TWdwU1ZhdldEOExSRHdCZDVVNWZoMFhsM0E3RlVrYV96dWRnQjMyaXlTMFdsOWV4VzEyQUxXMFl1ZWZ5OHFCdlpXZ1Eza3BMdXNQeEFvTHk1R24zS3dvV1k2S1hUbl9hRlFOYnRMOWNac05FbGpWSWhFUTY5ME5XUjl3QnlmZko3V2R1QzdWVFFWekFTS0h4Tmc4TlpXZkhnalFTZw?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 20:30:51 GMT",
+      "timestamp": "2026-10-12T20:30:51.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:5h(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "senal:\\b\\d+\\s*(goles|millo(+6)",
         "gigante:colo colo(+10)"
       ]
     },
@@ -1251,6 +1364,28 @@
       "razones": [
         "categoria:colo_colo(+60)",
         "frescura:7h(+10)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Fue capitán de U de Chile, salvó a Palestino y le manda recado a Colo Colo: “No podemos regalar más puntos ... - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxNSjlVUGhxLVQ5eDRxTVZGbDVEYldlTk1aWGxta1VGdEdZNFhpSjFNX2RUbVVYZVJBcllKWjdCb2JCRkRuSG5aOTU0bjNhaHpITTdpdUtLeFZqcDZvX3lHTktuOHpKRGR6QzVzeElVblZfUHNSZjZTV3RldU51Q3BTYjFXQmNlUWhzeGhNZXhPblVvdHVvS0htUlI5VXhtMTY4Qm91QWJQZVVIdXdTTHNvaWgtYTFZcjB0SEFkdm1QcGxUQ2VMN1VYdlZFU09BQms4VGx5b1NB0gHbAUFVX3lxTE82LWlJVnFmRVFWalNSaThSREprXzRySU5oRUZjVVJjdE41TXdGSEdkeGV4SEhqNnJNaTBVUkRVV25EejdlcFNLZi1Kb2dJaHQtbXd1RDJEd1R4Wk51VjJXYmhqdXJ4MEZvYTBjQjNCVUxVeTdkbE",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNSjlVUGhxLVQ5eDRxTVZGbDVEYldlTk1aWGxta1VGdEdZNFhpSjFNX2RUbVVYZVJBcllKWjdCb2JCRkRuSG5aOTU0bjNhaHpITTdpdUtLeFZqcDZvX3lHTktuOHpKRGR6QzVzeElVblZfUHNSZjZTV3RldU51Q3BTYjFXQmNlUWhzeGhNZXhPblVvdHVvS0htUlI5VXhtMTY4Qm91QWJQZVVIdXdTTHNvaWgtYTFZcjB0SEFkdm1QcGxUQ2VMN1VYdlZFU09BQms4VGx5b1NB0gHbAUFVX3lxTE82LWlJVnFmRVFWalNSaThSREprXzRySU5oRUZjVVJjdE41TXdGSEdkeGV4SEhqNnJNaTBVUkRVV25EejdlcFNLZi1Kb2dJaHQtbXd1RDJEd1R4Wk51VjJXYmhqdXJ4MEZvYTBjQjNCVUxVeTdkbERvdU1XNU1MUGkzQ21GUnlGeTRaVlJCREtyTDlkYUpCekpLUms4UkMtaVlfbTF2WUxoNmdFa1ZleHE0Nk1YLU5ySVlicEpwVFU3LU9qYVJzT3BBUkFsQWhzdWFQWUVBWFpLOUlOWQ?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 15:41:10 GMT",
+      "timestamp": "2026-10-12T15:41:10.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:10h(+10)",
         "gigante:colo colo(+10)"
       ]
     },
@@ -1922,28 +2057,6 @@
       ]
     },
     {
-      "title": "Colo Colo piensa a futuro y le hizo contrato a una promesa - Prensa Fútbol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE9QV2dLenZCeDBhOUUwVVpwTWJBS0NUd2pBZUloLWtMRjVGTkNpZDRHWDE0TWpBNUNvMy1KOTB3V3Qxai1CeTR1cFpuVkFDaHZXUkt0cnpHUUR0ZE9nTmRoQVBsWGZxNHJPXzlSNDI0ZzB5OFlIT1RHZTVJR2g?oc=5\" target=\"_blank\">Colo Colo piensa a futuro y le hizo contrato a una promesa</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Prensa Fútbol</font>",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9QV2dLenZCeDBhOUUwVVpwTWJBS0NUd2pBZUloLWtMRjVGTkNpZDRHWDE0TWpBNUNvMy1KOTB3V3Qxai1CeTR1cFpuVkFDaHZXUkt0cnpHUUR0ZE9nTmRoQVBsWGZxNHJPXzlSNDI0ZzB5OFlIT1RHZTVJR2g?oc=5",
-      "pubDate": "Fri, 09 Oct 2026 23:21:52 GMT",
-      "timestamp": "2026-10-09T23:21:52.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Prensa Fútbol",
-      "fuente_url_original": "https://www.prensafutbol.cl",
-      "fuente": "Prensa Fútbol",
-      "fuente_host": "prensafutbol.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:13h(+5)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
       "title": "Coquimbo Unido vs Colo Colo: Hora y dónde ver EN VIVO partido por la Liga de Primera - Chilevisión",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQMC1jVjZiUlN4TnZ4cmNZaGFLNVZtd3RtR09qRncyU0ZuN1pGdGlBc3duMXo4WTZXMG9PYno4elQzVUo0eHVDWlVaUXZiV2MydnBTcC1sc3NIeW9nWmpuVGp0UzQxeDFkeFhyLWdyOVNPV2xJRWtTRTZVWUJZU0ZFSGN4eG5qS3dHV2c4c0NMRXNCMkU0d2hGWTdtTmZubzF0MjFZVG1tcGRoRmVvUkkwOWZRMFN1SHhVUVNEMTdoUUxCcXVmSXdvQXlRMDJoczNDMGpHakVn?oc=5\" target=\"_blank\">Coquimbo Unido vs Colo Colo: Hora y dónde ver EN VIVO partido por la Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Chilevisión</font",
       "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQMC1jVjZiUlN4TnZ4cmNZaGFLNVZtd3RtR09qRncyU0ZuN1pGdGlBc3duMXo4WTZXMG9PYno4elQzVUo0eHVDWlVaUXZiV2MydnBTcC1sc3NIeW9nWmpuVGp0UzQxeDFkeFhyLWdyOVNPV2xJRWtTRTZVWUJZU0ZFSGN4eG5qS3dHV2c4c0NMRXNCMkU0d2hGWTdtTmZubzF0MjFZVG1tcGRoRmVvUkkwOWZRMFN1SHhVUVNEMTdoUUxCcXVmSXdvQXlRMDJoczNDMGpHakVn?oc=5",
@@ -2162,6 +2275,28 @@
         "categoria:colo_colo(+60)",
         "frescura:8h(+10)",
         "penal(-8)"
+      ]
+    },
+    {
+      "title": "Notición por continuidad de DT sacude la final Coquimbo vs O’Higgins: “Conversaciones para seguir” - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNbXhPNC1FR0hNbkg2U1Nfb3ljMk5OUkNSYzhfNGFWODNEWE5EZGlOWjdURnJZaC13UTNNbi1oUGtoUWQwMDJvNHhDMnBQNmxsM0JTRldWa0ZfamJic0ZCaFZ6NVVFUThpMDFra1FPZDlmQW4wNTJXcGJSZGlNZXJndGIxVU5BX0Y3WUNRYXV6aVdVRVZSa0xBTko5cEIwRk96VHg1ZzJxVHFJeWc5WUdFbENpR3FtRlRIa3fSAb8BQVVfeXFMUFlHQXFpcUNHeVZJNmtrMDYyQWhtamNDU2VmMDR0Ry1BUDBWdEFjODVFYUZfZEhvdkN4SW9aeDEtYUJwUHRXTEJNMlp5VVVfYTd2NnhHXy1HNkEyNDczNHR3aFliTU9XY3R0WW5KaWdUU3ZmVFVBd1FoNzdjbFhmWEQ0QmlJclUxa1gtaGFsNkdQdT",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNbXhPNC1FR0hNbkg2U1Nfb3ljMk5OUkNSYzhfNGFWODNEWE5EZGlOWjdURnJZaC13UTNNbi1oUGtoUWQwMDJvNHhDMnBQNmxsM0JTRldWa0ZfamJic0ZCaFZ6NVVFUThpMDFra1FPZDlmQW4wNTJXcGJSZGlNZXJndGIxVU5BX0Y3WUNRYXV6aVdVRVZSa0xBTko5cEIwRk96VHg1ZzJxVHFJeWc5WUdFbENpR3FtRlRIa3fSAb8BQVVfeXFMUFlHQXFpcUNHeVZJNmtrMDYyQWhtamNDU2VmMDR0Ry1BUDBWdEFjODVFYUZfZEhvdkN4SW9aeDEtYUJwUHRXTEJNMlp5VVVfYTd2NnhHXy1HNkEyNDczNHR3aFliTU9XY3R0WW5KaWdUU3ZmVFVBd1FoNzdjbFhmWEQ0QmlJclUxa1gtaGFsNkdQdTdZYkhHZUpKNV9NS29DSzlBaEVweGFnOWFWdHh1UTZrUGk1eU1xLVVfWXpWVlU?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 19:06:41 GMT",
+      "timestamp": "2026-10-12T19:06:41.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": "Coquimbo Unido",
+      "viral_score": 83,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:6h(+10)",
+        "senal:\\b(clasific|eliminad(+8)"
       ]
     },
     {
@@ -2754,6 +2889,48 @@
       ]
     },
     {
+      "title": "Deportes Iquique vence a Unión Española: así queda la tabla de posiciones al cierre de la fecha 27 en la Pr... - Bolavip Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxPOHdaOUE4Y0ZfM3QxOGJzdGZfalNkWFdGTVhidjk5RVdyTk5IUlNUN3Jocl9keWZucDFJMnB2bXhzdWNqME5Nc2JYUXA5M2Zhd1NqWnFTVU9jdVhrdmlZdnJJNlBKa21Fd1VnUm15b042QmJQLTJwRDh4ZllXNGNYVmNfTXowam85Nk1TbkZONmlNQ1dKMWFZdXBVeUhYZUpfdnNMUlpXZ0Z5YlBndzlnUW12dXBHRjJCOC1OMnJxT214dlB4TzRvZUUxMXFTOXpOTTRTNzNqNFlLM3FabE1B0gHkAUFVX3lxTE1CS0VDSC1acjBmUU16T3hqYXJYNlB4ejlVSTlXZG02eU8zN0lCaGN0UW8zS3phaXRqOGtodHN0Tl9fYzZyWjkxYmY2eHU4cmpMREVScWZqQ0FRLWZvdlVFdWs3MHIwSlA4Y19XQm",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPOHdaOUE4Y0ZfM3QxOGJzdGZfalNkWFdGTVhidjk5RVdyTk5IUlNUN3Jocl9keWZucDFJMnB2bXhzdWNqME5Nc2JYUXA5M2Zhd1NqWnFTVU9jdVhrdmlZdnJJNlBKa21Fd1VnUm15b042QmJQLTJwRDh4ZllXNGNYVmNfTXowam85Nk1TbkZONmlNQ1dKMWFZdXBVeUhYZUpfdnNMUlpXZ0Z5YlBndzlnUW12dXBHRjJCOC1OMnJxT214dlB4TzRvZUUxMXFTOXpOTTRTNzNqNFlLM3FabE1B0gHkAUFVX3lxTE1CS0VDSC1acjBmUU16T3hqYXJYNlB4ejlVSTlXZG02eU8zN0lCaGN0UW8zS3phaXRqOGtodHN0Tl9fYzZyWjkxYmY2eHU4cmpMREVScWZqQ0FRLWZvdlVFdWs3MHIwSlA4Y19XQmZzMHVGV2VmMTQxeWFIN0dtLVZMZm9XbmF1Ui1Renowcm5YU2liWHhxSkNmN3ZmQzhkMHl0YXVxRVlENmpSZTluRU5KSmRXV2o2R1hSSkR1Uk9JY2I2TnZMbHVEMHpKbUtoS1BDblduNFlwcllUWnBHcEt2OVhHOA?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 23:52:28 GMT",
+      "timestamp": "2026-10-12T23:52:28.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Bolavip Chile",
+      "fuente_url_original": "https://bolavip.com",
+      "fuente": "Bolavip Chile",
+      "fuente_host": "bolavip.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "categoria": "chile",
+      "equipo_chile": "Unión Española",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)"
+      ]
+    },
+    {
+      "title": "San Luis derrotó a Puerto Montt y tomó el liderato del Ascenso: así quedó la tabla de posiciones - TVN",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZS1xZTFMa3FlLWlQV2ZlRHBPVFRTRmNPel8za3d3b0hhQXZIblJYRlhIbWtnNHlfU19ObV8tTnBhR1owUUFjOXpIRnl2cktldFNwbU1vMTdWQ2pqTjlMLUpIeEljSDQwYi01bFpJVzJMaHYzX2lmQ1ZzOXJmakVENWNEcFRNQ2dpOHdYZnM0LUZvOUV0Z05RcDRHSDB6UGpZeC1xSmF4SktUNE4wa0RjWUR5Q0lzUmhzOG5pcFFuQ0tzbFFjQUE5RmtWTnM4dVdyd2dhQ1JR0gHbAUFVX3lxTE5QLVVPTU9lSVk0MllRX0NhZkxkeFFBTGlRNUpRa050MkJtZERFaFFyRllUU2JTRDI5b0R0ZTBudnZhU2dsQk5tMjY4Z0Y5d01LYlpUeW9aS2U1Z2lxbER6Z20tSHhBaWg1dTh3MnI4TnZHNFZKaX",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZS1xZTFMa3FlLWlQV2ZlRHBPVFRTRmNPel8za3d3b0hhQXZIblJYRlhIbWtnNHlfU19ObV8tTnBhR1owUUFjOXpIRnl2cktldFNwbU1vMTdWQ2pqTjlMLUpIeEljSDQwYi01bFpJVzJMaHYzX2lmQ1ZzOXJmakVENWNEcFRNQ2dpOHdYZnM0LUZvOUV0Z05RcDRHSDB6UGpZeC1xSmF4SktUNE4wa0RjWUR5Q0lzUmhzOG5pcFFuQ0tzbFFjQUE5RmtWTnM4dVdyd2dhQ1JR0gHbAUFVX3lxTE5QLVVPTU9lSVk0MllRX0NhZkxkeFFBTGlRNUpRa050MkJtZERFaFFyRllUU2JTRDI5b0R0ZTBudnZhU2dsQk5tMjY4Z0Y5d01LYlpUeW9aS2U1Z2lxbER6Z20tSHhBaWg1dTh3MnI4TnZHNFZKaXJOQmQ4b2V0elVnWDJBWWZxRFJ5THBIZ1ZiTTMyWlRiX09EeWU1U0FsVVNvaGx3UzRaVDhjV0NFSS1rZmsyTFZnNTVHZFFiVDFXOTQxWC1XSk0zeVFfMGZsckloZHdrVFJpTmJtSQ?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 18:12:00 GMT",
+      "timestamp": "2026-10-12T18:12:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "TVN",
+      "fuente_url_original": "https://www.tvn.cl",
+      "fuente": "TVN",
+      "fuente_host": "tvn.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "categoria": "chile",
+      "equipo_chile": "San Luis",
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:7h(+10)"
+      ]
+    },
+    {
       "title": "Primera B de Chile 2026: Calendario, partidos y resultados del Ascenso - Teletrece",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNa0M0Um1WbzVYVUQ4OE5iazg2WnN4SUJZY2NwbHVsWkZMUll6cldxellmLUZtNUJ4eUhJOVhLVU1DRmZkUmtLMG1pQ08xbklTbldpSzcwYU1NUFJwc2UyVWd4OEF3MUlvNkFUaUJPZjdFRkZPdEYxN3JaTjR3UHU2SThteWRpRXNnRzFqRVFyZ3pWZkVoMUtXOGFR0gGaAUFVX3lxTE1rQzRSbVZvNVhVRDg4TmJrODZac3hJQlljY3BsdWxaRkxSWXpyV3F6WWYtRm01Qnh5SEk5WEtVTUNGZmRSa0swbWlDTzFuSVNuV2lLNzBhTU1QUnBzZTJVZ3g4QXcxSW82QVRpQk9mN0VGRk90RjE3clpONHdQdTZJOG15ZGlFc2dHMWpFUXJnelZmRWgxS1c4YVE?oc=5\" target=\"_blank\">Primera ",
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNa0M0Um1WbzVYVUQ4OE5iazg2WnN4SUJZY2NwbHVsWkZMUll6cldxellmLUZtNUJ4eUhJOVhLVU1DRmZkUmtLMG1pQ08xbklTbldpSzcwYU1NUFJwc2UyVWd4OEF3MUlvNkFUaUJPZjdFRkZPdEYxN3JaTjR3UHU2SThteWRpRXNnRzFqRVFyZ3pWZkVoMUtXOGFR0gGaAUFVX3lxTE1rQzRSbVZvNVhVRDg4TmJrODZac3hJQlljY3BsdWxaRkxSWXpyV3F6WWYtRm01Qnh5SEk5WEtVTUNGZmRSa0swbWlDTzFuSVNuV2lLNzBhTU1QUnBzZTJVZ3g4QXcxSW82QVRpQk9mN0VGRk90RjE3clpONHdQdTZJOG15ZGlFc2dHMWpFUXJnelZmRWgxS1c4YVE?oc=5",
@@ -2899,182 +3076,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:2h(+15)"
-      ]
-    },
-    {
-      "title": "Tabla Segunda División: Esteban Paredes y Santiago Morning quedan al borde del fútbol amateur - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPZUpISlRnTFFheWQwWFRZUkpfOHpJLUJoVDZwYzB2Ymxxa184dTdTcXFiQXdIZXUtc19iREp3UWl5TmRDMVlpT2RzMkhkUDRpLUlKa3lRcmZ1YXZfOGRjbW5xTFFoaGxFZFdFeXF5bTVYY0cyV0tZQWJMVzBfMDgxQ0Z4bUVpVV9ybW5LMmthZktIVVZOTmxMU0xUbmxhQTBvTDZObjBTTnJKRjZ1TkdncHNXQzRtMUnSAbwBQVVfeXFMTnM4TWtPSjZMcUxIS0dPcXhoOVI1ZklPX2tsNUNMNHpVbjJrZ0t0aTlVOEhGNlJiaDBwaDM3VDJxc0JwV0JVZGRIMTl0WVJOeXdOSl9sbHhhMHNEQmNOOTRwLUZ5SXpka2VQUDhvQmtfUlBKdEI4QWJvSHZxVmN5QWlHZjE1YzFmVHAtbzZIeTU5dUZKY3",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZUpISlRnTFFheWQwWFRZUkpfOHpJLUJoVDZwYzB2Ymxxa184dTdTcXFiQXdIZXUtc19iREp3UWl5TmRDMVlpT2RzMkhkUDRpLUlKa3lRcmZ1YXZfOGRjbW5xTFFoaGxFZFdFeXF5bTVYY0cyV0tZQWJMVzBfMDgxQ0Z4bUVpVV9ybW5LMmthZktIVVZOTmxMU0xUbmxhQTBvTDZObjBTTnJKRjZ1TkdncHNXQzRtMUnSAbwBQVVfeXFMTnM4TWtPSjZMcUxIS0dPcXhoOVI1ZklPX2tsNUNMNHpVbjJrZ0t0aTlVOEhGNlJiaDBwaDM3VDJxc0JwV0JVZGRIMTl0WVJOeXdOSl9sbHhhMHNEQmNOOTRwLUZ5SXpka2VQUDhvQmtfUlBKdEI4QWJvSHZxVmN5QWlHZjE1YzFmVHAtbzZIeTU5dUZKY3pwMUJUX2hHeC1nd3ZlTDNXYXhpNGhnUUJDbTA4Yk1HMmZuYVF3ZGY?oc=5",
-      "pubDate": "Mon, 12 Oct 2026 15:34:04 GMT",
-      "timestamp": "2026-10-12T15:34:04.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 80,
-      "categoria": "chile",
-      "equipo_chile": "Santiago Morning",
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:7h(+10)"
-      ]
-    },
-    {
-      "title": "Un partido para no creer: nueve goles y una remontada agónica con 10 jugadores en el fútbol chileno - En Cancha",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8gFBVV95cUxOTkpZQ0V6RVR1MGlhajdhemFvMXdlV3laRE1TSG05N0VMeTJBRFhmX3VaMHRCa1RxY0FiVHphdXh5WndCeUJVUllSTjNBTDkwUG1mQzl5TzhJbl9RbWo2bGVsdXVLYWViTi1mYnZWOUtoT1VNRTJlZG84dnNkWUVlX3JGdHV5Z3ZEajU2MDJsV0lRQjRjSW9DdElmdHV5N2NZWHFxbjJiRlliUkJFWGFlRk1naHNVWGU0RUgwdTFrSnB5dGRpQzZHS3M2YXR1c2hCczhoRG9NVFYyTHBUeDdHdjh5VDg2OXppdHZZZzBCZHNtdw?oc=5\" target=\"_blank\">Un partido para no creer: nueve goles y una remontada agónica con 10 jugadores en el fútbol chileno</",
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOTkpZQ0V6RVR1MGlhajdhemFvMXdlV3laRE1TSG05N0VMeTJBRFhmX3VaMHRCa1RxY0FiVHphdXh5WndCeUJVUllSTjNBTDkwUG1mQzl5TzhJbl9RbWo2bGVsdXVLYWViTi1mYnZWOUtoT1VNRTJlZG84dnNkWUVlX3JGdHV5Z3ZEajU2MDJsV0lRQjRjSW9DdElmdHV5N2NZWHFxbjJiRlliUkJFWGFlRk1naHNVWGU0RUgwdTFrSnB5dGRpQzZHS3M2YXR1c2hCczhoRG9NVFYyTHBUeDdHdjh5VDg2OXppdHZZZzBCZHNtdw?oc=5",
-      "pubDate": "Sun, 11 Oct 2026 14:24:38 GMT",
-      "timestamp": "2026-10-11T14:24:38.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "En Cancha",
-      "fuente_url_original": "https://www.encancha.cl",
-      "fuente": "En Cancha",
-      "fuente_host": "encancha.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 80,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 71,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:32h(+0)",
-        "senal:\\b(ultima hora|sorpr(+6)"
-      ]
-    },
-    {
-      "title": "Liga de Segunda División 2026: Calendario, partidos, liguillas y resultados - Teletrece",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNdjNwczN1YTJfY1hzWjAtc0lhaGVuMU5lUm1CR3I5dlY1Z0JkVUlDcWpUVHZ6a0tPcklaRTROX1p1QU0tN1JBYzJfaXBMZ2FXdXpBVUpMSzFITVVmVEZld0dYaTJiNVh0YXh1M19GVTdTVTZvb0drZ3Z2NS1DZmZLRThXTzUwTmd0NlN1eXZRRXRNRXJkX1BnclRHckFpdThIYlgxNUdLONIBpwFBVV95cUxNdjNwczN1YTJfY1hzWjAtc0lhaGVuMU5lUm1CR3I5dlY1Z0JkVUlDcWpUVHZ6a0tPcklaRTROX1p1QU0tN1JBYzJfaXBMZ2FXdXpBVUpMSzFITVVmVEZld0dYaTJiNVh0YXh1M19GVTdTVTZvb0drZ3Z2NS1DZmZLRThXTzUwTmd0NlN1eXZRRXRNRXJkX1BnclRHckFpdThIYlgxNU",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdjNwczN1YTJfY1hzWjAtc0lhaGVuMU5lUm1CR3I5dlY1Z0JkVUlDcWpUVHZ6a0tPcklaRTROX1p1QU0tN1JBYzJfaXBMZ2FXdXpBVUpMSzFITVVmVEZld0dYaTJiNVh0YXh1M19GVTdTVTZvb0drZ3Z2NS1DZmZLRThXTzUwTmd0NlN1eXZRRXRNRXJkX1BnclRHckFpdThIYlgxNUdLONIBpwFBVV95cUxNdjNwczN1YTJfY1hzWjAtc0lhaGVuMU5lUm1CR3I5dlY1Z0JkVUlDcWpUVHZ6a0tPcklaRTROX1p1QU0tN1JBYzJfaXBMZ2FXdXpBVUpMSzFITVVmVEZld0dYaTJiNVh0YXh1M19GVTdTVTZvb0drZ3Z2NS1DZmZLRThXTzUwTmd0NlN1eXZRRXRNRXJkX1BnclRHckFpdThIYlgxNUdLOA?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 20:47:00 GMT",
-      "timestamp": "2026-10-10T20:47:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Teletrece",
-      "fuente_url_original": "https://www.t13.cl",
-      "fuente": "Teletrece",
-      "fuente_host": "t13.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 80,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 55,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:50h(-10)"
-      ]
-    },
-    {
-      "title": "La Roja vuelve al Estadio Nacional: Chile ya tiene fecha para su reencuentro con la hinchada - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPM3Y3WmZqMGZQZXdwWlhOTXNnTUY2ckpIcWlpYXlPcEdIZDZFajlDQjhQdHhwc2d4VnFTQUdFbmcxYkpaTVh3MFQ1TXdrTWh2S2MzRGptdE9iUXRpeWhmbzVjSVVaRVA0R2RXS0p0dF9fa1NDLW1JaW9FcFdWY2lXSVBRV0JZbl9UOThLNU85MWt4cWpiSkMtXzAzRVJNV041VjVia1d6LVcxZk41bWYwUVh4Q19La1BWTjlUdUFsZ3dnYmFy0gHKAUFVX3lxTE1HVDhNVk0wc25jVVZlbktqREdlN1NPODVlMEVPclJWSFhTVkZwTTRjTmdmOUQyUVpLU3lrNmZpT3hiMWFFSDJkcU13Yk5VMy1nbjZoR0J1dHp5b21DczliZ3pwSmF6cS14dmozcnlEU1ZxQmlhMGdPZmNRVlJRYy0yVnNpeHNjbU",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPM3Y3WmZqMGZQZXdwWlhOTXNnTUY2ckpIcWlpYXlPcEdIZDZFajlDQjhQdHhwc2d4VnFTQUdFbmcxYkpaTVh3MFQ1TXdrTWh2S2MzRGptdE9iUXRpeWhmbzVjSVVaRVA0R2RXS0p0dF9fa1NDLW1JaW9FcFdWY2lXSVBRV0JZbl9UOThLNU85MWt4cWpiSkMtXzAzRVJNV041VjVia1d6LVcxZk41bWYwUVh4Q19La1BWTjlUdUFsZ3dnYmFy0gHKAUFVX3lxTE1HVDhNVk0wc25jVVZlbktqREdlN1NPODVlMEVPclJWSFhTVkZwTTRjTmdmOUQyUVpLU3lrNmZpT3hiMWFFSDJkcU13Yk5VMy1nbjZoR0J1dHp5b21DczliZ3pwSmF6cS14dmozcnlEU1ZxQmlhMGdPZmNRVlJRYy0yVnNpeHNjbUd2ck9iMHp1Z1BtYmhWbzFGbkkzSHctWF9pRUMtM2Z4emY2c2hzX0lpMmlZNTJzOTE2ak1NSHBrbXNEd3RPVW9DckE?oc=5",
-      "pubDate": "Sun, 11 Oct 2026 18:42:14 GMT",
-      "timestamp": "2026-10-11T18:42:14.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 78,
-      "categoria": "chile",
-      "equipo_chile": "Selección Chilena",
-      "viral_score": 81,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:28h(+0)",
-        "senal:\\b(ultima hora|sorpr(+6)",
-        "gigante:la roja(+10)"
-      ]
-    },
-    {
-      "title": "Goles de Chile Femenino 7-0 Bolivia: Partido EN VIVO, resumen y resultado del amistoso internacional - Teletrece",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPRnRCeEVxMWJJczNKcGJuUTVFaVVGaEZKUWdQTUNPbjBpbzluOW1rRDhsUjI2MEt0d05QcUZwNF9qZzFHYm5fbXluVjhVZGgtSG4yejNtVVpobWRHSnk1elllSzZ5b0dQWHpCdXp6eXpROTh0RF90T0ZhODRQOVRzaUxmbV9jSHpTU3RpS1ZpeVVyTWFhS1UzVG5vQjF5Q1VuSW5vOENURjBJREx1aEt2cVRLVnlZV2ZydVRsd3NOaEF2RWJjQXZr?oc=5\" target=\"_blank\">Goles de Chile Femenino 7-0 Bolivia: Partido EN VIVO, resumen y resultado del amistoso internacional</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Teletrece</font>",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRnRCeEVxMWJJczNKcGJuUTVFaVVGaEZKUWdQTUNPbjBpbzluOW1rRDhsUjI2MEt0d05QcUZwNF9qZzFHYm5fbXluVjhVZGgtSG4yejNtVVpobWRHSnk1elllSzZ5b0dQWHpCdXp6eXpROTh0RF90T0ZhODRQOVRzaUxmbV9jSHpTU3RpS1ZpeVVyTWFhS1UzVG5vQjF5Q1VuSW5vOENURjBJREx1aEt2cVRLVnlZV2ZydVRsd3NOaEF2RWJjQXZr?oc=5",
-      "pubDate": "Sun, 11 Oct 2026 22:55:00 GMT",
-      "timestamp": "2026-10-11T22:55:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Teletrece",
-      "fuente_url_original": "https://www.t13.cl",
-      "fuente": "Teletrece",
-      "fuente_host": "t13.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 78,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 78,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:23h(+5)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
-      "title": "Chile vs. Bolivia: Cómo ver el partido amistoso EN VIVO de La Roja por Mega 2 y MegaGO - Mega.cl",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxQTkxHRmVETXdEa29BWW1GNjM2aXZ4MXc4VHFfQ2NJX0ZWd0VvQ1ZpMzA3eVVFbVpPd2xINkxPZHdhQmpQYlQxWW5OQ3FCTXNVQjhTYWs5NjNOUHdaSnVzRk5wbkJlNDkxUVlCbmlqQ3BQWkVBZWx3UUJ6bnBMVjlOMmdMODZLb2dxajh2WGtnY2Z1czd3NlZ3RWVtbVNkb3lnNGNqM1l30gGrAUFVX3lxTE0zdk9EMjBDMHV6WUxYMGFxZm5oQXlCSkNDY3dqb3RLYnFTMXB2N0RnMlRiMlIzMlhkM0MxWjNHUE1xRThrODJfQ3pacW1od2wtbnNXVWpvQ3h6Y0ptREFtZUhha2lSRTd4ZzRQWjd4eXFPamh2aTgyY3BFSmVfWTNyMklINm1FMmRXUDZNcWZYMGF0d1EtbVVNWXhacEV0VFlhRWFobG",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTkxHRmVETXdEa29BWW1GNjM2aXZ4MXc4VHFfQ2NJX0ZWd0VvQ1ZpMzA3eVVFbVpPd2xINkxPZHdhQmpQYlQxWW5OQ3FCTXNVQjhTYWs5NjNOUHdaSnVzRk5wbkJlNDkxUVlCbmlqQ3BQWkVBZWx3UUJ6bnBMVjlOMmdMODZLb2dxajh2WGtnY2Z1czd3NlZ3RWVtbVNkb3lnNGNqM1l30gGrAUFVX3lxTE0zdk9EMjBDMHV6WUxYMGFxZm5oQXlCSkNDY3dqb3RLYnFTMXB2N0RnMlRiMlIzMlhkM0MxWjNHUE1xRThrODJfQ3pacW1od2wtbnNXVWpvQ3h6Y0ptREFtZUhha2lSRTd4ZzRQWjd4eXFPamh2aTgyY3BFSmVfWTNyMklINm1FMmRXUDZNcWZYMGF0d1EtbVVNWXhacEV0VFlhRWFobGJQSEFCbw?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 17:00:00 GMT",
-      "timestamp": "2026-10-10T17:00:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Mega.cl",
-      "fuente_url_original": "https://www.mega.cl",
-      "fuente": "Mega.cl",
-      "fuente_host": "mega.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 78,
-      "categoria": "chile",
-      "equipo_chile": "Selección Chilena",
-      "viral_score": 57,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:53h(-10)",
-        "gigante:la roja(+10)",
-        "penal(-8)"
-      ]
-    },
-    {
-      "title": "Liga Femenina de Fútbol del Maule 2026 inicia su torneo de Clausura - Pasión Por Los Deportes",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxQTFgtRXpZaTRQWFk1NGhJSXMtV0pnV3hZajNaOW53eWR5d0tLeWM1NDZXeUw0MWZ5dTQyei1rYm5EMjV4VFhCVmF6eGl6SXNkbllXbF9vb2E2UkduMm1HRndleGRYQ1N3RUV6Mm9vOHo1aEM3RV9ndllWMUxvRDZNOXFHdHd1bU95ZXQyZm1TV1REbkdKRXBQaXFOQ0Nsd0RFWnc?oc=5\" target=\"_blank\">Liga Femenina de Fútbol del Maule 2026 inicia su torneo de Clausura</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Pasión Por Los Deportes</font>",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTFgtRXpZaTRQWFk1NGhJSXMtV0pnV3hZajNaOW53eWR5d0tLeWM1NDZXeUw0MWZ5dTQyei1rYm5EMjV4VFhCVmF6eGl6SXNkbllXbF9vb2E2UkduMm1HRndleGRYQ1N3RUV6Mm9vOHo1aEM3RV9ndllWMUxvRDZNOXFHdHd1bU95ZXQyZm1TV1REbkdKRXBQaXFOQ0Nsd0RFWnc?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 19:51:53 GMT",
-      "timestamp": "2026-10-10T19:51:53.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Pasión Por Los Deportes",
-      "fuente_url_original": "https://pasionporlosdeportes.cl",
-      "fuente": "Pasión Por Los Deportes",
-      "fuente_host": "pasionporlosdeportes.cl",
-      "categoria_feed": "femenino",
-      "prioridad_fuente": 75,
-      "categoria": "femenino",
-      "equipo_chile": null,
-      "viral_score": 43,
-      "razones": [
-        "categoria:femenino(+28)",
-        "frescura:51h(-10)"
-      ]
-    },
-    {
-      "title": "Alexis Sánchez, Darío Osorio y más: cuándo juegan y dónde ver a los futbolistas chilenos en las ligas extranjeras - La Tercera",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8AFBVV95cUxQLWJjQXhVX09zRmVKNF9tY00tWHo1OC0xLUdLLVVGQ3VfbzI3MW1acC0yaFRUZVpHWGJ1ZFVZNWVENEVCMlBnZ2NCS3lRcmZjUTQtYWN2ZmhsdU5jV0JTXzZlRS1CNTJVNzVLTUNBZ0tmT2JqV2dQRkY3R3RVNkJ5VVpVWFlVaUszUkp6R2c2S1FzeDBOMXRPc29qWkNERGxndHU3RHd4NUdwanh1Uk1NMno5ZTlmWTl5a3c3ZXBBbDVPTnRWekc0eHZ0eUlmR0ZRRlNacXNpM1BjcVNCR0tFM2lDT2hVdVBPWmFQTGFwUVDSAZICQVVfeXFMUHhaSlZweGhZX2NLS1ZUbjBqVEtVOHFRQnp0RUc5cXE5UGdHZXp3b3FsNFU5bFB3V0RtN2pCVW5xODVqY04yYXBzQi1WcjVzdGVxd2tzUGFUZTlGSU",
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQLWJjQXhVX09zRmVKNF9tY00tWHo1OC0xLUdLLVVGQ3VfbzI3MW1acC0yaFRUZVpHWGJ1ZFVZNWVENEVCMlBnZ2NCS3lRcmZjUTQtYWN2ZmhsdU5jV0JTXzZlRS1CNTJVNzVLTUNBZ0tmT2JqV2dQRkY3R3RVNkJ5VVpVWFlVaUszUkp6R2c2S1FzeDBOMXRPc29qWkNERGxndHU3RHd4NUdwanh1Uk1NMno5ZTlmWTl5a3c3ZXBBbDVPTnRWekc0eHZ0eUlmR0ZRRlNacXNpM1BjcVNCR0tFM2lDT2hVdVBPWmFQTGFwUVDSAZICQVVfeXFMUHhaSlZweGhZX2NLS1ZUbjBqVEtVOHFRQnp0RUc5cXE5UGdHZXp3b3FsNFU5bFB3V0RtN2pCVW5xODVqY04yYXBzQi1WcjVzdGVxd2tzUGFUZTlGSUJFbUFWa19taG9ZRGlSMzJZMXQxQnhhQzQ4THktUXpGTVRJaDVyZTRFVnZKUW9NOTMwcXBEeHMyWGRVT1JUY1lHOV9LRTJ1REFEUzJYS2NHVkp2Ui1Cclp5LS15TC1aYXdvMkh2U2VHN0JXS3RwU1BJVjhVamNQVmtiRlJYdmMzUkY0bXlXZ3l4eDE5VWFoaXItYTZ0STdHNWxrak9SSk1ZZnRaQVk2czR6YzFHdGVyVmpkSjlhZw?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 12:19:09 GMT",
-      "timestamp": "2026-10-10T12:19:09.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "La Tercera",
-      "fuente_url_original": "https://www.latercera.com",
-      "fuente": "La Tercera",
-      "fuente_host": "latercera.com",
-      "categoria_feed": "chilenos_exterior",
-      "prioridad_fuente": 72,
-      "categoria": "chilenos_exterior",
-      "equipo_chile": null,
-      "viral_score": 55,
-      "razones": [
-        "categoria:chilenos_exterior(+38)",
-        "frescura:58h(-10)",
-        "gigante:alexis sanchez(+10)",
-        "penal(-8)"
       ]
     }
   ]
