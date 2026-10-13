@@ -43,7 +43,7 @@ const manifest = readJson(RIGHTS_FILE, { assets: [] });
 const approved = new Set(
   (Array.isArray(manifest.assets) ? manifest.assets : [])
     .filter(isApproved)
-    .map(asset => String(asset.file || '').replace(/\\\\/g, '/'))
+    .map(asset => String(asset.file || ''))
 );
 let externalMediaCount = 0;
 
