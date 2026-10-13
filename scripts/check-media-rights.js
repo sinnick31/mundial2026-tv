@@ -65,7 +65,10 @@ for (const [index, item] of content.contenido.entries()) {
 const brollDir = path.join(ROOT, 'public', 'broll');
 const authorizedBroll = [...approved].filter(file => {
   const full = path.resolve(brollDir, file);
-  return full.startsWith(brollDir + path.sep) && fs.existsSync(full) && /\\.(mp4|mov|webm)$/i.test(full);
+  const lower = full.toLowerCase();
+  return full.startsWith(brollDir + path.sep) &&
+    fs.existsSync(full) &&
+    ['.mp4', '.mov', '.webm'].some(ext => lower.endsWith(ext));
 });
 console.log('🛡️ RIGHTS_CHECK OK: ' + externalMediaCount + ' recursos externos declarados autorizados.');
 console.log('🎞️ B-roll con permiso documentado disponible: ' + authorizedBroll.length + '.');
