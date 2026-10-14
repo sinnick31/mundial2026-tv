@@ -1,10 +1,10 @@
 {
-  "ultima_actualizacion": "2026-10-13T23:15:58.765Z",
-  "total_hoy": 508,
+  "ultima_actualizacion": "2026-10-14T01:33:08.192Z",
+  "total_hoy": 506,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 87,
-    "colo_colo": 53
+    "chile": 88,
+    "colo_colo": 52
   },
   "noticias": [
     {
@@ -31,6 +31,28 @@
       ]
     },
     {
+      "title": "Comunicado de prensa - ANFP",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVkxtUC11MUVuNEhnSHgwdEdkMDE5VXI5Q2NzZUEtZGpDaERhZmtsOFFwbndOVU5oQm91NDdoWFdzM1lQd3hQX0Z2UFY3VHRBaVUyeFF5SQ?oc=5\" target=\"_blank\">Comunicado de prensa</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ANFP</font>",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVkxtUC11MUVuNEhnSHgwdEdkMDE5VXI5Q2NzZUEtZGpDaERhZmtsOFFwbndOVU5oQm91NDdoWFdzM1lQd3hQX0Z2UFY3VHRBaVUyeFF5SQ?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 21:30:46 GMT",
+      "timestamp": "2026-10-13T21:30:46.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ANFP",
+      "fuente_url_original": "https://www.anfp.cl",
+      "fuente": "ANFP",
+      "fuente_host": "anfp.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 94,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 63,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:4h(+10)",
+        "penal(-12)"
+      ]
+    },
+    {
       "title": "Everton vs Deportes La Serena - Campeonato Chileno",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPNzRKZVhIQ3owQmxGNkNzLWE0aXBNYVljUUpmV1hLM3NmRXVWQVhhcld5YmswMnRCWmRORHZVVndRcF9vTDFrYTZlMUEzdm1hYUdWS1dYOG9udmxJRUI0dDNIblZ1QkQyeUNNRGxuWFNQQ05mRklxR3hCbVdBbTcyeDYyWQ?oc=5\" target=\"_blank\">Everton vs Deportes La Serena</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Campeonato Chileno</font>",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPNzRKZVhIQ3owQmxGNkNzLWE0aXBNYVljUUpmV1hLM3NmRXVWQVhhcld5YmswMnRCWmRORHZVVndRcF9vTDFrYTZlMUEzdm1hYUdWS1dYOG9udmxJRUI0dDNIblZ1QkQyeUNNRGxuWFNQQ05mRklxR3hCbVdBbTcyeDYyWQ?oc=5",
@@ -49,28 +71,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:26h(+0)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "Huachipato vs O’Higgins - Campeonato Chileno",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE5ZTWVnMG1Pd3BrQ1RmVWdndHVMSlpSZ2RJQzZJRnRNWkUtOVFhMUVBTzFfbjBDcjZCUHViZUNRX3l1b0pMWmc5REJMdVpQb1VrbGZpaTMzN0c0TWhiOHRxRGRyWjRCWnlDZU5GZE1ldzdQR0U5WDhlYmR3?oc=5\" target=\"_blank\">Huachipato vs O’Higgins</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Campeonato Chileno</font>",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ZTWVnMG1Pd3BrQ1RmVWdndHVMSlpSZ2RJQzZJRnRNWkUtOVFhMUVBTzFfbjBDcjZCUHViZUNRX3l1b0pMWmc5REJMdVpQb1VrbGZpaTMzN0c0TWhiOHRxRGRyWjRCWnlDZU5GZE1ldzdQR0U5WDhlYmR3?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 23:35:43 GMT",
-      "timestamp": "2026-10-10T23:35:43.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Campeonato Chileno",
-      "fuente_url_original": "https://www.campeonatochileno.cl",
-      "fuente": "Campeonato Chileno",
-      "fuente_host": "campeonatochileno.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 92,
-      "categoria": "chile",
-      "equipo_chile": "Huachipato",
-      "viral_score": 73,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:47h(+0)",
         "senal:\\b(clasific|eliminad(+8)"
       ]
     },
@@ -186,6 +186,28 @@
       ]
     },
     {
+      "title": "El fuerte mensaje de Ribera tras ser despedido de Ñublense: “Con una derrota así es normal que se tomen dec... - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxPQWc0SnFjSjJfWU5FNGVXS1J4OXRmOXE3eG8tZ0ZJU1VoWlhrVVRTWEphT3gyQ1UzVHA5QXFqM21wanYxMEVWajRvM0Z4MDZvcjYwYjVUV21aOVNRUk11RDlTR0VvT0tkWXkyYTMwOVJtaDhDLTkzUHVqUnRpZmROQXpENzBmRTl6RW1r0gGQAUFVX3lxTE15SmpTUkxQVGxMMVplQjU4dk1ST0ZQYnNQQXN5ME1GNHN6WkNuTEpDQ3JnT2dlMUhsajZvb1FRaXFJbm41eEliaTVsTlhsdlM0UVljeXVOOHZncFBfcThxSmFZUTctajRYaTBHaHNHTERELUxVcUZfalZWNnI3VEs4aEdZNDdINndOLXJyekJDOA?oc=5\" target=\"_blank\">El fuerte mensaje de Ribera tras ser desp",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPQWc0SnFjSjJfWU5FNGVXS1J4OXRmOXE3eG8tZ0ZJU1VoWlhrVVRTWEphT3gyQ1UzVHA5QXFqM21wanYxMEVWajRvM0Z4MDZvcjYwYjVUV21aOVNRUk11RDlTR0VvT0tkWXkyYTMwOVJtaDhDLTkzUHVqUnRpZmROQXpENzBmRTl6RW1r0gGQAUFVX3lxTE15SmpTUkxQVGxMMVplQjU4dk1ST0ZQYnNQQXN5ME1GNHN6WkNuTEpDQ3JnT2dlMUhsajZvb1FRaXFJbm41eEliaTVsTlhsdlM0UVljeXVOOHZncFBfcThxSmFZUTctajRYaTBHaHNHTERELUxVcUZfalZWNnI3VEs4aEdZNDdINndOLXJyekJDOA?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 19:33:42 GMT",
+      "timestamp": "2026-10-13T19:33:42.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": "Ñublense",
+      "viral_score": 84,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:6h(+10)",
+        "senal:\\b(crisis|despedido|(+9)"
+      ]
+    },
+    {
       "title": "Goles del Coquimbo Unido vs. Colo-Colo: Partido EN VIVO, resumen, VIDEOS y resultado por la Liga de Primera 2026 - Teletrece",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPclZ5RW9fdEo3OHFhY1JreVNFVDBCa21aU19mMHptT19BNmZhQmlRa28zYU5BNHRCRnNydE50ZFZvNWNSZ2ZsWXk5TXBNNE1jbjl0bl84WG1fak5JTHZvOXQtTTNoX2FFamJqSG93VmZlRWRPbTRmYm1aMFlaNktuRGxmV0dkdkNBTE0tY0RVNjZtMFBxM3hZdkJ3SVlXalJYaXJwYWlmT0luRV9QQXg5dmo5TDRaQTA4SFBvNzVfbFJDdmRPeVpZ?oc=5\" target=\"_blank\">Goles del Coquimbo Unido vs. Colo-Colo: Partido EN VIVO, resumen, VIDEOS y resultado por la Liga de Primera 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Teletrece",
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPclZ5RW9fdEo3OHFhY1JreVNFVDBCa21aU19mMHptT19BNmZhQmlRa28zYU5BNHRCRnNydE50ZFZvNWNSZ2ZsWXk5TXBNNE1jbjl0bl84WG1fak5JTHZvOXQtTTNoX2FFamJqSG93VmZlRWRPbTRmYm1aMFlaNktuRGxmV0dkdkNBTE0tY0RVNjZtMFBxM3hZdkJ3SVlXalJYaXJwYWlmT0luRV9QQXg5dmo5TDRaQTA4SFBvNzVfbFJDdmRPeVpZ?oc=5",
@@ -204,27 +226,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:3h(+15)"
-      ]
-    },
-    {
-      "title": "Jaime García se mosquea tras meter a Huachipato en copas: “Hay gente que opina de fútbol y gente que sabe d... - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxNZ1RCMHNLRVRqNlZ1Q3UxYXhIUk5yUmhwNTZobzNBaVNoM0hqdnBibkdfd3p4YThtajl2S1BxNG00bHBQUkE5QTdFc3dvZ0RsaWdfVkpjZUxqbjg1OEozYmI4WWVPZlRsVjFMX0ljTy13WllSNGJVUU56VVlCRzdQSWQ4OEJxalZTcmRCTWlFZGlWSTZ0dmg1d3VWX0tIMVZoWUhEREV1S2d4LWNEOVN4b0wyVDI1UkRhUzJEcE1FVkwyenN3YUI0bkFReTNlM2loMHNn0gHYAUFVX3lxTE1FTWR6dnF1Z2dCVzhuUTlOSVNzQjU0cUNqUEdFSlNBcWpRZ2xlNzBWem9WQXpWXzBTNDNaQ1kwamVfYXVOT2dwMUFtQXdqN1BqR2RJQUoyY0tiMDlOMW53YTZLcFQ3YWxldi1GeUYtNVNoZl9QUWp5Y0",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNZ1RCMHNLRVRqNlZ1Q3UxYXhIUk5yUmhwNTZobzNBaVNoM0hqdnBibkdfd3p4YThtajl2S1BxNG00bHBQUkE5QTdFc3dvZ0RsaWdfVkpjZUxqbjg1OEozYmI4WWVPZlRsVjFMX0ljTy13WllSNGJVUU56VVlCRzdQSWQ4OEJxalZTcmRCTWlFZGlWSTZ0dmg1d3VWX0tIMVZoWUhEREV1S2d4LWNEOVN4b0wyVDI1UkRhUzJEcE1FVkwyenN3YUI0bkFReTNlM2loMHNn0gHYAUFVX3lxTE1FTWR6dnF1Z2dCVzhuUTlOSVNzQjU0cUNqUEdFSlNBcWpRZ2xlNzBWem9WQXpWXzBTNDNaQ1kwamVfYXVOT2dwMUFtQXdqN1BqR2RJQUoyY0tiMDlOMW53YTZLcFQ3YWxldi1GeUYtNVNoZl9QUWp5Y09QQ2ZXeFl0ZWNzcHFOdnlWTGpxMl9sREg1T1B5em4yNERLV3dzbGlEVVMweXVlUU1rb3JiU1Y2VTFtdTBhNFpLZk5Oa1IyUnNLTm9ISVNFVDJjYlB3cGxoUjA5emppNw?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 23:28:41 GMT",
-      "timestamp": "2026-10-10T23:28:41.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 90,
-      "categoria": "chile",
-      "equipo_chile": "Huachipato",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:2h(+15)"
       ]
     },
     {
@@ -334,6 +335,30 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:7h(+10)"
+      ]
+    },
+    {
+      "title": "Universidad de Chile vs Ñublense: dónde ver en VIVO y online la fecha 24 de la Liga de Primera - Radio Pauta 100.5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxOODdPU3BhVVpTVXZhRThEVE13alB6X2JGODhQRmN3a0pHT1FTTVdrQ00xVmh5bkpuMG8zR1EzNDJuRVpBTzU3WmRYWmljRzFkalYxemlERDRVbmxOdVlfejBDbjFLbjg3S21USGhkMUc1aFFNa2RGSzR5Sk5zZWRSNnN0bXkwNkRmOW00Q3hKRGJxbTdEeU5FemxVU3lMTHEtN0JONzNveWNYQTVRNFBhVnVmZEUyeU96N2J4d0dqUkd0ZGQtRlVOblVWVkFtaGFaVmJKUVhB?oc=5\" target=\"_blank\">Universidad de Chile vs Ñublense: dónde ver en VIVO y online la fecha 24 de la Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Radio P",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOODdPU3BhVVpTVXZhRThEVE13alB6X2JGODhQRmN3a0pHT1FTTVdrQ00xVmh5bkpuMG8zR1EzNDJuRVpBTzU3WmRYWmljRzFkalYxemlERDRVbmxOdVlfejBDbjFLbjg3S21USGhkMUc1aFFNa2RGSzR5Sk5zZWRSNnN0bXkwNkRmOW00Q3hKRGJxbTdEeU5FemxVU3lMTHEtN0JONzNveWNYQTVRNFBhVnVmZEUyeU96N2J4d0dqUkd0ZGQtRlVOblVWVkFtaGFaVmJKUVhB?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 15:37:50 GMT",
+      "timestamp": "2026-10-12T15:37:50.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Radio Pauta 100.5",
+      "fuente_url_original": "https://www.pauta.cl",
+      "fuente": "Radio Pauta 100.5",
+      "fuente_host": "pauta.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:34h(+0)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "gigante:universidad de chile(+10)",
+        "penal(-8)"
       ]
     },
     {
@@ -1119,6 +1144,72 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:14h(+5)"
+      ]
+    },
+    {
+      "title": "“Debe haber una mejoría”: Claudio Bravo le pone tarea a Gabriel Maureira como dueño del arco de Colo Colo - PrensaFútbol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE9vbjhQeHhmcWZiTkRvbjVBOTJCaFFZX2wwVjR5dTZZSzFfNmZaaVoyeWdBSVZjYTlqX0ctT3l4b0dZNzJDZWxNSDNCakwtZ0haX0NHZTExZndvNVVLSnhEX00tZ01QTUhaeDFudy1xd2xZNUdTSFRvbGhn?oc=5\" target=\"_blank\">“Debe haber una mejoría”: Claudio Bravo le pone tarea a Gabriel Maureira como dueño del arco de Colo Colo</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9vbjhQeHhmcWZiTkRvbjVBOTJCaFFZX2wwVjR5dTZZSzFfNmZaaVoyeWdBSVZjYTlqX0ctT3l4b0dZNzJDZWxNSDNCakwtZ0haX0NHZTExZndvNVVLSnhEX00tZ01QTUhaeDFudy1xd2xZNUdTSFRvbGhn?oc=5",
+      "pubDate": "Wed, 14 Oct 2026 00:14:19 GMT",
+      "timestamp": "2026-10-14T00:14:19.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "PrensaFútbol",
+      "fuente_url_original": "https://www.prensafutbol.cl",
+      "fuente": "PrensaFútbol",
+      "fuente_host": "prensafutbol.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:1h(+15)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "El arquero de Colo-Colo que no estaría cómodo con su situación y buscaría salir en 2027 - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8wFBVV95cUxNSUd6UTVkc2o4dlpMX3E3VUgtZjJ0cjBCVHpYcDlzczU4RzRaQUJWSklmMmxfSW91Ty1UcUE1eDBfSXluMlc1b2RVbnllMzVwUXFZNFFuZklyWkdtSkVmamk2d3U1TDZDazJLQXNuQlJOTldlalI1MXdudlA2M0FfVFBDbmxZdjJ1U1hfTW1tUDVVUWdqRVRURGNseEdYOHF6U1FNbkFjUVBxVjItX3ExM3NqcXdrTFFNcW1reVhZdG43dFhYVXRqX0dsZFNVLWJJM19DS3JDMVVXQWFvOFhCY1l4cHdVcGcyZWh0TG53anFBZTg?oc=5\" target=\"_blank\">El arquero de Colo-Colo que no estaría cómodo con su situación y buscaría salir en 2027</a>&nbsp;&nb",
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNSUd6UTVkc2o4dlpMX3E3VUgtZjJ0cjBCVHpYcDlzczU4RzRaQUJWSklmMmxfSW91Ty1UcUE1eDBfSXluMlc1b2RVbnllMzVwUXFZNFFuZklyWkdtSkVmamk2d3U1TDZDazJLQXNuQlJOTldlalI1MXdudlA2M0FfVFBDbmxZdjJ1U1hfTW1tUDVVUWdqRVRURGNseEdYOHF6U1FNbkFjUVBxVjItX3ExM3NqcXdrTFFNcW1reVhZdG43dFhYVXRqX0dsZFNVLWJJM19DS3JDMVVXQWFvOFhCY1l4cHdVcGcyZWh0TG53anFBZTg?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 23:17:00 GMT",
+      "timestamp": "2026-10-13T23:17:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "En Cancha",
+      "fuente_url_original": "https://www.encancha.cl",
+      "fuente": "En Cancha",
+      "fuente_host": "encancha.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:2h(+15)"
+      ]
+    },
+    {
+      "title": "Los partidos que le quedan a Colo Colo, la U y a la UC por el título de la Liga de Primera - Dale Albo",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNS2tjSUd3MUxWb2FJdUN1Nkc5bk1Dc19oQ1k0UG9fSmtVdXhFejdMRGpxYmJERkNPOGRUS25XOTlRTENiNTVMZmlHb2lVOV9UclZzd1N2Q2xIcGtUdDlqN3d5LUlTbmt4MWNLYjBiRENPNlVxTE1yUlhFUThKRThSX0dGbVZWLXdRdzVBNWRNZ0xJM0pNekpoSm4xc0FKTWNSS2pWVS1NWDA3N09wcjY1S3ZXNWZIdlFTNHIzM3I5YzY4YlHSAcgBQVVfeXFMTkZXWUpKeDEtVWhTR3hwQlEtNk10Q0RRNjZ3dW53QkN1cTJNVWJ1NFZ3dUY1azA1QThLNDVoUVhhalNFcTN2SnFTNVVVc3FBc1hLbkZvTmdnaDRILTk4YWtycEJXcjlZd1pNc1N1YWQxNkVBSFk4dGxHODRfTHY3dFNTeFdzbnJuT2",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNS2tjSUd3MUxWb2FJdUN1Nkc5bk1Dc19oQ1k0UG9fSmtVdXhFejdMRGpxYmJERkNPOGRUS25XOTlRTENiNTVMZmlHb2lVOV9UclZzd1N2Q2xIcGtUdDlqN3d5LUlTbmt4MWNLYjBiRENPNlVxTE1yUlhFUThKRThSX0dGbVZWLXdRdzVBNWRNZ0xJM0pNekpoSm4xc0FKTWNSS2pWVS1NWDA3N09wcjY1S3ZXNWZIdlFTNHIzM3I5YzY4YlHSAcgBQVVfeXFMTkZXWUpKeDEtVWhTR3hwQlEtNk10Q0RRNjZ3dW53QkN1cTJNVWJ1NFZ3dUY1azA1QThLNDVoUVhhalNFcTN2SnFTNVVVc3FBc1hLbkZvTmdnaDRILTk4YWtycEJXcjlZd1pNc1N1YWQxNkVBSFk4dGxHODRfTHY3dFNTeFdzbnJuT2lCVW9YWVVOMHY3akVrR3JXcERMTExoczJqMFlSdGtMRGUxZGRHY0o2NVhnMm5VNnQ3S014bVhWbFJrRGRFZWg?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 20:35:44 GMT",
+      "timestamp": "2026-10-13T20:35:44.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Dale Albo",
+      "fuente_url_original": "https://dalealbo.cl",
+      "fuente": "Dale Albo",
+      "fuente_host": "dalealbo.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:5h(+10)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
       ]
     },
     {
@@ -2066,95 +2157,6 @@
       ]
     },
     {
-      "title": "¿Maxi Romero por Brayan Cortés? Avisan que Colo Colo toma una decisión sobre el trueque del año - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOS2pta0FXNEVTVmVKR05aY3lCb2ZJeGszVUZsZUpXQzRwbmxCLS1FbGZyTnhwTGV2d3A3MmJOZ0M3YmduRWQ0dGRHWnJWV3R3bFE0dWdYUjlrM1A3Y2taMmltMWlhQXM5V3NCZXpleGp0Y2tyQkdRR0NKSldNS3lSRFYzOExxMU5hM1lUZ09VNy1TY290b1VXQ0VKLWJ3SlZMYmRlWVZTdF9JOUtISFhWcWI1akRha2pGdUdvedIBwgFBVV95cUxPZzJpeFVQTm5XenQwbHU2NzN0ZTZNWVBTYUo0YlJjZnlqYkgyUlVLaVVzSDlQMTdxX212MVpuYWtBTy1sQnBpNDRCUzJVLURNZWFVUHotbFlhZHMybzRQQVRXTDFXSHFHdlNqVVhqTXNwMXhSWkkxNnlheUREQ0xjaHJJNzdJOUhNdTdlcnpsZV",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOS2pta0FXNEVTVmVKR05aY3lCb2ZJeGszVUZsZUpXQzRwbmxCLS1FbGZyTnhwTGV2d3A3MmJOZ0M3YmduRWQ0dGRHWnJWV3R3bFE0dWdYUjlrM1A3Y2taMmltMWlhQXM5V3NCZXpleGp0Y2tyQkdRR0NKSldNS3lSRFYzOExxMU5hM1lUZ09VNy1TY290b1VXQ0VKLWJ3SlZMYmRlWVZTdF9JOUtISFhWcWI1akRha2pGdUdvedIBwgFBVV95cUxPZzJpeFVQTm5XenQwbHU2NzN0ZTZNWVBTYUo0YlJjZnlqYkgyUlVLaVVzSDlQMTdxX212MVpuYWtBTy1sQnBpNDRCUzJVLURNZWFVUHotbFlhZHMybzRQQVRXTDFXSHFHdlNqVVhqTXNwMXhSWkkxNnlheUREQ0xjaHJJNzdJOUhNdTdlcnpsZVdHblpPemw2cjl0TGpHSjhUQUlGZXBDbzhSR0NhYXNXLXNfTnFDX3ZPU1dnYkpVYXBPdw?oc=5",
-      "pubDate": "Sun, 11 Oct 2026 01:23:47 GMT",
-      "timestamp": "2026-10-11T01:23:47.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:21h(+5)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Avisan que el primer cortado del Colo Colo 2027 es un arquero: “No sigue, es una decisión tomada” - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNZmtEVVRBZ3FRVnFCdW4zQnE3eVhLZWhjUjVQX1owUkVQdk9hSzQtTFdqZ1FXOGVXcmNRZDVXNDVwQ3R2X3FMZXppeVpDMFdka3lNWGtRaUhQa2kwZC1MVWc2TTZBcTR3eWdPcWRDT0xGTTJRbGs4TVFiaTRJRkFhazBJUjd6NFd1aGxXNDFqQXFsdzZvdnNVaUNWQzQydWtnaDJZY0twMUpPaDdYUlJCcGRFQkhVd1BJTWRwS9IBwgFBVV95cUxORFV2aXlFWThvMFR4MGt4ajFNaHVRa2pTVDRTbHlDcVg1MXl5ZW4zSjlJZ0ROcmp5UjY4WmtldVVNNmhVNnZMdHJqdFRSbEVPWmJIMmNjamtxbnVRd21RWXB4S0h4X2JMYjdQUkpJQjh2bjktR3NMazk0MVB1Zk5WRy1pbVVNQ3dkVDhyS2JTdk",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZmtEVVRBZ3FRVnFCdW4zQnE3eVhLZWhjUjVQX1owUkVQdk9hSzQtTFdqZ1FXOGVXcmNRZDVXNDVwQ3R2X3FMZXppeVpDMFdka3lNWGtRaUhQa2kwZC1MVWc2TTZBcTR3eWdPcWRDT0xGTTJRbGs4TVFiaTRJRkFhazBJUjd6NFd1aGxXNDFqQXFsdzZvdnNVaUNWQzQydWtnaDJZY0twMUpPaDdYUlJCcGRFQkhVd1BJTWRwS9IBwgFBVV95cUxORFV2aXlFWThvMFR4MGt4ajFNaHVRa2pTVDRTbHlDcVg1MXl5ZW4zSjlJZ0ROcmp5UjY4WmtldVVNNmhVNnZMdHJqdFRSbEVPWmJIMmNjamtxbnVRd21RWXB4S0h4X2JMYjdQUkpJQjh2bjktR3NMazk0MVB1Zk5WRy1pbVVNQ3dkVDhyS2JTdk41LWtVLWFzUGJfRmowN1hzN0JJOE5CY3ZtT2VmWlc4aUEya0lZbUFUTmpHX1EydS11UQ?oc=5",
-      "pubDate": "Sun, 11 Oct 2026 00:19:21 GMT",
-      "timestamp": "2026-10-11T00:19:21.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:1h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Colo-Colo tomó una decisión con los hinchas para la reanudación ante Puerto Montt - En Cancha",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi6AFBVV95cUxNWnl0MWtDak9INHJma3NZZzRRUlBpWU41bzNGVkl2UmMtTHJoekM3WkJjUUtCUjBEdU1lNjBxNVJDdVkxQTNLREZYa015bGlJR0tuSmE2dl9scTBIekdqRkhia20wODdvU245OFlsT1Eyd2tRTGNBSm5xT3VXN05tU1BGUUwzelMyMGZmcm5DVlhkZThRdUFBTDFhcnhBQVVoNUF6NTdxV0dQZjc2Z25YNWpMZmhUcnBQOXlZOWpnbkxPMXhQOWFkRXZZRm9BblV1Ui0tMi1kOXI0OURDb0lrX29SSl9DZTlv?oc=5\" target=\"_blank\">Colo-Colo tomó una decisión con los hinchas para la reanudación ante Puerto Montt</a>&nbsp;&nbsp;<font color=\"#6f6f",
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNWnl0MWtDak9INHJma3NZZzRRUlBpWU41bzNGVkl2UmMtTHJoekM3WkJjUUtCUjBEdU1lNjBxNVJDdVkxQTNLREZYa015bGlJR0tuSmE2dl9scTBIekdqRkhia20wODdvU245OFlsT1Eyd2tRTGNBSm5xT3VXN05tU1BGUUwzelMyMGZmcm5DVlhkZThRdUFBTDFhcnhBQVVoNUF6NTdxV0dQZjc2Z25YNWpMZmhUcnBQOXlZOWpnbkxPMXhQOWFkRXZZRm9BblV1Ui0tMi1kOXI0OURDb0lrX29SSl9DZTlv?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 23:56:06 GMT",
-      "timestamp": "2026-10-10T23:56:06.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "En Cancha",
-      "fuente_url_original": "https://www.encancha.cl",
-      "fuente": "En Cancha",
-      "fuente_host": "encancha.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:2h(+15)"
-      ]
-    },
-    {
-      "title": "Colo Colo buscará estirar su racha en la Liga ante un Coquimbo que necesita repuntar - Cooperativa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxNczV3dWtlZmpqOThWODEtd1NTMk41YkpJQXZnZmhqRTA4X2xpV0IwRDZ0Z05RcGQ4YmNuOVc5OTAxX3R1UHBCZ0dLMW9EWWRuVE9GRnRld00zRjg0aHlUdEctNkZNQzRpb21aTDlSWVVxZWNINDhVcHFxcjlJVFpzbHoyS0VNaFRrVkRxb1ZYYmpsXzhjWEF6c1lXenRrX3hfekZWdm1ZSDlPVFFfcV90S0J0VzdlZVlVdU5KeVBMX2paZ2V4d3J1a1otaVJjUGUtVTVVcnFzSDg1ODlmMC1MNWVhaXlCRHVxeDNNY2RR0gGMAUFVX3lxTE1zdUZUQXhkLXV4aVBqeVJtWWMxZHJJOEotY0J2ckFQeWF3blhXRWotOUFQSkVBODhtYjByNExLaUJLd1VJaFFiUHp2eHZvUzd0LUZfc0pRQ2llUVVTcz",
-      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNczV3dWtlZmpqOThWODEtd1NTMk41YkpJQXZnZmhqRTA4X2xpV0IwRDZ0Z05RcGQ4YmNuOVc5OTAxX3R1UHBCZ0dLMW9EWWRuVE9GRnRld00zRjg0aHlUdEctNkZNQzRpb21aTDlSWVVxZWNINDhVcHFxcjlJVFpzbHoyS0VNaFRrVkRxb1ZYYmpsXzhjWEF6c1lXenRrX3hfekZWdm1ZSDlPVFFfcV90S0J0VzdlZVlVdU5KeVBMX2paZ2V4d3J1a1otaVJjUGUtVTVVcnFzSDg1ODlmMC1MNWVhaXlCRHVxeDNNY2RR0gGMAUFVX3lxTE1zdUZUQXhkLXV4aVBqeVJtWWMxZHJJOEotY0J2ckFQeWF3blhXRWotOUFQSkVBODhtYjByNExLaUJLd1VJaFFiUHp2eHZvUzd0LUZfc0pRQ2llUVVTczRhMDc3Yi13S2ZYRVhsOElMdXRCMDYwX1BWd0ZHejY5SWRxSWk4eGZDQkUxNjRt?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 23:26:00 GMT",
-      "timestamp": "2026-10-10T23:26:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Cooperativa",
-      "fuente_url_original": "https://www.cooperativa.cl",
-      "fuente": "Cooperativa",
-      "fuente_host": "cooperativa.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:2h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
       "title": "Coquimbo Unido vs Colo Colo: Hora y dónde ver EN VIVO partido por la Liga de Primera - Chilevisión",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQMC1jVjZiUlN4TnZ4cmNZaGFLNVZtd3RtR09qRncyU0ZuN1pGdGlBc3duMXo4WTZXMG9PYno4elQzVUo0eHVDWlVaUXZiV2MydnBTcC1sc3NIeW9nWmpuVGp0UzQxeDFkeFhyLWdyOVNPV2xJRWtTRTZVWUJZU0ZFSGN4eG5qS3dHV2c4c0NMRXNCMkU0d2hGWTdtTmZubzF0MjFZVG1tcGRoRmVvUkkwOWZRMFN1SHhVUVNEMTdoUUxCcXVmSXdvQXlRMDJoczNDMGpHakVn?oc=5\" target=\"_blank\">Coquimbo Unido vs Colo Colo: Hora y dónde ver EN VIVO partido por la Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Chilevisión</font",
       "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQMC1jVjZiUlN4TnZ4cmNZaGFLNVZtd3RtR09qRncyU0ZuN1pGdGlBc3duMXo4WTZXMG9PYno4elQzVUo0eHVDWlVaUXZiV2MydnBTcC1sc3NIeW9nWmpuVGp0UzQxeDFkeFhyLWdyOVNPV2xJRWtTRTZVWUJZU0ZFSGN4eG5qS3dHV2c4c0NMRXNCMkU0d2hGWTdtTmZubzF0MjFZVG1tcGRoRmVvUkkwOWZRMFN1SHhVUVNEMTdoUUxCcXVmSXdvQXlRMDJoczNDMGpHakVn?oc=5",
@@ -2289,6 +2291,29 @@
         "categoria:colo_colo(+60)",
         "frescura:17h(+5)",
         "senal:\\b\\d+\\s*(goles|millo(+6)"
+      ]
+    },
+    {
+      "title": "Oficial: ANFP confirma la suspensión de la final de la Copa de la Liga - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPb3k5RDlLUnRMUGxJTXRVT1BtckRQR0FUZnlwTkt5UHBXb1BpLUtvcWg3NFFnWXg1VlVCa3Z3WW14dUJhZEZFbXdqZXZxS1N2OFN2U2NydGl0djh6MkdROS0tbkczMlpQUTh4Tmx2QkMwS05BTjNuNVNWQzNkX3lfY2FGUnhUNEdfdlpMNUVFTjQ3YzRfQlc4OGtmQ0otdGhEeW1SWmFOV2w4Uk83YjFnNU5YSFA4SWstN1dNcFFqVkhra1A3aVRFS253WQ?oc=5\" target=\"_blank\">Oficial: ANFP confirma la suspensión de la final de la Copa de la Liga</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En Cancha</font>",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPb3k5RDlLUnRMUGxJTXRVT1BtckRQR0FUZnlwTkt5UHBXb1BpLUtvcWg3NFFnWXg1VlVCa3Z3WW14dUJhZEZFbXdqZXZxS1N2OFN2U2NydGl0djh6MkdROS0tbkczMlpQUTh4Tmx2QkMwS05BTjNuNVNWQzNkX3lfY2FGUnhUNEdfdlpMNUVFTjQ3YzRfQlc4OGtmQ0otdGhEeW1SWmFOV2w4Uk83YjFnNU5YSFA4SWstN1dNcFFqVkhra1A3aVRFS253WQ?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 21:46:56 GMT",
+      "timestamp": "2026-10-13T21:46:56.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "En Cancha",
+      "fuente_url_original": "https://www.encancha.cl",
+      "fuente": "En Cancha",
+      "fuente_host": "encancha.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 95,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:4h(+10)",
+        "senal:\\b(oficial|confirmad(+12)",
+        "senal:\\b(clasific|eliminad(+8)"
       ]
     },
     {
@@ -2626,6 +2651,28 @@
       ]
     },
     {
+      "title": "Premio tras el 6-0: Fernando Gago toma llamativa decisión con el plantel de la U antes de la Copa Chile - La Magia Azul",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4wFBVV95cUxPTXhjZ3NZdkNTbzdJWlBVV0tMeU8zaU5mdW1CMkNWMkt0WmR5RU5qZ1FZalhYcTZxcnhnRHpuM1FJUnJqVUppU3kxaXNrbFI0MTRBUXVnclp0bnlEaXZXakw5aFNmQnpFc1liQzNld1pjT0FTSUVvZE9SRXdFRWszWklQRXgyT2FPV1BNZnZGYmg0U2pOVFF3Ri1sb3Z6V1NXbjFXMGFNRzctUGs2LU15bERnWjNDbGE1bktac09JdnZPd24yZGlBWUozRzBlczZuRjJnTXgzeDlQYnJHd21nVWxkUQ?oc=5\" target=\"_blank\">Premio tras el 6-0: Fernando Gago toma llamativa decisión con el plantel de la U antes de la Copa Chile</a>&nbsp;&nbsp;<f",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPTXhjZ3NZdkNTbzdJWlBVV0tMeU8zaU5mdW1CMkNWMkt0WmR5RU5qZ1FZalhYcTZxcnhnRHpuM1FJUnJqVUppU3kxaXNrbFI0MTRBUXVnclp0bnlEaXZXakw5aFNmQnpFc1liQzNld1pjT0FTSUVvZE9SRXdFRWszWklQRXgyT2FPV1BNZnZGYmg0U2pOVFF3Ri1sb3Z6V1NXbjFXMGFNRzctUGs2LU15bERnWjNDbGE1bktac09JdnZPd24yZGlBWUozRzBlczZuRjJnTXgzeDlQYnJHd21nVWxkUQ?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 22:25:36 GMT",
+      "timestamp": "2026-10-13T22:25:36.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "La Magia Azul",
+      "fuente_url_original": "https://www.lamagiaazul.cl",
+      "fuente": "La Magia Azul",
+      "fuente_host": "lamagiaazul.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 83,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
       "title": "Final de Copa de la Liga se quedó sin sede a días de partido - PrensaFútbol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTFB1Z3JKbzZ4bDVpUDR2bWw5YjlOT0xyUHhnNURxZTZyem9pOTFIcHJHQWxqX1h5SzlUbVlQRUlVNDRydG9lQkJweE5HMEY3V2drRHh3eWFYQmFNRzhzbm1zMS1fTklNeElWMmlKdXBESzBRTDBUbnNYeU9BRnBXQQ?oc=5\" target=\"_blank\">Final de Copa de la Liga se quedó sin sede a días de partido</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
       "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB1Z3JKbzZ4bDVpUDR2bWw5YjlOT0xyUHhnNURxZTZyem9pOTFIcHJHQWxqX1h5SzlUbVlQRUlVNDRydG9lQkJweE5HMEY3V2drRHh3eWFYQmFNRzhzbm1zMS1fTklNeElWMmlKdXBESzBRTDBUbnNYeU9BRnBXQQ?oc=5",
@@ -2912,28 +2959,6 @@
       ]
     },
     {
-      "title": "Cuándo juegan Coquimbo Unido vs. Colo Colo por la Liga de Primera: equipo, fecha y hora - ESPN Deportes",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxQTmtMc0hzaW5CR2tQWmhvaGtyUVpKLVFfMXhuclBScTBHbTZrMmYzNVZ1b1dFTmpHazJoTEFaNm85ZHc4YmpGbGJKU1FSM1htcjdlN1VBQ0pGVDl1UU5HbkdpbW1tN0QyajlxY0RYS3BfVnRSUnZTeHlPcl9FWEJoYmdub09vczdFdEttc3NBUndtRXY3UWtWZktIMzBXNWxlYlpPLUQ3bjM0UG1TVGxtNVhZS3dTZWxxWEYwMHVPYnB2VE5TTDJPMGRHMlV6WUwxVGlZ?oc=5\" target=\"_blank\">Cuándo juegan Coquimbo Unido vs. Colo Colo por la Liga de Primera: equipo, fecha y hora</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Deportes</fon",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQTmtMc0hzaW5CR2tQWmhvaGtyUVpKLVFfMXhuclBScTBHbTZrMmYzNVZ1b1dFTmpHazJoTEFaNm85ZHc4YmpGbGJKU1FSM1htcjdlN1VBQ0pGVDl1UU5HbkdpbW1tN0QyajlxY0RYS3BfVnRSUnZTeHlPcl9FWEJoYmdub09vczdFdEttc3NBUndtRXY3UWtWZktIMzBXNWxlYlpPLUQ3bjM0UG1TVGxtNVhZS3dTZWxxWEYwMHVPYnB2VE5TTDJPMGRHMlV6WUwxVGlZ?oc=5",
-      "pubDate": "Sun, 11 Oct 2026 01:29:00 GMT",
-      "timestamp": "2026-10-11T01:29:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "ESPN Deportes",
-      "fuente_url_original": "https://espndeportes.espn.com",
-      "fuente": "ESPN Deportes",
-      "fuente_host": "espndeportes.espn.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:21h(+5)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
       "title": "Final de la Copa de la Liga: la idea que surge para que el partido se juegue en el Claro Arena - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi9gFBVV95cUxNMGc3WkFnaHR2Vzl5VTdhc3VaYVI3eEp1S1VKRHFlZ1VBSml2QWk4ZnczaDRYLXBlcVJzVk1MNjdVd1Y5bXpEaElwLWJjcENQLVNMamFjZFhTX3hxVDVKRk9kYndPQ2JaQXQ3RXRSelFCYXd1NFBYaEhpSXBRMnFlb1FUdzNLMm41VU80M0QxbllsNXh4TWpRcTk5U1JvWXZMd0lNQzdNbTNaQ2FjakU0Rjdtc3d5cFdpVlBoajRTQmF5cHV5LXIwUmpVOXpiMzNfN21CZ3k0dUNzNnktOWtFZy1xb1djOE95M1NaREhQRUZXYjIwUVE?oc=5\" target=\"_blank\">Final de la Copa de la Liga: la idea que surge para que el partido se juegue en el Claro Arena</",
       "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNMGc3WkFnaHR2Vzl5VTdhc3VaYVI3eEp1S1VKRHFlZ1VBSml2QWk4ZnczaDRYLXBlcVJzVk1MNjdVd1Y5bXpEaElwLWJjcENQLVNMamFjZFhTX3hxVDVKRk9kYndPQ2JaQXQ3RXRSelFCYXd1NFBYaEhpSXBRMnFlb1FUdzNLMm41VU80M0QxbllsNXh4TWpRcTk5U1JvWXZMd0lNQzdNbTNaQ2FjakU0Rjdtc3d5cFdpVlBoajRTQmF5cHV5LXIwUmpVOXpiMzNfN21CZ3k0dUNzNnktOWtFZy1xb1djOE95M1NaREhQRUZXYjIwUVE?oc=5",
@@ -3083,27 +3108,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:16h(+5)"
-      ]
-    },
-    {
-      "title": "“Va a ser una revancha”: Everton no olvida lo sucedido en Copa Chile y adelantan el duelo ante la U - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOZE1KXzBvSVJTZkxPUEdTZmhDb2w2ajRDbURsc0cydXlndHZtLVZxeVBXX0hQa1JNbGNyNWZSTU03bmRycFd1RXJsY1p5VGtJdXg3NmF5NjhoLTZIaDFndmtNTWFtVTNSc0trR1RMbWd2Qy13RGlaZ0RTaGd6Q2xkaVBGSHo1WExwM3hnTTAyaU9TTndxSHZMc1V2cVdRMy1HZlhfNWk5RGpOR213Z1dEdTZTdHFnN1RCendXejR2aTVpUnJIU1I5UjlKTDjSAeABQVVfeXFMUEV1aktoTTU5eEQzVFhaY3JvdDIwN1dxNlNNVG1WUGFNUjhKd3E5ZlhzUWY0T1N2QTVvN3FfYXlQRGlyLVBiQnl5V2lVdTByS1NvaGdidS1EUF84bnVRcHpEOVBzb21ybU5kSEE0Q08zRUlQc3F0am9IY2dpNm16b1",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZE1KXzBvSVJTZkxPUEdTZmhDb2w2ajRDbURsc0cydXlndHZtLVZxeVBXX0hQa1JNbGNyNWZSTU03bmRycFd1RXJsY1p5VGtJdXg3NmF5NjhoLTZIaDFndmtNTWFtVTNSc0trR1RMbWd2Qy13RGlaZ0RTaGd6Q2xkaVBGSHo1WExwM3hnTTAyaU9TTndxSHZMc1V2cVdRMy1HZlhfNWk5RGpOR213Z1dEdTZTdHFnN1RCendXejR2aTVpUnJIU1I5UjlKTDjSAeABQVVfeXFMUEV1aktoTTU5eEQzVFhaY3JvdDIwN1dxNlNNVG1WUGFNUjhKd3E5ZlhzUWY0T1N2QTVvN3FfYXlQRGlyLVBiQnl5V2lVdTByS1NvaGdidS1EUF84bnVRcHpEOVBzb21ybU5kSEE0Q08zRUlQc3F0am9IY2dpNm16b19Nb0dybnI5czRtNjNFbnI1SUF4eE03QTdJb0RNNl9QUm4wOElWWXhCRmJzUlh6b1NZUFVIRkJyQ3F3bTRvQ1E3YVVLR21qNU9NaFhLcFZWeFNFQVdINW14RXctYV9nTWE?oc=5",
-      "pubDate": "Sun, 11 Oct 2026 23:18:54 GMT",
-      "timestamp": "2026-10-11T23:18:54.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "ADN Radio",
-      "fuente_url_original": "https://www.adnradio.cl",
-      "fuente": "ADN Radio",
-      "fuente_host": "adnradio.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Universidad de Chile",
-      "viral_score": 65,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:28h(+0)"
       ]
     }
   ]
