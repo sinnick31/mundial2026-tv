@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EFICIENCIA PUNTOS POR GOL",
-      "titulo": "Sunderland 1.285 puntos por gol: ¿el ataque más eficiente en la Premier?",
-      "fecha": "2026-08-01T04:25:09.110Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "CORREA GANA $70 MILLONES",
       "titulo": "Javier Correa gana $70 millones mensuales: ¿Es un sueldo top en la Primera División?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Pablo Milad asegura que no hubo escándalo en reunión con FIFA por separación…",
       "titulo": "FÚTBOL CHILENO: Pablo Milad asegura que no hubo escándalo en reunión con FIFA… | Lo que cambia",
       "fecha": "2026-10-15T22:06:17.651Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Presidio y una multa por más de $ 300 millones: el juicio que condenó al…",
+      "titulo": "FÚTBOL CHILENO: Presidio y una multa por más de $ 300 millones: el juicio que… | Lo que cambia",
+      "fecha": "2026-10-15T23:44:50.236Z"
     }
   ]
 }
