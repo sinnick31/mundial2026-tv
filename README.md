@@ -42,11 +42,21 @@ fetch-matches.js (multi-competición)  ────┤
                     content-history.json (anti-duplicados)
 ```
 
-Corre 4 veces al día (horario Chile): 08:00 · 12:00 · 17:00 · 21:00.
+Corre 3 veces al día según el workflow activo: 12:00 · 16:00 · 20:00, hora de Chile durante horario UTC−3 (cron UTC: 15:00 · 19:00 · 23:00). La fuente de verdad es `.github/workflows/futbol-pipeline.yml`; revisa la equivalencia local tras cambios de horario estacional.
+
+## 📰 Sistema operativo editorial y monetización
+
+La automatización técnica no sustituye el control editorial. Revisar fuentes, atribuciones, guion, derechos de imágenes/audio y resultado público; no publicar historias dudosas solo para llenar una ventana.
+
+- [Sistema operativo de prensa de fútbol](docs/SISTEMA_OPERATIVO_PRENSA_FUTBOL.md)
+- [Monetización y patrocinios](docs/MONETIZACION_Y_PATROCINIOS.md)
+- [Control de calidad y correcciones](docs/CONTROL_CALIDAD_EDITORIAL.md)
+- [Plan operativo de 30 días](docs/PLAN_30_DIAS.md)
+- [Estrategia editorial del canal](CHANNEL_STRATEGY.md)
 
 ## ⚙️ Modos (workflow_dispatch)
 
-`auto` · `noticias` · `partidos` · `predicciones` · `ranking` · **`chile`** (solo fútbol chileno) · **`fichajes`** (solo mercado)
+El workflow activo ofrece: `chile` (enfoque Chile), `auto` (selección automática) y `noticias`. Los modos documentados en otros scripts no se consideran opciones disponibles hasta que estén declarados en `.github/workflows/futbol-pipeline.yml`.
 
 ## 🔑 Secrets requeridos
 
@@ -64,9 +74,12 @@ Corre 4 veces al día (horario Chile): 08:00 · 12:00 · 17:00 · 21:00.
 
 - `config/ligas.js` — TODA la configuración: competiciones, equipos chilenos (A + B) con alias, categorías, feeds RSS
 - `scripts/viral-score.js` — motor de puntaje 0–100
-- `scripts/fetch-news.js` — noticias multi-tema con clasificación por categoría
-- `scripts/fetch-matches.js` — partidos multi-competición (1 llamada API) + liga chilena vía ESPN
-- `scripts/generate-daily-content.js` — generación IA con prompts genéricos y cupo garantizado para Chile
+- `scripts/fetch-real-news.js` — ingesta activa de noticias con fuentes
+- `scripts/fetch-matches.js` — partidos multi-competición y cobertura chilena estructurada
+- `scripts/viral-score.js` — motor de puntuación editorial
+- `scripts/generate-real-content.js` — selección y generación de contenido con controles de fuente
+- `scripts/preflight-youtube-auth.js` — comprobación de autenticación antes de publicar
+- `scripts/render-and-upload.js` — renderizado y publicación a YouTube
 
 ## 📌 Nota sobre la liga chilena
 
