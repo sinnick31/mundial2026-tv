@@ -1,6 +1,6 @@
 'use strict';
 
-const ALLOWED_VISIBILITIES = new Set(['private', 'unlisted', 'public');
+const ALLOWED_VISIBILITIES = new Set(['private', 'unlisted', 'public']);
 
 /**
  * Resolve YouTube upload visibility.
