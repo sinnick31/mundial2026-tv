@@ -24,6 +24,12 @@ on:
         default: 'chile'
         type: choice
         options: ['chile', 'auto', 'noticias']
+      privacy:
+        description: 'Visibilidad del vídeo subido'
+        required: true
+        default: 'unlisted'
+        type: choice
+        options: ['unlisted', 'private', 'public']
 
 concurrency:
   group: mundial2026shorts-${{ github.ref }}
@@ -177,6 +183,8 @@ jobs:
       - name: 🧪 Validar render y TypeScript antes de publicar
         run: |
           node --check scripts/render-and-upload.js
+          node --check scripts/publication-policy.js
+          npm run test:publication-policy
           # Si tsconfig.json/eslint.config.js se corrompen (p. ej. con "\n" literales), tsc ignora la
           # config y reporta cientos de errores falsos en node_modules/@types. Fallar aquí con un mensaje claro.
           node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))" || { echo "::error file=tsconfig.json::tsconfig.json no es JSON válido (¿saltos de línea escapados?)"; exit 1; }
@@ -211,6 +219,8 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
+          YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'unlisted' }}
+          ALLOW_SCHEDULED_PUBLIC: ${{ vars.ALLOW_SCHEDULED_PUBLIC || 'false' }}
         run: node scripts/render-and-upload.js
 
       - name: 🔎 Verificar publicación
