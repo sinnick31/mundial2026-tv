@@ -177,6 +177,7 @@ jobs:
       - name: 🧪 Validar render y TypeScript antes de publicar
         run: |
           node --check scripts/render-and-upload.js
+          node --check scripts/generate-thumbnail.js
           # Si tsconfig.json/eslint.config.js se corrompen (p. ej. con "\n" literales), tsc ignora la
           # config y reporta cientos de errores falsos en node_modules/@types. Fallar aquí con un mensaje claro.
           node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))" || { echo "::error file=tsconfig.json::tsconfig.json no es JSON válido (¿saltos de línea escapados?)"; exit 1; }
@@ -195,8 +196,8 @@ jobs:
           npx remotion browser ensure
           echo "REMOTION_CHROME_FLAGS=--no-sandbox --disable-setuid-sandbox" >> "$GITHUB_ENV"
 
-      - name: 🎞️ Instalar ffmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: 🎞️ Instalar ffmpeg y conversor PNG
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg librsvg2-bin
 
       - name: 📥 Descargar paquete
         uses: actions/download-artifact@v6

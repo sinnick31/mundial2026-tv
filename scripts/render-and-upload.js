@@ -19,6 +19,7 @@ const path = require('path');
 const { generarNarracion, construirGuion } = require('./generate-narration');
 const { estiloEquipo } = require('./team-styles');
 const { enhanceGeneratedDescription } = require('./metadata-generator');
+const { spawnSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
 const BROLL_DIR = path.join(ROOT, 'public', 'broll');
@@ -240,8 +241,42 @@ async function main() {
     try {
       const { compositionId, props, durationInFrames } = await prepararRender(item);
       renderVideo(compositionId, props, videoFile, durationInFrames);
+
+      // Generate a consistent branded thumbnail. A thumbnail failure must not block video upload.
+      const thumbnailPath = path.join(outDir, `miniatura_${item._orden}.png`);
+      const itemJsonPath = path.join(outDir, `thumbnail-item-${item._orden}.json`);
+      let thumbnailStatus = 'ERROR';
+      try {
+        fs.writeFileSync(itemJsonPath, JSON.stringify(item, null, 2));
+        const thumb = spawnSync(process.execPath, [
+          path.join(ROOT, 'scripts', 'generate-thumbnail.js'),
+          itemJsonPath,
+          thumbnailPath,
+        ], { cwd: ROOT, encoding: 'utf8' });
+        if (thumb.stdout) process.stdout.write(thumb.stdout);
+        if (thumb.status !== 0) throw new Error(thumb.stderr || 'Generador de miniatura falló');
+        thumbnailStatus = 'GENERADA';
+      } catch (thumbnailError) {
+        console.error(`   ⚠️ Miniatura no generada: ${thumbnailError.message}`);
+      } finally {
+        try { fs.rmSync(itemJsonPath, { force: true }); } catch {}
+      }
+
       await new Promise(r => setTimeout(r, 2000));
       const videoId = await uploadToYouTube(youtube, videoFile, item);
+      if (thumbnailStatus === 'GENERADA' && fs.existsSync(thumbnailPath)) {
+        try {
+          await youtube.thumbnails.set({
+            videoId,
+            media: { mimeType: 'image/png', body: fs.createReadStream(thumbnailPath) },
+          });
+          thumbnailStatus = 'ASIGNADA';
+          console.log(`   🖼️ Miniatura asignada: ${path.basename(thumbnailPath)}`);
+        } catch (thumbnailError) {
+          thumbnailStatus = 'GENERADA_NO_ASIGNADA';
+          console.error(`   ⚠️ Video publicado, pero YouTube rechazó la miniatura: ${thumbnailError.message}`);
+        }
+      }
 
       resultados.push({
         orden: item._orden,
@@ -252,6 +287,8 @@ async function main() {
         fuente_url: item._fuente_url,
         youtube_id: videoId,
         youtube_url: `https://youtu.be/${videoId}`,
+        miniatura: thumbnailStatus,
+        miniatura_path: fs.existsSync(thumbnailPath) ? thumbnailPath : undefined,
         estado: 'OK',
       });
       await new Promise(r => setTimeout(r, 4000));
