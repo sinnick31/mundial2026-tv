@@ -1,0 +1,42 @@
+{
+  "brand": "MUNDIAL 2026",
+  "handle": "@MUNDIAL2026SHORTS",
+  "positioning": "Noticias, análisis y resúmenes originales de fútbol chileno e internacional",
+  "tagline": "El fútbol nos une",
+  "palette": {
+    "navy": "#081F44",
+    "blue": "#00A3FF",
+    "red": "#FF0033",
+    "white": "#FFFFFF",
+    "charcoal": "#1A1A1A",
+    "yellow": "#FFD400"
+  },
+  "typography": {
+    "headline": "Bebas Neue",
+    "body": "Montserrat"
+  },
+  "thumbnail": {
+    "width": 1280,
+    "height": 720,
+    "headlineMaxChars": 48,
+    "headlineLines": 2,
+    "sectionBadge": true,
+    "logoBadge": true,
+    "footer": "MUNDIAL 2026"
+  },
+  "sections": {
+    "colo_colo": "COLO-COLO",
+    "chile": "FÚTBOL CHILENO",
+    "internacional": "FÚTBOL MUNDIAL",
+    "chilenos_exterior": "CHILENOS POR EL MUNDO",
+    "libertadores": "COPA LIBERTADORES",
+    "viral": "NOTICIAS VIRALES"
+  },
+  "imagePolicy": {
+    "default": "original_graphic_background",
+    "requireAuthorizedRightsForPhotos": true,
+    "noUnverifiedPlayerPhotos": true,
+    "noFakeClubCrests": true,
+    "noInventedScoresOrTransfers": true
+  }
+}
