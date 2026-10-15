@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "THOMPSON ROMPE SILENCIO COLO COLO",
-      "titulo": "Jordhy Thompson rompe el silencio: ¿Qué frenó su fichaje en Colo Colo?",
-      "fecha": "2026-08-01T04:24:55.028Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "EFICIENCIA PUNTOS POR GOL",
       "titulo": "Sunderland 1.285 puntos por gol: ¿el ataque más eficiente en la Premier?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: La inesperada ventaja que tendrá Colo-Colo Femenino en Copa Libertadores tras…",
       "titulo": "FÚTBOL CHILENO: La inesperada ventaja que tendrá Colo-Colo Femenino en Copa… | Lo que cambia",
       "fecha": "2026-10-15T18:51:58.654Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Pablo Milad asegura que no hubo escándalo en reunión con FIFA por separación…",
+      "titulo": "FÚTBOL CHILENO: Pablo Milad asegura que no hubo escándalo en reunión con FIFA… | Lo que cambia",
+      "fecha": "2026-10-15T22:06:17.651Z"
     }
   ]
 }
