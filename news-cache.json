@@ -1,10 +1,10 @@
 {
-  "ultima_actualizacion": "2026-10-15T23:44:46.966Z",
-  "total_hoy": 504,
+  "ultima_actualizacion": "2026-10-15T23:52:35.211Z",
+  "total_hoy": 494,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 90,
-    "colo_colo": 50
+    "chile": 89,
+    "colo_colo": 51
   },
   "noticias": [
     {
@@ -716,6 +716,29 @@
         "categoria:colo_colo(+60)",
         "frescura:4h(+10)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Primera baja en Colo Colo 2027: decisión tomada - AS Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxPbExkM1pNRDVEdzhtdWJDUTd0Zmp2dGJRcWNIclp6WFJJeUF3cjNvTjEyRXRBV1oyRlNkM0pmQzZDalhPMXVmRlpwS3VSa21HTVlNOGJRS2JUd014cW9iRTdqM1ZyMDFMUjRxcmRfdTNGVXMtclNPbUh6bUo2OHhnXzJtQVk1Nk05bkhKZGhn0gGiAUFVX3lxTFBtVmx2aGs4N0FlVmhlSUppMDlIejVwaUFZZ0FQZGFtUjlxelliTG1NUDB6dmJDQ3ppbGxlXzZteXBBNmozbXZVNWM2Zi14NkVlUnNTN1UzR3NPM0hFZm42M1Z0LXhCZmhwTjNjSVJLZWdaUmtiWTdXNldhWUFkbXBZaTZGVC02ZVZpbHYwMGs1djhHQ29IZW82OFUwcG8xY2JvZw?oc=5\" target=\"_blank\">Primera baja ",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPbExkM1pNRDVEdzhtdWJDUTd0Zmp2dGJRcWNIclp6WFJJeUF3cjNvTjEyRXRBV1oyRlNkM0pmQzZDalhPMXVmRlpwS3VSa21HTVlNOGJRS2JUd014cW9iRTdqM1ZyMDFMUjRxcmRfdTNGVXMtclNPbUh6bUo2OHhnXzJtQVk1Nk05bkhKZGhn0gGiAUFVX3lxTFBtVmx2aGs4N0FlVmhlSUppMDlIejVwaUFZZ0FQZGFtUjlxelliTG1NUDB6dmJDQ3ppbGxlXzZteXBBNmozbXZVNWM2Zi14NkVlUnNTN1UzR3NPM0hFZm42M1Z0LXhCZmhwTjNjSVJLZWdaUmtiWTdXNldhWUFkbXBZaTZGVC02ZVZpbHYwMGs1djhHQ29IZW82OFUwcG8xY2JvZw?oc=5",
+      "pubDate": "Thu, 15 Oct 2026 14:33:05 GMT",
+      "timestamp": "2026-10-15T14:33:05.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "AS Chile",
+      "fuente_url_original": "https://chile.as.com",
+      "fuente": "AS Chile",
+      "fuente_host": "chile.as.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:9h(+10)",
+        "senal:\\b(lesion|baja|desca(+6)",
         "gigante:colo colo(+10)"
       ]
     },
@@ -3083,27 +3106,6 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:53h(-10)"
-      ]
-    },
-    {
-      "title": "Descenso, desafiliación y pérdida del liderato: la semana clave de los seis “escritoriazos” en el fútbol chileno - AlAireLibre.cl",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNall6b2J0VF9PbUlXRE9xSzR1VlpqV2FxZGtIVDdTNV95OXE2UDN3RE1nbjN6azFsTURyd3cxQ3Izc3NMd2RjV2hRVl9obGNfZGREVWZTaVl3NzN1Ym1CVUJOeUZYWkhfZVl5Z1RXekl4UGg2V3JnczBPZ2p4MEo0aUJaQ2R2RmdBVlJwMmg1ODNMdlNMdFBFcFFiUHRaWlVaWVBQMXFPNkY4S3RRRnd1OERB?oc=5\" target=\"_blank\">Descenso, desafiliación y pérdida del liderato: la semana clave de los seis “escritoriazos” en el fútbol chileno</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">AlAireLibre.cl</font>",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNall6b2J0VF9PbUlXRE9xSzR1VlpqV2FxZGtIVDdTNV95OXE2UDN3RE1nbjN6azFsTURyd3cxQ3Izc3NMd2RjV2hRVl9obGNfZGREVWZTaVl3NzN1Ym1CVUJOeUZYWkhfZVl5Z1RXekl4UGg2V3JnczBPZ2p4MEo0aUJaQ2R2RmdBVlJwMmg1ODNMdlNMdFBFcFFiUHRaWlVaWVBQMXFPNkY4S3RRRnd1OERB?oc=5",
-      "pubDate": "Tue, 13 Oct 2026 14:36:41 GMT",
-      "timestamp": "2026-10-13T14:36:41.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "AlAireLibre.cl",
-      "fuente_url_original": "https://www.alairelibre.cl",
-      "fuente": "AlAireLibre.cl",
-      "fuente_host": "alairelibre.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 80,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 55,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:57h(-10)"
       ]
     }
   ]
