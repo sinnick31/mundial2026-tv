@@ -24,6 +24,12 @@ on:
         default: 'chile'
         type: choice
         options: ['chile', 'auto', 'noticias']
+      privacy:
+        description: 'Visibilidad del vídeo subido'
+        required: true
+        default: 'unlisted'
+        type: choice
+        options: ['unlisted', 'private', 'public']
 
 concurrency:
   group: mundial2026shorts-${{ github.ref }}
@@ -106,51 +112,29 @@ jobs:
           NODE
 
       - name: 💾 Guardar memoria editorial
-        continue-on-error: true
         run: |
-          echo "🔍 Verificando cambios en archivos de memoria..."
-          
-          # Verificar si hay cambios
-          if git diff --quiet content-history.json news-cache.json 2>/dev/null; then
-            echo "ℹ️  Sin cambios en memoria editorial"
+          # Editorial history is stateful: never overwrite newer remote history.
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Run this publishing workflow from main only; refusing to update editorial memory from another branch."
+            exit 1
+          fi
+
+          if git diff --quiet -- content-history.json news-cache.json 2>/dev/null; then
+            echo "ℹ️ Sin cambios en memoria editorial"
             exit 0
           fi
-          
-          echo "📝 Cambios detectados..."
-          
-          # Agregar cambios
-          git add content-history.json news-cache.json
-          
-          # Crear commit local
-          git commit -m "chore: actualizar memoria editorial [skip ci]" --no-verify || exit 0
-          
-          echo "🔄 Sincronizando cambios con origin/main..."
-          
-          # Usar force-with-lease para evitar rebase, pero respetar cambios remotos
-          # Si hay conflicto, hacer push de nuestra versión
-          for attempt in 1 2 3; do
-            echo "Intento $attempt/3..."
-            
-            if git push origin HEAD:main --force-with-lease; then
-              echo "✅ Push exitoso"
-              exit 0
-            fi
-            
-            # Si push falla, hacer fetch e intentar de nuevo
-            git fetch origin main
-            
-            if ! git diff --quiet origin/main -- content-history.json news-cache.json; then
-              echo "Hay cambios remotos conflictivos, resolviendo..."
-              # Preferir nuestra versión y reintentar commit
-              git checkout --ours content-history.json news-cache.json
-              git add content-history.json news-cache.json
-              git commit --amend --no-edit --no-verify 2>/dev/null || true
-            fi
-            
-            sleep 2
-          done
-          
-          echo "⚠️  Push no pudo completarse, pero cambios locales están guardados"
+
+          git add -- content-history.json news-cache.json
+          git commit -m "chore: actualizar memoria editorial [skip ci]" --no-verify
+
+          git fetch origin main
+          if ! git merge-base --is-ancestor origin/main HEAD; then
+            echo "::error::main avanzó durante esta ejecución. Se evita sobrescribir el historial editorial; reconcilia y vuelve a ejecutar."
+            exit 1
+          fi
+
+          # Regular fast-forward push only. If main moved again, fail closed.
+          git push origin HEAD:main
 
       - name: 📦 Entregar paquete
         if: steps.gen.outputs.hay_contenido == 'true'
@@ -177,6 +161,8 @@ jobs:
       - name: 🧪 Validar render y TypeScript antes de publicar
         run: |
           node --check scripts/render-and-upload.js
+          node --check scripts/publication-policy.js
+          npm run test:publication-policy
           # Si tsconfig.json/eslint.config.js se corrompen (p. ej. con "\n" literales), tsc ignora la
           # config y reporta cientos de errores falsos en node_modules/@types. Fallar aquí con un mensaje claro.
           node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))" || { echo "::error file=tsconfig.json::tsconfig.json no es JSON válido (¿saltos de línea escapados?)"; exit 1; }
@@ -211,6 +197,8 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
+          YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'unlisted' }}
+          ALLOW_SCHEDULED_PUBLIC: ${{ vars.ALLOW_SCHEDULED_PUBLIC || 'false' }}
         run: node scripts/render-and-upload.js
 
       - name: 🔎 Verificar publicación

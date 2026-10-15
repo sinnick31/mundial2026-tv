@@ -35,7 +35,8 @@
     "render:upload": "node scripts/render-and-upload.js",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "test:viral": "node -e \"const{calcularViralScore}=require('./scripts/viral-score');const result=calcularViralScore({title:process.argv[1]||'Colo Colo golea y es lider',description:'',timestamp:new Date().toISOString()});console.log(JSON.stringify(result,null,2));\" "
+    "test:viral": "node -e \"const{calcularViralScore}=require('./scripts/viral-score');const result=calcularViralScore({title:process.argv[1]||'Colo Colo golea y es lider',description:'',timestamp:new Date().toISOString()});console.log(JSON.stringify(result,null,2));\" ",
+    "test:publication-policy": "node --test tests/publication-policy.test.js"
   },
   "sideEffects": [
     "*.css"

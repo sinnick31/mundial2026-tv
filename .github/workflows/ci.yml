@@ -1,0 +1,48 @@
+name: Editorial system checks
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/publication-policy.js'
+      - 'scripts/render-and-upload.js'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/futbol-pipeline.yml'
+      - '.github/workflows/ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/publication-policy.js'
+      - 'scripts/render-and-upload.js'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/futbol-pipeline.yml'
+      - '.github/workflows/ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  quality-gates:
+    name: Publication policy and syntax checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check scripts/publication-policy.js
+          node --check scripts/render-and-upload.js
+
+      - name: Test upload visibility policy
+        run: npm run test:publication-policy

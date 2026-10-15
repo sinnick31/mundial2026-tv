@@ -14,6 +14,7 @@
 
 const { execSync } = require('child_process');
 const { getAuthenticatedYouTube } = require('./youtube-auth');
+const { getPublicationPrivacy } = require('./publication-policy');
 const fs = require('fs');
 const path = require('path');
 const { generarNarracion, construirGuion } = require('./generate-narration');
@@ -192,7 +193,7 @@ async function uploadToYouTube(youtube, filePath, data) {
         defaultLanguage: 'es',
       },
       status: {
-        privacyStatus: 'public',
+        privacyStatus: getPublicationPrivacy(),
         selfDeclaredMadeForKids: false,
         madeForKids: false,
       },
