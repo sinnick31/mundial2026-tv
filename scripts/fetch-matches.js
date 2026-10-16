@@ -64,7 +64,7 @@ async function getMatchesFromFootballData() {
   }
   try {
     const hoy = new Date();
-    const ayer = new Date(hoy.getTime() - 48 * 60 * 60 * 1000);
+    const ayer = new Date(hoy.getTime() - 72 * 60 * 60 * 1000);
     const en3dias = new Date(hoy.getTime() + 3 * 24 * 60 * 60 * 1000);
     const fmt = (d) => d.toISOString().split('T')[0];
     const auth = { 'X-Auth-Token': FOOTBALL_API_KEY };
@@ -132,9 +132,13 @@ const ESPN_LIGAS = [
 
 async function getMatchesFromESPN() {
   const recientes = [], enCurso = [], proximos = [];
+  const today = new Date();
+  const start = new Date(today.getTime() - 3 * 24 * 60 * 60 * 1000);
+  const ymd = (d) => `${d.getUTCFullYear()}${String(d.getUTCMonth()+1).padStart(2,'0')}${String(d.getUTCDate()).padStart(2,'0')}`;
+  const dateRange = `${ymd(start)}-${ymd(today)}`;
   for (const liga of ESPN_LIGAS) {
     try {
-      const data = await httpGet(`https://site.api.espn.com/apis/site/v2/sports/soccer/${liga.slug}/scoreboard`);
+      const data = await httpGet(`https://site.api.espn.com/apis/site/v2/sports/soccer/${liga.slug}/scoreboard?dates=${dateRange}`);
       for (const e of data.events || []) {
         const comp = e.competitions?.[0];
         const teams = comp?.competitors || [];
@@ -159,6 +163,7 @@ async function getMatchesFromESPN() {
           fecha: e.date,
           enCurso: status?.description === 'In Progress',
           fuente: 'ESPN',
+          url: `https://www.espn.com/soccer/match/_/gameId/${e.id}`,
         };
         if (p.enCurso) enCurso.push(p);
         else if (p.estado === 'finalizado') recientes.push(p);
