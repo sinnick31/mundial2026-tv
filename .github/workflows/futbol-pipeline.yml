@@ -72,6 +72,7 @@ jobs:
           node --check scripts/fetch-real-news.js
           node --check scripts/generate-real-content.js
           node --check scripts/viral-score.js
+          node --check scripts/generate-results-longform.js
 
       - name: 🔎 Ingerir fuentes verificables
         run: node scripts/fetch-real-news.js
