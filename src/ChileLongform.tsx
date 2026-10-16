@@ -2,13 +2,13 @@ import React from 'react';
 import { AbsoluteFill, Audio, staticFile, useCurrentFrame, interpolate } from 'remotion';
 
 export interface ChileLongformSection { orden: number; titulo: string; cuerpo: string; fuente: string; url: string; }
-export interface ChileLongformProps { title: string; intro: string; sections: ChileLongformSection[]; audioSrc?: string; fuente?: string; }
+export interface ChileLongformProps { title: string; intro: string; sections: ChileLongformSection[]; audioSrc?: string; fuente?: string; sectionDurationInFrames?: number; }
 const clamp = (s: string, n: number) => (s || '').length > n ? `${s.slice(0, n - 1)}…` : s;
-export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sections, audioSrc, fuente }) => {
+export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sections, audioSrc, fuente, sectionDurationInFrames = 450 }) => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 16], [0, 1], { extrapolateRight: 'clamp' });
   const safeSections = sections?.length ? sections : [];
-  const slot = 450;
+  const slot = Math.max(1, sectionDurationInFrames);
   const active = Math.min(safeSections.length - 1, Math.max(0, Math.floor(frame / slot)));
   const current = safeSections[active] || { orden: 1, titulo: 'Resumen', cuerpo: intro, fuente: fuente || 'Fuentes del día', url: '' };
   const teams = current.titulo.match(/^(.*?)\s+(\d+)\s*[-–]\s*(\d+)\s+(.*)$/);
