@@ -121,12 +121,23 @@ async function getMatchesFromFootballData() {
 
 // ─── 2. ESPN API pública — Scores en vivo multi-liga ─────────────────────────
 const ESPN_LIGAS = [
+  { slug: 'chi.1', nombre: 'Primera División de Chile' },
+  { slug: 'chi.2', nombre: 'Liga de Ascenso de Chile' },
+  { slug: 'chi.copa_chi', nombre: 'Copa Chile' },
+  { slug: 'conmebol.libertadores', nombre: 'Copa Libertadores' },
+  { slug: 'conmebol.sudamericana', nombre: 'Copa Sudamericana' },
   { slug: 'uefa.champions', nombre: 'Champions League' },
+  { slug: 'uefa.europa', nombre: 'Europa League' },
   { slug: 'eng.1', nombre: 'Premier League' },
   { slug: 'esp.1', nombre: 'LaLiga' },
-  { slug: 'conmebol.libertadores', nombre: 'Copa Libertadores' },
-  { slug: 'chi.1', nombre: 'Primera División de Chile' }, // ⭐ ESPN SÍ tiene la liga chilena
-  { slug: 'chi.copa_chi', nombre: 'Copa Chile' },
+  { slug: 'ita.1', nombre: 'Serie A' },
+  { slug: 'ger.1', nombre: 'Bundesliga' },
+  { slug: 'fra.1', nombre: 'Ligue 1' },
+  { slug: 'arg.1', nombre: 'Liga Profesional Argentina' },
+  { slug: 'bra.1', nombre: 'Brasileirão' },
+  { slug: 'usa.1', nombre: 'MLS' },
+  { slug: 'mex.1', nombre: 'Liga MX' },
+  { slug: 'por.1', nombre: 'Primeira Liga' },
   { slug: 'fifa.world', nombre: 'Mundial FIFA' },
 ];
 
