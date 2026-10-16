@@ -66,6 +66,9 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: resultados-largos-${{ github.run_number }}
-          path: out/*/reporte-resultados.json
+          path: |
+            out/*/reporte-resultados.json
+            out/*/resumen-resultados.mp4
+            out/*/miniatura-resultados.png
           if-no-files-found: ignore
-          retention-days: 14
+          retention-days: 7
