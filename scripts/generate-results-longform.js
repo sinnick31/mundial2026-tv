@@ -24,7 +24,7 @@ function mainData() {
   if (!fs.existsSync(CACHE)) throw new Error('No existe matches-cache.json; la fuente de resultados no se ejecutó.');
   const cache = JSON.parse(fs.readFileSync(CACHE, 'utf8'));
   const matches = Array.isArray(cache.partidos_recientes) ? cache.partidos_recientes : [];
-  const cutoff = Date.now() - 72 * 60 * 60 * 1000;
+  const cutoff = Date.now() - 48 * 60 * 60 * 1000;
   const recent = matches.filter(m => m.estado === 'finalizado'
     && m.golesLocal !== null && m.golesLocal !== undefined
     && m.golesVisita !== null && m.golesVisita !== undefined
@@ -55,16 +55,17 @@ async function main() {
     url: m.url || (m.fuente === 'football-data.org' ? 'https://www.football-data.org/' : 'https://www.espn.com/soccer/scoreboard'),
   }));
   const title = `TODOS LOS RESULTADOS DEL FÚTBOL | Chile y el mundo | ${TODAY}`;
-  const intro = `Repasamos ${sections.length} resultados finalizados y disponibles en las fuentes consultadas durante las últimas 72 horas. Priorizamos Colo-Colo y el fútbol chileno, y después recorremos el fútbol internacional. Solo mostramos marcadores verificados.`;
+  const intro = `Repasamos ${sections.length} resultados finalizados y disponibles en las fuentes consultadas durante las últimas 48 horas. Priorizamos Colo-Colo y el fútbol chileno, y después recorremos el fútbol internacional. Solo mostramos marcadores verificados.`;
   const narration = [title, intro, ...sections.map((s,i)=>`Partido ${i+1}. ${s.titulo}. ${s.cuerpo}`), 'Estos fueron los resultados disponibles en nuestra edición. Revisa las fuentes enlazadas en la descripción y cuéntanos qué partido quieres que analicemos.'].join('\n\n');
   const audioPath = path.join(ROOT, 'public', 'tmp', 'resultados-diarios.wav');
   fs.mkdirSync(path.dirname(audioPath), {recursive:true});
   const audio = await generarNarracion(narration, audioPath, {estilo:'Narrador de prensa deportiva chilena, claro, enérgico y natural. Pronuncia con precisión los nombres y marcadores. No agregues datos que no estén en el guion.'});
+  if (!audio.audioPath || !audio.duracionSeg) throw new Error('No se pudo generar la narración; se cancela la publicación para evitar un vídeo silencioso. Revisa GEMINI_API_KEY y el servicio TTS.');
   const audioSrc = audio.audioPath ? 'tmp/resultados-diarios.wav' : undefined;
   const props = { title, intro, sections, audioSrc, fuente: 'Fuentes deportivas enlazadas en la descripción' };
   const framesBySections = Math.max(1, sections.length) * SECTION_FRAMES;
   const audioFrames = audio.duracionSeg ? Math.ceil((audio.duracionSeg + 8) * FPS) : 0;
-  const durationInFrames = Math.max(framesBySections, audioFrames, 3600);
+  const durationInFrames = Math.max(framesBySections, audioFrames, 900);
   fs.mkdirSync(path.dirname(OUT), {recursive:true});
   const propsArg = JSON.stringify(props).replace(/'/g, "'\\''");
   execSync(`npx remotion render src/index.tsx ChileLongform "${OUT}" --props='${propsArg}' --duration-in-frames=${durationInFrames} --codec=h264 --fps=30 --width=1920 --height=1080 --concurrency=2`, {cwd:ROOT, stdio:'inherit'});
