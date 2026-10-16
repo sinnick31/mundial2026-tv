@@ -1,6 +1,15 @@
 name: ⚽ Resumen largo diario de resultados
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate-results-longform.js'
+      - 'scripts/fetch-matches.js'
+      - 'src/ChileLongform.tsx'
+      - 'src/ResultsThumbnail.tsx'
+      - 'src/index.tsx'
+      - '.github/workflows/resultados-largos-diarios.yml'
   schedule:
     - cron: '30 15 * * *'
   workflow_dispatch:
@@ -20,7 +29,30 @@ permissions:
   contents: read
 
 jobs:
+  validate-longform:
+    if: github.event_name == 'push'
+    name: 🧪 Validar producción y miniatura sin publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Validar JavaScript y TypeScript
+        run: |
+          node --check scripts/fetch-matches.js
+          node --check scripts/generate-results-longform.js
+          node --check scripts/generate-narration.js
+          npm run lint
+          npm run test:publication-policy
+      - name: Renderizar miniatura de prueba
+        run: npx remotion still src/index.tsx ResultsThumbnail /tmp/results-thumbnail.png --props='{"date":"2026-10-16","count":3}' --frame=0 --scale=1
+
   results-longform:
+    if: github.event_name != 'push'
     name: 📊 Resultados verificados → vídeo 16:9
     runs-on: ubuntu-latest
     timeout-minutes: 60
