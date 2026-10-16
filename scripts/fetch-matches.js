@@ -196,7 +196,7 @@ async function fetchMatches() {
 
   const cache = {
     fecha: new Date().toISOString(),
-    partidos_recientes: combinar(espn.recientes, fd.recientes).slice(0, 20),
+    partidos_recientes: combinar(espn.recientes, fd.recientes).slice(0, 60),
     partidos_en_curso: espn.enCurso || [],
     partidos_proximos: combinar(espn.proximos, fd.proximos).slice(0, 20),
     tabla_posiciones: fd.standings,
