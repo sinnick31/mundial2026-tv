@@ -44,8 +44,7 @@ function mainData() {
 async function main() {
   const matches = mainData();
   if (!matches.length) {
-    console.log('No hay resultados finalizados verificables en la ventana disponible. No se publica para evitar inventar contenido.');
-    return;
+    throw new Error('No hay resultados finalizados verificables en la ventana disponible. No se publica un vídeo vacío; revisar la fuente de resultados y el rango de fechas.');
   }
   const sections = matches.map((m,i) => ({
     orden: i+1,
