@@ -24,7 +24,7 @@ function mainData() {
   if (!fs.existsSync(CACHE)) throw new Error('No existe matches-cache.json; la fuente de resultados no se ejecutó.');
   const cache = JSON.parse(fs.readFileSync(CACHE, 'utf8'));
   const matches = Array.isArray(cache.partidos_recientes) ? cache.partidos_recientes : [];
-  const cutoff = Date.now() - 48 * 60 * 60 * 1000;
+  const cutoff = Date.now() - 72 * 60 * 60 * 1000;
   const recent = matches.filter(m => m.estado === 'finalizado'
     && m.golesLocal !== null && m.golesLocal !== undefined
     && m.golesVisita !== null && m.golesVisita !== undefined
