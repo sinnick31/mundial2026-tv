@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850611",
-      "tipo_contenido": "prediccion",
-      "hook": "DESAFÍO ANÁLISIS SIN DATOS",
-      "titulo": "Wolverhampton 20 puntos: ¿Cómo analizar Cobresal sin datos chilenos?",
-      "fecha": "2026-08-01T13:36:19.843Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "CORREA GANA $70 MILLONES EN COLO-COLO",
@@ -3499,6 +3492,13 @@
       "hook": "ES OFICIAL: Oficial: Palestino confirma el estadio donde recibirá a Colo Colo por la Liga de…",
       "titulo": "FÚTBOL MUNDIAL: Oficial: Palestino confirma el estadio donde recibirá a Colo… | Lo que cambia",
       "fecha": "2026-10-16T13:32:08.582Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: ¿Qué canal transmite Colo Colo Femenino vs Corinthians por Copa Libertadores?…",
+      "titulo": "FÚTBOL MUNDIAL: ¿Qué canal transmite Colo Colo Femenino vs Corinthians por Copa… | Lo que cambia",
+      "fecha": "2026-10-16T13:40:37.361Z"
     }
   ]
 }
