@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "CORREA GANA $70 MILLONES EN COLO-COLO",
-      "titulo": "Javier Correa gana $70M en Colo-Colo: ¿Supera a Maxi Salas de River? 💰",
-      "fecha": "2026-08-01T21:46:15.071Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "LA ROJA JUGARÁ ANTE MUNDIALISTA",
       "titulo": "La Roja confirma amistoso con un 'Mundialista': ¿quién viene a Chile?",
       "fecha": "2026-08-01T21:46:30.245Z"
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para los hinchas…",
       "titulo": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para… | Lo que cambia",
       "fecha": "2026-10-16T19:23:02.337Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para los hinchas…",
+      "titulo": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para… | Lo que cambia",
+      "fecha": "2026-10-16T22:00:44.482Z"
     }
   ]
 }
