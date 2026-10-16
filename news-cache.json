@@ -1,10 +1,10 @@
 {
-  "ultima_actualizacion": "2026-10-15T23:52:35.211Z",
-  "total_hoy": 494,
+  "ultima_actualizacion": "2026-10-16T00:58:01.273Z",
+  "total_hoy": 497,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 89,
-    "colo_colo": 51
+    "chile": 87,
+    "colo_colo": 53
   },
   "noticias": [
     {
@@ -427,6 +427,28 @@
       ]
     },
     {
+      "title": "Tigres quiere sacar a Fernando Ortiz de Colo-Colo: revelan detalles de la reunión con el DT albo - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi-wFBVV95cUxNc3B6XzB0ZFdxWmgzeld6b05MczhYYVJqZWJoeDBpbU9uOVlGek5MRG9zMkg5ZVpsN3g2MEFsNlVpa3VBcmQwNVB1aWgtWTF4a1VHaWIteWQzYzl5T2gzZy1HVHl5Y1RHQXB2VnN2N0pQQlpidFhaQnl5Ynh0eE52MU1IcS1VUThxRjlvbU1YUkJTcDJVRnIwZHBTVGtfZ3ZoRFBUTjBuVHFSWDMtZ2tMVmY1X0hqd1NJelVKZlVHXzVHekVueUJfSVAtWWJqazEyX2lmdGhtT2M1NVJ0VUpjQ2hyc0NHU19nd09CQ18yLUFxU0FOdVg0UUQtSQ?oc=5\" target=\"_blank\">Tigres quiere sacar a Fernando Ortiz de Colo-Colo: revelan detalles de la reunión con el ",
+      "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNc3B6XzB0ZFdxWmgzeld6b05MczhYYVJqZWJoeDBpbU9uOVlGek5MRG9zMkg5ZVpsN3g2MEFsNlVpa3VBcmQwNVB1aWgtWTF4a1VHaWIteWQzYzl5T2gzZy1HVHl5Y1RHQXB2VnN2N0pQQlpidFhaQnl5Ynh0eE52MU1IcS1VUThxRjlvbU1YUkJTcDJVRnIwZHBTVGtfZ3ZoRFBUTjBuVHFSWDMtZ2tMVmY1X0hqd1NJelVKZlVHXzVHekVueUJfSVAtWWJqazEyX2lmdGhtT2M1NVJ0VUpjQ2hyc0NHU19nd09CQ18yLUFxU0FOdVg0UUQtSQ?oc=5",
+      "pubDate": "Thu, 15 Oct 2026 23:36:33 GMT",
+      "timestamp": "2026-10-15T23:36:33.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "En Cancha",
+      "fuente_url_original": "https://www.encancha.cl",
+      "fuente": "En Cancha",
+      "fuente_host": "encancha.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:1h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
       "title": "Club extranjero busca a Fernando Ortiz: ya hubo una reunión y Colo Colo está alerta - AS Chile",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNamhwN0N2SXJFTHNlNDYtWkxLUURhVFphY3ZXekR3OVVTMGNHLVVkS29vV1BNaTMtaXJLU1JLS1lYVXVOcWthZmFubXdhbWV1OXQtWjVxdGp1LVR5LVNqdXJJOExBNDZOc1R3eTF5UTdNdk12Z0xjRmdZUFFyWnhsQk1uNWZmdWRkc2pkS28zNk42UG45ekRZWFhESHhMZlpkVGpfVF92bzF2b0FtdEVfRTdiNXhtNGdoUmNYN3NR0gHSAUFVX3lxTE1MNTk5VmVFaDRuUVlKLWVRcC1rbE5Kc0ZuaFVsMHF2TWxJTkVkN2cxTDFnV04wbEpnbXJxazJXNDJFNWFBSVVZa0llbWw3aVkteUJxYTdrM0ZaYVdpRlE4b2pXWjQ5SjliTVBmZ0VIRU9fT3NhZnJKOWNkOUlucWJ4TnI3QlhXY3A2ZkNncX",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNamhwN0N2SXJFTHNlNDYtWkxLUURhVFphY3ZXekR3OVVTMGNHLVVkS29vV1BNaTMtaXJLU1JLS1lYVXVOcWthZmFubXdhbWV1OXQtWjVxdGp1LVR5LVNqdXJJOExBNDZOc1R3eTF5UTdNdk12Z0xjRmdZUFFyWnhsQk1uNWZmdWRkc2pkS28zNk42UG45ekRZWFhESHhMZlpkVGpfVF92bzF2b0FtdEVfRTdiNXhtNGdoUmNYN3NR0gHSAUFVX3lxTE1MNTk5VmVFaDRuUVlKLWVRcC1rbE5Kc0ZuaFVsMHF2TWxJTkVkN2cxTDFnV04wbEpnbXJxazJXNDJFNWFBSVVZa0llbWw3aVkteUJxYTdrM0ZaYVdpRlE4b2pXWjQ5SjliTVBmZ0VIRU9fT3NhZnJKOWNkOUlucWJ4TnI3QlhXY3A2ZkNncXIwcDhCQlFSNll6eDBHOFVLNDRCTHhXTnZOdlNYamFubi0xbWJ5Yks3blJXV1ptSE5uVFlDblFpaDQ5bW95OU1PYlVidw?oc=5",
@@ -445,6 +467,28 @@
       "razones": [
         "categoria:colo_colo(+60)",
         "frescura:0h(+15)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Difícil inicio: Colo Colo cae ante Corinthians en su debut en la Copa Libertadores Femenina - RedGol",
+      "description": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZWJhSkg3cFRzN0xlaDFpa1o3RjJVT0ZzSkZuY2wtNTRwcDJpa1Q2ZkxhbUtHR0lacTRmZkRkSVFlbVNjN0VHaWRubEphWkdDQzhaUmNpMVY1R0NFREFTR1N1VW40ZW02ZkhxRi1sYm1rbkl6d0RZRlJaaXdLR0FzTXVRanB5aGI2QTFlcWkyODRCVTNWMWlsMm5POW5YOVgtajJBaVlfejM4cVFBdHU5a0lkTUJaQlFLVEUw0gHAAUFVX3lxTE9FeF9tRi1vOUtFTGVRLUg3czl6bFl4QkRwZndTeTFLc0hYSHNYMHdGNUVDUlhtMFhUa3p1YWN6YWU0Yy1URWVqVUdtcTZSRzI1OGdnTjIxbE9KSGt3MWZFSThuOHd4UXlBeE51a2FhS2xOSFl2RFVSTVZkM1JqUXBCR2RnM3U2aHRxUG",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZWJhSkg3cFRzN0xlaDFpa1o3RjJVT0ZzSkZuY2wtNTRwcDJpa1Q2ZkxhbUtHR0lacTRmZkRkSVFlbVNjN0VHaWRubEphWkdDQzhaUmNpMVY1R0NFREFTR1N1VW40ZW02ZkhxRi1sYm1rbkl6d0RZRlJaaXdLR0FzTXVRanB5aGI2QTFlcWkyODRCVTNWMWlsMm5POW5YOVgtajJBaVlfejM4cVFBdHU5a0lkTUJaQlFLVEUw0gHAAUFVX3lxTE9FeF9tRi1vOUtFTGVRLUg3czl6bFl4QkRwZndTeTFLc0hYSHNYMHdGNUVDUlhtMFhUa3p1YWN6YWU0Yy1URWVqVUdtcTZSRzI1OGdnTjIxbE9KSGt3MWZFSThuOHd4UXlBeE51a2FhS2xOSFl2RFVSTVZkM1JqUXBCR2RnM3U2aHRxUGpJVXhfWU41ZVJvWlo2VVF0QWY3aGprSi1IQ2dobDl5WmxCSzNrVU8tT0hHZHhPb0xuX196eQ?oc=5",
+      "pubDate": "Thu, 15 Oct 2026 22:20:59 GMT",
+      "timestamp": "2026-10-15T22:20:59.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:3h(+15)",
         "gigante:colo colo(+10)"
       ]
     },
@@ -762,6 +806,29 @@
         "categoria:colo_colo(+60)",
         "frescura:6h(+10)",
         "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "“El mejor clásico fue el 5-0 contra Colo Colo en el Nacional” - AlAireLibre.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQM0d5Ylp2U0dmX05DT1Awb3lJZmJGcmMzSkZJN2NSQ1lnaXVZNjVhUlJnNmNHaldTYUNOTWs0em5MczU0VnI1OFB5SjRaZ1YycGhWRjJ2bl9xWVFaRTB4WVIxZHJMUE9sbl9Yc190U091RnRCSEc0cU9ZTjl1ZFJSei0yLVM2UmdmUHRLS1hwcXlEQzI4cm9ldGVBNTdqSUNQLTV3QWp3Rlh1Y3dq?oc=5\" target=\"_blank\">“El mejor clásico fue el 5-0 contra Colo Colo en el Nacional”</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">AlAireLibre.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQM0d5Ylp2U0dmX05DT1Awb3lJZmJGcmMzSkZJN2NSQ1lnaXVZNjVhUlJnNmNHaldTYUNOTWs0em5MczU0VnI1OFB5SjRaZ1YycGhWRjJ2bl9xWVFaRTB4WVIxZHJMUE9sbl9Yc190U091RnRCSEc0cU9ZTjl1ZFJSei0yLVM2UmdmUHRLS1hwcXlEQzI4cm9ldGVBNTdqSUNQLTV3QWp3Rlh1Y3dq?oc=5",
+      "pubDate": "Thu, 15 Oct 2026 11:11:29 GMT",
+      "timestamp": "2026-10-15T11:11:29.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "AlAireLibre.cl",
+      "fuente_url_original": "https://www.alairelibre.cl",
+      "fuente": "AlAireLibre.cl",
+      "fuente_host": "alairelibre.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:14h(+5)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:colo colo(+10)"
       ]
     },
@@ -1389,28 +1456,6 @@
       ]
     },
     {
-      "title": "Matías Zaldivia manda mensaje directo a Colo-Colo tras goleada de la U: \"Todavía queda; ilusión intacta\" - En Cancha",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMigwJBVV95cUxQc1k5bEpCaTExRzQzMEd1bm5rR0hLbW9pYnJTcHA5c3loVEhvUXI3aVNCVkdRZGtUeTVsc0FuNTQzTEczM0E5WnBvTHVUMDhHdzFjc2F2MXBPWC1xS1pyaGhlY2F2QTNVNWxreUd3QTl2NE9KelU2V1QteFo1aUlsYk1GS0VOa3o3elJBLWNsQ0ZsalVBN3oxQnk5UnZrVldPM0xUcWJ3TjBhNG5YM0JaZE10ZTJRd1cybVNmN0VXYzlVNTdxOGVhZzR3ZFJsNXVmSHJkazBSUjRFdC1JanFxMWpNdVhJVWgwd3JERnM2Nms4WXNhbTZGOWhwc1VJdlFWNXdn?oc=5\" target=\"_blank\">Matías Zaldivia manda mensaje directo a Colo-Colo tras goleada de la U: \"Todaví",
-      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQc1k5bEpCaTExRzQzMEd1bm5rR0hLbW9pYnJTcHA5c3loVEhvUXI3aVNCVkdRZGtUeTVsc0FuNTQzTEczM0E5WnBvTHVUMDhHdzFjc2F2MXBPWC1xS1pyaGhlY2F2QTNVNWxreUd3QTl2NE9KelU2V1QteFo1aUlsYk1GS0VOa3o3elJBLWNsQ0ZsalVBN3oxQnk5UnZrVldPM0xUcWJ3TjBhNG5YM0JaZE10ZTJRd1cybVNmN0VXYzlVNTdxOGVhZzR3ZFJsNXVmSHJkazBSUjRFdC1JanFxMWpNdVhJVWgwd3JERnM2Nms4WXNhbTZGOWhwc1VJdlFWNXdn?oc=5",
-      "pubDate": "Tue, 13 Oct 2026 00:02:00 GMT",
-      "timestamp": "2026-10-13T00:02:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "En Cancha",
-      "fuente_url_original": "https://www.encancha.cl",
-      "fuente": "En Cancha",
-      "fuente_host": "encancha.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Universidad de Chile",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:3h(+10)",
-        "senal:\\b(goleada|hat.?tric(+9)"
-      ]
-    },
-    {
       "title": "La U le puede dar el golpe final a Colo-Colo - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMHhqUWxyWjdqeXhmdE9oVnQzbmtQS3EzZkg2MmhaRVJKVER4N0xoSHVwTTdLVTNFbkZuWlF1cGhRb3hJb2J4ZUlsQk9KTHhfdUNieHVGQUpKZkV5NjJocGZPRzRqajBFX2Fxa253dUVlR2p4SWlMZlEwcFdJOGhUWHo5NVM5ZHNYNTVzYjdqT1UxQWhRcU55UWZwcVBEaGR3eGtGTmcxenpIQQ?oc=5\" target=\"_blank\">La U le puede dar el golpe final a Colo-Colo</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En Cancha</font>",
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMHhqUWxyWjdqeXhmdE9oVnQzbmtQS3EzZkg2MmhaRVJKVER4N0xoSHVwTTdLVTNFbkZuWlF1cGhRb3hJb2J4ZUlsQk9KTHhfdUNieHVGQUpKZkV5NjJocGZPRzRqajBFX2Fxa253dUVlR2p4SWlMZlEwcFdJOGhUWHo5NVM5ZHNYNTVzYjdqT1UxQWhRcU55UWZwcVBEaGR3eGtGTmcxenpIQQ?oc=5",
@@ -1604,29 +1649,6 @@
       "fuente_url_original": "https://www.alairelibre.cl",
       "fuente": "AlAireLibre.cl",
       "fuente_host": "alairelibre.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 96,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:3h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "Final de la Copa de la Liga: la condición que podría permitir la disputa del partido en el Claro Arena - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOVBYX3l4N2tWODZRa3Nvenk3QkZGdHlfNUdPMW93RkpPTUwzNy15Vmd5NUpLVjAtR3FNMThoZmw0UjlSb29ob0ZEVXRPXzh6VHFhRTFGbXRYVTRlU3pnWG1uMTVTY1I0M1pLTEZEaUtnMGpJNDVCdE16OTdKZHZpMGwzMnlLZFByYXUtak1GNnVObGk1X1ZnXzNZemtNN095Y3dFOFNXNElkQWZhdThKZlFja25DQjJXR04wdk9CN1lWQlNzSUpyNDA0aENNZWVJOWZv0gHnAUFVX3lxTE1jNTJHeVJvTUlwbVF5TmJJYzR2TEhuMWlRR0lreHNvOVlyOHlZVlhtUHphYzhUeDY2LWd5YTdXSTRjS2h5d2hOTUNnV25zRnZGQmdtbHBBQzM0NXZidWZxTkNjRENBMWdlYVRqdlJPc1hUZkQ3U1VNRz",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOVBYX3l4N2tWODZRa3Nvenk3QkZGdHlfNUdPMW93RkpPTUwzNy15Vmd5NUpLVjAtR3FNMThoZmw0UjlSb29ob0ZEVXRPXzh6VHFhRTFGbXRYVTRlU3pnWG1uMTVTY1I0M1pLTEZEaUtnMGpJNDVCdE16OTdKZHZpMGwzMnlLZFByYXUtak1GNnVObGk1X1ZnXzNZemtNN095Y3dFOFNXNElkQWZhdThKZlFja25DQjJXR04wdk9CN1lWQlNzSUpyNDA0aENNZWVJOWZv0gHnAUFVX3lxTE1jNTJHeVJvTUlwbVF5TmJJYzR2TEhuMWlRR0lreHNvOVlyOHlZVlhtUHphYzhUeDY2LWd5YTdXSTRjS2h5d2hOTUNnV25zRnZGQmdtbHBBQzM0NXZidWZxTkNjRENBMWdlYVRqdlJPc1hUZkQ3U1VNRzMyNmo4djJFM1hUNFZadDhUS0ZTbjBjLTBjMzFlQllPbEFackZqNnVZTk4tVVY5TXhDRUpVdkotXzRSb1FlQUJ4alNsUVozamp1WGJZUE1hSnNudGZZZ1IzZlF3cHpic2NTT1pvMElWWjRiY2tCWQ?oc=5",
-      "pubDate": "Tue, 13 Oct 2026 00:28:10 GMT",
-      "timestamp": "2026-10-13T00:28:10.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "ADN Radio",
-      "fuente_url_original": "https://www.adnradio.cl",
-      "fuente": "ADN Radio",
-      "fuente_host": "adnradio.cl",
       "categoria_feed": "chile",
       "prioridad_fuente": 88,
       "categoria": "chile",
@@ -2498,28 +2520,6 @@
         "frescura:0h(+15)",
         "senal:\\b(clasific|eliminad(+8)",
         "penal(-8)"
-      ]
-    },
-    {
-      "title": "U de Chile define dónde jugará como local para duelos con Antofagasta y Everton - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPSnJFWUR6NTY3RzJuanBDNEh6UTRydUhtQVVlenpld0pRbVZMbEpzZExTendsZXBwREFva0J6dXlmdnJrUDQ1OUg1OUxoWk0zdl81cklmV2hVYklGQUlySjJBc1RGNGRJTW1LNXM2NjFQUWwyMExEazJCUlNYVGRMN2V0d3JzaW4tMjJ4aUlKVDM5SHYzTkQtTWY5dUNvUVRISWFXR3A5aE1NeU5xQXpYRdIBtgFBVV95cUxOTU0wM3ZIVmRMYjBweTlJdVcxa1BsbkphbU9RMVBpOUxVd0p0UWJGLWtrbG16dVFJRi03MHNJSkljbExxMUNDU3llT0lFY0wyRE9sLXRaRXpRMnc2MEY3QXVxaW1OTFI4bEd2WmVacGFuZE5BaW5vSWJ4aVoyVnF3Tk05Q0I2VXk5NWRiZzlCTlNhdWliZGVFZXB4YX",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSnJFWUR6NTY3RzJuanBDNEh6UTRydUhtQVVlenpld0pRbVZMbEpzZExTendsZXBwREFva0J6dXlmdnJrUDQ1OUg1OUxoWk0zdl81cklmV2hVYklGQUlySjJBc1RGNGRJTW1LNXM2NjFQUWwyMExEazJCUlNYVGRMN2V0d3JzaW4tMjJ4aUlKVDM5SHYzTkQtTWY5dUNvUVRISWFXR3A5aE1NeU5xQXpYRdIBtgFBVV95cUxOTU0wM3ZIVmRMYjBweTlJdVcxa1BsbkphbU9RMVBpOUxVd0p0UWJGLWtrbG16dVFJRi03MHNJSkljbExxMUNDU3llT0lFY0wyRE9sLXRaRXpRMnc2MEY3QXVxaW1OTFI4bEd2WmVacGFuZE5BaW5vSWJ4aVoyVnF3Tk05Q0I2VXk5NWRiZzlCTlNhdWliZGVFZXB4YXNzNjczZklNTXdzdm5xTkhJdmYxNVJ3MC1FUQ?oc=5",
-      "pubDate": "Tue, 13 Oct 2026 00:04:31 GMT",
-      "timestamp": "2026-10-13T00:04:31.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Universidad de Chile",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:15h(+5)",
-        "gigante:u de chile(+10)"
       ]
     },
     {
