@@ -1,0 +1,71 @@
+name: ⚽ Resumen largo diario de resultados
+
+on:
+  schedule:
+    - cron: '30 15 * * *'
+  workflow_dispatch:
+    inputs:
+      privacy:
+        description: 'Visibilidad del vídeo'
+        required: true
+        default: 'unlisted'
+        type: choice
+        options: ['unlisted', 'private', 'public']
+
+concurrency:
+  group: daily-football-results
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  results-longform:
+    name: 📊 Resultados verificados → vídeo 16:9
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      NODE_VERSION: '24'
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - name: ⚽ Obtener resultados de los últimos días
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+          COMPETITIONS: ${{ secrets.COMPETITIONS }}
+        run: node scripts/fetch-matches.js
+      - name: 🧪 Validar scripts
+        run: |
+          node --check scripts/fetch-matches.js
+          node --check scripts/generate-results-longform.js
+          node --check scripts/youtube-auth.js
+          node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))"
+          npm run test:publication-policy
+      - name: 🔐 Validar canal y OAuth
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
+        run: node scripts/preflight-youtube-auth.js
+      - name: 🎬 Renderizar y publicar resumen largo
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
+          RESULTS_VIDEO_PRIVACY: ${{ inputs.privacy || vars.RESULTS_VIDEO_PRIVACY || 'unlisted' }}
+        run: node scripts/generate-results-longform.js
+      - name: 📦 Guardar reporte
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: resultados-largos-${{ github.run_number }}
+          path: out/*/reporte-resultados.json
+          if-no-files-found: ignore
+          retention-days: 14
