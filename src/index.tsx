@@ -2,6 +2,7 @@ import { Composition, registerRoot } from 'remotion';
 import { PrediccionShorts, PrediccionProps } from './PrediccionShorts';
 import { JugadaAnimada, defaultJugadaProps } from './JugadaAnimada';
 import { ChileLongform, ChileLongformProps } from './ChileLongform';
+import { ResultsThumbnail } from './ResultsThumbnail';
 
 const PREVIEW_PROPS: PrediccionProps = {
   gancho: 'DATOS DEL FÚTBOL CHILENO',
@@ -49,6 +50,15 @@ const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={defaultJugadaProps}
+      />
+      <Composition
+        id="ResultsThumbnail"
+        component={ResultsThumbnail}
+        durationInFrames={1}
+        fps={30}
+        width={1280}
+        height={720}
+        defaultProps={{ date: '2026-10-16', count: 12 }}
       />
       <Composition
         id="ChileLongform"
