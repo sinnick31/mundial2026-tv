@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "LA U: ¡9 PARTIDOS CONFIRMADOS!",
-      "titulo": "La U tiene 9 partidos confirmados: ¿Aguantará el calendario azul?",
-      "fecha": "2026-08-01T17:01:34.991Z"
-    },
-    {
       "match_id": "espn-401850610",
       "tipo_contenido": "prediccion",
       "hook": "ANÁLISIS SIN DATOS DIRECTOS",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Así se podrán ver los duelos de Colo Colo y la U en la Copa Libertadores…",
       "titulo": "FÚTBOL MUNDIAL: Así se podrán ver los duelos de Colo Colo y la U en la Copa… | Lo que cambia",
       "fecha": "2026-10-16T14:02:17.438Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: Sanhueza aprueba la llegada de dos jugadores a Colo Colo pensando en Copa…",
+      "titulo": "FÚTBOL MUNDIAL: Sanhueza aprueba la llegada de dos jugadores a Colo Colo… | Lo que cambia",
+      "fecha": "2026-10-16T18:36:39.982Z"
     }
   ]
 }
