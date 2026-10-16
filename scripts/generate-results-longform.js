@@ -14,7 +14,7 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const CACHE = path.join(ROOT, 'matches-cache.json');
 const OUT = path.join(ROOT, 'out', TODAY, 'resumen-resultados.mp4');
 const FPS = 30;
-const SECTION_FRAMES = 900; // 30 segundos por partido
+const SECTION_FRAMES = 450; // 15 segundos por partido
 
 const norm = (s='') => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 const isChile = (m) => /primera division de chile|copa chile|liga de ascenso|futbol chileno|chile/i.test(norm(m.competencia || ''));
@@ -38,7 +38,7 @@ function mainData() {
     (Number(isColo(b))*100 + Number(isChile(b))*30 + Number(b.prioridad||0))
     - (Number(isColo(a))*100 + Number(isChile(a))*30 + Number(a.prioridad||0))
     || new Date(b.fecha || 0) - new Date(a.fecha || 0)
-  ).slice(0, 12);
+  ).slice(0, 20);
 }
 
 async function main() {
@@ -82,7 +82,10 @@ async function main() {
     media:{body:fs.createReadStream(OUT)},
   });
   if (!response.data.id) throw new Error('YouTube no devolvió un ID de vídeo.');
-  const report = {date:TODAY, channelId:channel.id, videoId:response.data.id, url:`https://youtu.be/${response.data.id}`, totalMatches:sections.length, privacyStatus, title};
+  const thumbnailPath = path.join(path.dirname(OUT), 'miniatura-resultados.jpg');
+  execSync(`ffmpeg -y -ss 00:00:02 -i "${OUT}" -frames:v 1 -vf "scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720" -q:v 2 "${thumbnailPath}"`, {cwd:ROOT, stdio:'inherit'});
+  await youtube.thumbnails.set({videoId:response.data.id, media:{mimeType:'image/jpeg', body:fs.createReadStream(thumbnailPath)}});
+  const report = {date:TODAY, channelId:channel.id, videoId:response.data.id, url:`https://youtu.be/${response.data.id}`, totalMatches:sections.length, thumbnailPath, privacyStatus, title};
   fs.writeFileSync(path.join(path.dirname(OUT),'reporte-resultados.json'), JSON.stringify(report,null,2));
   console.log('PUBLICACIÓN CONFIRMADA '+JSON.stringify(report));
 }
