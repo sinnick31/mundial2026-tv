@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850608",
-      "tipo_contenido": "prediccion",
-      "hook": "DESEQUILIBRIO ESTADÍSTICO MARCADO",
-      "titulo": "Palestino recibió solo 27 goles en la liga: ¿Será su defensa la clave?",
-      "fecha": "2026-08-01T21:46:01.974Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "CORREA GANA $70 MILLONES EN COLO-COLO",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para los hinchas…",
       "titulo": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para… | Lo que cambia",
       "fecha": "2026-10-16T18:57:52.647Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para los hinchas…",
+      "titulo": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para… | Lo que cambia",
+      "fecha": "2026-10-16T19:23:02.337Z"
     }
   ]
 }
