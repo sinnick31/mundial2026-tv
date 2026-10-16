@@ -55,7 +55,7 @@ async function main() {
     url: m.url || (m.fuente === 'football-data.org' ? 'https://www.football-data.org/' : 'https://www.espn.com/soccer/scoreboard'),
   }));
   const title = `TODOS LOS RESULTADOS DEL FÚTBOL | Chile y el mundo | ${TODAY}`;
-  const intro = `Repasamos ${sections.length} resultados finalizados y disponibles en las fuentes consultadas durante las últimas 48 horas. Priorizamos Colo-Colo y el fútbol chileno, y después recorremos el fútbol internacional. Solo mostramos marcadores verificados.`;
+  const intro = `Repasamos ${sections.length} resultados finalizados y disponibles en las fuentes consultadas durante las últimas 72 horas. Priorizamos Colo-Colo y el fútbol chileno, y después recorremos el fútbol internacional. Solo mostramos marcadores verificados.`;
   const narration = [title, intro, ...sections.map((s,i)=>`Partido ${i+1}. ${s.titulo}. ${s.cuerpo}`), 'Estos fueron los resultados disponibles en nuestra edición. Revisa las fuentes enlazadas en la descripción y cuéntanos qué partido quieres que analicemos.'].join('\n\n');
   const audioPath = path.join(ROOT, 'public', 'tmp', 'resultados-diarios.wav');
   fs.mkdirSync(path.dirname(audioPath), {recursive:true});
@@ -63,8 +63,10 @@ async function main() {
   if (!audio.audioPath || !audio.duracionSeg) throw new Error('No se pudo generar la narración; se cancela la publicación para evitar un vídeo silencioso. Revisa GEMINI_API_KEY y el servicio TTS.');
   const audioSrc = audio.audioPath ? 'tmp/resultados-diarios.wav' : undefined;
   const props = { title, intro, sections, audioSrc, fuente: 'Fuentes deportivas enlazadas en la descripción' };
-  const framesBySections = Math.max(1, sections.length) * SECTION_FRAMES;
-  const audioFrames = audio.duracionSeg ? Math.ceil((audio.duracionSeg + 8) * FPS) : 0;
+  const sectionDurationInFrames = Math.max(SECTION_FRAMES, Math.ceil(((audio.duracionSeg || 0) + 2) * FPS / sections.length));
+  props.sectionDurationInFrames = sectionDurationInFrames;
+  const framesBySections = Math.max(1, sections.length) * sectionDurationInFrames;
+  const audioFrames = audio.duracionSeg ? Math.ceil((audio.duracionSeg + 2) * FPS) : 0;
   const durationInFrames = Math.max(framesBySections, audioFrames, 900);
   fs.mkdirSync(path.dirname(OUT), {recursive:true});
   const propsArg = JSON.stringify(props).replace(/'/g, "'\\''");
@@ -83,10 +85,11 @@ async function main() {
     media:{body:fs.createReadStream(OUT)},
   });
   if (!response.data.id) throw new Error('YouTube no devolvió un ID de vídeo.');
-  const thumbnailPath = path.join(path.dirname(OUT), 'miniatura-resultados.jpg');
-  execSync(`ffmpeg -y -ss 00:00:02 -i "${OUT}" -frames:v 1 -vf "scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720" -q:v 2 "${thumbnailPath}"`, {cwd:ROOT, stdio:'inherit'});
-  await youtube.thumbnails.set({videoId:response.data.id, media:{mimeType:'image/jpeg', body:fs.createReadStream(thumbnailPath)}});
-  const report = {date:TODAY, channelId:channel.id, videoId:response.data.id, url:`https://youtu.be/${response.data.id}`, totalMatches:sections.length, thumbnailPath, privacyStatus, title};
+  const thumbnailPath = path.join(path.dirname(OUT), 'miniatura-resultados.png');
+  const thumbnailProps = JSON.stringify({date:TODAY, count:sections.length}).replace(/'/g, "'\\''");
+  execSync(`npx remotion still src/index.tsx ResultsThumbnail "${thumbnailPath}" --props='${thumbnailProps}' --frame=0 --scale=1`, {cwd:ROOT, stdio:'inherit'});
+  await youtube.thumbnails.set({videoId:response.data.id, media:{mimeType:'image/png', body:fs.createReadStream(thumbnailPath)}});
+  const report = {date:TODAY, channelId:channel.id, videoId:response.data.id, url:`https://youtu.be/${response.data.id}`, totalMatches:sections.length, thumbnailPath, thumbnailUploaded:true, privacyStatus, title};
   fs.writeFileSync(path.join(path.dirname(OUT),'reporte-resultados.json'), JSON.stringify(report,null,2));
   console.log('PUBLICACIÓN CONFIRMADA '+JSON.stringify(report));
 }
