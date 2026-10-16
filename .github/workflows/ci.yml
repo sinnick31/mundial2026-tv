@@ -43,6 +43,9 @@ jobs:
         run: |
           node --check scripts/publication-policy.js
           node --check scripts/render-and-upload.js
+          node --check scripts/fetch-matches.js
+          node --check scripts/generate-results-longform.js
+          node --check scripts/preflight-youtube-auth.js
 
       - name: Test upload visibility policy
         run: npm run test:publication-policy
