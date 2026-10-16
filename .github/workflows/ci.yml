@@ -11,6 +11,11 @@ on:
       - 'package-lock.json'
       - '.github/workflows/futbol-pipeline.yml'
       - '.github/workflows/ci.yml'
+      - '.github/workflows/resultados-largos-diarios.yml'
+      - 'scripts/fetch-matches.js'
+      - 'scripts/generate-results-longform.js'
+      - 'scripts/generate-narration.js'
+      - 'src/**'
   push:
     branches: [main]
     paths:
@@ -21,6 +26,11 @@ on:
       - 'package-lock.json'
       - '.github/workflows/futbol-pipeline.yml'
       - '.github/workflows/ci.yml'
+      - '.github/workflows/resultados-largos-diarios.yml'
+      - 'scripts/fetch-matches.js'
+      - 'scripts/generate-results-longform.js'
+      - 'scripts/generate-narration.js'
+      - 'src/**'
 
 permissions:
   contents: read
