@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "THOMPSON HABLA DE COLO COLO",
-      "titulo": "Jordhy Thompson rompe el silencio: ¿Qué dijo tras su fichaje frustrado en Colo Colo?",
-      "fecha": "2026-08-01T13:35:55.025Z"
-    },
-    {
       "match_id": "espn-401850611",
       "tipo_contenido": "prediccion",
       "hook": "DESAFÍO ANÁLISIS SIN DATOS",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Difícil inicio: Colo Colo cae ante Corinthians en su debut en la Copa…",
       "titulo": "FÚTBOL MUNDIAL: Difícil inicio: Colo Colo cae ante Corinthians en su debut en la… | Lo que cambia",
       "fecha": "2026-10-16T00:58:04.136Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "ES OFICIAL: Oficial: Palestino confirma el estadio donde recibirá a Colo Colo por la Liga de…",
+      "titulo": "FÚTBOL MUNDIAL: Oficial: Palestino confirma el estadio donde recibirá a Colo… | Lo que cambia",
+      "fecha": "2026-10-16T13:32:08.582Z"
     }
   ]
 }
