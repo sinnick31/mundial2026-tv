@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "LA ROJA JUGARÁ ANTE MUNDIALISTA",
-      "titulo": "La Roja confirma amistoso con un 'Mundialista': ¿quién viene a Chile?",
-      "fecha": "2026-08-01T21:46:30.245Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "U DE CHILE: 9 PARTIDOS CONFIRMADOS",
       "titulo": "Universidad de Chile confirma 9 partidos: ¿la U se juega todo?",
       "fecha": "2026-08-01T21:46:39.919Z"
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para los hinchas…",
       "titulo": "FÚTBOL MUNDIAL: Palestino vs Colo Colo: anuncian los sectores disponibles para… | Lo que cambia",
       "fecha": "2026-10-16T22:00:44.482Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo-Colo conoce la programación de la fecha 26 y se prepara para un…",
+      "titulo": "FÚTBOL CHILENO: Colo-Colo conoce la programación de la fecha 26 y se prepara… | Lo que cambia",
+      "fecha": "2026-10-17T00:58:54.761Z"
     }
   ]
 }
