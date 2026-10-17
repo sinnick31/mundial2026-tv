@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: 9 PARTIDOS CONFIRMADOS",
-      "titulo": "Universidad de Chile confirma 9 partidos: ¿la U se juega todo?",
-      "fecha": "2026-08-01T21:46:39.919Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "CORREA GANA $70 MILLONES EN COLO-COLO",
       "titulo": "Javier Correa gana $70 millones mensuales: ¿es el sueldo más alto en Primera División?",
       "fecha": "2026-08-02T04:27:34.584Z"
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Colo-Colo conoce la programación de la fecha 26 y se prepara para un…",
       "titulo": "FÚTBOL CHILENO: Colo-Colo conoce la programación de la fecha 26 y se prepara… | Lo que cambia",
       "fecha": "2026-10-17T00:58:54.761Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: VIDEO Nieto de Carlos Caszely se lució con un golazo ante la U en el…",
+      "titulo": "FÚTBOL CHILENO: VIDEO Nieto de Carlos Caszely se lució con un golazo ante la U… | Lo que cambia",
+      "fecha": "2026-10-17T17:44:32.982Z"
     }
   ]
 }
