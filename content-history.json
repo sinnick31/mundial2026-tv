@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "CORREA GANA $70 MILLONES EN COLO-COLO",
-      "titulo": "Javier Correa gana $70 millones mensuales: ¿es el sueldo más alto en Primera División?",
-      "fecha": "2026-08-02T04:27:34.584Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "U. DE CHILE: CALENDARIO OFICIAL LISTO",
       "titulo": "Universidad de Chile: 9 partidos definidos, ¿cómo se viene el cierre de la Primera?",
       "fecha": "2026-08-02T04:27:44.216Z"
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: VIDEO Nieto de Carlos Caszely se lució con un golazo ante la U en el…",
       "titulo": "FÚTBOL CHILENO: VIDEO Nieto de Carlos Caszely se lució con un golazo ante la U… | Lo que cambia",
       "fecha": "2026-10-17T17:44:32.982Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EL DATO QUE MARCA LA JORNADA: Fecha 28: San Luis venció a Magallanes, pero Cobreloa respondió…",
+      "titulo": "FÚTBOL CHILENO: Fecha 28: San Luis venció a Magallanes, pero Cobreloa respondió… | Lo que cambia",
+      "fecha": "2026-10-17T21:23:49.764Z"
     }
   ]
 }
