@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "EX COLO COLO BAJA DE CATEGORÍA",
-      "titulo": "Ex Colo Colo baja a tercera división: ¿Fin de una carrera?",
-      "fecha": "2026-08-02T04:27:55.034Z"
-    },
-    {
       "match_id": "espn-401850604",
       "tipo_contenido": "prediccion",
       "hook": "DATOS IRRELEVANTES PARA ANÁLISIS",
@@ -3499,6 +3492,13 @@
       "hook": "EL DATO QUE MARCA LA JORNADA: Fecha 28: San Luis venció a Magallanes, pero Cobreloa respondió…",
       "titulo": "FÚTBOL CHILENO: Fecha 28: San Luis venció a Magallanes, pero Cobreloa respondió… | Lo que cambia",
       "fecha": "2026-10-18T00:34:21.750Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Gonzalo Jara rompe el silencio tras la salida de Marcelino Núñez en La Roja:…",
+      "titulo": "FÚTBOL CHILENO: Gonzalo Jara rompe el silencio tras la salida de Marcelino Núñez… | Lo que cambia",
+      "fecha": "2026-10-18T17:45:42.499Z"
     }
   ]
 }
