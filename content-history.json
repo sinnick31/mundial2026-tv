@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850604",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS IRRELEVANTES PARA ANÁLISIS",
-      "titulo": "Arsenal FC lidera con 85 puntos: ¿Cómo afecta esto a Limache vs Ñublense?",
-      "fecha": "2026-08-02T04:28:07.122Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "CONFIRMADOS 9 PARTIDOS DE LA U!",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Gonzalo Jara rompe el silencio tras la salida de Marcelino Núñez en La Roja:…",
       "titulo": "FÚTBOL CHILENO: Gonzalo Jara rompe el silencio tras la salida de Marcelino Núñez… | Lo que cambia",
       "fecha": "2026-10-18T17:45:42.499Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "SE JUEGA ALGO GRANDE: Equipo del litoral vuelve al fútbol profesional después de 40 años:…",
+      "titulo": "FÚTBOL CHILENO: Equipo del litoral vuelve al fútbol profesional después de 40… | Lo que cambia",
+      "fecha": "2026-10-18T21:23:16.678Z"
     }
   ]
 }
