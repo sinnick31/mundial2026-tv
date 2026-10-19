@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "EX COLO-COLO A TERCERA DIVISIÓN",
-      "titulo": "Ex Colo-Colo a Tercera Categoría: ¿Fin de una era en la élite?",
-      "fecha": "2026-08-02T13:36:28.285Z"
-    },
-    {
       "match_id": "espn-401850605",
       "tipo_contenido": "prediccion",
       "hook": "CONTRASTE DE RENDIMIENTO",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Fernando Ortiz no se asusta por el asedio de la U a Colo Colo en la Liga de…",
       "titulo": "FÚTBOL MUNDIAL: Fernando Ortiz no se asusta por el asedio de la U a Colo Colo en… | Lo que cambia",
       "fecha": "2026-10-19T20:21:04.677Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EL DATO QUE MARCA LA JORNADA: Colo Colo quedó fuera de la Copa Libertadores Femenina tras la…",
+      "titulo": "FÚTBOL MUNDIAL: Colo Colo quedó fuera de la Copa Libertadores Femenina tras la… | Lo que cambia",
+      "fecha": "2026-10-19T22:52:42.656Z"
     }
   ]
 }
