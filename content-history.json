@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "CONFIRMADOS 9 PARTIDOS DE LA U!",
-      "titulo": "Universidad de Chile jugará 9 partidos: ¿Cómo afrontará la U este calendario?",
-      "fecha": "2026-08-02T13:36:05.199Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "CORREA GANA $70M EN COLO-COLO",
       "titulo": "Javier Correa gana $70 millones en Colo-Colo: ¿Rinde la inversión?",
       "fecha": "2026-08-02T13:36:15.997Z"
@@ -3499,6 +3492,13 @@
       "hook": "SE JUEGA ALGO GRANDE: Equipo del litoral vuelve al fútbol profesional después de 40 años:…",
       "titulo": "FÚTBOL CHILENO: Equipo del litoral vuelve al fútbol profesional después de 40… | Lo que cambia",
       "fecha": "2026-10-18T21:23:16.678Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: Casi eliminadas: Colo Colo cae ante Santa Fe y apela a un milagro en Copa…",
+      "titulo": "FÚTBOL MUNDIAL: Casi eliminadas: Colo Colo cae ante Santa Fe y apela a un… | Lo que cambia",
+      "fecha": "2026-10-19T00:42:36.018Z"
     }
   ]
 }
