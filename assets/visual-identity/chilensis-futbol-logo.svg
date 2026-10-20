@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">Chilensis Fútbol</title>
+  <desc id="desc">Identidad original de prensa futbolística con símbolo abstracto de balón y líneas de cancha.</desc>
+  <rect width="1200" height="320" rx="28" fill="#101827"/>
+  <g transform="translate(48 42)">
+    <rect width="236" height="236" rx="30" fill="#E63946"/>
+    <circle cx="118" cy="118" r="78" fill="none" stroke="#F8FAFC" stroke-width="8"/>
+    <path d="M118 68 151 92 138 131 98 131 85 92Z" fill="none" stroke="#F8FAFC" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M118 68V40M151 92l32-11M138 131l19 34M98 131l-19 34M85 92 53 81M79 165h78M53 81l-9 48M183 81l9 48" fill="none" stroke="#F8FAFC" stroke-width="7" stroke-linecap="round"/>
+    <path d="M44 190h148" stroke="#F8FAFC" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="330" y="143" font-family="Inter,Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="1" fill="#F8FAFC">CHILENSIS</text>
+  <text x="334" y="225" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="700" letter-spacing="8" fill="#E63946">FÚTBOL</text>
+  <text x="338" y="270" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="500" letter-spacing="3" fill="#CBD5E1">QUÉ PASÓ · QUÉ ESTÁ CONFIRMADO · POR QUÉ IMPORTA</text>
+</svg>
