@@ -174,7 +174,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
         </div>
       </AbsoluteFill>
 
-      {/* Marca y sección editorial */}}
+      {/* Marca y sección editorial */}
       <div style={{
         position: 'absolute', top: 60, left: 0, right: 0,
         display: 'flex', justifyContent: 'center',
