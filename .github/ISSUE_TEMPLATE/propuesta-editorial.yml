@@ -1,0 +1,88 @@
+name: Propuesta editorial
+description: Proponer una noticia para verificar y convertir en contenido original
+title: "[Historia]: "
+labels: ["propuesta-editorial"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Esta ficha abre una propuesta para revisión; no autoriza su publicación. No incluyas contraseñas, tokens ni datos personales innecesarios.
+  - type: input
+    id: tema
+    attributes:
+      label: Protagonista y hecho
+      description: Resume en una frase qué ocurrió o qué se necesita comprobar.
+      placeholder: "Equipo / jugador + hecho concreto"
+    validations:
+      required: true
+  - type: dropdown
+    id: pilar
+    attributes:
+      label: Pilar editorial
+      options:
+        - Fútbol chileno (general)
+        - Colo-Colo
+        - Otros clubes chilenos
+        - Chilenos en el extranjero
+        - Fútbol internacional
+        - Análisis o explicador
+    validations:
+      required: true
+  - type: input
+    id: fuente_primaria
+    attributes:
+      label: URL de la fuente primaria
+      description: Preferir comunicado oficial, documento de competición o declaración original.
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: input
+    id: fuente_secundaria
+    attributes:
+      label: URL de fuente secundaria independiente
+      description: Obligatoria para hechos sensibles si no hay confirmación oficial.
+      placeholder: "https://..."
+    validations:
+      required: false
+  - type: input
+    id: fecha_hecho
+    attributes:
+      label: Fecha del hecho
+      description: No confundir con la fecha en que el medio publicó la noticia.
+      placeholder: "AAAA-MM-DD"
+    validations:
+      required: true
+  - type: dropdown
+    id: verificacion
+    attributes:
+      label: Estado de verificación
+      options:
+        - Aún no verificado
+        - Confirmado por fuente primaria
+        - Corroborado por fuentes independientes
+        - Fuentes contradictorias
+    validations:
+      required: true
+  - type: textarea
+    id: aporta
+    attributes:
+      label: Ángulo original del canal
+      description: Qué contexto, explicación o dato útil se añadirá más allá del titular.
+      placeholder: "¿Por qué importa y qué cambia?"
+    validations:
+      required: true
+  - type: textarea
+    id: recursos
+    attributes:
+      label: Recursos audiovisuales y derechos
+      description: Enumera visuales/audio previstos y su licencia/permiso. Si no está claro, se deben sustituir por recursos originales.
+      placeholder: "Gráficos propios / recurso con licencia / permiso documentado"
+    validations:
+      required: true
+  - type: checkboxes
+    id: declaracion
+    attributes:
+      label: Confirmación editorial
+      options:
+        - label: Entiendo que una propuesta no se publica automáticamente y que no se deben afirmar hechos sin verificación ni usar clips sin derechos.
+          required: true
