@@ -52,10 +52,10 @@ export const CreditoFuente: React.FC<{ fuente?: string }> = ({ fuente }) => {
 };
 
 const COLORES = {
-  eliminacion: { bg: '#0d0000', acento: '#ff1a1a', acento2: '#ff6b00' },
-  campeon:     { bg: '#000d00', acento: '#00cc44', acento2: '#ffe600' },
-  sorpresa:    { bg: '#00001a', acento: '#6600ff', acento2: '#00ccff' },
-  fracaso:     { bg: '#0d0500', acento: '#ff6b00', acento2: '#ff1a1a' },
+  eliminacion: { bg: '#101827', acento: '#E63946', acento2: '#F8FAFC' },
+  campeon:     { bg: '#101827', acento: '#22C55E', acento2: '#F8FAFC' },
+  sorpresa:    { bg: '#101827', acento: '#E63946', acento2: '#60A5FA' },
+  fracaso:     { bg: '#101827', acento: '#E63946', acento2: '#FCA5A5' },
 };
 
 // ─── Capa de video real de fondo (stock libre de copyright) ──────────────────
@@ -174,7 +174,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
         </div>
       </AbsoluteFill>
 
-      {/* MUNDIAL 2026 badge top */}
+      {/* Marca y sección editorial */}}
       <div style={{
         position: 'absolute', top: 60, left: 0, right: 0,
         display: 'flex', justifyContent: 'center',
@@ -182,7 +182,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
       }}>
         <div style={{
           background: colores.acento,
-          color: '#000',
+          color: '#FFFFFF',
           padding: '8px 28px',
           borderRadius: 99,
           fontSize: 22,
@@ -190,7 +190,7 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
           letterSpacing: 1,
           fontFamily: "'Arial Black', sans-serif",
         }}>
-          ⚽ {etiquetaSeccion || 'FÚTBOL CHILENO'}
+          ⚽ CHILENSIS FÚTBOL · {etiquetaSeccion || 'FÚTBOL CHILENO'}
         </div>
       </div>
     </AbsoluteFill>
@@ -409,7 +409,7 @@ const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo']; etiquetaCanal?: string
           🔔 Síguenos para más noticias verificadas y análisis de fútbol
         </div>
         <div style={{ fontSize: 26, color: '#ffffff66', marginTop: 8, fontFamily: "'Arial', sans-serif" }}>
-          {etiquetaCanal || '@MUNDIAL2026SHORTS'}
+          {etiquetaCanal || '@CHILENSISFUTBOL'}
         </div>
       </div>
     </AbsoluteFill>
