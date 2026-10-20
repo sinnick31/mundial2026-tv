@@ -15,14 +15,14 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
   const isChile = /chile|colo colo|copa chile|liga de ascenso/i.test(current.titulo + ' ' + current.cuerpo);
   const progress = safeSections.length ? Math.min(100, ((active + 1) / safeSections.length) * 100) : 100;
   return (
-    <AbsoluteFill style={{ background: 'linear-gradient(135deg,#07111f 0%,#101d30 55%,#07111f 100%)', color: '#fff', fontFamily: 'Arial, Helvetica, sans-serif', opacity }}>
+    <AbsoluteFill style={{ background: 'linear-gradient(135deg,#101827 0%,#172438 55%,#101827 100%)', color: '#fff', fontFamily: 'Arial, Helvetica, sans-serif', opacity }}>
       {audioSrc ? <Audio src={staticFile(audioSrc)} /> : null}
       <div style={{position:'absolute',inset:0,background:'radial-gradient(ellipse at 80% 15%,rgba(26,120,190,.23),transparent 42%)'}} />
-      <div style={{position:'absolute',left:0,right:0,top:0,height:12,background:'#e31b36'}}/>
+      <div style={{position:'absolute',left:0,right:0,top:0,height:12,background:'#E63946'}}/>
       <div style={{position:'absolute',left:64,right:64,top:44,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
         <div style={{display:'flex',alignItems:'center',gap:18}}>
-          <div style={{background:'#e31b36',padding:'12px 18px',fontSize:21,fontWeight:900,letterSpacing:2}}>RFN</div>
-          <div style={{fontSize:24,fontWeight:900,letterSpacing:3}}>REAL FOOTBALL NEWSROOM</div>
+          <div style={{background:'#E63946',padding:'12px 18px',fontSize:21,fontWeight:900,letterSpacing:2}}>CF</div>
+          <div style={{fontSize:24,fontWeight:900,letterSpacing:3}}>CHILENSIS FÚTBOL</div>
         </div>
         <div style={{fontSize:18,fontWeight:800,letterSpacing:2,color:'#f3f6fa'}}>EDICIÓN DIARIA · {isChile ? 'FÚTBOL CHILENO' : 'FÚTBOL INTERNACIONAL'}</div>
       </div>
@@ -33,13 +33,13 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
           <div style={{fontSize:23,lineHeight:1.4,color:'#c4d1df',marginTop:15,maxWidth:1500}}>{clamp(intro,250)}</div>
         </div>
         <div style={{display:'flex',alignItems:'stretch',gap:28,minHeight:270}}>
-          <div style={{width:105,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',background:'#e31b36',borderRadius:8,flexShrink:0}}>
+          <div style={{width:105,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',background:'#E63946',borderRadius:8,flexShrink:0}}>
             <div style={{fontSize:15,fontWeight:900,letterSpacing:2}}>PARTIDO</div><div style={{fontSize:48,fontWeight:900}}>{String(current.orden).padStart(2,'0')}</div>
           </div>
           <div style={{flex:1,background:'linear-gradient(115deg,rgba(20,42,67,.98),rgba(12,26,43,.98))',border:'1px solid #294661',borderRadius:12,padding:'28px 34px',display:'flex',flexDirection:'column',justifyContent:'center',boxShadow:'0 18px 60px rgba(0,0,0,.22)'}}>
             {teams ? <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:24,marginBottom:22}}>
               <div style={{flex:1,fontSize:35,fontWeight:900,lineHeight:1.1}}>{clamp(teams[1].trim(),35)}</div>
-              <div style={{display:'flex',alignItems:'center',gap:18,background:'#07111f',border:'1px solid #35536e',borderRadius:10,padding:'14px 24px',fontSize:48,fontWeight:900,fontVariantNumeric:'tabular-nums',whiteSpace:'nowrap'}}><span>{teams[2]}</span><span style={{color:'#e31b36'}}>:</span><span>{teams[3]}</span></div>
+              <div style={{display:'flex',alignItems:'center',gap:18,background:'#101827',border:'1px solid #35536e',borderRadius:10,padding:'14px 24px',fontSize:48,fontWeight:900,fontVariantNumeric:'tabular-nums',whiteSpace:'nowrap'}}><span>{teams[2]}</span><span style={{color:'#E63946'}}>:</span><span>{teams[3]}</span></div>
               <div style={{flex:1,textAlign:'right',fontSize:35,fontWeight:900,lineHeight:1.1}}>{clamp(teams[4].trim(),35)}</div>
             </div> : <div style={{fontSize:36,fontWeight:900,marginBottom:20}}>{clamp(current.titulo,100)}</div>}
             <div style={{fontSize:23,lineHeight:1.42,color:'#e3ebf3'}}>{clamp(current.cuerpo,350)}</div>
@@ -49,13 +49,13 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
           </div>
         </div>
         <div>
-          <div style={{height:5,background:'#20374d',borderRadius:4,overflow:'hidden',marginBottom:14}}><div style={{height:'100%',width:`${progress}%`,background:'#e31b36'}}/></div>
+          <div style={{height:5,background:'#20374d',borderRadius:4,overflow:'hidden',marginBottom:14}}><div style={{height:'100%',width:`${progress}%`,background:'#E63946'}}/></div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',fontSize:16,color:'#a7bdd1'}}>
             <span>COLO-COLO · FÚTBOL CHILENO · CHILENOS EN EL EXTERIOR · EL MUNDO</span><span>FUENTES ENLAZADAS EN LA DESCRIPCIÓN</span>
           </div>
         </div>
       </div>
-      <div style={{position:'absolute',bottom:0,left:0,right:0,height:58,background:'#e31b36',display:'flex',alignItems:'center',padding:'0 64px',fontSize:18,fontWeight:900,letterSpacing:2}}>RESULTADOS VERIFICADOS · RESUMEN DIARIO · REAL FOOTBALL NEWSROOM</div>
+      <div style={{position:'absolute',bottom:0,left:0,right:0,height:58,background:'#E63946',display:'flex',alignItems:'center',padding:'0 64px',fontSize:18,fontWeight:900,letterSpacing:2}}>RESULTADOS VERIFICADOS · RESUMEN DIARIO · CHILENSIS FÚTBOL</div>
     </AbsoluteFill>
   );
 };
