@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "LA U: CALENDARIO DE 9 PARTIDOS CONFIRMADO",
-      "titulo": "Universidad de Chile confirma 9 partidos: ¿Lograrán mantener el liderato? 🏆",
-      "fecha": "2026-08-02T21:46:34.835Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "CORREA $70 MILLONES EN COLO-COLO",
       "titulo": "Javier Correa cobra $70M/mes en el Cacique: ¿un lujo para el fútbol chileno?",
       "fecha": "2026-08-02T21:46:47.618Z"
@@ -3499,6 +3492,13 @@
       "hook": "ES OFICIAL: Confirmado: cancelan el partido entre Colo-Colo y Puerto Montt por Copa Chile - En…",
       "titulo": "FÚTBOL CHILENO: Confirmado: cancelan el partido entre Colo-Colo y Puerto Montt… | Lo que cambia",
       "fecha": "2026-10-20T21:46:33.819Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "SE JUEGA ALGO GRANDE: Autoridades zanjan el futuro del partido de la U ante Deportes…",
+      "titulo": "FÚTBOL CHILENO: Autoridades zanjan el futuro del partido de la U ante Deportes… | Lo que cambia",
+      "fecha": "2026-10-20T22:14:08.879Z"
     }
   ]
 }
