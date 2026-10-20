@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "EX COLO COLO BAJA A TERCERA",
-      "titulo": "Ex Colo Colo cae a Tercera División: ¿Impacto en su futuro?",
-      "fecha": "2026-08-02T17:01:13.702Z"
-    },
-    {
       "match_id": "espn-401850609",
       "tipo_contenido": "prediccion",
       "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Puerto Montt y la travesía para enfrentar a Colo-Colo: \"Mucho viaje y no…",
       "titulo": "FÚTBOL CHILENO: Puerto Montt y la travesía para enfrentar a Colo-Colo: \"Mucho… | Lo que cambia",
       "fecha": "2026-10-20T14:13:47.068Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: La UC sondea un delantero perteneciente a Colo-Colo para reforzar su ataque en…",
+      "titulo": "FÚTBOL CHILENO: La UC sondea un delantero perteneciente a Colo-Colo para… | Lo que cambia",
+      "fecha": "2026-10-20T18:54:32.848Z"
     }
   ]
 }
