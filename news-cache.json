@@ -1,10 +1,10 @@
 {
-  "ultima_actualizacion": "2026-10-20T21:19:01.047Z",
-  "total_hoy": 495,
+  "ultima_actualizacion": "2026-10-20T21:46:27.049Z",
+  "total_hoy": 476,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 102,
-    "colo_colo": 38
+    "chile": 97,
+    "colo_colo": 43
   },
   "noticias": [
     {
@@ -3458,6 +3458,28 @@
       ]
     },
     {
+      "title": "Comunicado de prensa - ANFP",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiV0FVX3lxTE0xMkNuNUsybXVWT0FPNHg3SUprR3ozX1BydFkwb0tKWWgxc0FaYkVCTHRxcUZJTmNHd3NtUFRkZVEtdXZoX0RHRTFuZWNKcVhZS0NCZXRCRQ?oc=5\" target=\"_blank\">Comunicado de prensa</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ANFP</font>",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE0xMkNuNUsybXVWT0FPNHg3SUprR3ozX1BydFkwb0tKWWgxc0FaYkVCTHRxcUZJTmNHd3NtUFRkZVEtdXZoX0RHRTFuZWNKcVhZS0NCZXRCRQ?oc=5",
+      "pubDate": "Tue, 20 Oct 2026 06:59:59 GMT",
+      "timestamp": "2026-10-20T06:59:59.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ANFP",
+      "fuente_url_original": "https://www.anfp.cl",
+      "fuente": "ANFP",
+      "fuente_host": "anfp.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 94,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 58,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:15h(+5)",
+        "penal(-12)"
+      ]
+    },
+    {
       "title": "Unión Española venció a Copiapó y acortó distancias hacia la Liguilla; tabla actualizada - Canal 9 Bío Bío Televisión",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPem0wdUxDZUlscTFVVE5xWGUzRWp2em02NktYYVpNa2hhZDRWaEhzTjZibHJCaXB2anF5ZU9GYzFCalhMSFZWQWpuNnQzUGVFS1JtT25wTXlwUzVPV0FmUHVqYWE5YnhXalhac3lGS2RGbHhlX2NabjZQTnU2cVMwYVoxUEtTQVhycU9hdmlCWjdUc2ZnblZXUUJWeVF5aWZGRS1iNkRzQWNZc2RndjdBZQ?oc=5\" target=\"_blank\">Unión Española venció a Copiapó y acortó distancias hacia la Liguilla; tabla actualizada</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Canal 9 Bío Bío Televisión</font>",
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPem0wdUxDZUlscTFVVE5xWGUzRWp2em02NktYYVpNa2hhZDRWaEhzTjZibHJCaXB2anF5ZU9GYzFCalhMSFZWQWpuNnQzUGVFS1JtT25wTXlwUzVPV0FmUHVqYWE5YnhXalhac3lGS2RGbHhlX2NabjZQTnU2cVMwYVoxUEtTQVhycU9hdmlCWjdUc2ZnblZXUUJWeVF5aWZGRS1iNkRzQWNZc2RndjdBZQ?oc=5",
@@ -4160,6 +4182,49 @@
         "categoria:chile(+40)",
         "frescura:0h(+15)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "La Copa Chile suma otra suspensión: el mal tiempo obliga a postergar la revancha entre la U y Antofagasta - La Tercera",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxNZGllV1dEbkRvQlJEZHZUTWdkQW5VZmlTT0FrZldpM1daM2JtZy1lUGtmZllNZ29mT05UNGlUbHk2VDhjZUQ2T0hOUmZEb0dtTWVTakFSTDVOMXRON3MzTXd4dWJqNTd3YmwyM0ZGY2VJbVNuSVVtWkk5Q2pyYmZzT0h4blNiZ3lkLXFMcTd2dUpCaEZ4ZGZ0NWRDWUF3Zjl6aUN5QV9BNkRsRXBYTi1oUzNxRENjZ1FTa3lOX2NCYnhjcGg2WU90M2FVWUVuaElEQ3JPV1VidG5aV2lFRmpsLVJvTGhZZ0XSAYgCQVVfeXFMUFdZRWFUS0JOTW5JUWZ5M3FwSC05dlk0OWdaUERQOTBYdFlrMkZ3d093aUY4WGt6aFZkUENfVVJ1NFZsdUJfUVFCTkNGcGZWZ09uNVF5UmdnNEhOY1RPYTVFdk5nam",
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNZGllV1dEbkRvQlJEZHZUTWdkQW5VZmlTT0FrZldpM1daM2JtZy1lUGtmZllNZ29mT05UNGlUbHk2VDhjZUQ2T0hOUmZEb0dtTWVTakFSTDVOMXRON3MzTXd4dWJqNTd3YmwyM0ZGY2VJbVNuSVVtWkk5Q2pyYmZzT0h4blNiZ3lkLXFMcTd2dUpCaEZ4ZGZ0NWRDWUF3Zjl6aUN5QV9BNkRsRXBYTi1oUzNxRENjZ1FTa3lOX2NCYnhjcGg2WU90M2FVWUVuaElEQ3JPV1VidG5aV2lFRmpsLVJvTGhZZ0XSAYgCQVVfeXFMUFdZRWFUS0JOTW5JUWZ5M3FwSC05dlk0OWdaUERQOTBYdFlrMkZ3d093aUY4WGt6aFZkUENfVVJ1NFZsdUJfUVFCTkNGcGZWZ09uNVF5UmdnNEhOY1RPYTVFdk5namtJWGZmZ19laXBnSlhvYkVzWUVfN1lUOXNNNmxJLTd0akJfMDFTMTBNbWxWX3hQZ29USlRWT3lTS1ZFdGF6RWpjcFNsNDlaelpSNkhYRzlfcHNhaG0zTXJpSllHeTl1bUhaXzg3bzBIcEh6bXllSkxUTWpuTnozME1WWjhaV1Y4eVNuMU9XZVdXOGIxTEc3T0NKRWNqdXN6ci1JTjFOeVduVWo5?oc=5",
+      "pubDate": "Tue, 20 Oct 2026 21:37:53 GMT",
+      "timestamp": "2026-10-20T21:37:53.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "La Tercera",
+      "fuente_url_original": "https://www.latercera.com",
+      "fuente": "La Tercera",
+      "fuente_host": "latercera.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:0h(+15)"
+      ]
+    },
+    {
+      "title": "¿Quién transmite Unión La Calera vs Coquimbo Unido? Horario y dónde ver EN VIVO la Copa Chile - www.elobservatodo.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWk5TbjVWX00taWtkdTRtSEZPVmt5UVRwdFhDcjZuWUFCVWhlY25TSFBEUGJZTmVyZ0F6Y1poU2xBLTFraXJCSkpDRnpMNU5xS3gwOHVpbGszRFJJZElEMGtzakZqN01aYjY1UGFjTGxQbVlhNGFhRlRqeXlnVzV3WFUycWNLaTItUUpjcnN3RlppQVJ3RGdEOF9CQmFtZHdqZTRhdXdtQ0RLMjlSWTUxUFE0ZnNlUVZSUmtla18ybS12RkRZZ2hnbQ?oc=5\" target=\"_blank\">¿Quién transmite Unión La Calera vs Coquimbo Unido? Horario y dónde ver EN VIVO la Copa Chile</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">www.elobservatodo.cl</font",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWk5TbjVWX00taWtkdTRtSEZPVmt5UVRwdFhDcjZuWUFCVWhlY25TSFBEUGJZTmVyZ0F6Y1poU2xBLTFraXJCSkpDRnpMNU5xS3gwOHVpbGszRFJJZElEMGtzakZqN01aYjY1UGFjTGxQbVlhNGFhRlRqeXlnVzV3WFUycWNLaTItUUpjcnN3RlppQVJ3RGdEOF9CQmFtZHdqZTRhdXdtQ0RLMjlSWTUxUFE0ZnNlUVZSUmtla18ybS12RkRZZ2hnbQ?oc=5",
+      "pubDate": "Tue, 20 Oct 2026 21:45:03 GMT",
+      "timestamp": "2026-10-20T21:45:03.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "www.elobservatodo.cl",
+      "fuente_url_original": "https://www.elobservatodo.cl",
+      "fuente": "www.elobservatodo.cl",
+      "fuente_host": "elobservatodo.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "categoria": "chile",
+      "equipo_chile": "Coquimbo Unido",
+      "viral_score": 72,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:0h(+15)",
+        "penal(-8)"
       ]
     }
   ]

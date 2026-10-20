@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "UC GOLEADA, ¿ADIÓS AL TÍTULO?",
-      "titulo": "U. Católica goleada en el Ester Roa: ¿Se escapa el título de Primera División?",
-      "fecha": "2026-08-02T21:46:22.812Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "LA U: CALENDARIO DE 9 PARTIDOS CONFIRMADO",
       "titulo": "Universidad de Chile confirma 9 partidos: ¿Lograrán mantener el liderato? 🏆",
       "fecha": "2026-08-02T21:46:34.835Z"
@@ -3499,6 +3492,13 @@
       "hook": "CHILENOS POR EL MUNDO: Ipswich Town toma drástica decisión con Marcelino Núñez tras su…",
       "titulo": "CHILENOS POR EL MUNDO: Ipswich Town toma drástica decisión con… | La clave para seguirlo",
       "fecha": "2026-10-20T21:19:11.844Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "ES OFICIAL: Confirmado: cancelan el partido entre Colo-Colo y Puerto Montt por Copa Chile - En…",
+      "titulo": "FÚTBOL CHILENO: Confirmado: cancelan el partido entre Colo-Colo y Puerto Montt… | Lo que cambia",
+      "fecha": "2026-10-20T21:46:33.819Z"
     }
   ]
 }
