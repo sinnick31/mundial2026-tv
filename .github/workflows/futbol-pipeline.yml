@@ -73,6 +73,8 @@ jobs:
           node --check scripts/generate-real-content.js
           node --check scripts/viral-score.js
           node --check scripts/generate-results-longform.js
+          node --check scripts/reconcile-editorial-state.js
+          node --test tests/editorial-state-merge.test.js
 
       - name: 🔎 Ingerir fuentes verificables
         run: node scripts/fetch-real-news.js
@@ -125,16 +127,22 @@ jobs:
             exit 0
           fi
 
-          git add -- content-history.json news-cache.json
-          git commit -m "chore: actualizar memoria editorial [skip ci]" --no-verify
-
+          # Fetch first, then union this run's generated state with the latest remote JSON.
+          # This avoids committing against a stale parent and preserves concurrent editorial entries.
           git fetch origin main
-          if ! git merge-base --is-ancestor origin/main HEAD; then
-            echo "::error::main avanzó durante esta ejecución. Se evita sobrescribir el historial editorial; reconcilia y vuelve a ejecutar."
-            exit 1
-          fi
+          node scripts/reconcile-editorial-state.js
 
-          # Regular fast-forward push only. If main moved again, fail closed.
+          # Move HEAD and the index to the fetched main while keeping generated JSON in the worktree.
+          # No hard reset, force push, or overwrite of unrelated repository files.
+          git reset --mixed origin/main
+          git add -- content-history.json news-cache.json
+          if git diff --cached --quiet; then
+            echo "ℹ️ La reconciliación no produjo cambios que guardar"
+            exit 0
+          fi
+          git commit -m "chore: reconciliar memoria editorial [skip ci]" --no-verify
+
+          # If main advances after the fetch, the normal push rejects safely. Never force-push.
           git push origin HEAD:main
 
       - name: 📦 Entregar paquete
