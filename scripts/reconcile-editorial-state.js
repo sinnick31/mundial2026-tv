@@ -16,8 +16,8 @@ function stable(value) {
 
 function itemKey(item, path) {
   if (item && typeof item === 'object' && !Array.isArray(item)) {
-    if ((path === 'noticias' || path.endsWith('.noticias'))) return String(item.link || item.url || item.id || item.title || stable(item));
-    if ((path === 'items' || path.endsWith('.items'))) return stable(item);
+    if ((path === 'noticias' || (path === 'noticias' || path.endsWith('.noticias')))) return String(item.link || item.url || item.id || item.title || stable(item));
+    if ((path === 'items' || (path === 'items' || path.endsWith('.items')))) return stable(item);
     if (item.id != null) return 'id:' + item.id;
     if (item.link || item.url) return 'url:' + (item.link || item.url);
   }
@@ -29,10 +29,10 @@ function mergeJson(remote, local, path = '') {
     const merged = new Map();
     for (const item of [...remote, ...local]) merged.set(itemKey(item, path), item);
     let result = [...merged.values()];
-    if (path.endsWith('.items')) {
+    if ((path === 'items' || path.endsWith('.items'))) {
       result.sort((a, b) => String(a.fecha || '').localeCompare(String(b.fecha || '')));
       result = result.slice(-500);
-    } else if (path.endsWith('.noticias')) {
+    } else if ((path === 'noticias' || path.endsWith('.noticias'))) {
       result.sort((a, b) => String(a.timestamp || a.pubDate || '').localeCompare(String(b.timestamp || b.pubDate || '')));
       result = result.slice(-1000);
     }
