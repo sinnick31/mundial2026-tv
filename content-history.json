@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850605",
-      "tipo_contenido": "prediccion",
-      "hook": "CONTRASTE DE RENDIMIENTO",
-      "titulo": "Universidad Católica con 85 puntos y 71 goles: ¿mantendrá su dominio?",
-      "fecha": "2026-08-02T13:36:56.819Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "U DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
@@ -3499,6 +3492,13 @@
       "hook": "EL DATO QUE MARCA LA JORNADA: Colo Colo quedó fuera de la Copa Libertadores Femenina tras la…",
       "titulo": "FÚTBOL MUNDIAL: Colo Colo quedó fuera de la Copa Libertadores Femenina tras la… | Lo que cambia",
       "fecha": "2026-10-19T22:52:42.656Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Puerto Montt y la travesía para enfrentar a Colo-Colo: \"Mucho viaje y no…",
+      "titulo": "FÚTBOL CHILENO: Puerto Montt y la travesía para enfrentar a Colo-Colo: \"Mucho… | Lo que cambia",
+      "fecha": "2026-10-20T01:27:50.954Z"
     }
   ]
 }
