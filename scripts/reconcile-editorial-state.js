@@ -16,8 +16,8 @@ function stable(value) {
 
 function itemKey(item, path) {
   if (item && typeof item === 'object' && !Array.isArray(item)) {
-    if (path.endsWith('.noticias')) return String(item.link || item.url || item.id || item.title || stable(item));
-    if (path.endsWith('.items')) return stable(item);
+    if ((path === 'noticias' || path.endsWith('.noticias'))) return String(item.link || item.url || item.id || item.title || stable(item));
+    if ((path === 'items' || path.endsWith('.items'))) return stable(item);
     if (item.id != null) return 'id:' + item.id;
     if (item.link || item.url) return 'url:' + (item.link || item.url);
   }
