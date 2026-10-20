@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850609",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
-      "titulo": "Arsenal, 1er puesto con 85 pts: ¿Un análisis válido para La Serena vs O'Higgins?",
-      "fecha": "2026-08-02T17:01:31.793Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "UC GOLEADA, ¿ADIÓS AL TÍTULO?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: La UC sondea un delantero perteneciente a Colo-Colo para reforzar su ataque en…",
       "titulo": "FÚTBOL CHILENO: La UC sondea un delantero perteneciente a Colo-Colo para… | Lo que cambia",
       "fecha": "2026-10-20T18:54:32.848Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "CHILENOS POR EL MUNDO: Ipswich Town toma drástica decisión con Marcelino Núñez tras su…",
+      "titulo": "CHILENOS POR EL MUNDO: Ipswich Town toma drástica decisión con… | La clave para seguirlo",
+      "fecha": "2026-10-20T21:19:11.844Z"
     }
   ]
 }
