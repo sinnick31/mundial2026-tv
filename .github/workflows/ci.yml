@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - 'scripts/publication-policy.js'
+      - 'scripts/editorial-gate.js'
+      - 'scripts/generate-real-content.js'
+      - 'scripts/viral-score.js'
+      - 'scripts/fetch-real-news.js'
       - 'scripts/render-and-upload.js'
       - 'tests/**'
       - 'package.json'
@@ -13,6 +17,7 @@ on:
       - '.github/workflows/ci.yml'
       - '.github/workflows/resultados-largos-diarios.yml'
       - 'scripts/fetch-matches.js'
+      - 'config/**'
       - 'scripts/generate-results-longform.js'
       - 'scripts/generate-narration.js'
       - 'src/**'
@@ -20,6 +25,10 @@ on:
     branches: [main]
     paths:
       - 'scripts/publication-policy.js'
+      - 'scripts/editorial-gate.js'
+      - 'scripts/generate-real-content.js'
+      - 'scripts/viral-score.js'
+      - 'scripts/fetch-real-news.js'
       - 'scripts/render-and-upload.js'
       - 'tests/**'
       - 'package.json'
@@ -28,6 +37,7 @@ on:
       - '.github/workflows/ci.yml'
       - '.github/workflows/resultados-largos-diarios.yml'
       - 'scripts/fetch-matches.js'
+      - 'config/**'
       - 'scripts/generate-results-longform.js'
       - 'scripts/generate-narration.js'
       - 'src/**'
@@ -52,10 +62,14 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check scripts/publication-policy.js
+          node --check scripts/editorial-gate.js
+          node --check scripts/generate-real-content.js
+          node --check scripts/viral-score.js
+          node --check scripts/fetch-real-news.js
           node --check scripts/render-and-upload.js
           node --check scripts/fetch-matches.js
           node --check scripts/generate-results-longform.js
           node --check scripts/preflight-youtube-auth.js
 
-      - name: Test upload visibility policy
-        run: npm run test:publication-policy
+      - name: Test editorial and upload policy
+        run: npm run test:all
