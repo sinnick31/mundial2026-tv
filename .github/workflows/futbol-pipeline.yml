@@ -1,11 +1,19 @@
-name: ⚽ MUNDIAL2026SHORTS v7 — Newsroom
+name: ⚽ CHILENSIS FÚTBOL — Newsroom
 
 on:
+  # Los pushes de código ejecutan validación, nunca publican automáticamente.
   push:
     branches: [main]
-    paths-ignore:
-      - 'content-history.json'
-      - 'news-cache.json'
+    paths:
+      - 'scripts/**'
+      - 'config/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - '.github/workflows/futbol-pipeline.yml'
+      - '.github/workflows/ci.yml'
   schedule:
     - cron: '0 15 * * *'
     - cron: '0 19 * * *'
@@ -42,7 +50,34 @@ env:
   NODE_VERSION: '24'
 
 jobs:
+  validate-push:
+    if: github.event_name == 'push'
+    name: 🧪 Validar cambios de código sin publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Validar sintaxis, política editorial y TypeScript
+        run: |
+          node --check scripts/editorial-gate.js
+          node --check scripts/generate-real-content.js
+          node --check scripts/fetch-real-news.js
+          node --check scripts/viral-score.js
+          node --check scripts/render-and-upload.js
+          node --check scripts/publication-policy.js
+          npm run test:all
+          node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))"
+          npx tsc --noEmit
+
   generate:
+    if: github.event_name != 'push'
     name: 📰 Detectar noticia + guion original
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -98,21 +133,12 @@ jobs:
           echo "Piezas seleccionadas: $TOTAL"
           if [ "$TOTAL" -gt 0 ]; then echo "hay_contenido=true" >> "$GITHUB_OUTPUT"; else echo "hay_contenido=false" >> "$GITHUB_OUTPUT"; fi
 
-      - name: 🛡️ Bloqueo editorial
+      - name: 🛡️ Bloqueo editorial Chilensis Fútbol
         if: steps.gen.outputs.hay_contenido == 'true'
         run: |
-          node - <<'NODE'
-          const fs=require('fs');
-          const d=JSON.parse(fs.readFileSync('daily-content.json','utf8'));
-          if(!d.total || !Array.isArray(d.contenido)) throw new Error('daily-content inválido');
-          for(const [i,x] of d.contenido.entries()){
-            if(!x._fuente_url || !/^https?:\/\//.test(x._fuente_url)) throw new Error('Pieza '+(i+1)+': URL de fuente ausente');
-            if(!x._fuente) throw new Error('Pieza '+(i+1)+': fuente ausente');
-            if(!x.titulo_youtube) throw new Error('Pieza '+(i+1)+': título ausente');
-            if(!x.narracion || x.narracion.length<180) throw new Error('Pieza '+(i+1)+': narración original insuficiente');
-          }
-          console.log('✅ SOURCE LOCK + ORIGINALIDAD OK');
-          NODE
+          node --check scripts/editorial-gate.js
+          node scripts/editorial-gate.js daily-content.json
+          npm run test:editorial-gate
 
       - name: 💾 Guardar memoria editorial
         run: |
@@ -157,7 +183,7 @@ jobs:
     name: 🎬 Render + publicar Short
     runs-on: ubuntu-latest
     needs: generate
-    if: needs.generate.outputs.hay_contenido == 'true'
+    if: github.event_name != 'push' && needs.generate.outputs.hay_contenido == 'true'
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
@@ -234,11 +260,17 @@ jobs:
   report:
     name: 📊 Estado final
     runs-on: ubuntu-latest
-    needs: [generate, publish]
+    needs: [validate-push, generate, publish]
     if: always()
     steps:
       - run: |
-          echo "⚽ MUNDIAL2026SHORTS v7"
+          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
+            echo "Validación de código: ${{ needs.validate-push.result }}"
+            test "${{ needs.validate-push.result }}" = "success"
+            echo "Push validado. No se generó ni publicó contenido."
+            exit 0
+          fi
+          echo "⚽ CHILENSIS FÚTBOL — Newsroom"
           echo "════════════════════════════════════════"
           echo "Generación: ${{ needs.generate.result }}"
           echo "Publicación: ${{ needs.publish.result }}"
