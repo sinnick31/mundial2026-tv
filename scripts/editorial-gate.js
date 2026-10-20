@@ -38,7 +38,7 @@ function validatePackage(pkg) {
   if (pkg.total < 1 || pkg.total > MAX_ITEMS) {
     fail(`se esperaban entre 1 y ${MAX_ITEMS} piezas; recibido: ${pkg.total}`);
   }
-  if (typeof pkg.fecha !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(pkg.fecha)
+  if (typeof pkg.fecha !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(pkg.fecha)
       || Number.isNaN(Date.parse(pkg.fecha))) {
     fail('fecha de generación ausente o inválida');
   }
