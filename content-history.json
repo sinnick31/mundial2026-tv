@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CORREA $70 MILLONES EN COLO-COLO",
-      "titulo": "Javier Correa cobra $70M/mes en el Cacique: ¿un lujo para el fútbol chileno?",
-      "fecha": "2026-08-02T21:46:47.618Z"
-    },
-    {
       "match_id": "espn-401850607",
       "tipo_contenido": "prediccion",
       "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
@@ -3499,6 +3492,13 @@
       "hook": "SE JUEGA ALGO GRANDE: Autoridades zanjan el futuro del partido de la U ante Deportes…",
       "titulo": "FÚTBOL CHILENO: Autoridades zanjan el futuro del partido de la U ante Deportes… | Lo que cambia",
       "fecha": "2026-10-20T22:14:08.879Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "CHILENOS POR EL MUNDO: Ipswich Town toma una drástica decisión con Marcelino Núñez: duro…",
+      "titulo": "CHILENOS POR EL MUNDO: Ipswich Town toma una drástica decisión con… | La clave para seguirlo",
+      "fecha": "2026-10-20T22:40:56.011Z"
     }
   ]
 }
