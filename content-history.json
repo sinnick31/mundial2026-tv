@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": "espn-401850607",
-      "tipo_contenido": "prediccion",
-      "hook": "DATOS INSUFICIENTES PARA ANÁLISIS",
-      "titulo": "Premier League: 20 equipos, 0 chilenos. ¿Qué análisis es posible?",
-      "fecha": "2026-08-02T21:47:03.307Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "U CATÓLICA PIERDE TÍTULO GOLEADA",
@@ -3499,6 +3492,13 @@
       "hook": "CHILENOS POR EL MUNDO: Ipswich Town toma una drástica decisión con Marcelino Núñez: duro…",
       "titulo": "CHILENOS POR EL MUNDO: Ipswich Town toma una drástica decisión con… | La clave para seguirlo",
       "fecha": "2026-10-20T22:40:56.011Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Ipswich Town toma una drástica decisión con Marcelino Núñez: duro presente…",
+      "titulo": "FÚTBOL CHILENO: Ipswich Town toma una drástica decisión con Marcelino Núñez:… | Lo que cambia",
+      "fecha": "2026-10-21T01:12:18.985Z"
     }
   ]
 }
