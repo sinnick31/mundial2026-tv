@@ -156,8 +156,11 @@ async function prepararRender(item) {
   }
 
   const imagen = imagenAutorizadaParaEquipo(item.equipo1);
+  const imagen2 = item.equipo2 ? imagenAutorizadaParaEquipo(item.equipo2) : {};
   const props = {
     ...imagen,
+    imagenEquipo2Src: imagen2.imagenEquipoSrc,
+    imagenEquipo2Credito: imagen2.imagenEquipoCredito,
     gancho: item.gancho,
     subtitulo: item.subtitulo,
     descripcion: item.descripcion,
