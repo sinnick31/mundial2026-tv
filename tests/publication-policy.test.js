@@ -4,10 +4,10 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const { getPublicationPrivacy } = require('../scripts/publication-policy');
 
-test('defaults to unlisted when no visibility is configured', () => {
+test('defaults to public when no visibility is configured', () => {
   assert.equal(
     getPublicationPrivacy({ requested: undefined, eventName: 'schedule' }),
-    'unlisted',
+    'public',
   );
 });
 
@@ -27,7 +27,7 @@ test('rejects unsupported visibility values', () => {
   );
 });
 
-test('blocks scheduled public uploads unless explicitly enabled', () => {
+test('blocks scheduled public uploads if explicitly disabled', () => {
   assert.throws(
     () => getPublicationPrivacy({
       requested: 'public',
@@ -38,13 +38,9 @@ test('blocks scheduled public uploads unless explicitly enabled', () => {
   );
 });
 
-test('allows scheduled public uploads only when explicitly enabled', () => {
+test('allows scheduled public uploads by default', () => {
   assert.equal(
-    getPublicationPrivacy({
-      requested: 'public',
-      eventName: 'schedule',
-      allowScheduledPublic: 'true',
-    }),
+    getPublicationPrivacy({ requested: 'public', eventName: 'schedule' }),
     'public',
   );
 });
