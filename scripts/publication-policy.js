@@ -4,20 +4,17 @@ const ALLOWED_VISIBILITIES = new Set(['private', 'unlisted', 'public']);
 
 /**
  * Resolve YouTube upload visibility.
- *
- * Defaults to unlisted so scheduled videos can be reviewed before becoming public.
- * Scheduled public uploads require an explicit repository variable switch.
- * A manual workflow_dispatch can explicitly select public.
+ * Scheduled uploads default to public unless explicitly overridden.
  */
 function getPublicationPrivacy(options = {}) {
   const requested = String(
-    options.requested ?? process.env.YOUTUBE_PRIVACY_STATUS ?? 'unlisted',
+    options.requested ?? process.env.YOUTUBE_PRIVACY_STATUS ?? 'public',
   ).trim().toLowerCase();
   const eventName = String(
     options.eventName ?? process.env.GITHUB_EVENT_NAME ?? '',
   ).trim().toLowerCase();
   const allowScheduledPublic = String(
-    options.allowScheduledPublic ?? process.env.ALLOW_SCHEDULED_PUBLIC ?? 'false',
+    options.allowScheduledPublic ?? process.env.ALLOW_SCHEDULED_PUBLIC ?? 'true',
   ).trim().toLowerCase() === 'true';
 
   if (!ALLOWED_VISIBILITIES.has(requested)) {
@@ -28,7 +25,7 @@ function getPublicationPrivacy(options = {}) {
 
   if (eventName === 'schedule' && requested === 'public' && !allowScheduledPublic) {
     throw new Error(
-      'Scheduled public upload blocked. Review the video first or explicitly enable ALLOW_SCHEDULED_PUBLIC=true.',
+      'Scheduled public upload blocked. Enable ALLOW_SCHEDULED_PUBLIC=true to allow automatic public publishing.',
     );
   }
 
