@@ -47,7 +47,7 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
     elapsed += length;
     active = Math.min(i + 1, safeSections.length - 1);
   }
-  const current = isIntro ? { orden: 0, tipo: 'intro' as const, titulo: 'LA EDICIÓN DE HOY', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' } : safeSections[active] || { orden: 1, titulo: 'Resumen', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' };
+  const current: ChileLongformSection = isIntro ? { orden: 0, tipo: 'resultado', titulo: 'LA EDICIÓN DE HOY', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' } : safeSections[active] || { orden: 1, titulo: 'Resumen', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' };
   const score = current.tipo === 'resultado' ? current.titulo.match(/^(.*?)\\s+(\\d+)\\s*[-–]\\s*(\\d+)\\s+(.*)$/) : null;
   const isUpcoming = current.tipo === 'proximo' || current.titulo.startsWith('PRÓXIMO:');
   const isChile = /chile|colo colo|copa chile|liga de ascenso/i.test(current.titulo + ' ' + current.cuerpo);
