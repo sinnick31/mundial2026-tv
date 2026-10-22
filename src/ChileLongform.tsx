@@ -21,6 +21,7 @@ export interface ChileLongformProps {
   fuente?: string;
   sectionFrames?: number[];
   introFrames?: number;
+  outroFrames?: number;
   sectionDurationInFrames?: number;
 }
 const clamp = (s: string, n: number) => (s || '').length > n ? `${s.slice(0, n - 1)}…` : s;
@@ -33,12 +34,14 @@ const TeamBadge: React.FC<{name:string; src?:string; align?:'left'|'right'}> = (
     <div style={{fontSize:29,fontWeight:900,lineHeight:1.12,textAlign:align==='right'?'right':'left'}}>{clamp(name,34)}</div>
   </div>
 );
-export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sections, audioSrc, fuente, sectionFrames, introFrames = 0, sectionDurationInFrames = 450 }) => {
+export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sections, audioSrc, fuente, sectionFrames, introFrames = 0, outroFrames = 0, sectionDurationInFrames = 450 }) => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 16], [0, 1], { extrapolateRight: 'clamp' });
   const safeSections = sections?.length ? sections : [];
   const sceneFrame = Math.max(0, frame - introFrames);
   const isIntro = frame < introFrames;
+  const sectionTotalFrames = (sectionFrames || []).reduce((sum,n)=>sum+Math.max(1,n),0) || safeSections.length * sectionDurationInFrames;
+  const isOutro = !isIntro && sceneFrame >= sectionTotalFrames;
   let active = 0;
   let elapsed = 0;
   for (let i=0;i<safeSections.length;i++) {
@@ -47,11 +50,11 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
     elapsed += length;
     active = Math.min(i + 1, safeSections.length - 1);
   }
-  const current: ChileLongformSection = isIntro ? { orden: 0, tipo: 'resultado', titulo: 'LA EDICIÓN DE HOY', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' } : safeSections[active] || { orden: 1, titulo: 'Resumen', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' };
+  const current: ChileLongformSection = isIntro ? { orden: 0, tipo: 'resultado', titulo: 'LA EDICIÓN DE HOY', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' } : isOutro ? { orden: safeSections.length + 1, tipo: 'resultado', titulo: 'FUENTES Y PRÓXIMAS FECHAS', cuerpo: 'Gracias por acompañarnos. Consulta las fuentes enlazadas en la descripción y confirma la programación antes de cada encuentro.', fuente: fuente || 'Fuentes consultadas', url: '' } : safeSections[active] || { orden: 1, titulo: 'Resumen', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' };
   const score = current.tipo === 'resultado' ? current.titulo.match(/^(.*?)\\s+(\\d+)\\s*[-–]\\s*(\\d+)\\s+(.*)$/) : null;
   const isUpcoming = current.tipo === 'proximo' || current.titulo.startsWith('PRÓXIMO:');
   const isChile = /chile|colo colo|copa chile|liga de ascenso/i.test(current.titulo + ' ' + current.cuerpo);
-  const progress = isIntro ? 0 : safeSections.length ? Math.min(100, ((active + 1) / safeSections.length) * 100) : 100;
+  const progress = isIntro ? 0 : isOutro ? 100 : safeSections.length ? Math.min(100, ((active + 1) / safeSections.length) * 100) : 100;
   const accent = colors[active % colors.length];
   const template = active % 3;
   return (
@@ -69,7 +72,7 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
       </div>
       <div style={{position:'absolute',left:64,right:64,top:118,bottom:88,display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
         <div>
-          <div style={{fontSize:18,color:accent,fontWeight:800,letterSpacing:4,marginBottom:12}}>{isIntro?'APERTURA · CHILE Y EL MUNDO':isUpcoming?'AGENDA · FECHAS PROGRAMADAS':template===0?'EL MARCADOR Y SUS DATOS':template===1?'LA FICHA DEL ENCUENTRO':'RESULTADOS · CHILE Y EL MUNDO'}</div>
+          <div style={{fontSize:18,color:accent,fontWeight:800,letterSpacing:4,marginBottom:12}}>{isIntro?'APERTURA · CHILE Y EL MUNDO':isOutro?'CIERRE · FUENTES CONSULTADAS':isUpcoming?'AGENDA · FECHAS PROGRAMADAS':template===0?'EL MARCADOR Y SUS DATOS':template===1?'LA FICHA DEL ENCUENTRO':'RESULTADOS · CHILE Y EL MUNDO'}</div>
           <div style={{fontSize:46,lineHeight:1.08,fontWeight:900,maxWidth:1650}}>{clamp(title,105)}</div>
           <div style={{fontSize:21,lineHeight:1.35,color:'#c4d1df',marginTop:12,maxWidth:1500}}>{clamp(intro,220)}</div>
         </div>
@@ -97,7 +100,7 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
           </div>
         </div>
       </div>
-      <div style={{position:'absolute',bottom:0,left:0,right:0,height:58,background:accent,display:'flex',alignItems:'center',padding:'0 64px',fontSize:18,fontWeight:900,letterSpacing:2}}>{isIntro?'NOTICIAS Y FÚTBOL · CHILENSIS FÚTBOL':isUpcoming?'AGENDA DE ENCUENTROS · HORARIOS SUJETOS A CAMBIOS':'RESULTADOS Y DATOS DISPONIBLES · CHILENSIS FÚTBOL'}</div>
+      <div style={{position:'absolute',bottom:0,left:0,right:0,height:58,background:accent,display:'flex',alignItems:'center',padding:'0 64px',fontSize:18,fontWeight:900,letterSpacing:2}}>{isIntro?'NOTICIAS Y FÚTBOL · CHILENSIS FÚTBOL':isOutro?'FUENTES EN LA DESCRIPCIÓN · CHILENSIS FÚTBOL':isUpcoming?'AGENDA DE ENCUENTROS · HORARIOS SUJETOS A CAMBIOS':'RESULTADOS Y DATOS DISPONIBLES · CHILENSIS FÚTBOL'}</div>
     </AbsoluteFill>
   );
 };
