@@ -126,9 +126,9 @@ function buildNarration(item, type, resumen) {
 }
 function inferMatchup(title) {
   const value = clean(title);
-  const match = value.match(/^(.{2,48}?)\\s+(?:vs\\.?|versus|contra)\\s+(.{2,48}?)(?=\\s*[:|–—]\\s*|$)/i);
+  const match = value.match(/^(.{2,48}?)\s+(?:vs\.?|versus|contra)\s+(.{2,48}?)(?=\s*[:|–—]\s*|$)/i);
   if (!match) return null;
-  const home = clean(match[1]).replace(/^.*?:\\s*/, '').trim();
+  const home = clean(match[1]).replace(/^.*?:\s*/, '').trim();
   const away = clean(match[2]).trim();
   if (home.length < 2 || away.length < 2 || normalize(home) === normalize(away)) return null;
   return { home, away };
