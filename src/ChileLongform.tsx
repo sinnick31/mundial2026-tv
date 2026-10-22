@@ -25,11 +25,11 @@ export interface ChileLongformProps {
   sectionDurationInFrames?: number;
 }
 const clamp = (s: string, n: number) => (s || '').length > n ? `${s.slice(0, n - 1)}…` : s;
-const initials = (s: string) => (s || '?').split(/\\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase();
+const initials = (s: string) => (s || '?').split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase();
 const colors = ['#E63946','#22A6B3','#F4A261','#7C5CFC'];
 const TeamBadge: React.FC<{name:string; src?:string; align?:'left'|'right'}> = ({name,src,align='left'}) => (
   <div style={{flex:1,minWidth:0,display:'flex',flexDirection:'column',alignItems:align==='right'?'flex-end':'flex-start',gap:12}}>
-    {src && /^https:\\/\\//i.test(src) ? <Img src={src} style={{width:100,height:100,objectFit:'contain',background:'rgba(255,255,255,.96)',borderRadius:18,padding:8}} /> :
+    {src && /^https:\/\//i.test(src) ? <Img src={src} style={{width:100,height:100,objectFit:'contain',background:'rgba(255,255,255,.96)',borderRadius:18,padding:8}} /> :
       <div style={{width:100,height:100,display:'flex',alignItems:'center',justifyContent:'center',background:'linear-gradient(145deg,#f7fafc,#cbd5e1)',color:'#172438',borderRadius:18,fontSize:30,fontWeight:1000,border:'3px solid rgba(255,255,255,.25)'}}>{initials(name)}</div>}
     <div style={{fontSize:29,fontWeight:900,lineHeight:1.12,textAlign:align==='right'?'right':'left'}}>{clamp(name,34)}</div>
   </div>
@@ -51,7 +51,7 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
     active = Math.min(i + 1, safeSections.length - 1);
   }
   const current: ChileLongformSection = isIntro ? { orden: 0, tipo: 'resultado', titulo: 'LA EDICIÓN DE HOY', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' } : isOutro ? { orden: safeSections.length + 1, tipo: 'resultado', titulo: 'FUENTES Y PRÓXIMAS FECHAS', cuerpo: 'Gracias por acompañarnos. Consulta las fuentes enlazadas en la descripción y confirma la programación antes de cada encuentro.', fuente: fuente || 'Fuentes consultadas', url: '' } : safeSections[active] || { orden: 1, titulo: 'Resumen', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' };
-  const score = current.tipo === 'resultado' ? current.titulo.match(/^(.*?)\\s+(\\d+)\\s*[-–]\\s*(\\d+)\\s+(.*)$/) : null;
+  const score = current.tipo === 'resultado' ? current.titulo.match(/^(.*?)\s+(\d+)\s*[-–]\s*(\d+)\s+(.*)$/) : null;
   const isUpcoming = current.tipo === 'proximo' || current.titulo.startsWith('PRÓXIMO:');
   const isChile = /chile|colo colo|copa chile|liga de ascenso/i.test(current.titulo + ' ' + current.cuerpo);
   const progress = isIntro ? 0 : isOutro ? 100 : safeSections.length ? Math.min(100, ((active + 1) / safeSections.length) * 100) : 100;
