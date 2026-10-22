@@ -14,7 +14,7 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const CACHE = path.join(ROOT, 'matches-cache.json');
 const OUT = path.join(ROOT, 'out', TODAY, 'resumen-resultados.mp4');
 const FPS = 30;
-const SECTION_FRAMES = 450; // 15 segundos por partido
+const SECTION_FRAMES = 240; // mínimo visual de 8 segundos por sección
 
 const norm = (s='') => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 const isChile = (m) => /primera division de chile|copa chile|liga de ascenso|futbol chileno|chile/i.test(norm(m.competencia || ''));
@@ -38,7 +38,7 @@ function mainData() {
     (Number(isColo(b))*100 + Number(isChile(b))*30 + Number(b.prioridad||0))
     - (Number(isColo(a))*100 + Number(isChile(a))*30 + Number(a.prioridad||0))
     || new Date(b.fecha || 0) - new Date(a.fecha || 0)
-  ).slice(0, 20);
+  ).slice(0, 8);
 }
 
 async function main() {
@@ -62,11 +62,15 @@ async function main() {
   if (!audio.audioPath || !audio.duracionSeg) throw new Error('No se pudo generar la narración; se cancela la publicación para evitar un vídeo silencioso. Revisa GEMINI_API_KEY y el servicio TTS.');
   const audioSrc = audio.audioPath ? 'tmp/resultados-diarios.wav' : undefined;
   const props = { title, intro, sections, audioSrc, fuente: 'Fuentes deportivas enlazadas en la descripción' };
-  const sectionDurationInFrames = Math.max(SECTION_FRAMES, Math.ceil(((audio.duracionSeg || 0) + 2) * FPS / sections.length));
-  props.sectionDurationInFrames = sectionDurationInFrames;
-  const framesBySections = Math.max(1, sections.length) * sectionDurationInFrames;
-  const audioFrames = audio.duracionSeg ? Math.ceil((audio.duracionSeg + 2) * FPS) : 0;
-  const durationInFrames = Math.max(framesBySections, audioFrames, 900);
+  // La narración es continua. Repartimos los cambios de escena según la cantidad de palabras
+  // de cada bloque para evitar que todos los partidos tengan una duración visual idéntica.
+  const wordCount = value => String(value || '').trim().split(/\\s+/).filter(Boolean).length;
+  const narrationBlocks = [title, intro, ...sections.map((s,i)=>`${s.tipo === 'proximo' ? 'Próximo encuentro' : 'Resultado final'} ${i+1}. ${s.titulo}. ${s.cuerpo}`), 'Estas son las novedades disponibles en las fuentes enlazadas en la descripción. Las fechas pueden cambiar; revisa la fuente oficial antes de cada encuentro.'];
+  const weights = narrationBlocks.slice(2, 2 + sections.length).map(wordCount);
+  const totalWeight = weights.reduce((sum,n)=>sum+n,0) || 1;
+  const availableFrames = Math.max(1, Math.ceil(((audio.duracionSeg || 0) + 1) * FPS));
+  props.sectionFrames = weights.map(n => Math.max(SECTION_FRAMES, Math.round(availableFrames * n / totalWeight)));
+  const durationInFrames = Math.max(availableFrames, props.sectionFrames.reduce((sum,n)=>sum+n,0), 900);
   fs.mkdirSync(path.dirname(OUT), {recursive:true});
   const propsArg = JSON.stringify(props).replace(/'/g, "'\\''");
   execSync(`npx remotion render src/index.tsx ChileLongform "${OUT}" --props='${propsArg}' --duration-in-frames=${durationInFrames} --codec=h264 --fps=30 --width=1920 --height=1080 --concurrency=2`, {cwd:ROOT, stdio:'inherit'});
@@ -78,7 +82,7 @@ async function main() {
   const response = await youtube.videos.insert({
     part:['snippet','status'],
     requestBody:{
-      snippet:{title, description, tags:['Fútbol chileno','Colo-Colo','Resultados fútbol','Fútbol mundial'], categoryId:'17', defaultLanguage:'es'},
+      snippet:{title, description, tags:['Fútbol chileno','Colo-Colo','Resultados fútbol','Próximos partidos','Fútbol mundial'], categoryId:'17', defaultLanguage:'es'},
       status:{privacyStatus, selfDeclaredMadeForKids:false, madeForKids:false},
     },
     media:{body:fs.createReadStream(OUT)},
