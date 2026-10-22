@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "PUNTOS POR VICTORIA LA LIGA",
-      "titulo": "Real Oviedo: 4.83 puntos por victoria. ¿La estrategia de los empates?",
-      "fecha": "2026-08-03T04:36:00.257Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "CATÓLICA GOLEADA, PIERDE TÍTULO!",
       "titulo": "Católica perdió el título goleada por Concepción: ¿Fin de una era en los Cruzados?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: La formación que prepara Fernando Ortiz en Colo Colo para enfrentar a…",
       "titulo": "FÚTBOL MUNDIAL: La formación que prepara Fernando Ortiz en Colo Colo para… | Lo que cambia",
       "fecha": "2026-10-22T01:10:18.277Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: Colo Colo se despide con un triunfo ante Caracas: la tabla del grupo A de la…",
+      "titulo": "FÚTBOL MUNDIAL: Colo Colo se despide con un triunfo ante Caracas: la tabla del… | Lo que cambia",
+      "fecha": "2026-10-22T13:29:35.591Z"
     }
   ]
 }
