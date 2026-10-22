@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('node:fs');
-const { execFileSync } = require('node:child_process');
+const { execFileSync, spawnSync } = require('node:child_process');
 
 function validateRenderedVideo(filePath) {
   if (!fs.existsSync(filePath)) throw new Error('VIDEO_GATE_BLOCKED: no existe el archivo renderizado');
@@ -30,17 +30,13 @@ function validateRenderedVideo(filePath) {
 
   // Only blocks long intervals where virtually the entire frame is black.
   // Dark sports graphics remain valid because text, lines and other elements break the threshold.
-  let diagnostics = '';
-  try {
-    diagnostics = execFileSync('ffmpeg', [
-      '-hide_banner', '-i', filePath, '-vf', 'blackdetect=d=2.8:pix_th=0.10:pic_th=0.98',
-      '-an', '-f', 'null', '-',
-    ], { encoding: 'utf8', stdio: ['ignore', 'ignore', 'pipe'] });
-  } catch (error) {
-    diagnostics = String(error.stderr || '');
-    if (error.status !== 0) {
-      throw new Error('VIDEO_GATE_BLOCKED: ffmpeg no pudo analizar los fotogramas: ' + diagnostics.slice(-500));
-    }
+  const analysis = spawnSync('ffmpeg', [
+    '-hide_banner', '-i', filePath, '-vf', 'blackdetect=d=2.8:pix_th=0.10:pic_th=0.98',
+    '-an', '-f', 'null', '-',
+  ], { encoding: 'utf8', stdio: ['ignore', 'ignore', 'pipe'] });
+  const diagnostics = String(analysis.stderr || '');
+  if (analysis.error || analysis.status !== 0) {
+    throw new Error('VIDEO_GATE_BLOCKED: ffmpeg no pudo analizar los fotogramas: ' + String(analysis.error || diagnostics).slice(-500));
   }
   const blackIntervals = diagnostics.match(/black_duration:([0-9.]+)/g) || [];
   const longBlack = blackIntervals.map((entry) => Number(entry.split(':')[1])).filter((seconds) => seconds >= 2.8);
