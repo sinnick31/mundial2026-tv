@@ -34,7 +34,7 @@ const TeamBadge: React.FC<{name:string; src?:string; align?:'left'|'right'}> = (
     <div style={{fontSize:29,fontWeight:900,lineHeight:1.12,textAlign:align==='right'?'right':'left'}}>{clamp(name,34)}</div>
   </div>
 );
-export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sections, audioSrc, fuente, sectionFrames, introFrames = 0, outroFrames = 0, sectionDurationInFrames = 450 }) => {
+export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sections, audioSrc, fuente, sectionFrames, introFrames = 0, sectionDurationInFrames = 450 }) => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 16], [0, 1], { extrapolateRight: 'clamp' });
   const safeSections = sections?.length ? sections : [];
