@@ -84,12 +84,13 @@ async function main() {
   const weights = sectionNarration.map(wordCount);
   const introWords = wordCount(title) + wordCount(intro);
   const totalWords = narrationBlocks.reduce((sum,block)=>sum+wordCount(block),0) || 1;
+  const outroFrames = Math.max(60, Math.round(audioFrames * wordCount(closing) / totalWords));
   const introFrames = Math.max(60, Math.round(audioFrames * introWords / totalWords));
-  const sectionBudget = Math.max(MIN_SECTION_FRAMES * sections.length, audioFrames - introFrames);
+  const sectionBudget = Math.max(MIN_SECTION_FRAMES * sections.length, audioFrames - introFrames - outroFrames);
   const totalSectionWords = weights.reduce((sum,n)=>sum+n,0) || 1;
   const sectionFrames = weights.map(n=>Math.max(MIN_SECTION_FRAMES,Math.round(sectionBudget*n/totalSectionWords)));
-  const props = {title,intro,sections,audioSrc:'tmp/resultados-diarios.wav',fuente:'Fuentes deportivas enlazadas en la descripción',introFrames,sectionFrames};
-  const durationInFrames = Math.max(900, introFrames + sectionFrames.reduce((sum,n)=>sum+n,0), audioFrames);
+  const props = {title,intro,sections,audioSrc:'tmp/resultados-diarios.wav',fuente:'Fuentes deportivas enlazadas en la descripción',introFrames,sectionFrames,outroFrames};
+  const durationInFrames = Math.max(900, introFrames + sectionFrames.reduce((sum,n)=>sum+n,0) + outroFrames, audioFrames);
   fs.mkdirSync(path.dirname(OUT), {recursive:true});
   const propsArg = JSON.stringify(props).replace(/'/g, "'\\''");
   execSync(`npx remotion render src/index.tsx ChileLongform "${OUT}" --props='${propsArg}' --duration-in-frames=${durationInFrames} --codec=h264 --fps=30 --width=1920 --height=1080 --concurrency=2`, {cwd:ROOT, stdio:'inherit'});
