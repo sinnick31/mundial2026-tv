@@ -230,7 +230,7 @@ jobs:
           node - <<'NODE'
           const fs = require('fs');
           const path = 'public/broll';
-          const clips = fs.existsSync(path) ? fs.readdirSync(path).filter(f => /\\.mp4$/i.test(f)) : [];
+          const clips = fs.existsSync(path) ? fs.readdirSync(path).filter(f => /\.mp4$/i.test(f)) : [];
           console.log('Clips visuales disponibles:', clips.length);
           if (!clips.length) {
             console.error('::error::No hay clips visuales. Se bloquea la publicación para evitar un Short sin imágenes.');
