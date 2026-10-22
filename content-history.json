@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CORREA GANA 70 MILLONES EN COLO-COLO",
-      "titulo": "Javier Correa: $70 millones mensuales en Colo-Colo. ¿Salario top en Chile?",
-      "fecha": "2026-08-03T04:35:33.703Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "PUNTOS POR VICTORIA LA LIGA",
       "titulo": "Real Oviedo: 4.83 puntos por victoria. ¿La estrategia de los empates?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Se fue de Colo-Colo a principio de año y ahora vive un irregular presente en…",
       "titulo": "FÚTBOL CHILENO: Se fue de Colo-Colo a principio de año y ahora vive un irregular… | Lo que cambia",
       "fecha": "2026-10-21T22:15:34.883Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: La formación que prepara Fernando Ortiz en Colo Colo para enfrentar a…",
+      "titulo": "FÚTBOL MUNDIAL: La formación que prepara Fernando Ortiz en Colo Colo para… | Lo que cambia",
+      "fecha": "2026-10-22T01:10:18.277Z"
     }
   ]
 }
