@@ -58,6 +58,10 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Check JavaScript syntax
         run: |
@@ -73,3 +77,6 @@ jobs:
 
       - name: Test editorial and upload policy
         run: npm run test:all
+
+      - name: Type-check Remotion components
+        run: npx tsc --noEmit

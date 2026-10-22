@@ -20,6 +20,8 @@ const path = require('path');
 const { generarNarracion, construirGuion } = require('./generate-narration');
 const { estiloEquipo } = require('./team-styles');
 const { enhanceGeneratedDescription } = require('./metadata-generator');
+const { validateItemForRender } = require('./content-quality-gate');
+const { validateRenderedVideo } = require('./validate-rendered-video');
 
 const ROOT = path.join(__dirname, '..');
 const BROLL_DIR = path.join(ROOT, 'public', 'broll');
@@ -154,8 +156,11 @@ async function prepararRender(item) {
   }
 
   const imagen = imagenAutorizadaParaEquipo(item.equipo1);
+  const imagen2 = item.equipo2 ? imagenAutorizadaParaEquipo(item.equipo2) : {};
   const props = {
     ...imagen,
+    imagenEquipo2Src: imagen2.imagenEquipoSrc,
+    imagenEquipo2Credito: imagen2.imagenEquipoCredito,
     gancho: item.gancho,
     subtitulo: item.subtitulo,
     descripcion: item.descripcion,
@@ -239,8 +244,11 @@ async function main() {
     const videoFile = path.join(outDir, `video_${item._orden}_${item._tipo_contenido}.mp4`);
 
     try {
+      validateItemForRender(item, item._orden || resultados.length + 1);
       const { compositionId, props, durationInFrames } = await prepararRender(item);
       renderVideo(compositionId, props, videoFile, durationInFrames);
+      const quality = validateRenderedVideo(videoFile);
+      console.log(`   🛡️ Control visual aprobado: ${quality.width}x${quality.height}, ${quality.duration}s, ${(quality.bytes / 1e6).toFixed(2)} MB`);
       await new Promise(r => setTimeout(r, 2000));
       const videoId = await uploadToYouTube(youtube, videoFile, item);
 

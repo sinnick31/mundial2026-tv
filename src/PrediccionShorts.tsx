@@ -32,6 +32,8 @@ export type PrediccionProps = {
   fechaPublicacion?: string;
   imagenEquipoSrc?: string;
   imagenEquipoCredito?: string;
+  imagenEquipo2Src?: string;
+  imagenEquipo2Credito?: string;
   etiquetaCanal?: string;
   etiquetaSeccion?: string;
 };
@@ -202,7 +204,8 @@ const HeaderBlock: React.FC<{
   descripcion: string; equipo1: string; equipo2?: string;
   probabilidad: number; tipo: PrediccionProps['tipo'];
   imagenEquipoSrc?: string; imagenEquipoCredito?: string;
-}> = ({ descripcion, equipo1, equipo2, probabilidad, tipo, imagenEquipoSrc, imagenEquipoCredito }) => {
+  imagenEquipo2Src?: string; imagenEquipo2Credito?: string;
+}> = ({ descripcion, equipo1, equipo2, probabilidad, tipo, imagenEquipoSrc, imagenEquipoCredito, imagenEquipo2Src, imagenEquipo2Credito }) => {
   const frame = useCurrentFrame();
   const colores = COLORES[tipo] || COLORES.sorpresa;
   const headerOpacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: 'clamp' });
@@ -259,12 +262,40 @@ const HeaderBlock: React.FC<{
           </div>
         </div>
       )}
-      {imagenEquipoSrc && (
-        <div style={{ width: '100%', marginTop: 4 }}>
-          <div style={{ width: '100%', height: 440, borderRadius: 24, overflow: 'hidden', border: '2px solid #ffffff35', background: '#111' }}>
-            <Img src={imagenEquipoSrc} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      <div style={{ display: 'flex', width: '100%', gap: 18, marginTop: 8 }}>
+        {[{ name: equipo1, src: imagenEquipoSrc, credit: imagenEquipoCredito, accent: colores.acento },
+          ...(equipo2 ? [{ name: equipo2, src: imagenEquipo2Src, credit: imagenEquipo2Credito, accent: colores.acento2 }] : [])].map((team, index) => (
+          <div key={team.name + index} style={{
+            flex: 1, minWidth: 0, height: 330, borderRadius: 22, overflow: 'hidden',
+            border: '2px solid #ffffff35', position: 'relative',
+            background: `radial-gradient(circle at 50% 25%, ${team.accent}88 0%, transparent 45%), linear-gradient(145deg, #182338 0%, #070b14 100%)`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            {team.src ? (
+              <Img src={team.src} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            ) : (
+              <div style={{
+                width: 190, height: 190, borderRadius: '50%', display: 'flex',
+                alignItems: 'center', justifyContent: 'center',
+                border: `5px solid ${team.accent}`, color: '#fff',
+                fontSize: 58, fontWeight: 900, textAlign: 'center',
+                fontFamily: "'Arial Black', sans-serif",
+                background: 'linear-gradient(145deg, #24324b, #090d16)',
+                boxShadow: `0 0 44px ${team.accent}66`,
+              }}>{team.name.split(/\s+/).map(part => part[0] || '').join('').slice(0, 3).toUpperCase()}</div>
+            )}
+            <div style={{
+              position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px 10px',
+              textAlign: 'center', fontSize: 27, lineHeight: 1.1, fontWeight: 900,
+              color: '#fff', background: 'linear-gradient(transparent, rgba(0,0,0,0.94))',
+              fontFamily: "'Arial Black', sans-serif",
+            }}>{team.name}</div>
           </div>
-          {imagenEquipoCredito && <div style={{ marginTop: 8, fontSize: 18, color: '#ffffff99', textAlign: 'right' }}>Imagen: {imagenEquipoCredito}</div>}
+        ))}
+      </div>
+      {[imagenEquipoCredito, imagenEquipo2Credito].filter(Boolean).length > 0 && (
+        <div style={{ fontSize: 16, color: '#ffffff99', textAlign: 'right' }}>
+          Imágenes: {[imagenEquipoCredito, imagenEquipo2Credito].filter(Boolean).join(' · ')}
         </div>
       )}
     </AbsoluteFill>
@@ -326,7 +357,8 @@ const ContentPhase: React.FC<{
   descripcion: string; equipo1: string; equipo2?: string;
   probabilidad: number; puntos: string[]; tipo: PrediccionProps['tipo'];
   durationInFrames: number; brollSrc?: string; imagenEquipoSrc?: string; imagenEquipoCredito?: string;
-}> = ({ descripcion, equipo1, equipo2, probabilidad, puntos, tipo, durationInFrames, brollSrc, imagenEquipoSrc, imagenEquipoCredito }) => {
+  imagenEquipo2Src?: string; imagenEquipo2Credito?: string;
+}> = ({ descripcion, equipo1, equipo2, probabilidad, puntos, tipo, durationInFrames, brollSrc, imagenEquipoSrc, imagenEquipoCredito, imagenEquipo2Src, imagenEquipo2Credito }) => {
   const HEADER_FRAMES = Math.round(durationInFrames * 0.34);
   const puntosFrames = Math.max(durationInFrames - HEADER_FRAMES, 30);
   const perPunto = Math.max(Math.floor(puntosFrames / Math.max(puntos.length, 1)), 20);
@@ -340,6 +372,7 @@ const ContentPhase: React.FC<{
             descripcion={descripcion} equipo1={equipo1} equipo2={equipo2}
             probabilidad={probabilidad} tipo={tipo}
             imagenEquipoSrc={imagenEquipoSrc} imagenEquipoCredito={imagenEquipoCredito}
+            imagenEquipo2Src={imagenEquipo2Src} imagenEquipo2Credito={imagenEquipo2Credito}
           />
           <div style={{
             position: 'absolute', bottom: 50, left: 0, right: 0, textAlign: 'center',
@@ -449,6 +482,7 @@ export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
           probabilidad={props.probabilidad} puntos={props.puntos} tipo={props.tipo}
           durationInFrames={CONTENT_END - HOOK_END} brollSrc={props.brollSrc}
           imagenEquipoSrc={props.imagenEquipoSrc} imagenEquipoCredito={props.imagenEquipoCredito}
+          imagenEquipo2Src={props.imagenEquipo2Src} imagenEquipo2Credito={props.imagenEquipo2Credito}
         />
       </Sequence>
 

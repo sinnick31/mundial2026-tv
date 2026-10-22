@@ -197,7 +197,10 @@ jobs:
         run: |
           node --check scripts/render-and-upload.js
           node --check scripts/publication-policy.js
+          node --check scripts/content-quality-gate.js
+          node --check scripts/validate-rendered-video.js
           npm run test:publication-policy
+          node --test tests/content-quality-gate.test.js
           # Si tsconfig.json/eslint.config.js se corrompen (p. ej. con "\n" literales), tsc ignora la
           # config y reporta cientos de errores falsos en node_modules/@types. Fallar aquí con un mensaje claro.
           node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))" || { echo "::error file=tsconfig.json::tsconfig.json no es JSON válido (¿saltos de línea escapados?)"; exit 1; }
@@ -218,6 +221,22 @@ jobs:
 
       - name: 🎞️ Instalar ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: 🏟️ Preparar clips visuales para evitar fondos vacíos
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: |
+          node scripts/fetch-broll.js
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = 'public/broll';
+          const clips = fs.existsSync(path) ? fs.readdirSync(path).filter(f => /\.mp4$/i.test(f)) : [];
+          console.log('Clips visuales disponibles:', clips.length);
+          if (!clips.length) {
+            console.error('::error::No hay clips visuales. Se bloquea la publicación para evitar un Short sin imágenes.');
+            process.exit(1);
+          }
+          NODE
 
       - name: 📥 Descargar paquete
         uses: actions/download-artifact@v6

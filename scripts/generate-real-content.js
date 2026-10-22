@@ -124,8 +124,19 @@ function buildNarration(item, type, resumen) {
   const fechaTexto = fecha ? `La publicación de ${sourceName} está fechada el ${fecha}. Esta es la fecha de publicación de la fuente, no necesariamente la fecha del partido.` : 'La fecha de publicación no pudo verificarse con los datos disponibles, por lo que no se afirma una fecha de partido.';
   return [`${labelFor(type)}.`, title, `Según ${sourceName}: ${resumen}`, fechaTexto, editorialAngle(type), closingQuestion(type)].join(' ');
 }
+function inferMatchup(title) {
+  const value = clean(title);
+  const match = value.match(/^(.{2,48}?)\s+(?:vs\.?|versus|contra)\s+(.{2,48}?)(?=\s*[:|–—]\s*|$)/i);
+  if (!match) return null;
+  const home = clean(match[1]).replace(/^.*?:\s*/, '').trim();
+  const away = clean(match[2]).trim();
+  if (home.length < 2 || away.length < 2 || normalize(home) === normalize(away)) return null;
+  return { home, away };
+}
+
 function buildItem(item, type, order) {
   const title = clean(item.title);
+  const matchup = inferMatchup(title);
   const resumen = snippet(item);
   const fuente = item.fuente || item.fuente_host || 'Fuente deportiva';
   const fuenteUrl = item.link;
@@ -137,8 +148,9 @@ function buildItem(item, type, order) {
     gancho: ganchoFor(item, type),
     subtitulo: angle,
     descripcion: `${resumen} ${angle}`,
-    equipo1: item.equipo_chile || (type === 'chilenos_exterior' ? 'Chile' : type === 'internacional' ? 'Fútbol mundial' : 'Fútbol chileno'),
-    equipo2: null,
+    // Mostrar rivales únicamente cuando el titular de la fuente los identifica explícitamente.
+    equipo1: matchup?.home || item.equipo_chile || (type === 'chilenos_exterior' ? 'Chile' : type === 'internacional' ? 'Fútbol mundial' : 'Fútbol chileno'),
+    equipo2: matchup?.away || null,
     probabilidad: 0,
     puntos: [`HECHO PUBLICADO: ${title}`, `CONTEXTO DE LA FUENTE: ${resumen}`, fechaPub ? `PUBLICADO EL ${fechaPub} (fecha de publicación, no necesariamente fecha del partido)` : 'FECHA: la fuente no entrega una fecha de publicación verificable; no inventar fecha del partido', `ANÁLISIS EDITORIAL: ${angle}`, `SIGUIENTE DATO A COMPROBAR: ${closingQuestion(type)}`],
     narracion: buildNarration(item, type, resumen),
