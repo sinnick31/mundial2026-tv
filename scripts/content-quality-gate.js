@@ -14,6 +14,16 @@ function validateItemForRender(item, index = 1) {
     if (HTML_TAG.test(item[key])) fail('etiquetas HTML visibles en ' + key);
     if (PLACEHOLDER.test(item[key])) fail('marcador técnico visible en ' + key);
   }
+  // These fields are painted into the video, not only stored in YouTube metadata.
+  const visibleText = [
+    item.gancho, item.subtitulo, item.descripcion, item.narracion,
+    item.equipo1, item.equipo2, ...(Array.isArray(item.puntos) ? item.puntos : []),
+  ].filter((value) => value !== undefined && value !== null).map(String);
+  for (const value of visibleText) {
+    if (MOJIBAKE.test(value)) fail('caracteres dañados en texto visible del video');
+    if (HTML_TAG.test(value) || HTML_ENTITY.test(value)) fail('etiquetas o entidades HTML sin limpiar en texto visible');
+    if (PLACEHOLDER.test(value)) fail('marcador técnico visible en texto del video');
+  }
   if (item.titulo_youtube.length > 100) fail('título supera 100 caracteres');
   if (!Array.isArray(item.puntos) || item.puntos.length < 2 || item.puntos.some((p) => typeof p !== 'string' || p.trim().length < 8)) {
     fail('faltan puntos de contenido legibles');
