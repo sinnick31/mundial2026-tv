@@ -168,6 +168,8 @@ async function getMatchesFromESPN() {
           escudoLocal: home.team?.logo || null,
           escudoVisita: away.team?.logo || null,
           estadio: comp?.venue?.fullName || e.venue?.fullName || null,
+          espnEventId: e.id,
+          espnLeagueSlug: liga.slug,
           golesLocal: status?.completed ? parseInt(home.score || '0', 10) : null,
           golesVisita: status?.completed ? parseInt(away.score || '0', 10) : null,
           golesLocalEnVivo: !status?.completed ? parseInt(home.score || '0', 10) : null,
@@ -216,9 +218,31 @@ async function fetchMatches() {
     })
     .sort((a, b) => (b.prioridad || 5) - (a.prioridad || 5));
 
+  const partidosRecientes = combinar(espn.recientes, fd.recientes).slice(0, 60);
+  // Enriquecer los partidos recientes de ESPN con goleadores/minutos cuando el resumen los exponga.
+  // Si la fuente no publica esos detalles, se dejan ausentes y el guion lo indica expresamente.
+  for (const partido of partidosRecientes.filter(p => p.espnEventId && p.espnLeagueSlug).slice(0, 8)) {
+    try {
+      const summary = await httpGet(`https://site.api.espn.com/apis/site/v2/sports/soccer/${partido.espnLeagueSlug}/summary?event=${partido.espnEventId}`);
+      const plays = Array.isArray(summary.scoringPlays) ? summary.scoringPlays : Array.isArray(summary.scoringPlays?.items) ? summary.scoringPlays.items : [];
+      const goleadores = plays.map(play => {
+        const description = String(play.text || play.type?.text || play.shortText || '');
+        const participants = Array.isArray(play.participants) ? play.participants : Array.isArray(play.athletesInvolved) ? play.athletesInvolved : [];
+        const athlete = participants.map(p => p.athlete?.displayName || p.displayName || p.name).find(Boolean);
+        const goalLike = /goal|gol|penalty|penalti|own goal|autogol/i.test(description) || Boolean(play.type?.id && play.team);
+        if (!goalLike || !athlete) return null;
+        const minute = play.clock?.displayValue || play.time?.displayValue || play.period?.number && `${play.period.number}T` || '';
+        return `${athlete}${minute ? ` (${minute})` : ''}${play.team?.displayName ? ` · ${play.team.displayName}` : ''}`;
+      }).filter(Boolean);
+      if (goleadores.length) partido.goleadores = [...new Set(goleadores)];
+    } catch (err) {
+      console.log(`  ℹ️ Goleadores no disponibles para ${partido.equipo1} vs ${partido.equipo2}: ${err.message}`);
+    }
+  }
+
   const cache = {
     fecha: new Date().toISOString(),
-    partidos_recientes: combinar(espn.recientes, fd.recientes).slice(0, 60),
+    partidos_recientes: partidosRecientes,
     partidos_en_curso: espn.enCurso || [],
     partidos_proximos: combinar(espn.proximos, fd.proximos).slice(0, 20),
     tabla_posiciones: fd.standings,
