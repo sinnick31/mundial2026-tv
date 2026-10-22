@@ -282,7 +282,7 @@ const HeaderBlock: React.FC<{
                 fontFamily: "'Arial Black', sans-serif",
                 background: 'linear-gradient(145deg, #24324b, #090d16)',
                 boxShadow: `0 0 44px ${team.accent}66`,
-              }}>{team.name.split(/\\s+/).map(part => part[0] || '').join('').slice(0, 3).toUpperCase()}</div>
+              }}>{team.name.split(/\s+/).map(part => part[0] || '').join('').slice(0, 3).toUpperCase()}</div>
             )}
             <div style={{
               position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px 10px',
