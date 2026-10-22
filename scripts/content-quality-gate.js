@@ -1,7 +1,8 @@
 'use strict';
 
-const MOJIBAKE = /(?:Ã[\u0080-\u00BF]|Â[\u0080-\u00BF]|â€|ï¿½|\uFFFD|\\uFFFD)/i;
+const MOJIBAKE = /(?:Ã[\u0080-\u00FF]|Â[\u0080-\u00FF]|â€|ï¿½|�|\\uFFFD)/i;
 const HTML_TAG = /<\/?[a-z][^>]*>/i;
+const HTML_ENTITY = /&(?:#\d+|#x[\da-f]+|[a-z]+);/i;
 const PLACEHOLDER = /\b(?:undefined|null|NaN|TODO|PLACEHOLDER)\b/i;
 const GENERIC_TEAM = /^(?:f[uú]tbol chileno|f[uú]tbol mundial|chile|noticias|equipo local|equipo visitante|por definir)$/i;
 
