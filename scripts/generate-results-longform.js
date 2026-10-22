@@ -74,7 +74,7 @@ async function main() {
   const channel = await verifyChannel(youtube);
   const sourceList = sections.map(s=>`${s.titulo}\nFuente: ${s.fuente}\n${s.url}`).join('\n\n');
   const description = `${intro}\n\nMarcadores recopilados de fuentes deportivas disponibles. No se incluyen clips de retransmisión.\n\nFUENTES\n${sourceList}\n\n#FutbolChileno #ColoColo #ResultadosFutbol #FutbolMundial`;
-  const privacyStatus = process.env.RESULTS_VIDEO_PRIVACY || 'unlisted';
+  const privacyStatus = process.env.RESULTS_VIDEO_PRIVACY || 'public';
   const response = await youtube.videos.insert({
     part:['snippet','status'],
     requestBody:{
