@@ -35,7 +35,7 @@ on:
       privacy:
         description: 'Visibilidad del vídeo subido'
         required: true
-        default: 'unlisted'
+        default: 'public'
         type: choice
         options: ['unlisted', 'private', 'public']
 
@@ -232,8 +232,8 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
-          YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'unlisted' }}
-          ALLOW_SCHEDULED_PUBLIC: ${{ vars.ALLOW_SCHEDULED_PUBLIC || 'false' }}
+          YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'public' }}
+          ALLOW_SCHEDULED_PUBLIC: ${{ vars.ALLOW_SCHEDULED_PUBLIC || 'true' }}
         run: node scripts/render-and-upload.js
 
       - name: 🔎 Verificar publicación
