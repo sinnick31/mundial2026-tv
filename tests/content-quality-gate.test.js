@@ -56,3 +56,15 @@ test('acepta un partido con ambos equipos identificados', () => {
   item._goles_visita = 1;
   assert.deepEqual(validateItemForRender(item), { ok: true });
 });
+
+test('bloquea caracteres corruptos en el texto que se dibuja en pantalla', () => {
+  const item = validItem();
+  item.descripcion = 'La noticia es FÃºtbol chileno';
+  assert.throws(() => validateItemForRender(item), /caracteres dañados en texto visible/);
+});
+
+test('bloquea entidades HTML que aparecerían literalmente en pantalla', () => {
+  const item = validItem();
+  item.subtitulo = 'La noticia &nbsp; del partido';
+  assert.throws(() => validateItemForRender(item), /entidades HTML sin limpiar/);
+});
