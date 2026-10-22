@@ -14,15 +14,15 @@ export const ResultsThumbnail: React.FC<ResultsThumbnailProps> = ({ date, count 
     <div style={{ position: 'absolute', right: -90, top: -160, width: 520, height: 520, borderRadius: 260, border: '42px solid rgba(255,255,255,0.06)' }} />
     <div style={{ position: 'absolute', right: 95, top: 105, fontSize: 150, opacity: 0.95 }}>⚽</div>
     <div style={{ position: 'absolute', left: 76, top: 62, fontSize: 25, fontWeight: 900, letterSpacing: 5, color: '#E63946' }}>CHILENSIS FÚTBOL</div>
-    <div style={{ position: 'absolute', left: 72, top: 150, fontSize: 82, lineHeight: 0.98, fontWeight: 1000, letterSpacing: -2, maxWidth: 930 }}>
-      RESULTADOS<br />DEL FÚTBOL
+    <div style={{ position: 'absolute', left: 72, top: 150, fontSize: 82, lineHeight: 0.98, fontWeight: 1000, letterSpacing: -2, maxWidth: 1000 }}>
+      RESULTADOS<br />Y PRÓXIMAS FECHAS
     </div>
     <div style={{ position: 'absolute', left: 78, top: 365, background: '#E63946', padding: '14px 22px', borderRadius: 7, fontSize: 27, fontWeight: 900, letterSpacing: 2 }}>
       CHILE + MUNDO
     </div>
     <div style={{ position: 'absolute', left: 78, bottom: 67, fontSize: 28, color: '#d5e2ef', fontWeight: 700 }}>
-      {date}  ·  {count} {count === 1 ? 'PARTIDO' : 'PARTIDOS'} VERIFICADOS
+      {date} · {count} {count === 1 ? 'TEMA' : 'TEMAS'} DE LA EDICIÓN
     </div>
-    <div style={{ position: 'absolute', right: 52, bottom: 47, fontSize: 19, color: '#91a9c1', letterSpacing: 2 }}>QUÉ PASÓ · POR QUÉ IMPORTA</div>
+    <div style={{ position: 'absolute', right: 52, bottom: 47, fontSize: 19, color: '#91a9c1', letterSpacing: 2 }}>MARCADORES · AGENDA · EQUIPOS</div>
   </AbsoluteFill>
 );
