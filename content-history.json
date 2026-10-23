@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "EX COLO COLO BAJA A TERCERA DIVISIÓN",
-      "titulo": "Ex Colo Colo baja a tercera división: ¿Qué significa este fichaje?",
-      "fecha": "2026-08-03T14:47:52.008Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "DEPENDENCIA DE EMPATES LA LIGA",
       "titulo": "Real Oviedo: 11 de sus 29 puntos son empates. ¿Estrategia de supervivencia?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: En Palestino destacan el presente de Colo Colo previo al partido por la Liga…",
       "titulo": "FÚTBOL MUNDIAL: En Palestino destacan el presente de Colo Colo previo al partido… | Lo que cambia",
       "fecha": "2026-10-22T22:15:25.832Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Tras el receso vuelve el fútbol chileno a la TV abierta: Canal 13 anuncia el…",
+      "titulo": "FÚTBOL CHILENO: Tras el receso vuelve el fútbol chileno a la TV abierta: Canal… | Lo que cambia",
+      "fecha": "2026-10-23T01:09:31.099Z"
     }
   ]
 }
