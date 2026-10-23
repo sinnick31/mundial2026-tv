@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DEPENDENCIA DE EMPATES LA LIGA",
-      "titulo": "Real Oviedo: 11 de sus 29 puntos son empates. ¿Estrategia de supervivencia?",
-      "fecha": "2026-08-03T14:48:14.231Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "CATÓLICA GOLEADA, ¡ADIÓS AL TÍTULO!",
       "titulo": "U. Católica fue goleada por Deportes Concepción: ¿Se complica el título?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Tras el receso vuelve el fútbol chileno a la TV abierta: Canal 13 anuncia el…",
       "titulo": "FÚTBOL CHILENO: Tras el receso vuelve el fútbol chileno a la TV abierta: Canal… | Lo que cambia",
       "fecha": "2026-10-23T01:09:31.099Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "ES OFICIAL: Fernando Ortiz confirma amistoso de Colo-Colo contra un grande de Argentina - En…",
+      "titulo": "FÚTBOL CHILENO: Fernando Ortiz confirma amistoso de Colo-Colo contra un grande… | Lo que cambia",
+      "fecha": "2026-10-23T18:32:26.789Z"
     }
   ]
 }
