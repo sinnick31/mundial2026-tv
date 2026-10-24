@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "COLO COLO: ¡NUEVO RÉCORD EN LIGA!",
-      "titulo": "Colo Colo vence a Everton y marca récord en Liga: ¿Impacta en el título?",
-      "fecha": "2026-08-03T22:00:25.151Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "CATÓLICA SE QUEDA SIN TÍTULO",
       "titulo": "Universidad Católica cayó goleada: ¿Adiós al título?",
       "fecha": "2026-08-03T22:00:38.233Z"
@@ -3499,6 +3492,13 @@
       "hook": "ES OFICIAL: Oficial: ANFP reprograma dos partidos claves del fútbol chileno - AS Chile",
       "titulo": "FÚTBOL CHILENO: Oficial: ANFP reprograma dos partidos claves del fútbol chileno… | Lo que cambia",
       "fecha": "2026-10-24T17:46:51.881Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Esto dicen en Palestino antes de enfrentar a Colo-Colo - En Cancha",
+      "titulo": "FÚTBOL CHILENO: Esto dicen en Palestino antes de enfrentar a Colo-Colo - En Cancha | Lo que cambia",
+      "fecha": "2026-10-24T21:28:49.437Z"
     }
   ]
 }
