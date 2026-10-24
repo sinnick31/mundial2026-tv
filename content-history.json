@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DEFENSA RESILIENTE LALIGA",
-      "titulo": "Getafe CF con 2.24 goles por derrota en La Liga: ¿La defensa más dura? 🛡️",
-      "fecha": "2026-08-03T17:53:12.057Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "COLO COLO: ¡NUEVO RÉCORD EN LIGA!",
       "titulo": "Colo Colo vence a Everton y marca récord en Liga: ¿Impacta en el título?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: La FIFA llegó hasta el Monumental y se hizo presente en las juveniles de…",
       "titulo": "FÚTBOL CHILENO: La FIFA llegó hasta el Monumental y se hizo presente en las… | Lo que cambia",
       "fecha": "2026-10-24T01:18:48.843Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "ES OFICIAL: Oficial: ANFP reprograma dos partidos claves del fútbol chileno - AS Chile",
+      "titulo": "FÚTBOL CHILENO: Oficial: ANFP reprograma dos partidos claves del fútbol chileno… | Lo que cambia",
+      "fecha": "2026-10-24T17:46:51.881Z"
     }
   ]
 }
