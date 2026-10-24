@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "EX COLO COLO BAJA A TERCERA",
-      "titulo": "Ex Colo Colo baja a tercera división: ¿el fin de una carrera?",
-      "fecha": "2026-08-03T17:52:53.969Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "DEFENSA RESILIENTE LALIGA",
       "titulo": "Getafe CF con 2.24 goles por derrota en La Liga: ¿La defensa más dura? 🛡️",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Gedeón Díaz da el salto más importante en Colo-Colo - En Cancha",
       "titulo": "FÚTBOL CHILENO: Gedeón Díaz da el salto más importante en Colo-Colo - En Cancha | Lo que cambia",
       "fecha": "2026-10-23T21:58:43.102Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: La FIFA llegó hasta el Monumental y se hizo presente en las juveniles de…",
+      "titulo": "FÚTBOL CHILENO: La FIFA llegó hasta el Monumental y se hizo presente en las… | Lo que cambia",
+      "fecha": "2026-10-24T01:18:48.843Z"
     }
   ]
 }
