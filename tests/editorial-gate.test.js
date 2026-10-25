@@ -69,3 +69,15 @@ test('rechaza total incoherente o más de dos piezas', () => {
 test('rechaza URL con credenciales incrustadas', () => {
   assert.equal(validateSourceUrl('https://user:pass@example.com/story'), false);
 });
+
+test('rechaza entidades HTML en la narración antes del render', () => {
+  const pkg = validPackage();
+  pkg.contenido[0].narracion = 'La narración contiene &nbsp; sin decodificar. '.repeat(6);
+  assert.throws(() => validatePackage(pkg), /entidad HTML sin decodificar en narracion/);
+});
+
+test('rechaza etiquetas HTML en títulos', () => {
+  const pkg = validPackage();
+  pkg.contenido[0].titulo_youtube = '<b>FÚTBOL CHILENO</b>: noticia y contexto';
+  assert.throws(() => validatePackage(pkg), /etiquetas HTML sin limpiar en titulo_youtube/);
+});
