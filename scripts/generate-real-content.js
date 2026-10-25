@@ -18,7 +18,29 @@ function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (_) { return fallback; }
 }
 function clean(s = '') {
-  return String(s).replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
+  // El texto de los feeds puede llegar con etiquetas o entidades HTML.
+  // Se eliminan etiquetas y se decodifican entidades antes de crear cualquier pieza.
+  const named = {
+    amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ',
+    ndash: '–', mdash: '—', hellip: '…', rsquo: '’', lsquo: '‘',
+    rdquo: '”', ldquo: '“', bull: '•', copy: '©', reg: '®',
+  };
+  return String(s)
+    .replace(/<\\/?[a-z][^>]*>/gi, ' ')
+    .replace(/&(#x[0-9a-f]+|#\\d+|[a-z][a-z0-9]+);/gi, (entity, code) => {
+      if (code[0] === '#') {
+        const hex = code[1]?.toLowerCase() === 'x';
+        const number = Number.parseInt(code.slice(hex ? 2 : 1), hex ? 16 : 10);
+        if (!Number.isFinite(number) || number <= 0 || number > 0x10ffff
+          || (number >= 0xd800 && number <= 0xdfff)) return ' ';
+        try { return String.fromCodePoint(number); } catch { return ' '; }
+      }
+      return Object.prototype.hasOwnProperty.call(named, code.toLowerCase())
+        ? named[code.toLowerCase()] : entity;
+    })
+    .replace(/[\\u0000-\\u0008\\u000B\\u000C\\u000E-\\u001F]/g, ' ')
+    .replace(/\\s+/g, ' ')
+    .trim();
 }
 function normalize(s = '') {
   return clean(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
