@@ -1,10 +1,10 @@
 {
-  "ultima_actualizacion": "2026-10-25T00:44:05.516Z",
-  "total_hoy": 476,
+  "ultima_actualizacion": "2026-10-25T00:57:13.623Z",
+  "total_hoy": 477,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 90,
-    "colo_colo": 50
+    "chile": 91,
+    "colo_colo": 49
   },
   "noticias": [
     {
@@ -9055,6 +9055,27 @@
         "categoria:chile(+40)",
         "frescura:1h(+15)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "[VIDEO] Los goles de Cobreloa y San Luis que postergaron la definición del Ascenso - Cooperativa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8AFBVV95cUxOMmw5YXZBUl9BU1QwN1Y5aHVlMGRJX1NLV0ItWTktZlBkWlQ3ZGtxTnZKRjlBVHhWdGhKZnlyaU9WQjVuMGxnOTBWVFJnS3VfWjhycmV6U3FQdVUtZWVyWnQxVWNzTUlpN3NqSml0WE5pbzVoT2RrUmtPU2RQcTZCSGFlX01KY1NDVXhYMnNKYlREU2I2YlV6WjZFVkk4aE1uWnpRR3F4OV92ODlreVVCRHB0SVBIWjE4U0Z4RGRKcFAxTEpmQXR5YTVacG9XWks0M0tQcTRyNS0yVjJRZVRjcDBOMDhtNzkydFdBVURqcjPSAYwBQVVfeXFMTzVqY05mWm5sUUN4eEdSRkJIczlka294UGJoRlJRYjZFOHlYMDlZNVpIZ19wb0VnTWNRXzNlMjd6c3ozT3VpQWJ5cE9PLTR4NEZ4N1ozRDM1TDNpUF",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOMmw5YXZBUl9BU1QwN1Y5aHVlMGRJX1NLV0ItWTktZlBkWlQ3ZGtxTnZKRjlBVHhWdGhKZnlyaU9WQjVuMGxnOTBWVFJnS3VfWjhycmV6U3FQdVUtZWVyWnQxVWNzTUlpN3NqSml0WE5pbzVoT2RrUmtPU2RQcTZCSGFlX01KY1NDVXhYMnNKYlREU2I2YlV6WjZFVkk4aE1uWnpRR3F4OV92ODlreVVCRHB0SVBIWjE4U0Z4RGRKcFAxTEpmQXR5YTVacG9XWks0M0tQcTRyNS0yVjJRZVRjcDBOMDhtNzkydFdBVURqcjPSAYwBQVVfeXFMTzVqY05mWm5sUUN4eEdSRkJIczlka294UGJoRlJRYjZFOHlYMDlZNVpIZ19wb0VnTWNRXzNlMjd6c3ozT3VpQWJ5cE9PLTR4NEZ4N1ozRDM1TDNpUFNJc2ZVQzdJSG0zTmI3VkRkZldZemVNMWJfTWQ5VEtoclg5QW5zemdoNElFNm5tSWE?oc=5",
+      "pubDate": "Sun, 25 Oct 2026 00:14:00 GMT",
+      "timestamp": "2026-10-25T00:14:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Cooperativa",
+      "fuente_url_original": "https://www.cooperativa.cl",
+      "fuente": "Cooperativa",
+      "fuente_host": "cooperativa.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "categoria": "chile",
+      "equipo_chile": "Cobreloa",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)"
       ]
     }
   ]
