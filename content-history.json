@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "CATÓLICA SE QUEDA SIN TÍTULO",
-      "titulo": "Universidad Católica cayó goleada: ¿Adiós al título?",
-      "fecha": "2026-08-03T22:00:38.233Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "U DE CHILE: 9 PARTIDOS CONFIRMADOS",
       "titulo": "La U ya tiene 9 fechas confirmadas: ¿Camino a la gloria o a un desafío intenso?",
       "fecha": "2026-08-03T22:00:48.916Z"
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Esto dicen en Palestino antes de enfrentar a Colo-Colo - En Cancha",
       "titulo": "FÚTBOL CHILENO: Esto dicen en Palestino antes de enfrentar a Colo-Colo - En Cancha | Lo que cambia",
       "fecha": "2026-10-24T21:28:49.437Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: Aprovechará el parón por la fecha FIFA: Colo Colo jugará un amistoso ante…",
+      "titulo": "FÚTBOL MUNDIAL: Aprovechará el parón por la fecha FIFA: Colo Colo jugará un… | Lo que cambia",
+      "fecha": "2026-10-25T00:44:14.295Z"
     }
   ]
 }

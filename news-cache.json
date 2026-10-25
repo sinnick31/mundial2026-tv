@@ -1,10 +1,10 @@
 {
-  "ultima_actualizacion": "2026-10-24T21:28:40.817Z",
-  "total_hoy": 479,
+  "ultima_actualizacion": "2026-10-25T00:44:05.516Z",
+  "total_hoy": 476,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 88,
-    "colo_colo": 52
+    "chile": 90,
+    "colo_colo": 50
   },
   "noticias": [
     {
@@ -7590,6 +7590,29 @@
       ]
     },
     {
+      "title": "Tatiele Silveira identifica el error que condenó a Colo Colo femenino en la Libertadores - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPd2wwZW5FTE9lamV3RVZEa3JYeTRGRU56R2hCOEc0ZTRSd0NGdVpSRzhQVDF2UEdLVHAwbnp5Xy1BVi1WbDB4V05ZOGJGQS03eGRqUDBYSlgxZVAzSFlrb05XTllad000VzhIdFpGUDd6V1JuYzBmZVhCUWcwSGZDVUlIX20zZHRrUU9aUDA3NGY2eVg1bE5nWXd4R2xCOGtLYnE5M3l5UlVRU3lRQVppT3RvSFZRZ9IBuwFBVV95cUxQcE1kWk5XdGVxT1ZqNkJtNGFJVnlPUXJVWjRDaF8xWnBXUTR1dGxRZThzdUtNd0ptRTlGZTNRaV9Ba3czcTZaSTdDSFAwLXVHbHNEcFg4R2xJRTZhVGNURU9IT245WmJUbS1PLTN4QzY0SnJ0OGtWM083X0xSSFZvYjdFeEE4TXBqa0E1SzdPUHUzRHFlYj",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPd2wwZW5FTE9lamV3RVZEa3JYeTRGRU56R2hCOEc0ZTRSd0NGdVpSRzhQVDF2UEdLVHAwbnp5Xy1BVi1WbDB4V05ZOGJGQS03eGRqUDBYSlgxZVAzSFlrb05XTllad000VzhIdFpGUDd6V1JuYzBmZVhCUWcwSGZDVUlIX20zZHRrUU9aUDA3NGY2eVg1bE5nWXd4R2xCOGtLYnE5M3l5UlVRU3lRQVppT3RvSFZRZ9IBuwFBVV95cUxQcE1kWk5XdGVxT1ZqNkJtNGFJVnlPUXJVWjRDaF8xWnBXUTR1dGxRZThzdUtNd0ptRTlGZTNRaV9Ba3czcTZaSTdDSFAwLXVHbHNEcFg4R2xJRTZhVGNURU9IT245WmJUbS1PLTN4QzY0SnJ0OGtWM083X0xSSFZvYjdFeEE4TXBqa0E1SzdPUHUzRHFlYjBhMXVwOEhseHAzOWd1dWxCYXFrc3JIQk5CVjZHSDU1QUZISGFN?oc=5",
+      "pubDate": "Fri, 23 Oct 2026 18:43:45 GMT",
+      "timestamp": "2026-10-23T18:43:45.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:30h(+0)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
       "title": "Colo Colo confirma partido amistoso ante \"un gran rival\": Fecha y lugar - TVN",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNcFZoc0thQnJ3bmQwSjFOOTlRc09ONXB2RENMenFUb21aSDR6NHBEUDZuVlU3aDR3bVB0SjNBV3J4cVRLYXMwWmRRSmZndE1nMlN6eVVDN1hrV0RyOGx2WjlZN2NQeEV3Qi1CUkZtd0Y1MEJCWlhnWnJjR0lOUjdGN0FHa0dxbU1QZ3R6NnBEQ0dybnJ5c1NJQnZqdmhtR2UtWGFISXczSE0tSWVxcHdjMi1R0gG3AUFVX3lxTE5WMmVnM0Z3dGE4eWxmWVZDOWRLREZ0ZFIxUmE1bG5lSFFSQTR0OWw5UGVYZjYtbm5MZElxcnlfQU1GNFFzcUNKR254TjFiczUwNkJOa1Qzb2VCRHhnY25ER1o3aHl1VXN2SUNmYVFtR01CWGVrOVFCMU8yRmg5NTY5d1IzbnEwaDREQmdTTkZpYW9ORDhpamRydW",
       "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcFZoc0thQnJ3bmQwSjFOOTlRc09ONXB2RENMenFUb21aSDR6NHBEUDZuVlU3aDR3bVB0SjNBV3J4cVRLYXMwWmRRSmZndE1nMlN6eVVDN1hrV0RyOGx2WjlZN2NQeEV3Qi1CUkZtd0Y1MEJCWlhnWnJjR0lOUjdGN0FHa0dxbU1QZ3R6NnBEQ0dybnJ5c1NJQnZqdmhtR2UtWGFISXczSE0tSWVxcHdjMi1R0gG3AUFVX3lxTE5WMmVnM0Z3dGE4eWxmWVZDOWRLREZ0ZFIxUmE1bG5lSFFSQTR0OWw5UGVYZjYtbm5MZElxcnlfQU1GNFFzcUNKR254TjFiczUwNkJOa1Qzb2VCRHhnY25ER1o3aHl1VXN2SUNmYVFtR01CWGVrOVFCMU8yRmg5NTY5d1IzbnEwaDREQmdTTkZpYW9ORDhpamRydWhyTEhGbzQzZ2xjc1FtNkh1bHJoMHY5YkJTMVhBWQ?oc=5",
@@ -8222,6 +8245,50 @@
       ]
     },
     {
+      "title": "Los más bajos del mundo: el récord de la Liga de Primera siendo el torneo de menor promedio de estatura - El Conquistador FM",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQMTZCM1poNUJ3LUtyWHpCX2M3elpNRU1TWVhEaXAxeTRTaTc2MEhnSXJidGdjOURNTkd1X1N5S2FXakRUZEpBV0pWT2R2VzBuYTRKRVNRbTkwdS1xbDRIcWNFT3JmSkNqMFpNZmpyWDVTSnZ5aExXbDZjVWM5QnVWeXdjTHNLa0pjODdiYzNpRkZYME9aMTByRXdBQi14bWRzWDNIMDFxZnBCdUU0THRpSmVYQU9PRUlTOXc?oc=5\" target=\"_blank\">Los más bajos del mundo: el récord de la Liga de Primera siendo el torneo de menor promedio de estatura</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">El Conquistador FM</font>",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMTZCM1poNUJ3LUtyWHpCX2M3elpNRU1TWVhEaXAxeTRTaTc2MEhnSXJidGdjOURNTkd1X1N5S2FXakRUZEpBV0pWT2R2VzBuYTRKRVNRbTkwdS1xbDRIcWNFT3JmSkNqMFpNZmpyWDVTSnZ5aExXbDZjVWM5QnVWeXdjTHNLa0pjODdiYzNpRkZYME9aMTByRXdBQi14bWRzWDNIMDFxZnBCdUU0THRpSmVYQU9PRUlTOXc?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 08:41:32 GMT",
+      "timestamp": "2026-10-24T08:41:32.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "El Conquistador FM",
+      "fuente_url_original": "https://www.elconquistadorfm.net",
+      "fuente": "El Conquistador FM",
+      "fuente_host": "elconquistadorfm.net",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 90,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:16h(+5)",
+        "senal:\\b(record|historico|(+12)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "\"Me enamoré y me hice hincha de la U, pese a que en ese tiempo era difícil no ser de Colo-Colo\" - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi_AFBVV95cUxQRzN6eS16UGNqX0t0UGNxejNBVFM3Z2pPSERwSXA0eHJGdEt6SlNURm9BdFJIdEg3VzNUTTFvSnJZNS1pak9KaWx2RVlFN3JQdFdqX3F6Q1k4OGlZZ0pHQlZ1ZkVEcDd4MTljdjkxSXAzdHZSTlBlcDNFNnJKQklwcndTd243UHZTVDk1d0dDQU84LUNSaW5ZSTZ0Z0NMdnBncWNQSVVnTEtVZE9uajY2elNxZUdMZFRQa2FSSHJBY2ZPZFBVcllmUmg5Y29QeC1LZTZBSE1lbFkxcGZ4VVp1U3cta29meVR1QkJBeS1pS2RLMzB0OThQX2VINnk?oc=5\" target=\"_blank\">\"Me enamoré y me hice hincha de la U, pese a que en ese tiempo era difícil no ser de Col",
+      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQRzN6eS16UGNqX0t0UGNxejNBVFM3Z2pPSERwSXA0eHJGdEt6SlNURm9BdFJIdEg3VzNUTTFvSnJZNS1pak9KaWx2RVlFN3JQdFdqX3F6Q1k4OGlZZ0pHQlZ1ZkVEcDd4MTljdjkxSXAzdHZSTlBlcDNFNnJKQklwcndTd243UHZTVDk1d0dDQU84LUNSaW5ZSTZ0Z0NMdnBncWNQSVVnTEtVZE9uajY2elNxZUdMZFRQa2FSSHJBY2ZPZFBVcllmUmg5Y29QeC1LZTZBSE1lbFkxcGZ4VVp1U3cta29meVR1QkJBeS1pS2RLMzB0OThQX2VINnk?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 09:00:00 GMT",
+      "timestamp": "2026-10-24T09:00:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "En Cancha",
+      "fuente_url_original": "https://www.encancha.cl",
+      "fuente": "En Cancha",
+      "fuente_host": "encancha.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 90,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:16h(+5)"
+      ]
+    },
+    {
       "title": "Audax Italiano y Huachipato empataron 1-1 en la fecha 25 del torneo nacional - laconexion.cl",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNeklvN09TOEIzQlZaWE9KZzcyU09hbWNHUDNxWkpMTEJHSWdjMWtKSjc4TWpuVlhmZGw0bzNSRk1aMUoyalYxTnJ4ellMX0JXR0FNWi14OVJQX01tRnl0cnIwbFVxVGd2eC1MNWlyYWNwa2RzRVNDWlJhdm83b19NY0RZWGpLcmRGQ1hVeldldkJsRUZSaWs1WTh2RFRHQzN6?oc=5\" target=\"_blank\">Audax Italiano y Huachipato empataron 1-1 en la fecha 25 del torneo nacional</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">laconexion.cl</font>",
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeklvN09TOEIzQlZaWE9KZzcyU09hbWNHUDNxWkpMTEJHSWdjMWtKSjc4TWpuVlhmZGw0bzNSRk1aMUoyalYxTnJ4ellMX0JXR0FNWi14OVJQX01tRnl0cnIwbFVxVGd2eC1MNWlyYWNwa2RzRVNDWlJhdm83b19NY0RZWGpLcmRGQ1hVeldldkJsRUZSaWs1WTh2RFRHQzN6?oc=5",
@@ -8399,6 +8466,28 @@
       ]
     },
     {
+      "title": "ANFP advierte a la UC que podría perder los puntos ante Audax Italiano: la decisión que tomaron los “cruzados” - ADN Radio",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPSnB4dEh2UUJlTGFVeFhXZkFpX002X1NGNVp0LThJY0FCdVlJRnNsVTdJRUxOdURSelQybi1ENUV5VjFWVWFoRm1HNlplbEVOTTJxWk5HSzlmTjBDWjNuYlB3YWhDb3YtTFNUWXV6X0FVVmFDU0V0WG9QTG5nNHJuZXNHVlMyUnh2YUVMRmdxZUJNQzktRGtLR1Y4bTU3UDhNaE4zckMzblhfODZDUVBwdjgtMmlVY3RrWVMyMG81clpPNWxJZGdTaFVRU0VFYjRvRFJISW1Id3BxQVnSAe8BQVVfeXFMT2tHeWpOby0xLWJLbXJ3YXRScm1Ha0g4UlZGWkdpWnhIRENnSE1LX2xyWHBOT2plQXJXeGZsNDJGX0ZXdkllY1M4SURWUEljVWV3cUR6TkswMjhyUmp2SHpMWEJfNkFOMmZwblNIbE1nSU",
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPSnB4dEh2UUJlTGFVeFhXZkFpX002X1NGNVp0LThJY0FCdVlJRnNsVTdJRUxOdURSelQybi1ENUV5VjFWVWFoRm1HNlplbEVOTTJxWk5HSzlmTjBDWjNuYlB3YWhDb3YtTFNUWXV6X0FVVmFDU0V0WG9QTG5nNHJuZXNHVlMyUnh2YUVMRmdxZUJNQzktRGtLR1Y4bTU3UDhNaE4zckMzblhfODZDUVBwdjgtMmlVY3RrWVMyMG81clpPNWxJZGdTaFVRU0VFYjRvRFJISW1Id3BxQVnSAe8BQVVfeXFMT2tHeWpOby0xLWJLbXJ3YXRScm1Ha0g4UlZGWkdpWnhIRENnSE1LX2xyWHBOT2plQXJXeGZsNDJGX0ZXdkllY1M4SURWUEljVWV3cUR6TkswMjhyUmp2SHpMWEJfNkFOMmZwblNIbE1nSUhJUnZoMVRMYS15VHVLcGoybldwTlFRY0hwTHdEa3NaYVRfVkVQNXF1WkNKUXBxRHBTeG9TVUxwWGk3eU1RRUtKWVQ1OGpxQmN0WDVrQnVZcnJ4Q2t1b2VuM1BQMjRBLTBzQkZ3ZHhDa1AyLUFCZzVmQldRdUdvREZFak5wME0?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 16:09:47 GMT",
+      "timestamp": "2026-10-24T16:09:47.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ADN Radio",
+      "fuente_url_original": "https://www.adnradio.cl",
+      "fuente": "ADN Radio",
+      "fuente_host": "adnradio.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "categoria": "chile",
+      "equipo_chile": "Universidad Católica",
+      "viral_score": 83,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:9h(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
       "title": "San Luis vs. Recoleta EN VIVO: ¿A qué hora y dónde ver el partido de la Primera B 2026? - Teletrece",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxONlphX2JwTmdnU3JrU0x2UEVlWExVNEZmRmJqc1BnZy13NXhYZGI4M00xb2VGMUdWS1lyeXZ2cjZrOXNTWUI4aWc4RnJ3QzFpM3RxN0xTODBtUzEwMDhpeVNWYzhscUl2LU1TaW9pcVpfYXVfX0dsLWlkNkxpOWJIVUFDQVU3MmJxZHd5YmpVTkp0OTRpZTNhQjJKSGlIblY2RTBzRzNvUEFZUWhNNEwxeW13?oc=5\" target=\"_blank\">San Luis vs. Recoleta EN VIVO: ¿A qué hora y dónde ver el partido de la Primera B 2026?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Teletrece</font>",
       "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxONlphX2JwTmdnU3JrU0x2UEVlWExVNEZmRmJqc1BnZy13NXhYZGI4M00xb2VGMUdWS1lyeXZ2cjZrOXNTWUI4aWc4RnJ3QzFpM3RxN0xTODBtUzEwMDhpeVNWYzhscUl2LU1TaW9pcVpfYXVfX0dsLWlkNkxpOWJIVUFDQVU3MmJxZHd5YmpVTkp0OTRpZTNhQjJKSGlIblY2RTBzRzNvUEFZUWhNNEwxeW13?oc=5",
@@ -8529,6 +8618,50 @@
       ]
     },
     {
+      "title": "Un regreso clave y una baja importante: las novedades de la U para el partido ante Everton - La Magia Azul",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQY0RtM3NpRDdTZG1ya0ktVnNNS09pUnJKM2V5VVluUWwzN3lndV9rRzd2dXpFNGwxSjcyS1lGQm82bEw1UEtQVE1UbHFnNlkxWU5adUVNVzA0eFp3Mm9uZG9IVzZsOHlVZzQ0a285UzFyNnpiQ1lJN0tkOW5OWm5NaDNac241c1dkUFRzZUIxbEdQWjV6SkdVN1g5LTRSbzduRFVXWUtBb2V1QkJLZGJHRWxfOExGZGd3MmszcTd2QWEwUV9ybkhDdmdYZUg1Rk0?oc=5\" target=\"_blank\">Un regreso clave y una baja importante: las novedades de la U para el partido ante Everton</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">La Magia Azul</font>",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQY0RtM3NpRDdTZG1ya0ktVnNNS09pUnJKM2V5VVluUWwzN3lndV9rRzd2dXpFNGwxSjcyS1lGQm82bEw1UEtQVE1UbHFnNlkxWU5adUVNVzA0eFp3Mm9uZG9IVzZsOHlVZzQ0a285UzFyNnpiQ1lJN0tkOW5OWm5NaDNac241c1dkUFRzZUIxbEdQWjV6SkdVN1g5LTRSbzduRFVXWUtBb2V1QkJLZGJHRWxfOExGZGd3MmszcTd2QWEwUV9ybkhDdmdYZUg1Rk0?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 18:35:35 GMT",
+      "timestamp": "2026-10-24T18:35:35.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "La Magia Azul",
+      "fuente_url_original": "https://www.lamagiaazul.cl",
+      "fuente": "La Magia Azul",
+      "fuente_host": "lamagiaazul.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 81,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:6h(+10)",
+        "senal:\\b(lesion|baja|desca(+6)"
+      ]
+    },
+    {
+      "title": "El sorpresivo guiño de un equipo de Japón a Colo Colo: dará la vuelta al mundo - AS Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPeWRCbnlRZ1pCTllmZ0phb1lvYmhIa0JGdXN5TFVvSVN5b3FOMUtlcXZhd1pPOURqUHRSZ0RDcTFhTldUWWVvMEVWZXB0RUl4aGE0ZXpUSmN3RzR2dXZhNkNINXNnNW5HMGtGTUN4MmdYdG1fR244YjdtdnRRNGh5cF83d1pOZ3dkMUhZSGpSYklNU1FzYVloWm1mOU5YcTc3UmFXN1FWLTRpVFRHZFBmbUVtV3Z1bVHSAcsBQVVfeXFMTjgtSE1KWUVLVDdub2liSGE0c0k3c0daejhuTkhjel9HSTdNUXhmcE91dDRhODlacHNUeVN6VWpacUZSWExGWGRWU1kzNU5kZ1BMZm1fVXZQUHJ1TUJJcTRzbV9nNVg1ZHlVakpvWE5QR1dhVE9IekJNZ282anZ6Z3MzWjFvd21KbGFrSnhBNW1IbjBnd1",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPeWRCbnlRZ1pCTllmZ0phb1lvYmhIa0JGdXN5TFVvSVN5b3FOMUtlcXZhd1pPOURqUHRSZ0RDcTFhTldUWWVvMEVWZXB0RUl4aGE0ZXpUSmN3RzR2dXZhNkNINXNnNW5HMGtGTUN4MmdYdG1fR244YjdtdnRRNGh5cF83d1pOZ3dkMUhZSGpSYklNU1FzYVloWm1mOU5YcTc3UmFXN1FWLTRpVFRHZFBmbUVtV3Z1bVHSAcsBQVVfeXFMTjgtSE1KWUVLVDdub2liSGE0c0k3c0daejhuTkhjel9HSTdNUXhmcE91dDRhODlacHNUeVN6VWpacUZSWExGWGRWU1kzNU5kZ1BMZm1fVXZQUHJ1TUJJcTRzbV9nNVg1ZHlVakpvWE5QR1dhVE9IekJNZ282anZ6Z3MzWjFvd21KbGFrSnhBNW1IbjBnd1Ffck45c08yU1NkSFN4RFNwU20yd0hoSHpNMFZGeExRbkJMTFo1OWx3WXJXcHBTQXpheTNXa1E?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 18:39:34 GMT",
+      "timestamp": "2026-10-24T18:39:34.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "AS Chile",
+      "fuente_url_original": "https://chile.as.com",
+      "fuente": "AS Chile",
+      "fuente_host": "chile.as.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:6h(+10)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
       "title": "Aprovechará el parón por la fecha FIFA: Colo Colo jugará un amistoso ante Racing en Concepción - Prensa Fútbol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE9ib0NKdXRrcFNFMjZlXzBLN2hsUUtWTnVFMG9aVE5JTEJPNmpMT1I0bnZ2MnFFR09GUm9iVmNLRmxyRVhBdDZOWlZCOWJpYnBXRm54NC12aHJsTUtDVVdwb1UxYk9wQ21YVTFrVXJidl92X2Qyd1lEc1I3Yw?oc=5\" target=\"_blank\">Aprovechará el parón por la fecha FIFA: Colo Colo jugará un amistoso ante Racing en Concepción</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Prensa Fútbol</font>",
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9ib0NKdXRrcFNFMjZlXzBLN2hsUUtWTnVFMG9aVE5JTEJPNmpMT1I0bnZ2MnFFR09GUm9iVmNLRmxyRVhBdDZOWlZCOWJpYnBXRm54NC12aHJsTUtDVVdwb1UxYk9wQ21YVTFrVXJidl92X2Qyd1lEc1I3Yw?oc=5",
@@ -8641,6 +8774,28 @@
       ]
     },
     {
+      "title": "El insólito ranking en que la liga chilena es líder mundial: pocos lo imaginarán - AS Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOVXdoNDgxYXFIcTZXZGJUbEpxSnctVmplc25BQklKMmlTckU2dHI3UXJidnU3bG5NX3VKRjRhUmRUdUtqdEhpd0YzZ1duSWZ0em0xZE9fVkduOWlJTnM2Umx0QVJEeUFhb3k2dUE4U0hqT29TMFJkQ2QySGlSY2kxUzZUR2xBcHltZ2d5OWtJZkM3U0VwazNVTkk4eW9vaWdiZzMtLXk0anVfbGI0WU52OWhEQTVZM0ZEbEHSAc4BQVVfeXFMTWJzTTZyTnlqcy1NT2RkQnVMZDVVTXQ5enRBa184Rmo2T3ZneE9va0puaGVCREZIRGp4X1BzU1gxVVJrU19rcmZXeHAtTjNkeWpXbElyejVSeG9heGdVaG5qLU5CWXduSkpLOWlkTWxJRzRYSV9VUXpoWU1ncjNINVh0Skd5M0kzaHExRXRLbDBseW",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVXdoNDgxYXFIcTZXZGJUbEpxSnctVmplc25BQklKMmlTckU2dHI3UXJidnU3bG5NX3VKRjRhUmRUdUtqdEhpd0YzZ1duSWZ0em0xZE9fVkduOWlJTnM2Umx0QVJEeUFhb3k2dUE4U0hqT29TMFJkQ2QySGlSY2kxUzZUR2xBcHltZ2d5OWtJZkM3U0VwazNVTkk4eW9vaWdiZzMtLXk0anVfbGI0WU52OWhEQTVZM0ZEbEHSAc4BQVVfeXFMTWJzTTZyTnlqcy1NT2RkQnVMZDVVTXQ5enRBa184Rmo2T3ZneE9va0puaGVCREZIRGp4X1BzU1gxVVJrU19rcmZXeHAtTjNkeWpXbElyejVSeG9heGdVaG5qLU5CWXduSkpLOWlkTWxJRzRYSV9VUXpoWU1ncjNINVh0Skd5M0kzaHExRXRLbDBseW5CenFpOWtIYThKbnpYNXgtQ1J5bkJSZkhjOEt3VXY5OUQzcDhOQngybnNfREtiaWc4ZkFmRE8taFA1Qnc?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 20:10:27 GMT",
+      "timestamp": "2026-10-24T20:10:27.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "AS Chile",
+      "fuente_url_original": "https://chile.as.com",
+      "fuente": "AS Chile",
+      "fuente_host": "chile.as.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 83,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:5h(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
       "title": "Esto dicen en Palestino antes de enfrentar a Colo-Colo - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQW9ZcjRKV2h5b1BXOWR3VThSS3RRT25jd25QTUliUXlOOVRwU21sZ1kxV1pzYkxFdG9WNVRXRGVTWEtvR2pMQTN2eFM3cGdTZXVnSDVjdUI0aUZtMDVia2Uxc1h5X19VZlY2dVptQ19wRjFfS2hPaTNmYklPNE15bTM3TU5fTVN1VW9fYkZmbEF0Z0t2dm9KcTdGLXZPUWdmdWktb25lbFN3UnJXemFrYmRwZWgyemlnbWo4bm9welRlZw?oc=5\" target=\"_blank\">Esto dicen en Palestino antes de enfrentar a Colo-Colo</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En Cancha</font>",
       "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQW9ZcjRKV2h5b1BXOWR3VThSS3RRT25jd25QTUliUXlOOVRwU21sZ1kxV1pzYkxFdG9WNVRXRGVTWEtvR2pMQTN2eFM3cGdTZXVnSDVjdUI0aUZtMDVia2Uxc1h5X19VZlY2dVptQ19wRjFfS2hPaTNmYklPNE15bTM3TU5fTVN1VW9fYkZmbEF0Z0t2dm9KcTdGLXZPUWdmdWktb25lbFN3UnJXemFrYmRwZWgyemlnbWo4bm9welRlZw?oc=5",
@@ -8727,6 +8882,179 @@
         "categoria:colo_colo(+60)",
         "frescura:1h(+15)",
         "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Campeón de la B se definirá en última fecha de infarto: Cobreloa y San Luis llegan igualados en puntos - BioBioChile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMilAJBVV95cUxQN3NBcGN6ek5IaW53UURNaWVfcGlMcU1TYS1Pa0pUUnNwLTdHejRCS0Y2U3BFcE5FRTJESzJkWjhFMUxCSklOcUM1ZEZRTzZLbmJKbjh1dGpBeUtsQjFhaDFta0dOU2J1RngzanFoaEo2QVJKR0dab0VjaDhLWUotNXhPcnQ1YV9wUzZzWE9GSExCV3Zrb0o5TnVUZG05Wkd5TWxuaWllV2pKdXl1YWMyNFRGLTUzazRiV3FJT2VQQ2xqSDdYSVJRcW5oeTBBV2FZZHNTLWltTzVoNjRxX0ZtOFdVYkdQanBhUmJZelNYR3ZyQ1JfeGJJaHp1ZV9zTDctRjBlWjNaaXV1SDVvcExnYUVLdVQ?oc=5\" target=\"_blank\">Campeón de la B se definirá en última fecha de infarto: ",
+      "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQN3NBcGN6ek5IaW53UURNaWVfcGlMcU1TYS1Pa0pUUnNwLTdHejRCS0Y2U3BFcE5FRTJESzJkWjhFMUxCSklOcUM1ZEZRTzZLbmJKbjh1dGpBeUtsQjFhaDFta0dOU2J1RngzanFoaEo2QVJKR0dab0VjaDhLWUotNXhPcnQ1YV9wUzZzWE9GSExCV3Zrb0o5TnVUZG05Wkd5TWxuaWllV2pKdXl1YWMyNFRGLTUzazRiV3FJT2VQQ2xqSDdYSVJRcW5oeTBBV2FZZHNTLWltTzVoNjRxX0ZtOFdVYkdQanBhUmJZelNYR3ZyQ1JfeGJJaHp1ZV9zTDctRjBlWjNaaXV1SDVvcExnYUVLdVQ?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 22:35:36 GMT",
+      "timestamp": "2026-10-24T22:35:36.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "BioBioChile",
+      "fuente_url_original": "https://www.biobiochile.cl",
+      "fuente": "BioBioChile",
+      "fuente_host": "biobiochile.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "categoria": "chile",
+      "equipo_chile": "Cobreloa",
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
+    {
+      "title": "El campeón de la Primera B se definirá en la última fecha: Cobreloa ganó en la agonía y San Luis rescató un empate - Teletrece",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbDdPSkJVbmJwWW5Sd2s1aW5OaWRjd2sxLUZGdXhKNDhUbDZxeHFKOXVLdk9YR0VuVFNwYnZPT0poSTkzczNLTEtGeHpPRnhrc29uVlZTTWozVExxUzdPTGdHZE9HUnQzRmRCU2hWSE1VMERDTVNNQmRiSzdOekV3VURCbzBCREdkVzlVNGRpOHpDVjdUbVhpLTB2Y0F4U3F0dzVsN2ktOEUyX3M?oc=5\" target=\"_blank\">El campeón de la Primera B se definirá en la última fecha: Cobreloa ganó en la agonía y San Luis rescató un empate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Teletrece</font>",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbDdPSkJVbmJwWW5Sd2s1aW5OaWRjd2sxLUZGdXhKNDhUbDZxeHFKOXVLdk9YR0VuVFNwYnZPT0poSTkzczNLTEtGeHpPRnhrc29uVlZTTWozVExxUzdPTGdHZE9HUnQzRmRCU2hWSE1VMERDTVNNQmRiSzdOekV3VURCbzBCREdkVzlVNGRpOHpDVjdUbVhpLTB2Y0F4U3F0dzVsN2ktOEUyX3M?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 22:40:00 GMT",
+      "timestamp": "2026-10-24T22:40:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Teletrece",
+      "fuente_url_original": "https://www.t13.cl",
+      "fuente": "Teletrece",
+      "fuente_host": "t13.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
+    {
+      "title": "Tabla de posiciones: ¡Suspenso total en el Ascenso con Cobreloa y San Luis empatados en puntos! - TNT Sports",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxNUE9aTEYxNlB1UTAycFhESS16S3V3a2hPbXhIaVdoc3gzYzBIS0cwdzM4cVB2bzlGWjZIRkJRMy1OQU9lckJXZGdRWEdkU1dKMEZtNjZjN19QdjQ1cFZ1RnZQWUpCZWxoaE82RW82bDdzQ2FLNFAwZWtXZ0dSczZoWUhiTHJyUXRrbTFsMWRKMmM3SC1FQUJscEF3NXBqLWVwZEV4SkxHdUtTQ25nXzlDOFFuRHBkTm1oZ0JmZ1pYWUxZalhZV24xRHlHWmlERm9JQlHSAdcBQVVfeXFMTWhkdUFsLWFfT2RRLV9haENnMjhuWW5RSWRCem5ic3diTDh3X2h1VXBwY2pmZUZGOHVERWNINWc4UzV6azhWRU9ITXFqQ3BzVndrNWpLc3pTRXZzWjBjRVFFWVRrLXY3dXhFWENQR2FLMWp2b3Flek9OSX",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNUE9aTEYxNlB1UTAycFhESS16S3V3a2hPbXhIaVdoc3gzYzBIS0cwdzM4cVB2bzlGWjZIRkJRMy1OQU9lckJXZGdRWEdkU1dKMEZtNjZjN19QdjQ1cFZ1RnZQWUpCZWxoaE82RW82bDdzQ2FLNFAwZWtXZ0dSczZoWUhiTHJyUXRrbTFsMWRKMmM3SC1FQUJscEF3NXBqLWVwZEV4SkxHdUtTQ25nXzlDOFFuRHBkTm1oZ0JmZ1pYWUxZalhZV24xRHlHWmlERm9JQlHSAdcBQVVfeXFMTWhkdUFsLWFfT2RRLV9haENnMjhuWW5RSWRCem5ic3diTDh3X2h1VXBwY2pmZUZGOHVERWNINWc4UzV6azhWRU9ITXFqQ3BzVndrNWpLc3pTRXZzWjBjRVFFWVRrLXY3dXhFWENQR2FLMWp2b3Flek9OSXNuNGE1akRDM0I5VVdsM3plZXo1QnZ4Yk1nVTVEc2JoczEzNk80d1VWVDZBMVdBSFFjYVhlc1I4QXlQQlRGWDhmdGpWQ01qa01wQkR6cjVKSDRkWk5GT3VGaGgzYlE?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 22:46:00 GMT",
+      "timestamp": "2026-10-24T22:46:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "TNT Sports",
+      "fuente_url_original": "https://tntsports.cl",
+      "fuente": "TNT Sports",
+      "fuente_host": "tntsports.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "categoria": "chile",
+      "equipo_chile": "Cobreloa",
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "De infarto: Cobreloa y San Luis comparten el liderato y el Ascenso se definirá en la última fecha - Cooperativa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8AFBVV95cUxPV3VCakVvZnJHc1BBRVdveDhtNGljRDJrLXd1TGpINXVobWRZX1k1RTkzZURNbko0RzNKUzUxM19PV19wN2dPbHhpbVdIYVo4dm51MUtiYTJSMTE0b25CRWJaWmZtNXlMcEdfSDJ2MUtDS0c4bU1IMUtCUmNfYWVGckNNVjFvNktKOG9nSUZOT2NhLUpCSFlNT3k1SzdkNmZsS0xpTVFSZE0wRkJaUFhpTnJMNVFsaFJNMWwtSUR0b1lqb1M5bXNnYkFLY1Y4VDhwVEpNSlZmLTlfRDZGVnpOcmhZS3AzanFFaWlmUEc0Um7SAYwBQVVfeXFMTW9qVEcyRkpIclpCb3pEc2Z5UDdwNVRPVW5DeEp1Y190UDlzUHpTZXFNVmZpRDY2YTE0Nk5SelRHTHIxZWVMQzliYTExenZXaThKM3VHMWNsQWtHcW",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPV3VCakVvZnJHc1BBRVdveDhtNGljRDJrLXd1TGpINXVobWRZX1k1RTkzZURNbko0RzNKUzUxM19PV19wN2dPbHhpbVdIYVo4dm51MUtiYTJSMTE0b25CRWJaWmZtNXlMcEdfSDJ2MUtDS0c4bU1IMUtCUmNfYWVGckNNVjFvNktKOG9nSUZOT2NhLUpCSFlNT3k1SzdkNmZsS0xpTVFSZE0wRkJaUFhpTnJMNVFsaFJNMWwtSUR0b1lqb1M5bXNnYkFLY1Y4VDhwVEpNSlZmLTlfRDZGVnpOcmhZS3AzanFFaWlmUEc0Um7SAYwBQVVfeXFMTW9qVEcyRkpIclpCb3pEc2Z5UDdwNVRPVW5DeEp1Y190UDlzUHpTZXFNVmZpRDY2YTE0Nk5SelRHTHIxZWVMQzliYTExenZXaThKM3VHMWNsQWtHcWR5YXdpS29VdmlIYXEwaUdfeG1SOGZvT1g2YktUNzZ4YXVmYjhtejBQWDhCeF9hZkY?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 22:49:00 GMT",
+      "timestamp": "2026-10-24T22:49:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Cooperativa",
+      "fuente_url_original": "https://www.cooperativa.cl",
+      "fuente": "Cooperativa",
+      "fuente_host": "cooperativa.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)"
+      ]
+    },
+    {
+      "title": "Ahora hay dos punteros: el escritorio y los goles agónicos de Cobreloa y San Luis le ponen suspenso al desenlace de la B - La Tercera",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi-wFBVV95cUxPenFZVkUtNzRZanA4TnI2QjFSVGJRb2lFXzhCcXB2ajd3UzFvaEtQUFpuOGd5S3J0UHNvZlBYV3QyaWFPbW9CbGlUTmRXRzdFRDNoc0V5R050eE9yOVFuVnJkYmQ3ZUVFY2pHaWFfSkJVVHZiZzRSN0ZHcFBLYThuY3Q1MGd3Ry1vMEdXWjUzRzNNZFo0WFBldXItMmlxQlFwUHVZNEEwN0lBa2tVTkhuZGR1YldrNmh5TVdZVzRiQmxZeWFfLU9mbWVUMDRZZVAxVWRXV1IzYi1fNGFETGV6Ulhfc3ZHUG9SYUxPYkdCcUdYaHlWZk55VnBwY9IBnAJBVV95cUxOX0JVeUZSZllpMWJUNkdEZVRGSF9wU3d0MXp5NGpWZmIyNUhWNkIyQnhfQndYbmVaM3dybjhtTW5QOUg1OFhPZXloNE91NURlNW",
+      "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPenFZVkUtNzRZanA4TnI2QjFSVGJRb2lFXzhCcXB2ajd3UzFvaEtQUFpuOGd5S3J0UHNvZlBYV3QyaWFPbW9CbGlUTmRXRzdFRDNoc0V5R050eE9yOVFuVnJkYmQ3ZUVFY2pHaWFfSkJVVHZiZzRSN0ZHcFBLYThuY3Q1MGd3Ry1vMEdXWjUzRzNNZFo0WFBldXItMmlxQlFwUHVZNEEwN0lBa2tVTkhuZGR1YldrNmh5TVdZVzRiQmxZeWFfLU9mbWVUMDRZZVAxVWRXV1IzYi1fNGFETGV6Ulhfc3ZHUG9SYUxPYkdCcUdYaHlWZk55VnBwY9IBnAJBVV95cUxOX0JVeUZSZllpMWJUNkdEZVRGSF9wU3d0MXp5NGpWZmIyNUhWNkIyQnhfQndYbmVaM3dybjhtTW5QOUg1OFhPZXloNE91NURlNW9ITGdVTkYwaWtGbjFhZlBQa1VVV05nc3FjeHhhN19yRW1GU2g0dWR3bk5VdTY0YnpFTnI1MUp3NmNvRWdJLVREQ1ZvNmVlSDdfLWhpaFdDc1BsSUlkTmtvZHBtS3FfRF9TQThmODB4WTlMTzlIbmZtRUZBT0ZJQjRyQ0JVZm5aZmdGTDI1cENWbTcxdWo1amdLRFZnQWNVWExwWnFPblZsVk1FVU40YkY3Y1BwYktQVHBoM0ZsQXFkSU55TzdIdmNid09hVWJJUll1cw?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 22:56:54 GMT",
+      "timestamp": "2026-10-24T22:56:54.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "La Tercera",
+      "fuente_url_original": "https://www.latercera.com",
+      "fuente": "La Tercera",
+      "fuente_host": "latercera.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "categoria": "chile",
+      "equipo_chile": "Cobreloa",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)"
+      ]
+    },
+    {
+      "title": "La tensión del escritorio marca la última fecha: los rivales de Cobreloa y San Luis por el ascenso directo en la B - La Tercera",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi-wFBVV95cUxOZ3hIUFptWnBMTTZ0dWJFbE1WTHRIWXNldVJ0RVA1a3hqTTlpaFBfWUVVc1VGWHRRRUcxbWVSZDRUdTJPMVh2SDB4b2l1dzBuWVBDbXRRMmdJdnZNZzRrNHdRbFBkSlN5MHBoYU9YaWxSdHd6b3JEWm5vUmM5bkJHX0xaWmVtLWdxZmdpUXFMN3dHblQ0emFBR0FHYm91VktJTXFoYUN4cjdGYjRSek02Vk1YOUVWUGNseDFHNV9aLXNrOFlQa2MwSTFBWmVnYW5uUGFFVU9RUkFDUlhxLXVaQmdzTHpDdnVZa3ptNFI1T1R5bms3S2k4M0w4d9IBnAJBVV95cUxNc0VfeVVKRXBFYnk1RldlNVhBN0VTOGJoZ3NiMUNwQW9JUnQteW5kWnFFYkRGb1pjYmlrU3B4UG1vQ2NzakdQTEFSUmhNeURfTj",
+      "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOZ3hIUFptWnBMTTZ0dWJFbE1WTHRIWXNldVJ0RVA1a3hqTTlpaFBfWUVVc1VGWHRRRUcxbWVSZDRUdTJPMVh2SDB4b2l1dzBuWVBDbXRRMmdJdnZNZzRrNHdRbFBkSlN5MHBoYU9YaWxSdHd6b3JEWm5vUmM5bkJHX0xaWmVtLWdxZmdpUXFMN3dHblQ0emFBR0FHYm91VktJTXFoYUN4cjdGYjRSek02Vk1YOUVWUGNseDFHNV9aLXNrOFlQa2MwSTFBWmVnYW5uUGFFVU9RUkFDUlhxLXVaQmdzTHpDdnVZa3ptNFI1T1R5bms3S2k4M0w4d9IBnAJBVV95cUxNc0VfeVVKRXBFYnk1RldlNVhBN0VTOGJoZ3NiMUNwQW9JUnQteW5kWnFFYkRGb1pjYmlrU3B4UG1vQ2NzakdQTEFSUmhNeURfTjB5aW01cTNRZ3hCNXpFR3pYVDZ6U293TjJyV01vX3J6RVFZOVhHb0lqS2NxXzNSU3Q2ZHFzbUMtdTFucW5HbFFNVFJYbVowQ2JWZU4xU0J1R3Y2MnBJSHJlXzh0M1M3RVBYMmFEaFg1dzJxM1AxR0FCdWo3QTZpLTd2YkJiMlVnRFZtTWRfWGdVcHlxQ3pkU3h4WU1wRkxtSlF4aWtpb1RlN1dkQ2RBblFsOGRkeWtOWjJSQXVvMnFiaU5hLTJid1czcXhIbU1oN3V2UQ?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 23:43:43 GMT",
+      "timestamp": "2026-10-24T23:43:43.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "La Tercera",
+      "fuente_url_original": "https://www.latercera.com",
+      "fuente": "La Tercera",
+      "fuente_host": "latercera.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)"
+      ]
+    },
+    {
+      "title": "Cobreloa y San Luis se jugarán el título de la B en la última fecha, empatados en puntos - Canal 9 Bío Bío Televisión",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxQOWlBTlBrQ3ZQYnl3Y0Q5SUxNd24zQklxREJFT2xuUVpOd3F6ZlVlbTdoM2FyMFBZZXZmbElySmZUZWhGdTRkQ0dCVEJZa05oYWMyNFlNUTdiNEstY2lTakpSQkYxeWNmbDRSQVFEWU56Wmc3S2tTX3lkalRjZHlWR0ozMi1SNjdZeXBXMjdLV3ZKUm8zVmg5Wms1djJTaEFtZmVjMVF5eTM5UEFOVXF0VmRXOVpWTGtENmI3aEpNX1FRQWdleHBPWlVZTklzWjdabkljdXlrQXhOdnFO?oc=5\" target=\"_blank\">Cobreloa y San Luis se jugarán el título de la B en la última fecha, empatados en puntos</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Canal",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQOWlBTlBrQ3ZQYnl3Y0Q5SUxNd24zQklxREJFT2xuUVpOd3F6ZlVlbTdoM2FyMFBZZXZmbElySmZUZWhGdTRkQ0dCVEJZa05oYWMyNFlNUTdiNEstY2lTakpSQkYxeWNmbDRSQVFEWU56Wmc3S2tTX3lkalRjZHlWR0ozMi1SNjdZeXBXMjdLV3ZKUm8zVmg5Wms1djJTaEFtZmVjMVF5eTM5UEFOVXF0VmRXOVpWTGtENmI3aEpNX1FRQWdleHBPWlVZTklzWjdabkljdXlrQXhOdnFO?oc=5",
+      "pubDate": "Sat, 24 Oct 2026 23:45:04 GMT",
+      "timestamp": "2026-10-24T23:45:04.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Canal 9 Bío Bío Televisión",
+      "fuente_url_original": "https://www.canal9.cl",
+      "fuente": "Canal 9 Bío Bío Televisión",
+      "fuente_host": "canal9.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
+    {
+      "title": "Fecha 25: O'Higgins vence a Cobresal en El Teniente - Cooperativa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxOUUYtZTJuc1dhTkRoZ1UtUFRVWUVzdFVVdHJOeG9pNHB4NERCTTh5bTA3Qk56NXFBRndPWlVvbU84Z1pTZmVXZUNUVEZISVlVUTFRSHRSUDk2SzkwSXRWYmw2TlY0VFRNNXI5WnpwMHM5eHF4eHFIYTJPdEdqSGZiOHhZODE4X2RoYkZGdGlyTEtOVUxrRW5XcmZWTjBScXVmUjZmN2hYVXRZZ21nVkxHR0Ewamp4VV9NaG1MdVFQcDJuRGZJU1pJUHhOc3drZlFSSjJkbmtZZHjSAYwBQVVfeXFMUFc5MTVnODk3VzR2TXFmWHIwUHR5ejdDckFqckVfaXhYd0N2RVE0aXRkdmNPT3h2SU1SQmJoU2ltbWhVWmJESEhXQ0lScmptYzNBOE54akpKUlVmSXdFS2cydTZoTHRRbkR2S2wtSVpLYnBlen",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOUUYtZTJuc1dhTkRoZ1UtUFRVWUVzdFVVdHJOeG9pNHB4NERCTTh5bTA3Qk56NXFBRndPWlVvbU84Z1pTZmVXZUNUVEZISVlVUTFRSHRSUDk2SzkwSXRWYmw2TlY0VFRNNXI5WnpwMHM5eHF4eHFIYTJPdEdqSGZiOHhZODE4X2RoYkZGdGlyTEtOVUxrRW5XcmZWTjBScXVmUjZmN2hYVXRZZ21nVkxHR0Ewamp4VV9NaG1MdVFQcDJuRGZJU1pJUHhOc3drZlFSSjJkbmtZZHjSAYwBQVVfeXFMUFc5MTVnODk3VzR2TXFmWHIwUHR5ejdDckFqckVfaXhYd0N2RVE0aXRkdmNPT3h2SU1SQmJoU2ltbWhVWmJESEhXQ0lScmptYzNBOE54akpKUlVmSXdFS2cydTZoTHRRbkR2S2wtSVpLYnBlenRzRG9Yb0RldEYyYS1veTlsOG5NWUk0ZGY?oc=5",
+      "pubDate": "Sun, 25 Oct 2026 00:04:37 GMT",
+      "timestamp": "2026-10-25T00:04:37.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Cooperativa",
+      "fuente_url_original": "https://www.cooperativa.cl",
+      "fuente": "Cooperativa",
+      "fuente_host": "cooperativa.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "categoria": "chile",
+      "equipo_chile": "O'Higgins",
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
       ]
     }
   ]
