@@ -48,6 +48,31 @@ function validatePackage(pkg) {
     if (!item || typeof item !== 'object' || Array.isArray(item)) {
       fail(`pieza ${n}: formato inválido`);
     }
+    const visibleFields = [
+      'gancho', 'subtitulo', 'descripcion', 'narracion', 'titulo_youtube',
+      'descripcion_youtube', '_noticia_original', '_fuente',
+      'equipo1', 'equipo2',
+    ];
+    const htmlTag = /<\/?[a-z][^>]*>/i;
+    const htmlEntity = /&(?:#\d+|#x[\da-f]+|[a-z][a-z0-9]+);/i;
+    const mojibake = /(?:Ã[\u0080-\u00FF]|Â[\u0080-\u00FF]|â€|ï¿½|�)/i;
+    for (const key of visibleFields) {
+      const value = item[key];
+      if (value === undefined || value === null || value === '') continue;
+      if (typeof value !== 'string') fail('pieza ' + n + ': campo de texto inválido: ' + key);
+      if (htmlTag.test(value)) fail('pieza ' + n + ': etiquetas HTML sin limpiar en ' + key);
+      if (htmlEntity.test(value)) fail('pieza ' + n + ': entidad HTML sin decodificar en ' + key);
+      if (mojibake.test(value)) fail('pieza ' + n + ': caracteres dañados en ' + key);
+    }
+    if (Array.isArray(item.puntos)) {
+      item.puntos.forEach((point, pointIndex) => {
+        if (typeof point !== 'string') fail('pieza ' + n + ': punto ' + (pointIndex + 1) + ' no es texto');
+        if (htmlTag.test(point) || htmlEntity.test(point)) {
+          fail('pieza ' + n + ': HTML sin limpiar en puntos[' + pointIndex + ']');
+        }
+        if (mojibake.test(point)) fail('pieza ' + n + ': caracteres dañados en puntos[' + pointIndex + ']');
+      });
+    }
     if (!validateSourceUrl(item._fuente_url)) {
       fail(`pieza ${n}: URL de fuente ausente o inválida`);
     }
