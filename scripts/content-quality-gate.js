@@ -1,16 +1,15 @@
 'use strict';
 
-const MOJIBAKE = /(?:Ã[\\u0080-\\u00FF]|Â[\\u0080-\\u00FF]|â€|ï¿½|�|\\\\uFFFD)/i;
-const HTML_TAG = /<\\/?[a-z][^>]*>/i;
-const HTML_ENTITY = /&(?:#\\d+|#x[\\da-f]+|[a-z][a-z0-9]+);/i;
-const PLACEHOLDER = /\\b(?:undefined|null|NaN|TODO|PLACEHOLDER)\\b/i;
+const MOJIBAKE = /(?:Ã[\u0080-\u00FF]|Â[\u0080-\u00FF]|â€|ï¿½|�|\\uFFFD)/i;
+const HTML_TAG = /<\/?[a-z][^>]*>/i;
+const HTML_ENTITY = /&(?:#\d+|#x[\da-f]+|[a-z][a-z0-9]+);/i;
+const PLACEHOLDER = /\b(?:undefined|null|NaN|TODO|PLACEHOLDER)\b/i;
 const GENERIC_TEAM = /^(?:f[uú]tbol chileno|f[uú]tbol mundial|chile|noticias|equipo local|equipo visitante|por definir)$/i;
 
 function validateItemForRender(item, index = 1) {
   const fail = (message) => { throw new Error('CONTENT_GATE_BLOCKED: pieza ' + index + ': ' + message); };
   if (!item || typeof item !== 'object' || Array.isArray(item)) fail('pieza no válida');
 
-  // Validate every user-facing field, including metadata that can be shown or spoken.
   const textFields = [
     'gancho', 'subtitulo', 'descripcion', 'narracion', 'titulo_youtube',
     'descripcion_youtube', '_noticia_original', '_fuente',
@@ -27,7 +26,7 @@ function validateItemForRender(item, index = 1) {
     if (HTML_ENTITY.test(value)) fail('entidades HTML sin decodificar en ' + key);
     if (PLACEHOLDER.test(value)) fail('marcador técnico visible en ' + key);
   }
-  if (typeof item._fuente_url !== 'string' || !/^https?:\\/\\/[^\\s]+$/i.test(item._fuente_url)
+  if (typeof item._fuente_url !== 'string' || !/^https?:\/\/[^\s]+$/i.test(item._fuente_url)
       || HTML_ENTITY.test(item._fuente_url)) fail('URL de fuente inválida o sin limpiar');
 
   const visibleText = [
