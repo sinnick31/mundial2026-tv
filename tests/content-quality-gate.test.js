@@ -7,9 +7,11 @@ const { validateItemForRender } = require('../scripts/content-quality-gate');
 function validItem() {
   return {
     gancho: 'FÚTBOL CHILENO: noticia confirmada',
+    narracion: 'Esta narración explica el hecho publicado, aporta contexto y distingue la información confirmada de la interpretación editorial. '.repeat(2),
+    _noticia_original: 'Noticia deportiva verificada',
+    _fuente: 'Medio deportivo',
     titulo_youtube: 'FÚTBOL CHILENO: noticia y contexto | Lo que cambia',
     descripcion_youtube: 'Hecho confirmado y contexto editorial. Fuente: https://example.com/noticia',
-    _fuente: 'Medio deportivo',
     _fuente_url: 'https://example.com/noticia',
     puntos: ['HECHO PUBLICADO: noticia deportiva', 'CONTEXTO EDITORIAL: explicación del hecho'],
     _tipo_contenido: 'noticia',
@@ -66,5 +68,17 @@ test('bloquea caracteres corruptos en el texto que se dibuja en pantalla', () =>
 test('bloquea entidades HTML que aparecerían literalmente en pantalla', () => {
   const item = validItem();
   item.subtitulo = 'La noticia &nbsp; del partido';
-  assert.throws(() => validateItemForRender(item), /entidades HTML sin limpiar/);
+  assert.throws(() => validateItemForRender(item), /entidades HTML sin decodificar/);
+});
+
+test('bloquea entidades HTML en la narración y detalla el campo', () => {
+  const item = validItem();
+  item.narracion = 'La noticia incluye &amp; y más contexto editorial.';
+  assert.throws(() => validateItemForRender(item), /entidades HTML sin decodificar en narracion/);
+});
+
+test('bloquea etiquetas HTML en el título antes de renderizar', () => {
+  const item = validItem();
+  item.titulo_youtube = '<b>FÚTBOL CHILENO</b>: noticia y contexto';
+  assert.throws(() => validateItemForRender(item), /etiquetas HTML sin limpiar en titulo_youtube/);
 });
