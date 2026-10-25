@@ -215,6 +215,61 @@ async function uploadToYouTube(youtube, filePath, data) {
   return response.data.id;
 }
 
+function limpiarTextoVisible(valor) {
+  if (typeof valor !== 'string') return valor;
+  const entidades = {
+    amp: '&', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—',
+    hellip: '…', rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“',
+    bull: '•', copy: '©', reg: '®',
+  };
+  let texto = valor
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ')
+    .replace(/<\/?[a-z][^>]*>/gi, ' ')
+    .replace(/&(#x[0-9a-f]+|#\d+|[a-z][a-z0-9]+);/gi, (entidad, codigo) => {
+      if (codigo[0] === '#') {
+        const hexadecimal = codigo[1]?.toLowerCase() === 'x';
+        const numero = Number.parseInt(codigo.slice(hexadecimal ? 2 : 1), hexadecimal ? 16 : 10);
+        if (!Number.isFinite(numero) || numero <= 0 || numero > 0x10ffff
+          || (numero >= 0xd800 && numero <= 0xdfff)) return ' ';
+        try { return String.fromCodePoint(numero); } catch { return ' '; }
+      }
+      if (codigo.toLowerCase() === 'lt') return '‹';
+      if (codigo.toLowerCase() === 'gt') return '›';
+      return Object.prototype.hasOwnProperty.call(entidades, codigo.toLowerCase())
+        ? entidades[codigo.toLowerCase()] : entidad;
+    });
+  // A second pass removes any tags exposed by malformed or double-encoded feeds.
+  texto = texto.replace(/<\/?[a-z][^>]*>/gi, ' ');
+  return texto.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function limpiarPiezaAntesDeValidar(item) {
+  const campos = [
+    'gancho', 'subtitulo', 'descripcion', 'narracion', 'titulo_youtube',
+    'descripcion_youtube', '_noticia_original', '_fuente', 'equipo1', 'equipo2',
+  ];
+  let camposLimpiados = 0;
+  for (const campo of campos) {
+    if (typeof item[campo] === 'string') {
+      const limpio = limpiarTextoVisible(item[campo]);
+      if (limpio !== item[campo]) camposLimpiados++;
+      item[campo] = limpio;
+    }
+  }
+  if (Array.isArray(item.puntos)) {
+    item.puntos = item.puntos.map((punto) => {
+      if (typeof punto !== 'string') return punto;
+      const limpio = limpiarTextoVisible(punto);
+      if (limpio !== punto) camposLimpiados++;
+      return limpio;
+    });
+  }
+  if (camposLimpiados) {
+    console.log('   🧹 Texto de fuente normalizado en ' + camposLimpiados + ' campo(s) antes de validar.');
+  }
+}
+
 async function main() {
   if (!fs.existsSync('daily-content.json')) {
     console.log('⚠️ No existe daily-content.json — nada que hacer.');
@@ -244,6 +299,7 @@ async function main() {
     const videoFile = path.join(outDir, `video_${item._orden}_${item._tipo_contenido}.mp4`);
 
     try {
+      limpiarPiezaAntesDeValidar(item);
       validateItemForRender(item, item._orden || resultados.length + 1);
       const { compositionId, props, durationInFrames } = await prepararRender(item);
       renderVideo(compositionId, props, videoFile, durationInFrames);
