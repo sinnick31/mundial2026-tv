@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DOMINIO GOLEADOR POR VICTORIA",
-      "titulo": "FC Barcelona logra 1.90 GD/victoria: ¿es el más contundente de La Liga?",
-      "fecha": "2026-08-03T22:01:13.127Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "FICHAJE CONFIRMADO PERO VA PRESTADO",
       "titulo": "U. de Chile ficha y presta: ¿Busca minutos fuera de casa?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Aprovechará el parón por la fecha FIFA: Colo Colo jugará un amistoso ante…",
       "titulo": "FÚTBOL MUNDIAL: Aprovechará el parón por la fecha FIFA: Colo Colo jugará un… | Lo que cambia",
       "fecha": "2026-10-25T00:57:20.948Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "SE JUEGA ALGO GRANDE: La calculadora \"alba\": ¿Qué necesita Colo Colo para cerrar el título de…",
+      "titulo": "FÚTBOL MUNDIAL: La calculadora \"alba\": ¿Qué necesita Colo Colo para cerrar el… | Lo que cambia",
+      "fecha": "2026-10-25T18:02:47.214Z"
     }
   ]
 }
