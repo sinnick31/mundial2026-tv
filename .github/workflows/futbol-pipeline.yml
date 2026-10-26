@@ -127,6 +127,8 @@ jobs:
           MODO: ${{ inputs.modo || 'chile' }}
         run: |
           node scripts/generate-real-content.js
+          node --check scripts/retention-package.js
+          node scripts/retention-package.js daily-content.json
           FECHA=$(date -u +%Y-%m-%d)
           echo "fecha=$FECHA" >> "$GITHUB_OUTPUT"
           TOTAL=$(node -e "const f=require('./daily-content.json'); console.log(f.total||0)")
