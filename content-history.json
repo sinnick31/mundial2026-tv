@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U. DE CHILE: 9 PARTIDOS CONFIRMADOS",
-      "titulo": "U. de Chile con 9 partidos programados: ¿clave para el campeonato?",
-      "fecha": "2026-08-04T04:18:40.004Z"
-    },
-    {
       "match_id": "espn-401850614",
       "tipo_contenido": "prediccion",
       "hook": "DATOS RELEVANTES AUSENTES",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Colo-Colo volvió al triunfo frente a Deportes Temuco y se ilusiona con los…",
       "titulo": "FÚTBOL CHILENO: Colo-Colo volvió al triunfo frente a Deportes Temuco y se… | Lo que cambia",
       "fecha": "2026-10-26T00:56:28.822Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "CHILENOS POR EL MUNDO: Fulham vs. Crystal Palace: a qué hora juegan, qué canal transmite y…",
+      "titulo": "CHILENOS POR EL MUNDO: Fulham vs. Crystal Palace: a qué hora juegan,… | La clave para seguirlo",
+      "fecha": "2026-10-26T20:17:02.836Z"
     }
   ]
 }
