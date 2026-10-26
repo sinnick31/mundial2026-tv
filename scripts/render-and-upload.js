@@ -47,28 +47,68 @@ async function getYouTubeClient() {
 }
 
 
+function normalizarNombreEquipo(valor) {
+  return String(valor || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]/g, '');
+}
+
+function esMismoEquipo(a, b) {
+  const alias = {
+    colocolocolo: 'colocolo',
+    colocolosadp: 'colocolo',
+    catolica: 'universidadcatolica',
+    uc: 'universidadcatolica',
+    ucatolica: 'universidadcatolica',
+    udec: 'universidaddeconcepcion',
+    laudeconce: 'universidaddeconcepcion',
+    laude: 'udechile',
+    universidaddechile: 'udechile',
+    uchile: 'udechile',
+    unionespaniola: 'unionespanola',
+  };
+  const na = normalizarNombreEquipo(a);
+  const nb = normalizarNombreEquipo(b);
+  return na === nb || (alias[na] || na) === (alias[nb] || nb);
+}
+
 function imagenAutorizadaParaEquipo(nombreEquipo) {
-  // TEAM_IMAGES_JSON: {"Colo-Colo":{"url":"https://...","credit":"Club/autor","rights":"authorized"}}
-  // Solo usar recursos cuyo operador haya confirmado los derechos de uso.
+  // TEAM_IMAGES_JSON: {"Colo-Colo":{"url":"https://...","credit":"Club/autor","rights":"authorized","team":"Colo-Colo"}}
+  // Una URL no basta: el catálogo debe identificar explícitamente el equipo y confirmar derechos.
   try {
     const catalogo = JSON.parse(process.env.TEAM_IMAGES_JSON || '{}');
-    const normalizarEquipo = valor => String(valor || '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/[^a-z0-9]/g, '');
-    const buscado = normalizarEquipo(nombreEquipo);
-    const key = Object.keys(catalogo).find(k => normalizarEquipo(k) === buscado);
+    const key = Object.keys(catalogo).find(k => esMismoEquipo(k, nombreEquipo));
     const item = key ? catalogo[key] : null;
     if (!item || item.rights !== 'authorized' || !/^https:\/\//i.test(item.url || '')) return {};
-    return { imagenEquipoSrc: item.url, imagenEquipoCredito: item.credit || 'Crédito no indicado' };
+    if (item.team && !esMismoEquipo(item.team, nombreEquipo)) return {};
+    return {
+      imagenEquipoSrc: item.url,
+      imagenEquipoCredito: item.credit || 'Crédito no indicado',
+      imagenEquipoNombreVerificado: nombreEquipo,
+    };
   } catch {
     return {};
   }
 }
 
-function elegirBroll() {
+function elegirBroll(item) {
+  // Nunca elegir clips al azar: el b-roll genérico puede mostrar un club equivocado.
+  // TEAM_BROLL_MANIFEST: [{"file":"colo-colo-01.mp4","team":"Colo-Colo","rights":"authorized"}]
   try {
-    const archivos = fs.readdirSync(BROLL_DIR).filter(f => /\.(mp4|mov|webm)$/i.test(f));
-    if (archivos.length === 0) return undefined;
-    const elegido = archivos[Math.floor(Math.random() * archivos.length)];
-    return `broll/${elegido}`;
+    const manifest = JSON.parse(process.env.TEAM_BROLL_MANIFEST || '[]');
+    if (!Array.isArray(manifest)) return undefined;
+    const equiposNoticia = [item?.equipo1, item?.equipo2].filter(Boolean);
+    const candidatos = manifest.filter(entry => {
+      if (!entry || entry.rights !== 'authorized' || typeof entry.file !== 'string' || typeof entry.team !== 'string') return false;
+      if (!equiposNoticia.some(equipo => esMismoEquipo(equipo, entry.team))) return false;
+      if (path.basename(entry.file) !== entry.file || !/\.(mp4|mov|webm)$/i.test(entry.file)) return false;
+      return fs.existsSync(path.join(BROLL_DIR, entry.file));
+    });
+    if (!candidatos.length) return undefined;
+    const elegido = candidatos[Math.floor(Math.random() * candidatos.length)];
+    return `broll/${elegido.file}`;
   } catch {
     return undefined;
   }
@@ -121,7 +161,7 @@ async function prepararNarracion(item) {
 }
 
 async function prepararRender(item) {
-  const brollSrc = elegirBroll();
+  const brollSrc = elegirBroll(item);
   const { audioSrc, durationInFrames } = await prepararNarracion(item);
 
   const esPartidoJugado = item._tipo_contenido === 'narrativa'
