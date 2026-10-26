@@ -82,7 +82,7 @@ function imagenAutorizadaParaEquipo(nombreEquipo) {
     const key = Object.keys(catalogo).find(k => esMismoEquipo(k, nombreEquipo));
     const item = key ? catalogo[key] : null;
     if (!item || item.rights !== 'authorized' || !/^https:\/\//i.test(item.url || '')) return {};
-    if (item.team && !esMismoEquipo(item.team, nombreEquipo)) return {};
+    if (typeof item.team !== 'string' || !esMismoEquipo(item.team, nombreEquipo)) return {};
     return {
       imagenEquipoSrc: item.url,
       imagenEquipoCredito: item.credit || 'Crédito no indicado',
