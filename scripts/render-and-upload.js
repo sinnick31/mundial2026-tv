@@ -271,6 +271,9 @@ function limpiarPiezaAntesDeValidar(item) {
 }
 
 async function main() {
+  const renderOnly = String(process.env.RENDER_ONLY || '').trim().toLowerCase() === 'true';
+  if (renderOnly) console.log('🧪 MODO RENDER-ONLY: no se autenticará ni se publicará en YouTube.');
+
   if (!fs.existsSync('daily-content.json')) {
     console.log('⚠️ No existe daily-content.json — nada que hacer.');
     return;
@@ -285,7 +288,7 @@ async function main() {
 
   console.log(`\n🚀 Procesando ${contenido.length} video(s) único(s) para el ${fecha}\n`);
 
-  const youtube = await getYouTubeClient();
+  const youtube = renderOnly ? null : await getYouTubeClient();
   const outDir = `out/${fecha}`;
   fs.mkdirSync(outDir, { recursive: true });
   fs.mkdirSync(PUBLIC_TMP_DIR, { recursive: true });
@@ -305,6 +308,22 @@ async function main() {
       renderVideo(compositionId, props, videoFile, durationInFrames);
       const quality = validateRenderedVideo(videoFile);
       console.log(`   🛡️ Control visual aprobado: ${quality.width}x${quality.height}, ${quality.duration}s, ${(quality.bytes / 1e6).toFixed(2)} MB`);
+      if (renderOnly) {
+        resultados.push({
+          orden: item._orden,
+          tipo: item._tipo_contenido,
+          plantilla: compositionId,
+          gancho: item.gancho,
+          fuente: item._fuente,
+          fuente_url: item._fuente_url,
+          archivo_local: videoFile,
+          calidad: quality,
+          estado: 'RENDERED_LOCAL',
+        });
+        console.log('   🧪 Render local validado; subida omitida por RENDER_ONLY=true.');
+        continue;
+      }
+
       await new Promise(r => setTimeout(r, 2000));
       const videoId = await uploadToYouTube(youtube, videoFile, item);
 
@@ -340,7 +359,9 @@ async function main() {
     fecha,
     ejecutado_en: new Date().toISOString(),
     total: contenido.length,
+    modo: renderOnly ? 'render-only' : 'publish',
     exitosos: resultados.filter(r => r.estado === 'OK').length,
+    renderizados_locales: resultados.filter(r => r.estado === 'RENDERED_LOCAL').length,
     errores: resultados.filter(r => r.estado === 'ERROR').length,
     videos: resultados,
   };
@@ -350,14 +371,18 @@ async function main() {
   console.log('\n\n══════════════════════════════════════');
   console.log('📊 RESUMEN DEL DÍA');
   console.log('══════════════════════════════════════');
-  console.log(`✅ Exitosos: ${reporte.exitosos}/${reporte.total}`);
+  console.log(`✅ Publicados: ${reporte.exitosos}/${reporte.total}`);
+  if (renderOnly) console.log(`🧪 Renderizados localmente: ${reporte.renderizados_locales}/${reporte.total}`);
   if (reporte.errores > 0) console.log(`❌ Errores:  ${reporte.errores}`);
   resultados.filter(r => r.estado === 'OK').forEach(r =>
     console.log(`   ${r.orden}. [${r.plantilla || r.tipo}] ${r.gancho} → ${r.youtube_url}`)
   );
 
-  if (reporte.errores > 0 || reporte.exitosos !== reporte.total) {
-    console.error(`\n❌ Publicación incompleta: ${reporte.exitosos}/${reporte.total} videos publicados.`);
+  const completados = renderOnly ? reporte.renderizados_locales : reporte.exitosos;
+  if (reporte.errores > 0 || completados !== reporte.total) {
+    console.error(renderOnly
+      ? `\n❌ Renderizado local incompleto: ${reporte.renderizados_locales}/${reporte.total} videos renderizados.`
+      : `\n❌ Publicación incompleta: ${reporte.exitosos}/${reporte.total} videos publicados.`);
     process.exitCode = 1;
     return;
   }
