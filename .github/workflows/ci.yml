@@ -9,6 +9,7 @@ on:
       - 'scripts/generate-real-content.js'
       - 'scripts/viral-score.js'
       - 'scripts/fetch-real-news.js'
+      - 'scripts/reconcile-editorial-state.js'
       - 'scripts/render-and-upload.js'
       - 'tests/**'
       - 'package.json'
@@ -29,6 +30,7 @@ on:
       - 'scripts/generate-real-content.js'
       - 'scripts/viral-score.js'
       - 'scripts/fetch-real-news.js'
+      - 'scripts/reconcile-editorial-state.js'
       - 'scripts/render-and-upload.js'
       - 'tests/**'
       - 'package.json'
@@ -70,6 +72,7 @@ jobs:
           node --check scripts/generate-real-content.js
           node --check scripts/viral-score.js
           node --check scripts/fetch-real-news.js
+          node --check scripts/reconcile-editorial-state.js
           node --check scripts/render-and-upload.js
           node --check scripts/fetch-matches.js
           node --check scripts/generate-results-longform.js
