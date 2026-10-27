@@ -42,7 +42,7 @@ function isFutbolFemenino(item) {
   const category = normalize(item.categoria_feed || item.categoria || '');
   const text = normalize(`${item.title || ''} ${item.description || ''}`);
   return ['femenino', 'futbol_femenino', 'liga_femenina', 'la_roja_femenina'].includes(category)
-    || /\\b(liga femenina|futbol femenino|la roja femenina|seleccion femenina|copa femenina|ascenso femenino|women'?s football|women'?s champions league|femenil)\\b/.test(text);
+    || /\b(liga femenina|futbol femenino|la roja femenina|seleccion femenina|copa femenina|ascenso femenino|women'?s football|women'?s champions league|femenil)\b/.test(text);
 }
 function isInternational(item) {
   if (item.categoria_feed === 'internacional' || item.categoria === 'internacional') return true;
