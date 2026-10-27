@@ -248,4 +248,6 @@ function main() {
   console.log(`✅ ${picks.length} piezas reales seleccionadas`);
   picks.forEach((p, i) => console.log(`${i + 1}. [${p._fuente}] ${p.titulo_youtube}`));
 }
-main();
+if (require.main === module) main();
+
+module.exports = { isFutbolFemenino, typeFor, labelFor };
