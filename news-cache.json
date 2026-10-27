@@ -1,14 +1,10 @@
 {
-  "ultima_actualizacion": "2026-10-27T01:38:49.716Z",
-  "total_hoy": 487,
+  "ultima_actualizacion": "2026-10-27T01:46:36.354Z",
+  "total_hoy": 383,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 63,
-    "colo_colo": 22,
-    "formativo": 10,
-    "tercera": 2,
-    "futsal": 2,
-    "internacional": 41
+    "chile": 94,
+    "colo_colo": 46
   },
   "noticias": [
     {
@@ -10133,6 +10129,29 @@
       ]
     },
     {
+      "title": "Pronósticos Universidad de Chile vs Everton: los Ruleteros quieren meterse en la pelea por el Chile 2 - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxNM0JPcHYxR2YxTXNENVNoamhRNlgxTWJjOWQ5X0RTMEFQT2swRVNscjhSLWhvQldYemtKWDY5TE9ES3dtMVJCQ2kzekVIN1pzSkZoVkJlRkV5YUVlR21DaDRHYmFlQURrMG5zRmdZVVRZYU02OHR5RGhnQ19PemZkUVpNb2hvQS1qVXV4SkxMUzNCN19pUUdNekRxblBoZw?oc=5\" target=\"_blank\">Pronósticos Universidad de Chile vs Everton: los Ruleteros quieren meterse en la pelea por el Chile 2</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">RedGol</font>",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNM0JPcHYxR2YxTXNENVNoamhRNlgxTWJjOWQ5X0RTMEFQT2swRVNscjhSLWhvQldYemtKWDY5TE9ES3dtMVJCQ2kzekVIN1pzSkZoVkJlRkV5YUVlR21DaDRHYmFlQURrMG5zRmdZVVRZYU02OHR5RGhnQ19PemZkUVpNb2hvQS1qVXV4SkxMUzNCN19pUUdNekRxblBoZw?oc=5",
+      "pubDate": "Sun, 25 Oct 2026 21:00:00 GMT",
+      "timestamp": "2026-10-25T21:00:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 83,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:29h(+0)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "gigante:universidad de chile(+10)"
+      ]
+    },
+    {
       "title": "La Calera venció a una UC que cedió terreno en el Chile 2 - ESPN Deportes",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxOX2hNNmV6UlhjTk9SR2Q4dGl5dGpJVWVTVWlBb3lZcEhoc3RYaXJycWJVeExhakg0ZmgwUDQ1cGk3T3dZNzltNTQ4dGxuZzA1bXJOVFlTWHJ3Wlgtd09sLXVqRkFOeC1TTzN0aDlIQXpXM1BIOUFiMjAzVTRUZi1HN2xkc3FxYk9jWjVPZjZEME5jOTNOcGNDbTlEaEdQS2RFcjc2X0lOTmdiVU42TDdiOFFsNDJzRkE4Ymo5SHV0bExXMDhBcjk5Y2ZKZUpEMVpTdXJzREkydThIbEM0Szd3MlRqM2t4OXc?oc=5\" target=\"_blank\">La Calera venció a una UC que cedió terreno en el Chile 2</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Deportes</font>",
       "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOX2hNNmV6UlhjTk9SR2Q4dGl5dGpJVWVTVWlBb3lZcEhoc3RYaXJycWJVeExhakg0ZmgwUDQ1cGk3T3dZNzltNTQ4dGxuZzA1bXJOVFlTWHJ3Wlgtd09sLXVqRkFOeC1TTzN0aDlIQXpXM1BIOUFiMjAzVTRUZi1HN2xkc3FxYk9jWjVPZjZEME5jOTNOcGNDbTlEaEdQS2RFcjc2X0lOTmdiVU42TDdiOFFsNDJzRkE4Ymo5SHV0bExXMDhBcjk5Y2ZKZUpEMVpTdXJzREkydThIbEM0Szd3MlRqM2t4OXc?oc=5",
@@ -13091,6 +13110,29 @@
         "senal:\\b(record|historico|(+12)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "¡Histórico! Colo Colo prepara su primera camiseta morada para la temporada 2027 - TVN",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPcktidDNfNVVwcWIwQ2IzYmUwU2Q5T3pPdTZwQUZqOU14VUlUR1MzeGlCMUlpMWZZcllCRTJyUVFhbUtKdWRiaTlMdEJTM050TEppVlJsZTBpYXlLSnJma0RQMjBPZDNhZUxHc3AwRFc0b2JyVGNyenZyS2tFaFNRbXM2VDBkRTdSZ2lZVDRLZHhjUU5yRlV0QXAxY2VkaTkzZmpERzdFNUUxLTNsNjdLLXBsTW84UzN3bFpkTlRR0gHDAUFVX3lxTE5KZnNwMnphVWpqbUJfT3BpbVREUVVnSGlBLTFKcjBsMFNrbDdtS1otbm1jeDNwdTktTEtlSTNDZzBqUFdiVldqTkM4TGJ0ekt4N2sxMGVrbUEyaVhTTExfNjh5ZHJNWW5ueUVCUzMwaTFTZzZYZTF5NGVZa0Q3STNlUFl0SXo1dWduVnZYRH",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPcktidDNfNVVwcWIwQ2IzYmUwU2Q5T3pPdTZwQUZqOU14VUlUR1MzeGlCMUlpMWZZcllCRTJyUVFhbUtKdWRiaTlMdEJTM050TEppVlJsZTBpYXlLSnJma0RQMjBPZDNhZUxHc3AwRFc0b2JyVGNyenZyS2tFaFNRbXM2VDBkRTdSZ2lZVDRLZHhjUU5yRlV0QXAxY2VkaTkzZmpERzdFNUUxLTNsNjdLLXBsTW84UzN3bFpkTlRR0gHDAUFVX3lxTE5KZnNwMnphVWpqbUJfT3BpbVREUVVnSGlBLTFKcjBsMFNrbDdtS1otbm1jeDNwdTktTEtlSTNDZzBqUFdiVldqTkM4TGJ0ekt4N2sxMGVrbUEyaVhTTExfNjh5ZHJNWW5ueUVCUzMwaTFTZzZYZTF5NGVZa0Q3STNlUFl0SXo1dWduVnZYRHpHTHR4bk1OS1plSDdsR2IzWkNrUFV6UXhXZW1pVXpRbi1vY0Z3N1NfMFZwT1FRUklVRDhnYw?oc=5",
+      "pubDate": "Tue, 27 Oct 2026 01:39:00 GMT",
+      "timestamp": "2026-10-27T01:39:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "TVN",
+      "fuente_url_original": "https://www.tvn.cl",
+      "fuente": "TVN",
+      "fuente_host": "tvn.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:0h(+15)",
+        "senal:\\b(record|historico|(+12)",
+        "gigante:colo colo(+10)"
       ]
     }
   ]
