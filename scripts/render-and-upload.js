@@ -96,15 +96,19 @@ function imagenAutorizadaParaEquipo(nombreEquipo) {
 
 function elegirBroll(item) {
   // Nunca elegir clips al azar: el b-roll genérico puede mostrar un club equivocado.
-  // TEAM_BROLL_MANIFEST: [{"file":"colo-colo-01.mp4","team":"Colo-Colo","rights":"authorized"}]
+  // TEAM_BROLL_MANIFEST: [{"file":"colo-colo-01.mp4","team":"Colo-Colo","rights":"authorized","sourceUrl":"https://...","credit":"Autor/club"}]
   try {
     const manifest = JSON.parse(process.env.TEAM_BROLL_MANIFEST || '[]');
     if (!Array.isArray(manifest)) return undefined;
     const equiposNoticia = [item?.equipo1, item?.equipo2].filter(Boolean);
     const candidatos = manifest.filter(entry => {
       if (!entry || entry.rights !== 'authorized' || typeof entry.file !== 'string' || typeof entry.team !== 'string') return false;
+      if (typeof entry.credit !== 'string' || !entry.credit.trim()) return false;
+      if (typeof entry.sourceUrl !== 'string' || !/^https:\/\//i.test(entry.sourceUrl)) return false;
       if (!equiposNoticia.some(equipo => esMismoEquipo(equipo, entry.team))) return false;
       if (path.basename(entry.file) !== entry.file || !/\.(mp4|mov|webm)$/i.test(entry.file)) return false;
+      // Nunca permitir que clips genéricos descargados por fetch-broll.js se etiqueten como material de un club.
+      if (/^clip\d+\.(mp4|mov|webm)$/i.test(entry.file)) return false;
       return fs.existsSync(path.join(BROLL_DIR, entry.file));
     });
     if (!candidatos.length) return undefined;
