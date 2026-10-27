@@ -59,6 +59,13 @@ La automatización técnica no sustituye el control editorial. Revisar fuentes, 
 - [Plan operativo de 30 días](docs/PLAN_30_DIAS.md)
 - [Estrategia editorial del canal](CHANNEL_STRATEGY.md)
 
+## 📱 TikTok — @elias.valdivia60
+
+- Perfil: https://www.tiktok.com/@elias.valdivia60
+- Auditoría y requisitos de integración: [docs/INTEGRACION_TIKTOK.md](docs/INTEGRACION_TIKTOK.md)
+- La integración de publicación automática está pendiente de la aplicación oficial, permisos, autorización de la cuenta y auditoría de TikTok.
+- TikTok se mantendrá aislado del flujo de YouTube. No se cambia la publicación de YouTube como parte de esta integración.
+
 ## ⚙️ Modos (workflow_dispatch)
 
 El workflow activo ofrece: `chile` (enfoque Chile), `auto` (selección automática) y `noticias`. Los modos documentados en otros scripts no se consideran opciones disponibles hasta que estén declarados en `.github/workflows/futbol-pipeline.yml`.
