@@ -150,7 +150,13 @@ jobs:
           npm run test:editorial-gate
 
       - name: 💾 Guardar memoria editorial
+        env:
+          RENDER_ONLY: ${{ inputs.render_only || 'true' }}
         run: |
+          if [ "$RENDER_ONLY" = "true" ]; then
+            echo "ℹ️ Render-only: no se modifica la memoria editorial del repositorio."
+            exit 0
+          fi
           # Editorial history is stateful: never overwrite newer remote history.
           if [ "$GITHUB_REF" != "refs/heads/main" ]; then
             echo "::error::Run this publishing workflow from main only; refusing to update editorial memory from another branch."
@@ -274,15 +280,15 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
           TEAM_BROLL_MANIFEST: ${{ secrets.TEAM_BROLL_MANIFEST }}
-          RENDER_ONLY: ${{ inputs.render_only || 'false' }}
-          YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'public' }}
-          ALLOW_SCHEDULED_PUBLIC: ${{ vars.ALLOW_SCHEDULED_PUBLIC || 'true' }}
+          RENDER_ONLY: ${{ inputs.render_only || 'true' }}
+          YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'private' }}
+          ALLOW_SCHEDULED_PUBLIC: 'false'
         run: node scripts/render-and-upload.js
 
       - name: 🔎 Verificar publicación
         env:
           REPORT: out/reporte-${{ needs.generate.outputs.fecha }}.json
-          RENDER_ONLY: ${{ inputs.render_only || 'false' }}
+          RENDER_ONLY: ${{ inputs.render_only || 'true' }}
         run: |
           test -f "$REPORT"
           node - <<'NODE'
