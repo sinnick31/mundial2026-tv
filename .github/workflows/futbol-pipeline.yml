@@ -84,7 +84,7 @@ jobs:
           npx tsc --noEmit
 
   generate:
-    if: github.event_name != 'push' && github.event_name != 'schedule'
+    if: github.event_name != 'push'
     name: 📰 Detectar noticia + guion original
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -325,9 +325,5 @@ jobs:
           echo "Generación: ${{ needs.generate.result }}"
           echo "Publicación: ${{ needs.publish.result }}"
           echo "════════════════════════════════════════"
-          if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
-            echo "Publicación programada pausada por seguridad: pendiente validar un render audiovisual en modo render-only."
-            exit 0
-          fi
           if [ "${{ needs.generate.result }}" != "success" ]; then exit 1; fi
           if [ "${{ needs.publish.result }}" = "failure" ] || [ "${{ needs.publish.result }}" = "cancelled" ]; then exit 1; fi
