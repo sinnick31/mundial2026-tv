@@ -4,17 +4,17 @@ const ALLOWED_VISIBILITIES = new Set(['private', 'unlisted', 'public']);
 
 /**
  * Resolve YouTube upload visibility.
- * Scheduled uploads default to public unless explicitly overridden.
+ * Upload visibility defaults to private. Scheduled public uploads are disabled by default.
  */
 function getPublicationPrivacy(options = {}) {
   const requested = String(
-    options.requested ?? process.env.YOUTUBE_PRIVACY_STATUS ?? 'public',
+    options.requested ?? process.env.YOUTUBE_PRIVACY_STATUS ?? 'private',
   ).trim().toLowerCase();
   const eventName = String(
     options.eventName ?? process.env.GITHUB_EVENT_NAME ?? '',
   ).trim().toLowerCase();
   const allowScheduledPublic = String(
-    options.allowScheduledPublic ?? process.env.ALLOW_SCHEDULED_PUBLIC ?? 'true',
+    options.allowScheduledPublic ?? process.env.ALLOW_SCHEDULED_PUBLIC ?? 'false',
   ).trim().toLowerCase() === 'true';
 
   if (!ALLOWED_VISIBILITIES.has(requested)) {
