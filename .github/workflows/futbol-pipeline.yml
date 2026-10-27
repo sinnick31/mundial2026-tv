@@ -38,6 +38,12 @@ on:
         default: 'public'
         type: choice
         options: ['unlisted', 'private', 'public']
+      render_only:
+        description: 'Solo renderizar y validar, sin subir a YouTube'
+        required: true
+        default: 'true'
+        type: choice
+        options: ['true', 'false']
 
 concurrency:
   group: mundial2026shorts-${{ github.ref }}
@@ -78,7 +84,7 @@ jobs:
           npx tsc --noEmit
 
   generate:
-    if: github.event_name != 'push'
+    if: github.event_name != 'push' && (github.event_name != 'schedule' || vars.ENABLE_AUTO_PUBLISH == 'true')
     name: 📰 Detectar noticia + guion original
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -183,7 +189,7 @@ jobs:
           retention-days: 7
 
   publish:
-    name: 🎬 Render + publicar Short
+    name: 🎬 Render + validar/publicar Short
     runs-on: ubuntu-latest
     needs: generate
     if: github.event_name != 'push' && needs.generate.outputs.hay_contenido == 'true'
@@ -211,6 +217,7 @@ jobs:
           npx tsc --noEmit
 
       - name: 🔐 Validar YouTube OAuth v8
+        if: inputs.render_only != 'true'
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -255,6 +262,7 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
+          RENDER_ONLY: ${{ inputs.render_only || 'false' }}
           YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'public' }}
           ALLOW_SCHEDULED_PUBLIC: ${{ vars.ALLOW_SCHEDULED_PUBLIC || 'true' }}
         run: node scripts/render-and-upload.js
@@ -262,14 +270,22 @@ jobs:
       - name: 🔎 Verificar publicación
         env:
           REPORT: out/reporte-${{ needs.generate.outputs.fecha }}.json
+          RENDER_ONLY: ${{ inputs.render_only || 'false' }}
         run: |
           test -f "$REPORT"
           node - <<'NODE'
           const fs=require('fs');
           const r=JSON.parse(fs.readFileSync(process.env.REPORT,'utf8'));
-          const ok=(r.videos||[]).filter(v=>v.estado==='OK'&&v.youtube_id&&v.youtube_url);
-          console.log('YouTube: '+ok.length+'/'+r.total);
-          if(r.total>0 && ok.length!==r.total) process.exit(1);
+          const renderOnly=String(process.env.RENDER_ONLY||'').toLowerCase()==='true';
+          if (renderOnly) {
+            const rendered=(r.videos||[]).filter(v=>v.estado==='RENDERED_LOCAL'&&v.archivo_local&&v.calidad);
+            console.log('Render local validado: '+rendered.length+'/'+r.total);
+            if(r.modo!=='render-only'||r.total===0||rendered.length!==r.total) process.exit(1);
+          } else {
+            const ok=(r.videos||[]).filter(v=>v.estado==='OK'&&v.youtube_id&&v.youtube_url);
+            console.log('YouTube: '+ok.length+'/'+r.total);
+            if(r.total===0||ok.length!==r.total) process.exit(1);
+          }
           NODE
 
       - name: 💾 Backup
@@ -298,5 +314,9 @@ jobs:
           echo "Generación: ${{ needs.generate.result }}"
           echo "Publicación: ${{ needs.publish.result }}"
           echo "════════════════════════════════════════"
+          if [ "${GITHUB_EVENT_NAME}" = "schedule" ] && [ "${{ vars.ENABLE_AUTO_PUBLISH }}" != "true" ]; then
+            echo "Publicación programada pausada por seguridad: ENABLE_AUTO_PUBLISH no está en true."
+            exit 0
+          fi
           if [ "${{ needs.generate.result }}" != "success" ]; then exit 1; fi
           if [ "${{ needs.publish.result }}" = "failure" ] || [ "${{ needs.publish.result }}" = "cancelled" ]; then exit 1; fi
