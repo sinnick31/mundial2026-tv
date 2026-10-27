@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: CALENDARIO DEFINIDO",
-      "titulo": "U. de Chile ya tiene 9 partidos confirmados: ¿Definirán su campaña?",
-      "fecha": "2026-08-04T14:24:44.028Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "POTENCIA CONSOLIDADA",
       "titulo": "Arsenal con 8.625 de potencia: ¿El 1-1 contra PSG frena su invicto?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Fue llamada a La Roja adulta con 15 años: la UC le arrebata joven promesa a…",
       "titulo": "FÚTBOL CHILENO: Fue llamada a La Roja adulta con 15 años: la UC le arrebata… | Lo que cambia",
       "fecha": "2026-10-27T01:46:43.875Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Colo-Colo blinda a otra promesa: \"El comienzo de una gran historia\" - En Cancha",
+      "titulo": "FÚTBOL CHILENO: Colo-Colo blinda a otra promesa: \"El comienzo de una gran… | Lo que cambia",
+      "fecha": "2026-10-27T18:18:06.873Z"
     }
   ]
 }
