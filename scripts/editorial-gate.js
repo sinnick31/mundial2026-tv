@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const MAX_ITEMS = 2;
 const ALLOWED_CATEGORIES = new Set([
   'colo_colo',
+  'futbol_femenino',
   'chile',
   'chilenos_exterior',
   'internacional',

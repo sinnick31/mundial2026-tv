@@ -75,6 +75,20 @@ function esMismoEquipo(a, b) {
   return na === nb || (alias[na] || na) === (alias[nb] || nb);
 }
 
+// Etiquetas editoriales, no nombres de clubes. No deben exigir una foto de un equipo real.
+function esEtiquetaEditorialGenerica(nombreEquipo) {
+  const normalizado = normalizarNombreEquipo(nombreEquipo);
+  return new Set([
+    'futbolchileno',
+    'futbolmundial',
+    'noticias',
+    'chile',
+    'equipolocal',
+    'equipovisitante',
+    'pordefinir',
+  ]).has(normalizado);
+}
+
 function imagenAutorizadaParaEquipo(nombreEquipo) {
   // TEAM_IMAGES_JSON: {"Colo-Colo":{"url":"https://...","credit":"Club/autor","rights":"authorized","team":"Colo-Colo"}}
   // Una URL no basta: el catálogo debe identificar explícitamente el equipo y confirmar derechos.
@@ -173,12 +187,17 @@ async function prepararRender(item) {
     throw new Error('AV_GATE_BLOCKED: partido sin clip autorizado y verificado para equipo1/equipo2 en TEAM_BROLL_MANIFEST.');
   }
 
-  const imagen = imagenAutorizadaParaEquipo(item.equipo1);
-  const imagen2 = item.equipo2 ? imagenAutorizadaParaEquipo(item.equipo2) : {};
-  if (!esPartidoJugado && item.equipo1 && !imagen.imagenEquipoSrc) {
+  const imagen = esEtiquetaEditorialGenerica(item.equipo1) ? {} : imagenAutorizadaParaEquipo(item.equipo1);
+  const imagen2 = item.equipo2 && !esEtiquetaEditorialGenerica(item.equipo2)
+    ? imagenAutorizadaParaEquipo(item.equipo2)
+    : {};
+  // Solo exigimos fotos de catálogo cuando el guion nombra un club/selección concreto.
+  // Etiquetas de sección como "Fútbol chileno" usan el gráfico tipográfico de la plantilla,
+  // sin inventar que una imagen corresponde a un club específico.
+  if (!esPartidoJugado && item.equipo1 && !esEtiquetaEditorialGenerica(item.equipo1) && !imagen.imagenEquipoSrc) {
     throw new Error('AV_GATE_BLOCKED: falta imagen autorizada y asociada al equipo ' + item.equipo1 + ' en TEAM_IMAGES_JSON.');
   }
-  if (!esPartidoJugado && item.equipo2 && !imagen2.imagenEquipoSrc) {
+  if (!esPartidoJugado && item.equipo2 && !esEtiquetaEditorialGenerica(item.equipo2) && !imagen2.imagenEquipoSrc) {
     throw new Error('AV_GATE_BLOCKED: falta imagen autorizada y asociada al equipo ' + item.equipo2 + ' en TEAM_IMAGES_JSON.');
   }
 
@@ -228,8 +247,8 @@ async function prepararRender(item) {
     audioSrc,
     fuente: fuenteTexto(item),
     fechaPublicacion: item._fecha_publicacion_fuente || undefined,
-    etiquetaCanal: '@MUNDIAL2026SHORTS',
-    etiquetaSeccion: item._categoria_editorial === 'internacional' ? 'FÚTBOL MUNDIAL' : item._categoria_editorial === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : item._categoria_editorial === 'colo_colo' ? 'COLO-COLO' : 'FÚTBOL CHILENO',
+    etiquetaCanal: '@CHILENSISFUTBOL',
+    etiquetaSeccion: item._categoria_editorial === 'futbol_femenino' ? 'FÚTBOL FEMENINO' : item._categoria_editorial === 'internacional' ? 'FÚTBOL MUNDIAL' : item._categoria_editorial === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : item._categoria_editorial === 'colo_colo' ? 'COLO-COLO' : 'FÚTBOL CHILENO',
   };
   return { compositionId: 'PrediccionShorts', props, durationInFrames };
 }
@@ -415,7 +434,11 @@ async function main() {
   }
 }
 
-main().catch(err => {
-  console.error('\n❌ Error fatal:', err.message);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(err => {
+    console.error('\n❌ Error fatal:', err.message);
+    process.exit(1);
+  });
+}
+
+module.exports = { normalizarNombreEquipo, esMismoEquipo, esEtiquetaEditorialGenerica };

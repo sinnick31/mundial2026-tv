@@ -50,6 +50,12 @@ test('rechaza descripción sin URL de fuente', () => {
   assert.throws(() => validatePackage(pkg), /descripción sin URL de fuente/);
 });
 
+test('acepta la categoría editorial de fútbol femenino', () => {
+  const pkg = validPackage();
+  pkg.contenido[0]._categoria_editorial = 'futbol_femenino';
+  assert.deepEqual(validatePackage(pkg), { ok: true, total: 1 });
+});
+
 test('rechaza categorías desconocidas', () => {
   const pkg = validPackage();
   pkg.contenido[0]._categoria_editorial = 'rumor';

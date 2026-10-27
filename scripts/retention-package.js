@@ -15,7 +15,9 @@ function buildRetention(item) {
   const hook = isOfficial
     ? `¿Qué cambia de verdad con esta noticia confirmada? ${title}`
     : `La pregunta clave es qué cambia ahora: ${title}`;
-  const question = category === 'colo_colo'
+  const question = category === 'futbol_femenino'
+    ? '¿Qué historia del fútbol femenino chileno merece más seguimiento? Te leo en los comentarios.'
+    : category === 'colo_colo'
     ? '¿Qué debería hacer Colo-Colo a partir de esta noticia? Te leo en los comentarios.'
     : category === 'internacional'
       ? '¿Esto cambia el panorama del torneo o todavía es pronto? Te leo en los comentarios.'

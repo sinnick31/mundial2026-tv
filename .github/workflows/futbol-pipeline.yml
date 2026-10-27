@@ -151,7 +151,7 @@ jobs:
 
       - name: 💾 Guardar memoria editorial
         env:
-          RENDER_ONLY: ${{ inputs.render_only || 'true' }}
+          RENDER_ONLY: ${{ github.event_name == 'schedule' && 'false' || inputs.render_only || 'true' }}
         run: |
           if [ "$RENDER_ONLY" = "true" ]; then
             echo "ℹ️ Render-only: no se modifica la memoria editorial del repositorio."
@@ -234,7 +234,7 @@ jobs:
           npx tsc --noEmit
 
       - name: 🔐 Validar YouTube OAuth v8
-        if: inputs.render_only == 'false'
+        if: github.event_name == 'schedule' || inputs.render_only == 'false'
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -261,8 +261,7 @@ jobs:
           const clips = fs.existsSync(path) ? fs.readdirSync(path).filter(f => /\.mp4$/i.test(f)) : [];
           console.log('Clips visuales disponibles:', clips.length);
           if (!clips.length) {
-            console.error('::error::No hay clips visuales. Se bloquea la publicación para evitar un Short sin imágenes.');
-            process.exit(1);
+            console.warn('::warning::No hay clips genéricos disponibles. Las noticias usarán gráficos de plantilla; las crónicas de partidos seguirán bloqueadas si no tienen un clip específico autorizado en TEAM_BROLL_MANIFEST.');
           }
           NODE
 
@@ -293,7 +292,7 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
           TEAM_BROLL_MANIFEST: ${{ secrets.TEAM_BROLL_MANIFEST }}
-          RENDER_ONLY: ${{ inputs.render_only || 'true' }}
+          RENDER_ONLY: ${{ github.event_name == 'schedule' && 'false' || inputs.render_only || 'true' }}
           YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'private' }}
           ALLOW_SCHEDULED_PUBLIC: 'false'
         run: node scripts/render-and-upload.js
@@ -301,7 +300,7 @@ jobs:
       - name: 🔎 Verificar publicación
         env:
           REPORT: out/reporte-${{ needs.generate.outputs.fecha }}.json
-          RENDER_ONLY: ${{ inputs.render_only || 'true' }}
+          RENDER_ONLY: ${{ github.event_name == 'schedule' && 'false' || inputs.render_only || 'true' }}
         run: |
           echo "[diagnóstico] REPORT=${REPORT}"
           echo "[diagnóstico] pwd=$(pwd)"
