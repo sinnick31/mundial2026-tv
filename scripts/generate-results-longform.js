@@ -94,11 +94,19 @@ async function main() {
   fs.mkdirSync(path.dirname(OUT), {recursive:true});
   const propsArg = JSON.stringify(props).replace(/'/g, "'\\''");
   execSync(`npx remotion render src/index.tsx ChileLongform "${OUT}" --props='${propsArg}' --duration-in-frames=${durationInFrames} --codec=h264 --fps=30 --width=1920 --height=1080 --concurrency=2`, {cwd:ROOT, stdio:'inherit'});
+
+  // Por seguridad, este script solo renderiza localmente salvo autorización explícita.
+  if (String(process.env.PUBLISH_TO_YOUTUBE || '').toLowerCase() !== 'true') {
+    const report = {date:TODAY,mode:'render-only',localPath:OUT,totalMatches:sections.length,results:recent.length,upcoming:upcoming.length,title};
+    fs.writeFileSync(path.join(path.dirname(OUT),'reporte-resultados.json'),JSON.stringify(report,null,2));
+    console.log('RENDER LOCAL COMPLETADO; NO SE SUBIÓ A YOUTUBE '+JSON.stringify(report));
+    return;
+  }
   const {youtube} = await getAuthenticatedYouTube();
   const channel = await verifyChannel(youtube);
   const sourceList = sections.map(s=>`${s.titulo}\nFuente: ${s.fuente}\n${s.url}`).join('\n\n');
   const description = `${intro}\n\nLos nombres de goleadores y estadios se incluyen solo cuando están disponibles en los datos recibidos. Las fechas programadas pueden cambiar. No se incluyen clips de retransmisión.\n\nFUENTES\n${sourceList}\n\n#FutbolChileno #ColoColo #ResultadosFutbol #ProximosPartidos #FutbolMundial`;
-  const privacyStatus = process.env.RESULTS_VIDEO_PRIVACY || 'public';
+  const privacyStatus = process.env.RESULTS_VIDEO_PRIVACY || 'private';
   const response = await youtube.videos.insert({
     part:['snippet','status'],
     requestBody:{
