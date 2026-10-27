@@ -82,3 +82,21 @@ test('bloquea etiquetas HTML en el título antes de renderizar', () => {
   item.titulo_youtube = '<b>FÚTBOL CHILENO</b>: noticia y contexto';
   assert.throws(() => validateItemForRender(item), /etiquetas HTML sin limpiar en titulo_youtube/);
 });
+
+
+test('decodifica entidades HTML anidadas antes de validar el texto visible', () => {
+  const { cleanVisibleText } = require('../scripts/text-sanitizer');
+  const item = validItem();
+  const entrada = 'FÚTBOL MUNDIAL: amistoso ante… &amp;#91;noticia&amp;#93;';
+  const salida = cleanVisibleText(entrada);
+  assert.equal(salida, 'FÚTBOL MUNDIAL: amistoso ante… [noticia]');
+  item.gancho = salida;
+  assert.deepEqual(validateItemForRender(item), { ok: true });
+});
+
+test('no elimina entidades desconocidas: el control de calidad debe bloquearlas', () => {
+  const { cleanVisibleText } = require('../scripts/text-sanitizer');
+  const item = validItem();
+  item.gancho = cleanVisibleText('Titular &entidaddesconocida; del fútbol chileno');
+  assert.throws(() => validateItemForRender(item), /entidades HTML sin decodificar en gancho/);
+});
