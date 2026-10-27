@@ -304,15 +304,13 @@ async function main() {
   if (renderOnly) console.log('🧪 MODO RENDER-ONLY: se renderiza y valida, sin OAuth ni subida a YouTube.');
 
   if (!fs.existsSync('daily-content.json')) {
-    console.log('⚠️ No existe daily-content.json — nada que hacer.');
-    return;
+    throw new Error('PACKAGE_GATE_BLOCKED: no existe daily-content.json en el directorio de trabajo. Comprueba la descarga del artefacto del job generate.');
   }
 
   const { contenido, fecha, total } = JSON.parse(fs.readFileSync('daily-content.json', 'utf8'));
 
-  if (!total || total === 0 || !contenido || contenido.length === 0) {
-    console.log('ℹ️ No hay contenido nuevo único para publicar hoy. Pipeline termina sin generar videos.');
-    return;
+  if (!Array.isArray(contenido) || !Number.isInteger(total) || total !== contenido.length || total === 0) {
+    throw new Error('PACKAGE_GATE_BLOCKED: daily-content.json está vacío o tiene total/contenido incoherentes. No se genera una publicación ni se omite silenciosamente el reporte.');
   }
 
   console.log(`\n🚀 Procesando ${contenido.length} video(s) único(s) para el ${fecha}\n`);
