@@ -75,6 +75,20 @@ jobs:
           node --check scripts/generate-results-longform.js
           node --check scripts/preflight-youtube-auth.js
 
+      - name: Guard render/upload entrypoint behavior
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const source = fs.readFileSync('scripts/render-and-upload.js', 'utf8');
+          const required = ['async function main()', 'main().catch', 'function renderVideo(', 'async function uploadToYouTube(', 'validateRenderedVideo('];
+          const missing = required.filter(token => !source.includes(token));
+          if (missing.length) {
+            console.error('::error::render-and-upload.js no contiene el punto de entrada o funciones obligatorias: ' + missing.join(', '));
+            process.exit(1);
+          }
+          console.log('Render/upload entrypoint OK: ' + required.join(', '));
+          NODE
+
       - name: Test editorial and upload policy
         run: npm run test:all
 
