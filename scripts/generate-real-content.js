@@ -17,30 +17,9 @@ const FECHA = new Date().toISOString().split('T')[0];
 function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (_) { return fallback; }
 }
-function clean(s = '') {
-  // Normaliza etiquetas y entidades HTML de los feeds antes de crear texto visible.
-  const named = {
-    amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ',
-    ndash: '–', mdash: '—', hellip: '…', rsquo: '’', lsquo: '‘',
-    rdquo: '”', ldquo: '“', bull: '•', copy: '©', reg: '®',
-  };
-  return String(s)
-    .replace(/<\/?[a-z][^>]*>/gi, ' ')
-    .replace(/&(#x[0-9a-f]+|#\d+|[a-z][a-z0-9]+);/gi, (entity, code) => {
-      if (code[0] === '#') {
-        const hex = code[1]?.toLowerCase() === 'x';
-        const number = Number.parseInt(code.slice(hex ? 2 : 1), hex ? 16 : 10);
-        if (!Number.isFinite(number) || number <= 0 || number > 0x10ffff
-          || (number >= 0xd800 && number <= 0xdfff)) return ' ';
-        try { return String.fromCodePoint(number); } catch { return ' '; }
-      }
-      return Object.prototype.hasOwnProperty.call(named, code.toLowerCase())
-        ? named[code.toLowerCase()] : entity;
-    })
-    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
+const { cleanVisibleText } = require('./text-sanitizer');
+function clean(s = '') { return cleanVisibleText(s); }
+
 function normalize(s = '') {
   return clean(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }

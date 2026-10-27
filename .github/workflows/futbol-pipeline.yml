@@ -71,6 +71,7 @@ jobs:
           node --check scripts/fetch-real-news.js
           node --check scripts/viral-score.js
           node --check scripts/render-and-upload.js
+          node --check scripts/text-sanitizer.js
           node --check scripts/publication-policy.js
           npm run test:all
           node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))"
@@ -200,6 +201,7 @@ jobs:
           node --check scripts/render-and-upload.js
           node --check scripts/publication-policy.js
           node --check scripts/content-quality-gate.js
+          node --check scripts/text-sanitizer.js
           node --check scripts/validate-rendered-video.js
           npm run test:publication-policy
           node --test tests/content-quality-gate.test.js
