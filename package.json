@@ -38,7 +38,7 @@
     "test:viral": "node -e \"const{calcularViralScore}=require('./scripts/viral-score');const result=calcularViralScore({title:process.argv[1]||'Colo Colo golea y es lider',description:'',timestamp:new Date().toISOString()});console.log(JSON.stringify(result,null,2));\" ",
     "test:publication-policy": "node --test tests/publication-policy.test.js",
     "test:editorial-gate": "node --test tests/editorial-gate.test.js",
-    "test:all": "npm run test:publication-policy && npm run test:editorial-gate && node --test tests/editorial-state-merge.test.js tests/content-quality-gate.test.js tests/retention-package.test.js tests/female-coverage.test.js"
+    "test:all": "npm run test:publication-policy && npm run test:editorial-gate && node --test tests/editorial-state-merge.test.js tests/content-quality-gate.test.js tests/retention-package.test.js tests/female-coverage.test.js tests/render-policy.test.js"
   },
   "sideEffects": [
     "*.css"
