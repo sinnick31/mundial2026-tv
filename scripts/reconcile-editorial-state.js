@@ -68,8 +68,25 @@ function mergeEditorialStates(remoteHistory, localHistory, remoteCache, localCac
 }
 
 function readRemoteJson(path) {
-  const raw = execFileSync('git', ['show', 'origin/main:' + path], { encoding: 'utf8' });
-  return JSON.parse(raw);
+  let raw;
+  try {
+    // news-cache.json can exceed Node's default 1 MiB execFileSync output buffer.
+    // Bound the buffer explicitly so the reconciliation step can read the full JSON.
+    raw = execFileSync('git', ['show', 'origin/main:' + path], {
+      encoding: 'utf8',
+      maxBuffer: 64 * 1024 * 1024,
+    });
+  } catch (error) {
+    if (error && error.code === 'ENOBUFS') {
+      throw new Error('La lectura de origin/main:' + path + ' superó el búfer de 64 MiB; revisar el tamaño del archivo editorial remoto.');
+    }
+    throw error;
+  }
+  try {
+    return JSON.parse(raw);
+  } catch (error) {
+    throw new Error('JSON inválido en origin/main:' + path + ': ' + error.message);
+  }
 }
 
 function main() {
