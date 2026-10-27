@@ -35,7 +35,7 @@ on:
       privacy:
         description: 'Visibilidad del vídeo subido'
         required: true
-        default: 'public'
+        default: 'private'
         type: choice
         options: ['unlisted', 'private', 'public']
       render_only:
@@ -234,7 +234,7 @@ jobs:
           npx tsc --noEmit
 
       - name: 🔐 Validar YouTube OAuth v8
-        if: inputs.render_only != 'true'
+        if: inputs.render_only == 'false'
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
