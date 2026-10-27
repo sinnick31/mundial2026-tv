@@ -270,6 +270,19 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           name: contenido-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
+          path: .
+
+      - name: 🔎 Verificar paquete de contenido descargado
+        shell: bash
+        run: |
+          echo "[diagnóstico] directorio: $PWD"
+          find . -maxdepth 3 -type f -name 'daily-content.json' -print
+          if [ ! -s daily-content.json ]; then
+            echo "::error::No se descargó daily-content.json en la raíz del workspace. Revisa el artefacto generado y su estructura."
+            find . -maxdepth 3 -type f | sort | tail -n 100
+            exit 1
+          fi
+          node -e "const f=require('./daily-content.json'); if(!Array.isArray(f.contenido)||!f.total||f.total!==f.contenido.length) { console.error('::error::daily-content.json tiene un formato o total incoherente'); process.exit(1) } console.log('Paquete válido:', f.total, 'pieza(s), fecha', f.fecha)"
 
       - name: 🎥 Renderizar + publicar
         env:
