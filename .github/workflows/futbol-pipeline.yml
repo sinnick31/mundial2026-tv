@@ -290,7 +290,21 @@ jobs:
           REPORT: out/reporte-${{ needs.generate.outputs.fecha }}.json
           RENDER_ONLY: ${{ inputs.render_only || 'true' }}
         run: |
-          test -f "$REPORT"
+          echo "[diagnóstico] REPORT=${REPORT}"
+          echo "[diagnóstico] pwd=$(pwd)"
+          echo "[diagnóstico] ls -la"
+          ls -la
+          echo "[diagnóstico] ls -la out || true"
+          ls -la out || true
+          echo "[diagnóstico] find . -maxdepth 3 -type f | sort | tail -n 200"
+          find . -maxdepth 3 -type f | sort | tail -n 200 || true
+
+          if [ ! -f "$REPORT" ]; then
+            echo "::error::Fichero faltante: $REPORT"
+            echo "::error::No existe el reporte esperado. Comprueba la salida de script/render-and-upload.js y el nombre exacto del archivo generado."
+            exit 1
+          fi
+
           node - <<'NODE'
           const fs=require('fs');
           const r=JSON.parse(fs.readFileSync(process.env.REPORT,'utf8'));
