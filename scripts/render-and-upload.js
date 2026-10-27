@@ -248,7 +248,7 @@ async function prepararRender(item) {
     fuente: fuenteTexto(item),
     fechaPublicacion: item._fecha_publicacion_fuente || undefined,
     etiquetaCanal: '@CHILENSISFUTBOL',
-    etiquetaSeccion: item._categoria_editorial === 'internacional' ? 'FÚTBOL MUNDIAL' : item._categoria_editorial === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : item._categoria_editorial === 'colo_colo' ? 'COLO-COLO' : 'FÚTBOL CHILENO',
+    etiquetaSeccion: item._categoria_editorial === 'futbol_femenino' ? 'FÚTBOL FEMENINO' : item._categoria_editorial === 'internacional' ? 'FÚTBOL MUNDIAL' : item._categoria_editorial === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : item._categoria_editorial === 'colo_colo' ? 'COLO-COLO' : 'FÚTBOL CHILENO',
   };
   return { compositionId: 'PrediccionShorts', props, durationInFrames };
 }
