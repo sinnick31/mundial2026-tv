@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: 9 PARTIDOS CONFIRMADOS",
-      "titulo": "9 partidos de la U confirmados: ¿se juega su campaña en Primera?",
-      "fecha": "2026-08-04T17:50:25.610Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "BALANCE GOLEADOR ABSOLUTO",
       "titulo": "Arsenal con 5.75 GF/GC: ¿Es el equipo más dominante de Europa?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Cuándo juegan Universidad Católica vs. Audax Italiano por la Liga de Primera…",
       "titulo": "FÚTBOL CHILENO: Cuándo juegan Universidad Católica vs. Audax Italiano por la… | Lo que cambia",
       "fecha": "2026-10-27T21:34:59.629Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "ES OFICIAL: Club del fútbol chileno sufre nueva resta de puntos y pierde el liderato:…",
+      "titulo": "FÚTBOL CHILENO: Club del fútbol chileno sufre nueva resta de puntos y pierde el… | Lo que cambia",
+      "fecha": "2026-10-27T22:54:40.652Z"
     }
   ]
 }
