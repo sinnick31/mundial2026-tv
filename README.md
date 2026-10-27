@@ -46,6 +46,9 @@ Corre 3 veces al día según el workflow activo: 12:00 · 16:00 · 20:00, hora d
 
 ## 📰 Sistema operativo editorial y monetización
 
+- [Estrategia de crecimiento mixto: 5 Shorts + 2 vídeos largos por semana](docs/ESTRATEGIA_CRECIMIENTO_MIXTO.md)
+
+
 La automatización técnica no sustituye el control editorial. Revisar fuentes, atribuciones, guion, derechos de imágenes/audio y resultado público; no publicar historias dudosas solo para llenar una ventana.
 
 - [Sistema operativo maestro del canal](docs/OPERATING_SYSTEM_MASTER.md)
@@ -62,7 +65,7 @@ El workflow activo ofrece: `chile` (enfoque Chile), `auto` (selección automáti
 
 ## 🔒 Visibilidad y revisión antes de publicar
 
-Las ejecuciones programadas usan `unlisted` por defecto para permitir una revisión en YouTube Studio antes de hacer público cada vídeo. En una ejecución manual puedes seleccionar `private`, `unlisted` o `public`. Para configurar una política programada explícita, usa las variables de repositorio `SCHEDULED_VIDEO_PRIVACY` y `ALLOW_SCHEDULED_PUBLIC`; la publicación programada pública requiere que la primera sea `public` y la segunda `true`. Mantén la revisión humana hasta comprobar que todo el pipeline es fiable.
+Las ejecuciones programadas deben renderizar localmente por defecto, sin subir vídeos a YouTube. En una ejecución manual, elegir render_only=false autoriza la subida de esa ejecución; la visibilidad predeterminada es private. Las ejecuciones programadas no deben publicar automáticamente. El script de vídeo largo solo sube si PUBLISH_TO_YOUTUBE=true se configura expresamente.
 
 ## 🔑 Secrets requeridos
 
