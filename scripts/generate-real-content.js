@@ -56,6 +56,7 @@ function isChileanAbroad(item) {
 }
 function importance(item) {
   let score = Number(item.viral_score || 0);
+  if (isFutbolFemenino(item)) score += 60;
   if (isColo(item)) score += 28;
   if (isChileCompetition(item)) score += 55;
   if (isInternational(item) && !isChileCompetition(item)) score += 24;
