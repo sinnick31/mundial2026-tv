@@ -96,15 +96,19 @@ function imagenAutorizadaParaEquipo(nombreEquipo) {
 
 function elegirBroll(item) {
   // Nunca elegir clips al azar: el b-roll genérico puede mostrar un club equivocado.
-  // TEAM_BROLL_MANIFEST: [{"file":"colo-colo-01.mp4","team":"Colo-Colo","rights":"authorized"}]
+  // TEAM_BROLL_MANIFEST: [{"file":"colo-colo-01.mp4","team":"Colo-Colo","rights":"authorized","sourceUrl":"https://...","credit":"Autor/club"}]
   try {
     const manifest = JSON.parse(process.env.TEAM_BROLL_MANIFEST || '[]');
     if (!Array.isArray(manifest)) return undefined;
     const equiposNoticia = [item?.equipo1, item?.equipo2].filter(Boolean);
     const candidatos = manifest.filter(entry => {
       if (!entry || entry.rights !== 'authorized' || typeof entry.file !== 'string' || typeof entry.team !== 'string') return false;
+      if (typeof entry.credit !== 'string' || !entry.credit.trim()) return false;
+      if (typeof entry.sourceUrl !== 'string' || !/^https:\/\//i.test(entry.sourceUrl)) return false;
       if (!equiposNoticia.some(equipo => esMismoEquipo(equipo, entry.team))) return false;
       if (path.basename(entry.file) !== entry.file || !/\.(mp4|mov|webm)$/i.test(entry.file)) return false;
+      // Nunca permitir que clips genéricos descargados por fetch-broll.js se etiqueten como material de un club.
+      if (/^clip\d+\.(mp4|mov|webm)$/i.test(entry.file)) return false;
       return fs.existsSync(path.join(BROLL_DIR, entry.file));
     });
     if (!candidatos.length) return undefined;
@@ -144,12 +148,8 @@ async function prepararNarracion(item) {
 
   const { audioPath, duracionSeg } = await generarNarracion(guion, wavPath);
 
-  if (!audioPath) {
-    const jitterSeg = (Math.random() * 6) - 3;
-    return {
-      audioSrc: undefined,
-      durationInFrames: Math.round((config.fallbackSeg + jitterSeg) * FPS),
-    };
+  if (!audioPath || !Number.isFinite(duracionSeg) || duracionSeg <= 0 || !fs.existsSync(audioPath)) {
+    throw new Error('AV_GATE_BLOCKED: no se generó una narración de audio válida; no se renderiza ni publica un video silencioso.');
   }
 
   const audioSrc = `tmp/${path.basename(audioPath)}`;
@@ -163,11 +163,26 @@ async function prepararNarracion(item) {
 
 async function prepararRender(item) {
   const brollSrc = elegirBroll(item);
-  const { audioSrc, durationInFrames } = await prepararNarracion(item);
-
   const esPartidoJugado = item._tipo_contenido === 'narrativa'
     && item._goles_local !== null && item._goles_local !== undefined
     && item._goles_visita !== null && item._goles_visita !== undefined;
+
+  // Fail closed: una crónica de partido exige un clip autorizado asociado a uno de sus equipos.
+  // No se acepta b-roll genérico como prueba visual de un partido concreto.
+  if (esPartidoJugado && !brollSrc) {
+    throw new Error('AV_GATE_BLOCKED: partido sin clip autorizado y verificado para equipo1/equipo2 en TEAM_BROLL_MANIFEST.');
+  }
+
+  const imagen = imagenAutorizadaParaEquipo(item.equipo1);
+  const imagen2 = item.equipo2 ? imagenAutorizadaParaEquipo(item.equipo2) : {};
+  if (!esPartidoJugado && item.equipo1 && !imagen.imagenEquipoSrc) {
+    throw new Error('AV_GATE_BLOCKED: falta imagen autorizada y asociada al equipo ' + item.equipo1 + ' en TEAM_IMAGES_JSON.');
+  }
+  if (!esPartidoJugado && item.equipo2 && !imagen2.imagenEquipoSrc) {
+    throw new Error('AV_GATE_BLOCKED: falta imagen autorizada y asociada al equipo ' + item.equipo2 + ' en TEAM_IMAGES_JSON.');
+  }
+
+  const { audioSrc, durationInFrames } = await prepararNarracion(item);
 
   if (esPartidoJugado) {
     const home = estiloEquipo(item.equipo1);
@@ -196,8 +211,6 @@ async function prepararRender(item) {
     return { compositionId: 'JugadaAnimada', props, durationInFrames };
   }
 
-  const imagen = imagenAutorizadaParaEquipo(item.equipo1);
-  const imagen2 = item.equipo2 ? imagenAutorizadaParaEquipo(item.equipo2) : {};
   const props = {
     ...imagen,
     imagenEquipo2Src: imagen2.imagenEquipoSrc,

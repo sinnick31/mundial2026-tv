@@ -273,6 +273,7 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
+          TEAM_BROLL_MANIFEST: ${{ secrets.TEAM_BROLL_MANIFEST }}
           RENDER_ONLY: ${{ inputs.render_only || 'false' }}
           YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'public' }}
           ALLOW_SCHEDULED_PUBLIC: ${{ vars.ALLOW_SCHEDULED_PUBLIC || 'true' }}

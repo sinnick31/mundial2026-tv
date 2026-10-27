@@ -11,16 +11,26 @@ function validateRenderedVideo(filePath) {
   let probe;
   try {
     probe = JSON.parse(execFileSync('ffprobe', [
-      '-v', 'error', '-show_entries', 'format=duration:stream=codec_type,width,height',
+      '-v', 'error', '-show_entries', 'format=duration:stream=codec_type,width,height,duration',
       '-of', 'json', filePath,
     ], { encoding: 'utf8' }));
   } catch (error) {
     throw new Error('VIDEO_GATE_BLOCKED: ffprobe no pudo leer el MP4: ' + error.message);
   }
 
-  const video = (probe.streams || []).find((s) => s.codec_type === 'video');
+  const streams = probe.streams || [];
+  const video = streams.find((s) => s.codec_type === 'video');
+  const audio = streams.find((s) => s.codec_type === 'audio');
   const duration = Number(probe.format?.duration || 0);
   if (!video) throw new Error('VIDEO_GATE_BLOCKED: el archivo no contiene pista de video');
+  if (!audio) throw new Error('AV_GATE_BLOCKED: el archivo renderizado no contiene pista de audio/narración.');
+  const audioDuration = Number(audio.duration || 0);
+  if (!Number.isFinite(audioDuration) || audioDuration <= 0) {
+    throw new Error('AV_GATE_BLOCKED: no se pudo verificar la duración de la pista de audio.');
+  }
+  if (audioDuration > duration + 0.5) {
+    throw new Error('AV_GATE_BLOCKED: la pista de audio excede la duración del video (' + audioDuration + 's > ' + duration + 's).');
+  }
   if (video.width !== 1080 || video.height !== 1920) {
     throw new Error('VIDEO_GATE_BLOCKED: resolución incorrecta; se requiere 1080x1920 y se obtuvo ' + video.width + 'x' + video.height);
   }
@@ -44,7 +54,7 @@ function validateRenderedVideo(filePath) {
     throw new Error('VIDEO_GATE_BLOCKED: se detectó un tramo completamente negro de ' + longBlack.join(', ') + ' segundos');
   }
 
-  return { ok: true, bytes: stat.size, duration: Number(duration.toFixed(2)), width: video.width, height: video.height };
+  return { ok: true, bytes: stat.size, duration: Number(duration.toFixed(2)), audioDuration: Number(audioDuration.toFixed(2)), width: video.width, height: video.height };
 }
 
 if (require.main === module) {
