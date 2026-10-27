@@ -17,6 +17,28 @@ Promesa editorial: **fútbol chileno e internacional, sin humo y con contexto**.
 4. **Fútbol internacional:** Champions League, torneos UEFA, Libertadores, Sudamericana, ligas principales y selecciones.
 5. **Historias y explicación:** táctica, reglas, contexto histórico y consecuencias deportivas, usando investigación y gráficos originales.
 
+### Pilar prioritario: fútbol femenino chileno e internacional
+
+El fútbol femenino no será una mención ocasional: forma parte de la cobertura permanente y tendrá espacios editoriales identificables, con la misma exigencia de verificación y calidad que el fútbol masculino.
+
+Cobertura mínima:
+- **Chile femenino:** Liga Femenina, Copa Chile femenina cuando corresponda, clubes, fichajes, entrenadores, calendario, resultados y tabla verificados.
+- **La Roja Femenina:** convocatorias, amistosos, torneos, clasificatorias, preparación y análisis de rendimiento.
+- **Chilenas en el extranjero:** minutos, titularidades, goles, asistencias, lesiones confirmadas, traspasos y logros, siempre respaldados por fuentes.
+- **Internacional femenino:** torneos FIFA y CONMEBOL, UEFA Women's Champions League, ligas relevantes y selecciones nacionales.
+- **Desarrollo y contexto:** formación, infraestructura, profesionalización, historias de jugadoras y datos históricos, evitando enfoques sensacionalistas.
+
+Regla de programación: reservar como mínimo **un Short semanal dedicado específicamente al fútbol femenino** y asegurar presencia en al menos uno de los dos vídeos largos semanales cuando exista una historia con suficiente relevancia y verificación. Si hay una noticia femenina de alto impacto, puede ocupar más espacios. No se relegará automáticamente al jueves ni se limitará a una cuota simbólica.
+
+Formatos originales:
+1. **La Roja Femenina al día:** convocatoria, calendario o análisis confirmado.
+2. **La figura de la fecha:** actuación individual basada en estadísticas verificadas.
+3. **Club femenino en foco:** resultados, clasificación y contexto de la Liga Femenina.
+4. **La chilena en el exterior:** seguimiento de jugadoras en sus clubes.
+5. **Fútbol femenino internacional:** resultados, fichajes y torneos con fuentes oficiales.
+
+Los datos de la competición masculina no se reutilizarán como si correspondieran a la femenina. El pipeline deberá verificar categoría, competición, equipo, jugadoras, fecha, marcador y recursos visuales específicos. Si no hay imágenes autorizadas, utilizar pizarra y gráficos originales, no material masculino presentado como femenino.
+
 ## 2. Referentes estudiados: adaptar el método, no copiar las piezas
 
 - **TNT Sports Chile:** actualidad local, secciones recurrentes y seguimiento de clubes. Adaptación: agenda diaria nacional con contexto y próxima fecha.
@@ -67,7 +89,7 @@ Estructura de largo:
 | Lunes | Lo que dejó el fin de semana | La jornada explicada, cuando haya partidos suficientes |
 | Martes | Noticia chilena confirmada | — |
 | Miércoles | Clave táctica o internacional | Informe Chilensis |
-| Jueves | Chileno/a en el extranjero o fútbol femenino | — |
+| Jueves | Fútbol femenino: La Roja, Liga Femenina o chilenas en el exterior | — |
 | Viernes | Previa con datos verificados y agenda del fin de semana | — |
 | Sábado/Domingo | Publicar solo si hay una noticia realmente relevante; no forzar volumen | — |
 
