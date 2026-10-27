@@ -209,6 +209,17 @@ jobs:
           node --check scripts/content-quality-gate.js
           node --check scripts/text-sanitizer.js
           node --check scripts/validate-rendered-video.js
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const source = fs.readFileSync('scripts/render-and-upload.js', 'utf8');
+          const required = ['async function main()', 'main().catch', 'function renderVideo(', 'async function uploadToYouTube(', 'validateRenderedVideo('];
+          const missing = required.filter(token => !source.includes(token));
+          if (missing.length) {
+            console.error('::error::render-and-upload.js no contiene el punto de entrada o funciones obligatorias: ' + missing.join(', '));
+            process.exit(1);
+          }
+          console.log('Render/upload entrypoint OK: ' + required.join(', '));
+          NODE
           npm run test:publication-policy
           node --test tests/content-quality-gate.test.js
           # Si tsconfig.json/eslint.config.js se corrompen (p. ej. con "\n" literales), tsc ignora la
