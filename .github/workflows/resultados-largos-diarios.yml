@@ -17,9 +17,9 @@ on:
       privacy:
         description: 'Visibilidad del vídeo'
         required: true
-        default: 'unlisted'
+        default: 'public'
         type: choice
-        options: ['unlisted', 'private', 'public']
+        options: ['public', 'unlisted', 'private']
 
 concurrency:
   group: daily-football-results
@@ -91,7 +91,8 @@ jobs:
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
-          RESULTS_VIDEO_PRIVACY: ${{ inputs.privacy || vars.RESULTS_VIDEO_PRIVACY || 'unlisted' }}
+          RESULTS_VIDEO_PRIVACY: ${{ inputs.privacy || vars.RESULTS_VIDEO_PRIVACY || 'public' }}
+          PUBLISH_TO_YOUTUBE: 'true'
         run: node scripts/generate-results-longform.js
       - name: 📦 Guardar reporte
         if: always()
