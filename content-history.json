@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "COLO COLO HACE HISTORIA EN PRIMERA",
-      "titulo": "Colo Colo vence a Everton en Primera 2026: ¿Qué nuevo récord estableció el Cacique?",
-      "fecha": "2026-08-04T22:05:51.677Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U. DE CHILE: 9 PARTIDOS CONFIRMADOS",
-      "titulo": "U. de Chile con 9 partidos confirmados: ¿Demasiado exigente para la U? 🔵",
-      "fecha": "2026-08-04T22:06:03.431Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "MÁXIMA EFICIENCIA GOLEADORA",
       "titulo": "Arsenal FC con 5.75 de ratio G/A: ¿Dominio total en la competición? 🎯",
@@ -3499,6 +3485,20 @@
       "hook": "EL DATO QUE MARCA LA JORNADA: Goleada azul en Rancagua: Universidad de Chile apabulló a…",
       "titulo": "FÚTBOL MUNDIAL: Goleada azul en Rancagua: Universidad de Chile apabulló a… | Lo que cambia",
       "fecha": "2026-10-28T01:58:45.773Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Fernando Ortiz volvería a mover las piezas en el arco de Colo-Colo - En Cancha",
+      "titulo": "FÚTBOL CHILENO: Fernando Ortiz volvería a mover las piezas en el arco de… | Lo que cambia",
+      "fecha": "2026-10-28T15:08:19.482Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "COLO-COLO: LA CLAVE ES Filtran la nueva camiseta de Colo Colo: “Primera equipación morada en…",
+      "titulo": "COLO-COLO: Filtran la nueva camiseta de Colo Colo: “Primera equipación morada… | Lo que se sabe",
+      "fecha": "2026-10-28T15:08:19.482Z"
     }
   ]
 }
