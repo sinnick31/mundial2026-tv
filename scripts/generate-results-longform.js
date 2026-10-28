@@ -120,8 +120,12 @@ async function main() {
   const thumbnailProps = JSON.stringify({date:TODAY,count:sections.length}).replace(/'/g, "'\\''");
   execSync(`npx remotion still src/index.tsx ResultsThumbnail "${thumbnailPath}" --props='${thumbnailProps}' --frame=0 --scale=1`, {cwd:ROOT,stdio:'inherit'});
   await youtube.thumbnails.set({videoId:response.data.id,media:{mimeType:'image/png',body:fs.createReadStream(thumbnailPath)}});
-  const report = {date:TODAY,channelId:channel.id,videoId:response.data.id,url:`https://youtu.be/${response.data.id}`,totalMatches:sections.length,results:recent.length,upcoming:upcoming.length,thumbnailPath,thumbnailUploaded:true,privacyStatus,title};
+  const actualPrivacy = response.data.status?.privacyStatus || 'unknown';
+  const report = {date:TODAY,channelId:channel.id,videoId:response.data.id,url:`https://youtu.be/${response.data.id}`,totalMatches:sections.length,results:recent.length,upcoming:upcoming.length,thumbnailPath,thumbnailUploaded:true,requestedPrivacyStatus:privacyStatus,privacyStatus:actualPrivacy,title};
   fs.writeFileSync(path.join(path.dirname(OUT),'reporte-resultados.json'),JSON.stringify(report,null,2));
+  if (actualPrivacy !== privacyStatus) {
+    throw new Error(`YOUTUBE_VISIBILITY_MISMATCH: se solicitó ${privacyStatus}, pero YouTube confirmó ${actualPrivacy}. Revisa restricciones del proyecto/API y la visibilidad en YouTube Studio.`);
+  }
   console.log('PUBLICACIÓN CONFIRMADA '+JSON.stringify(report));
 }
 main().catch(err=>{console.error(err.stack||err);process.exit(1);});
