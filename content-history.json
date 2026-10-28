@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "MÁXIMA EFICIENCIA GOLEADORA",
-      "titulo": "Arsenal FC con 5.75 de ratio G/A: ¿Dominio total en la competición? 🎯",
-      "fecha": "2026-08-04T22:06:34.707Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "U DE CHILE FICHA Y LO CEDE",
       "titulo": "U de Chile ficha un refuerzo y lo presta: ¿Estrategia para el futuro?",
@@ -3499,6 +3492,13 @@
       "hook": "COLO-COLO: LA CLAVE ES Filtran la nueva camiseta de Colo Colo: “Primera equipación morada en…",
       "titulo": "COLO-COLO: Filtran la nueva camiseta de Colo Colo: “Primera equipación morada… | Lo que se sabe",
       "fecha": "2026-10-28T15:08:19.482Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EL DATO QUE MARCA LA JORNADA: Goleada azul en Rancagua: Universidad de Chile apabulló a…",
+      "titulo": "FÚTBOL MUNDIAL: Goleada azul en Rancagua: Universidad de Chile apabulló a… | Lo que cambia",
+      "fecha": "2026-10-28T20:02:56.100Z"
     }
   ]
 }
