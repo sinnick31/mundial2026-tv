@@ -191,14 +191,15 @@ async function prepararRender(item) {
   const imagen2 = item.equipo2 && !esEtiquetaEditorialGenerica(item.equipo2)
     ? imagenAutorizadaParaEquipo(item.equipo2)
     : {};
-  // Solo exigimos fotos de catálogo cuando el guion nombra un club/selección concreto.
-  // Etiquetas de sección como "Fútbol chileno" usan el gráfico tipográfico de la plantilla,
-  // sin inventar que una imagen corresponde a un club específico.
+  // En noticias/editoriales, la ausencia de una imagen licenciada no debe tumbar toda
+  // la producción: la plantilla usa identidad gráfica tipográfica y colores, sin fingir
+  // que un clip genérico es una foto del club. Los resúmenes de partidos siguen cerrados
+  // si no hay material de partido autorizado y asociado a uno de los equipos.
   if (!esPartidoJugado && item.equipo1 && !esEtiquetaEditorialGenerica(item.equipo1) && !imagen.imagenEquipoSrc) {
-    throw new Error('AV_GATE_BLOCKED: falta imagen autorizada y asociada al equipo ' + item.equipo1 + ' en TEAM_IMAGES_JSON.');
+    console.warn('⚠️ AV_FALLBACK: falta imagen autorizada para ' + item.equipo1 + ' en TEAM_IMAGES_JSON; se usará la identidad gráfica de la plantilla, sin atribuirle una imagen incorrecta.');
   }
   if (!esPartidoJugado && item.equipo2 && !esEtiquetaEditorialGenerica(item.equipo2) && !imagen2.imagenEquipoSrc) {
-    throw new Error('AV_GATE_BLOCKED: falta imagen autorizada y asociada al equipo ' + item.equipo2 + ' en TEAM_IMAGES_JSON.');
+    console.warn('⚠️ AV_FALLBACK: falta imagen autorizada para ' + item.equipo2 + ' en TEAM_IMAGES_JSON; se usará la identidad gráfica de la plantilla, sin atribuirle una imagen incorrecta.');
   }
 
   const { audioSrc, durationInFrames } = await prepararNarracion(item);
