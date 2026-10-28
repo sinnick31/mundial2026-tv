@@ -35,15 +35,15 @@ on:
       privacy:
         description: 'Visibilidad del vídeo subido'
         required: true
-        default: 'private'
+        default: 'public'
         type: choice
-        options: ['unlisted', 'private', 'public']
+        options: ['public', 'unlisted', 'private']
       render_only:
         description: 'Solo renderizar y validar, sin subir a YouTube'
         required: true
-        default: 'true'
+        default: 'false'
         type: choice
-        options: ['true', 'false']
+        options: ['false', 'true']
 
 concurrency:
   group: mundial2026shorts-${{ github.ref }}
@@ -293,8 +293,8 @@ jobs:
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
           TEAM_BROLL_MANIFEST: ${{ secrets.TEAM_BROLL_MANIFEST }}
           RENDER_ONLY: ${{ github.event_name == 'schedule' && 'false' || inputs.render_only || 'true' }}
-          YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'private' }}
-          ALLOW_SCHEDULED_PUBLIC: 'false'
+          YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'public' }}
+          ALLOW_SCHEDULED_PUBLIC: 'true'
         run: node scripts/render-and-upload.js
 
       - name: 🔎 Verificar publicación
