@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "BALANCE GOLEADOR ABSOLUTO",
-      "titulo": "Arsenal con 5.75 GF/GC: ¿Es el equipo más dominante de Europa?",
-      "fecha": "2026-08-04T17:50:46.143Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "U. DE CHILE FICHA Y LO PRESTA",
       "titulo": "Fichaje en Universidad de Chile: ¿Apuesta a futuro o necesidad?",
@@ -3499,6 +3492,13 @@
       "hook": "ES OFICIAL: Club del fútbol chileno sufre nueva resta de puntos y pierde el liderato:…",
       "titulo": "FÚTBOL CHILENO: Club del fútbol chileno sufre nueva resta de puntos y pierde el… | Lo que cambia",
       "fecha": "2026-10-27T22:54:40.652Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "EL DATO QUE MARCA LA JORNADA: Goleada azul en Rancagua: Universidad de Chile apabulló a…",
+      "titulo": "FÚTBOL MUNDIAL: Goleada azul en Rancagua: Universidad de Chile apabulló a… | Lo que cambia",
+      "fecha": "2026-10-28T00:54:51.272Z"
     }
   ]
 }
