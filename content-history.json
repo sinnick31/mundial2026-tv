@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "CALENDARIO AZUL REVELADO",
-      "titulo": "Universidad de Chile ya tiene 9 partidos confirmados: ¿Se juega el campeonato?",
-      "fecha": "2026-08-05T04:16:12.788Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "PERFECTO INICIO DE TEMPORADA",
       "titulo": "20 equipos con 0 goles concedidos al inicio: ¿Quién romperá el récord?",
@@ -3499,6 +3492,13 @@
       "hook": "CHILENOS POR EL MUNDO: \"Con túnel incluido\": El lujo de Darío Osorio en el triunfo del Crystal…",
       "titulo": "CHILENOS POR EL MUNDO: \"Con túnel incluido\": El lujo de Darío Osorio en… | La clave para seguirlo",
       "fecha": "2026-10-29T02:02:29.266Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "CHILENOS POR EL MUNDO: ¿Demanda contra Colo Colo? Lucas Cepeda toma una decisión definitiva…",
+      "titulo": "CHILENOS POR EL MUNDO: ¿Demanda contra Colo Colo? Lucas Cepeda toma una… | La clave para seguirlo",
+      "fecha": "2026-10-29T20:02:06.680Z"
     }
   ]
 }
