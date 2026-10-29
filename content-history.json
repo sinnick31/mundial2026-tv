@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "COLO COLO HACE HISTORIA",
-      "titulo": "Colo Colo establece récord tras vencer a Everton: ¿Dominio en Liga 2026?",
-      "fecha": "2026-08-05T04:16:02.943Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "CALENDARIO AZUL REVELADO",
       "titulo": "Universidad de Chile ya tiene 9 partidos confirmados: ¿Se juega el campeonato?",
       "fecha": "2026-08-05T04:16:12.788Z"
@@ -3499,6 +3492,13 @@
       "hook": "CHILENOS POR EL MUNDO: Darío Osorio gana terreno en Crystal Palace: titular, lujo y celebró…",
       "titulo": "CHILENOS POR EL MUNDO: Darío Osorio gana terreno en Crystal Palace:… | La clave para seguirlo",
       "fecha": "2026-10-28T23:04:45.452Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "CHILENOS POR EL MUNDO: \"Con túnel incluido\": El lujo de Darío Osorio en el triunfo del Crystal…",
+      "titulo": "CHILENOS POR EL MUNDO: \"Con túnel incluido\": El lujo de Darío Osorio en… | La clave para seguirlo",
+      "fecha": "2026-10-29T02:02:29.266Z"
     }
   ]
 }
