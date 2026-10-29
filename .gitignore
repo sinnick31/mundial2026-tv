@@ -4,3 +4,11 @@ public/tmp/
 out/
 daily-content.json
 config/affiliate-links.json
+
+# Secrets locales: nunca versionar archivos .env reales
+.env
+.env.*
+!.env.example
+config/.env
+config/.env.*
+!config/.env.example
