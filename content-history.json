@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "AZUL AZUL CONFIRMA FICHAJE Y LO PRESTA",
-      "titulo": "La U confirma fichaje y lo presta: ¿Estrategia para el futuro?",
-      "fecha": "2026-08-05T14:17:38.837Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "COLO COLO HACE HISTORIA EN PRIMERA",
       "titulo": "Colo Colo establece nuevo récord: ¿camino al bicampeonato?",
       "fecha": "2026-08-05T14:17:53.953Z"
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: La U vs. La UC y Coquimbo Unido vs. Colo-Colo: programada la ida de las…",
       "titulo": "FÚTBOL FEMENINO: La U vs. La UC y Coquimbo Unido vs. Colo-Colo: programada la… | Lo que cambia",
       "fecha": "2026-10-29T23:12:59.679Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: \"Con túnel incluido\": El lujo de Darío Osorio en el triunfo del Crystal Palace…",
+      "titulo": "FÚTBOL CHILENO: \"Con túnel incluido\": El lujo de Darío Osorio en el triunfo del… | Lo que cambia",
+      "fecha": "2026-10-30T02:19:21.457Z"
     }
   ]
 }
