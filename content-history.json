@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: FIXTURE DE INFARTO",
-      "titulo": "U de Chile con 9 partidos: ¿Define el semestre azul?",
-      "fecha": "2026-08-05T14:18:04.065Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "ORDEN ALFABÉTICO INICIAL",
       "titulo": "ACF Fiorentina es #1 en la tabla con 0 puntos: ¿Cómo es posible?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Fecha 27 de la Liga de Primera: Colo Colo visita a Ñublense y no habrá fútbol…",
       "titulo": "FÚTBOL MUNDIAL: Fecha 27 de la Liga de Primera: Colo Colo visita a Ñublense y no… | Lo que cambia",
       "fecha": "2026-10-30T19:49:42.431Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Revelan la defensa de Colo-Colo ante una posible demanda de Lucas Cepeda - En…",
+      "titulo": "FÚTBOL CHILENO: Revelan la defensa de Colo-Colo ante una posible demanda de… | Lo que cambia",
+      "fecha": "2026-10-30T22:55:12.518Z"
     }
   ]
 }
