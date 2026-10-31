@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "ORDEN ALFABÉTICO INICIAL",
-      "titulo": "ACF Fiorentina es #1 en la tabla con 0 puntos: ¿Cómo es posible?",
-      "fecha": "2026-08-05T14:18:21.493Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "FICHAJE AZUL CONFIRMADO: ¡VA A PRÉSTAMO!",
       "titulo": "U. de Chile confirma un fichaje y lo presta: ¿Apuesta arriesgada?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Revelan la defensa de Colo-Colo ante una posible demanda de Lucas Cepeda - En…",
       "titulo": "FÚTBOL CHILENO: Revelan la defensa de Colo-Colo ante una posible demanda de… | Lo que cambia",
       "fecha": "2026-10-30T22:55:12.518Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: Con un Correa descollante, Colo Colo aplasta a la Universidad de Concepción…",
+      "titulo": "FÚTBOL MUNDIAL: Con un Correa descollante, Colo Colo aplasta a la Universidad de… | Lo que cambia",
+      "fecha": "2026-10-31T01:58:04.448Z"
     }
   ]
 }
