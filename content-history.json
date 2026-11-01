@@ -3,13 +3,6 @@
     {
       "match_id": null,
       "tipo_contenido": "noticia",
-      "hook": "FICHAJE AZUL: ¿VA PRESTADO?",
-      "titulo": "U. de Chile ficha jugador y lo presta: ¿Apuesta a futuro?",
-      "fecha": "2026-08-05T22:07:16.094Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "noticia",
       "hook": "U. DE CHILE: ¡AGENDA DE 9 PARTIDOS!",
       "titulo": "U. de Chile con 9 partidos confirmados: ¿es un desafío para el liderato?",
       "fecha": "2026-08-05T22:07:26.883Z"
@@ -3499,6 +3492,13 @@
       "hook": "SE JUEGA ALGO GRANDE: La UC le gana un apretado Clásico a la U y le entrega en bandeja el…",
       "titulo": "FÚTBOL MUNDIAL: La UC le gana un apretado Clásico a la U y le entrega en bandeja… | Lo que cambia",
       "fecha": "2026-11-01T19:21:00.891Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "SE JUEGA ALGO GRANDE: La UC le gana un apretado Clásico a la U y le entrega en bandeja el…",
+      "titulo": "FÚTBOL MUNDIAL: La UC le gana un apretado Clásico a la U y le entrega en bandeja… | Lo que cambia",
+      "fecha": "2026-11-01T22:41:43.600Z"
     }
   ]
 }
