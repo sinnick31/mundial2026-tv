@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "U DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
-      "titulo": "Universidad de Chile: 9 partidos ya confirmados. ¿Un calendario favorable para la U?",
-      "fecha": "2026-08-05T17:39:33.375Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "EL RANKING ID DE EQUIPOS",
       "titulo": "Milan tiene el ID 98: ¿es el equipo con el registro más antiguo?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Dónde ver Colo Colo vs Universidad de Concepción: canal y streaming por la…",
       "titulo": "FÚTBOL MUNDIAL: Dónde ver Colo Colo vs Universidad de Concepción: canal y… | Lo que cambia",
       "fecha": "2026-10-31T22:24:26.500Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL MUNDIAL: Goleador de la Liga de Primera le deja guiño a Colo Colo: “¿Y por qué no un…",
+      "titulo": "FÚTBOL MUNDIAL: Goleador de la Liga de Primera le deja guiño a Colo Colo: “¿Y… | Lo que cambia",
+      "fecha": "2026-11-01T01:46:37.194Z"
     }
   ]
 }
