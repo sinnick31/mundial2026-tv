@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EL RANKING ID DE EQUIPOS",
-      "titulo": "Milan tiene el ID 98: ¿es el equipo con el registro más antiguo?",
-      "fecha": "2026-08-05T17:39:54.563Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "FICHAJE AZUL: ¿VA PRESTADO?",
       "titulo": "U. de Chile ficha jugador y lo presta: ¿Apuesta a futuro?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL MUNDIAL: Goleador de la Liga de Primera le deja guiño a Colo Colo: “¿Y por qué no un…",
       "titulo": "FÚTBOL MUNDIAL: Goleador de la Liga de Primera le deja guiño a Colo Colo: “¿Y… | Lo que cambia",
       "fecha": "2026-11-01T01:46:37.194Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "SE JUEGA ALGO GRANDE: La UC le gana un apretado Clásico a la U y le entrega en bandeja el…",
+      "titulo": "FÚTBOL MUNDIAL: La UC le gana un apretado Clásico a la U y le entrega en bandeja… | Lo que cambia",
+      "fecha": "2026-11-01T19:21:00.891Z"
     }
   ]
 }
