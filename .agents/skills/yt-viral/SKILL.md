@@ -13,7 +13,7 @@ Raw view counts rank channel size, not ideas. This ranks by **multiple over each
 median**, which is the only version of the question that is about the video.
 
 ```bash
-python3 swipe.py collected.json --min 2.0
+python3 .agents/skills/yt-viral/swipe.py collected.json --min 2.0
 ```
 
 ## Collecting the input
@@ -32,7 +32,7 @@ account credentials.
 ## Reading the output
 
 The multiple is the signal. The formula line is a judgement about the TITLE, matched against
-[the 21 formulas](../yt-script/hooks.json) - it is not a claim about why the video worked, and you
+[the 21 formulas](.agents/skills/yt-script/hooks.json) - it is not a claim about why the video worked, and you
 should say so when you present it.
 
 What to hand back: the top five with their multiples, the formula each used, and the ONE structural
