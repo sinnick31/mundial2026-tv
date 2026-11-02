@@ -15,8 +15,8 @@ One idea into a script somebody finishes.
 Two tools live in this folder and both actually run. Use them. Do not eyeball the hook.
 
 ```bash
-python3 hookscore.py hooks.txt              # rank your hook options
-python3 hookscore.py --hook "one line"      # score a single one
+python3 .agents/skills/yt-script/hookscore.py hooks.txt              # rank your hook options
+python3 .agents/skills/yt-script/hookscore.py --hook "one line"      # score a single one
 ```
 
 ## Before you write
@@ -34,7 +34,7 @@ python3 hookscore.py --hook "one line"      # score a single one
 **The first 15 seconds is the whole job.** It does three things or the video leaks: confirm the
 click the title promised, open a question the viewer cannot close, and prove the payoff exists.
 
-1. **Hook.** Write FIVE against [the 21 formulas](hooks.json), run them through `hookscore.py`,
+1. **Hook.** Write FIVE against [the 21 formulas](.agents/skills/yt-script/hooks.json), run them through `.agents/skills/yt-script/hookscore.py`,
    keep the top two, and show the user both with their scores. Never hand over one hook.
 2. **The turn** (0:15-0:45). Say what the video is going to do, in one sentence, and start doing it.
    No channel intro, no "before we get started", no subscribe pitch. Those are the single most
