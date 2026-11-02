@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "EX COLO COLO BAJA DE CATEGORÍA",
-      "titulo": "Ex Colo Colo aterriza en Tercera División: ¿Un paso atrás en su carrera?",
-      "fecha": "2026-08-05T22:07:42.355Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "NOMBRES LARGOS, ¿MÁS GRANDES?",
       "titulo": "FC Internazionale Milano con 24 caracteres: ¿Qué significa este inusual ranking inicial?",
@@ -3499,6 +3492,13 @@
       "hook": "CHILENOS POR EL MUNDO: Colo Colo enfrenta millonaria demanda de Lucas Cepeda tras su salida al…",
       "titulo": "CHILENOS POR EL MUNDO: Colo Colo enfrenta millonaria demanda de Lucas… | La clave para seguirlo",
       "fecha": "2026-11-02T02:01:44.269Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "SE JUEGA ALGO GRANDE: Contra la campeona del mundo: La Roja Femenina anuncia amistoso frente a…",
+      "titulo": "FÚTBOL FEMENINO: Contra la campeona del mundo: La Roja Femenina anuncia amistoso… | Lo que cambia",
+      "fecha": "2026-11-02T17:13:56.059Z"
     }
   ]
 }
