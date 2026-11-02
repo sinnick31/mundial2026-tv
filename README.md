@@ -100,3 +100,7 @@ Las ejecuciones programadas deben renderizar localmente por defecto, sin subir v
 ## 📌 Nota sobre la liga chilena
 
 football-data.org (gratis) **no** incluye la Primera División de Chile. La cobertura chilena viene de dos fuentes que sí son gratis: **Google News RSS** (noticias, muy completo para Chile) y la **API pública de ESPN** (`chi.1` y `chi.copa_chi`) para marcadores de partidos.
+
+## 🤖 Skills del agente (Codex)
+
+Las 11 skills de YouTube están registradas en `.agents/skills/`, la ruta nativa de descubrimiento de Codex. Las instrucciones permanentes de activación están en [AGENTS.md](AGENTS.md), y el catálogo con comandos de prueba en [.agents/skills/README.md](.agents/skills/README.md). Antes de tareas editoriales, el agente debe leer y aplicar las skills pertinentes. Esto no autoriza publicaciones automáticas.
