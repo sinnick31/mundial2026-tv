@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "NOMBRES LARGOS, ¿MÁS GRANDES?",
-      "titulo": "FC Internazionale Milano con 24 caracteres: ¿Qué significa este inusual ranking inicial?",
-      "fecha": "2026-08-05T22:07:59.076Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "U DE CHILE: ¡9 PARTIDOS CONFIRMADOS!",
       "titulo": "Universidad de Chile ya tiene 9 partidos confirmados: ¿Calendario apretado para la U?",
@@ -3499,6 +3492,13 @@
       "hook": "SE JUEGA ALGO GRANDE: Contra la campeona del mundo: La Roja Femenina anuncia amistoso frente a…",
       "titulo": "FÚTBOL FEMENINO: Contra la campeona del mundo: La Roja Femenina anuncia amistoso… | Lo que cambia",
       "fecha": "2026-11-02T17:13:56.059Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "SE JUEGA ALGO GRANDE: Contra la campeona del mundo: La Roja Femenina anuncia amistoso frente a…",
+      "titulo": "FÚTBOL FEMENINO: Contra la campeona del mundo: La Roja Femenina anuncia amistoso… | Lo que cambia",
+      "fecha": "2026-11-02T17:27:35.383Z"
     }
   ]
 }
