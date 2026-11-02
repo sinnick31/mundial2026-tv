@@ -13,8 +13,8 @@ The title and the thumbnail are ONE unit. Writing them separately is why most pa
 thumbnail repeats the title, and half the click surface says the same thing twice.
 
 ```bash
-python3 title.py --title "..." --thumb "AI RAN IT"
-python3 title.py titles.txt            # one per line, ranked
+python3 .agents/skills/yt-package/title.py --title "..." --thumb "AI RAN IT"
+python3 .agents/skills/yt-package/title.py titles.txt            # one per line, ranked
 ```
 
 ## Before you write
@@ -39,7 +39,7 @@ python3 title.py titles.txt            # one per line, ranked
 
 ## Write ten, keep two
 
-Generate ten titles, run them all through `title.py`, show the user the top three with their scores
+Generate ten titles, run them all through `.agents/skills/yt-package/title.py`, show the user the top three with their scores
 and the specific issue on each. For the winner, write the thumbnail brief: the expression, the
 framing, the three words, and what the background has to do to hold contrast at feed size.
 
