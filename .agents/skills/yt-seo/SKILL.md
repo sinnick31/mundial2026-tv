@@ -9,7 +9,7 @@ description: >-
 # yt-seo
 
 Search is a smaller lever than packaging and a bigger one than people think for evergreen videos.
-For a video aimed at the subscriber feed, say so and spend the effort on `/yt-package` instead.
+For a video aimed at the subscriber feed, say so and spend the effort on `$yt-package` instead.
 
 ## Before you write
 
@@ -26,7 +26,7 @@ For a video aimed at the subscriber feed, say so and spend the effort on `/yt-pa
 - **The first two lines are the only ones anyone reads.** They show above "...more" and they are
   the search snippet. Say what the video gives them, in the words they would have typed.
 - Then the link or the resource, if there is one, so it is above the fold.
-- Then chapters (`/yt-chapters` writes them).
+- Then chapters (`$yt-chapters` writes them).
 - Then the long version: what is covered, who it is for, what it assumes.
 
 ## Tags, honestly
