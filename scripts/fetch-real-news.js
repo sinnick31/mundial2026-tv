@@ -166,7 +166,11 @@ async function main() {
   console.log(`📊 Categorías: ${JSON.stringify(porCategoria)}`);
 }
 
-main().catch(err => {
-  console.error(`❌ fetch-real-news: ${err.message}`);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(err => {
+    console.error(`❌ fetch-real-news: ${err.message}`);
+    process.exit(1);
+  });
+}
+
+module.exports = { httpGet, decodeXml, getTag, parseFeed, esFutbol, similitud, sourceKey };
