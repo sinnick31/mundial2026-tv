@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "MELE ROMPE EL SILENCIO TRAS COLGAR A COLO COLO",
-      "titulo": "Santiago Mele ROMPE EL SILENCIO tras fichar en Independiente: ¿Por qué NO llegó a Colo Colo? 🤫",
-      "fecha": "2026-08-06T04:18:45.782Z"
-    },
-    {
       "match_id": "554956",
       "tipo_contenido": "prediccion",
       "hook": "ANÁLISIS DE LA TABLA DE PUNTOS",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: EN VIVO Colo-Colo vs Deportes Puerto Montt por Copa Chile: minuto a minuto -…",
       "titulo": "FÚTBOL CHILENO: EN VIVO Colo-Colo vs Deportes Puerto Montt por Copa Chile:… | Lo que cambia",
       "fecha": "2026-11-03T01:30:55.641Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Vuelve a El Teniente: La U definió estadio para recibir a Cobresal - La Nación",
+      "titulo": "FÚTBOL CHILENO: Vuelve a El Teniente: La U definió estadio para recibir a… | Lo que cambia",
+      "fecha": "2026-11-03T03:49:42.464Z"
     }
   ]
 }
