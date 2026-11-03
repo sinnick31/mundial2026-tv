@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "match_id": "554956",
-      "tipo_contenido": "prediccion",
-      "hook": "ANÁLISIS DE LA TABLA DE PUNTOS",
-      "titulo": "Bayern Múnich: 89 puntos en 34 partidos, ¿clave de la consistencia?",
-      "fecha": "2026-08-06T04:19:07.718Z"
-    },
-    {
       "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "LA ROJA GIRA EUROPA MUNDIAL",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Vuelve a El Teniente: La U definió estadio para recibir a Cobresal - La Nación",
       "titulo": "FÚTBOL CHILENO: Vuelve a El Teniente: La U definió estadio para recibir a… | Lo que cambia",
       "fecha": "2026-11-03T03:49:42.464Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "FÚTBOL CHILENO: Aníbal Mosa cuestionó la demanda de Lucas Cepeda y lanzó una tajante…",
+      "titulo": "FÚTBOL CHILENO: Aníbal Mosa cuestionó la demanda de Lucas Cepeda y lanzó una… | Lo que cambia",
+      "fecha": "2026-11-03T20:45:59.152Z"
     }
   ]
 }
