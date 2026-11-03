@@ -38,20 +38,26 @@ function validateRenderedVideo(filePath) {
     throw new Error('VIDEO_GATE_BLOCKED: duración insuficiente (' + duration + 's)');
   }
 
-  // Only blocks long intervals where virtually the entire frame is black.
-  // Dark sports graphics remain valid because text, lines and other elements break the threshold.
+  // Detecta negro real, no fondos deportivos oscuros ni degradados de la plantilla.
+  // pix_th=0.03 exige luminancia prácticamente nula; pic_th=0.995 exige que
+  // al menos el 99.5% del fotograma sea negro durante 2.8s continuos.
   const analysis = spawnSync('ffmpeg', [
-    '-hide_banner', '-i', filePath, '-vf', 'blackdetect=d=2.8:pix_th=0.10:pic_th=0.98',
+    '-hide_banner', '-i', filePath, '-vf', 'blackdetect=d=2.8:pix_th=0.03:pic_th=0.995',
     '-an', '-f', 'null', '-',
   ], { encoding: 'utf8', stdio: ['ignore', 'ignore', 'pipe'] });
   const diagnostics = String(analysis.stderr || '');
   if (analysis.error || analysis.status !== 0) {
     throw new Error('VIDEO_GATE_BLOCKED: ffmpeg no pudo analizar los fotogramas: ' + String(analysis.error || diagnostics).slice(-500));
   }
-  const blackIntervals = diagnostics.match(/black_duration:([0-9.]+)/g) || [];
-  const longBlack = blackIntervals.map((entry) => Number(entry.split(':')[1])).filter((seconds) => seconds >= 2.8);
-  if (longBlack.length) {
-    throw new Error('VIDEO_GATE_BLOCKED: se detectó un tramo completamente negro de ' + longBlack.join(', ') + ' segundos');
+
+  const intervals = [...diagnostics.matchAll(/black_start:([0-9.]+)\\s+black_end:([0-9.]+)\\s+black_duration:([0-9.]+)/g)]
+    .map((match) => ({ start: Number(match[1]), end: Number(match[2]), duration: Number(match[3]) }))
+    .filter((interval) => interval.duration >= 2.8);
+  if (intervals.length) {
+    const detail = intervals.map((interval) =>
+      interval.start.toFixed(2) + '-' + interval.end.toFixed(2) + 's (' + interval.duration.toFixed(2) + 's)'
+    ).join(', ');
+    throw new Error('VIDEO_GATE_BLOCKED: se detectó un tramo completamente negro: ' + detail);
   }
 
   return { ok: true, bytes: stat.size, duration: Number(duration.toFixed(2)), audioDuration: Number(audioDuration.toFixed(2)), width: video.width, height: video.height };
