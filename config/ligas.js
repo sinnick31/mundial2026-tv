@@ -68,6 +68,11 @@ const CHILE = {
 };
 
 const CATEGORIAS = {
+  // Etiqueta de procedencia para noticias de TNT que no encajan en una competición concreta.
+  tnt_sports: {
+    emoji: '📺', prioridadBase: 42,
+    keywords: ['tnt sports', 'tntsports'],
+  },
   colo_colo: {
     emoji: '⚪⚫', prioridadBase: 60,
     keywords: ['colo colo', 'colocolo', 'cacique', 'albos'],
