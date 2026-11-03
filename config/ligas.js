@@ -143,6 +143,11 @@ const RSS_FEEDS = [
   { name: 'Google News — Colo-Colo oficial', url: gnews('"Colo-Colo" sitio oficial'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
   { name: 'Google News — CSD Colo-Colo', url: gnews('site:csdcolocolo.cl futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
 
+  // 📺 TNT SPORTS CHILE — fuente prioritaria de descubrimiento editorial.
+  // Google News RSS indexa únicamente publicaciones del dominio TNT Sports; el pipeline
+  // conserva el enlace original y la fecha del artículo, y aplica deduplicación existente.
+  { name: 'TNT Sports Chile — noticias de fútbol', url: gnews('site:tntsports.cl futbol OR fútbol', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'tnt_sports', prioridad: 100 },
+
   // 🇨🇱 COMPETICIONES PROFESIONALES
   { name: 'Google News — Liga de Primera', url: gnews('"Liga de Primera" Chile futbol'), lang: 'es', categoria: 'chile', prioridad: 90 },
   { name: 'Google News — Liga de Ascenso', url: gnews('"Liga de Ascenso" Chile futbol'), lang: 'es', categoria: 'chile', prioridad: 85 },
