@@ -50,7 +50,7 @@ function validateRenderedVideo(filePath) {
     throw new Error('VIDEO_GATE_BLOCKED: ffmpeg no pudo analizar los fotogramas: ' + String(analysis.error || diagnostics).slice(-500));
   }
 
-  const intervals = [...diagnostics.matchAll(/black_start:([0-9.]+)\\s+black_end:([0-9.]+)\\s+black_duration:([0-9.]+)/g)]
+  const intervals = [...diagnostics.matchAll(/black_start:([0-9.]+)\s+black_end:([0-9.]+)\s+black_duration:([0-9.]+)/g)]
     .map((match) => ({ start: Number(match[1]), end: Number(match[2]), duration: Number(match[3]) }))
     .filter((interval) => interval.duration >= 2.8);
   if (intervals.length) {
