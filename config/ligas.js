@@ -146,7 +146,14 @@ const RSS_FEEDS = [
   // 📺 TNT SPORTS CHILE — fuente prioritaria de descubrimiento editorial.
   // Google News RSS indexa únicamente publicaciones del dominio TNT Sports; el pipeline
   // conserva el enlace original y la fecha del artículo, y aplica deduplicación existente.
-  { name: 'TNT Sports Chile — noticias de fútbol', url: gnews('site:tntsports.cl futbol OR fútbol', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'tnt_sports', prioridad: 100 },
+  { name: 'TNT Sports Chile — noticias generales', url: gnews('site:tntsports.cl futbol OR fútbol', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'tnt_sports', prioridad: 100 },
+  // Secciones específicas: amplían el descubrimiento sin descargar ni copiar artículos.
+  { name: 'TNT Sports Chile — Nacional', url: gnews('site:tntsports.cl/seccion/nacional futbol', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 99 },
+  { name: 'TNT Sports Chile — Fútbol chileno', url: gnews('site:tntsports.cl/futbol-chileno-t780300', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 99 },
+  { name: 'TNT Sports Chile — Liga de Primera', url: gnews('site:tntsports.cl/liga-de-primera-t794917', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 98 },
+  { name: 'TNT Sports Chile — Ascenso y Copa Chile', url: gnews('site:tntsports.cl "Liga de Ascenso" OR "Copa Chile"', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 96 },
+  { name: 'TNT Sports Chile — Fútbol femenino', url: gnews('site:tntsports.cl/seccion/futbolfemenino', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'femenino', prioridad: 97 },
+  { name: 'TNT Sports Chile — Fútbol internacional', url: gnews('site:tntsports.cl/futbol-t7154 internacional OR Champions OR Libertadores', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'internacional', prioridad: 90 },
 
   // 🇨🇱 COMPETICIONES PROFESIONALES
   { name: 'Google News — Liga de Primera', url: gnews('"Liga de Primera" Chile futbol'), lang: 'es', categoria: 'chile', prioridad: 90 },
