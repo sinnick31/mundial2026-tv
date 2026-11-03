@@ -12,6 +12,9 @@ test('TNT Sports tiene cobertura general y por secciones prioritarias', () => {
   assert.ok(tnt.some(feed => feed.name.includes('Fútbol femenino') && feed.categoria === 'femenino'));
   assert.ok(tnt.some(feed => feed.name.includes('Liga de Primera') && feed.categoria === 'chile'));
   assert.ok(tnt.some(feed => feed.name.includes('Ascenso') && feed.categoria === 'chile'));
+  const femaleIndex = RSS_FEEDS.findIndex(feed => feed.name === 'TNT Sports Chile — Fútbol femenino');
+  const generalIndex = RSS_FEEDS.findIndex(feed => feed.name === 'TNT Sports Chile — noticias generales');
+  assert.ok(femaleIndex >= 0 && femaleIndex < generalIndex, 'las secciones específicas deben procesarse antes del feed general para preservar su categoría');
   assert.ok(tnt.every(feed => feed.url.startsWith('https://news.google.com/rss/search?')));
 });
 
