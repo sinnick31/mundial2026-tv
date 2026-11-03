@@ -359,35 +359,58 @@ const ContentPhase: React.FC<{
   durationInFrames: number; brollSrc?: string; imagenEquipoSrc?: string; imagenEquipoCredito?: string;
   imagenEquipo2Src?: string; imagenEquipo2Credito?: string;
 }> = ({ descripcion, equipo1, equipo2, probabilidad, puntos, tipo, durationInFrames, brollSrc, imagenEquipoSrc, imagenEquipoCredito, imagenEquipo2Src, imagenEquipo2Credito }) => {
-  const HEADER_FRAMES = Math.round(durationInFrames * 0.34);
-  const puntosFrames = Math.max(durationInFrames - HEADER_FRAMES, 30);
-  const perPunto = Math.max(Math.floor(puntosFrames / Math.max(puntos.length, 1)), 20);
+  // No confiar en puntos vacíos ni en divisiones redondeadas: ambas podían dejar
+  // fotogramas sin ninguna Sequence activa y producir una pantalla negra.
+  const safePuntos = (Array.isArray(puntos) ? puntos : [])
+    .filter((punto): punto is string => typeof punto === 'string' && punto.trim().length > 0);
+  const totalFrames = Math.max(1, Math.floor(durationInFrames));
+  const HEADER_FRAMES = safePuntos.length
+    ? Math.min(totalFrames, Math.max(1, Math.round(totalFrames * 0.34)))
+    : totalFrames;
+  const puntosFrames = totalFrames - HEADER_FRAMES;
+  const canShowPoints = safePuntos.length > 0 && puntosFrames >= safePuntos.length;
+  const baseFrames = canShowPoints ? Math.floor(puntosFrames / safePuntos.length) : 0;
+  const remainderFrames = canShowPoints ? puntosFrames % safePuntos.length : 0;
+  let nextPointFrame = HEADER_FRAMES;
+
+  const header = (
+    <AbsoluteFill style={{ background: 'linear-gradient(180deg, #0a1420 0%, #050505 100%)' }}>
+      <BrollLayer brollSrc={brollSrc} opacity={0.4} />
+      <HeaderBlock
+        descripcion={descripcion} equipo1={equipo1} equipo2={equipo2}
+        probabilidad={probabilidad} tipo={tipo}
+        imagenEquipoSrc={imagenEquipoSrc} imagenEquipoCredito={imagenEquipoCredito}
+        imagenEquipo2Src={imagenEquipo2Src} imagenEquipo2Credito={imagenEquipo2Credito}
+      />
+      <div style={{
+        position: 'absolute', bottom: 50, left: 0, right: 0, textAlign: 'center',
+        fontSize: 22, color: '#ffffff66', fontFamily: "'Arial', sans-serif",
+      }}>
+        Análisis editorial · Fuentes indicadas en pantalla
+      </div>
+    </AbsoluteFill>
+  );
+
+  if (!canShowPoints) {
+    // Sin puntos válidos, mantener la ficha editorial durante toda la fase.
+    return <AbsoluteFill>{header}</AbsoluteFill>;
+  }
 
   return (
     <AbsoluteFill>
-      <Sequence  durationInFrames={HEADER_FRAMES}>
-        <AbsoluteFill style={{ background: `linear-gradient(180deg, #0a1420 0%, #050505 100%)` }}>
-          <BrollLayer brollSrc={brollSrc} opacity={0.4} />
-          <HeaderBlock
-            descripcion={descripcion} equipo1={equipo1} equipo2={equipo2}
-            probabilidad={probabilidad} tipo={tipo}
-            imagenEquipoSrc={imagenEquipoSrc} imagenEquipoCredito={imagenEquipoCredito}
-            imagenEquipo2Src={imagenEquipo2Src} imagenEquipo2Credito={imagenEquipo2Credito}
-          />
-          <div style={{
-            position: 'absolute', bottom: 50, left: 0, right: 0, textAlign: 'center',
-            fontSize: 22, color: '#ffffff66', fontFamily: "'Arial', sans-serif",
-          }}>
-            Análisis editorial · Fuentes indicadas en pantalla
-          </div>
-        </AbsoluteFill>
+      <Sequence durationInFrames={HEADER_FRAMES}>
+        {header}
       </Sequence>
-
-      {puntos.map((punto, i) => (
-        <Sequence key={i} from={HEADER_FRAMES + i * perPunto} durationInFrames={perPunto}>
-          <PuntoFullscreen punto={punto} index={i} total={puntos.length} tipo={tipo} brollSrc={brollSrc} />
-        </Sequence>
-      ))}
+      {safePuntos.map((punto, i) => {
+        const pointFrames = baseFrames + (i < remainderFrames ? 1 : 0);
+        const from = nextPointFrame;
+        nextPointFrame += pointFrames;
+        return (
+          <Sequence key={i} from={from} durationInFrames={pointFrames}>
+            <PuntoFullscreen punto={punto} index={i} total={safePuntos.length} tipo={tipo} brollSrc={brollSrc} />
+          </Sequence>
+        );
+      })}
     </AbsoluteFill>
   );
 };
