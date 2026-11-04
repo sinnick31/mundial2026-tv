@@ -67,9 +67,18 @@ function importance(item) {
   return score;
 }
 function snippet(item) {
-  const desc = clean(item.description || '');
-  if (desc.length >= 70) return desc.slice(0, 220).replace(/\s+\S*$/, '') + '.';
-  return clean(item.title).slice(0, 180);
+  const body = clean(item.article_body || '');
+  if (item.article_complete === true && body.length >= 300) {
+    const sentences = body.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [body];
+    let summary = '';
+    for (const sentence of sentences) {
+      const candidate = [summary, sentence.trim()].filter(Boolean).join(' ');
+      if (candidate.length > 760) break;
+      summary = candidate;
+    }
+    return summary.trim() || body.slice(0, 700);
+  }
+  return '';
 }
 function typeFor(item) {
   if (isFutbolFemenino(item)) return 'futbol_femenino';
@@ -109,11 +118,12 @@ function fechaPublicacion(item) {
   return new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(raw));
 }
 function buildNarration(item, type, resumen) {
-  const title = clean(item.title);
+  const title = clean(item.article_title || item.title);
   const summary = clean(resumen);
-  const angle = editorialAngle(type);
   const question = closingQuestion(type);
-  return [title, summary && normalize(summary) !== normalize(title) ? summary : '', angle, question].filter(Boolean).join(' ');
+  if (item.article_complete !== true || summary.length < 180) return '';
+  const body = normalize(summary).startsWith(normalize(title)) ? summary.slice(title.length).trim() : summary;
+  return [title, body, question].filter(Boolean).join(' ');
 }
 function inferMatchup(title) {
   const value = clean(title);
@@ -126,7 +136,7 @@ function inferMatchup(title) {
 }
 
 function buildItem(item, type, order) {
-  const title = clean(item.title);
+  const title = clean(item.article_title || item.title);
   const matchup = inferMatchup(title);
   const resumen = snippet(item);
   const fuente = item.fuente || item.fuente_host || 'Fuente deportiva';
@@ -143,7 +153,7 @@ function buildItem(item, type, order) {
     equipo1: matchup?.home || item.equipo_chile || (type === 'chilenos_exterior' ? 'Chile' : type === 'internacional' ? 'Fútbol mundial' : 'Fútbol chileno'),
     equipo2: matchup?.away || null,
     probabilidad: 0,
-    puntos: [`HECHO PUBLICADO: ${title}`, `CONTEXTO DE LA FUENTE: ${resumen}`, fechaPub ? `PUBLICADO EL ${fechaPub} (fecha de publicación, no necesariamente fecha del partido)` : 'FECHA: la fuente no entrega una fecha de publicación verificable; no inventar fecha del partido', `ANÁLISIS EDITORIAL: ${angle}`, `SIGUIENTE DATO A COMPROBAR: ${closingQuestion(type)}`],
+    puntos: [`NOTICIA: ${title}`, `DETALLES: ${resumen.slice(0, 360)}`, `SEGUIMIENTO: ${closingQuestion(type)}`],
     narracion: buildNarration(item, type, resumen),
     emoji: type === 'futbol_femenino' ? '⚽♀' : type === 'colo_colo' ? '⚪⚫' : type === 'chilenos_exterior' ? '🇨🇱🌎' : '🇨🇱⚽',
     titulo_youtube: titleFor(item),
@@ -151,7 +161,7 @@ function buildItem(item, type, order) {
     tags,
     _tipo_contenido: 'noticia',
     _match_id: null,
-    _noticia_original: title,
+    _noticia_original: title,\n    _articulo_completo: true,\n    _articulo_caracteres: item.article_chars || item.article_body.length,
     _fuente: fuente,
     _fuente_url: fuenteUrl,
     _fecha: FECHA,
@@ -164,10 +174,10 @@ function buildItem(item, type, order) {
 function main() {
   const news = readJson('news-cache.json', { noticias: [] });
   const history = loadHistory();
-  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => ageHours(n) <= 72 && n.link) : [];
+  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => ageHours(n) <= 72 && n.link && n.article_complete === true && typeof n.article_body === 'string' && n.article_body.trim().length >= 300) : [];
   if (!candidates.length) {
     fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, total: 0, contenido: [] }, null, 2));
-    console.log('⚠️ No hay fuentes recientes con URL verificable. No se publica relleno.');
+    console.log('⚠️ No hay artículos completos recuperados desde las fuentes. Los titulares RSS no se convierten en guiones; no se publica relleno.');
     return;
   }
 
