@@ -133,6 +133,33 @@ function elegirBroll(item) {
   }
 }
 
+function renderThumbnail(item, renderProps, outputPath) {
+  const props = {
+    headline: item.thumbnail_title || item.gancho || item.titulo_youtube || 'FÚTBOL CHILENSIS',
+    section: renderProps.etiquetaSeccion || (item._categoria_editorial || 'FÚTBOL CHILENO').replace(/_/g, ' '),
+    team1: item.equipo1 || renderProps.homeTeam || '',
+    team2: item.equipo2 || renderProps.awayTeam || '',
+    team1Image: renderProps.imagenEquipoSrc || '',
+    team2Image: renderProps.imagenEquipo2Src || '',
+    source: item._fuente || 'Fuentes verificadas',
+    date: item._fecha_publicacion_fuente || item._fecha || '',
+  };
+  const propsJson = JSON.stringify(props);
+  const cmd = [
+    'npx remotion still src/index.tsx VideoThumbnail',
+    outputPath,
+    `--props='${propsJson.replace(/'/g, "'\\\\''")}'`,
+    '--frame=0',
+    '--scale=1',
+  ].join(' ');
+  console.log(`   🖼️ Generando miniatura 1280x720: ${path.basename(outputPath)}`);
+  execSync(cmd, { stdio: 'inherit', cwd: ROOT });
+  if (!fs.existsSync(outputPath) || fs.statSync(outputPath).size < 10000) {
+    throw new Error('THUMBNAIL_GATE_BLOCKED: la miniatura no se generó o está vacía.');
+  }
+  return outputPath;
+}
+
 function renderVideo(compositionId, props, outputPath, durationInFrames) {
   const propsJson = JSON.stringify(props);
   const cmd = [
