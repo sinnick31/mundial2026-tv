@@ -1,27 +1,12 @@
 /**
- * fetch-matches.js — FOOTBALL AI STUDIO v4.0
- *
- * ANTES (v3): solo Mundial 2026 (COMPETITION_ID=2000).
- * AHORA (v4): TODAS las competiciones del plan gratis de football-data.org
- * en UNA SOLA llamada (/v4/matches?competitions=...) → respeta el límite
- * de 10 llamadas/minuto y cubre Champions, Premier, LaLiga, Serie A,
- * Bundesliga, Ligue 1, Libertadores, Brasileirão y torneos FIFA activos.
- *
- * + ESPN scoreboard multi-liga para partidos en vivo.
- * + Tabla de posiciones: 1 competición por día (rotación semanal).
- *
- * NOTA: la Primera División de Chile no está en football-data.org gratis.
- * El fútbol chileno se cubre vía fetch-news.js (funciona muy bien con RSS).
- *
- * Salida: matches-cache.json — MISMO formato que v3 (compatible con todo
- * el pipeline existente) + campo `competencia` en cada partido.
+ * fetch-matches.js — FÚTBOL CHILENSIS
+ * ESPN como proveedor principal; TheSportsDB como respaldo verificable
+ * para Primera División y Primera B de Chile.
  */
 
 const fs = require('fs');
 const https = require('https');
-// Resultados y programación: ESPN scoreboard. No se consulta football-data.org.
 
-// ─── HTTP helper ─────────────────────────────────────────────────────────────
 function httpGet(url, headers = {}, redirects = 0) {
   return new Promise((resolve, reject) => {
     if (redirects > 4) return reject(new Error('Demasiadas redirecciones'));
@@ -29,7 +14,7 @@ function httpGet(url, headers = {}, redirects = 0) {
     const req = https.get({
       hostname: u.hostname,
       path: u.pathname + u.search,
-      headers: { 'User-Agent': 'FootballAIStudio/4.0', ...headers },
+      headers: { 'User-Agent': 'FootballChilensisNewsroom/7.0', Accept: 'application/json', ...headers },
       timeout: 15000,
     }, (res) => {
       if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location) {
@@ -37,14 +22,16 @@ function httpGet(url, headers = {}, redirects = 0) {
         return httpGet(next, headers, redirects + 1).then(resolve).catch(reject);
       }
       let data = '';
-      res.on('data', (chunk) => (data += chunk));
+      res.on('data', (chunk) => { data += chunk; });
       res.on('end', () => {
-        if ((res.statusCode || 500) >= 400) return reject(new Error(`HTTP ${res.statusCode}`));
+        if ((res.statusCode || 500) >= 400) return reject(new Error('HTTP ' + res.statusCode));
         try {
           const parsed = JSON.parse(data);
-          if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return reject(new Error('Respuesta JSON con formato inesperado'));
+          if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+            return reject(new Error('Respuesta JSON con formato inesperado'));
+          }
           resolve(parsed);
-        } catch (e) {
+        } catch (err) {
           reject(new Error('Respuesta no es JSON válido'));
         }
       });
@@ -54,7 +41,6 @@ function httpGet(url, headers = {}, redirects = 0) {
   });
 }
 
-// ─── ESPN API pública — Scores en vivo multi-liga ─────────────────────────
 const ESPN_LIGAS = [
   { slug: 'chi.1', nombre: 'Primera División de Chile' },
   { slug: 'chi.2', nombre: 'Liga de Ascenso de Chile' },
@@ -76,146 +62,338 @@ const ESPN_LIGAS = [
   { slug: 'fifa.world', nombre: 'Mundial FIFA' },
 ];
 
-async function getMatchesFromESPN() {
-  const recientes = [], enCurso = [], proximos = [], errores = [];
-  const today = new Date();
-  const start = new Date(today.getTime() - 3 * 24 * 60 * 60 * 1000);
-  const end = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
-  const ymd = (d) => `${d.getUTCFullYear()}${String(d.getUTCMonth()+1).padStart(2,'0')}${String(d.getUTCDate()).padStart(2,'0')}`;
-  const dateRange = `${ymd(start)}-${ymd(end)}`;
-  for (const liga of ESPN_LIGAS) {
-    try {
-      const data = await httpGet(`https://site.api.espn.com/apis/site/v2/sports/soccer/${liga.slug}/scoreboard?dates=${dateRange}`);
-      if (!Array.isArray(data.events)) throw new Error('La respuesta no contiene events[]; posible cambio de endpoint o formato');
-      for (const e of data.events) {
-        const comp = e.competitions?.[0];
-        const teams = comp?.competitors || [];
-        const home = teams.find((t) => t.homeAway === 'home') || teams[0] || {};
-        const away = teams.find((t) => t.homeAway === 'away') || teams[1] || {};
-        const status = e.status?.type;
-        const esChile = liga.slug.startsWith('chi.');
-        const p = {
-          id: `espn-${e.id}`,
-          estado: status?.completed ? 'finalizado' : (status?.description === 'In Progress' ? 'en_curso' : 'programado'),
-          equipo1: home.team?.displayName || 'Local',
-          equipo2: away.team?.displayName || 'Visitante',
-          escudoLocal: home.team?.logo || null,
-          escudoVisita: away.team?.logo || null,
-          estadio: comp?.venue?.fullName || e.venue?.fullName || null,
-          espnEventId: e.id,
-          espnLeagueSlug: liga.slug,
-          golesLocal: status?.completed ? parseInt(home.score || '0', 10) : null,
-          golesVisita: status?.completed ? parseInt(away.score || '0', 10) : null,
-          golesLocalEnVivo: !status?.completed ? parseInt(home.score || '0', 10) : null,
-          golesVisitaEnVivo: !status?.completed ? parseInt(away.score || '0', 10) : null,
-          minuto: status?.displayClock || null,
-          competencia: liga.nombre,
-          prioridad: esChile ? 12 : 8, // ⭐ Chile por encima de todo
-          hashtag: esChile ? '#FutbolChileno' : '#Futbol',
-          fase: liga.nombre,
-          fecha: e.date,
-          enCurso: status?.description === 'In Progress',
-          fuente: 'ESPN',
-          url: `https://www.espn.com/soccer/match/_/gameId/${e.id}`,
-        };
-        if (p.enCurso) enCurso.push(p);
-        else if (p.estado === 'finalizado') recientes.push(p);
-        else proximos.push(p);
-      }
-      await new Promise((r) => setTimeout(r, 300));
-    } catch (err) {
-      errores.push({ liga: liga.nombre, slug: liga.slug, error: err.message });
-      console.error(`  ⚠️ ESPN ${liga.nombre}: ${err.message}`);
+const THESPORTSDB_LIGAS = [
+  { id: '4627', nombre: 'Chile Primera Division', competencia: 'Primera División de Chile' },
+  { id: '4899', nombre: 'Chile Primera B', competencia: 'Liga de Ascenso de Chile' },
+];
+
+function validateEspnLeagueConfig(ligas = ESPN_LIGAS) {
+  const seen = new Set();
+  const errors = [];
+  for (const liga of ligas) {
+    if (!liga || typeof liga.slug !== 'string' || !/^[a-z0-9]+(?:\.[a-z0-9_]+)*$/.test(liga.slug)) {
+      errors.push({ slug: liga?.slug || null, error: 'slug_format_invalid' });
+      continue;
     }
+    if (seen.has(liga.slug)) errors.push({ slug: liga.slug, error: 'slug_duplicate' });
+    seen.add(liga.slug);
   }
-  return { recientes, enCurso, proximos, errores, ligas_consultadas: ESPN_LIGAS.length };
+  return { valid: errors.length === 0, total: ligas.length, errors };
 }
 
-// ─── Pipeline principal ──────────────────────────────────────────────────────
-async function fetchMatches() {
-  console.log('⚽ CHILENSIS FÚTBOL — Resultados ESPN: Chile + ligas internacionales...\n');
-  const espn = await getMatchesFromESPN();
+function ymd(date) {
+  return date.toISOString().slice(0, 10).replace(/-/g, '');
+}
 
-  const idsVistos = new Set();
-  const combinar = (...arrays) => arrays.flat()
-    .filter((p) => {
-      const key = `${p.equipo1}-${p.equipo2}-${(p.fecha || '').substring(0, 10)}`;
-      if (idsVistos.has(key)) return false;
-      idsVistos.add(key);
-      return true;
-    })
-    .sort((a, b) => (b.prioridad || 5) - (a.prioridad || 5));
+function getWindow(now) {
+  const start = new Date(now.getTime() - 3 * 86400000);
+  const end = new Date(now.getTime() + 7 * 86400000);
+  return { start, end, startDay: start.toISOString().slice(0, 10), endDay: end.toISOString().slice(0, 10) };
+}
 
-  const partidosRecientes = combinar(espn.recientes).slice(0, 60);
-  // Enriquecer los partidos recientes de ESPN con goleadores/minutos cuando el resumen los exponga.
-  // Si la fuente no publica esos detalles, se dejan ausentes y el guion lo indica expresamente.
-  for (const partido of partidosRecientes.filter(p => p.espnEventId && p.espnLeagueSlug).slice(0, 8)) {
-    try {
-      const summary = await httpGet(`https://site.api.espn.com/apis/site/v2/sports/soccer/${partido.espnLeagueSlug}/summary?event=${partido.espnEventId}`);
-      const plays = Array.isArray(summary.scoringPlays) ? summary.scoringPlays : Array.isArray(summary.scoringPlays?.items) ? summary.scoringPlays.items : [];
-      const goleadores = plays.map(play => {
-        const description = String(play.text || play.type?.text || play.shortText || '');
-        const participants = Array.isArray(play.participants) ? play.participants : Array.isArray(play.athletesInvolved) ? play.athletesInvolved : [];
-        const athlete = participants.map(p => p.athlete?.displayName || p.displayName || p.name).find(Boolean);
-        const goalLike = /goal|gol|penalty|penalti|own goal|autogol/i.test(description) || Boolean(play.type?.id && play.team);
-        if (!goalLike || !athlete) return null;
-        const minute = play.clock?.displayValue || play.time?.displayValue || play.period?.number && `${play.period.number}T` || '';
-        return `${athlete}${minute ? ` (${minute})` : ''}${play.team?.displayName ? ` · ${play.team.displayName}` : ''}`;
-      }).filter(Boolean);
-      if (goleadores.length) partido.goleadores = [...new Set(goleadores)];
-    } catch (err) {
-      console.log(`  ℹ️ Goleadores no disponibles para ${partido.equipo1} vs ${partido.equipo2}: ${err.message}`);
-    }
-  }
-
-  const cache = {
-    fecha: new Date().toISOString(),
-    partidos_recientes: partidosRecientes,
-    partidos_en_curso: espn.enCurso || [],
-    partidos_proximos: combinar(espn.proximos).slice(0, 30),
-    tabla_posiciones: [],
-    tabla_competencia: null,
-    resumen: {},
-    diagnostico_fuentes: { proveedor: 'ESPN', ligas_consultadas: espn.ligas_consultadas || ESPN_LIGAS.length, errores: espn.errores || [] },
+function normalizeEspnEvent(event, liga) {
+  const comp = event.competitions?.[0];
+  const teams = comp?.competitors || [];
+  const home = teams.find((team) => team.homeAway === 'home') || teams[0] || {};
+  const away = teams.find((team) => team.homeAway === 'away') || teams[1] || {};
+  const status = event.status?.type || {};
+  if (!event.id || !home.team?.displayName || !away.team?.displayName || !event.date) return null;
+  const inProgress = status.description === 'In Progress' || status.state === 'in';
+  const completed = Boolean(status.completed);
+  const isChile = liga.slug.startsWith('chi.');
+  return {
+    id: 'espn-' + event.id,
+    estado: completed ? 'finalizado' : (inProgress ? 'en_curso' : 'programado'),
+    equipo1: home.team.displayName,
+    equipo2: away.team.displayName,
+    escudoLocal: home.team.logo || null,
+    escudoVisita: away.team.logo || null,
+    estadio: comp?.venue?.fullName || event.venue?.fullName || null,
+    espnEventId: String(event.id),
+    espnLeagueSlug: liga.slug,
+    golesLocal: completed && Number.isFinite(Number(home.score)) ? Number(home.score) : null,
+    golesVisita: completed && Number.isFinite(Number(away.score)) ? Number(away.score) : null,
+    golesLocalEnVivo: inProgress && Number.isFinite(Number(home.score)) ? Number(home.score) : null,
+    golesVisitaEnVivo: inProgress && Number.isFinite(Number(away.score)) ? Number(away.score) : null,
+    minuto: status.displayClock || null,
+    competencia: liga.nombre,
+    prioridad: 8,
+    hashtag: isChile ? '#FutbolChileno' : '#Futbol',
+    fase: liga.nombre,
+    fecha: event.date,
+    enCurso: inProgress,
+    fuente: 'ESPN',
+    fuente_url: 'https://www.espn.com/soccer/match/_/gameId/' + event.id,
+    url: 'https://www.espn.com/soccer/match/_/gameId/' + event.id,
   };
-  cache.resumen = {
-    total_recientes: cache.partidos_recientes.length,
-    total_en_curso: cache.partidos_en_curso.length,
-    total_proximos: cache.partidos_proximos.length,
-  };
+}
 
-  fs.writeFileSync('matches-cache.json', JSON.stringify(cache, null, 2));
-
-  console.log('📊 Resumen de partidos:');
-  console.log(`  ✅ Finalizados recientes: ${cache.resumen.total_recientes}`);
-  console.log(`  🔴 En curso ahora: ${cache.resumen.total_en_curso}`);
-  console.log(`  📅 Próximos: ${cache.resumen.total_proximos}`);
-  console.log(`  🔎 Ligas consultadas: ${cache.diagnostico_fuentes.ligas_consultadas}; errores: ${cache.diagnostico_fuentes.errores.length}`);
-  if (!cache.resumen.total_recientes && !cache.resumen.total_en_curso && !cache.resumen.total_proximos && cache.diagnostico_fuentes.errores.length === cache.diagnostico_fuentes.ligas_consultadas) {
-    const error = new Error('ESPN no entregó una respuesta válida para ninguna competición; revisar disponibilidad o endpoint');
-    error.diagnostics = cache.diagnostico_fuentes;
+async function getMatchesFromESPN(options = {}) {
+  const request = options.request || httpGet;
+  const sleep = options.sleep || ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
+  const now = options.now || new Date();
+  const { start, end, startDay, endDay } = getWindow(now);
+  const config = validateEspnLeagueConfig();
+  if (!config.valid) {
+    const error = new Error('Configuración de identificadores ESPN inválida');
+    error.diagnostics = { validacion_config: config };
     throw error;
   }
 
+  const recientes = [], enCurso = [], proximos = [], errores = [], ligasValidas = [];
+  const probeDate = ymd(now);
+  console.log('🔎 ESPN: prevalidando identificadores con fecha individual ' + probeDate);
 
-  cache.partidos_en_curso.forEach((p) => {
-    console.log(`  🔴 [${p.competencia}] ${p.equipo1} ${p.golesLocalEnVivo ?? 0}-${p.golesVisitaEnVivo ?? 0} ${p.equipo2} (${p.minuto})`);
-  });
-  cache.partidos_recientes.slice(0, 6).forEach((p) => {
-    console.log(`  ⚽ [${p.competencia}] ${p.equipo1} ${p.golesLocal}-${p.golesVisita} ${p.equipo2}`);
+  // Primero se valida cada identificador con una fecha individual. Un events:[]
+  // vacío es una respuesta válida; HTTP 400/404 no lo es.
+  for (const liga of ESPN_LIGAS) {
+    try {
+      const probe = await request(
+        'https://site.api.espn.com/apis/site/v2/sports/soccer/' + liga.slug + '/scoreboard?dates=' + probeDate
+      );
+      if (!Array.isArray(probe.events)) throw new Error('Respuesta sin events[]');
+      ligasValidas.push(liga);
+    } catch (err) {
+      errores.push({ liga: liga.nombre, slug: liga.slug, etapa: 'validacion_id', error: err.message });
+      console.error('  ⚠️ Identificador ESPN no validado ' + liga.slug + ': ' + err.message);
+    }
+    await sleep(150);
+  }
+
+  // ESPN rechaza rangos YYYYMMDD-YYYYMMDD en varias respuestas 400.
+  // Se consulta por mes (YYYYMM) y se filtra localmente al intervalo editorial.
+  const months = [...new Set([start, end].map((date) => date.toISOString().slice(0, 7).replace('-', '')))];
+  let consultasCorrectas = 0;
+  for (const liga of ligasValidas) {
+    for (const month of months) {
+      try {
+        const data = await request(
+          'https://site.api.espn.com/apis/site/v2/sports/soccer/' + liga.slug + '/scoreboard?dates=' + month
+        );
+        if (!Array.isArray(data.events)) throw new Error('Respuesta sin events[]');
+        consultasCorrectas += 1;
+        for (const event of data.events) {
+          const eventDay = String(event.date || '').slice(0, 10);
+          if (eventDay < startDay || eventDay > endDay) continue;
+          const match = normalizeEspnEvent(event, liga);
+          if (!match) continue;
+          if (match.estado === 'en_curso') enCurso.push(match);
+          else if (match.estado === 'finalizado') recientes.push(match);
+          else proximos.push(match);
+        }
+      } catch (err) {
+        errores.push({ liga: liga.nombre, slug: liga.slug, etapa: 'scoreboard_mes', mes: month, error: err.message });
+        console.error('  ⚠️ ESPN ' + liga.nombre + ' (' + month + '): ' + err.message);
+      }
+      await sleep(150);
+    }
+  }
+
+  return {
+    recientes, enCurso, proximos, errores,
+    ligas_consultadas: ESPN_LIGAS.length,
+    ligas_validadas: ligasValidas.length,
+    consultas_correctas: consultasCorrectas,
+    rango: { desde: startDay, hasta: endDay },
+    preflight_fecha: probeDate,
+  };
+}
+
+function normalizeTheSportsDbEvents(events, liga, now = new Date()) {
+  if (!Array.isArray(events)) throw new Error('TheSportsDB no devolvió events[]');
+  const { startDay, endDay } = getWindow(now);
+  const recientes = [], enCurso = [], proximos = [];
+  for (const event of events) {
+    const date = String(event.dateEvent || '').slice(0, 10);
+    const home = String(event.strHomeTeam || '').trim();
+    const away = String(event.strAwayTeam || '').trim();
+    const eventId = String(event.idEvent || '').trim();
+    if (!eventId || !home || !away || !/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
+    if (date < startDay || date > endDay) continue;
+
+    const status = String(event.strStatus || '').toLowerCase();
+    const hasScore = event.intHomeScore !== null && event.intHomeScore !== undefined &&
+      event.intAwayScore !== null && event.intAwayScore !== undefined &&
+      String(event.intHomeScore).trim() !== '' && String(event.intAwayScore).trim() !== '' &&
+      Number.isFinite(Number(event.intHomeScore)) && Number.isFinite(Number(event.intAwayScore));
+    const live = /in progress|live|1st half|2nd half|half time|extra time/.test(status);
+    const finished = /match finished|finished|full time|ft/.test(status);
+    const scheduled = /not started|scheduled|upcoming|fixture/.test(status);
+    if (live && !hasScore) continue;
+    if (finished && !hasScore) continue;
+    if (!live && !finished && !scheduled && date <= now.toISOString().slice(0, 10)) continue;
+
+    const match = {
+      id: 'thesportsdb-' + eventId,
+      estado: finished ? 'finalizado' : (live ? 'en_curso' : 'programado'),
+      equipo1: home,
+      equipo2: away,
+      escudoLocal: event.strHomeTeamBadge || null,
+      escudoVisita: event.strAwayTeamBadge || null,
+      estadio: event.strVenue || null,
+      golesLocal: finished ? Number(event.intHomeScore) : null,
+      golesVisita: finished ? Number(event.intAwayScore) : null,
+      golesLocalEnVivo: live ? Number(event.intHomeScore) : null,
+      golesVisitaEnVivo: live ? Number(event.intAwayScore) : null,
+      competencia: event.strLeague || liga.competencia,
+      prioridad: 8,
+      hashtag: '#FutbolChileno',
+      fase: event.strSeason || 'Temporada 2026',
+      fecha: date,
+      enCurso: live,
+      fuente: 'TheSportsDB',
+      fuente_url: 'https://www.thesportsdb.com/api/v1/json/123/eventsseason.php?id=' + liga.id + '&s=2026',
+      url: 'https://www.thesportsdb.com/event/' + eventId,
+      theSportsDbEventId: eventId,
+    };
+    if (live) enCurso.push(match);
+    else if (finished) recientes.push(match);
+    else proximos.push(match);
+  }
+  return { recientes, enCurso, proximos };
+}
+
+async function getMatchesFromTheSportsDB(options = {}) {
+  const request = options.request || httpGet;
+  const sleep = options.sleep || ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
+  const now = options.now || new Date();
+  const recientes = [], enCurso = [], proximos = [], errores = [];
+  let ligasCorrectas = 0;
+  for (const liga of THESPORTSDB_LIGAS) {
+    const url = 'https://www.thesportsdb.com/api/v1/json/123/eventsseason.php?id=' + liga.id + '&s=2026';
+    try {
+      const data = await request(url);
+      if (!Array.isArray(data.events)) throw new Error('Respuesta sin events[] para temporada 2026');
+      ligasCorrectas += 1;
+      const normalized = normalizeTheSportsDbEvents(data.events, liga, now);
+      recientes.push(...normalized.recientes);
+      enCurso.push(...normalized.enCurso);
+      proximos.push(...normalized.proximos);
+    } catch (err) {
+      errores.push({ liga: liga.competencia, id: liga.id, error: err.message });
+      console.error('  ⚠️ TheSportsDB ' + liga.competencia + ': ' + err.message);
+    }
+    await sleep(250);
+  }
+  return { recientes, enCurso, proximos, errores, ligas_consultadas: THESPORTSDB_LIGAS.length, ligas_correctas: ligasCorrectas };
+}
+
+function mergeUnique(...arrays) {
+  const seen = new Set();
+  return arrays.flat().filter((match) => {
+    const teams = [String(match.equipo1 || '').trim().toLocaleLowerCase(), String(match.equipo2 || '').trim().toLocaleLowerCase()].sort();
+    const key = teams.join('|') + '|' + String(match.fecha || '').slice(0, 10);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).sort((a, b) => (b.prioridad || 0) - (a.prioridad || 0));
+}
+
+async function fetchMatches(options = {}) {
+  console.log('⚽ FÚTBOL CHILENSIS — Resultados y calendario verificables\n');
+  const espn = await getMatchesFromESPN(options);
+  const espnChileCount = [...espn.recientes, ...espn.enCurso, ...espn.proximos]
+    .filter((match) => match.hashtag === '#FutbolChileno').length;
+
+  let backup = { recientes: [], enCurso: [], proximos: [], errores: [], ligas_consultadas: 0, ligas_correctas: 0 };
+  if (!espnChileCount) {
+    console.log('🇨🇱 ESPN no aportó partidos chilenos. Consultando respaldo TheSportsDB...');
+    backup = await getMatchesFromTheSportsDB(options);
+  }
+
+  const partidosRecientes = mergeUnique(espn.recientes, backup.recientes).slice(0, 60);
+  const partidosEnCurso = mergeUnique(espn.enCurso, backup.enCurso).slice(0, 30);
+  const partidosProximos = mergeUnique(espn.proximos, backup.proximos).slice(0, 40);
+
+  for (const partido of partidosRecientes.filter((match) => match.espnEventId && match.espnLeagueSlug).slice(0, 8)) {
+    try {
+      const summary = await (options.request || httpGet)(
+        'https://site.api.espn.com/apis/site/v2/sports/soccer/' + partido.espnLeagueSlug + '/summary?event=' + partido.espnEventId
+      );
+      const plays = Array.isArray(summary.scoringPlays) ? summary.scoringPlays :
+        Array.isArray(summary.scoringPlays?.items) ? summary.scoringPlays.items : [];
+      const scorers = plays.map((play) => {
+        const description = String(play.text || play.type?.text || play.shortText || '');
+        const participants = Array.isArray(play.participants) ? play.participants :
+          Array.isArray(play.athletesInvolved) ? play.athletesInvolved : [];
+        const athlete = participants.map((person) => person.athlete?.displayName || person.displayName || person.name).find(Boolean);
+        const goalLike = /goal|gol|penalty|penalti|own goal|autogol/i.test(description) || Boolean(play.type?.id && play.team);
+        if (!goalLike || !athlete) return null;
+        const minute = play.clock?.displayValue || play.time?.displayValue || (play.period?.number ? play.period.number + 'T' : '');
+        return athlete + (minute ? ' (' + minute + ')' : '') + (play.team?.displayName ? ' · ' + play.team.displayName : '');
+      }).filter(Boolean);
+      if (scorers.length) partido.goleadores = [...new Set(scorers)];
+    } catch (err) {
+      console.log('  ℹ️ Goleadores no disponibles para ' + partido.equipo1 + ' vs ' + partido.equipo2 + ': ' + err.message);
+    }
+  }
+
+  const validSources = espn.consultas_correctas + backup.ligas_correctas;
+  const cache = {
+    fecha: new Date().toISOString(),
+    partidos_recientes: partidosRecientes,
+    partidos_en_curso: partidosEnCurso,
+    partidos_proximos: partidosProximos,
+    tabla_posiciones: [],
+    tabla_competencia: null,
+    resumen: {
+      total_recientes: partidosRecientes.length,
+      total_en_curso: partidosEnCurso.length,
+      total_proximos: partidosProximos.length,
+    },
+    diagnostico_fuentes: {
+      proveedor_principal: 'ESPN',
+      proveedor_respaldo: 'TheSportsDB',
+      espn: {
+        ligas_configuradas: espn.ligas_consultadas,
+        ligas_validadas: espn.ligas_validadas,
+        consultas_correctas: espn.consultas_correctas,
+        errores: espn.errores,
+        rango: espn.rango,
+        preflight_fecha: espn.preflight_fecha,
+      },
+      thesportsdb: {
+        ligas_consultadas: backup.ligas_consultadas,
+        ligas_correctas: backup.ligas_correctas,
+        errores: backup.errores,
+      },
+    },
+  };
+
+  fs.writeFileSync('matches-cache.json', JSON.stringify(cache, null, 2));
+  console.log('📊 Finalizados: ' + cache.resumen.total_recientes);
+  console.log('🔴 En curso: ' + cache.resumen.total_en_curso);
+  console.log('📅 Próximos: ' + cache.resumen.total_proximos);
+  console.log('🔎 ESPN: ' + espn.ligas_validadas + '/' + espn.ligas_consultadas + ' identificadores validados; consultas válidas: ' + espn.consultas_correctas);
+  console.log('🔎 TheSportsDB: ' + backup.ligas_correctas + '/' + backup.ligas_consultadas + ' ligas consultadas');
+
+  if (validSources === 0) {
+    const error = new Error('Ninguna fuente de partidos devolvió una respuesta estructurada verificable; generación de partidos bloqueada');
+    error.diagnostics = cache.diagnostico_fuentes;
+    throw error;
+  }
+  return cache;
+}
+
+if (require.main === module) {
+  fetchMatches().catch((err) => {
+    console.error('❌ Error en fetch-matches:', err.message);
+    fs.writeFileSync('matches-cache.json', JSON.stringify({
+      fecha: new Date().toISOString(),
+      partidos_recientes: [],
+      partidos_en_curso: [],
+      partidos_proximos: [],
+      tabla_posiciones: [],
+      resumen: { total_recientes: 0, total_en_curso: 0, total_proximos: 0 },
+      error: err.message,
+      diagnostico_fuentes: err.diagnostics || null,
+    }, null, 2));
+    process.exitCode = 1;
   });
 }
 
-if (require.main === module) fetchMatches().catch((err) => {
-  console.error('❌ Error en fetch-matches:', err.message);
-  fs.writeFileSync('matches-cache.json', JSON.stringify({
-    fecha: new Date().toISOString(),
-    partidos_recientes: [], partidos_en_curso: [], partidos_proximos: [],
-    tabla_posiciones: [], resumen: { total_recientes: 0, total_en_curso: 0, total_proximos: 0 },
-    error: err.message,
-    diagnostico_fuentes: err.diagnostics || null,
-  }, null, 2));
-  process.exitCode = 1;
-});
-
-module.exports = { httpGet, ESPN_LIGAS, getMatchesFromESPN, fetchMatches };
+module.exports = {
+  httpGet, ESPN_LIGAS, THESPORTSDB_LIGAS, validateEspnLeagueConfig,
+  normalizeEspnEvent, normalizeTheSportsDbEvents,
+  getMatchesFromESPN, getMatchesFromTheSportsDB, fetchMatches,
+};
