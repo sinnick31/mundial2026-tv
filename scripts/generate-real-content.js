@@ -109,13 +109,30 @@ function ganchoFor(item) {
   return title.length > 110 ? title.slice(0, 107).replace(/\s+\S*$/, '') + '…' : title;
 }
 function titleFor(item) {
-  const base = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
+  const base = clean(item.article_title || item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
   return base.length > 100 ? base.slice(0, 97).replace(/\s+\S*$/, '') + '…' : base;
 }
 function fechaPublicacion(item) {
   const raw = item.pubDate || item.timestamp;
   if (!raw || Number.isNaN(Date.parse(raw))) return null;
   return new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(raw));
+}
+function splitIntoPoints(text, maxPoints = 7) {
+  const sentences = (String(text || '').match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [])
+    .map(value => value.trim()).filter(value => value.length > 24);
+  const chunks = [];
+  for (const sentence of sentences) {
+    if (sentence.length <= 118) { chunks.push(sentence); continue; }
+    const words = sentence.split(/\s+/);
+    let chunk = '';
+    for (const word of words) {
+      const next = chunk ? chunk + ' ' + word : word;
+      if (next.length > 118 && chunk) { chunks.push(chunk); chunk = word; }
+      else chunk = next;
+    }
+    if (chunk) chunks.push(chunk);
+  }
+  return chunks.slice(0, maxPoints);
 }
 function buildNarration(item, type, resumen) {
   const title = clean(item.article_title || item.title);
@@ -147,13 +164,13 @@ function buildItem(item, type, order) {
   return {
     tipo: 'sorpresa',
     gancho: ganchoFor(item),
-    subtitulo: angle,
-    descripcion: `${resumen} ${angle}`,
+    subtitulo: labelFor(type),
+    descripcion: resumen.slice(0, 230),
     // Mostrar rivales únicamente cuando el titular de la fuente los identifica explícitamente.
     equipo1: matchup?.home || item.equipo_chile || (type === 'chilenos_exterior' ? 'Chile' : type === 'internacional' ? 'Fútbol mundial' : 'Fútbol chileno'),
     equipo2: matchup?.away || null,
     probabilidad: 0,
-    puntos: [`NOTICIA: ${title}`, `DETALLES: ${resumen.slice(0, 360)}`, `SEGUIMIENTO: ${closingQuestion(type)}`],
+    puntos: [`EL HECHO: ${title}`, ...splitIntoPoints(normalize(resumen).startsWith(normalize(title)) ? resumen.slice(title.length).trim() : resumen, 7)],
     narracion: buildNarration(item, type, resumen),
     emoji: type === 'futbol_femenino' ? '⚽♀' : type === 'colo_colo' ? '⚪⚫' : type === 'chilenos_exterior' ? '🇨🇱🌎' : '🇨🇱⚽',
     titulo_youtube: titleFor(item),
