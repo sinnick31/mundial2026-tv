@@ -109,7 +109,8 @@ function extractArticle(html = '') {
     .sort((x, y) => y.length - x.length)[0] || '';
   const title = extractMeta(html, 'og:title') || plainText((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '');
   const description = extractMeta(html, 'og:description') || extractMeta(html, 'description');
-  const canonical = (html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i) || [])[1] || '';
+  const canonicalTag = (html.match(/<link\b[^>]*rel=["']canonical["'][^>]*>/i) || [])[0] || '';
+  const canonical = (canonicalTag.match(/href=["']([^"']+)["']/i) || [])[1] || '';
   const datePublished = (html.match(/"datePublished"\s*:\s*"([^"]+)"/i) || [])[1] || extractMeta(html, 'article:published_time');
   return { title, description, body: body.slice(0, 14000), canonical: canonical ? decodeHtml(canonical) : '', datePublished };
 }
@@ -174,7 +175,8 @@ async function enrichArticle(item) {
     };
   } catch (error) {
     const message = String(error.message || 'unknown_error');
-    const status = /^HTTP \d+/.test(message) ? 'http_error' : /Timeout/i.test(message) ? 'timeout' : 'fetch_error';
+    const httpCode = Number((message.match(/^HTTP (\d+)/) || [])[1] || 0);
+    const status = [401, 403, 429].includes(httpCode) ? 'blocked' : httpCode >= 500 ? 'source_server_error' : httpCode ? 'http_error' : /Timeout/i.test(message) ? 'timeout' : 'fetch_error';
     return {
       ...item,
       article_body: '',
