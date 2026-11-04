@@ -35,7 +35,7 @@ test('ESPN prevalidates all league IDs with a single controlled date before mont
   });
 
   const probes = calls.filter((url) => url.includes('dates=20261104'));
-  const monthQueries = calls.filter((url) => url.includes('dates=202611'));
+  const monthQueries = calls.filter((url) => /[?&]dates=202611(?:&|$)/.test(url));
   assert.equal(probes.length, ESPN_LIGAS.length);
   assert.equal(monthQueries.length, ESPN_LIGAS.length);
   assert.equal(calls.some((url) => /dates=\d{8}-\d{8}/.test(url)), false);
@@ -55,7 +55,7 @@ test('un identificador ESPN que responde HTTP 400 no se usa en la consulta mensu
       return { events: [] };
     },
   });
-  assert.equal(calls.some((url) => url.includes('/chi.copa_chi/') && url.includes('dates=202611')), false);
+  assert.equal(calls.some((url) => url.includes('/chi.copa_chi/') && /[?&]dates=202611(?:&|$)/.test(url)), false);
   assert.equal(result.ligas_validadas, ESPN_LIGAS.length - 1);
   assert.ok(result.errores.some((entry) => entry.slug === 'chi.copa_chi' && entry.etapa === 'validacion_id'));
 });
