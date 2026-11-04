@@ -76,7 +76,7 @@ async function main() {
   const intro = `Revisamos ${recent.length} resultados recientes y ${upcoming.length} partidos que vienen. Vamos con los encuentros que dejan algo para analizar y lo que se viene en la cancha.`;
   const sectionNarration = sections.map((s,i)=>`${s.tipo==='proximo'?'Próximo encuentro':'Resultado final'} ${i+1}. ${s.titulo}. ${s.cuerpo}`);
   const closing = 'La jornada sigue abierta y cada punto puede cambiar el panorama. ¿Qué resultado o próximo partido te parece más importante? Te leo en los comentarios.';
-  const narrationBlocks = [title, intro, ...sectionNarration, closing];
+  const narrationBlocks = [intro, ...sectionNarration, closing];
   const narration = narrationBlocks.join('\n\n');
   const audioPath = path.join(ROOT, 'public', 'tmp', 'resultados-diarios.wav');
   fs.mkdirSync(path.dirname(audioPath), {recursive:true});
