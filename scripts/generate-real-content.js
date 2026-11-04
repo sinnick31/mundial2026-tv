@@ -45,6 +45,7 @@ function isEligibleCandidate(item) {
   const source = String(item.fuente || item.fuente_original || item.fuente_host || '').trim();
   return item.article_complete === true
     && typeof item.article_body === 'string' && item.article_body.trim().length >= 300
+    && item.fecha_publicacion_verificada === true
     && publicationTimestamp(item) !== null
     && age >= -6 && age <= 72
     && validSourceUrl(item.link)
