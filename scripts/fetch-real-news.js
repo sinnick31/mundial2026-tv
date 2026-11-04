@@ -158,7 +158,7 @@ function parseFeed(xml) {
 }
 
 function sourceKey(url) {
-  try { return new URL(url).hostname.replace(/^www\\./, ''); } catch (_) { return 'fuente-desconocida'; }
+  try { return new URL(url).hostname.replace(/^www\./, ''); } catch (_) { return 'fuente-desconocida'; }
 }
 
 function esFutbol(item) {
