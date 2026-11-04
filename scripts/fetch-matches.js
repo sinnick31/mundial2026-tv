@@ -192,7 +192,9 @@ async function fetchMatches() {
   console.log(`  📅 Próximos: ${cache.resumen.total_proximos}`);
   console.log(`  🔎 Ligas consultadas: ${cache.diagnostico_fuentes.ligas_consultadas}; errores: ${cache.diagnostico_fuentes.errores.length}`);
   if (!cache.resumen.total_recientes && !cache.resumen.total_en_curso && !cache.resumen.total_proximos && cache.diagnostico_fuentes.errores.length === cache.diagnostico_fuentes.ligas_consultadas) {
-    throw new Error('ESPN no entregó una respuesta válida para ninguna competición; revisar disponibilidad o endpoint');
+    const error = new Error('ESPN no entregó una respuesta válida para ninguna competición; revisar disponibilidad o endpoint');
+    error.diagnostics = cache.diagnostico_fuentes;
+    throw error;
   }
 
 
@@ -211,6 +213,7 @@ if (require.main === module) fetchMatches().catch((err) => {
     partidos_recientes: [], partidos_en_curso: [], partidos_proximos: [],
     tabla_posiciones: [], resumen: { total_recientes: 0, total_en_curso: 0, total_proximos: 0 },
     error: err.message,
+    diagnostico_fuentes: err.diagnostics || null,
   }, null, 2));
   process.exitCode = 1;
 });
