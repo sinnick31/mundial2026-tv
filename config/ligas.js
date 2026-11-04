@@ -128,8 +128,8 @@ function gnews(q, lang = 'es', gl = 'CL') {
 }
 
 const RSS_FEEDS = [
-  // ⭐ COLO-COLO, fuente editorial dominante
-  { name: 'Google News — Colo-Colo', url: gnews('"Colo-Colo" futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
+  // Cobertura de Colo-Colo, sin prioridad editorial sobre otros clubes
+  { name: 'Google News — Colo-Colo', url: gnews('"Colo-Colo" futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 70 },
   { name: 'Google News — Colo-Colo oficial', url: gnews('"Colo-Colo" sitio oficial'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
   { name: 'Google News — CSD Colo-Colo', url: gnews('site:csdcolocolo.cl futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
 
@@ -138,13 +138,18 @@ const RSS_FEEDS = [
   // conserva el enlace original y la fecha del artículo, y aplica deduplicación existente.
   // Se procesan primero las secciones específicas para que la deduplicación conserve
   // su categoría editorial (por ejemplo, fútbol femenino) antes del feed general.
-  { name: 'TNT Sports Chile — Fútbol femenino', url: gnews('site:tntsports.cl/seccion/futbolfemenino', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'femenino', prioridad: 97 },
-  { name: 'TNT Sports Chile — Liga de Primera', url: gnews('site:tntsports.cl/liga-de-primera-t794917', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 98 },
-  { name: 'TNT Sports Chile — Ascenso y Copa Chile', url: gnews('site:tntsports.cl "Liga de Ascenso" OR "Copa Chile"', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 96 },
-  { name: 'TNT Sports Chile — Fútbol chileno', url: gnews('site:tntsports.cl/futbol-chileno-t780300', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 99 },
+  { name: 'TNT Sports Chile — Fútbol femenino', url: gnews('site:tntsports.cl/seccion/futbolfemenino', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'femenino', prioridad: 120, nivel_fuente: 1 },
+  { name: 'TNT Sports Chile — Liga de Primera', url: gnews('site:tntsports.cl/liga-de-primera-t794917', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 122, nivel_fuente: 1 },
+  { name: 'TNT Sports Chile — Ascenso y Copa Chile', url: gnews('site:tntsports.cl "Liga de Ascenso" OR "Copa Chile"', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 118, nivel_fuente: 1 },
+  { name: 'TNT Sports Chile — Fútbol chileno', url: gnews('site:tntsports.cl/futbol-chileno-t780300', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 124, nivel_fuente: 1 },
   { name: 'TNT Sports Chile — Nacional', url: gnews('site:tntsports.cl/seccion/nacional futbol', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 99 },
-  { name: 'TNT Sports Chile — Fútbol internacional', url: gnews('site:tntsports.cl/futbol-t7154 internacional OR Champions OR Libertadores', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'internacional', prioridad: 90 },
-  { name: 'TNT Sports Chile — noticias generales', url: gnews('site:tntsports.cl futbol OR fútbol', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'tnt_sports', prioridad: 100 },
+  { name: 'TNT Sports Chile — Fútbol internacional', url: gnews('site:tntsports.cl/futbol-t7154 internacional OR Champions OR Libertadores', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'internacional', prioridad: 114, nivel_fuente: 1 },
+  { name: 'TNT Sports Chile — noticias generales', url: gnews('site:tntsports.cl futbol OR fútbol', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'tnt_sports', prioridad: 126, nivel_fuente: 1 },
+
+  // 🥈 ESPN — segunda fuente periodística, consultada después de TNT Sports.
+  { name: 'ESPN — Fútbol chileno y La Roja', url: gnews('site:espn.com/soccer Chile OR "fútbol chileno" OR "La Roja"', 'es', 'CL'), lang: 'es', gl: 'CL', categoria: 'chile', prioridad: 108, nivel_fuente: 2 },
+  { name: 'ESPN — Fútbol sudamericano y chilenos', url: gnews('site:espn.com.ar/futbol Chile OR chilenos OR Colo-Colo OR Universidad de Chile', 'es', 'AR'), lang: 'es', gl: 'AR', categoria: 'chile', prioridad: 104, nivel_fuente: 2 },
+  { name: 'ESPN — Fútbol internacional', url: gnews('site:espn.com/soccer Champions OR Libertadores OR Premier League', 'es', 'US'), lang: 'es', gl: 'US', categoria: 'internacional', prioridad: 102, nivel_fuente: 2 },
 
   // 🇨🇱 COMPETICIONES PROFESIONALES
   { name: 'Google News — Liga de Primera', url: gnews('"Liga de Primera" Chile futbol'), lang: 'es', categoria: 'chile', prioridad: 90 },

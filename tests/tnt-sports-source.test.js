@@ -5,6 +5,7 @@ const assert = require('node:assert/strict');
 const { RSS_FEEDS } = require('../config/ligas');
 const { parseFeed, esFutbol, sourceKey, extractArticle, parseTntHomepage, plainText, decodeHtml } = require('../scripts/fetch-real-news');
 const { calcularViralScore } = require('../scripts/viral-score');
+const { sourceTier, sourceTierBonus, importance } = require('../scripts/generate-real-content');
 
 test('TNT Sports tiene cobertura general y por secciones prioritarias', () => {
   const tnt = RSS_FEEDS.filter(feed => feed.name.startsWith('TNT Sports Chile'));
@@ -92,4 +93,25 @@ test('descubre noticias desde enlaces de la portada oficial de TNT Sports', () =
   assert.equal(stories[0].fuente, 'TNT Sports Chile');
   assert.equal(stories[0].fuente_host, 'tntsports.cl');
   assert.match(stories[0].link, /^https:\/\/www\.tntsports\.cl\/noticia\//);
+});
+
+
+test('TNT Sports es primera fuente y ESPN la segunda, antes que el resto de feeds', () => {
+  const tnt = RSS_FEEDS.filter(feed => feed.nivel_fuente === 1);
+  const espn = RSS_FEEDS.filter(feed => feed.nivel_fuente === 2);
+  assert.ok(tnt.length >= 6);
+  assert.ok(espn.length >= 2);
+  assert.ok(tnt.every(feed => feed.name.startsWith('TNT Sports Chile')));
+  assert.ok(espn.every(feed => feed.name.startsWith('ESPN —')));
+  assert.ok(Math.min(...tnt.map(feed => feed.prioridad)) > Math.max(...espn.map(feed => feed.prioridad)));
+  assert.ok(Math.min(...espn.map(feed => feed.prioridad)) > Math.max(...RSS_FEEDS.filter(feed => !feed.nivel_fuente).map(feed => feed.prioridad)));
+  assert.equal(sourceTier({ fuente_host: 'tntsports.cl' }), 1);
+  assert.equal(sourceTier({ fuente_host: 'espn.com' }), 2);
+  assert.equal(sourceTier({ fuente_host: 'anfp.cl' }), 3);
+  assert.equal(sourceTierBonus({ nivel_fuente: 1 }), 30);
+  assert.equal(sourceTierBonus({ nivel_fuente: 2 }), 15);
+  assert.equal(sourceTierBonus({ nivel_fuente: 3 }), 0);
+  const base = { viral_score: 10, nivel_fuente: 3, timestamp: new Date().toISOString() };
+  assert.ok(importance({ ...base, nivel_fuente: 1 }) > importance({ ...base, nivel_fuente: 2 }));
+  assert.ok(importance({ ...base, nivel_fuente: 2 }) > importance({ ...base, nivel_fuente: 3 }));
 });

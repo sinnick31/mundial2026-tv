@@ -129,7 +129,7 @@ function parseTntHomepage(html = '') {
     const title = plainText((anchor.match(/>([\s\S]*?)<\/a>/i) || [])[1] || '')
       || decodeHtml((anchor.match(/\b(?:aria-label|title)=["']([^"']+)["']/i) || [])[1] || '');
     if (title.length < 22 || title.length > 180) continue;
-    const item = { title, description: '', link: url.toString(), fuente: 'TNT Sports Chile', fuente_host: 'tntsports.cl', fuente_original: 'TNT Sports Chile', fuente_url_original: 'https://www.tntsports.cl/', categoria_feed: /femenin/i.test(url.pathname + title) ? 'femenino' : 'chile', prioridad_fuente: 110 };
+    const item = { title, description: '', link: url.toString(), fuente: 'TNT Sports Chile', fuente_host: 'tntsports.cl', fuente_original: 'TNT Sports Chile', fuente_url_original: 'https://www.tntsports.cl/', categoria_feed: /femenin/i.test(url.pathname + title) ? 'femenino' : 'chile', prioridad_fuente: 130, nivel_fuente: 1 };
     if (!esFutbol(item)) continue;
     if (found.some(existing => existing.link === item.link || similitud(existing.title, item.title) >= 0.65)) continue;
     found.push(item);
@@ -293,6 +293,7 @@ async function main() {
           fuente_host: sourceKey(item.fuente_url_original || item.link),
           categoria_feed: feed.categoria,
           prioridad_fuente: feed.prioridad || 0,
+          nivel_fuente: feed.nivel_fuente || 3,
         }));
 
       for (const item of parsed) {
