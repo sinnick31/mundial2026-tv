@@ -146,13 +146,13 @@ function renderThumbnail(item, renderProps, outputPath) {
   };
   const propsJson = JSON.stringify(props);
   const cmd = [
-    'npx remotion still src/index.tsx VideoThumbnail',
+    'npx remotion still src/index.tsx ShortThumbnail',
     outputPath,
     `--props='${propsJson.replace(/'/g, "'\\\\''")}'`,
     '--frame=0',
     '--scale=1',
   ].join(' ');
-  console.log(`   🖼️ Generando miniatura 1280x720: ${path.basename(outputPath)}`);
+  console.log(`   🖼️ Generando miniatura vertical 1080x1920: ${path.basename(outputPath)}`);
   execSync(cmd, { stdio: 'inherit', cwd: ROOT });
   if (!fs.existsSync(outputPath) || fs.statSync(outputPath).size < 10000) {
     throw new Error('THUMBNAIL_GATE_BLOCKED: la miniatura no se generó o está vacía.');
