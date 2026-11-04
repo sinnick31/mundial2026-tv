@@ -11,10 +11,7 @@ function buildRetention(item) {
   const title = String(item._noticia_original || item.titulo_youtube || '').trim();
   const category = String(item._categoria_editorial || 'chile');
   const normalized = title.toLocaleLowerCase('es-CL');
-  const isOfficial = /\b(oficial|confirmad[oa]|confirma|anuncia)\b/i.test(title);
-  const hook = isOfficial
-    ? `¿Qué cambia de verdad con esta noticia confirmada? ${title}`
-    : `La pregunta clave es qué cambia ahora: ${title}`;
+  const hook = title ? (/[.!?…]$/.test(title) ? title : `${title}.`) : 'La noticia que marca la jornada.';
   const question = category === 'futbol_femenino'
     ? '¿Qué historia del fútbol femenino chileno merece más seguimiento? Te leo en los comentarios.'
     : category === 'colo_colo'
