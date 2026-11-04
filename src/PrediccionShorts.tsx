@@ -437,11 +437,11 @@ const CTAPhase: React.FC<{
       alignItems: 'center', justifyContent: 'center',
       gap: 34, padding: '0 64px',
     }}>
-      <div style={{ transform: \`scale(\${scale})\`, opacity, textAlign: 'center', maxWidth: 940 }}>
+      <div style={{ transform: `scale(${scale})`, opacity, textAlign: 'center', maxWidth: 940 }}>
         <div style={{
           fontSize: 54, fontWeight: 900, color: '#ffffff',
           lineHeight: 1.12, fontFamily: "'Arial Black', sans-serif",
-          textShadow: \`0 0 30px \${colores.acento}66\`,
+          textShadow: `0 0 30px ${colores.acento}66`,
         }}>
           {preguntaComunidad || '¿Qué lectura haces de esta noticia?'}
         </div>
