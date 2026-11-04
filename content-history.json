@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EFICIENCIA DE TRIUNFOS BUNDESLIGA",
-      "titulo": "Bayern acumula 3.17 puntos por victoria: ¿la clave de su dominio?",
-      "fecha": "2026-08-06T14:22:03.674Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "U DE CHILE: CALENDARIO DE 9 PARTIDOS",
       "titulo": "Universidad de Chile: 9 partidos ya tienen fecha. ¿La U lista para el sprint final?",
@@ -3499,6 +3492,13 @@
       "hook": "FÚTBOL CHILENO: Ni con Chupete Suazo ni con Lucas Barrios: lo que Colo-Colo vuelve a vivir…",
       "titulo": "FÚTBOL CHILENO: Ni con Chupete Suazo ni con Lucas Barrios: lo que Colo-Colo… | Lo que cambia",
       "fecha": "2026-11-03T23:55:55.158Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "SE JUEGA ALGO GRANDE: Tabla de la Liga de Primera tras la fecha 26: Colo Colo, a un paso de…",
+      "titulo": "FÚTBOL MUNDIAL: Tabla de la Liga de Primera tras la fecha 26: Colo Colo, a un… | Lo que cambia",
+      "fecha": "2026-11-04T00:03:17.408Z"
     }
   ]
 }

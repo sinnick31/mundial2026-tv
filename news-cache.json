@@ -1,99 +1,13 @@
 {
-  "ultima_actualizacion": "2026-11-03T23:55:48.096Z",
-  "total_hoy": 468,
+  "ultima_actualizacion": "2026-11-04T00:03:09.259Z",
+  "total_hoy": 475,
   "total_reciente": 140,
   "por_categoria": {
     "tnt_sports": 1,
-    "chile": 89,
-    "colo_colo": 50
+    "chile": 87,
+    "colo_colo": 52
   },
   "noticias": [
-    {
-      "title": "El San Luis de Humberto Suazo rompe la resistencia de Magallanes en la agonía y da un paso gigante hacia el ascenso - La Tercera",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiggJBVV95cUxQUFhiQUdaeVA2a3ZCTUJwN3JTQ3hGT1B0YUJ5TXlSVnZEb3djZGZuUHJBcGp2a3RfaUk1cnlwSjNid2U0TjY3QlRxTVE0dHdHYzJSVEtSeVV6NjFteGJ5SEE1LTJOYnZzdzFwQUhDSUltU29tT3Nhck96T093RjhIZHBTTkZCNF9fWExacTRhV0pkeFFpXzJFc3o0SEF1d2JXZGQ1Sl9iOG83RG5HQmNoaDVrS1dEcDVPbjJTY0FuYXJVSjBKN0wwTUVXckM2OGY1eE5hbUc5QnVIZi1LQW5WU2o4bE1KR0JDbXdDcWlEcUxNRzBibm5DcVFsaVQzRGtRSnfSAaMCQVVfeXFMTlMyUDMtdjRvUzRqNEwyVWFuT2MtUFdHdl9jMURIUGMyMF9leEZGa295RTRqYlFGMm1zbU1DMk0xb2pZLVZiQWhvMT",
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQUFhiQUdaeVA2a3ZCTUJwN3JTQ3hGT1B0YUJ5TXlSVnZEb3djZGZuUHJBcGp2a3RfaUk1cnlwSjNid2U0TjY3QlRxTVE0dHdHYzJSVEtSeVV6NjFteGJ5SEE1LTJOYnZzdzFwQUhDSUltU29tT3Nhck96T093RjhIZHBTTkZCNF9fWExacTRhV0pkeFFpXzJFc3o0SEF1d2JXZGQ1Sl9iOG83RG5HQmNoaDVrS1dEcDVPbjJTY0FuYXJVSjBKN0wwTUVXckM2OGY1eE5hbUc5QnVIZi1LQW5WU2o4bE1KR0JDbXdDcWlEcUxNRzBibm5DcVFsaVQzRGtRSnfSAaMCQVVfeXFMTlMyUDMtdjRvUzRqNEwyVWFuT2MtUFdHdl9jMURIUGMyMF9leEZGa295RTRqYlFGMm1zbU1DMk0xb2pZLVZiQWhvMThWRDQzQ1lfX21Dd1N3YUw5QWloQUFCQUpUYS1wZzY5YnZnaTMzRUtBS0ZNWG1PSEhkMHF2OF94U2hBYU5kTnhGcTdXbVBMcnZSODNBSmdPdWhBSDJhQm1HVGE0ZDE0aFFIT0ZJTlMzWmF6M3RXSzRZeVRudGo1VGY4TUZrcWNuRGFhWlBOT2FVQWhLNjJfbUE0TzJqa0QzcHE1c0tCeUZKMUsydFBndU9UemI2bkdRUWJodjJ6MEJuTHdLNnZkZG5kMFdsZWtXcmc3dzZSMnNvYmFXTnNKTGV3?oc=5",
-      "pubDate": "Sat, 17 Oct 2026 17:37:25 GMT",
-      "timestamp": "2026-10-17T17:37:25.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "La Tercera",
-      "fuente_url_original": "https://www.latercera.com",
-      "fuente": "La Tercera",
-      "fuente_host": "latercera.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 85,
-      "categoria": "chile",
-      "equipo_chile": "Magallanes",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:0h(+15)"
-      ]
-    },
-    {
-      "title": "San Luis venció a Magallanes sobre el final y se acercó al título del Ascenso - Cooperativa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8gFBVV95cUxPSTlGb0NLc2g4UDFndjZXTlZhLXhTRVp3VWc3MWNMV2ZjektwNXVsMEI5WkFQV0ZOdEgwSFZrZVgtd1FCZWQ1Q0wxcVJpMXRUbjVNNU9XRXNHYXdGMkhtZkFGbWFkcE8tVzJLMlV0OHo4SUZNSWVoeTh5RGtTNWY4R3lzdUJlQjkwTklzcUFWRzl1cGEyaTRaYXpUWno2UktENE5zS08yV095d3BsMGtCSG4tSHhfV19OR3ZPS2lhdUNCLWY2eUgxZHJBbDJSZ3NsMFJwenAtaXdqbnoxOTRCZWstYkVyRGpXa3JzczVnSUwxQdIBjAFBVV95cUxNRlQ5c1pzdVFMby1RcDF0YkZocFVHZ2ZPTm1pcTNndEhLWGFpbWVEcjUwTUdaZWphTkFWWGw0MzUwQTVMUzlYTUlzU2NTcDAyWVNTME1wMVdZY2",
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPSTlGb0NLc2g4UDFndjZXTlZhLXhTRVp3VWc3MWNMV2ZjektwNXVsMEI5WkFQV0ZOdEgwSFZrZVgtd1FCZWQ1Q0wxcVJpMXRUbjVNNU9XRXNHYXdGMkhtZkFGbWFkcE8tVzJLMlV0OHo4SUZNSWVoeTh5RGtTNWY4R3lzdUJlQjkwTklzcUFWRzl1cGEyaTRaYXpUWno2UktENE5zS08yV095d3BsMGtCSG4tSHhfV19OR3ZPS2lhdUNCLWY2eUgxZHJBbDJSZ3NsMFJwenAtaXdqbnoxOTRCZWstYkVyRGpXa3JzczVnSUwxQdIBjAFBVV95cUxNRlQ5c1pzdVFMby1RcDF0YkZocFVHZ2ZPTm1pcTNndEhLWGFpbWVEcjUwTUdaZWphTkFWWGw0MzUwQTVMUzlYTUlzU2NTcDAyWVNTME1wMVdZY2hpS094TTlvX3gyRHBtT1FqZ3Vsaks5di13bG9yYUJRb1JYSTVzN2hPNkVkWm53eEpXeQ?oc=5",
-      "pubDate": "Sat, 17 Oct 2026 17:53:00 GMT",
-      "timestamp": "2026-10-17T17:53:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Cooperativa",
-      "fuente_url_original": "https://www.cooperativa.cl",
-      "fuente": "Cooperativa",
-      "fuente_host": "cooperativa.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 86,
-      "categoria": "chile",
-      "equipo_chile": "Magallanes",
-      "viral_score": 83,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:4h(+10)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "San Luis sueña con Primera: Humberto Suazo quedó a un paso del ascenso - PrensaFútbol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE11S0lSZXdMUVBLeThKZE1Jc1ZUSTFnU1BaY0xtRVJaZDNqcUVTZ0RTVkhHUXFDTjJPOVN5eW9pVHozYk4wNG9PT2M3NjFfdF9YcjlLUHJ4ajU2Q2FkbkJjY25JdHgzQWlUWnA1UEJDOVcyVGNhc3dRNkFhWVg0Zw?oc=5\" target=\"_blank\">San Luis sueña con Primera: Humberto Suazo quedó a un paso del ascenso</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE11S0lSZXdMUVBLeThKZE1Jc1ZUSTFnU1BaY0xtRVJaZDNqcUVTZ0RTVkhHUXFDTjJPOVN5eW9pVHozYk4wNG9PT2M3NjFfdF9YcjlLUHJ4ajU2Q2FkbkJjY25JdHgzQWlUWnA1UEJDOVcyVGNhc3dRNkFhWVg0Zw?oc=5",
-      "pubDate": "Sat, 17 Oct 2026 17:56:14 GMT",
-      "timestamp": "2026-10-17T17:56:14.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "PrensaFútbol",
-      "fuente_url_original": "https://www.prensafutbol.cl",
-      "fuente": "PrensaFútbol",
-      "fuente_host": "prensafutbol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 85,
-      "categoria": "chile",
-      "equipo_chile": "San Luis",
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:3h(+10)"
-      ]
-    },
-    {
-      "title": "Humberto Suazo conmueve al fútbol chileno: “Me acuerdo de todo lo que pasé, de las personas que ya no están... - AS Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPZ1dnbklLcU1Dd3JrRG5SM3U3OEUtMEo2WC1TYzhmMnZjUXBkU1I1RVpsRnBLcmdkT2Y4cFJsdTB3MGQ0TWVFQVhwV1B0dnNidW1uUDZlWVU2U2RBZlJhMkFHQzQzSXBqUmZVYndBa1JwVklJQTRXZ21MQVIwV2ZUczVUNnlVT0NEdVZxSjVoY0xVM3JKbXFtVXIxN0QybEc5V09SMkVqN283VFp4eFJCbWhQWVpyMUdhaWFhbVBZX2tNUHd3MGFGZ2NnZnp2VUd2cUZQSkI5WE9DVjTSAe8BQVVfeXFMT0syd2lnZkY3OWFXNkQ2RnZkem9XMXktMDhmeXBGOTJmWC12dVhGS0t3WFF5U3doVExlY3RSZ0VJTVktX0x0NUJ4UG9jXzlaWDlFMFl4WUFWLWdKaGVweWNHODRSS2tEMWxpRHVYWVJueE",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPZ1dnbklLcU1Dd3JrRG5SM3U3OEUtMEo2WC1TYzhmMnZjUXBkU1I1RVpsRnBLcmdkT2Y4cFJsdTB3MGQ0TWVFQVhwV1B0dnNidW1uUDZlWVU2U2RBZlJhMkFHQzQzSXBqUmZVYndBa1JwVklJQTRXZ21MQVIwV2ZUczVUNnlVT0NEdVZxSjVoY0xVM3JKbXFtVXIxN0QybEc5V09SMkVqN283VFp4eFJCbWhQWVpyMUdhaWFhbVBZX2tNUHd3MGFGZ2NnZnp2VUd2cUZQSkI5WE9DVjTSAe8BQVVfeXFMT0syd2lnZkY3OWFXNkQ2RnZkem9XMXktMDhmeXBGOTJmWC12dVhGS0t3WFF5U3doVExlY3RSZ0VJTVktX0x0NUJ4UG9jXzlaWDlFMFl4WUFWLWdKaGVweWNHODRSS2tEMWxpRHVYWVJueERvWFZaSUk5cWlXREpWV19qUjJ2OG5FQ09pMVRRaFlrQ3lLbWJnUnM5R3lwUEYzaEljWjhyTUVUVWJXc1J4Q0E5aS1VUUQtSk5zb3ZwMnBSTGt3SFc5RXhwNG1qVGY2cDl4TFpoZWM2Zm10YU15UW90WnFUbUVESmNOQ2JGb3M?oc=5",
-      "pubDate": "Sat, 17 Oct 2026 18:08:44 GMT",
-      "timestamp": "2026-10-17T18:08:44.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "AS Chile",
-      "fuente_url_original": "https://chile.as.com",
-      "fuente": "AS Chile",
-      "fuente_host": "chile.as.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 85,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 83,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:3h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
     {
       "title": "Tabla de posiciones Primera B 2026 actualizada hoy, 17 de octubre: fecha 28, Campeonato Ascenso - AS Chile",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxQYXpsUDE2NnJnM045LXBMaTlyZnU4cmNSRGdpUmlGNGJfOWFWanprUmhEYjZOdF9nWDIzeTFEa21kbVlNczE4NDNYSFR4aVFyVTZXal9LUElYaDZFM2M5bm1MeGxNQ3hIY0xpLXNLMGdZeHVGdktlTmtKSlBfeU9TVTdibkJsbWtOZ1MzeTBHQndhSUR1YWVHMEt3dF9CUG5UVlVOVVVSdEdsZ0I3blFzRmRZZ05OVVhhckUzeGg2bVB6MDZxbzh2UFN4ONIB3wFBVV95cUxNSFlmb0Fkd3ZxX3Z6aXg0OUdxb1NPQVUzMHZQZmpBb092U0ZvVmIyckdVUlpfaENKNzhEb3JkeGh0bzNlX1BoUFZsRkJqVVZLM3FoRVYxMmJmem5OaXFJWWdPdWx3bGtEM015ZUtELVJSaTBoTk1JRkVhX1dxcy02d3",
@@ -21527,6 +21441,29 @@
       ]
     },
     {
+      "title": "¡Será este martes! Confirman horario para la venta de entradas para el partido de Colo Colo vs Ñublense - Dale Albo",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPeDZRMFB0MUdfaFdsci1KQW9NdFdRWWo3V3U0WnE3Ni1lSUFhU0haSTgtOWc1QkY2Qmtnbmg3bGJvV1Iwb1F1RjUxYTdUb0c1TTN4UVdleE5ISXlZVUdNb0wzY2NSZDRQb0ZNMWFQdmlDUzBBRkFlMnZGd3dzZXJqRkk5VExuaG1mX1hSS3Fqdk1va0pPUUctcTY3bmhRM1lPZENtaDBhVWdSbFRKYU9uLUJDSVdxWkViNFVielVwVFV0VXNtRUxQcnpaUU5lcFN6MDlr0gHYAUFVX3lxTE9RM3R0MWl0eS04Z0JLd2dIZEZ6dWpzWVdKRERhS2M4QmVRYWp2Xzl0ZUNRWWVoQXp3NmY4QkJkSTIyamFTMk9feUFyZDRYVzRORVFTUEZhdXVzTFRjMXhWX25laUVNMXhiU1NDNFJWaWlHZWtRUWE2OX",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPeDZRMFB0MUdfaFdsci1KQW9NdFdRWWo3V3U0WnE3Ni1lSUFhU0haSTgtOWc1QkY2Qmtnbmg3bGJvV1Iwb1F1RjUxYTdUb0c1TTN4UVdleE5ISXlZVUdNb0wzY2NSZDRQb0ZNMWFQdmlDUzBBRkFlMnZGd3dzZXJqRkk5VExuaG1mX1hSS3Fqdk1va0pPUUctcTY3bmhRM1lPZENtaDBhVWdSbFRKYU9uLUJDSVdxWkViNFVielVwVFV0VXNtRUxQcnpaUU5lcFN6MDlr0gHYAUFVX3lxTE9RM3R0MWl0eS04Z0JLd2dIZEZ6dWpzWVdKRERhS2M4QmVRYWp2Xzl0ZUNRWWVoQXp3NmY4QkJkSTIyamFTMk9feUFyZDRYVzRORVFTUEZhdXVzTFRjMXhWX25laUVNMXhiU1NDNFJWaWlHZWtRUWE2OXo5VDUtT2FHenE4VHl2SVNvd0JwZEFWdkVkaVc1TE9mM3JQcjhvaEhJQXAtVEE2aXd6YkpiY3lnaHpvcU9uSEFMU3Y3cG16aWduNWM4ZHY3RTJFSGZCSVE1ZXcwaVdVVQ?oc=5",
+      "pubDate": "Tue, 03 Nov 2026 16:03:41 GMT",
+      "timestamp": "2026-11-03T16:03:41.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Dale Albo",
+      "fuente_url_original": "https://dalealbo.cl",
+      "fuente": "Dale Albo",
+      "fuente_host": "dalealbo.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 97,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:8h(+10)",
+        "gigante:colo colo(+10)",
+        "penal(-8)"
+      ]
+    },
+    {
       "title": "Ex gerente de la ANFP analiza el nuevo “escritoriazo” que sacude a la Liga de Primera: “Si es culpable, se va” - RedGol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOaFBrbFpJT1RUeGtLbzJ2dG1pSGo1cHRkLTdlRy14T3dlcy1fYkFuYjR3ZDN3UXZnWmxxVFlyc2Y4UXdxOXFLc2U2aVRfQTVpR3gwM3BiMVlPZjFwMjJWWVMzQ1plSkJLUWk1Um1CN2V5NmdOQVNJWEduVmdPZ2cxX2NMYk05M1dmWFlCRUk5UXc5cnloX2xabTR2S3l6dkd2MVlDaWlWazhqaThBdXJ6WVp5WlljV2pWY0xkODQtLVNtR25qTVQ40gHMAUFVX3lxTE1QMnhpNUdmbF9sd2VTVWNUSnBGZTdraVZ1VVRxSWxRcmhMSENTR25tMXBJZFpoS0MzN2FTaUNhQUN1MW1NZ3UzcWF4M0VTUFE1eVpWTU9peE1rZ2ptZzNJZVFmUmdMdHdfemhNX0ctU0tpZ1NKRk9MMVY1djByRGJCbTFIQ0",
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOaFBrbFpJT1RUeGtLbzJ2dG1pSGo1cHRkLTdlRy14T3dlcy1fYkFuYjR3ZDN3UXZnWmxxVFlyc2Y4UXdxOXFLc2U2aVRfQTVpR3gwM3BiMVlPZjFwMjJWWVMzQ1plSkJLUWk1Um1CN2V5NmdOQVNJWEduVmdPZ2cxX2NMYk05M1dmWFlCRUk5UXc5cnloX2xabTR2S3l6dkd2MVlDaWlWazhqaThBdXJ6WVp5WlljV2pWY0xkODQtLVNtR25qTVQ40gHMAUFVX3lxTE1QMnhpNUdmbF9sd2VTVWNUSnBGZTdraVZ1VVRxSWxRcmhMSENTR25tMXBJZFpoS0MzN2FTaUNhQUN1MW1NZ3UzcWF4M0VTUFE1eVpWTU9peE1rZ2ptZzNJZVFmUmdMdHdfemhNX0ctU0tpZ1NKRk9MMVY1djByRGJCbTFIQ0FFTjEtVEdLb09oLWVBdEpfdmhBckY4LTRxc3JVWmNHNkdjQTVQWmEyOHRNaEdVTWxfV0RlelpiZndJTkdmNkhzX2JIcTlxQw?oc=5",
@@ -21764,6 +21701,29 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:1h(+15)"
+      ]
+    },
+    {
+      "title": "Ñublense vs. Colo-Colo: Día y horario confirmado de la fecha 27 de la Liga de Primera 2026 - Teletrece",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPV29VUDAzNE1FSWhId0Z0THNUem15M0xLREpkdUdBemJjQS1WUmJubnQyanFWd3dIMlk1TEEtTzJxM3lBelVZeDAzOWpoNnp3dUVWWjl5VXJZSHUtUW9PNTFlWS1nXzdndGFxQkxPM1lnWGdGdDQwODZsMXdzdlZfb3pCSXg3U3RRWnRhQWxTN1JpZC0ybDYtd2otVU9PNnEzVTZBV0pBdGtYNHk5VUxMQ1RPVnpLWXFMcHVqb0lfNjhENlppVl84?oc=5\" target=\"_blank\">Ñublense vs. Colo-Colo: Día y horario confirmado de la fecha 27 de la Liga de Primera 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Teletrece</font>",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPV29VUDAzNE1FSWhId0Z0THNUem15M0xLREpkdUdBemJjQS1WUmJubnQyanFWd3dIMlk1TEEtTzJxM3lBelVZeDAzOWpoNnp3dUVWWjl5VXJZSHUtUW9PNTFlWS1nXzdndGFxQkxPM1lnWGdGdDQwODZsMXdzdlZfb3pCSXg3U3RRWnRhQWxTN1JpZC0ybDYtd2otVU9PNnEzVTZBV0pBdGtYNHk5VUxMQ1RPVnpLWXFMcHVqb0lfNjhENlppVl84?oc=5",
+      "pubDate": "Tue, 03 Nov 2026 19:42:00 GMT",
+      "timestamp": "2026-11-03T19:42:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Teletrece",
+      "fuente_url_original": "https://www.t13.cl",
+      "fuente": "Teletrece",
+      "fuente_host": "t13.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "categoria": "chile",
+      "equipo_chile": "Ñublense",
+      "viral_score": 79,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:4h(+10)",
+        "senal:\\b(oficial|confirmad(+12)",
+        "penal(-8)"
       ]
     },
     {
@@ -22016,6 +21976,27 @@
       ]
     },
     {
+      "title": "ANFP oficializó reprogramación del duelo entre la UC y Deportes Limache - La Nación",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPZEF4QUp0SjdkWnpnV3dRTTF2cVdERjRqS0xCWnJqWVB4QVlUa0NZOU9Eei00Sk01LUU0YXd0c21FaDVCUDQzdVktM2NaZXAwNDlRWDgzTVZyRGo3MkdFaXNuOEd1alJXUFlLeGdZaTBDNjFibXpnT3hlMTRBQmlROGg2RlRqTTBYaWxnOFk1RDR1bjdiakYxbFhELTQ?oc=5\" target=\"_blank\">ANFP oficializó reprogramación del duelo entre la UC y Deportes Limache</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">La Nación</font>",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZEF4QUp0SjdkWnpnV3dRTTF2cVdERjRqS0xCWnJqWVB4QVlUa0NZOU9Eei00Sk01LUU0YXd0c21FaDVCUDQzdVktM2NaZXAwNDlRWDgzTVZyRGo3MkdFaXNuOEd1alJXUFlLeGdZaTBDNjFibXpnT3hlMTRBQmlROGg2RlRqTTBYaWxnOFk1RDR1bjdiakYxbFhELTQ?oc=5",
+      "pubDate": "Tue, 03 Nov 2026 21:31:46 GMT",
+      "timestamp": "2026-11-03T21:31:46.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "La Nación",
+      "fuente_url_original": "https://www.lanacion.cl",
+      "fuente": "La Nación",
+      "fuente_host": "lanacion.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Universidad Católica",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:3h(+15)"
+      ]
+    },
+    {
       "title": "El club chileno que está a detalles de perder puntos por la regla Sub 21: Los altísimos minutos que necesit... - RedGol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNlNiOUs0eERmZ3oxYVZpTF81Y0Ywa0M4dUtseUFZNlNjRXlwSkdRdmh6RHVDeGI4QTlZUkR2UXRES2RiSlBZWnE1bDFBY0U1SEduZmdJbFVManBYNmstWlk5eWZ0SE5XelN5Y2JsbVlZN0tlUGwxRm10OHgxLUMzMHhVSkkxam42ekFZVkctNUZTdXEtUnNtSXFSbWhpYXdNcUl0cFRiS0LSAa4BQVVfeXFMUDB1c2hGd1FrYzd3UHJ4bmJ6T0dqOFk1M2kwNE5iaDRuZE5EUW13bkRNQ2R0aEQ4Sk5nVU1vZTNNQU1xejBOSUhSd3lwREVfX1NUa0lmd25LRkJsTE1PaVVHMTdiVnJZc01oRzJvanEzVVpEbGlwc2RHaWtuSk55UFBfUWJfU0xMdkZ6eHY5Y3BfSmI1cnVyWmJMOXJSLThrU0x5V3",
       "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNlNiOUs0eERmZ3oxYVZpTF81Y0Ywa0M4dUtseUFZNlNjRXlwSkdRdmh6RHVDeGI4QTlZUkR2UXRES2RiSlBZWnE1bDFBY0U1SEduZmdJbFVManBYNmstWlk5eWZ0SE5XelN5Y2JsbVlZN0tlUGwxRm10OHgxLUMzMHhVSkkxam42ekFZVkctNUZTdXEtUnNtSXFSbWhpYXdNcUl0cFRiS0LSAa4BQVVfeXFMUDB1c2hGd1FrYzd3UHJ4bmJ6T0dqOFk1M2kwNE5iaDRuZE5EUW13bkRNQ2R0aEQ4Sk5nVU1vZTNNQU1xejBOSUhSd3lwREVfX1NUa0lmd25LRkJsTE1PaVVHMTdiVnJZc01oRzJvanEzVVpEbGlwc2RHaWtuSk55UFBfUWJfU0xMdkZ6eHY5Y3BfSmI1cnVyWmJMOXJSLThrU0x5V3FSMERkeFdsZk1n?oc=5",
@@ -22077,6 +22058,28 @@
       "razones": [
         "categoria:colo_colo(+60)",
         "frescura:2h(+15)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "Impacto en el fútbol chileno: así le va a Colo Colo, la U y la UC en los clásicos al mediodía - AS Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPc0szZmJpOThuUnJuUzZGR3piVWE3ajB2R1ktR1lXSDJDMDgxVGNEQlNSTjVLSV94d1c0Z2xKQlNwcnUzNXUtUVh1YlV5aHVHN0RIanBGSDZEdWEwb1lCcnM2YjdNbUFGYlFRcXU3cFlfM3p3amIzb3c5TzdROVI0bWNFd0dQa1BJajl0U211M3FBbTF0MzdWOFN2T1lfZDFacmY4XzdjOFhjYl9tZTFOWFo0aUpDM3RYVUJWTDlVX3VxTWNBWlh3amhR0gHeAUFVX3lxTFA2RHBMRDFuUTJnSzdXZG9YVktZcmhBa3dCUEVqSFE1akZQSUUteWhFNFpwZWpoZUF2dk1FMWloekdsNmlXdXkwVlk5RlQxX0U5amhaNzVxcFpXdEJZVXVIRjdGazJxSzA3Z2xDMGFUWGFiS0VEVk5QeVBhd1Q3OVFZVT",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPc0szZmJpOThuUnJuUzZGR3piVWE3ajB2R1ktR1lXSDJDMDgxVGNEQlNSTjVLSV94d1c0Z2xKQlNwcnUzNXUtUVh1YlV5aHVHN0RIanBGSDZEdWEwb1lCcnM2YjdNbUFGYlFRcXU3cFlfM3p3amIzb3c5TzdROVI0bWNFd0dQa1BJajl0U211M3FBbTF0MzdWOFN2T1lfZDFacmY4XzdjOFhjYl9tZTFOWFo0aUpDM3RYVUJWTDlVX3VxTWNBWlh3amhR0gHeAUFVX3lxTFA2RHBMRDFuUTJnSzdXZG9YVktZcmhBa3dCUEVqSFE1akZQSUUteWhFNFpwZWpoZUF2dk1FMWloekdsNmlXdXkwVlk5RlQxX0U5amhaNzVxcFpXdEJZVXVIRjdGazJxSzA3Z2xDMGFUWGFiS0VEVk5QeVBhd1Q3OVFZVTVKSmNxWDVxSnNGYmY3V0xKRzFPaGs4aGJlQ1ZQR1VucE9BQmIwVTB6ZVEzVG1HSzRlbE1JZHVBcV90V2lkSmw1Tk91ZjVyUXNSeUJtRmx1eEEwOXp6dUxHUEtGdw?oc=5",
+      "pubDate": "Tue, 03 Nov 2026 23:50:47 GMT",
+      "timestamp": "2026-11-03T23:50:47.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "AS Chile",
+      "fuente_url_original": "https://chile.as.com",
+      "fuente": "AS Chile",
+      "fuente_host": "chile.as.com",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "categoria": "colo_colo",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:0h(+15)",
         "gigante:colo colo(+10)"
       ]
     }
