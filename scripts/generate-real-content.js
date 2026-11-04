@@ -57,7 +57,6 @@ function isChileanAbroad(item) {
 function importance(item) {
   let score = Number(item.viral_score || 0);
   if (isFutbolFemenino(item)) score += 60;
-  if (isColo(item)) score += 28;
   if (isChileCompetition(item)) score += 55;
   if (isInternational(item) && !isChileCompetition(item)) score += 24;
   if (isChileanAbroad(item)) score += 45;
@@ -89,14 +88,14 @@ function typeFor(item) {
 }
 function editorialAngle(type) {
   if (type === 'futbol_femenino') return 'Qué significa esta noticia para la competición femenina, la jugadora o el equipo, distinguiendo datos confirmados de análisis.';
-  if (type === 'colo_colo') return 'Por qué esta noticia importa ahora para Colo-Colo y qué conviene seguir en las próximas horas.';
+  if (type === 'colo_colo') return 'Qué cambia para el club involucrado y qué conviene seguir en las próximas horas.';
   if (type === 'chilenos_exterior') return 'Qué cambia para el futbolista chileno involucrado y qué habrá que mirar en su próximo partido o decisión.';
   if (type === 'internacional') return 'Qué impacto tiene esta noticia en su liga, torneo o equipo, separando el hecho confirmado de la interpretación editorial.';
   return 'Qué significa esta noticia dentro de la competencia chilena y cuál es el siguiente dato que puede cambiar el escenario.';
 }
 function closingQuestion(type) {
   if (type === 'futbol_femenino') return '¿Qué historia o competición del fútbol femenino chileno deberíamos seguir a continuación?';
-  if (type === 'colo_colo') return 'La pregunta queda abierta: ¿qué debería ser lo siguiente que mire el hincha albo?';
+  if (type === 'colo_colo') return 'La pregunta queda abierta: ¿qué debería seguir ahora la hinchada de este equipo?';
   if (type === 'chilenos_exterior') return 'Ahora queda seguir su próximo partido y comprobar si esta tendencia se sostiene.';
   if (type === 'internacional') return '¿Qué liga o torneo internacional deberíamos seguir con más detalle en el próximo resumen?';
   return 'La próxima fecha puede entregar la pista clave para confirmar si esta noticia realmente mueve el campeonato.';
@@ -220,20 +219,17 @@ function main() {
     const slot = scheduledSlot >= 0 ? scheduledSlot : (new Date().getUTCDate() % 3);
     if (slot === 0) {
       addPick(n => isFutbolFemenino(n), 'futbol_femenino');
-      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n) && !isFutbolFemenino(n), 'chile');
-      if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
+      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isFutbolFemenino(n), 'chile');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
       if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
     } else if (slot === 1) {
       addPick(n => isInternational(n) && !isChileanAbroad(n) && !isFutbolFemenino(n), 'internacional');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
-      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n), 'chile');
-      if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
+      if (picks.length < MAX_ITEMS) addPick(isChileCompetition(n), 'chile');
     } else {
       addPick(n => isFutbolFemenino(n), 'futbol_femenino');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
-      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n) && !isFutbolFemenino(n), 'chile');
-      if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
+      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isFutbolFemenino(n), 'chile');
       if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
     }
   }
@@ -260,4 +256,4 @@ function main() {
 }
 if (require.main === module) main();
 
-module.exports = { isFutbolFemenino, typeFor, labelFor };
+module.exports = { isFutbolFemenino, typeFor, labelFor, importance };
