@@ -32,14 +32,21 @@ function httpGet(url, headers = {}, redirects = 0) {
       headers: { 'User-Agent': 'FootballAIStudio/4.0', ...headers },
       timeout: 15000,
     }, (res) => {
-      if ([301, 302].includes(res.statusCode)) {
-        return httpGet(res.headers.location, headers, redirects + 1).then(resolve).catch(reject);
+      if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location) {
+        const next = new URL(res.headers.location, u).toString();
+        return httpGet(next, headers, redirects + 1).then(resolve).catch(reject);
       }
       let data = '';
       res.on('data', (chunk) => (data += chunk));
       res.on('end', () => {
-        try { resolve(JSON.parse(data)); }
-        catch (e) { resolve({ raw: data.substring(0, 500) }); }
+        if ((res.statusCode || 500) >= 400) return reject(new Error(`HTTP ${res.statusCode}`));
+        try {
+          const parsed = JSON.parse(data);
+          if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return reject(new Error('Respuesta JSON con formato inesperado'));
+          resolve(parsed);
+        } catch (e) {
+          reject(new Error('Respuesta no es JSON válido'));
+        }
       });
     });
     req.on('error', reject);
@@ -70,7 +77,7 @@ const ESPN_LIGAS = [
 ];
 
 async function getMatchesFromESPN() {
-  const recientes = [], enCurso = [], proximos = [];
+  const recientes = [], enCurso = [], proximos = [], errores = [];
   const today = new Date();
   const start = new Date(today.getTime() - 3 * 24 * 60 * 60 * 1000);
   const end = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
@@ -79,7 +86,8 @@ async function getMatchesFromESPN() {
   for (const liga of ESPN_LIGAS) {
     try {
       const data = await httpGet(`https://site.api.espn.com/apis/site/v2/sports/soccer/${liga.slug}/scoreboard?dates=${dateRange}`);
-      for (const e of data.events || []) {
+      if (!Array.isArray(data.events)) throw new Error('La respuesta no contiene events[]; posible cambio de endpoint o formato');
+      for (const e of data.events) {
         const comp = e.competitions?.[0];
         const teams = comp?.competitors || [];
         const home = teams.find((t) => t.homeAway === 'home') || teams[0] || {};
@@ -116,10 +124,11 @@ async function getMatchesFromESPN() {
       }
       await new Promise((r) => setTimeout(r, 300));
     } catch (err) {
+      errores.push({ liga: liga.nombre, slug: liga.slug, error: err.message });
       console.error(`  ⚠️ ESPN ${liga.nombre}: ${err.message}`);
     }
   }
-  return { recientes, enCurso, proximos };
+  return { recientes, enCurso, proximos, errores, ligas_consultadas: ESPN_LIGAS.length };
 }
 
 // ─── Pipeline principal ──────────────────────────────────────────────────────
@@ -167,6 +176,7 @@ async function fetchMatches() {
     tabla_posiciones: [],
     tabla_competencia: null,
     resumen: {},
+    diagnostico_fuentes: { proveedor: 'ESPN', ligas_consultadas: espn.ligas_consultadas || ESPN_LIGAS.length, errores: espn.errores || [] },
   };
   cache.resumen = {
     total_recientes: cache.partidos_recientes.length,
@@ -180,6 +190,12 @@ async function fetchMatches() {
   console.log(`  ✅ Finalizados recientes: ${cache.resumen.total_recientes}`);
   console.log(`  🔴 En curso ahora: ${cache.resumen.total_en_curso}`);
   console.log(`  📅 Próximos: ${cache.resumen.total_proximos}`);
+  console.log(`  🔎 Ligas consultadas: ${cache.diagnostico_fuentes.ligas_consultadas}; errores: ${cache.diagnostico_fuentes.errores.length}`);
+  if (!cache.resumen.total_recientes && !cache.resumen.total_en_curso && !cache.resumen.total_proximos && cache.diagnostico_fuentes.errores.length === cache.diagnostico_fuentes.ligas_consultadas) {
+    const error = new Error('ESPN no entregó una respuesta válida para ninguna competición; revisar disponibilidad o endpoint');
+    error.diagnostics = cache.diagnostico_fuentes;
+    throw error;
+  }
 
 
   cache.partidos_en_curso.forEach((p) => {
@@ -190,13 +206,16 @@ async function fetchMatches() {
   });
 }
 
-fetchMatches().catch((err) => {
+if (require.main === module) fetchMatches().catch((err) => {
   console.error('❌ Error en fetch-matches:', err.message);
   fs.writeFileSync('matches-cache.json', JSON.stringify({
     fecha: new Date().toISOString(),
     partidos_recientes: [], partidos_en_curso: [], partidos_proximos: [],
     tabla_posiciones: [], resumen: { total_recientes: 0, total_en_curso: 0, total_proximos: 0 },
     error: err.message,
+    diagnostico_fuentes: err.diagnostics || null,
   }, null, 2));
-  process.exit(0);
+  process.exitCode = 1;
 });
+
+module.exports = { httpGet, ESPN_LIGAS, getMatchesFromESPN, fetchMatches };
