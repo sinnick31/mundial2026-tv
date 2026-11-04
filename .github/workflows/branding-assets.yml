@@ -1,0 +1,48 @@
+name: FÚTBOL CHILENSIS · Exportar identidad de canal
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'assets/visual-identity/**'
+      - 'public/channel-assets/**'
+      - 'src/ChannelBranding.tsx'
+      - 'src/index.tsx'
+      - '.github/workflows/branding-assets.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'assets/visual-identity/**'
+      - 'public/channel-assets/**'
+      - 'src/ChannelBranding.tsx'
+      - 'src/index.tsx'
+      - '.github/workflows/branding-assets.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  export-brand-assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Preparar navegador Remotion
+        run: npx remotion browser ensure
+      - name: Exportar banner y avatar en PNG
+        run: |
+          mkdir -p out/branding
+          npx remotion still src/index.tsx ChannelBanner out/branding/youtube-banner.png --frame=0 --scale=1
+          npx remotion still src/index.tsx ChannelAvatar out/branding/profile-chilensis.png --frame=0 --scale=1
+          test -s out/branding/youtube-banner.png
+          test -s out/branding/profile-chilensis.png
+      - uses: actions/upload-artifact@v6
+        with:
+          name: futbol-chilensis-branding-png
+          path: out/branding/*.png
+          retention-days: 30
