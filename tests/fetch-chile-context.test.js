@@ -5,6 +5,7 @@ const {
   normalizeEspnStandings,
   normalizeTheSportsDbTable,
   normalizeLeaders,
+  resolveLeaderReferences,
   getChileContext,
   ESPN_STANDINGS,
   ESPN_LEADERS,
@@ -71,4 +72,18 @@ test('consulta ESPN primero y usa tabla TheSportsDB solo como respaldo', async (
   assert.ok(calls.includes(THESPORTSDB_TABLE));
   assert.equal(result.tabla_fuente, 'TheSportsDB');
   assert.equal(result.tabla_posiciones.length, 8);
+});
+
+test('resuelve referencias ESPN de atletas antes de crear el bloque de figuras', async () => {
+  const athleteUrl = 'https://sports.core.api.espn.com/v2/sports/soccer/leagues/chi.1/athletes/77';
+  const payload = { categories: [{ name:'Goles', leaders:[
+    { athlete:{ $ref:athleteUrl }, displayValue:'11' },
+  ] }] };
+  const resolved = await resolveLeaderReferences(payload, async url => {
+    assert.equal(url, athleteUrl);
+    return { displayName:'Delantero Uno', team:{ displayName:'Club Uno' } };
+  });
+  const players = normalizeLeaders(resolved);
+  assert.equal(players[0].nombre,'Delantero Uno');
+  assert.equal(players[0].equipo,'Club Uno');
 });
