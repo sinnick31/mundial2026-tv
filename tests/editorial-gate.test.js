@@ -17,6 +17,9 @@ function validPackage() {
       narracion: 'Esta narración explica un hecho publicado, identifica su fuente y aporta contexto original. '.repeat(3),
       descripcion_youtube: `Hecho y contexto. Fuente original: ${source}`,
       _categoria_editorial: 'chile',
+      _tipo_contenido: 'noticia',
+      _articulo_completo: true,
+      _articulo_caracteres: 640,
       _orden: 1,
     }],
   };
@@ -86,4 +89,11 @@ test('rechaza etiquetas HTML en títulos', () => {
   const pkg = validPackage();
   pkg.contenido[0].titulo_youtube = '<b>FÚTBOL CHILENO</b>: noticia y contexto';
   assert.throws(() => validatePackage(pkg), /etiquetas HTML sin limpiar en titulo_youtube/);
+});
+
+test('rechaza noticias construidas solo con un titular RSS', () => {
+  const pkg = validPackage();
+  pkg.contenido[0]._articulo_completo = false;
+  pkg.contenido[0]._articulo_caracteres = 92;
+  assert.throws(() => validatePackage(pkg), /artículo original incompleto/);
 });

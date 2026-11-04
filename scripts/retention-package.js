@@ -11,10 +11,7 @@ function buildRetention(item) {
   const title = String(item._noticia_original || item.titulo_youtube || '').trim();
   const category = String(item._categoria_editorial || 'chile');
   const normalized = title.toLocaleLowerCase('es-CL');
-  const isOfficial = /\b(oficial|confirmad[oa]|confirma|anuncia)\b/i.test(title);
-  const hook = isOfficial
-    ? `¿Qué cambia de verdad con esta noticia confirmada? ${title}`
-    : `La pregunta clave es qué cambia ahora: ${title}`;
+  const hook = title ? (/[.!?…]$/.test(title) ? title : `${title}.`) : 'La noticia que marca la jornada.';
   const question = category === 'futbol_femenino'
     ? '¿Qué historia del fútbol femenino chileno merece más seguimiento? Te leo en los comentarios.'
     : category === 'colo_colo'
@@ -26,23 +23,25 @@ function buildRetention(item) {
         : '¿Qué lectura haces de esta noticia para el fútbol chileno? Te leo en los comentarios.';
   const cta = 'Si quieres seguir el fútbol chileno sin humo y con el análisis al grano fecha tras fecha, suscríbete a Chilensis Fútbol.';
   const base = String(item.narracion || '').trim();
-  // El gancho va al principio; el CTA se sitúa después del análisis y antes de la pregunta final.
-  const withoutOldQuestion = base.replace(/\s*(?:La pregunta queda abierta:|Ahora queda seguir|¿Qué liga o torneo|La próxima fecha puede entregar)[\s\S]*$/i, '').trim();
+  // El gancho ya contiene el titular: quitarlo del cuerpo para no repetir la misma información.
+  const withoutHeadline = base.toLocaleLowerCase('es-CL').startsWith(title.toLocaleLowerCase('es-CL'))
+    ? base.slice(title.length).replace(/^[\s.!?…]+/, '') : base;
+  const withoutOldQuestion = withoutHeadline.replace(question, '').replace(/\s*(?:La pregunta queda abierta:|Ahora queda seguir|¿Qué liga o torneo|La próxima fecha puede entregar)[\s\S]*$/i, '').trim();
   item.gancho = hook.slice(0, 220);
   item.narracion = [hook, withoutOldQuestion, cta, question].filter(Boolean).join(' ');
   item.pregunta_comunidad = question;
   item.cta_suscripcion = cta;
   item.estructura_retencion = {
-    gancho_0_a_5s: hook,
+    gancho_0_a_3s: hook,
     actos: {
       hecho: title,
       analisis: String(item.subtitulo || item.descripcion || ''),
       consecuencia: String(item.puntos?.at(-1) || question),
     },
     cambios_de_ritmo: [
-      { momento: '0-5s', objetivo: 'Abrir con una duda o tensión ligada al hecho publicado.' },
-      { momento: 'cada 15s', objetivo: 'Introducir contexto, dato confirmado o cambio visual; no inventar estadísticas.' },
-      { momento: '70-80%', objetivo: 'Insertar CTA después de entregar el análisis principal.' },
+      { momento: '0-3s', objetivo: 'Abrir directamente con el hecho atractivo, sin presentación ni fecha de la fuente.' },
+      { momento: 'cada 3-5s', objetivo: 'Cambiar imagen, plano o gráfico con información confirmada para sostener el ritmo.' },
+      { momento: 'cierre', objetivo: 'Cerrar con una pregunta concreta y un CTA breve, sin repetir el titular.' },
     ],
   };
   const overlay = /lesion|baja|descartad|sancion/i.test(normalized) ? 'BAJA CLAVE'

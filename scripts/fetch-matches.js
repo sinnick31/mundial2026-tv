@@ -19,11 +19,7 @@
 
 const fs = require('fs');
 const https = require('https');
-const { COMPETICIONES_API, ROTACION_TABLA } = require('../config/ligas');
-
-const FOOTBALL_API_KEY = process.env.FOOTBALL_DATA_API_KEY || '';
-// Permite override por secret; por defecto usa todas las de config/ligas.js
-const COMPETITIONS = (process.env.COMPETITIONS || Object.keys(COMPETICIONES_API).join(',')).trim();
+// Resultados y programación: ESPN scoreboard. No se consulta football-data.org.
 
 // ─── HTTP helper ─────────────────────────────────────────────────────────────
 function httpGet(url, headers = {}, redirects = 0) {
@@ -51,78 +47,7 @@ function httpGet(url, headers = {}, redirects = 0) {
   });
 }
 
-function nombreCompetencia(m) {
-  const id = m.competition?.id;
-  return COMPETICIONES_API[id]?.nombre || m.competition?.name || 'Fútbol Internacional';
-}
-
-// ─── 1. football-data.org — TODAS las competiciones en 2 llamadas ────────────
-async function getMatchesFromFootballData() {
-  if (!FOOTBALL_API_KEY) {
-    console.log('  ⚠️ FOOTBALL_DATA_API_KEY no configurada — usando solo ESPN');
-    return { recientes: [], proximos: [], standings: [], tablaCompetencia: null };
-  }
-  try {
-    const hoy = new Date();
-    const ayer = new Date(hoy.getTime() - 72 * 60 * 60 * 1000);
-    const en3dias = new Date(hoy.getTime() + 3 * 24 * 60 * 60 * 1000);
-    const fmt = (d) => d.toISOString().split('T')[0];
-    const auth = { 'X-Auth-Token': FOOTBALL_API_KEY };
-
-    // Tabla del día: rota 1 competición por día de la semana
-    const compTablaHoy = ROTACION_TABLA[hoy.getDay()] || 2021;
-
-    const [recentData, upcomingData, standingsData] = await Promise.allSettled([
-      httpGet(`https://api.football-data.org/v4/matches?competitions=${COMPETITIONS}&dateFrom=${fmt(ayer)}&dateTo=${fmt(hoy)}&status=FINISHED`, auth),
-      httpGet(`https://api.football-data.org/v4/matches?competitions=${COMPETITIONS}&dateFrom=${fmt(hoy)}&dateTo=${fmt(en3dias)}&status=SCHEDULED`, auth),
-      httpGet(`https://api.football-data.org/v4/competitions/${compTablaHoy}/standings`, auth),
-    ]);
-
-    const mapear = (m, estado) => ({
-      id: m.id,
-      estado,
-      equipo1: m.homeTeam?.shortName || m.homeTeam?.name || 'Local',
-      equipo2: m.awayTeam?.shortName || m.awayTeam?.name || 'Visitante',
-      escudoLocal: m.homeTeam?.crest || null,
-      escudoVisita: m.awayTeam?.crest || null,
-      estadio: m.venue || null,
-      ...(estado === 'finalizado' && {
-        golesLocal: m.score?.fullTime?.home,
-        golesVisita: m.score?.fullTime?.away,
-      }),
-      competencia: nombreCompetencia(m),
-      prioridad: COMPETICIONES_API[m.competition?.id]?.prioridad || 5,
-      hashtag: COMPETICIONES_API[m.competition?.id]?.hashtag || '#Futbol',
-      fase: m.stage || m.group || 'Temporada regular',
-      fecha: m.utcDate,
-      fuente: 'football-data.org',
-    });
-
-    const recientes = (recentData.status === 'fulfilled' ? recentData.value.matches || [] : [])
-      .map((m) => mapear(m, 'finalizado'))
-      .sort((a, b) => b.prioridad - a.prioridad); // Champions/Libertadores primero
-
-    const proximos = (upcomingData.status === 'fulfilled' ? upcomingData.value.matches || [] : [])
-      .map((m) => mapear(m, 'programado'))
-      .sort((a, b) => b.prioridad - a.prioridad);
-
-    const standings = standingsData.status === 'fulfilled'
-      ? (standingsData.value.standings || []).slice(0, 2)
-      : [];
-
-    return {
-      recientes,
-      proximos,
-      standings,
-      tablaCompetencia: COMPETICIONES_API[compTablaHoy]?.nombre || null,
-    };
-  } catch (err) {
-    console.error('  ⚠️ Error football-data.org:', err.message);
-    return { recientes: [], proximos: [], standings: [], tablaCompetencia: null };
-  }
-}
-
-// ─── 2. ESPN API pública — Scores en vivo multi-liga ─────────────────────────
+// ─── ESPN API pública — Scores en vivo multi-liga ─────────────────────────
 const ESPN_LIGAS = [
   { slug: 'chi.1', nombre: 'Primera División de Chile' },
   { slug: 'chi.2', nombre: 'Liga de Ascenso de Chile' },
@@ -148,8 +73,9 @@ async function getMatchesFromESPN() {
   const recientes = [], enCurso = [], proximos = [];
   const today = new Date();
   const start = new Date(today.getTime() - 3 * 24 * 60 * 60 * 1000);
+  const end = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
   const ymd = (d) => `${d.getUTCFullYear()}${String(d.getUTCMonth()+1).padStart(2,'0')}${String(d.getUTCDate()).padStart(2,'0')}`;
-  const dateRange = `${ymd(start)}-${ymd(today)}`;
+  const dateRange = `${ymd(start)}-${ymd(end)}`;
   for (const liga of ESPN_LIGAS) {
     try {
       const data = await httpGet(`https://site.api.espn.com/apis/site/v2/sports/soccer/${liga.slug}/scoreboard?dates=${dateRange}`);
@@ -198,15 +124,8 @@ async function getMatchesFromESPN() {
 
 // ─── Pipeline principal ──────────────────────────────────────────────────────
 async function fetchMatches() {
-  console.log('⚽ FOOTBALL AI STUDIO v4.0 — Partidos: Chile + ligas del mundo...\n');
-
-  const [footballData, espnData] = await Promise.allSettled([
-    getMatchesFromFootballData(),
-    getMatchesFromESPN(),
-  ]);
-
-  const fd = footballData.status === 'fulfilled' ? footballData.value : { recientes: [], proximos: [], standings: [], tablaCompetencia: null };
-  const espn = espnData.status === 'fulfilled' ? espnData.value : { recientes: [], enCurso: [], proximos: [] };
+  console.log('⚽ CHILENSIS FÚTBOL — Resultados ESPN: Chile + ligas internacionales...\n');
+  const espn = await getMatchesFromESPN();
 
   const idsVistos = new Set();
   const combinar = (...arrays) => arrays.flat()
@@ -218,7 +137,7 @@ async function fetchMatches() {
     })
     .sort((a, b) => (b.prioridad || 5) - (a.prioridad || 5));
 
-  const partidosRecientes = combinar(espn.recientes, fd.recientes).slice(0, 60);
+  const partidosRecientes = combinar(espn.recientes).slice(0, 60);
   // Enriquecer los partidos recientes de ESPN con goleadores/minutos cuando el resumen los exponga.
   // Si la fuente no publica esos detalles, se dejan ausentes y el guion lo indica expresamente.
   for (const partido of partidosRecientes.filter(p => p.espnEventId && p.espnLeagueSlug).slice(0, 8)) {
@@ -244,9 +163,9 @@ async function fetchMatches() {
     fecha: new Date().toISOString(),
     partidos_recientes: partidosRecientes,
     partidos_en_curso: espn.enCurso || [],
-    partidos_proximos: combinar(espn.proximos, fd.proximos).slice(0, 20),
-    tabla_posiciones: fd.standings,
-    tabla_competencia: fd.tablaCompetencia,
+    partidos_proximos: combinar(espn.proximos).slice(0, 30),
+    tabla_posiciones: [],
+    tabla_competencia: null,
     resumen: {},
   };
   cache.resumen = {
@@ -261,7 +180,7 @@ async function fetchMatches() {
   console.log(`  ✅ Finalizados recientes: ${cache.resumen.total_recientes}`);
   console.log(`  🔴 En curso ahora: ${cache.resumen.total_en_curso}`);
   console.log(`  📅 Próximos: ${cache.resumen.total_proximos}`);
-  if (fd.tablaCompetencia) console.log(`  📋 Tabla del día: ${fd.tablaCompetencia}`);
+
 
   cache.partidos_en_curso.forEach((p) => {
     console.log(`  🔴 [${p.competencia}] ${p.equipo1} ${p.golesLocalEnVivo ?? 0}-${p.golesVisitaEnVivo ?? 0} ${p.equipo2} (${p.minuto})`);

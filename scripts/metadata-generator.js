@@ -1,16 +1,13 @@
 const { appendAffiliateFooter } = require('./affiliate-links');
 
 const BASE_HASHTAGS = [
-  '#Futbol',
-  '#FIFAWorldCup',
+  '#FutbolChileno',
+  '#ChilensisFutbol',
+  '#ColoColo',
+  '#LaRoja',
+  '#FutbolFemenino',
+  '#FutbolInternacional',
   '#Resultados',
-  '#Futbol',
-  '#Football',
-  '#Shorts',
-  '#Resumen',
-  '#Goles',
-  '#FIFA',
-  '#WorldCup2026',
 ];
 
 function cleanTeam(team) {

@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { RSS_FEEDS } = require('../config/ligas');
-const { parseFeed, esFutbol, sourceKey } = require('../scripts/fetch-real-news');
+const { parseFeed, esFutbol, sourceKey, extractArticle, parseTntHomepage, plainText, decodeHtml } = require('../scripts/fetch-real-news');
 const { calcularViralScore } = require('../scripts/viral-score');
 
 test('TNT Sports tiene cobertura general y por secciones prioritarias', () => {
@@ -45,4 +45,51 @@ test('la categoría editorial TNT es reconocida por el puntuador', () => {
   });
   assert.equal(result.categoria, 'tnt_sports');
   assert.ok(result.score > 25);
+});
+
+test('extrae el cuerpo del artículo desde párrafos y metadatos HTML', () => {
+  const html = `<!doctype html><html><head>
+    <meta property="og:title" content="Colo-Colo prepara su próximo partido">
+    <meta property="og:description" content="La previa del encuentro">
+    <link rel="canonical" href="https://www.tntsports.cl/noticia/colo-colo">
+  </head><body><header>Menú</header><article>
+    <h1>Colo-Colo prepara su próximo partido</h1>
+    <p>El equipo retomó los entrenamientos esta semana con miras al encuentro que disputará por el campeonato nacional.</p>
+    <p>El cuerpo técnico trabajó aspectos tácticos y evaluará a los jugadores disponibles durante las próximas sesiones.</p>
+    <p>La programación del partido y las novedades de la convocatoria serán comunicadas por el club en sus canales oficiales.</p>
+  </article><script>var ignored = "No debe aparecer en el texto";</script></body></html>`;
+  const article = extractArticle(html);
+  assert.equal(article.title, 'Colo-Colo prepara su próximo partido');
+  assert.equal(article.canonical, 'https://www.tntsports.cl/noticia/colo-colo');
+  assert.ok(article.body.length >= 300);
+  assert.ok(article.body.includes('cuerpo técnico'));
+  assert.ok(!article.body.includes('ignored'));
+});
+
+test('prefiere articleBody de schema.org cuando está disponible', () => {
+  const body = 'La ANFP confirmó una modificación del calendario del campeonato. '.repeat(8);
+  const html = `<html><head><script type="application/ld+json">${JSON.stringify({
+    '@context':'https://schema.org','@type':'NewsArticle','headline':'Cambio de calendario','articleBody':body
+  })}</script></head><body><p>Publicidad</p></body></html>`;
+  const article = extractArticle(html);
+  assert.ok(article.body.includes('modificación del calendario'));
+  assert.ok(article.body.length >= 300);
+});
+
+test('decodifica entidades HTML y elimina etiquetas visibles', () => {
+  assert.equal(decodeHtml('Colo&nbsp;Colo &amp; La Roja &#8211; fútbol'), 'Colo Colo & La Roja – fútbol');
+  assert.equal(plainText('<p>La <strong>noticia</strong> está confirmada.</p>'), 'La noticia está confirmada.');
+});
+
+test('descubre noticias desde enlaces de la portada oficial de TNT Sports', () => {
+  const html = `<html><body>
+    <a href="/noticia/colo-colo-prepara-el-clasico"><h2>Colo-Colo prepara el clásico y define su formación</h2></a>
+    <a href="/seccion/nacional">Nacional</a>
+    <a href="https://example.com/noticia">Colo-Colo gana el partido</a>
+  </body></html>`;
+  const stories = parseTntHomepage(html);
+  assert.equal(stories.length, 1);
+  assert.equal(stories[0].fuente, 'TNT Sports Chile');
+  assert.equal(stories[0].fuente_host, 'tntsports.cl');
+  assert.match(stories[0].link, /^https:\/\/www\.tntsports\.cl\/noticia\//);
 });

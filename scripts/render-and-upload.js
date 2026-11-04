@@ -133,6 +133,28 @@ function elegirBroll(item) {
   }
 }
 
+
+function renderThumbnail(item, renderProps, outputPath) {
+  const props = {
+    headline: item.thumbnail_title || item.gancho || item.titulo_youtube || 'FÚTBOL CHILENSIS',
+    section: renderProps.etiquetaSeccion || (item._categoria_editorial || 'FÚTBOL CHILENO').replace(/_/g, ' '),
+    team1: item.equipo1 || '',
+    team2: item.equipo2 || '',
+    team1Image: renderProps.imagenEquipoSrc || '',
+    team2Image: renderProps.imagenEquipo2Src || '',
+    source: item._fuente || 'Fuentes verificadas',
+    date: item._fecha_publicacion_fuente || '',
+  };
+  const propsJson = JSON.stringify(props).replace(/'/g, "'\\''");
+  const cmd = `npx remotion still src/index.tsx ShortThumbnail "${outputPath}" --props='${propsJson}' --frame=0 --scale=1`;
+  console.log(`   🖼️ Generando miniatura Shorts 1080x1920: ${path.basename(outputPath)}`);
+  execSync(cmd, { stdio: 'inherit', cwd: ROOT });
+  if (!fs.existsSync(outputPath) || fs.statSync(outputPath).size < 10000) {
+    throw new Error('THUMBNAIL_GATE_BLOCKED: la miniatura no se generó o está vacía.');
+  }
+  return outputPath;
+}
+
 function renderVideo(compositionId, props, outputPath, durationInFrames) {
   const propsJson = JSON.stringify(props);
   const cmd = [
@@ -353,6 +375,8 @@ async function main() {
       validateItemForRender(item, item._orden || resultados.length + 1);
       const { compositionId, props, durationInFrames } = await prepararRender(item);
       renderVideo(compositionId, props, videoFile, durationInFrames);
+      const thumbnailFile = path.join(outDir, `miniatura_${item._orden}.png`);
+      renderThumbnail(item, props, thumbnailFile);
       const quality = validateRenderedVideo(videoFile);
       console.log(`   🛡️ Control visual aprobado: ${quality.width}x${quality.height}, ${quality.duration}s, ${(quality.bytes / 1e6).toFixed(2)} MB`);
       if (renderOnly) {
@@ -364,6 +388,8 @@ async function main() {
           fuente: item._fuente,
           fuente_url: item._fuente_url,
           archivo_local: videoFile,
+          miniatura_local: thumbnailFile,
+          miniatura_generada: true,
           calidad: quality,
           estado: 'RENDERED_LOCAL',
         });
@@ -373,6 +399,7 @@ async function main() {
 
       await new Promise(r => setTimeout(r, 2000));
       const videoId = await uploadToYouTube(youtube, videoFile, item);
+      await youtube.thumbnails.set({ videoId, media: { mimeType: 'image/png', body: fs.createReadStream(thumbnailFile) } });
 
       resultados.push({
         orden: item._orden,
@@ -383,6 +410,8 @@ async function main() {
         fuente_url: item._fuente_url,
         youtube_id: videoId,
         youtube_url: `https://youtu.be/${videoId}`,
+        miniatura_local: thumbnailFile,
+        miniatura_subida: true,
         estado: 'OK',
       });
       await new Promise(r => setTimeout(r, 4000));

@@ -1,22 +1,7 @@
 /**
- * config/ligas.js — REAL FOOTBALL NEWSROOM v5
+ * config/ligas.js — FÚTBOL CHILENSIS NEWSROOM v6
  * Fuente editorial: datos y noticias verificables. La IA no decide los hechos.
  */
-
-const COMPETICIONES_API = {
-  2001: { nombre: 'Champions League', hashtag: '#ChampionsLeague', prioridad: 10 },
-  2021: { nombre: 'Premier League', hashtag: '#PremierLeague', prioridad: 7 },
-  2014: { nombre: 'LaLiga', hashtag: '#LaLiga', prioridad: 7 },
-  2019: { nombre: 'Serie A', hashtag: '#SerieA', prioridad: 6 },
-  2002: { nombre: 'Bundesliga', hashtag: '#Bundesliga', prioridad: 6 },
-  2015: { nombre: 'Ligue 1', hashtag: '#Ligue1', prioridad: 5 },
-  2152: { nombre: 'Copa Libertadores', hashtag: '#Libertadores', prioridad: 9 },
-  2013: { nombre: 'Brasileirao', hashtag: '#Brasileirao', prioridad: 5 },
-  2000: { nombre: 'Mundial FIFA', hashtag: '#Mundial2026', prioridad: 4 },
-  2018: { nombre: 'Eurocopa', hashtag: '#Eurocopa', prioridad: 4 },
-};
-
-const ROTACION_TABLA = [2021, 2014, 2001, 2019, 2002, 2152, 2021];
 
 const CHILE = {
   // Cobertura editorial nacional 2026
@@ -243,5 +228,5 @@ const KEYWORDS_FUTBOL = [
 ];
 
 module.exports = {
-  COMPETICIONES_API, ROTACION_TABLA, CHILE, CATEGORIAS, RSS_FEEDS, KEYWORDS_FUTBOL,
+  CHILE, CATEGORIAS, RSS_FEEDS, KEYWORDS_FUTBOL,
 };

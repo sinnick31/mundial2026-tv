@@ -17,9 +17,15 @@ on:
       privacy:
         description: 'Visibilidad del vídeo'
         required: true
-        default: 'public'
+        default: 'private'
         type: choice
         options: ['public', 'unlisted', 'private']
+      render_only:
+        description: 'Renderizar y validar sin subir a YouTube'
+        required: true
+        default: 'true'
+        type: choice
+        options: ['true', 'false']
 
 concurrency:
   group: daily-football-results
@@ -49,7 +55,7 @@ jobs:
           npm run lint
           npm run test:publication-policy
       - name: Renderizar miniatura de prueba
-        run: npx remotion still src/index.tsx ResultsThumbnail /tmp/results-thumbnail.png --props='{"date":"2026-10-16","count":3}' --frame=0 --scale=1
+        run: npx remotion still src/index.tsx VideoThumbnail /tmp/results-thumbnail.png --props='{"headline":"COLO-COLO GANA Y MUEVE LA TABLA","section":"RESULTADOS Y AGENDA","team1":"Colo-Colo","team2":"Coquimbo Unido"}' --frame=0 --scale=1
 
   results-longform:
     if: github.event_name != 'push'
@@ -66,9 +72,6 @@ jobs:
           cache: npm
       - run: npm ci
       - name: ⚽ Obtener resultados de los últimos días
-        env:
-          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
-          COMPETITIONS: ${{ secrets.COMPETITIONS }}
         run: node scripts/fetch-matches.js
       - name: 🧪 Validar scripts
         run: |
@@ -78,21 +81,24 @@ jobs:
           node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))"
           npm run test:publication-policy
       - name: 🔐 Validar canal y OAuth
+        if: inputs.render_only == 'false'
         env:
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
         run: node scripts/preflight-youtube-auth.js
-      - name: 🎬 Renderizar y publicar resumen largo
+      - name: 🌐 Preparar Remotion
+        run: npx remotion browser ensure
+      - name: 🎬 Renderizar resumen largo
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
           RESULTS_VIDEO_PRIVACY: ${{ inputs.privacy || vars.RESULTS_VIDEO_PRIVACY || 'public' }}
-          PUBLISH_TO_YOUTUBE: 'true'
+          PUBLISH_TO_YOUTUBE: ${{ inputs.render_only == 'false' && 'true' || 'false' }}
         run: node scripts/generate-results-longform.js
       - name: 📦 Guardar reporte
         if: always()

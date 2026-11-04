@@ -67,9 +67,18 @@ function importance(item) {
   return score;
 }
 function snippet(item) {
-  const desc = clean(item.description || '');
-  if (desc.length >= 70) return desc.slice(0, 220).replace(/\s+\S*$/, '') + '.';
-  return clean(item.title).slice(0, 180);
+  const body = clean(item.article_body || '');
+  if (item.article_complete === true && body.length >= 300) {
+    const sentences = body.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [body];
+    let summary = '';
+    for (const sentence of sentences) {
+      const candidate = [summary, sentence.trim()].filter(Boolean).join(' ');
+      if (candidate.length > 760) break;
+      summary = candidate;
+    }
+    return summary.trim() || body.slice(0, 700);
+  }
+  return '';
 }
 function typeFor(item) {
   if (isFutbolFemenino(item)) return 'futbol_femenino';
@@ -95,44 +104,43 @@ function closingQuestion(type) {
 function labelFor(type) {
   return type === 'futbol_femenino' ? 'FÚTBOL FEMENINO' : type === 'colo_colo' ? 'COLO-COLO' : type === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : type === 'internacional' ? 'FÚTBOL MUNDIAL' : 'FÚTBOL CHILENO';
 }
-function ganchoFor(item, type) {
-  const title = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
-  const t = normalize(title);
-  // El gancho usa una señal que ya está en el titular: no añade rumores ni afirmaciones nuevas.
-  let prefix = '';
-  if (/\b(oficial|confirmado|confirma)\b/.test(t)) prefix = 'ES OFICIAL: ';
-  else if (/\b(ultimo momento|ultima hora|urgente)\b/.test(t)) prefix = 'ÚLTIMA HORA: ';
-  else if (/\b(remontada|remonta|goleada|hat.?trick|triplete|record|historico)\b/.test(t)) prefix = 'EL DATO QUE MARCA LA JORNADA: ';
-  else if (/\b(fichaje|traspaso|refuerzo|renovacion)\b/.test(t)) prefix = 'MERCADO DE PASES: ';
-  else if (/\b(clasifica|clasificado|eliminado|final|campeon|titulo)\w*/.test(t)) prefix = 'SE JUEGA ALGO GRANDE: ';
-  else if (/\b(lesion|baja|descartado|sancion|suspendido)\w*/.test(t)) prefix = 'ATENCIÓN A ESTA NOTICIA: ';
-  else if (type === 'colo_colo') prefix = 'COLO-COLO: LA CLAVE ES ';
-  else if (type === 'chilenos_exterior') prefix = 'CHILENOS POR EL MUNDO: ';
-  else if (type === 'internacional') prefix = 'FÚTBOL MUNDIAL: ';
-  else prefix = 'FÚTBOL CHILENO: ';
-  const maxTitle = Math.max(20, 96 - prefix.length);
-  const clipped = title.length > maxTitle ? title.slice(0, maxTitle - 1).replace(/\s+\S*$/, '') + '…' : title;
-  return (prefix + clipped).slice(0, 100);
+function ganchoFor(item) {
+  const title = clean(item.article_title || item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return title.length > 110 ? title.slice(0, 107).replace(/\s+\S*$/, '') + '…' : title;
 }
-function titleFor(item, type) {
-  const base = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
-  const label = labelFor(type);
-  const suffix = type === 'colo_colo' ? ' | Lo que se sabe' : type === 'chilenos_exterior' ? ' | La clave para seguirlo' : ' | Lo que cambia';
-  const room = Math.max(20, 100 - label.length - suffix.length - 4);
-  const short = base.length > room ? `${base.slice(0, room - 1).replace(/\s+\S*$/, '')}…` : base;
-  return `${label}: ${short}${suffix}`.slice(0, 100);
+function titleFor(item) {
+  const base = clean(item.article_title || item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return base.length > 100 ? base.slice(0, 97).replace(/\s+\S*$/, '') + '…' : base;
 }
 function fechaPublicacion(item) {
   const raw = item.pubDate || item.timestamp;
   if (!raw || Number.isNaN(Date.parse(raw))) return null;
   return new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(raw));
 }
+function splitIntoPoints(text, maxPoints = 7) {
+  const sentences = (String(text || '').match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [])
+    .map(value => value.trim()).filter(value => value.length > 24);
+  const chunks = [];
+  for (const sentence of sentences) {
+    if (sentence.length <= 118) { chunks.push(sentence); continue; }
+    const words = sentence.split(/\s+/);
+    let chunk = '';
+    for (const word of words) {
+      const next = chunk ? chunk + ' ' + word : word;
+      if (next.length > 118 && chunk) { chunks.push(chunk); chunk = word; }
+      else chunk = next;
+    }
+    if (chunk) chunks.push(chunk);
+  }
+  return chunks.slice(0, maxPoints);
+}
 function buildNarration(item, type, resumen) {
-  const title = clean(item.title);
-  const sourceName = clean(item.fuente || item.fuente_host || 'la fuente original');
-  const fecha = fechaPublicacion(item);
-  const fechaTexto = fecha ? `La publicación de ${sourceName} está fechada el ${fecha}. Esta es la fecha de publicación de la fuente, no necesariamente la fecha del partido.` : 'La fecha de publicación no pudo verificarse con los datos disponibles, por lo que no se afirma una fecha de partido.';
-  return [`${labelFor(type)}.`, title, `Según ${sourceName}: ${resumen}`, fechaTexto, editorialAngle(type), closingQuestion(type)].join(' ');
+  const title = clean(item.article_title || item.title);
+  const summary = clean(resumen);
+  const question = closingQuestion(type);
+  if (item.article_complete !== true || summary.length < 180) return '';
+  const body = normalize(summary).startsWith(normalize(title)) ? summary.slice(title.length).trim() : summary;
+  return [title, body, question].filter(Boolean).join(' ');
 }
 function inferMatchup(title) {
   const value = clean(title);
@@ -145,7 +153,7 @@ function inferMatchup(title) {
 }
 
 function buildItem(item, type, order) {
-  const title = clean(item.title);
+  const title = clean(item.article_title || item.title);
   const matchup = inferMatchup(title);
   const resumen = snippet(item);
   const fuente = item.fuente || item.fuente_host || 'Fuente deportiva';
@@ -155,22 +163,24 @@ function buildItem(item, type, order) {
   const tags = ['FutbolChileno', type === 'futbol_femenino' ? 'FutbolFemenino' : type === 'chilenos_exterior' ? 'ChilenosPorElMundo' : type === 'colo_colo' ? 'ColoColo' : type === 'internacional' ? 'FutbolMundial' : 'CampeonatoChileno', 'Chile', 'Futbol', 'Shorts'];
   return {
     tipo: 'sorpresa',
-    gancho: ganchoFor(item, type),
-    subtitulo: angle,
-    descripcion: `${resumen} ${angle}`,
+    gancho: ganchoFor(item),
+    subtitulo: labelFor(type),
+    descripcion: resumen.slice(0, 230),
     // Mostrar rivales únicamente cuando el titular de la fuente los identifica explícitamente.
     equipo1: matchup?.home || item.equipo_chile || (type === 'chilenos_exterior' ? 'Chile' : type === 'internacional' ? 'Fútbol mundial' : 'Fútbol chileno'),
     equipo2: matchup?.away || null,
     probabilidad: 0,
-    puntos: [`HECHO PUBLICADO: ${title}`, `CONTEXTO DE LA FUENTE: ${resumen}`, fechaPub ? `PUBLICADO EL ${fechaPub} (fecha de publicación, no necesariamente fecha del partido)` : 'FECHA: la fuente no entrega una fecha de publicación verificable; no inventar fecha del partido', `ANÁLISIS EDITORIAL: ${angle}`, `SIGUIENTE DATO A COMPROBAR: ${closingQuestion(type)}`],
+    puntos: [`EL HECHO: ${title}`, ...splitIntoPoints(normalize(resumen).startsWith(normalize(title)) ? resumen.slice(title.length).trim() : resumen, 7)],
     narracion: buildNarration(item, type, resumen),
     emoji: type === 'futbol_femenino' ? '⚽♀' : type === 'colo_colo' ? '⚪⚫' : type === 'chilenos_exterior' ? '🇨🇱🌎' : '🇨🇱⚽',
-    titulo_youtube: titleFor(item, type),
+    titulo_youtube: titleFor(item),
     descripcion_youtube: [`Esta edición de ${labelFor(type).toLowerCase()} parte de un hecho publicado y añade contexto editorial propio.`, `Hecho: ${title}`, `Lectura del canal: ${angle}`, `Fuente original: ${fuente} — ${fuenteUrl}`, `Fecha de publicación de la fuente: ${fechaPub || 'no verificada'}. No confundir con fecha del partido.`, '#FutbolChileno #Chile #Futbol #Shorts'].join('\n\n'),
     tags,
     _tipo_contenido: 'noticia',
     _match_id: null,
     _noticia_original: title,
+    _articulo_completo: true,
+    _articulo_caracteres: item.article_chars || item.article_body.length,
     _fuente: fuente,
     _fuente_url: fuenteUrl,
     _fecha: FECHA,
@@ -183,10 +193,10 @@ function buildItem(item, type, order) {
 function main() {
   const news = readJson('news-cache.json', { noticias: [] });
   const history = loadHistory();
-  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => ageHours(n) <= 72 && n.link) : [];
+  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => ageHours(n) <= 72 && n.link && n.article_complete === true && typeof n.article_body === 'string' && n.article_body.trim().length >= 300) : [];
   if (!candidates.length) {
     fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, total: 0, contenido: [] }, null, 2));
-    console.log('⚠️ No hay fuentes recientes con URL verificable. No se publica relleno.');
+    console.log('⚠️ No hay artículos completos recuperados desde las fuentes. Los titulares RSS no se convierten en guiones; no se publica relleno.');
     return;
   }
 
