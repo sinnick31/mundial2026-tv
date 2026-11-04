@@ -23,9 +23,33 @@ function clean(s = '') { return cleanVisibleText(s); }
 function normalize(s = '') {
   return clean(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
+function publicationTimestamp(item) {
+  const raw = item.timestamp || item.pubDate || null;
+  if (!raw) return null;
+  const ts = new Date(raw).getTime();
+  return Number.isFinite(ts) ? ts : null;
+}
 function ageHours(item) {
-  const ts = new Date(item.timestamp || Date.now()).getTime();
-  return Math.max(0, (Date.now() - ts) / 36e5);
+  const ts = publicationTimestamp(item);
+  return ts === null ? Infinity : (Date.now() - ts) / 36e5;
+}
+function validSourceUrl(value) {
+  try {
+    const url = new URL(value);
+    return ['https:', 'http:'].includes(url.protocol) && Boolean(url.hostname)
+      && !url.username && !url.password;
+  } catch (_) { return false; }
+}
+function isEligibleCandidate(item) {
+  const age = ageHours(item);
+  const source = String(item.fuente || item.fuente_original || item.fuente_host || '').trim();
+  return item.article_complete === true
+    && typeof item.article_body === 'string' && item.article_body.trim().length >= 300
+    && publicationTimestamp(item) !== null
+    && age >= -6 && age <= 72
+    && validSourceUrl(item.link)
+    && source.length >= 3
+    && !/^(fuente deportiva|fuente no especificada|desconocida)$/i.test(source);
 }
 function isColo(item) {
   const t = normalize(`${item.title} ${item.description} ${item.equipo_chile || ''}`);
@@ -155,8 +179,9 @@ function buildItem(item, type, order) {
   const title = clean(item.article_title || item.title);
   const matchup = inferMatchup(title);
   const resumen = snippet(item);
-  const fuente = item.fuente || item.fuente_host || 'Fuente deportiva';
+  const fuente = item.fuente || item.fuente_original || item.fuente_host;
   const fuenteUrl = item.link;
+  const timestampFuente = publicationTimestamp(item);
   const angle = editorialAngle(type);
   const fechaPub = fechaPublicacion(item);
   const tags = ['FutbolChileno', type === 'futbol_femenino' ? 'FutbolFemenino' : type === 'chilenos_exterior' ? 'ChilenosPorElMundo' : type === 'colo_colo' ? 'ColoColo' : type === 'internacional' ? 'FutbolMundial' : 'CampeonatoChileno', 'Chile', 'Futbol', 'Shorts'];
@@ -184,6 +209,8 @@ function buildItem(item, type, order) {
     _fuente_url: fuenteUrl,
     _fecha: FECHA,
     _fecha_publicacion_fuente: fechaPub,
+    _fecha_publicacion_iso: timestampFuente === null ? null : new Date(timestampFuente).toISOString(),
+    _fecha_publicacion_verificada: item.fecha_publicacion_verificada === true,
     _orden: order,
     _categoria_editorial: type,
   };
@@ -192,7 +219,7 @@ function buildItem(item, type, order) {
 function main() {
   const news = readJson('news-cache.json', { noticias: [] });
   const history = loadHistory();
-  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => ageHours(n) <= 72 && n.link && n.article_complete === true && typeof n.article_body === 'string' && n.article_body.trim().length >= 300) : [];
+  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(isEligibleCandidate) : [];
   if (!candidates.length) {
     fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, total: 0, contenido: [] }, null, 2));
     console.log('⚠️ No hay artículos completos recuperados desde las fuentes. Los titulares RSS no se convierten en guiones; no se publica relleno.');
@@ -256,4 +283,4 @@ function main() {
 }
 if (require.main === module) main();
 
-module.exports = { isFutbolFemenino, typeFor, labelFor, importance };
+module.exports = { isFutbolFemenino, typeFor, labelFor, importance, ageHours, isEligibleCandidate, validSourceUrl };
