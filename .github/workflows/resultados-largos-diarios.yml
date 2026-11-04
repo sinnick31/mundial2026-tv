@@ -72,9 +72,6 @@ jobs:
           cache: npm
       - run: npm ci
       - name: ⚽ Obtener resultados de los últimos días
-        env:
-          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
-          COMPETITIONS: ${{ secrets.COMPETITIONS }}
         run: node scripts/fetch-matches.js
       - name: 🧪 Validar scripts
         run: |
