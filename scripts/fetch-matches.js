@@ -185,7 +185,7 @@ async function getMatchesFromESPN(options = {}) {
         errores.push({ liga: liga.nombre, slug: liga.slug, etapa: 'scoreboard_mes', mes: month, error: err.message });
         console.error('  ⚠️ ESPN ' + liga.nombre + ' (' + month + '): ' + err.message);
       }
-      await new Promise((resolve) => setTimeout(resolve, 150));
+      await sleep(150);
     }
   }
 
