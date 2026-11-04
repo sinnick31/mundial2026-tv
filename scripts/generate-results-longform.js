@@ -116,7 +116,8 @@ function buildSections(cache, options = {}) {\n  const teams = options.teamImage
 async function main() {
   const cache = loadCache();
   const {recent, upcoming, sections, standings, players} = buildSections(cache);
-  if (!sections.length) throw new Error('No hay resultados recientes ni próximos encuentros con datos suficientes. No se publica un video vacío.');
+  if (!standings.length) throw new Error('LONGFORM_STANDINGS_BLOCKED: no hay una tabla chilena completa y verificable; no se genera un video largo sin la sección prioritaria.');
+  if (!sections.length) throw new Error('No hay datos suficientes para el video largo.');
   const featured = recent[0];
   const title = 'Fútbol chileno: resultados, tabla de posiciones y figuras del campeonato';
   const intro = `Repasamos los resultados recientes, la tabla de posiciones del Campeonato Nacional y los líderes estadísticos disponibles. Con pocas fechas por jugar, cada punto puede mover la clasificación. Cerramos con los próximos encuentros confirmados.`;
@@ -151,8 +152,8 @@ async function main() {
   const thumbnailPath = path.join(path.dirname(OUT),'miniatura-resultados.png');
   const featuredMatch = featured?.titulo?.match(/^(.*?)\\s+\\d+\\s*[-–]\\s*\\d+\\s+(.*)$/);
   const thumbnailProps = JSON.stringify({
-    headline: featured ? `${featured.titulo}: resultados y próximos partidos` : 'Fútbol chileno: próximos partidos y agenda',
-    section: 'RESULTADOS Y AGENDA',
+    headline: title,
+    section: 'TABLA · RESULTADOS · FIGURAS',
     team1: featuredMatch?.[1]?.trim() || '',
     team2: featuredMatch?.[2]?.trim() || '',
     source: 'Fuentes deportivas verificadas',
