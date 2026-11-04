@@ -124,7 +124,7 @@ async function getMatchesFromESPN() {
 
 // ─── Pipeline principal ──────────────────────────────────────────────────────
 async function fetchMatches() {
-  console.log('⚽ CHILENSIS FÚTBOL — Resultados ESPN: Chile + ligas internacionales...\\n');
+  console.log('⚽ CHILENSIS FÚTBOL — Resultados ESPN: Chile + ligas internacionales...\n');
   const espn = await getMatchesFromESPN();
 
   const idsVistos = new Set();
