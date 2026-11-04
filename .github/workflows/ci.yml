@@ -18,6 +18,7 @@ on:
       - '.github/workflows/ci.yml'
       - '.github/workflows/resultados-largos-diarios.yml'
       - 'scripts/fetch-matches.js'
+      - 'scripts/fetch-chile-context.js'
       - 'config/**'
       - 'scripts/generate-results-longform.js'
       - 'scripts/generate-narration.js'
@@ -75,6 +76,7 @@ jobs:
           node --check scripts/reconcile-editorial-state.js
           node --check scripts/render-and-upload.js
           node --check scripts/fetch-matches.js
+          node --check scripts/fetch-chile-context.js
           node --check scripts/generate-results-longform.js
           node --check scripts/preflight-youtube-auth.js
 
