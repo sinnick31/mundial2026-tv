@@ -64,7 +64,8 @@ function shortAlreadyCoversPlayer(history, player) {
 
 function buildSections(cache, options = {}) {
   const history = options.history || loadHistory();
-  const teams = options.teamImages || readManifest(process.env.TEAM_IMAGES_JSON);\n  const playerManifest = options.playerImages || readManifest(process.env.PLAYER_IMAGES_JSON);
+  const teams = options.teamImages || readManifest(process.env.TEAM_IMAGES_JSON);
+  const playerManifest = options.playerImages || readManifest(process.env.PLAYER_IMAGES_JSON);
   const cutoff = Date.now() - 72 * 60 * 60 * 1000;
   const recentRaw = Array.isArray(cache.partidos_recientes) ? cache.partidos_recientes : [];
   const unique = new Map();
