@@ -41,7 +41,7 @@ const TeamBadge: React.FC<{name:string; src?:string; align?:'left'|'right'}> = (
 
 const StandingsTable: React.FC<{rows: NonNullable<ChileLongformSection['tablaRows']>; updated?:string}> = ({rows,updated}) => (
   <div style={{width:'100%',display:'flex',flexDirection:'column',gap:8}}>
-    <div style={{display:'grid',gridTemplateColumns:'54px minmax(280px,1fr) repeat(6,66px) 76px',gap:8,padding:'8px 12px',background:'#0b1726',color:'#9fc4e3',fontSize:15,fontWeight:900,letterSpacing:1}}>
+    <div style={{display:'grid',gridTemplateColumns:'54px minmax(280px,1fr) repeat(5,66px) 76px',gap:8,padding:'8px 12px',background:'#0b1726',color:'#9fc4e3',fontSize:15,fontWeight:900,letterSpacing:1}}>
       <span>#</span><span>CLUB</span><span>PJ</span><span>PG</span><span>PE</span><span>PP</span><span>DG</span><span>PTS</span>
     </div>
     {rows.map((row,i)=>(
@@ -126,7 +126,7 @@ const PlayerFeature: React.FC<{player:NonNullable<ChileLongformSection['jugador'
               <div style={{display:'flex',alignItems:'center',gap:18,background:'#101827',border:`1px solid ${accent}`,borderRadius:10,padding:'16px 25px',fontSize:54,fontWeight:1000,fontVariantNumeric:'tabular-nums',whiteSpace:'nowrap'}}><span>{score[2]}</span><span style={{color:accent}}>:</span><span>{score[3]}</span></div>
               <TeamBadge name={score[4].trim()} src={current.escudoVisita} align="right" />
             </div> : <div style={{fontSize:35,fontWeight:900,marginBottom:18}}>{clamp(current.titulo,105)}</div>}
-            <div style={{fontSize:22,lineHeight:1.38,color:'#e3ebf3'}}>{clamp(current.cuerpo,360)}</div>
+            {!isTable && !isPlayer ? <div style={{fontSize:22,lineHeight:1.38,color:'#e3ebf3'}}>{clamp(current.cuerpo,360)}</div> : null}
             {current.estadio ? <div style={{marginTop:16,display:'inline-flex',alignSelf:'flex-start',gap:10,alignItems:'center',background:'#0b1726',padding:'10px 14px',borderRadius:8,fontSize:18,color:'#d8e9f7'}}>🏟️ {clamp(current.estadio,100)}</div> : null}
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginTop:18,paddingTop:12,borderTop:'1px solid #294661',fontSize:15,color:'#a7bdd1'}}>
               <span>FUENTE: {clamp(current.fuente,55)}</span><span>{active+1} / {Math.max(1,safeSections.length)}</span>
