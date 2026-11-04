@@ -200,6 +200,7 @@ jobs:
           path: |
             daily-content.json
             matches-cache.json
+            content-history.json
           retention-days: 7
 
   render-longform:
