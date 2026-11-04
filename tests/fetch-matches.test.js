@@ -101,7 +101,7 @@ test('TheSportsDB normaliza resultados y calendario chilenos solo con datos comp
   assert.equal(normalized.enCurso.length, 0);
 });
 
-test('TheSportsDB consulta solo las dos ligas chilenas con ID y temporada definidos', async () => {
+test('TheSportsDB consulta resultados anteriores y próximos para las dos ligas chilenas', async () => {
   const calls = [];
   const result = await getMatchesFromTheSportsDB({
     now,
@@ -111,10 +111,13 @@ test('TheSportsDB consulta solo las dos ligas chilenas con ID y temporada defini
       return { events: [] };
     },
   });
-  assert.equal(calls.length, 2);
-  assert.ok(calls.some((url) => url.includes('id=4627&s=2026')));
-  assert.ok(calls.some((url) => url.includes('id=4899&s=2026')));
+  assert.equal(calls.length, 4);
+  assert.ok(calls.some((url) => url.includes('eventspastleague.php?id=4627')));
+  assert.ok(calls.some((url) => url.includes('eventsnextleague.php?id=4627')));
+  assert.ok(calls.some((url) => url.includes('eventspastleague.php?id=4899')));
+  assert.ok(calls.some((url) => url.includes('eventsnextleague.php?id=4899')));
   assert.equal(result.ligas_correctas, 2);
+  assert.equal(result.consultas_correctas, 4);
   assert.deepEqual(result.errores, []);
 });
 
@@ -122,8 +125,8 @@ test('TheSportsDB rechaza respuestas que no contienen events[]', async () => {
   const result = await getMatchesFromTheSportsDB({
     now,
     sleep: noWait,
-    request: async () => ({ events: null }),
+    request: async () => ({ events: 'invalid-shape' }),
   });
   assert.equal(result.ligas_correctas, 0);
-  assert.equal(result.errores.length, 2);
+  assert.equal(result.errores.length, 4);
 });

@@ -199,7 +199,7 @@ async function getMatchesFromESPN(options = {}) {
   };
 }
 
-function normalizeTheSportsDbEvents(events, liga, now = new Date()) {
+function normalizeTheSportsDbEvents(events, liga, now = new Date(), sourceUrl = null) {
   if (!Array.isArray(events)) throw new Error('TheSportsDB no devolvió events[]');
   const { startDay, endDay } = getWindow(now);
   const recientes = [], enCurso = [], proximos = [];
@@ -242,7 +242,7 @@ function normalizeTheSportsDbEvents(events, liga, now = new Date()) {
       fecha: date,
       enCurso: live,
       fuente: 'TheSportsDB',
-      fuente_url: 'https://www.thesportsdb.com/api/v1/json/123/eventsseason.php?id=' + liga.id + '&s=2026',
+      fuente_url: sourceUrl || ('https://www.thesportsdb.com/event/' + eventId),
       url: 'https://www.thesportsdb.com/event/' + eventId,
       theSportsDbEventId: eventId,
     };
@@ -259,25 +259,48 @@ async function getMatchesFromTheSportsDB(options = {}) {
   const now = options.now || new Date();
   const recientes = [], enCurso = [], proximos = [], errores = [];
   let ligasCorrectas = 0;
-  for (const liga of THESPORTSDB_LIGAS) {
-    const url = 'https://www.thesportsdb.com/api/v1/json/123/eventsseason.php?id=' + liga.id + '&s=2026';
-    try {
-      const data = await request(url);
-      if (!Array.isArray(data.events)) throw new Error('Respuesta sin events[] para temporada 2026');
-      ligasCorrectas += 1;
-      const normalized = normalizeTheSportsDbEvents(data.events, liga, now);
-      recientes.push(...normalized.recientes);
-      enCurso.push(...normalized.enCurso);
-      proximos.push(...normalized.proximos);
-    } catch (err) {
-      errores.push({ liga: liga.competencia, id: liga.id, error: err.message });
-      console.error('  ⚠️ TheSportsDB ' + liga.competencia + ': ' + err.message);
-    }
-    await sleep(250);
-  }
-  return { recientes, enCurso, proximos, errores, ligas_consultadas: THESPORTSDB_LIGAS.length, ligas_correctas: ligasCorrectas };
-}
+  let consultasCorrectas = 0;
 
+  for (const liga of THESPORTSDB_LIGAS) {
+    let ligaRespondio = false;
+    const endpoints = [
+      {
+        tipo: 'anteriores',
+        url: 'https://www.thesportsdb.com/api/v1/json/123/eventspastleague.php?id=' + liga.id,
+      },
+      {
+        tipo: 'proximos',
+        url: 'https://www.thesportsdb.com/api/v1/json/123/eventsnextleague.php?id=' + liga.id,
+      },
+    ];
+
+    for (const endpoint of endpoints) {
+      try {
+        const data = await request(endpoint.url);
+        const events = Array.isArray(data.events) ? data.events : (data.events == null ? [] : null);
+        if (!events) throw new Error('Respuesta sin events[] en endpoint ' + endpoint.tipo);
+        ligaRespondio = true;
+        consultasCorrectas += 1;
+        const normalized = normalizeTheSportsDbEvents(events, liga, now, endpoint.url);
+        recientes.push(...normalized.recientes);
+        enCurso.push(...normalized.enCurso);
+        proximos.push(...normalized.proximos);
+      } catch (err) {
+        errores.push({ liga: liga.competencia, id: liga.id, endpoint: endpoint.tipo, error: err.message });
+        console.error('  ⚠️ TheSportsDB ' + liga.competencia + ' (' + endpoint.tipo + '): ' + err.message);
+      }
+      await sleep(250);
+    }
+    if (ligaRespondio) ligasCorrectas += 1;
+  }
+
+  return {
+    recientes, enCurso, proximos, errores,
+    ligas_consultadas: THESPORTSDB_LIGAS.length,
+    ligas_correctas: ligasCorrectas,
+    consultas_correctas: consultasCorrectas,
+  };
+}
 function mergeUnique(...arrays) {
   const seen = new Set();
   return arrays.flat().filter((match) => {
