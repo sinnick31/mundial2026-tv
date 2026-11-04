@@ -122,9 +122,6 @@ jobs:
         run: node scripts/fetch-real-news.js
 
       - name: ⚽ Obtener datos estructurados
-        env:
-          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
-          COMPETITIONS: ${{ secrets.COMPETITIONS }}
         run: node scripts/fetch-matches.js
 
       - name: 🧠 Seleccionar SOLO historias con valor
