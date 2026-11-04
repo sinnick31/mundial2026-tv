@@ -89,14 +89,26 @@ function esEtiquetaEditorialGenerica(nombreEquipo) {
   ]).has(normalizado);
 }
 
+function tieneAutorizacionVisual(item) {
+  if (!item || item.rights !== 'authorized') return false;
+  if (typeof item.credit !== 'string' || !item.credit.trim()) return false;
+  if (typeof item.sourceUrl !== 'string' || !/^https:\/\//i.test(item.sourceUrl)) return false;
+  const hasPermissionEvidence = (typeof item.authorizationReference === 'string' && item.authorizationReference.trim().length > 0)
+    || (typeof item.licenseUrl === 'string' && /^https:\/\//i.test(item.licenseUrl));
+  const permittedUse = Array.isArray(item.permittedUse)
+    ? item.permittedUse.map(value => String(value).toLowerCase())
+    : [];
+  return hasPermissionEvidence && (permittedUse.includes('youtube') || permittedUse.includes('youtube_monetized'));
+}
+
 function imagenAutorizadaParaEquipo(nombreEquipo) {
-  // TEAM_IMAGES_JSON: {"Colo-Colo":{"url":"https://...","credit":"Club/autor","rights":"authorized","team":"Colo-Colo"}}
+  // TEAM_IMAGES_JSON: {"Colo-Colo":{"url":"https://...","sourceUrl":"https://...","credit":"Club/autor","rights":"authorized","team":"Colo-Colo","authorizationReference":"permiso/licencia identificable","permittedUse":["youtube"]}}
   // Una URL no basta: el catálogo debe identificar explícitamente el equipo y confirmar derechos.
   try {
     const catalogo = JSON.parse(process.env.TEAM_IMAGES_JSON || '{}');
     const key = Object.keys(catalogo).find(k => esMismoEquipo(k, nombreEquipo));
     const item = key ? catalogo[key] : null;
-    if (!item || item.rights !== 'authorized' || !/^https:\/\//i.test(item.url || '')) return {};
+    if (!item || !tieneAutorizacionVisual({ ...item, sourceUrl: item.sourceUrl || item.url }) || !/^https:\/\//i.test(item.url || '')) return {};
     if (typeof item.team !== 'string' || !esMismoEquipo(item.team, nombreEquipo)) return {};
     return {
       imagenEquipoSrc: item.url,
@@ -110,15 +122,13 @@ function imagenAutorizadaParaEquipo(nombreEquipo) {
 
 function elegirBroll(item) {
   // Nunca elegir clips al azar: el b-roll genérico puede mostrar un club equivocado.
-  // TEAM_BROLL_MANIFEST: [{"file":"colo-colo-01.mp4","team":"Colo-Colo","rights":"authorized","sourceUrl":"https://...","credit":"Autor/club"}]
+  // TEAM_BROLL_MANIFEST: [{"file":"colo-colo-01.mp4","team":"Colo-Colo","rights":"authorized","sourceUrl":"https://...","credit":"Autor/club","authorizationReference":"permiso/licencia identificable","permittedUse":["youtube"]}]
   try {
     const manifest = JSON.parse(process.env.TEAM_BROLL_MANIFEST || '[]');
     if (!Array.isArray(manifest)) return undefined;
     const equiposNoticia = [item?.equipo1, item?.equipo2].filter(Boolean);
     const candidatos = manifest.filter(entry => {
-      if (!entry || entry.rights !== 'authorized' || typeof entry.file !== 'string' || typeof entry.team !== 'string') return false;
-      if (typeof entry.credit !== 'string' || !entry.credit.trim()) return false;
-      if (typeof entry.sourceUrl !== 'string' || !/^https:\/\//i.test(entry.sourceUrl)) return false;
+      if (!entry || !tieneAutorizacionVisual(entry) || typeof entry.file !== 'string' || typeof entry.team !== 'string') return false;
       if (!equiposNoticia.some(equipo => esMismoEquipo(equipo, entry.team))) return false;
       if (path.basename(entry.file) !== entry.file || !/\.(mp4|mov|webm)$/i.test(entry.file)) return false;
       // Nunca permitir que clips genéricos descargados por fetch-broll.js se etiqueten como material de un club.
@@ -471,4 +481,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { normalizarNombreEquipo, esMismoEquipo, esEtiquetaEditorialGenerica };
+module.exports = { normalizarNombreEquipo, esMismoEquipo, esEtiquetaEditorialGenerica, tieneAutorizacionVisual };
