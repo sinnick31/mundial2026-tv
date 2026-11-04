@@ -121,7 +121,7 @@ const PlayerFeature: React.FC<{player:NonNullable<ChileLongformSection['jugador'
             <div style={{fontSize:13,fontWeight:900,letterSpacing:2}}>{isUpcoming?'FECHA':'FICHA'}</div><div style={{fontSize:44,fontWeight:900}}>{String(current.orden).padStart(2,'0')}</div>
           </div>
           <div style={{flex:1,background:template===2?'linear-gradient(115deg,rgba(11,48,47,.97),rgba(12,26,43,.98))':'linear-gradient(115deg,rgba(20,42,67,.98),rgba(12,26,43,.98))',border:`1px solid ${accent}66`,borderRadius:14,padding:'24px 30px',display:'flex',flexDirection:'column',justifyContent:'center',boxShadow:'0 18px 60px rgba(0,0,0,.22)'}}>
-            {score ? <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:26,marginBottom:20}}>
+            {isTable ? <StandingsTable rows={current.tablaRows || []} updated={current.actualizada} /> : isPlayer && current.jugador ? <PlayerFeature player={current.jugador} /> : score ? <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:26,marginBottom:20}}>
               <TeamBadge name={score[1].trim()} src={current.escudoLocal} />
               <div style={{display:'flex',alignItems:'center',gap:18,background:'#101827',border:`1px solid ${accent}`,borderRadius:10,padding:'16px 25px',fontSize:54,fontWeight:1000,fontVariantNumeric:'tabular-nums',whiteSpace:'nowrap'}}><span>{score[2]}</span><span style={{color:accent}}>:</span><span>{score[3]}</span></div>
               <TeamBadge name={score[4].trim()} src={current.escudoVisita} align="right" />
@@ -140,7 +140,7 @@ const PlayerFeature: React.FC<{player:NonNullable<ChileLongformSection['jugador'
           </div>
         </div>
       </div>
-      <div style={{position:'absolute',bottom:0,left:0,right:0,height:58,background:accent,display:'flex',alignItems:'center',padding:'0 64px',fontSize:18,fontWeight:900,letterSpacing:2}}>{isIntro?'NOTICIAS Y FÚTBOL · CHILENSIS FÚTBOL':isOutro?'FUENTES EN LA DESCRIPCIÓN · CHILENSIS FÚTBOL':isTable?'TABLA DE POSICIONES · DATOS DE LA FUENTE':'isPlayer?'FIGURAS DEL CAMPEONATO · ESTADÍSTICAS':'isUpcoming?'AGENDA DE ENCUENTROS · HORARIOS SUJETOS A CAMBIOS':'RESULTADOS Y DATOS DISPONIBLES · CHILENSIS FÚTBOL'}</div>
+      <div style={{position:'absolute',bottom:0,left:0,right:0,height:58,background:accent,display:'flex',alignItems:'center',padding:'0 64px',fontSize:18,fontWeight:900,letterSpacing:2}}>{isIntro?'NOTICIAS Y FÚTBOL · CHILENSIS FÚTBOL':isOutro?'FUENTES EN LA DESCRIPCIÓN · CHILENSIS FÚTBOL':isTable?'TABLA DE POSICIONES · DATOS DE LA FUENTE':isPlayer?'FIGURAS DEL CAMPEONATO · ESTADÍSTICAS':isUpcoming?'AGENDA DE ENCUENTROS · HORARIOS SUJETOS A CAMBIOS':'RESULTADOS Y DATOS DISPONIBLES · CHILENSIS FÚTBOL'}</div>
     </AbsoluteFill>
   );
 };
