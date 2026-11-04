@@ -4,6 +4,7 @@ import { PrediccionIA, defaultPrediccionProps } from "./PrediccionIA";
 import { EstadisticaViral, defaultEstadisticaProps } from "./EstadisticaViral";
 import { PrediccionShorts } from "./PrediccionShorts";
 import { JugadaAnimada, defaultJugadaProps } from "./JugadaAnimada";
+import { NoticiasMultiples } from "./NoticiasMultiples";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -64,6 +65,17 @@ export const RemotionRoot: React.FC = () => {
           emoji: "⚽",
           tipo: "eliminacion",
         }}
+      />
+
+      {/* 6. Noticias múltiples: montaje vertical con subtítulos y ficha independiente por noticia */}
+      <Composition
+        id="NoticiasMultiples"
+        component={NoticiasMultiples}
+        durationInFrames={750}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ items: [] }}
       />
 
       {/* 5. Jugada Animada — recreación 2D del gol, sin footage con copyright — 12s por defecto */}
