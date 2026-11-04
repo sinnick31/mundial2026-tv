@@ -16,3 +16,9 @@ test('asigna una categoría y rótulo propios al fútbol femenino', () => {
   assert.equal(typeFor(item), 'futbol_femenino');
   assert.equal(labelFor('futbol_femenino'), 'FÚTBOL FEMENINO');
 });
+
+
+test('la puntuación editorial no entrega puntos extra a Colo-Colo por su nombre', () => {
+  const base = { title: 'Noticia del campeonato', description: '', timestamp: new Date().toISOString(), viral_score: 50, prioridad_fuente: 80, categoria_feed: 'chile' };
+  assert.equal(importance({ ...base, title: 'Colo-Colo anuncia una novedad' }), importance({ ...base, title: 'Universidad de Chile anuncia una novedad' }));
+});
