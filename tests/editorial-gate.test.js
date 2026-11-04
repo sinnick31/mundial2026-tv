@@ -7,7 +7,7 @@ const { validatePackage, validateSourceUrl } = require('../scripts/editorial-gat
 function validPackage() {
   const source = 'https://example.com/noticia-futbol';
   return {
-    fecha: '2026-10-20',
+    fecha: new Date().toISOString().slice(0, 10),
     total: 1,
     contenido: [{
       _fuente_url: source,
@@ -20,6 +20,8 @@ function validPackage() {
       _tipo_contenido: 'noticia',
       _articulo_completo: true,
       _articulo_caracteres: 640,
+      _fecha_publicacion_verificada: true,
+      _fecha_publicacion_iso: new Date().toISOString(),
       _orden: 1,
     }],
   };
@@ -96,4 +98,22 @@ test('rechaza noticias construidas solo con un titular RSS', () => {
   pkg.contenido[0]._articulo_completo = false;
   pkg.contenido[0]._articulo_caracteres = 92;
   assert.throws(() => validatePackage(pkg), /artículo original incompleto/);
+});
+
+test('rechaza una noticia sin fecha de publicación verificada', () => {
+  const pkg = validPackage();
+  pkg.contenido[0]._fecha_publicacion_verificada = false;
+  assert.throws(() => validatePackage(pkg), /fecha de publicación no verificada/);
+});
+
+test('rechaza una noticia fuera de la ventana de actualidad', () => {
+  const pkg = validPackage();
+  pkg.contenido[0]._fecha_publicacion_iso = new Date(Date.now() - 73 * 3600000).toISOString();
+  assert.throws(() => validatePackage(pkg), /noticia caducada/);
+});
+
+test('rechaza una fecha de publicación demasiado futura', () => {
+  const pkg = validPackage();
+  pkg.contenido[0]._fecha_publicacion_iso = new Date(Date.now() + 7 * 3600000).toISOString();
+  assert.throws(() => validatePackage(pkg), /demasiado en el futuro/);
 });
