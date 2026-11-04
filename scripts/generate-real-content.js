@@ -96,12 +96,12 @@ function labelFor(type) {
   return type === 'futbol_femenino' ? 'FÚTBOL FEMENINO' : type === 'colo_colo' ? 'COLO-COLO' : type === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : type === 'internacional' ? 'FÚTBOL MUNDIAL' : 'FÚTBOL CHILENO';
 }
 function ganchoFor(item) {
-  const title = clean(item.title).replace(/[|]+/g, ' ').replace(/\\s+/g, ' ').trim();
-  return title.length > 110 ? title.slice(0, 107).replace(/\\s+\\S*$/, '') + '…' : title;
+  const title = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return title.length > 110 ? title.slice(0, 107).replace(/\s+\S*$/, '') + '…' : title;
 }
 function titleFor(item) {
-  const base = clean(item.title).replace(/[|]+/g, ' ').replace(/\\s+/g, ' ').trim();
-  return base.length > 100 ? base.slice(0, 97).replace(/\\s+\\S*$/, '') + '…' : base;
+  const base = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return base.length > 100 ? base.slice(0, 97).replace(/\s+\S*$/, '') + '…' : base;
 }
 function fechaPublicacion(item) {
   const raw = item.pubDate || item.timestamp;
