@@ -83,9 +83,9 @@ jobs:
       - name: 🔐 Validar canal y OAuth
         if: inputs.render_only == 'false'
         env:
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
         run: node scripts/preflight-youtube-auth.js
       - name: 🌐 Preparar Remotion
@@ -93,9 +93,9 @@ jobs:
       - name: 🎬 Renderizar resumen largo
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
           RESULTS_VIDEO_PRIVACY: ${{ inputs.privacy || vars.RESULTS_VIDEO_PRIVACY || 'public' }}
           PUBLISH_TO_YOUTUBE: ${{ inputs.render_only == 'false' && 'true' || 'false' }}
