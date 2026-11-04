@@ -259,7 +259,7 @@ function main() {
     rejection_counts: rejectionCounts,
     rejected_examples: rejectedExamples,
   };
-  fs.writeFileSync('editorial-diagnostics.json', JSON.stringify(diagnostics, null, 2) + '\\n');
+  fs.writeFileSync('editorial-diagnostics.json', JSON.stringify(diagnostics, null, 2) + '\n');
   console.log('🔬 Diagnóstico editorial: ' + JSON.stringify({
     cache_total: diagnostics.cache_total,
     eligible_total: diagnostics.eligible_total,
