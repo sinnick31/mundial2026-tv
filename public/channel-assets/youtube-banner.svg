@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440" role="img" aria-labelledby="title desc">
+<title id="title">FÚTBOL CHILENSIS · YouTube Channel Banner</title>
+<desc id="desc">Banner de sala de prensa deportiva. El nombre y la propuesta editorial están dentro del área segura central para todos los dispositivos.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset=".52" stop-color="#142b42"/><stop offset="1" stop-color="#07111f"/></linearGradient>
+  <linearGradient id="red" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ff4257"/><stop offset="1" stop-color="#c8102e"/></linearGradient>
+  <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse"><path d="M72 0H0V72" fill="none" stroke="#42617a" stroke-width="2" opacity=".22"/></pattern>
+</defs>
+<rect width="2560" height="1440" fill="url(#bg)"/><rect width="2560" height="1440" fill="url(#grid)"/>
+<path d="M0 180H2560M0 1260H2560" stroke="#e31b36" stroke-width="10" opacity=".75"/>
+<path d="M0 0L620 1440H820L250 0ZM2080 0H2560V1440H2380L1930 250Z" fill="#e31b36" opacity=".08"/>
+<g opacity=".18" fill="none" stroke="#8ba7bd" stroke-width="10"><circle cx="270" cy="720" r="220"/><circle cx="2290" cy="720" r="220"/><path d="M50 720H490M2070 720H2510"/></g>
+<!-- Safe area: 1546 x 423, centered -->
+<g transform="translate(540 520)">
+  <rect x="0" y="20" width="18" height="300" rx="9" fill="url(#red)"/>
+  <path d="M76 58H170L226 160L170 262H76L132 160Z" fill="url(#red)"/>
+  <circle cx="151" cy="160" r="46" fill="none" stroke="#fff" stroke-width="7"/>
+  <path d="M151 116L176 137L166 167H136L126 137Z" fill="none" stroke="#fff" stroke-width="5"/>
+  <text x="280" y="155" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="124" font-weight="900" letter-spacing="-2">FÚTBOL</text>
+  <text x="280" y="280" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="124" font-weight="900" letter-spacing="-2">CHILENSIS</text>
+  <rect x="285" y="316" width="920" height="8" fill="url(#red)"/>
+  <text x="285" y="380" fill="#c6d6e4" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700" letter-spacing="5">NOTICIAS · RESULTADOS · ANÁLISIS</text>
+</g>
+</svg>
