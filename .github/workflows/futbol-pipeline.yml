@@ -225,12 +225,24 @@ jobs:
         run: |
           npx remotion browser ensure
           sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: 🏟️ Renderizar tabla, resultados y figuras
+      - name: 🔐 Validar OAuth antes de publicar el video largo
+        if: inputs.render_only == 'false'
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
+        run: node scripts/preflight-youtube-auth.js
+      - name: 🏟️ Renderizar y, si fue autorizado, subir el video largo
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
           PLAYER_IMAGES_JSON: ${{ secrets.PLAYER_IMAGES_JSON }}
-          PUBLISH_TO_YOUTUBE: 'false'
+          YOUTUBE_CLIENT_ID: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
+          PUBLISH_TO_YOUTUBE: ${{ inputs.render_only == 'false' && 'true' || 'false' }}
+          RESULTS_VIDEO_PRIVACY: ${{ inputs.privacy || 'private' }}
         run: node scripts/generate-results-longform.js
       - name: 📦 Guardar video largo renderizado
         uses: actions/upload-artifact@v6
