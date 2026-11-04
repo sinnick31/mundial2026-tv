@@ -46,11 +46,12 @@ function buildSections(cache) {
     || new Date(b.fecha || 0) - new Date(a.fecha || 0)
   ).slice(0, 6).map((m,i) => {
     const scorers = Array.isArray(m.goleadores) ? m.goleadores.filter(Boolean).join(', ') : (m.goleadores || m.scorers || '');
-    const scorerText = scorers ? `Goleadores indicados por la fuente: ${scorers}.` : 'La fuente consultada no entrega los nombres de los goleadores; no los inferimos.';
-    const venueText = m.estadio ? `Estadio: ${m.estadio}.` : 'El estadio no figura en los datos disponibles.';
+    const scorerText = scorers ? `Goles de ${scorers}.` : '';
+    const venueText = m.estadio ? `Se jugó en ${m.estadio}.` : '';
+    const resultContext = m.golesLocal === m.golesVisita ? 'Un empate que repartió los puntos.' : m.golesLocal > m.golesVisita ? `${m.equipo1} se quedó con la victoria.` : `${m.equipo2} se llevó el triunfo.`;
     return {
       orden:i+1, tipo:'resultado', titulo:`${m.equipo1} ${m.golesLocal} - ${m.golesVisita} ${m.equipo2}`,
-      cuerpo:`Finalizado · ${m.competencia || 'Competencia no especificada'}. ${scorerText} ${venueText}`,
+      cuerpo:`${m.competencia || 'Fútbol'}. ${resultContext} ${scorerText} ${venueText}`.trim(),
       escudoLocal:m.escudoLocal||'', escudoVisita:m.escudoVisita||'', estadio:m.estadio||'',
       fuente:m.fuente||'Fuente deportiva', url:m.url||'https://www.espn.com/soccer/scoreboard',
     };
@@ -59,7 +60,7 @@ function buildSections(cache) {
   const upcoming = upcomingRaw.filter(m => m.equipo1 && m.equipo2 && m.fecha && !Number.isNaN(Date.parse(m.fecha)) && Date.parse(m.fecha) >= Date.now())
     .sort((a,b)=>new Date(a.fecha)-new Date(b.fecha)).slice(0,4).map((m,i)=>({
       orden:recent.length+i+1, tipo:'proximo', titulo:`PRÓXIMO: ${m.equipo1} vs ${m.equipo2}`,
-      cuerpo:`Programado para ${fechaLocal(m.fecha)} · ${m.competencia||'Competencia no especificada'}. La programación puede cambiar; confirma el horario con la fuente. ${m.estadio ? `Estadio: ${m.estadio}.` : 'El estadio no aparece en los datos recibidos.'}`,
+      cuerpo:`Se juega ${fechaLocal(m.fecha)} · ${m.competencia||'Fútbol'}.${m.estadio ? ` Estadio: ${m.estadio}.` : ''} Revisa la programación antes del encuentro.`,
       escudoLocal:m.escudoLocal||'', escudoVisita:m.escudoVisita||'', estadio:m.estadio||'', fechaTexto:fechaLocal(m.fecha),
       fuente:m.fuente||'Fuente deportiva', url:m.url||'https://www.espn.com/soccer/scoreboard',
     }));
@@ -70,10 +71,11 @@ async function main() {
   const cache = loadCache();
   const {recent, upcoming, sections} = buildSections(cache);
   if (!sections.length) throw new Error('No hay resultados recientes ni próximos encuentros con datos suficientes. No se publica un video vacío.');
-  const title = `FÚTBOL: RESULTADOS Y PRÓXIMAS FECHAS | Chile y el mundo | ${TODAY}`;
-  const intro = `Edición de fútbol chileno e internacional. Incluimos ${recent.length} resultados recientes y ${upcoming.length} próximos encuentros encontrados en las fuentes consultadas. Los goleadores y estadios se nombran solo cuando aparecen en los datos recibidos.`;
+  const featured = recent[0];
+  const title = featured ? `${featured.titulo}: resultados y próximos partidos`.slice(0, 100) : 'Fútbol chileno: próximos partidos y agenda';
+  const intro = `Revisamos ${recent.length} resultados recientes y ${upcoming.length} partidos que vienen. Vamos con los encuentros que dejan algo para analizar y lo que se viene en la cancha.`;
   const sectionNarration = sections.map((s,i)=>`${s.tipo==='proximo'?'Próximo encuentro':'Resultado final'} ${i+1}. ${s.titulo}. ${s.cuerpo}`);
-  const closing = 'Estas son las novedades disponibles en las fuentes enlazadas en la descripción. Las fechas pueden cambiar; revisa la fuente antes de cada encuentro.';
+  const closing = 'La jornada sigue abierta y cada punto puede cambiar el panorama. ¿Qué resultado o próximo partido te parece más importante? Te leo en los comentarios.';
   const narrationBlocks = [title, intro, ...sectionNarration, closing];
   const narration = narrationBlocks.join('\n\n');
   const audioPath = path.join(ROOT, 'public', 'tmp', 'resultados-diarios.wav');
@@ -105,7 +107,7 @@ async function main() {
   const {youtube} = await getAuthenticatedYouTube();
   const channel = await verifyChannel(youtube);
   const sourceList = sections.map(s=>`${s.titulo}\nFuente: ${s.fuente}\n${s.url}`).join('\n\n');
-  const description = `${intro}\n\nLos nombres de goleadores y estadios se incluyen solo cuando están disponibles en los datos recibidos. Las fechas programadas pueden cambiar. No se incluyen clips de retransmisión.\n\nFUENTES\n${sourceList}\n\n#FutbolChileno #ColoColo #ResultadosFutbol #ProximosPartidos #FutbolMundial`;
+  const description = `${intro}\n\nLos datos de partidos y programación se contrastan con las fuentes enlazadas. Los horarios pueden cambiar. No se incluyen clips de retransmisión.\n\nFUENTES\n${sourceList}\n\n#FutbolChileno #ColoColo #ResultadosFutbol #ProximosPartidos #FutbolMundial`;
   const privacyStatus = process.env.RESULTS_VIDEO_PRIVACY || 'private';
   const response = await youtube.videos.insert({
     part:['snippet','status'],
