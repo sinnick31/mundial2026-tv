@@ -31,7 +31,7 @@ function publicationTimestamp(item) {
 }
 function ageHours(item) {
   const ts = publicationTimestamp(item);
-  return ts === null ? Infinity : (Date.now() - ts) / 36e5;
+  return ts === null ? Infinity : Math.max(0, (Date.now() - ts) / 36e5);
 }
 function validSourceUrl(value) {
   try {
@@ -41,7 +41,8 @@ function validSourceUrl(value) {
   } catch (_) { return false; }
 }
 function isEligibleCandidate(item) {
-  const age = ageHours(item);
+  const timestamp = publicationTimestamp(item);
+  const age = timestamp === null ? Infinity : (Date.now() - timestamp) / 36e5;
   const source = String(item.fuente || item.fuente_original || item.fuente_host || '').trim();
   return item.article_complete === true
     && typeof item.article_body === 'string' && item.article_body.trim().length >= 300
