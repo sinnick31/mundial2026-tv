@@ -130,6 +130,7 @@ function normalizeEspnEvent(event, liga) {
 
 async function getMatchesFromESPN(options = {}) {
   const request = options.request || httpGet;
+  const sleep = options.sleep || ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
   const now = options.now || new Date();
   const { start, end, startDay, endDay } = getWindow(now);
   const config = validateEspnLeagueConfig();
@@ -156,7 +157,7 @@ async function getMatchesFromESPN(options = {}) {
       errores.push({ liga: liga.nombre, slug: liga.slug, etapa: 'validacion_id', error: err.message });
       console.error('  ⚠️ Identificador ESPN no validado ' + liga.slug + ': ' + err.message);
     }
-    await new Promise((resolve) => setTimeout(resolve, 150));
+    await sleep(150);
   }
 
   // ESPN rechaza rangos YYYYMMDD-YYYYMMDD en varias respuestas 400.
@@ -217,9 +218,10 @@ function normalizeTheSportsDbEvents(events, liga, now = new Date()) {
       Number.isFinite(Number(event.intHomeScore)) && Number.isFinite(Number(event.intAwayScore));
     const live = /in progress|live|1st half|2nd half|half time|extra time/.test(status);
     const finished = /match finished|finished|full time|ft/.test(status);
+    const scheduled = /not started|scheduled|upcoming|fixture/.test(status);
     if (live && !hasScore) continue;
     if (finished && !hasScore) continue;
-    if (!live && !finished && date <= now.toISOString().slice(0, 10)) continue;
+    if (!live && !finished && !scheduled && date <= now.toISOString().slice(0, 10)) continue;
 
     const match = {
       id: 'thesportsdb-' + eventId,
@@ -253,6 +255,7 @@ function normalizeTheSportsDbEvents(events, liga, now = new Date()) {
 
 async function getMatchesFromTheSportsDB(options = {}) {
   const request = options.request || httpGet;
+  const sleep = options.sleep || ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
   const now = options.now || new Date();
   const recientes = [], enCurso = [], proximos = [], errores = [];
   let ligasCorrectas = 0;
@@ -270,7 +273,7 @@ async function getMatchesFromTheSportsDB(options = {}) {
       errores.push({ liga: liga.competencia, id: liga.id, error: err.message });
       console.error('  ⚠️ TheSportsDB ' + liga.competencia + ': ' + err.message);
     }
-    await new Promise((resolve) => setTimeout(resolve, 250));
+    await sleep(250);
   }
   return { recientes, enCurso, proximos, errores, ligas_consultadas: THESPORTSDB_LIGAS.length, ligas_correctas: ligasCorrectas };
 }
@@ -278,7 +281,8 @@ async function getMatchesFromTheSportsDB(options = {}) {
 function mergeUnique(...arrays) {
   const seen = new Set();
   return arrays.flat().filter((match) => {
-    const key = String(match.id || [match.equipo1, match.equipo2, match.fecha].join('|'));
+    const teams = [String(match.equipo1 || '').trim().toLocaleLowerCase(), String(match.equipo2 || '').trim().toLocaleLowerCase()].sort();
+    const key = teams.join('|') + '|' + String(match.fecha || '').slice(0, 10);
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
