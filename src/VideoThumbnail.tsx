@@ -13,11 +13,11 @@ export type VideoThumbnailProps = {
 };
 
 const short = (value = '', max = 76) => value.length > max ? value.slice(0, max - 1).trimEnd() + '…' : value;
-const initials = (value = '?') => value.split(/\\s+/).filter(Boolean).slice(0, 2).map(x => x[0]).join('').toUpperCase();
+const initials = (value = '?') => value.split(' ').filter(Boolean).slice(0, 2).map(x => x[0]).join('').toUpperCase();
 
 const ClubVisual: React.FC<{ name?: string; image?: string; side: 'left' | 'right' }> = ({ name, image, side }) => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 9, width: 180, minWidth: 0 }}>
-    {image && /^https:\\/\\//i.test(image)
+    {image && image.startsWith('https://')
       ? <Img src={image} style={{ width: 112, height: 112, objectFit: 'contain', background: '#fff', borderRadius: 18, padding: 8 }} />
       : <div style={{ width: 112, height: 112, borderRadius: 56, background: 'linear-gradient(145deg,#fff,#b8c4d2)', color: '#101827', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 36, fontWeight: 900 }}>{initials(name || (side === 'left' ? 'FC' : 'CLUB'))}</div>}
     <div style={{ color: '#fff', fontSize: 20, lineHeight: 1.1, fontWeight: 900, textAlign: 'center' }}>{short(name || '', 22)}</div>
