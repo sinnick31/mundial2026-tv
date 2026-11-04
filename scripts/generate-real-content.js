@@ -24,8 +24,25 @@ function normalize(s = '') {
   return clean(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 function ageHours(item) {
-  const ts = new Date(item.timestamp || Date.now()).getTime();
-  return Math.max(0, (Date.now() - ts) / 36e5);
+  const ts = Date.parse(item && item.timestamp);
+  if (!Number.isFinite(ts)) return Infinity;
+  return (Date.now() - ts) / 36e5;
+}
+function isEligibleNewsCandidate(item, now = Date.now()) {
+  if (!item || item.article_complete !== true || typeof item.article_body !== 'string' || item.article_body.trim().length < 300) return false;
+  if (item.fecha_publicacion_verificada !== true) return false;
+  const published = Date.parse(item.timestamp);
+  if (!Number.isFinite(published)) return false;
+  const age = (now - published) / 36e5;
+  if (age > 72 || age < -6) return false;
+  if (typeof item.link !== 'string') return false;
+  try {
+    const url = new URL(item.link);
+    if (!['http:', 'https:'].includes(url.protocol) || !url.hostname.includes('.')) return false;
+  } catch (_) { return false; }
+  const source = String(item.fuente || item.fuente_host || '').trim();
+  if (!source || /fuente deportiva|desconocida|google news/i.test(source)) return false;
+  return true;
 }
 function isColo(item) {
   const t = normalize(`${item.title} ${item.description} ${item.equipo_chile || ''}`);
@@ -193,7 +210,7 @@ function buildItem(item, type, order) {
 function main() {
   const news = readJson('news-cache.json', { noticias: [] });
   const history = loadHistory();
-  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => ageHours(n) <= 72 && n.link && n.article_complete === true && typeof n.article_body === 'string' && n.article_body.trim().length >= 300) : [];
+  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => isEligibleNewsCandidate(n)) : [];
   if (!candidates.length) {
     fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, total: 0, contenido: [] }, null, 2));
     console.log('⚠️ No hay artículos completos recuperados desde las fuentes. Los titulares RSS no se convierten en guiones; no se publica relleno.');
@@ -260,4 +277,4 @@ function main() {
 }
 if (require.main === module) main();
 
-module.exports = { isFutbolFemenino, typeFor, labelFor };
+module.exports = { isFutbolFemenino, typeFor, labelFor, ageHours, isEligibleNewsCandidate, buildItem, snippet };
