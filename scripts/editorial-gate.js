@@ -84,6 +84,9 @@ function validatePackage(pkg) {
     if (typeof item._noticia_original !== 'string' || item._noticia_original.trim().length < 8) {
       fail(`pieza ${n}: hecho/titular original ausente`);
     }
+    if (item._tipo_contenido === 'noticia' && (item._articulo_completo !== true || !Number.isInteger(item._articulo_caracteres) || item._articulo_caracteres < 300)) {
+      fail(`pieza ${n}: artículo original incompleto; un titular RSS no basta para redactar una noticia`);
+    }
     if (typeof item.titulo_youtube !== 'string'
         || item.titulo_youtube.trim().length < 12
         || item.titulo_youtube.length > 100) {
