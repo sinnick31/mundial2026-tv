@@ -33,16 +33,16 @@ function buildRetention(item) {
   item.pregunta_comunidad = question;
   item.cta_suscripcion = cta;
   item.estructura_retencion = {
-    gancho_0_a_5s: hook,
+    gancho_0_a_3s: hook,
     actos: {
       hecho: title,
       analisis: String(item.subtitulo || item.descripcion || ''),
       consecuencia: String(item.puntos?.at(-1) || question),
     },
     cambios_de_ritmo: [
-      { momento: '0-5s', objetivo: 'Abrir con una duda o tensión ligada al hecho publicado.' },
-      { momento: 'cada 15s', objetivo: 'Introducir contexto, dato confirmado o cambio visual; no inventar estadísticas.' },
-      { momento: '70-80%', objetivo: 'Insertar CTA después de entregar el análisis principal.' },
+      { momento: '0-3s', objetivo: 'Abrir directamente con el hecho atractivo, sin presentación ni fecha de la fuente.' },
+      { momento: 'cada 3-5s', objetivo: 'Cambiar imagen, plano o gráfico con información confirmada para sostener el ritmo.' },
+      { momento: 'cierre', objetivo: 'Cerrar con una pregunta concreta y un CTA breve, sin repetir el titular.' },
     ],
   };
   const overlay = /lesion|baja|descartad|sancion/i.test(normalized) ? 'BAJA CLAVE'
