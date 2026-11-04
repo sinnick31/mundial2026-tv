@@ -88,7 +88,7 @@ async function main() {
   if (!audio.audioPath || !audio.duracionSeg) throw new Error('No se pudo generar la narración; se cancela la publicación para evitar un vídeo sin audio. Revisa GEMINI_API_KEY y el servicio TTS.');
   const audioFrames = Math.ceil((audio.duracionSeg + 0.5) * FPS);
   const weights = sectionNarration.map(wordCount);
-  const introWords = wordCount(title) + wordCount(intro);
+  const introWords = wordCount(intro);
   const totalWords = narrationBlocks.reduce((sum,block)=>sum+wordCount(block),0) || 1;
   const outroFrames = Math.max(60, Math.round(audioFrames * wordCount(closing) / totalWords));
   const introFrames = Math.max(60, Math.round(audioFrames * introWords / totalWords));
