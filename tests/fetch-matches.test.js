@@ -125,7 +125,7 @@ test('TheSportsDB rechaza respuestas que no contienen events[]', async () => {
   const result = await getMatchesFromTheSportsDB({
     now,
     sleep: noWait,
-    request: async () => ({ events: null }),
+    request: async () => ({ events: 'invalid-shape' }),
   });
   assert.equal(result.ligas_correctas, 0);
   assert.equal(result.errores.length, 4);
