@@ -96,6 +96,9 @@ function extractArticle(html = '') {
     const re = new RegExp('<' + tag + '\\b[^>]*>[\\s\\S]*?<\\/' + tag + '\\s*>', 'gi');
     for (const match of html.matchAll(re)) regions.push(match[0]);
   }
+  // Varios CMS publican el cuerpo en contenedores div/section sin usar <article>.
+  const bodyContainers = html.match(/<(div|section)\\b(?=[^>]*(?:itemprop=["']articleBody["']|class=["'][^"']*(?:article-body|article-content|story-body|news-content)[^"']*["']))[^>]*>[\\s\\S]*?<\\/\\1>/gi) || [];
+  regions.push(...bodyContainers);
   const rankedRegions = regions
     .map(region => (region.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi) || []).map(plainText).filter(t => t.length >= 45).join(' '))
     .sort((x, y) => y.length - x.length);
