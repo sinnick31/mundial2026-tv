@@ -96,10 +96,13 @@ async function main() {
   fs.mkdirSync(path.dirname(OUT), {recursive:true});
   const propsArg = JSON.stringify(props).replace(/'/g, "'\\''");
   execSync(`npx remotion render src/index.tsx ChileLongform "${OUT}" --props='${propsArg}' --duration-in-frames=${durationInFrames} --codec=h264 --fps=30 --width=1920 --height=1080 --concurrency=2`, {cwd:ROOT, stdio:'inherit'});
+  const thumbnailPath = path.join(path.dirname(OUT),'miniatura-resultados.png');
+  const thumbnailProps = JSON.stringify({date:TODAY,count:sections.length}).replace(/'/g, "'\\''");
+  execSync(`npx remotion still src/index.tsx ResultsThumbnail "${thumbnailPath}" --props='${thumbnailProps}' --frame=0 --scale=1`, {cwd:ROOT,stdio:'inherit'});
 
   // Por seguridad, este script solo renderiza localmente salvo autorización explícita.
   if (String(process.env.PUBLISH_TO_YOUTUBE || '').toLowerCase() !== 'true') {
-    const report = {date:TODAY,mode:'render-only',localPath:OUT,totalMatches:sections.length,results:recent.length,upcoming:upcoming.length,title};
+    const report = {date:TODAY,mode:'render-only',localPath:OUT,thumbnailPath,totalMatches:sections.length,results:recent.length,upcoming:upcoming.length,title};
     fs.writeFileSync(path.join(path.dirname(OUT),'reporte-resultados.json'),JSON.stringify(report,null,2));
     console.log('RENDER LOCAL COMPLETADO; NO SE SUBIÓ A YOUTUBE '+JSON.stringify(report));
     return;
@@ -118,9 +121,6 @@ async function main() {
     media:{body:fs.createReadStream(OUT)},
   });
   if (!response.data.id) throw new Error('YouTube no devolvió un ID de vídeo.');
-  const thumbnailPath = path.join(path.dirname(OUT),'miniatura-resultados.png');
-  const thumbnailProps = JSON.stringify({date:TODAY,count:sections.length}).replace(/'/g, "'\\''");
-  execSync(`npx remotion still src/index.tsx ResultsThumbnail "${thumbnailPath}" --props='${thumbnailProps}' --frame=0 --scale=1`, {cwd:ROOT,stdio:'inherit'});
   await youtube.thumbnails.set({videoId:response.data.id,media:{mimeType:'image/png',body:fs.createReadStream(thumbnailPath)}});
   const actualPrivacy = response.data.status?.privacyStatus || 'unknown';
   const report = {date:TODAY,channelId:channel.id,videoId:response.data.id,url:`https://youtu.be/${response.data.id}`,totalMatches:sections.length,results:recent.length,upcoming:upcoming.length,thumbnailPath,thumbnailUploaded:true,requestedPrivacyStatus:privacyStatus,privacyStatus:actualPrivacy,title};
