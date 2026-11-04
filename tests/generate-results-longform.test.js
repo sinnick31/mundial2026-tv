@@ -99,3 +99,46 @@ test('no acepta fotos de jugadores sin evidencia explícita de licencia para You
   });
   assert.equal(result.players[0].jugador.imagen,'');
 });
+
+test('omite del video largo el partido ya cubierto por un Short del mismo día', () => {
+  const history = {items:[{
+    tipo_contenido:'noticia',
+    hook:'Universidad de Chile y Colo Colo se enfrentan en el clásico',
+    titulo:'Universidad de Chile vs Colo Colo: previa del clásico',
+    fecha:new Date().toISOString(),
+  }]};
+  const cache = {
+    fecha:new Date().toISOString(),
+    partidos_recientes:[{
+      estado:'finalizado',equipo1:'Universidad de Chile',equipo2:'Colo Colo',
+      golesLocal:2,golesVisita:1,competencia:'Primera División de Chile',
+      fecha:new Date().toISOString(),fuente:'ESPN',url:'https://www.espn.com/soccer/match',
+    }],
+    partidos_proximos:[],
+    tabla_posiciones:Array.from({length:8},(_,i)=>({
+      posicion:i+1,equipo:'Club '+i,pj:25,pts:50-i,
+    })),
+    jugadores_destacados:[{
+      nombre:'Jugador del Clásico',equipo:'Universidad de Chile',categoria:'Goles',valor:'10',
+    }],
+  };
+  const result = buildSections(cache,{history});
+  assert.equal(result.recent.length,0);
+  assert.equal(result.sections[0].tipo,'tabla');
+});
+
+test('omite del bloque de figuras a un jugador ya cubierto por un Short', () => {
+  const history = {items:[{
+    tipo_contenido:'noticia',
+    hook:'Jugador Destacado firma renovación con Club A',
+    titulo:'Jugador Destacado renueva contrato',
+    fecha:new Date().toISOString(),
+  }]};
+  const cache = {
+    partidos_recientes:[],partidos_proximos:[],
+    tabla_posiciones:Array.from({length:8},(_,i)=>({posicion:i+1,equipo:'Club '+i,pts:30-i})),
+    jugadores_destacados:[{nombre:'Jugador Destacado',equipo:'Club A',categoria:'Goles',valor:'14'}],
+  };
+  const result = buildSections(cache,{history});
+  assert.equal(result.players.length,0);
+});
