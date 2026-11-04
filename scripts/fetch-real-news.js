@@ -202,7 +202,9 @@ async function main() {
 
       for (const item of parsed) {
         if (fresh.some(n => similitud(n.title, item.title) >= 0.65)) continue;
-        if (previous.some(n => similitud(n.title, item.title) >= 0.65)) continue;
+        const cachedMatch = previous.find(n => similitud(n.title, item.title) >= 0.65);
+        if (cachedMatch?.article_complete === true) continue;
+        // Si la noticia previa solo tenía un snippet RSS, volver a intentar recuperar el artículo completo.
         const viral = calcularViralScore({ ...item, categoria: item.categoria_feed });
         fresh.push({ ...item, categoria: viral.categoria, equipo_chile: viral.equipoChile, viral_score: viral.score, razones: viral.razones });
       }
