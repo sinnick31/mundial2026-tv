@@ -59,8 +59,8 @@ function buildSections(cache, options = {}) {\n  const teams = options.teamImage
     if (!unique.has(key)) unique.set(key, m);
   }
   const recent = [...unique.values()].sort((a,b) =>
-    (Number(isColo(b))*100 + Number(isChile(b))*30 + Number(b.prioridad||0))
-    - (Number(isColo(a))*100 + Number(isChile(a))*30 + Number(a.prioridad||0))
+    (Number(isChile(b))*30 + Number(b.prioridad||0))
+    - (Number(isChile(a))*30 + Number(a.prioridad||0))
     || new Date(b.fecha || 0) - new Date(a.fecha || 0)
   ).slice(0, 6).map((m,i) => {
     const scorers = Array.isArray(m.goleadores) ? m.goleadores.filter(Boolean).join(', ') : (m.goleadores || m.scorers || '');
@@ -89,7 +89,7 @@ function buildSections(cache, options = {}) {\n  const teams = options.teamImage
   for (let offset = 0; offset < standings.length; offset += 8) {
     const rows = standings.slice(offset, offset + 8).map(row => ({ ...row, escudo: teamImage(row.equipo, teams) }));
     tableSections.push({
-      orden: recent.length + tableSections.length + 1, tipo:'tabla',
+      orden: tableSections.length + 1, tipo:'tabla',
       titulo:`TABLA DE POSICIONES · PUESTOS ${offset + 1}–${offset + rows.length}`,
       cuerpo: rows.slice(0, 4).map((row, i) => `${row.posicion || offset + i + 1}. ${row.equipo}, ${row.pts} puntos`).join('; '),
       tablaRows: rows, fuente: cache.tabla_fuente || 'Fuente de clasificación',
@@ -102,7 +102,7 @@ function buildSections(cache, options = {}) {\n  const teams = options.teamImage
     .slice(0, 4).map((player, i) => {
       const image = playerImage(player, playerManifest);
       return {
-        orden: recent.length + tableSections.length + i + 1, tipo:'jugador',
+        orden: tableSections.length + recent.length + i + 1, tipo:'jugador',
         titulo:player.nombre,
         cuerpo:`${player.equipo ? player.equipo + '. ' : ''}${player.categoria}: ${player.valor}.`,
         jugador:{ ...player, imagen:image?.url || '', creditoImagen:image?.credit || '' },
@@ -110,7 +110,7 @@ function buildSections(cache, options = {}) {\n  const teams = options.teamImage
         url:player.url || cache.jugadores_url || 'https://www.espn.com/soccer/',
       };
     });
-  return {recent, upcoming, standings, players, tableSections, sections:[...recent,...tableSections,...players,...upcoming]};
+  return {recent, upcoming, standings, players, tableSections, sections:[...tableSections,...recent,...players,...upcoming]};
 }
 
 async function main() {
@@ -170,12 +170,13 @@ async function main() {
   const {youtube} = await getAuthenticatedYouTube();
   const channel = await verifyChannel(youtube);
   const sourceList = sections.map(s=>`${s.titulo}\nFuente: ${s.fuente}\n${s.url}`).join('\n\n');
-  const description = `${intro}\n\nLos datos de partidos y programación se contrastan con las fuentes enlazadas. Los horarios pueden cambiar. No se incluyen clips de retransmisión.\n\nFUENTES\n${sourceList}\n\n#FutbolChileno #ColoColo #ResultadosFutbol #ProximosPartidos #FutbolMundial`;
+  const standingsNote = standings.length ? `\n\nTABLA DE POSICIONES: ${cache.tabla_url || ''}\nActualizada: ${cache.tabla_actualizada || 'fecha no informada'}` : '\n\nLa tabla no se mostró porque las fuentes no entregaron una clasificación completa y verificable.';
+  const description = `${intro}${standingsNote}\n\nLos datos de partidos, clasificación y estadísticas se contrastan con las fuentes enlazadas. Los horarios pueden cambiar. No se incluyen clips de retransmisión.\n\nFUENTES\n${sourceList}\n\n#FutbolChileno #CampeonatoNacional #TablaDePosiciones #ResultadosFutbol`
   const privacyStatus = process.env.RESULTS_VIDEO_PRIVACY || 'private';
   const response = await youtube.videos.insert({
     part:['snippet','status'],
     requestBody:{
-      snippet:{title,description,tags:['Fútbol chileno','Colo-Colo','Resultados fútbol','Próximos partidos','Fútbol mundial'],categoryId:'17',defaultLanguage:'es'},
+      snippet:{title,description,tags:['Fútbol chileno','Campeonato Nacional','Tabla de posiciones','Resultados fútbol','Figuras del campeonato'],categoryId:'17',defaultLanguage:'es'},
       status:{privacyStatus,selfDeclaredMadeForKids:false,madeForKids:false},
     },
     media:{body:fs.createReadStream(OUT)},
