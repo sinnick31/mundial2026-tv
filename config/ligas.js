@@ -59,7 +59,7 @@ const CATEGORIAS = {
     keywords: ['tnt sports', 'tntsports'],
   },
   colo_colo: {
-    emoji: '⚪⚫', prioridadBase: 60,
+    emoji: '⚪⚫', prioridadBase: 40,
     keywords: ['colo colo', 'colocolo', 'cacique', 'albos'],
   },
   chile: {
@@ -128,7 +128,7 @@ function gnews(q, lang = 'es', gl = 'CL') {
 }
 
 const RSS_FEEDS = [
-  // ⭐ COLO-COLO, fuente editorial dominante
+  // ⚽ Fuentes por club: descubrimiento equilibrado, sin prioridad editorial por equipo
   { name: 'Google News — Colo-Colo', url: gnews('"Colo-Colo" futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
   { name: 'Google News — Colo-Colo oficial', url: gnews('"Colo-Colo" sitio oficial'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
   { name: 'Google News — CSD Colo-Colo', url: gnews('site:csdcolocolo.cl futbol'), lang: 'es', categoria: 'colo_colo', prioridad: 88 },
