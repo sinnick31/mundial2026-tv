@@ -258,6 +258,13 @@ function loadCache() {
 }
 
 
+function replaceEnrichedArticle(collection, original, enriched) {
+  const index = collection.indexOf(original);
+  if (index < 0) return false;
+  collection[index] = enriched;
+  return true;
+}
+
 async function main() {
   console.log('📰 REAL FOOTBALL NEWSROOM v5 — ingesta de fuentes reales');
   const cache = loadCache();
@@ -320,8 +327,7 @@ async function main() {
       article: await enrichArticle(original),
     })));
     for (const result of enriched) {
-      const index = fresh.indexOf(result.original);
-      if (index >= 0) fresh[index] = result.article;
+      replaceEnrichedArticle(fresh, result.original, result.article);
       const article = result.article;
       console.log(article.article_complete ? `  ✓ Artículo completo: ${article.article_title}` : `  ⚠️ ${article.article_fetch_status || 'extraction_error'}: ${article.title} (${article.article_fetch_error || 'sin detalle'})`);
     }
@@ -363,4 +369,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { httpGet, httpGetResponse, decodeXml, decodeHtml, plainText, extractArticle, parseTntHomepage, enrichArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };
+module.exports = { httpGet, httpGetResponse, decodeXml, decodeHtml, plainText, extractArticle, parseTntHomepage, enrichArticle, replaceEnrichedArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };
