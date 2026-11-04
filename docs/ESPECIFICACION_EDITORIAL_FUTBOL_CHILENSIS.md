@@ -38,6 +38,15 @@ Convertir el pipeline en una sala de prensa deportiva: noticias claras, narraci�
 - Miniaturas horizontales 16:9 para videos largos y recursos compatibles con las superficies de YouTube para Shorts. Respetar límites y zonas seguras de YouTube.
 - El prompt/brief de miniatura no debe confundirse con una imagen final generada y validada.
 
+## Identidad del canal y miniaturas
+
+- Banner de YouTube: SVG maestro de 2560 × 1440 px; nombre y propuesta editorial ubicados dentro del área segura central de 1546 × 423 px.
+- Avatar: SVG maestro cuadrado de 800 × 800 px, con símbolo FC legible en recorte circular.
+- Shorts: miniatura individual vertical 1080 × 1920 px generada junto a cada render.
+- Videos largos: miniatura individual horizontal 1280 × 720 px, con titular principal y equipos solo cuando están identificados.
+- Los escudos/fotografías de clubes solo se incorporan desde el catálogo de recursos autorizados y asociados al equipo correcto. Si no hay recurso autorizado, se usa identidad tipográfica, no un escudo inventado.
+- Los SVG son archivos maestros; antes de subirlos como arte del canal deben exportarse a PNG o JPEG, formatos admitidos por YouTube.
+
 ## Calidad y publicación
 
 - Validar claridad, integridad, repeticiones, nombres, resultados, URLs y derechos de uso antes de renderizar.
