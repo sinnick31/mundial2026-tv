@@ -36,6 +36,8 @@ export type PrediccionProps = {
   imagenEquipo2Credito?: string;
   etiquetaCanal?: string;
   etiquetaSeccion?: string;
+  preguntaComunidad?: string;
+  ctaSuscripcion?: string;
 };
 
 /** Crédito de fuente persistente — señal de legitimidad para el algoritmo y el espectador */
@@ -326,7 +328,7 @@ const PuntoFullscreen: React.FC<{
           fontSize: 24, fontWeight: 900, color: colores.acento, letterSpacing: 3,
           fontFamily: "'Arial Black', sans-serif", opacity, marginBottom: 22,
         }}>
-          RAZÓN {index + 1}/{total}
+          CLAVE {index + 1}/{total}
         </div>
         <div style={{
           opacity, transform: `scale(${scale}) translateX(${slideX}px)`,
@@ -365,7 +367,7 @@ const ContentPhase: React.FC<{
     .filter((punto): punto is string => typeof punto === 'string' && punto.trim().length > 0);
   const totalFrames = Math.max(1, Math.floor(durationInFrames));
   const HEADER_FRAMES = safePuntos.length
-    ? Math.min(totalFrames, Math.max(1, Math.round(totalFrames * 0.34)))
+    ? Math.min(totalFrames, Math.max(1, Math.round(totalFrames * 0.15)))
     : totalFrames;
   const puntosFrames = totalFrames - HEADER_FRAMES;
   const canShowPoints = safePuntos.length > 0 && puntosFrames >= safePuntos.length;
@@ -416,57 +418,48 @@ const ContentPhase: React.FC<{
 };
 
 // ─── Fase 3: CTA ──────────────────────────────────────────────────────────────
-const CTAPhase: React.FC<{ tipo: PrediccionProps['tipo']; etiquetaCanal?: string }> = ({ tipo, etiquetaCanal }) => {
+const CTAPhase: React.FC<{
+  tipo: PrediccionProps['tipo'];
+  etiquetaCanal?: string;
+  preguntaComunidad?: string;
+  ctaSuscripcion?: string;
+}> = ({ tipo, etiquetaCanal, preguntaComunidad, ctaSuscripcion }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const colores = COLORES[tipo] || COLORES.sorpresa;
-
   const scale = spring({ frame, fps, config: { damping: 12, stiffness: 150 } });
-  const pulse = 1 + Math.sin(frame * 0.2) * 0.04;
-
-  const siOpacity = interpolate(frame, [20, 35], [0, 1], { extrapolateRight: 'clamp' });
-  const noOpacity = interpolate(frame, [30, 45], [0, 1], { extrapolateRight: 'clamp' });
+  const opacity = interpolate(frame, [0, 12], [0, 1], { extrapolateRight: 'clamp' });
 
   return (
     <AbsoluteFill style={{
-      background: 'linear-gradient(180deg, #000000 0%, #050510 100%)',
+      background: 'linear-gradient(180deg, #07111f 0%, #101827 100%)',
       display: 'flex', flexDirection: 'column',
       alignItems: 'center', justifyContent: 'center',
-      gap: 40, padding: '0 40px',
+      gap: 34, padding: '0 64px',
     }}>
-      <div style={{ transform: `scale(${scale})`, textAlign: 'center' }}>
+      <div style={{ transform: \`scale(\${scale})\`, opacity, textAlign: 'center', maxWidth: 940 }}>
         <div style={{
-          fontSize: 62, fontWeight: 900, color: '#ffffff',
-          lineHeight: 1.1, fontFamily: "'Arial Black', sans-serif",
-          textShadow: `0 0 30px ${colores.acento}66`,
+          fontSize: 54, fontWeight: 900, color: '#ffffff',
+          lineHeight: 1.12, fontFamily: "'Arial Black', sans-serif",
+          textShadow: \`0 0 30px \${colores.acento}66\`,
         }}>
-          ¿Qué te parece esta noticia?
+          {preguntaComunidad || '¿Qué lectura haces de esta noticia?'}
         </div>
-        <div style={{ fontSize: 38, color: '#ffffffaa', marginTop: 12, fontFamily: "'Arial', sans-serif" }}>
-          Deja tu opinión con respeto en los comentarios 👇
+        <div style={{ fontSize: 34, color: '#ffffffaa', marginTop: 22, fontFamily: "'Arial', sans-serif" }}>
+          Cuéntanos tu opinión en los comentarios.
         </div>
       </div>
-
-      <div style={{ display: 'flex', gap: 30, transform: `scale(${pulse})` }}>
-        <div style={{
-          opacity: siOpacity, background: '#00cc44', borderRadius: 20, padding: '28px 52px',
-          fontSize: 64, fontWeight: 900, color: '#000', fontFamily: "'Arial Black', sans-serif",
-          boxShadow: '0 0 40px #00cc4488',
-        }}>✅ SI</div>
-        <div style={{
-          opacity: noOpacity, background: '#ff1a1a', borderRadius: 20, padding: '28px 52px',
-          fontSize: 64, fontWeight: 900, color: '#fff', fontFamily: "'Arial Black', sans-serif",
-          boxShadow: '0 0 40px #ff1a1a88',
-        }}>❌ NO</div>
+      <div style={{
+        opacity: interpolate(frame, [10, 24], [0, 1], { extrapolateRight: 'clamp' }),
+        background: colores.acento, color: '#fff', borderRadius: 14,
+        padding: '20px 34px', fontSize: 28, fontWeight: 900,
+        fontFamily: "'Arial Black', sans-serif", textAlign: 'center',
+        maxWidth: 920,
+      }}>
+        🔔 {ctaSuscripcion || 'Suscríbete a Fútbol Chilensis para seguir la actualidad.'}
       </div>
-
-      <div style={{ opacity: interpolate(frame, [50, 70], [0, 1], { extrapolateRight: 'clamp' }), textAlign: 'center' }}>
-        <div style={{ fontSize: 30, color: colores.acento, fontWeight: 700, fontFamily: "'Arial', sans-serif" }}>
-          🔔 Síguenos para más noticias verificadas y análisis de fútbol
-        </div>
-        <div style={{ fontSize: 26, color: '#ffffff66', marginTop: 8, fontFamily: "'Arial', sans-serif" }}>
-          {etiquetaCanal || '@CHILENSISFUTBOL'}
-        </div>
+      <div style={{ opacity, fontSize: 25, color: '#c6d6e4', letterSpacing: 3, fontWeight: 800 }}>
+        {etiquetaCanal || '@CHILENSISFUTBOL'}
       </div>
     </AbsoluteFill>
   );
@@ -510,7 +503,7 @@ export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
       </Sequence>
 
       <Sequence from={CONTENT_END} durationInFrames={durationInFrames - CONTENT_END}>
-        <CTAPhase tipo={props.tipo} etiquetaCanal={props.etiquetaCanal} />
+        <CTAPhase tipo={props.tipo} etiquetaCanal={props.etiquetaCanal} preguntaComunidad={props.preguntaComunidad} ctaSuscripcion={props.ctaSuscripcion} />
       </Sequence>
     </AbsoluteFill>
   );
