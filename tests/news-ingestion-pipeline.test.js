@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { extractArticle } = require('../scripts/fetch-real-news');
-const { isEligibleNewsCandidate, buildItem } = require('../scripts/generate-real-content');
+const { isEligibleNewsCandidate, newsCandidateRejection, buildItem } = require('../scripts/generate-real-content');
 
 const now = Date.parse('2026-11-04T12:00:00.000Z');
 function validNews(overrides = {}) {
@@ -59,6 +59,16 @@ test('se bloquean artículos antiguos, futuros fuera de tolerancia y URL inváli
   assert.equal(isEligibleNewsCandidate(validNews({ timestamp: new Date(now - 73 * 3600000).toISOString() }), now), false);
   assert.equal(isEligibleNewsCandidate(validNews({ timestamp: new Date(now + 7 * 3600000).toISOString() }), now), false);
   assert.equal(isEligibleNewsCandidate(validNews({ link: 'javascript:alert(1)' }), now), false);
+});
+
+
+test('diagnostica con precisión por qué una noticia no supera la selección', () => {
+  assert.equal(newsCandidateRejection(validNews(), now), null);
+  assert.equal(newsCandidateRejection(validNews({ article_complete: false }), now), 'articulo_no_completo');
+  assert.equal(newsCandidateRejection(validNews({ article_body: 'texto breve' }), now), 'cuerpo_menor_300');
+  assert.equal(newsCandidateRejection(validNews({ fecha_publicacion_verificada: false }), now), 'fecha_no_verificada');
+  assert.equal(newsCandidateRejection(validNews({ fuente: 'Google News' }), now), 'fuente_no_identificada');
+  assert.equal(newsCandidateRejection(validNews({ timestamp: new Date(now - 80 * 3600000).toISOString() }), now), 'noticia_mayor_72h');
 });
 
 test('una noticia elegible produce una pieza narrable con atribución de fuente', () => {
