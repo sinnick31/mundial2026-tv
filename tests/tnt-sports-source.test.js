@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { RSS_FEEDS } = require('../config/ligas');
-const { parseFeed, esFutbol, sourceKey, extractArticle, plainText, decodeHtml } = require('../scripts/fetch-real-news');
+const { parseFeed, esFutbol, sourceKey, extractArticle, parseTntHomepage, plainText, decodeHtml } = require('../scripts/fetch-real-news');
 const { calcularViralScore } = require('../scripts/viral-score');
 
 test('TNT Sports tiene cobertura general y por secciones prioritarias', () => {
@@ -79,4 +79,17 @@ test('prefiere articleBody de schema.org cuando está disponible', () => {
 test('decodifica entidades HTML y elimina etiquetas visibles', () => {
   assert.equal(decodeHtml('Colo&nbsp;Colo &amp; La Roja &#8211; fútbol'), 'Colo Colo & La Roja – fútbol');
   assert.equal(plainText('<p>La <strong>noticia</strong> está confirmada.</p>'), 'La noticia está confirmada.');
+});
+
+test('descubre noticias desde enlaces de la portada oficial de TNT Sports', () => {
+  const html = `<html><body>
+    <a href="/noticia/colo-colo-prepara-el-clasico"><h2>Colo-Colo prepara el clásico y define su formación</h2></a>
+    <a href="/seccion/nacional">Nacional</a>
+    <a href="https://example.com/noticia">Colo-Colo gana el partido</a>
+  </body></html>`;
+  const stories = parseTntHomepage(html);
+  assert.equal(stories.length, 1);
+  assert.equal(stories[0].fuente, 'TNT Sports Chile');
+  assert.equal(stories[0].fuente_host, 'tntsports.cl');
+  assert.match(stories[0].link, /^https:\/\/www\.tntsports\.cl\/noticia\//);
 });
