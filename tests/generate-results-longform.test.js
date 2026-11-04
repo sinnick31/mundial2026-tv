@@ -27,7 +27,7 @@ test('resumen largo explica el resultado sin avisos técnicos sobre datos ausent
       url: 'https://www.anfp.cl/fixture',
     }],
   };
-  const result = buildSections(cache);
+  const result = buildSections(cache, { history: { items: [] } });
   assert.equal(result.recent.length, 1);
   assert.equal(result.upcoming.length, 1);
   assert.match(result.recent[0].cuerpo, /Colo-Colo se quedó con la victoria/);
