@@ -122,7 +122,11 @@ async function main() {
   const intro = `Repasamos los resultados recientes, la tabla de posiciones del Campeonato Nacional y los líderes estadísticos disponibles. Con pocas fechas por jugar, cada punto puede mover la clasificación. Cerramos con los próximos encuentros confirmados.`;
   const sectionNarration = sections.map((s,i)=>s.tipo==='proximo'
     ? `En la agenda, ${s.titulo}. ${s.cuerpo}`
-    : `${i===0?'Uno de los resultados destacados es':'También se jugó'} ${s.titulo}. ${s.cuerpo}`);
+    : s.tipo==='tabla'
+      ? `Así marcha la tabla de posiciones del Campeonato Nacional. ${s.cuerpo}. La clasificación corresponde a la actualización indicada en pantalla.`
+      : s.tipo==='jugador'
+        ? `Entre los jugadores destacados por las estadísticas disponibles está ${s.titulo}. ${s.cuerpo}`
+        : `${i===0?'Uno de los resultados destacados es':'También se jugó'} ${s.titulo}. ${s.cuerpo}`);
   const closing = 'La jornada sigue abierta y cada punto puede cambiar el panorama. ¿Qué resultado o próximo partido te parece más importante? Te leo en los comentarios.';
   const narrationBlocks = [intro, ...sectionNarration, closing];
   const narration = narrationBlocks.join('\n\n');
