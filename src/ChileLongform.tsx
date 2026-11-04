@@ -3,7 +3,10 @@ import { AbsoluteFill, Audio, Img, staticFile, useCurrentFrame, interpolate } fr
 
 export interface ChileLongformSection {
   orden: number;
-  tipo?: 'resultado' | 'proximo';
+  tipo?: 'resultado' | 'proximo' | 'tabla' | 'jugador';
+  tablaRows?: Array<{posicion:number|null;equipo:string;escudo?:string;pj:number|null;pg:number|null;pe:number|null;pp:number|null;gf:number|null;gc:number|null;dif:number|null;pts:number|null}>;
+  jugador?: {nombre:string;equipo?:string;categoria:string;valor:string;imagen?:string;creditoImagen?:string};
+  actualizada?: string;
   titulo: string;
   cuerpo: string;
   fuente: string;
@@ -23,6 +26,7 @@ export interface ChileLongformProps {
   introFrames?: number;
   outroFrames?: number;
   sectionDurationInFrames?: number;
+  tablaActualizada?: string;
 }
 const clamp = (s: string, n: number) => (s || '').length > n ? `${s.slice(0, n - 1)}…` : s;
 const initials = (s: string) => (s || '?').split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase();
@@ -34,7 +38,41 @@ const TeamBadge: React.FC<{name:string; src?:string; align?:'left'|'right'}> = (
     <div style={{fontSize:29,fontWeight:900,lineHeight:1.12,textAlign:align==='right'?'right':'left'}}>{clamp(name,34)}</div>
   </div>
 );
-export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sections, audioSrc, fuente, sectionFrames, introFrames = 0, sectionDurationInFrames = 450 }) => {
+
+const StandingsTable: React.FC<{rows: NonNullable<ChileLongformSection['tablaRows']>; updated?:string}> = ({rows,updated}) => (
+  <div style={{width:'100%',display:'flex',flexDirection:'column',gap:8}}>
+    <div style={{display:'grid',gridTemplateColumns:'54px minmax(280px,1fr) repeat(6,66px) 76px',gap:8,padding:'8px 12px',background:'#0b1726',color:'#9fc4e3',fontSize:15,fontWeight:900,letterSpacing:1}}>
+      <span>#</span><span>CLUB</span><span>PJ</span><span>PG</span><span>PE</span><span>PP</span><span>DG</span><span>PTS</span>
+    </div>
+    {rows.map((row,i)=>(
+      <div key={row.equipo} style={{display:'grid',gridTemplateColumns:'54px minmax(280px,1fr) repeat(6,66px) 76px',gap:8,alignItems:'center',padding:'7px 12px',background:i===0?'rgba(34,166,179,.18)':'rgba(255,255,255,.055)',borderLeft:i===0?'4px solid #22A6B3':'4px solid transparent',fontSize:18,fontWeight:800}}>
+        <span style={{color:'#9fc4e3'}}>{row.posicion||i+1}</span>
+        <span style={{display:'flex',alignItems:'center',gap:10,minWidth:0}}>
+          {row.escudo && /^https:\/\//i.test(row.escudo) ? <Img src={row.escudo} style={{width:28,height:28,objectFit:'contain',background:'#fff',borderRadius:5,padding:2}}/> : null}
+          <span style={{whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{row.equipo}</span>
+        </span>
+        <span>{row.pj??'–'}</span><span>{row.pg??'–'}</span><span>{row.pe??'–'}</span><span>{row.pp??'–'}</span><span>{row.dif===null||row.dif===undefined?'–':row.dif>0?'+'+row.dif:row.dif}</span>
+        <span style={{fontSize:23,color:'#fff'}}>{row.pts??'–'}</span>
+      </div>
+    ))}
+    <div style={{fontSize:13,color:'#a7bdd1',textAlign:'right',marginTop:4}}>PJ partidos jugados · DG diferencia de gol · PTS puntos{updated? ` · Actualización ${updated.slice(0,16).replace('T',' ')} UTC`:''}</div>
+  </div>
+);
+const PlayerFeature: React.FC<{player:NonNullable<ChileLongformSection['jugador']>}> = ({player}) => (
+  <div style={{display:'flex',alignItems:'center',gap:48,padding:'20px 32px',width:'100%'}}>
+    {player.imagen && /^https:\/\//i.test(player.imagen)
+      ? <Img src={player.imagen} style={{width:230,height:260,objectFit:'cover',objectPosition:'top',borderRadius:16,border:'3px solid #fff'}}/>
+      : <div style={{width:230,height:260,borderRadius:16,background:'linear-gradient(145deg,#263b55,#0b1726)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:64,fontWeight:900,color:'#dce9f4',border:'2px solid #526a83'}}>{initials(player.nombre)}</div>}
+    <div style={{display:'flex',flexDirection:'column',gap:16,minWidth:0}}>
+      <div style={{fontSize:42,fontWeight:1000,lineHeight:1.08}}>{clamp(player.nombre,52)}</div>
+      <div style={{fontSize:25,color:'#b8d7ef',fontWeight:800}}>{clamp(player.equipo||'Club no indicado',48)}</div>
+      <div style={{fontSize:22,color:'#a7bdd1',letterSpacing:2,fontWeight:900}}>{clamp(player.categoria,48).toUpperCase()}</div>
+      <div style={{fontSize:48,fontWeight:1000,color:'#fff'}}>{clamp(player.valor,30)}</div>
+      {player.creditoImagen ? <div style={{fontSize:13,color:'#9fb3c7'}}>Imagen: {clamp(player.creditoImagen,90)}</div> : null}
+    </div>
+  </div>
+);
+\nexport const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sections, audioSrc, fuente, sectionFrames, introFrames = 0, sectionDurationInFrames = 450 }) => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 16], [0, 1], { extrapolateRight: 'clamp' });
   const safeSections = sections?.length ? sections : [];
@@ -53,6 +91,8 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
   const current: ChileLongformSection = isIntro ? { orden: 0, tipo: 'resultado', titulo: 'LA EDICIÓN DE HOY', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' } : isOutro ? { orden: safeSections.length + 1, tipo: 'resultado', titulo: 'FUENTES Y PRÓXIMAS FECHAS', cuerpo: 'Gracias por acompañarnos. Consulta las fuentes enlazadas en la descripción y confirma la programación antes de cada encuentro.', fuente: fuente || 'Fuentes consultadas', url: '' } : safeSections[active] || { orden: 1, titulo: 'Resumen', cuerpo: intro, fuente: fuente || 'Fuentes consultadas', url: '' };
   const score = current.tipo === 'resultado' ? current.titulo.match(/^(.*?)\s+(\d+)\s*[-–]\s*(\d+)\s+(.*)$/) : null;
   const isUpcoming = current.tipo === 'proximo' || current.titulo.startsWith('PRÓXIMO:');
+  const isTable = current.tipo === 'tabla';
+  const isPlayer = current.tipo === 'jugador';
   const isChile = /chile|colo colo|copa chile|liga de ascenso/i.test(current.titulo + ' ' + current.cuerpo);
   const progress = isIntro ? 0 : isOutro ? 100 : safeSections.length ? Math.min(100, ((active + 1) / safeSections.length) * 100) : 100;
   const accent = colors[active % colors.length];
@@ -68,11 +108,11 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
           <div style={{background:accent,padding:'12px 18px',fontSize:21,fontWeight:900,letterSpacing:2}}>CF</div>
           <div style={{fontSize:24,fontWeight:900,letterSpacing:3}}>CHILENSIS FÚTBOL</div>
         </div>
-        <div style={{fontSize:18,fontWeight:800,letterSpacing:2,color:'#f3f6fa'}}>EDICIÓN DIARIA · {isUpcoming?'PRÓXIMOS PARTIDOS':isChile?'FÚTBOL CHILENO':'FÚTBOL INTERNACIONAL'}</div>
+        <div style={{fontSize:18,fontWeight:800,letterSpacing:2,color:'#f3f6fa'}}>EDICIÓN DIARIA · {isTable?'TABLA DE POSICIONES':isPlayer?'FIGURAS DEL CAMPEONATO':isUpcoming?'PRÓXIMOS PARTIDOS':isChile?'FÚTBOL CHILENO':'FÚTBOL INTERNACIONAL'}</div>
       </div>
       <div style={{position:'absolute',left:64,right:64,top:118,bottom:88,display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
         <div>
-          <div style={{fontSize:18,color:accent,fontWeight:800,letterSpacing:4,marginBottom:12}}>{isIntro?'APERTURA · CHILE Y EL MUNDO':isOutro?'CIERRE · FUENTES CONSULTADAS':isUpcoming?'AGENDA · FECHAS PROGRAMADAS':template===0?'EL MARCADOR Y SUS DATOS':template===1?'LA FICHA DEL ENCUENTRO':'RESULTADOS · CHILE Y EL MUNDO'}</div>
+          <div style={{fontSize:18,color:accent,fontWeight:800,letterSpacing:4,marginBottom:12}}>{isIntro?'APERTURA · CAMPEONATO NACIONAL':isOutro?'CIERRE · FUENTES CONSULTADAS':isTable?'CLASIFICACIÓN ACTUALIZADA':isPlayer?'LÍDERES ESTADÍSTICOS':isUpcoming?'AGENDA · FECHAS PROGRAMADAS':template===0?'EL MARCADOR Y SUS DATOS':template===1?'LA FICHA DEL ENCUENTRO':'RESULTADOS · CHILE Y EL MUNDO'}</div>
           <div style={{fontSize:46,lineHeight:1.08,fontWeight:900,maxWidth:1650}}>{clamp(title,105)}</div>
           <div style={{fontSize:21,lineHeight:1.35,color:'#c4d1df',marginTop:12,maxWidth:1500}}>{clamp(intro,220)}</div>
         </div>
@@ -100,7 +140,7 @@ export const ChileLongform: React.FC<ChileLongformProps> = ({ title, intro, sect
           </div>
         </div>
       </div>
-      <div style={{position:'absolute',bottom:0,left:0,right:0,height:58,background:accent,display:'flex',alignItems:'center',padding:'0 64px',fontSize:18,fontWeight:900,letterSpacing:2}}>{isIntro?'NOTICIAS Y FÚTBOL · CHILENSIS FÚTBOL':isOutro?'FUENTES EN LA DESCRIPCIÓN · CHILENSIS FÚTBOL':isUpcoming?'AGENDA DE ENCUENTROS · HORARIOS SUJETOS A CAMBIOS':'RESULTADOS Y DATOS DISPONIBLES · CHILENSIS FÚTBOL'}</div>
+      <div style={{position:'absolute',bottom:0,left:0,right:0,height:58,background:accent,display:'flex',alignItems:'center',padding:'0 64px',fontSize:18,fontWeight:900,letterSpacing:2}}>{isIntro?'NOTICIAS Y FÚTBOL · CHILENSIS FÚTBOL':isOutro?'FUENTES EN LA DESCRIPCIÓN · CHILENSIS FÚTBOL':isTable?'TABLA DE POSICIONES · DATOS DE LA FUENTE':'isPlayer?'FIGURAS DEL CAMPEONATO · ESTADÍSTICAS':'isUpcoming?'AGENDA DE ENCUENTROS · HORARIOS SUJETOS A CAMBIOS':'RESULTADOS Y DATOS DISPONIBLES · CHILENSIS FÚTBOL'}</div>
     </AbsoluteFill>
   );
 };
