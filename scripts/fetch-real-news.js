@@ -313,10 +313,16 @@ async function main() {
   const toEnrich = fresh.slice().sort((a, b) => (b.prioridad_fuente || 0) - (a.prioridad_fuente || 0)).slice(0, 30);
   for (let i = 0; i < toEnrich.length; i += 3) {
     const batch = toEnrich.slice(i, i + 3);
-    const enriched = await Promise.all(batch.map(enrichArticle));
-    for (const article of enriched) {
-      const index = fresh.findIndex(item => item.title === article.title && item.timestamp === article.timestamp);
-      if (index >= 0) fresh[index] = article;
+    // La fecha del artículo puede diferir de la fecha RSS y la URL puede canonicalizarse.
+    // Conservar la referencia al objeto original evita perder la versión enriquecida.
+    const enriched = await Promise.all(batch.map(async original => ({
+      original,
+      article: await enrichArticle(original),
+    })));
+    for (const result of enriched) {
+      const index = fresh.indexOf(result.original);
+      if (index >= 0) fresh[index] = result.article;
+      const article = result.article;
       console.log(article.article_complete ? `  ✓ Artículo completo: ${article.article_title}` : `  ⚠️ ${article.article_fetch_status || 'extraction_error'}: ${article.title} (${article.article_fetch_error || 'sin detalle'})`);
     }
   }
