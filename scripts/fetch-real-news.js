@@ -82,16 +82,31 @@ function extractArticle(html = '') {
     if (value['@graph']) visit(value['@graph']);
     if (value.mainEntity) visit(value.mainEntity);
     if (value.article) visit(value.article);
+    if (value.mainEntityOfPage) visit(value.mainEntityOfPage);
   };
   for (const tag of jsonLd) {
     const raw = (tag.match(/>([\s\S]*?)<\/script>/i) || [])[1] || '';
-    try { visit(JSON.parse(raw)); } catch (_) {}
+    try { visit(JSON.parse(raw)); } catch (_) { /* JSON-LD inválido: continuar con HTML */ }
   }
-  const articleRegion = (html.match(/<(?:article|main)\b[^>]*>[\s\S]*?<\/(?:article|main)>/i) || [])[0] || '';
-  const sourceRegion = articleRegion || html;
-  const paragraphs = (sourceRegion.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi) || [])
-    .map(plainText).filter(text => text.length >= 45 && !/cookies|suscr[ií]bete|publicidad|t[eé]rminos y condiciones|compartir esta noticia/i.test(text));
-  const body = [...new Set([...blocks.map(plainText), ...paragraphs])].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+
+  // Buscar cada región por separado: no mezclar <article> con </main> ni tomar
+  // todo el documento cuando el sitio usa contenedores anidados.
+  const regions = [];
+  for (const tag of ['article', 'main']) {
+    const re = new RegExp('<' + tag + '\\b[^>]*>[\\s\\S]*?<\\/' + tag + '\\s*>', 'gi');
+    for (const match of html.matchAll(re)) regions.push(match[0]);
+  }
+  const rankedRegions = regions
+    .map(region => (region.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi) || []).map(plainText).filter(t => t.length >= 45).join(' '))
+    .sort((x, y) => y.length - x.length);
+  const sourceRegionText = rankedRegions[0] || '';
+  const paragraphText = sourceRegionText
+    ? sourceRegionText
+    : (html.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi) || []).map(plainText)
+      .filter(t => t.length >= 45 && !/cookies|suscr[ií]bete|publicidad|t[eé]rminos y condiciones|compartir esta noticia/i.test(t))
+      .join(' ');
+  const body = [...new Set([...blocks.map(plainText), paragraphText].filter(Boolean))]
+    .sort((x, y) => y.length - x.length)[0] || '';
   const title = extractMeta(html, 'og:title') || plainText((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '');
   const description = extractMeta(html, 'og:description') || extractMeta(html, 'description');
   const canonical = (html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i) || [])[1] || '';
@@ -124,26 +139,52 @@ async function enrichArticle(item) {
     const resolved = new URL(response.finalUrl);
     const expectedTnt = item.fuente_host === 'tntsports.cl' || /tntsports\.cl/i.test(item.fuente || '');
     if (resolved.hostname === 'news.google.com' || (expectedTnt && !/(^|\.)tntsports\.cl$/i.test(resolved.hostname))) {
-      throw new Error('No se pudo resolver una URL directa de TNT Sports');
+      throw new Error('redirect_outside_expected_source');
     }
     const parsed = extractArticle(response.body);
     const canonical = parsed.canonical ? new URL(parsed.canonical, resolved) : resolved;
     if (expectedTnt && canonical.hostname.replace(/^www\./i, '') !== 'tntsports.cl') {
-      throw new Error('La URL canónica no pertenece a TNT Sports');
+      throw new Error('canonical_outside_expected_source');
     }
-    if (!['https:', 'http:'].includes(canonical.protocol)) throw new Error('Protocolo de artículo no permitido');
+    if (!['https:', 'http:'].includes(canonical.protocol)) throw new Error('invalid_article_protocol');
     const canonicalUrl = canonical.toString();
     const body = parsed.body.length >= 300 ? parsed.body : '';
-    const publishedAt = parsed.datePublished && !Number.isNaN(Date.parse(parsed.datePublished)) ? new Date(parsed.datePublished).toISOString() : item.timestamp || null;
-    return { ...item, link: canonicalUrl, article_title: parsed.title || item.title,
-      article_description: parsed.description || item.description || '', article_body: body,
-      timestamp: publishedAt, pubDate: publishedAt || item.pubDate || null,
-      fecha_publicacion_verificada: publishedAt ? true : item.fecha_publicacion_verificada,
-      article_complete: body.length >= 300, article_chars: body.length,
-      article_fetch_error: body ? null : 'El sitio no entregó suficiente texto de artículo',
-      fuente_host: sourceKey(canonicalUrl) };
+    const articleDateValid = Boolean(parsed.datePublished && !Number.isNaN(Date.parse(parsed.datePublished)));
+    const feedDateValid = Boolean(item.timestamp && !Number.isNaN(Date.parse(item.timestamp)));
+    const articlePublishedAt = articleDateValid ? new Date(parsed.datePublished).toISOString() : null;
+    const feedPublishedAt = feedDateValid ? new Date(item.timestamp).toISOString() : null;
+    const publishedAt = articlePublishedAt || feedPublishedAt;
+    const fetchStatus = body ? 'complete' : (parsed.body.length > 0 ? 'body_too_short' : 'extraction_empty');
+    return {
+      ...item,
+      link: canonicalUrl,
+      article_title: parsed.title || item.title,
+      article_description: parsed.description || item.description || '',
+      article_body: body,
+      article_chars: parsed.body.length,
+      timestamp: publishedAt,
+      pubDate: publishedAt || null,
+      fecha_publicacion_articulo: articlePublishedAt,
+      fecha_publicacion_fuente: feedPublishedAt,
+      fecha_publicacion_verificada: Boolean(publishedAt),
+      article_complete: body.length >= 300,
+      article_fetch_status: fetchStatus,
+      article_fetch_error: body ? null : (fetchStatus === 'body_too_short' ? 'El texto extraído no alcanza 300 caracteres' : 'La página respondió, pero no se encontró el cuerpo del artículo'),
+      fuente_host: sourceKey(canonicalUrl),
+    };
   } catch (error) {
-    return { ...item, article_body: '', article_complete: false, article_chars: 0, article_fetch_error: error.message };
+    const message = String(error.message || 'unknown_error');
+    const status = /^HTTP \d+/.test(message) ? 'http_error' : /Timeout/i.test(message) ? 'timeout' : 'fetch_error';
+    return {
+      ...item,
+      article_body: '',
+      article_complete: false,
+      article_chars: 0,
+      article_fetch_status: status,
+      article_fetch_error: message,
+      fecha_publicacion_verificada: Boolean(item.timestamp && !Number.isNaN(Date.parse(item.timestamp))),
+      timestamp: item.timestamp && !Number.isNaN(Date.parse(item.timestamp)) ? new Date(item.timestamp).toISOString() : null,
+    };
   }
 }
 function decodeXml(value = '') {
@@ -270,7 +311,7 @@ async function main() {
     for (const article of enriched) {
       const index = fresh.findIndex(item => item.title === article.title && item.timestamp === article.timestamp);
       if (index >= 0) fresh[index] = article;
-      console.log(article.article_complete ? `  ✓ Artículo completo: ${article.article_title}` : `  ⚠️ Artículo incompleto: ${article.title}`);
+      console.log(article.article_complete ? `  ✓ Artículo completo: ${article.article_title}` : `  ⚠️ ${article.article_fetch_status || 'extraction_error'}: ${article.title} (${article.article_fetch_error || 'sin detalle'})`);
     }
   }
 
@@ -278,8 +319,11 @@ async function main() {
   const now = Date.now();
   const recientes = [...fresh, ...previous]
     .filter(n => {
-      const ageH = (now - new Date(n.timestamp || now).getTime()) / 36e5;
-      return n.fecha_publicacion_verificada !== false && ageH <= 72;
+      if (n.fecha_publicacion_verificada !== true || !n.timestamp) return false;
+      const published = Date.parse(n.timestamp);
+      if (!Number.isFinite(published)) return false;
+      const ageH = (now - published) / 36e5;
+      return ageH <= 72 && ageH >= -6;
     })
     .sort((a, b) => (b.prioridad_fuente || 0) - (a.prioridad_fuente || 0) || (b.viral_score || 0) - (a.viral_score || 0) || new Date(b.timestamp) - new Date(a.timestamp))
     .slice(0, 140);
