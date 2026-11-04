@@ -12,12 +12,12 @@ export type ShortThumbnailProps = {
   date?: string;
 };
 
-const initials = (value = '?') => value.split(/\\s+/).filter(Boolean).slice(0, 2).map(x => x[0]).join('').toUpperCase();
+const initials = (value = '?') => value.split(' ').filter(Boolean).slice(0, 2).map(x => x[0]).join('').toUpperCase();
 const trim = (value = '', max = 54) => value.length > max ? value.slice(0, max - 1).trimEnd() + '…' : value;
 
 const Badge: React.FC<{ name?: string; image?: string }> = ({ name, image }) => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 230, gap: 14 }}>
-    {image && /^https:\\/\\//i.test(image)
+    {image && image.startsWith('https://')
       ? <Img src={image} style={{ width: 170, height: 170, objectFit: 'contain', background: '#fff', borderRadius: 28, padding: 12 }} />
       : <div style={{ width: 170, height: 170, borderRadius: 85, background: 'linear-gradient(145deg,#fff,#bac5d3)', color: '#101827', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 56, fontWeight: 900 }}>{initials(name || 'FC')}</div>}
     <div style={{ color: '#fff', fontSize: 27, fontWeight: 900, textAlign: 'center', lineHeight: 1.1 }}>{trim(name || '', 20)}</div>
