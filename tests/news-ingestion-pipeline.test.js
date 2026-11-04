@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { extractArticle } = require('../scripts/fetch-real-news');
+const { extractArticle, replaceEnrichedArticle } = require('../scripts/fetch-real-news');
 const { isEligibleNewsCandidate, newsCandidateRejection, buildItem } = require('../scripts/generate-real-content');
 
 const now = Date.parse('2026-11-04T12:00:00.000Z');
@@ -21,6 +21,27 @@ function validNews(overrides = {}) {
     ...overrides,
   };
 }
+
+
+test('conserva el artículo enriquecido aunque cambien timestamp y URL canónica', () => {
+  const original = {
+    title: 'Noticia TNT',
+    link: 'https://news.google.com/rss/articles/example',
+    timestamp: null,
+  };
+  const fresh = [original];
+  const enriched = {
+    ...original,
+    link: 'https://www.tntsports.cl/noticia/example',
+    timestamp: '2026-11-04T10:00:00.000Z',
+    article_body: 'Contenido completo de la noticia. '.repeat(12),
+    article_complete: true,
+  };
+  assert.equal(replaceEnrichedArticle(fresh, original, enriched), true);
+  assert.equal(fresh[0], enriched);
+  assert.equal(fresh[0].article_complete, true);
+  assert.equal(fresh[0].timestamp, enriched.timestamp);
+});
 
 test('extrae texto de article sin confundir cierres de contenedores anidados', () => {
   const html = '<html><body><main><article><h1>Noticia</h1>' +
