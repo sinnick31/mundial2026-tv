@@ -105,7 +105,7 @@ function labelFor(type) {
   return type === 'futbol_femenino' ? 'FÚTBOL FEMENINO' : type === 'colo_colo' ? 'COLO-COLO' : type === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : type === 'internacional' ? 'FÚTBOL MUNDIAL' : 'FÚTBOL CHILENO';
 }
 function ganchoFor(item) {
-  const title = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
+  const title = clean(item.article_title || item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
   return title.length > 110 ? title.slice(0, 107).replace(/\s+\S*$/, '') + '…' : title;
 }
 function titleFor(item) {
@@ -161,7 +161,9 @@ function buildItem(item, type, order) {
     tags,
     _tipo_contenido: 'noticia',
     _match_id: null,
-    _noticia_original: title,\n    _articulo_completo: true,\n    _articulo_caracteres: item.article_chars || item.article_body.length,
+    _noticia_original: title,
+    _articulo_completo: true,
+    _articulo_caracteres: item.article_chars || item.article_body.length,
     _fuente: fuente,
     _fuente_url: fuenteUrl,
     _fecha: FECHA,
