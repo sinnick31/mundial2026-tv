@@ -8,7 +8,7 @@ Convertir el pipeline en una sala de prensa deportiva: noticias claras, narraci�
 
 - TNT Sports Chile (`https://www.tntsports.cl/`) es la fuente prioritaria de descubrimiento para el fútbol chileno: el rastreador consulta directamente la portada y complementa con feeds RSS de secciones TNT.
 - El Instagram oficial de TNT Sports Chile puede utilizarse como señal de descubrimiento, pero la publicación original debe abrirse y contrastarse antes de tratarla como hecho.
-- Contrastar datos centrales con clubes, ANFP, competiciones y organismos oficiales cuando corresponda.
+- Para resultados y programación, el pipeline utiliza el marcador de ESPN; no consulta football-data.org. Contrastar datos centrales con clubes, ANFP, competiciones y organismos oficiales cuando corresponda.
 - Conservar URL, medio, fecha y metadatos de procedencia en el paquete y en la descripción. No leerlos como descargos en la narración.
 - Un titular o snippet RSS no equivale a una noticia completa. Si no se recupera el cuerpo de la noticia o una segunda fuente que confirme los detalles centrales, reducir el alcance del guion o bloquearlo; nunca rellenar con inferencias.
 
