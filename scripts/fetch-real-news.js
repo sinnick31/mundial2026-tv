@@ -95,8 +95,29 @@ function extractArticle(html = '') {
   const title = extractMeta(html, 'og:title') || plainText((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '');
   const description = extractMeta(html, 'og:description') || extractMeta(html, 'description');
   const canonical = (html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i) || [])[1] || '';
-  return { title, description, body: body.slice(0, 14000), canonical: canonical ? decodeHtml(canonical) : '' };
+  const datePublished = (html.match(/"datePublished"\s*:\s*"([^"]+)"/i) || [])[1] || extractMeta(html, 'article:published_time');
+  return { title, description, body: body.slice(0, 14000), canonical: canonical ? decodeHtml(canonical) : '', datePublished };
 }
+function parseTntHomepage(html = '') {
+  const anchors = html.match(/<a\b[^>]*href=["'][^"']+["'][^>]*>[\s\S]*?<\/a>/gi) || [];
+  const found = [];
+  for (const anchor of anchors) {
+    const href = (anchor.match(/\bhref=["']([^"']+)["']/i) || [])[1] || '';
+    if (!href) continue;
+    let url;
+    try { url = new URL(decodeHtml(href), 'https://www.tntsports.cl/'); } catch (_) { continue; }
+    if (!/(^|\.)tntsports\.cl$/i.test(url.hostname) || url.pathname === '/' || /\/(seccion|liga-de-primera|futbol-chileno|futbol-t\d+)(\/|$)/i.test(url.pathname)) continue;
+    const title = plainText((anchor.match(/>([\s\S]*?)<\/a>/i) || [])[1] || '')
+      || decodeHtml((anchor.match(/\b(?:aria-label|title)=["']([^"']+)["']/i) || [])[1] || '');
+    if (title.length < 22 || title.length > 180) continue;
+    const item = { title, description: '', link: url.toString(), fuente: 'TNT Sports Chile', fuente_host: 'tntsports.cl', fuente_original: 'TNT Sports Chile', fuente_url_original: 'https://www.tntsports.cl/', categoria_feed: /femenin/i.test(url.pathname + title) ? 'femenino' : 'chile', prioridad_fuente: 110 };
+    if (!esFutbol(item)) continue;
+    if (found.some(existing => existing.link === item.link || similitud(existing.title, item.title) >= 0.65)) continue;
+    found.push(item);
+  }
+  return found.slice(0, 20);
+}
+
 async function enrichArticle(item) {
   try {
     const response = await httpGetResponse(item.link);
@@ -113,8 +134,11 @@ async function enrichArticle(item) {
     if (!['https:', 'http:'].includes(canonical.protocol)) throw new Error('Protocolo de artículo no permitido');
     const canonicalUrl = canonical.toString();
     const body = parsed.body.length >= 300 ? parsed.body : '';
+    const publishedAt = parsed.datePublished && !Number.isNaN(Date.parse(parsed.datePublished)) ? new Date(parsed.datePublished).toISOString() : item.timestamp || null;
     return { ...item, link: canonicalUrl, article_title: parsed.title || item.title,
       article_description: parsed.description || item.description || '', article_body: body,
+      timestamp: publishedAt, pubDate: publishedAt || item.pubDate || null,
+      fecha_publicacion_verificada: Boolean(publishedAt),
       article_complete: body.length >= 300, article_chars: body.length,
       article_fetch_error: body ? null : 'El sitio no entregó suficiente texto de artículo',
       fuente_host: sourceKey(canonicalUrl) };
@@ -194,6 +218,22 @@ async function main() {
   const previous = Array.isArray(cache.noticias) ? cache.noticias : [];
   const fresh = [];
 
+  // Descubrimiento directo desde la portada oficial de TNT Sports Chile.
+  try {
+    const homepage = await httpGetResponse('https://www.tntsports.cl/');
+    const directStories = parseTntHomepage(homepage.body);
+    for (const item of directStories) {
+      if (fresh.some(n => n.link === item.link || similitud(n.title, item.title) >= 0.65)) continue;
+      const cachedMatch = previous.find(n => similitud(n.title, item.title) >= 0.65);
+      if (cachedMatch?.article_complete === true) continue;
+      const viral = calcularViralScore({ ...item, categoria: item.categoria_feed });
+      fresh.push({ ...item, categoria: viral.categoria, equipo_chile: viral.equipoChile, viral_score: viral.score, razones: viral.razones });
+    }
+    console.log(`📺 TNT Sports portada: ${directStories.length} noticia(s) detectada(s)`);
+  } catch (error) {
+    console.log(`  ⚠️ TNT Sports portada: ${error.message}`);
+  }
+
   for (const feed of RSS_FEEDS) {
     try {
       console.log(`📡 ${feed.name}`);
@@ -267,4 +307,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { httpGet, httpGetResponse, decodeXml, decodeHtml, plainText, extractArticle, enrichArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };
+module.exports = { httpGet, httpGetResponse, decodeXml, decodeHtml, plainText, extractArticle, parseTntHomepage, enrichArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };
