@@ -28,21 +28,27 @@ function ageHours(item) {
   if (!Number.isFinite(ts)) return Infinity;
   return (Date.now() - ts) / 36e5;
 }
-function isEligibleNewsCandidate(item, now = Date.now()) {
-  if (!item || item.article_complete !== true || typeof item.article_body !== 'string' || item.article_body.trim().length < 300) return false;
-  if (item.fecha_publicacion_verificada !== true) return false;
+function newsCandidateRejection(item, now = Date.now()) {
+  if (!item || typeof item !== 'object') return 'registro_invalido';
+  if (item.article_complete !== true) return 'articulo_no_completo';
+  if (typeof item.article_body !== 'string' || item.article_body.trim().length < 300) return 'cuerpo_menor_300';
+  if (item.fecha_publicacion_verificada !== true) return 'fecha_no_verificada';
   const published = Date.parse(item.timestamp);
-  if (!Number.isFinite(published)) return false;
+  if (!Number.isFinite(published)) return 'fecha_ausente_o_invalida';
   const age = (now - published) / 36e5;
-  if (age > 72 || age < -6) return false;
-  if (typeof item.link !== 'string') return false;
+  if (age > 72) return 'noticia_mayor_72h';
+  if (age < -6) return 'fecha_futura';
+  if (typeof item.link !== 'string') return 'url_ausente';
   try {
     const url = new URL(item.link);
-    if (!['http:', 'https:'].includes(url.protocol) || !url.hostname.includes('.')) return false;
-  } catch (_) { return false; }
+    if (!['http:', 'https:'].includes(url.protocol) || !url.hostname.includes('.')) return 'url_invalida';
+  } catch (_) { return 'url_invalida'; }
   const source = String(item.fuente || item.fuente_host || '').trim();
-  if (!source || /fuente deportiva|desconocida|google news/i.test(source)) return false;
-  return true;
+  if (!source || /fuente deportiva|desconocida|google news/i.test(source)) return 'fuente_no_identificada';
+  return null;
+}
+function isEligibleNewsCandidate(item, now = Date.now()) {
+  return newsCandidateRejection(item, now) === null;
 }
 function isColo(item) {
   const t = normalize(`${item.title} ${item.description} ${item.equipo_chile || ''}`);
@@ -227,10 +233,42 @@ function buildItem(item, type, order) {
 function main() {
   const news = readJson('news-cache.json', { noticias: [] });
   const history = loadHistory();
-  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => isEligibleNewsCandidate(n)) : [];
+  const allNews = Array.isArray(news.noticias) ? news.noticias : [];
+  const now = Date.now();
+  const rejectionCounts = {};
+  const rejectedExamples = [];
+  for (const item of allNews) {
+    const reason = newsCandidateRejection(item, now);
+    if (reason) {
+      rejectionCounts[reason] = (rejectionCounts[reason] || 0) + 1;
+      if (rejectedExamples.length < 12) rejectedExamples.push({
+        title: clean(item && item.title || '').slice(0, 160),
+        source: clean(item && (item.fuente || item.fuente_host) || '').slice(0, 80),
+        reason,
+        article_chars: Number(item && item.article_chars) || String(item && item.article_body || '').length,
+        fetch_status: String(item && item.article_fetch_status || 'unknown'),
+      });
+    }
+  }
+  const candidates = allNews.filter(n => newsCandidateRejection(n, now) === null);
+  const diagnostics = {
+    generated_at: new Date(now).toISOString(),
+    cache_total: allNews.length,
+    eligible_total: candidates.length,
+    rejected_total: allNews.length - candidates.length,
+    rejection_counts: rejectionCounts,
+    rejected_examples: rejectedExamples,
+  };
+  fs.writeFileSync('editorial-diagnostics.json', JSON.stringify(diagnostics, null, 2) + '\\n');
+  console.log('🔬 Diagnóstico editorial: ' + JSON.stringify({
+    cache_total: diagnostics.cache_total,
+    eligible_total: diagnostics.eligible_total,
+    rejected_total: diagnostics.rejected_total,
+    rejection_counts: diagnostics.rejection_counts,
+  }));
   if (!candidates.length) {
     fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, total: 0, contenido: [] }, null, 2));
-    console.log('⚠️ No hay artículos completos recuperados desde las fuentes. Los titulares RSS no se convierten en guiones; no se publica relleno.');
+    console.log('⚠️ No hay artículos que cumplan los requisitos editoriales. Revisa editorial-diagnostics.json para identificar el filtro exacto; no se publican titulares incompletos.');
     return;
   }
 
@@ -294,4 +332,4 @@ function main() {
 }
 if (require.main === module) main();
 
-module.exports = { isFutbolFemenino, typeFor, labelFor, ageHours, sourceTier, sourceTierBonus, importance, isEligibleNewsCandidate, buildItem, snippet };
+module.exports = { isFutbolFemenino, typeFor, labelFor, ageHours, sourceTier, sourceTierBonus, importance, newsCandidateRejection, isEligibleNewsCandidate, buildItem, snippet };
