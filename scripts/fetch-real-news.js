@@ -138,7 +138,7 @@ async function enrichArticle(item) {
     return { ...item, link: canonicalUrl, article_title: parsed.title || item.title,
       article_description: parsed.description || item.description || '', article_body: body,
       timestamp: publishedAt, pubDate: publishedAt || item.pubDate || null,
-      fecha_publicacion_verificada: Boolean(publishedAt),
+      fecha_publicacion_verificada: publishedAt ? true : item.fecha_publicacion_verificada,
       article_complete: body.length >= 300, article_chars: body.length,
       article_fetch_error: body ? null : 'El sitio no entregó suficiente texto de artículo',
       fuente_host: sourceKey(canonicalUrl) };
