@@ -157,6 +157,10 @@ function parseFeed(xml) {
   return items;
 }
 
+function sourceKey(url) {
+  try { return new URL(url).hostname.replace(/^www\\./, ''); } catch (_) { return 'fuente-desconocida'; }
+}
+
 function esFutbol(item) {
   const text = normalizar(`${item.title} ${item.description}`);
   return KEYWORDS_FUTBOL.some(k => text.includes(normalizar(k)));
