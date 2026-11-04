@@ -3,6 +3,7 @@ import { PrediccionShorts, PrediccionProps } from './PrediccionShorts';
 import { JugadaAnimada, defaultJugadaProps } from './JugadaAnimada';
 import { ChileLongform, ChileLongformProps } from './ChileLongform';
 import { ResultsThumbnail } from './ResultsThumbnail';
+import { VideoThumbnail } from './VideoThumbnail';
 
 const PREVIEW_PROPS: PrediccionProps = {
   gancho: 'DATOS DEL FÚTBOL CHILENO',
@@ -59,6 +60,15 @@ const RemotionRoot: React.FC = () => {
         width={1280}
         height={720}
         defaultProps={{ date: '2026-10-16', count: 12 }}
+      />
+      <Composition
+        id="VideoThumbnail"
+        component={VideoThumbnail}
+        durationInFrames={1}
+        fps={30}
+        width={1280}
+        height={720}
+        defaultProps={{ headline: 'NOTICIAS DEL FÚTBOL CHILENO', section: 'FÚTBOL CHILENSIS', source: 'Fuentes verificadas' }}
       />
       <Composition
         id="ChileLongform"
