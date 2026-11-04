@@ -106,7 +106,12 @@ async function enrichArticle(item) {
       throw new Error('No se pudo resolver una URL directa de TNT Sports');
     }
     const parsed = extractArticle(response.body);
-    const canonicalUrl = parsed.canonical ? new URL(parsed.canonical, resolved).toString() : resolved.toString();
+    const canonical = parsed.canonical ? new URL(parsed.canonical, resolved) : resolved;
+    if (expectedTnt && canonical.hostname.replace(/^www\./i, '') !== 'tntsports.cl') {
+      throw new Error('La URL canónica no pertenece a TNT Sports');
+    }
+    if (!['https:', 'http:'].includes(canonical.protocol)) throw new Error('Protocolo de artículo no permitido');
+    const canonicalUrl = canonical.toString();
     const body = parsed.body.length >= 300 ? parsed.body : '';
     return { ...item, link: canonicalUrl, article_title: parsed.title || item.title,
       article_description: parsed.description || item.description || '', article_body: body,
