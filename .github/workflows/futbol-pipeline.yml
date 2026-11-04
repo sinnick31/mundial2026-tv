@@ -294,7 +294,7 @@ jobs:
           TEAM_BROLL_MANIFEST: ${{ secrets.TEAM_BROLL_MANIFEST }}
           RENDER_ONLY: ${{ github.event_name == 'schedule' && 'true' || inputs.render_only || 'true' }}
           YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'public' }}
-          ALLOW_SCHEDULED_PUBLIC: 'true'
+          ALLOW_SCHEDULED_PUBLIC: 'false'
         run: node scripts/render-and-upload.js
 
       - name: 🔎 Verificar publicación
