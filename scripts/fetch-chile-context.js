@@ -115,6 +115,24 @@ function normalizeLeaders(payload) {
   return players.slice(0, 8);
 }
 
+async function resolveLeaderReferences(payload, request, limit = 12) {
+  const refs = new Set();
+  walk(payload, node => {
+    const athlete = node.athlete;
+    if (typeof athlete === 'string' && /^https:\/\//i.test(athlete)) refs.add(athlete);
+    else if (athlete && typeof athlete === 'object' && typeof athlete.$ref === 'string' && /^https:\/\//i.test(athlete.$ref)) refs.add(athlete.$ref);
+  });
+  const resolved = await Promise.all([...refs].slice(0, limit).map(async url => {
+    try { return [url, await request(url)]; } catch { return [url, null]; }
+  }));
+  const lookup = new Map(resolved);
+  walk(payload, node => {
+    if (typeof node.athlete === 'string' && lookup.get(node.athlete)) node.athlete = lookup.get(node.athlete);
+    else if (node.athlete && typeof node.athlete === 'object' && node.athlete.$ref && lookup.get(node.athlete.$ref)) node.athlete = lookup.get(node.athlete.$ref);
+  });
+  return payload;
+}
+
 async function getChileContext(options = {}) {
   const request = options.request;
   if (typeof request !== 'function') throw new Error('Se requiere una función request para consultar el contexto chileno.');
@@ -144,7 +162,8 @@ async function getChileContext(options = {}) {
   let jugadoresError = '';
   try {
     const leaders = await request(ESPN_LEADERS);
-    jugadores = normalizeLeaders(leaders);
+    const resolvedLeaders = await resolveLeaderReferences(leaders, request);
+    jugadores = normalizeLeaders(resolvedLeaders);
     if (!jugadores.length) jugadoresError = 'ESPN no entregó líderes individuales utilizables';
   } catch (error) {
     jugadoresError = error.message;
@@ -166,5 +185,5 @@ async function getChileContext(options = {}) {
 
 module.exports = {
   ESPN_STANDINGS, ESPN_LEADERS, THESPORTSDB_TABLE,
-  normalizeEspnStandings, normalizeTheSportsDbTable, normalizeLeaders, getChileContext,
+  normalizeEspnStandings, normalizeTheSportsDbTable, normalizeLeaders, resolveLeaderReferences, getChileContext,
 };
