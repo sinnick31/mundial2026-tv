@@ -75,8 +75,8 @@ function sourceTier(item) {
   const explicit = Number(item && item.nivel_fuente);
   if (explicit === 1 || explicit === 2) return explicit;
   const source = String(item && (item.fuente_host || item.fuente || item.link) || '').toLowerCase();
-  if (/tntsports\\.cl|tnt sports/.test(source)) return 1;
-  if (/espn\\.com|espn deportes/.test(source)) return 2;
+  if (/tntsports\.cl|tnt sports/.test(source)) return 1;
+  if (/espn\.com|espn deportes/.test(source)) return 2;
   return 3;
 }
 function sourceTierBonus(item) {
