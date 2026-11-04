@@ -31,6 +31,15 @@ test('extrae texto de article sin confundir cierres de contenedores anidados', (
   assert.match(result.body, /campeonato nacional/);
 });
 
+test('extrae el cuerpo cuando el CMS usa un contenedor article-body', () => {
+  const html = '<html><body><div class="article-body">' +
+    '<p>' + 'El club informó novedades de su plantel para la próxima fecha del torneo. '.repeat(5) + '</p>' +
+    '</div></body></html>';
+  const result = extractArticle(html);
+  assert.ok(result.body.length >= 300);
+  assert.match(result.body, /próxima fecha/);
+});
+
 test('la extracción no declara completo un artículo sin cuerpo suficiente', () => {
   const result = extractArticle('<html><head><title>Noticia</title></head><body><article><p>Texto breve.</p></article></body></html>');
   assert.ok(result.body.length < 300);
