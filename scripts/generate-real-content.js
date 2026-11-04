@@ -95,32 +95,13 @@ function closingQuestion(type) {
 function labelFor(type) {
   return type === 'futbol_femenino' ? 'FÚTBOL FEMENINO' : type === 'colo_colo' ? 'COLO-COLO' : type === 'chilenos_exterior' ? 'CHILENOS POR EL MUNDO' : type === 'internacional' ? 'FÚTBOL MUNDIAL' : 'FÚTBOL CHILENO';
 }
-function ganchoFor(item, type) {
-  const title = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
-  const t = normalize(title);
-  // El gancho usa una señal que ya está en el titular: no añade rumores ni afirmaciones nuevas.
-  let prefix = '';
-  if (/\b(oficial|confirmado|confirma)\b/.test(t)) prefix = 'ES OFICIAL: ';
-  else if (/\b(ultimo momento|ultima hora|urgente)\b/.test(t)) prefix = 'ÚLTIMA HORA: ';
-  else if (/\b(remontada|remonta|goleada|hat.?trick|triplete|record|historico)\b/.test(t)) prefix = 'EL DATO QUE MARCA LA JORNADA: ';
-  else if (/\b(fichaje|traspaso|refuerzo|renovacion)\b/.test(t)) prefix = 'MERCADO DE PASES: ';
-  else if (/\b(clasifica|clasificado|eliminado|final|campeon|titulo)\w*/.test(t)) prefix = 'SE JUEGA ALGO GRANDE: ';
-  else if (/\b(lesion|baja|descartado|sancion|suspendido)\w*/.test(t)) prefix = 'ATENCIÓN A ESTA NOTICIA: ';
-  else if (type === 'colo_colo') prefix = 'COLO-COLO: LA CLAVE ES ';
-  else if (type === 'chilenos_exterior') prefix = 'CHILENOS POR EL MUNDO: ';
-  else if (type === 'internacional') prefix = 'FÚTBOL MUNDIAL: ';
-  else prefix = 'FÚTBOL CHILENO: ';
-  const maxTitle = Math.max(20, 96 - prefix.length);
-  const clipped = title.length > maxTitle ? title.slice(0, maxTitle - 1).replace(/\s+\S*$/, '') + '…' : title;
-  return (prefix + clipped).slice(0, 100);
+function ganchoFor(item) {
+  const title = clean(item.title).replace(/[|]+/g, ' ').replace(/\\s+/g, ' ').trim();
+  return title.length > 110 ? title.slice(0, 107).replace(/\\s+\\S*$/, '') + '…' : title;
 }
-function titleFor(item, type) {
-  const base = clean(item.title).replace(/[|]+/g, ' ').replace(/\s+/g, ' ').trim();
-  const label = labelFor(type);
-  const suffix = type === 'colo_colo' ? ' | Lo que se sabe' : type === 'chilenos_exterior' ? ' | La clave para seguirlo' : ' | Lo que cambia';
-  const room = Math.max(20, 100 - label.length - suffix.length - 4);
-  const short = base.length > room ? `${base.slice(0, room - 1).replace(/\s+\S*$/, '')}…` : base;
-  return `${label}: ${short}${suffix}`.slice(0, 100);
+function titleFor(item) {
+  const base = clean(item.title).replace(/[|]+/g, ' ').replace(/\\s+/g, ' ').trim();
+  return base.length > 100 ? base.slice(0, 97).replace(/\\s+\\S*$/, '') + '…' : base;
 }
 function fechaPublicacion(item) {
   const raw = item.pubDate || item.timestamp;
@@ -129,10 +110,10 @@ function fechaPublicacion(item) {
 }
 function buildNarration(item, type, resumen) {
   const title = clean(item.title);
-  const sourceName = clean(item.fuente || item.fuente_host || 'la fuente original');
-  const fecha = fechaPublicacion(item);
-  const fechaTexto = fecha ? `La publicación de ${sourceName} está fechada el ${fecha}. Esta es la fecha de publicación de la fuente, no necesariamente la fecha del partido.` : 'La fecha de publicación no pudo verificarse con los datos disponibles, por lo que no se afirma una fecha de partido.';
-  return [`${labelFor(type)}.`, title, `Según ${sourceName}: ${resumen}`, fechaTexto, editorialAngle(type), closingQuestion(type)].join(' ');
+  const summary = clean(resumen);
+  const angle = editorialAngle(type);
+  const question = closingQuestion(type);
+  return [title, summary && normalize(summary) !== normalize(title) ? summary : '', angle, question].filter(Boolean).join(' ');
 }
 function inferMatchup(title) {
   const value = clean(title);
@@ -155,7 +136,7 @@ function buildItem(item, type, order) {
   const tags = ['FutbolChileno', type === 'futbol_femenino' ? 'FutbolFemenino' : type === 'chilenos_exterior' ? 'ChilenosPorElMundo' : type === 'colo_colo' ? 'ColoColo' : type === 'internacional' ? 'FutbolMundial' : 'CampeonatoChileno', 'Chile', 'Futbol', 'Shorts'];
   return {
     tipo: 'sorpresa',
-    gancho: ganchoFor(item, type),
+    gancho: ganchoFor(item),
     subtitulo: angle,
     descripcion: `${resumen} ${angle}`,
     // Mostrar rivales únicamente cuando el titular de la fuente los identifica explícitamente.
@@ -165,7 +146,7 @@ function buildItem(item, type, order) {
     puntos: [`HECHO PUBLICADO: ${title}`, `CONTEXTO DE LA FUENTE: ${resumen}`, fechaPub ? `PUBLICADO EL ${fechaPub} (fecha de publicación, no necesariamente fecha del partido)` : 'FECHA: la fuente no entrega una fecha de publicación verificable; no inventar fecha del partido', `ANÁLISIS EDITORIAL: ${angle}`, `SIGUIENTE DATO A COMPROBAR: ${closingQuestion(type)}`],
     narracion: buildNarration(item, type, resumen),
     emoji: type === 'futbol_femenino' ? '⚽♀' : type === 'colo_colo' ? '⚪⚫' : type === 'chilenos_exterior' ? '🇨🇱🌎' : '🇨🇱⚽',
-    titulo_youtube: titleFor(item, type),
+    titulo_youtube: titleFor(item),
     descripcion_youtube: [`Esta edición de ${labelFor(type).toLowerCase()} parte de un hecho publicado y añade contexto editorial propio.`, `Hecho: ${title}`, `Lectura del canal: ${angle}`, `Fuente original: ${fuente} — ${fuenteUrl}`, `Fecha de publicación de la fuente: ${fechaPub || 'no verificada'}. No confundir con fecha del partido.`, '#FutbolChileno #Chile #Futbol #Shorts'].join('\n\n'),
     tags,
     _tipo_contenido: 'noticia',
