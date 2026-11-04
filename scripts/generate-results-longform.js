@@ -48,7 +48,9 @@ function buildSections(cache) {
     const scorers = Array.isArray(m.goleadores) ? m.goleadores.filter(Boolean).join(', ') : (m.goleadores || m.scorers || '');
     const scorerText = scorers ? `Goles de ${scorers}.` : '';
     const venueText = m.estadio ? `Se jugó en ${m.estadio}.` : '';
-    const resultContext = m.golesLocal === m.golesVisita ? 'Un empate que repartió los puntos.' : m.golesLocal > m.golesVisita ? `${m.equipo1} se quedó con la victoria.` : `${m.equipo2} se llevó el triunfo.`;
+    const homeGoals = Number(m.golesLocal);
+    const awayGoals = Number(m.golesVisita);
+    const resultContext = homeGoals === awayGoals ? 'Un empate que repartió los puntos.' : homeGoals > awayGoals ? `${m.equipo1} se quedó con la victoria.` : `${m.equipo2} se llevó el triunfo.`;
     return {
       orden:i+1, tipo:'resultado', titulo:`${m.equipo1} ${m.golesLocal} - ${m.golesVisita} ${m.equipo2}`,
       cuerpo:`${m.competencia || 'Fútbol'}. ${resultContext} ${scorerText} ${venueText}`.trim(),
@@ -73,8 +75,10 @@ async function main() {
   if (!sections.length) throw new Error('No hay resultados recientes ni próximos encuentros con datos suficientes. No se publica un video vacío.');
   const featured = recent[0];
   const title = featured ? `${featured.titulo}: resultados y próximos partidos`.slice(0, 100) : 'Fútbol chileno: próximos partidos y agenda';
-  const intro = `Revisamos ${recent.length} resultados recientes y ${upcoming.length} partidos que vienen. Vamos con los encuentros que dejan algo para analizar y lo que se viene en la cancha.`;
-  const sectionNarration = sections.map((s,i)=>`${s.tipo==='proximo'?'Próximo encuentro':'Resultado final'} ${i+1}. ${s.titulo}. ${s.cuerpo}`);
+  const intro = `Estos son los resultados recientes del fútbol chileno e internacional y los próximos partidos que ya aparecen en la programación. Repasamos los marcadores y qué equipos se quedaron con los puntos.`;
+  const sectionNarration = sections.map((s,i)=>s.tipo==='proximo'
+    ? `En la agenda, ${s.titulo}. ${s.cuerpo}`
+    : `${i===0?'Uno de los resultados destacados es':'También se jugó'} ${s.titulo}. ${s.cuerpo}`);
   const closing = 'La jornada sigue abierta y cada punto puede cambiar el panorama. ¿Qué resultado o próximo partido te parece más importante? Te leo en los comentarios.';
   const narrationBlocks = [intro, ...sectionNarration, closing];
   const narration = narrationBlocks.join('\n\n');
@@ -139,3 +143,5 @@ async function main() {
   console.log('PUBLICACIÓN CONFIRMADA '+JSON.stringify(report));
 }
 main().catch(err=>{console.error(err.stack||err);process.exit(1);});
+
+module.exports = { buildSections };
