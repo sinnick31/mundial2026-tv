@@ -3,6 +3,8 @@
 const fs = require('node:fs');
 
 const MAX_ITEMS = 2;
+const MAX_SOURCE_AGE_HOURS = 72;
+const MAX_FUTURE_SKEW_HOURS = 6;
 const ALLOWED_CATEGORIES = new Set([
   'colo_colo',
   'futbol_femenino',
@@ -83,6 +85,18 @@ function validatePackage(pkg) {
     }
     if (typeof item._noticia_original !== 'string' || item._noticia_original.trim().length < 8) {
       fail(`pieza ${n}: hecho/titular original ausente`);
+    }
+    if (item._fecha_publicacion_verificada !== true
+        || typeof item._fecha_publicacion_iso !== 'string'
+        || !Number.isFinite(Date.parse(item._fecha_publicacion_iso))) {
+      fail(`pieza ${n}: fecha de publicación no verificada`);
+    }
+    const sourceAgeHours = (Date.now() - Date.parse(item._fecha_publicacion_iso)) / 3600000;
+    if (sourceAgeHours > MAX_SOURCE_AGE_HOURS) {
+      fail(`pieza ${n}: noticia caducada; supera ${MAX_SOURCE_AGE_HOURS} horas`);
+    }
+    if (sourceAgeHours < -MAX_FUTURE_SKEW_HOURS) {
+      fail(`pieza ${n}: fecha de publicación está demasiado en el futuro`);
     }
     if (item._tipo_contenido === 'noticia' && (item._articulo_completo !== true || !Number.isInteger(item._articulo_caracteres) || item._articulo_caracteres < 300)) {
       fail(`pieza ${n}: artículo original incompleto; un titular RSS no basta para redactar una noticia`);

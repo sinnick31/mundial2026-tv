@@ -23,9 +23,35 @@ function clean(s = '') { return cleanVisibleText(s); }
 function normalize(s = '') {
   return clean(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
+function publicationTimestamp(item) {
+  const raw = item.timestamp || item.pubDate || null;
+  if (!raw) return null;
+  const ts = new Date(raw).getTime();
+  return Number.isFinite(ts) ? ts : null;
+}
 function ageHours(item) {
-  const ts = new Date(item.timestamp || Date.now()).getTime();
-  return Math.max(0, (Date.now() - ts) / 36e5);
+  const ts = publicationTimestamp(item);
+  return ts === null ? Infinity : Math.max(0, (Date.now() - ts) / 36e5);
+}
+function validSourceUrl(value) {
+  try {
+    const url = new URL(value);
+    return ['https:', 'http:'].includes(url.protocol) && Boolean(url.hostname)
+      && !url.username && !url.password;
+  } catch (_) { return false; }
+}
+function isEligibleCandidate(item) {
+  const timestamp = publicationTimestamp(item);
+  const age = timestamp === null ? Infinity : (Date.now() - timestamp) / 36e5;
+  const source = String(item.fuente || item.fuente_original || item.fuente_host || '').trim();
+  return item.article_complete === true
+    && typeof item.article_body === 'string' && item.article_body.trim().length >= 300
+    && item.fecha_publicacion_verificada === true
+    && publicationTimestamp(item) !== null
+    && age >= -6 && age <= 72
+    && validSourceUrl(item.link)
+    && source.length >= 3
+    && !/^(fuente deportiva|fuente no especificada|desconocida)$/i.test(source);
 }
 function isColo(item) {
   const t = normalize(`${item.title} ${item.description} ${item.equipo_chile || ''}`);
@@ -57,7 +83,6 @@ function isChileanAbroad(item) {
 function importance(item) {
   let score = Number(item.viral_score || 0);
   if (isFutbolFemenino(item)) score += 60;
-  if (isColo(item)) score += 28;
   if (isChileCompetition(item)) score += 55;
   if (isInternational(item) && !isChileCompetition(item)) score += 24;
   if (isChileanAbroad(item)) score += 45;
@@ -89,14 +114,14 @@ function typeFor(item) {
 }
 function editorialAngle(type) {
   if (type === 'futbol_femenino') return 'Qué significa esta noticia para la competición femenina, la jugadora o el equipo, distinguiendo datos confirmados de análisis.';
-  if (type === 'colo_colo') return 'Por qué esta noticia importa ahora para Colo-Colo y qué conviene seguir en las próximas horas.';
+  if (type === 'colo_colo') return 'Qué cambia para el club involucrado y qué conviene seguir en las próximas horas.';
   if (type === 'chilenos_exterior') return 'Qué cambia para el futbolista chileno involucrado y qué habrá que mirar en su próximo partido o decisión.';
   if (type === 'internacional') return 'Qué impacto tiene esta noticia en su liga, torneo o equipo, separando el hecho confirmado de la interpretación editorial.';
   return 'Qué significa esta noticia dentro de la competencia chilena y cuál es el siguiente dato que puede cambiar el escenario.';
 }
 function closingQuestion(type) {
   if (type === 'futbol_femenino') return '¿Qué historia o competición del fútbol femenino chileno deberíamos seguir a continuación?';
-  if (type === 'colo_colo') return 'La pregunta queda abierta: ¿qué debería ser lo siguiente que mire el hincha albo?';
+  if (type === 'colo_colo') return 'La pregunta queda abierta: ¿qué debería seguir ahora la hinchada de este equipo?';
   if (type === 'chilenos_exterior') return 'Ahora queda seguir su próximo partido y comprobar si esta tendencia se sostiene.';
   if (type === 'internacional') return '¿Qué liga o torneo internacional deberíamos seguir con más detalle en el próximo resumen?';
   return 'La próxima fecha puede entregar la pista clave para confirmar si esta noticia realmente mueve el campeonato.';
@@ -156,8 +181,9 @@ function buildItem(item, type, order) {
   const title = clean(item.article_title || item.title);
   const matchup = inferMatchup(title);
   const resumen = snippet(item);
-  const fuente = item.fuente || item.fuente_host || 'Fuente deportiva';
+  const fuente = item.fuente || item.fuente_original || item.fuente_host;
   const fuenteUrl = item.link;
+  const timestampFuente = publicationTimestamp(item);
   const angle = editorialAngle(type);
   const fechaPub = fechaPublicacion(item);
   const tags = ['FutbolChileno', type === 'futbol_femenino' ? 'FutbolFemenino' : type === 'chilenos_exterior' ? 'ChilenosPorElMundo' : type === 'colo_colo' ? 'ColoColo' : type === 'internacional' ? 'FutbolMundial' : 'CampeonatoChileno', 'Chile', 'Futbol', 'Shorts'];
@@ -185,6 +211,8 @@ function buildItem(item, type, order) {
     _fuente_url: fuenteUrl,
     _fecha: FECHA,
     _fecha_publicacion_fuente: fechaPub,
+    _fecha_publicacion_iso: timestampFuente === null ? null : new Date(timestampFuente).toISOString(),
+    _fecha_publicacion_verificada: item.fecha_publicacion_verificada === true,
     _orden: order,
     _categoria_editorial: type,
   };
@@ -193,7 +221,7 @@ function buildItem(item, type, order) {
 function main() {
   const news = readJson('news-cache.json', { noticias: [] });
   const history = loadHistory();
-  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(n => ageHours(n) <= 72 && n.link && n.article_complete === true && typeof n.article_body === 'string' && n.article_body.trim().length >= 300) : [];
+  const candidates = Array.isArray(news.noticias) ? news.noticias.filter(isEligibleCandidate) : [];
   if (!candidates.length) {
     fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, total: 0, contenido: [] }, null, 2));
     console.log('⚠️ No hay artículos completos recuperados desde las fuentes. Los titulares RSS no se convierten en guiones; no se publica relleno.');
@@ -220,20 +248,17 @@ function main() {
     const slot = scheduledSlot >= 0 ? scheduledSlot : (new Date().getUTCDate() % 3);
     if (slot === 0) {
       addPick(n => isFutbolFemenino(n), 'futbol_femenino');
-      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n) && !isFutbolFemenino(n), 'chile');
-      if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
+      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isFutbolFemenino(n), 'chile');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
       if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
     } else if (slot === 1) {
       addPick(n => isInternational(n) && !isChileanAbroad(n) && !isFutbolFemenino(n), 'internacional');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
-      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n), 'chile');
-      if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
+      if (picks.length < MAX_ITEMS) addPick(isChileCompetition(n), 'chile');
     } else {
       addPick(n => isFutbolFemenino(n), 'futbol_femenino');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
-      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n) && !isFutbolFemenino(n), 'chile');
-      if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
+      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isFutbolFemenino(n), 'chile');
       if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
     }
   }
@@ -260,4 +285,4 @@ function main() {
 }
 if (require.main === module) main();
 
-module.exports = { isFutbolFemenino, typeFor, labelFor };
+module.exports = { isFutbolFemenino, typeFor, labelFor, importance, ageHours, isEligibleCandidate, validSourceUrl };
