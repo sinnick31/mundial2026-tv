@@ -97,8 +97,16 @@ async function main() {
   const propsArg = JSON.stringify(props).replace(/'/g, "'\\''");
   execSync(`npx remotion render src/index.tsx ChileLongform "${OUT}" --props='${propsArg}' --duration-in-frames=${durationInFrames} --codec=h264 --fps=30 --width=1920 --height=1080 --concurrency=2`, {cwd:ROOT, stdio:'inherit'});
   const thumbnailPath = path.join(path.dirname(OUT),'miniatura-resultados.png');
-  const thumbnailProps = JSON.stringify({date:TODAY,count:sections.length}).replace(/'/g, "'\\''");
-  execSync(`npx remotion still src/index.tsx ResultsThumbnail "${thumbnailPath}" --props='${thumbnailProps}' --frame=0 --scale=1`, {cwd:ROOT,stdio:'inherit'});
+  const featuredMatch = featured?.titulo?.match(/^(.*?)\\s+\\d+\\s*[-–]\\s*\\d+\\s+(.*)$/);
+  const thumbnailProps = JSON.stringify({
+    headline: featured ? `${featured.titulo}: resultados y próximos partidos` : 'Fútbol chileno: próximos partidos y agenda',
+    section: 'RESULTADOS Y AGENDA',
+    team1: featuredMatch?.[1]?.trim() || '',
+    team2: featuredMatch?.[2]?.trim() || '',
+    source: 'Fuentes deportivas verificadas',
+    date: TODAY,
+  }).replace(/'/g, "'\\''");
+  execSync(`npx remotion still src/index.tsx VideoThumbnail "${thumbnailPath}" --props='${thumbnailProps}' --frame=0 --scale=1`, {cwd:ROOT,stdio:'inherit'});
 
   // Por seguridad, este script solo renderiza localmente salvo autorización explícita.
   if (String(process.env.PUBLISH_TO_YOUTUBE || '').toLowerCase() !== 'true') {
