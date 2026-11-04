@@ -16,6 +16,24 @@ const OUT = path.join(ROOT, 'out', TODAY, 'resumen-resultados.mp4');
 const FPS = 30;
 const MIN_SECTION_FRAMES = 240;
 
+function visualRightsOk(item) {
+  if (!item || item.rights !== 'authorized' || !String(item.credit || '').trim()) return false;
+  if (!/^https:\/\//i.test(item.sourceUrl || '')) return false;
+  const evidence = Boolean(String(item.authorizationReference || '').trim()) || /^https:\/\//i.test(item.licenseUrl || '');
+  const uses = Array.isArray(item.permittedUse) ? item.permittedUse.map(x => String(x).toLowerCase()) : [];
+  return evidence && (uses.includes('youtube') || uses.includes('youtube_monetized')) && /^https:\/\//i.test(item.url || '');
+}
+function readManifest(raw) { try { const value = JSON.parse(raw || '{}'); return value && typeof value === 'object' ? value : {}; } catch { return {}; } }
+function teamImage(name, manifest) {
+  const key = Object.keys(manifest).find(k => norm(k) === norm(name));
+  const item = key ? manifest[key] : null;
+  return visualRightsOk(item) && norm(item.team) === norm(name) ? item.url : '';
+}
+function playerImage(player, manifest) {
+  const item = Array.isArray(manifest) ? manifest.find(x => x && norm(x.name) === norm(player.nombre) && (!x.team || norm(x.team) === norm(player.equipo))) : null;
+  return visualRightsOk(item) && norm(item.name) === norm(player.nombre) ? { url:item.url, credit:item.credit } : null;
+}
+
 const norm = (s='') => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 const isChile = (m) => /primera division de chile|copa chile|liga de ascenso|futbol chileno|chile/i.test(norm(m.competencia || ''));
 const isColo = (m) => /colo colo|colocolo/i.test(norm((m.equipo1 || '') + ' ' + (m.equipo2 || '')));
@@ -29,7 +47,7 @@ function loadCache() {
   if (!fs.existsSync(CACHE)) throw new Error('No existe matches-cache.json; la fuente de partidos no se ejecutó.');
   return JSON.parse(fs.readFileSync(CACHE, 'utf8'));
 }
-function buildSections(cache) {
+function buildSections(cache, options = {}) {\n  const teams = options.teamImages || readManifest(process.env.TEAM_IMAGES_JSON);\n  const playerManifest = options.playerImages || readManifest(process.env.PLAYER_IMAGES_JSON);
   const cutoff = Date.now() - 72 * 60 * 60 * 1000;
   const recentRaw = Array.isArray(cache.partidos_recientes) ? cache.partidos_recientes : [];
   const unique = new Map();
@@ -54,7 +72,7 @@ function buildSections(cache) {
     return {
       orden:i+1, tipo:'resultado', titulo:`${m.equipo1} ${m.golesLocal} - ${m.golesVisita} ${m.equipo2}`,
       cuerpo:`${m.competencia || 'Fútbol'}. ${resultContext} ${scorerText} ${venueText}`.trim(),
-      escudoLocal:m.escudoLocal||'', escudoVisita:m.escudoVisita||'', estadio:m.estadio||'',
+      escudoLocal:teamImage(m.equipo1, teams), escudoVisita:teamImage(m.equipo2, teams), estadio:m.estadio||'',
       fuente:m.fuente||'Fuente deportiva', url:m.url||'https://www.espn.com/soccer/scoreboard',
     };
   });
@@ -63,19 +81,45 @@ function buildSections(cache) {
     .sort((a,b)=>new Date(a.fecha)-new Date(b.fecha)).slice(0,4).map((m,i)=>({
       orden:recent.length+i+1, tipo:'proximo', titulo:`PRÓXIMO: ${m.equipo1} vs ${m.equipo2}`,
       cuerpo:`Se juega ${fechaLocal(m.fecha)} · ${m.competencia||'Fútbol'}.${m.estadio ? ` Estadio: ${m.estadio}.` : ''} Revisa la programación antes del encuentro.`,
-      escudoLocal:m.escudoLocal||'', escudoVisita:m.escudoVisita||'', estadio:m.estadio||'', fechaTexto:fechaLocal(m.fecha),
+      escudoLocal:teamImage(m.equipo1, teams), escudoVisita:teamImage(m.equipo2, teams), estadio:m.estadio||'', fechaTexto:fechaLocal(m.fecha),
       fuente:m.fuente||'Fuente deportiva', url:m.url||'https://www.espn.com/soccer/scoreboard',
     }));
-  return {recent, upcoming, sections:[...recent,...upcoming]};
+  const standings = Array.isArray(cache.tabla_posiciones) ? cache.tabla_posiciones.filter(row => row.equipo && Number.isFinite(Number(row.pts))) : [];
+  const tableSections = [];
+  for (let offset = 0; offset < standings.length; offset += 8) {
+    const rows = standings.slice(offset, offset + 8).map(row => ({ ...row, escudo: teamImage(row.equipo, teams) }));
+    tableSections.push({
+      orden: recent.length + tableSections.length + 1, tipo:'tabla',
+      titulo:`TABLA DE POSICIONES · PUESTOS ${offset + 1}–${offset + rows.length}`,
+      cuerpo: rows.slice(0, 4).map((row, i) => `${row.posicion || offset + i + 1}. ${row.equipo}, ${row.pts} puntos`).join('; '),
+      tablaRows: rows, fuente: cache.tabla_fuente || 'Fuente de clasificación',
+      url: cache.tabla_url || 'https://www.espn.com/soccer/standings',
+      actualizada: cache.tabla_actualizada || cache.fecha || '',
+    });
+  }
+  const players = (Array.isArray(cache.jugadores_destacados) ? cache.jugadores_destacados : [])
+    .filter(player => player && player.nombre && player.valor)
+    .slice(0, 4).map((player, i) => {
+      const image = playerImage(player, playerManifest);
+      return {
+        orden: recent.length + tableSections.length + i + 1, tipo:'jugador',
+        titulo:player.nombre,
+        cuerpo:`${player.equipo ? player.equipo + '. ' : ''}${player.categoria}: ${player.valor}.`,
+        jugador:{ ...player, imagen:image?.url || '', creditoImagen:image?.credit || '' },
+        fuente:player.fuente || cache.jugadores_fuente || 'Fuente estadística',
+        url:player.url || cache.jugadores_url || 'https://www.espn.com/soccer/',
+      };
+    });
+  return {recent, upcoming, standings, players, tableSections, sections:[...recent,...tableSections,...players,...upcoming]};
 }
 
 async function main() {
   const cache = loadCache();
-  const {recent, upcoming, sections} = buildSections(cache);
+  const {recent, upcoming, sections, standings, players} = buildSections(cache);
   if (!sections.length) throw new Error('No hay resultados recientes ni próximos encuentros con datos suficientes. No se publica un video vacío.');
   const featured = recent[0];
-  const title = featured ? `${featured.titulo}: resultados y próximos partidos`.slice(0, 100) : 'Fútbol chileno: próximos partidos y agenda';
-  const intro = `Estos son los resultados recientes del fútbol chileno e internacional y los próximos partidos que ya aparecen en la programación. Repasamos los marcadores y qué equipos se quedaron con los puntos.`;
+  const title = 'Fútbol chileno: resultados, tabla de posiciones y figuras del campeonato';
+  const intro = `Repasamos los resultados recientes, la tabla de posiciones del Campeonato Nacional y los líderes estadísticos disponibles. Con pocas fechas por jugar, cada punto puede mover la clasificación. Cerramos con los próximos encuentros confirmados.`;
   const sectionNarration = sections.map((s,i)=>s.tipo==='proximo'
     ? `En la agenda, ${s.titulo}. ${s.cuerpo}`
     : `${i===0?'Uno de los resultados destacados es':'También se jugó'} ${s.titulo}. ${s.cuerpo}`);
@@ -95,7 +139,7 @@ async function main() {
   const sectionBudget = Math.max(MIN_SECTION_FRAMES * sections.length, audioFrames - introFrames - outroFrames);
   const totalSectionWords = weights.reduce((sum,n)=>sum+n,0) || 1;
   const sectionFrames = weights.map(n=>Math.max(MIN_SECTION_FRAMES,Math.round(sectionBudget*n/totalSectionWords)));
-  const props = {title,intro,sections,audioSrc:'tmp/resultados-diarios.wav',fuente:'Fuentes deportivas enlazadas en la descripción',introFrames,sectionFrames,outroFrames};
+  const props = {title,intro,sections,audioSrc:'tmp/resultados-diarios.wav',fuente:'Fuentes deportivas enlazadas en la descripción',introFrames,sectionFrames,outroFrames,tablaActualizada:cache.tabla_actualizada||''};
   const durationInFrames = Math.max(900, introFrames + sectionFrames.reduce((sum,n)=>sum+n,0) + outroFrames, audioFrames);
   fs.mkdirSync(path.dirname(OUT), {recursive:true});
   const propsArg = JSON.stringify(props).replace(/'/g, "'\\''");
@@ -114,7 +158,7 @@ async function main() {
 
   // Por seguridad, este script solo renderiza localmente salvo autorización explícita.
   if (String(process.env.PUBLISH_TO_YOUTUBE || '').toLowerCase() !== 'true') {
-    const report = {date:TODAY,mode:'render-only',localPath:OUT,thumbnailPath,totalMatches:sections.length,results:recent.length,upcoming:upcoming.length,title};
+    const report = {date:TODAY,mode:'render-only',localPath:OUT,thumbnailPath,totalSections:sections.length,results:recent.length,standingsRows:standings.length,featuredPlayers:players.length,upcoming:upcoming.length,standingsSource:cache.tabla_fuente||null,playersSource:cache.jugadores_fuente||null,title};
     fs.writeFileSync(path.join(path.dirname(OUT),'reporte-resultados.json'),JSON.stringify(report,null,2));
     console.log('RENDER LOCAL COMPLETADO; NO SE SUBIÓ A YOUTUBE '+JSON.stringify(report));
     return;
@@ -144,4 +188,4 @@ async function main() {
 }
 if (require.main === module) main().catch(err=>{console.error(err.stack||err);process.exit(1);});
 
-module.exports = { buildSections };
+module.exports = { buildSections, visualRightsOk, teamImage, playerImage };
