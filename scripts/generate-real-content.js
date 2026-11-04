@@ -71,8 +71,16 @@ function isChileanAbroad(item) {
   const t = normalize(`${item.title} ${item.description}`);
   return ['futbolista chileno', 'futbolistas chilenos', 'jugador chileno', 'jugadores chilenos', 'chileno en el extranjero', 'chilenos en el extranjero', 'alexis sanchez', 'ben brereton', 'dario osorio', 'marcelino nunez', 'gabriel suazo', 'guillermo maripan', 'victor davila', 'lucas assadi', 'lucas cepeda', 'alexander aravena', 'felipe mora', 'maximiliano falcon'].some(k => t.includes(k));
 }
+function sourceTier(item) {
+  const explicit = Number(item && item.nivel_fuente);
+  if (explicit === 1 || explicit === 2) return explicit;
+  const source = String(item && (item.fuente_host || item.fuente || item.link) || '').toLowerCase();
+  if (/tntsports\\.cl|tnt sports/.test(source)) return 1;
+  if (/espn\\.com|espn deportes/.test(source)) return 2;
+  return 3;
+}
 function sourceTierBonus(item) {
-  const tier = Number(item && item.nivel_fuente);
+  const tier = sourceTier(item);
   if (tier === 1) return 30; // TNT Sports Chile: fuente preferente.
   if (tier === 2) return 15; // ESPN: segunda opción periodística.
   return 0; // Otras fuentes verificables: contraste y complemento.
@@ -206,7 +214,7 @@ function buildItem(item, type, order) {
     _articulo_caracteres: item.article_chars || item.article_body.length,
     _fuente: fuente,
     _fuente_url: fuenteUrl,
-    _nivel_fuente: Number(item.nivel_fuente) || 3,
+    _nivel_fuente: sourceTier(item),
     _prioridad_fuente: Number(item.prioridad_fuente) || 0,
     _politica_derechos_visual: 'ORIGINAL_OR_LICENSED_ONLY',
     _fecha: FECHA,
@@ -286,4 +294,4 @@ function main() {
 }
 if (require.main === module) main();
 
-module.exports = { isFutbolFemenino, typeFor, labelFor, ageHours, sourceTierBonus, importance, isEligibleNewsCandidate, buildItem, snippet };
+module.exports = { isFutbolFemenino, typeFor, labelFor, ageHours, sourceTier, sourceTierBonus, importance, isEligibleNewsCandidate, buildItem, snippet };
