@@ -6,6 +6,7 @@
 
 const fs = require('fs');
 const https = require('https');
+const { getChileContext } = require('./fetch-chile-context');
 
 function httpGet(url, headers = {}, redirects = 0) {
   return new Promise((resolve, reject) => {
@@ -351,14 +352,24 @@ async function fetchMatches(options = {}) {
     }
   }
 
+  const chileContext = await getChileContext({ request: options.request || httpGet, now: options.now || new Date() });
+
   const validSources = espn.consultas_correctas + backup.ligas_correctas;
   const cache = {
     fecha: new Date().toISOString(),
     partidos_recientes: partidosRecientes,
     partidos_en_curso: partidosEnCurso,
     partidos_proximos: partidosProximos,
-    tabla_posiciones: [],
-    tabla_competencia: null,
+    tabla_posiciones: chileContext.tabla_posiciones,
+    tabla_competencia: chileContext.tabla_competencia,
+    tabla_fuente: chileContext.tabla_fuente,
+    tabla_actualizada: chileContext.tabla_actualizada,
+    tabla_url: chileContext.tabla_url,
+    tabla_error: chileContext.tabla_error,
+    jugadores_destacados: chileContext.jugadores_destacados,
+    jugadores_fuente: chileContext.jugadores_fuente,
+    jugadores_url: chileContext.jugadores_url,
+    jugadores_error: chileContext.jugadores_error,
     resumen: {
       total_recientes: partidosRecientes.length,
       total_en_curso: partidosEnCurso.length,
@@ -367,6 +378,7 @@ async function fetchMatches(options = {}) {
     diagnostico_fuentes: {
       proveedor_principal: 'ESPN',
       proveedor_respaldo: 'TheSportsDB',
+      campeonato_chileno: { tabla_fuente: chileContext.tabla_fuente, tabla_error: chileContext.tabla_error, jugadores_fuente: chileContext.jugadores_fuente, jugadores_error: chileContext.jugadores_error },
       espn: {
         ligas_configuradas: espn.ligas_consultadas,
         ligas_validadas: espn.ligas_validadas,
