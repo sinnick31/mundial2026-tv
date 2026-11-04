@@ -1,0 +1,101 @@
+name: ⚽ Live match-source diagnostics
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/fetch-matches.js'
+      - '.github/workflows/match-source-diagnostics.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch-matches.js'
+      - '.github/workflows/match-source-diagnostics.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  live-source-probe:
+    name: Verify ESPN and TheSportsDB responses
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Probe real match endpoints (read-only)
+        run: node scripts/fetch-matches.js
+
+      - name: Probe TheSportsDB fallback directly (read-only)
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const { getMatchesFromTheSportsDB } = require('./scripts/fetch-matches');
+          getMatchesFromTheSportsDB().then((result) => {
+            const diagnostic = {
+              leagues_configured: result.ligas_consultadas,
+              leagues_responding: result.ligas_correctas,
+              recent: result.recientes.length,
+              live: result.enCurso.length,
+              upcoming: result.proximos.length,
+              errors: result.errores,
+            };
+            fs.writeFileSync('thesportsdb-diagnostic.json', JSON.stringify(diagnostic, null, 2));
+            console.log(JSON.stringify(diagnostic, null, 2));
+            if (result.ligas_correctas < 1) process.exitCode = 1;
+          }).catch((error) => {
+            console.error(error);
+            process.exitCode = 1;
+          });
+          NODE
+
+      - name: Validate source diagnostics
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const cache = JSON.parse(fs.readFileSync('matches-cache.json', 'utf8'));
+          const diagnostics = cache.diagnostico_fuentes;
+          if (!diagnostics || !diagnostics.espn || !diagnostics.thesportsdb) {
+            console.error('Missing provider diagnostics');
+            process.exit(1);
+          }
+          const espn = diagnostics.espn;
+          const backup = diagnostics.thesportsdb;
+          const valid = Number(espn.consultas_correctas || 0) + Number(backup.ligas_correctas || 0);
+          console.log(JSON.stringify({
+            espn_configured: espn.ligas_configuradas,
+            espn_validated: espn.ligas_validadas,
+            espn_valid_responses: espn.consultas_correctas,
+            thesportsdb_leagues_ok: backup.ligas_correctas,
+            recent: cache.resumen.total_recientes,
+            live: cache.resumen.total_en_curso,
+            upcoming: cache.resumen.total_proximos,
+            valid_provider_responses: valid
+          }, null, 2));
+          if (valid < 1) {
+            console.error('No provider returned a valid structured response');
+            process.exit(1);
+          }
+          const backupProbe = JSON.parse(fs.readFileSync('thesportsdb-diagnostic.json', 'utf8'));
+          if (backupProbe.leagues_responding < 1) {
+            console.error('TheSportsDB did not return a valid structured response');
+            process.exit(1);
+          }
+          NODE
+
+      - name: Save match-source diagnostic artifact
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: match-source-diagnostics-${{ github.run_number }}
+          path: |
+            matches-cache.json
+            thesportsdb-diagnostic.json
+          if-no-files-found: warn
+          retention-days: 7
