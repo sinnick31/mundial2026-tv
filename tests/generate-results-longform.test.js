@@ -45,3 +45,57 @@ test('deduplica resultados del mismo encuentro y fecha', () => {
   assert.equal(result.recent.length, 1);
   assert.match(result.recent[0].cuerpo, /empate/i);
 });
+
+test('el video largo prioriza la tabla chilena y solo muestra fotos con permiso verificable', () => {
+  const now = Date.now();
+  const authorized = {
+    url:'https://assets.example/player.jpg',
+    sourceUrl:'https://club.example/permiso',
+    credit:'Club / fotógrafo',
+    rights:'authorized',
+    authorizationReference:'licencia-123',
+    permittedUse:['youtube_monetized'],
+    name:'Jugador Destacado',
+    team:'Club A',
+  };
+  const cache = {
+    fecha:new Date(now).toISOString(),
+    partidos_recientes:[{
+      estado:'finalizado', equipo1:'Club A', equipo2:'Club B',
+      golesLocal:1, golesVisita:0, competencia:'Liga de Primera',
+      fecha:new Date(now-3600000).toISOString(), fuente:'ESPN',
+      url:'https://www.espn.com/soccer/match',
+    }],
+    partidos_proximos:[],
+    tabla_fuente:'ESPN',
+    tabla_url:'https://www.espn.com/soccer/standings',
+    tabla_actualizada:new Date(now).toISOString(),
+    tabla_posiciones:[{posicion:1,equipo:'Club A',pj:25,pg:16,pe:5,pp:4,gf:40,gc:20,dif:20,pts:53}],
+    jugadores_fuente:'ESPN',
+    jugadores_destacados:[{nombre:'Jugador Destacado',equipo:'Club A',categoria:'Goles',valor:'14',fuente:'ESPN'}],
+  };
+  const result = buildSections(cache, {
+    teamImages:{
+      'Club A':{...authorized,team:'Club A'},
+      'Club B':{url:'https://assets.example/b.png',team:'Club B',rights:'authorized'},
+    },
+    playerImages:[authorized],
+  });
+  assert.equal(result.sections[0].tipo,'tabla');
+  assert.equal(result.tableSections.length,1);
+  assert.equal(result.standings.length,1);
+  assert.equal(result.players[0].jugador.imagen,'https://assets.example/player.jpg');
+  assert.equal(result.recent[0].escudoLocal,'https://assets.example/player.jpg');
+  assert.equal(result.recent[0].escudoVisita,'');
+});
+
+test('no acepta fotos de jugadores sin evidencia explícita de licencia para YouTube', () => {
+  const cache = {
+    partidos_recientes:[], partidos_proximos:[], tabla_posiciones:[],
+    jugadores_destacados:[{nombre:'Jugador X',equipo:'Club X',categoria:'Goles',valor:'8'}],
+  };
+  const result = buildSections(cache, {
+    playerImages:[{name:'Jugador X',team:'Club X',url:'https://assets.example/x.jpg',sourceUrl:'https://source.example',credit:'Crédito',rights:'authorized',permittedUse:['youtube']}],
+  });
+  assert.equal(result.players[0].jugador.imagen,'');
+});
