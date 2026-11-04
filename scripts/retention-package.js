@@ -26,7 +26,7 @@ function buildRetention(item) {
   // El gancho ya contiene el titular: quitarlo del cuerpo para no repetir la misma información.
   const withoutHeadline = base.toLocaleLowerCase('es-CL').startsWith(title.toLocaleLowerCase('es-CL'))
     ? base.slice(title.length).replace(/^[\s.!?…]+/, '') : base;
-  const withoutOldQuestion = withoutHeadline.replace(/\s*(?:La pregunta queda abierta:|Ahora queda seguir|¿Qué liga o torneo|La próxima fecha puede entregar)[\s\S]*$/i, '').trim();
+  const withoutOldQuestion = withoutHeadline.replace(question, '').replace(/\s*(?:La pregunta queda abierta:|Ahora queda seguir|¿Qué liga o torneo|La próxima fecha puede entregar)[\s\S]*$/i, '').trim();
   item.gancho = hook.slice(0, 220);
   item.narracion = [hook, withoutOldQuestion, cta, question].filter(Boolean).join(' ');
   item.pregunta_comunidad = question;
