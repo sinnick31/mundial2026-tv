@@ -32,6 +32,29 @@ jobs:
       - name: Probe real match endpoints (read-only)
         run: node scripts/fetch-matches.js
 
+      - name: Probe TheSportsDB fallback directly (read-only)
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const { getMatchesFromTheSportsDB } = require('./scripts/fetch-matches');
+          getMatchesFromTheSportsDB().then((result) => {
+            const diagnostic = {
+              leagues_configured: result.ligas_consultadas,
+              leagues_responding: result.ligas_correctas,
+              recent: result.recientes.length,
+              live: result.enCurso.length,
+              upcoming: result.proximos.length,
+              errors: result.errores,
+            };
+            fs.writeFileSync('thesportsdb-diagnostic.json', JSON.stringify(diagnostic, null, 2));
+            console.log(JSON.stringify(diagnostic, null, 2));
+            if (result.ligas_correctas < 1) process.exitCode = 1;
+          }).catch((error) => {
+            console.error(error);
+            process.exitCode = 1;
+          });
+          NODE
+
       - name: Validate source diagnostics
         run: |
           node - <<'NODE'
@@ -59,6 +82,11 @@ jobs:
             console.error('No provider returned a valid structured response');
             process.exit(1);
           }
+          const backupProbe = JSON.parse(fs.readFileSync('thesportsdb-diagnostic.json', 'utf8'));
+          if (backupProbe.leagues_responding < 1) {
+            console.error('TheSportsDB did not return a valid structured response');
+            process.exit(1);
+          }
           NODE
 
       - name: Save match-source diagnostic artifact
@@ -66,6 +94,8 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: match-source-diagnostics-${{ github.run_number }}
-          path: matches-cache.json
+          path: |
+            matches-cache.json
+            thesportsdb-diagnostic.json
           if-no-files-found: warn
           retention-days: 7
