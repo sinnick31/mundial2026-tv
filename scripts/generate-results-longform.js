@@ -8,6 +8,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 const { getAuthenticatedYouTube, verifyChannel } = require('./youtube-auth');
 const { generarNarracion } = require('./generate-narration');
+const { loadHistory } = require('./content-history');
 
 const ROOT = path.join(__dirname, '..');
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -46,11 +47,28 @@ function loadCache() {
   if (!fs.existsSync(CACHE)) throw new Error('No existe matches-cache.json; la fuente de partidos no se ejecutó.');
   return JSON.parse(fs.readFileSync(CACHE, 'utf8'));
 }
-function buildSections(cache, options = {}) {\n  const teams = options.teamImages || readManifest(process.env.TEAM_IMAGES_JSON);\n  const playerManifest = options.playerImages || readManifest(process.env.PLAYER_IMAGES_JSON);
+function shortAlreadyCoversMatch(history, match) {
+  const home = norm(match.equipo1 || '');
+  const away = norm(match.equipo2 || '');
+  if (!home || !away) return false;
+  return (history.items || []).some(item => {
+    const text = norm([item.hook, item.titulo, item.title].filter(Boolean).join(' '));
+    return text.includes(home) && text.includes(away);
+  });
+}
+function shortAlreadyCoversPlayer(history, player) {
+  const name = norm(player.nombre || '');
+  if (!name || name.length < 5) return false;
+  return (history.items || []).some(item => norm([item.hook, item.titulo, item.title].filter(Boolean).join(' ')).includes(name));
+}
+
+function buildSections(cache, options = {}) {
+  const history = options.history || loadHistory();
+  const teams = options.teamImages || readManifest(process.env.TEAM_IMAGES_JSON);\n  const playerManifest = options.playerImages || readManifest(process.env.PLAYER_IMAGES_JSON);
   const cutoff = Date.now() - 72 * 60 * 60 * 1000;
   const recentRaw = Array.isArray(cache.partidos_recientes) ? cache.partidos_recientes : [];
   const unique = new Map();
-  for (const m of recentRaw.filter(m => m.estado === 'finalizado'
+  for (const m of recentRaw.filter(m => !shortAlreadyCoversMatch(history, m) && m.estado === 'finalizado'
     && m.golesLocal !== null && m.golesLocal !== undefined
     && m.golesVisita !== null && m.golesVisita !== undefined
     && (!m.fecha || (Date.parse(m.fecha) >= cutoff && !Number.isNaN(Date.parse(m.fecha)))))) {
@@ -76,7 +94,7 @@ function buildSections(cache, options = {}) {\n  const teams = options.teamImage
     };
   });
   const upcomingRaw = Array.isArray(cache.partidos_proximos) ? cache.partidos_proximos : [];
-  const upcoming = upcomingRaw.filter(m => m.equipo1 && m.equipo2 && m.fecha && !Number.isNaN(Date.parse(m.fecha)) && Date.parse(m.fecha) >= Date.now())
+  const upcoming = upcomingRaw.filter(m => !shortAlreadyCoversMatch(history, m) && m.equipo1 && m.equipo2 && m.fecha && !Number.isNaN(Date.parse(m.fecha)) && Date.parse(m.fecha) >= Date.now())
     .sort((a,b)=>new Date(a.fecha)-new Date(b.fecha)).slice(0,4).map((m,i)=>({
       orden:recent.length+i+1, tipo:'proximo', titulo:`PRÓXIMO: ${m.equipo1} vs ${m.equipo2}`,
       cuerpo:`Se juega ${fechaLocal(m.fecha)} · ${m.competencia||'Fútbol'}.${m.estadio ? ` Estadio: ${m.estadio}.` : ''} Revisa la programación antes del encuentro.`,
@@ -97,7 +115,7 @@ function buildSections(cache, options = {}) {\n  const teams = options.teamImage
     });
   }
   const players = (Array.isArray(cache.jugadores_destacados) ? cache.jugadores_destacados : [])
-    .filter(player => player && player.nombre && player.valor)
+    .filter(player => player && player.nombre && player.valor && !shortAlreadyCoversPlayer(history, player))
     .slice(0, 4).map((player, i) => {
       const image = playerImage(player, playerManifest);
       return {
@@ -193,4 +211,4 @@ async function main() {
 }
 if (require.main === module) main().catch(err=>{console.error(err.stack||err);process.exit(1);});
 
-module.exports = { buildSections, visualRightsOk, teamImage, playerImage };
+module.exports = { buildSections, visualRightsOk, teamImage, playerImage, shortAlreadyCoversMatch, shortAlreadyCoversPlayer };
