@@ -36,7 +36,6 @@ function playerImage(player, manifest) {
 
 const norm = (s='') => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 const isChile = (m) => /primera division de chile|copa chile|liga de ascenso|futbol chileno|chile/i.test(norm(m.competencia || ''));
-const isColo = (m) => /colo colo|colocolo/i.test(norm((m.equipo1 || '') + ' ' + (m.equipo2 || '')));
 const wordCount = value => String(value || '').trim().split(/\s+/).filter(Boolean).length;
 const fechaLocal = value => {
   if (!value || Number.isNaN(Date.parse(value))) return 'horario no disponible';
@@ -172,7 +171,7 @@ async function main() {
   const channel = await verifyChannel(youtube);
   const sourceList = sections.map(s=>`${s.titulo}\nFuente: ${s.fuente}\n${s.url}`).join('\n\n');
   const standingsNote = standings.length ? `\n\nTABLA DE POSICIONES: ${cache.tabla_url || ''}\nActualizada: ${cache.tabla_actualizada || 'fecha no informada'}` : '\n\nLa tabla no se mostró porque las fuentes no entregaron una clasificación completa y verificable.';
-  const description = `${intro}${standingsNote}\n\nLos datos de partidos, clasificación y estadísticas se contrastan con las fuentes enlazadas. Los horarios pueden cambiar. No se incluyen clips de retransmisión.\n\nFUENTES\n${sourceList}\n\n#FutbolChileno #CampeonatoNacional #TablaDePosiciones #ResultadosFutbol`
+  const description = `${intro}${standingsNote}\n\nLos datos de partidos, clasificación y estadísticas se contrastan con las fuentes enlazadas. Los horarios pueden cambiar. No se incluyen clips de retransmisión.\n\nFUENTES\n${sourceList}\n\n#FutbolChileno #CampeonatoNacional #TablaDePosiciones #ResultadosFutbol`;
   const privacyStatus = process.env.RESULTS_VIDEO_PRIVACY || 'private';
   const response = await youtube.videos.insert({
     part:['snippet','status'],
