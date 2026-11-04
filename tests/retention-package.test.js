@@ -19,14 +19,15 @@ function item() {
 
 test('añade gancho inmediato, CTA, pregunta y miniatura estructurada', () => {
   const result = buildRetention(item());
-  assert.match(result.gancho, /^¿Qué cambia de verdad/);
-  assert.match(result.narracion, /^¿Qué cambia de verdad/);
+  assert.equal(result.gancho, 'Colo-Colo confirma un nuevo refuerzo.');
+  assert.match(result.narracion, /^Colo-Colo confirma un nuevo refuerzo\./);
   assert.match(result.narracion, /suscríbete a Chilensis Fútbol/);
   assert.match(result.narracion, /comentarios/);
   assert.ok(result.miniatura.prompt_generador_imagen.includes('16:9'));
   assert.ok(result.miniatura.texto_en_miniatura.split(/\s+/).length <= 3);
-  assert.equal(result.estructura_retencion.cambios_de_ritmo[1].momento, 'cada 15s');
-  assert.equal(result.estructura_retencion.cambios_de_ritmo[2].momento, '70-80%');
+  assert.equal(result.estructura_retencion.cambios_de_ritmo[0].momento, '0-3s');
+  assert.equal(result.estructura_retencion.cambios_de_ritmo[1].momento, 'cada 3-5s');
+  assert.equal(result.estructura_retencion.cambios_de_ritmo[2].momento, 'cierre');
 });
 
 test('enriquece el paquete sin alterar el total ni borrar la fuente', () => {
