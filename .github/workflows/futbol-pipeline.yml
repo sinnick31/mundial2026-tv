@@ -233,9 +233,9 @@ jobs:
       - name: 🔐 Validar YouTube OAuth v8
         if: inputs.render_only == 'false'
         env:
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
         run: node scripts/preflight-youtube-auth.js
 
@@ -283,9 +283,9 @@ jobs:
       - name: 🎥 Renderizar + publicar
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
-          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
           TEAM_BROLL_MANIFEST: ${{ secrets.TEAM_BROLL_MANIFEST }}
