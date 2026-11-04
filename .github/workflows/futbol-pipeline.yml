@@ -188,7 +188,9 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: contenido-${{ steps.gen.outputs.fecha }}-${{ github.run_number }}
-          path: daily-content.json
+          path: |
+            daily-content.json
+            matches-cache.json
           retention-days: 7
 
   publish:
@@ -268,6 +270,20 @@ jobs:
           name: contenido-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
           path: .
 
+      - name: 🏟️ Renderizar video largo con resultados, tabla y figuras
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
+          PLAYER_IMAGES_JSON: ${{ secrets.PLAYER_IMAGES_JSON }}
+          PUBLISH_TO_YOUTUBE: 'false'
+        run: |
+          if [ ! -s matches-cache.json ]; then
+            echo "::warning::No se recibió matches-cache.json; se omite el video largo."
+            exit 0
+          fi
+          node scripts/generate-results-longform.js
+
       - name: 🔎 Verificar paquete de contenido descargado
         shell: bash
         run: |
@@ -288,6 +304,7 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
+          PLAYER_IMAGES_JSON: ${{ secrets.PLAYER_IMAGES_JSON }}
           TEAM_BROLL_MANIFEST: ${{ secrets.TEAM_BROLL_MANIFEST }}
           RENDER_ONLY: ${{ github.event_name == 'schedule' && 'true' || inputs.render_only || 'true' }}
           YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'public' }}
