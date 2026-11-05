@@ -137,20 +137,91 @@ function parseTntHomepage(html = '') {
   return found.slice(0, 20);
 }
 
+function hostMatches(host, expected) {
+  const normalized = String(host || '').toLowerCase().replace(/^www\./, '');
+  return expected.some(domain => normalized === domain || normalized.endsWith('.' + domain));
+}
+
+function expectedSourceHosts(item) {
+  const source = String(item.fuente || item.fuente_original || item.fuente_host || '').toLowerCase();
+  const sourceUrl = String(item.fuente_url_original || '');
+  if (/tnt\s*sports|tntsports\.cl/.test(source + ' ' + sourceUrl)) return ['tntsports.cl'];
+  if (/\bespn\b|espn\.com/.test(source + ' ' + sourceUrl)) {
+    const hosts = ['espn.com', 'espn.com.ar', 'espn.com.mx', 'espn.com.co', 'espn.com.pe'];
+    try {
+      const host = new URL(sourceUrl).hostname.replace(/^www\./, '');
+      if (host && !hosts.includes(host)) hosts.unshift(host);
+    } catch (_) {}
+    return hosts;
+  }
+  try {
+    const host = new URL(sourceUrl).hostname.replace(/^www\./, '');
+    return host && host !== 'news.google.com' ? [host] : [];
+  } catch (_) {
+    return [];
+  }
+}
+
+function extractGoogleNewsTarget(html, expectedHosts) {
+  const candidates = [];
+  const add = value => {
+    if (!value || typeof value !== 'string') return;
+    let decoded = value.replace(/&amp;/g, '&').replace(/\\u0026/g, '&').replace(/\\u003d/g, '=');
+    try {
+      const parsed = new URL(decoded, 'https://news.google.com/');
+      for (const key of ['url', 'u', 'target', 'redirect', 'q']) {
+        const nested = parsed.searchParams.get(key);
+        if (nested) candidates.push(nested);
+      }
+      if (parsed.hostname !== 'news.google.com') candidates.push(parsed.toString());
+    } catch (_) {}
+  };
+  const source = String(html || '');
+  const hrefs = source.match(/(?:href|data-url|data-n-au)=["'][^"']+["']/gi) || [];
+  for (const attribute of hrefs) {
+    const match = attribute.match(/=["']([^"']+)["']/);
+    if (match) add(match[1]);
+  }
+  const absolute = source.match(/https?:\\?\/\\?\/[^\s"'<>]+/gi) || [];
+  for (const value of absolute) add(value.replace(/\\\//g, '/').replace(/\\u0026/g, '&'));
+  for (const value of candidates) {
+    try {
+      const url = new URL(value, 'https://news.google.com/');
+      if (['http:', 'https:'].includes(url.protocol)
+        && !url.username && !url.password
+        && url.hostname !== 'news.google.com'
+        && (!expectedHosts.length || hostMatches(url.hostname, expectedHosts))) {
+        return url.toString();
+      }
+    } catch (_) {}
+  }
+  return '';
+}
+
 async function enrichArticle(item) {
   try {
-    const response = await httpGetResponse(item.link);
-    const resolved = new URL(response.finalUrl);
-    const expectedTnt = item.fuente_host === 'tntsports.cl' || /tntsports\.cl/i.test(item.fuente || '');
-    if (resolved.hostname === 'news.google.com' || (expectedTnt && !/(^|\.)tntsports\.cl$/i.test(resolved.hostname))) {
+    const expectedHosts = expectedSourceHosts(item);
+    let response = await httpGetResponse(item.link);
+    let resolved = new URL(response.finalUrl);
+    if (resolved.hostname.replace(/^www\./i, '') === 'news.google.com') {
+      const target = extractGoogleNewsTarget(response.body, expectedHosts);
+      if (!target) throw new Error('google_news_target_unresolved');
+      response = await httpGetResponse(target);
+      resolved = new URL(response.finalUrl);
+    }
+    if (expectedHosts.length && !hostMatches(resolved.hostname, expectedHosts)) {
       throw new Error('redirect_outside_expected_source');
     }
+    if (resolved.hostname === 'news.google.com') throw new Error('google_news_target_unresolved');
+
     const parsed = extractArticle(response.body);
     const canonical = parsed.canonical ? new URL(parsed.canonical, resolved) : resolved;
-    if (expectedTnt && canonical.hostname.replace(/^www\./i, '') !== 'tntsports.cl') {
+    if (!['https:', 'http:'].includes(canonical.protocol) || canonical.username || canonical.password) {
+      throw new Error('invalid_article_protocol');
+    }
+    if (expectedHosts.length && !hostMatches(canonical.hostname, expectedHosts)) {
       throw new Error('canonical_outside_expected_source');
     }
-    if (!['https:', 'http:'].includes(canonical.protocol)) throw new Error('invalid_article_protocol');
     const canonicalUrl = canonical.toString();
     const body = parsed.body.length >= 300 ? parsed.body : '';
     const articleDateValid = Boolean(parsed.datePublished && !Number.isNaN(Date.parse(parsed.datePublished)));
@@ -369,4 +440,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { httpGet, httpGetResponse, decodeXml, decodeHtml, plainText, extractArticle, parseTntHomepage, enrichArticle, replaceEnrichedArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };
+module.exports = { httpGet, httpGetResponse, extractGoogleNewsTarget, expectedSourceHosts, decodeXml, decodeHtml, plainText, extractArticle, parseTntHomepage, enrichArticle, replaceEnrichedArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };

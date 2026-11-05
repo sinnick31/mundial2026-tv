@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { RSS_FEEDS } = require('../config/ligas');
-const { parseFeed, esFutbol, sourceKey, extractArticle, parseTntHomepage, plainText, decodeHtml } = require('../scripts/fetch-real-news');
+const { parseFeed, esFutbol, sourceKey, extractArticle, parseTntHomepage, plainText, decodeHtml, extractGoogleNewsTarget, expectedSourceHosts } = require('../scripts/fetch-real-news');
 const { calcularViralScore } = require('../scripts/viral-score');
 const { sourceTier, sourceTierBonus, importance } = require('../scripts/generate-real-content');
 
@@ -114,4 +114,21 @@ test('TNT Sports es primera fuente y ESPN la segunda, antes que el resto de feed
   const base = { viral_score: 10, nivel_fuente: 3, timestamp: new Date().toISOString() };
   assert.ok(importance({ ...base, nivel_fuente: 1 }) > importance({ ...base, nivel_fuente: 2 }));
   assert.ok(importance({ ...base, nivel_fuente: 2 }) > importance({ ...base, nivel_fuente: 3 }));
+});
+
+
+test('resuelve enlaces Google News hacia el dominio TNT atribuido sin aceptar terceros', () => {
+  const html = '<html><body><a href="https://www.tntsports.cl/futbol-chileno/noticia-ejemplo">Noticia</a></body></html>';
+  const expected = expectedSourceHosts({ fuente: 'TNT Sports', fuente_url_original: 'https://www.tntsports.cl/' });
+  assert.deepEqual(expected, ['tntsports.cl']);
+  assert.equal(extractGoogleNewsTarget(html, expected), 'https://www.tntsports.cl/futbol-chileno/noticia-ejemplo');
+  const external = '<a href="https://example.com/noticia">Noticia externa</a>';
+  assert.equal(extractGoogleNewsTarget(external, expected), '');
+});
+
+test('reconoce ESPN como fuente atribuida independiente de TNT', () => {
+  const expected = expectedSourceHosts({ fuente: 'ESPN Argentina', fuente_url_original: 'https://www.espn.com.ar/' });
+  assert.ok(expected.includes('espn.com'));
+  assert.ok(expected.includes('espn.com.ar'));
+  assert.equal(extractGoogleNewsTarget('<a href="https://www.espn.com.ar/futbol/noticia">ESPN</a>', expected), 'https://www.espn.com.ar/futbol/noticia');
 });
