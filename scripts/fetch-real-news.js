@@ -182,7 +182,7 @@ function extractGoogleNewsTarget(html, expectedHosts) {
     const match = attribute.match(/=["']([^"']+)["']/);
     if (match) add(match[1]);
   }
-  const absolute = source.match(/https?:\\?\/\\?\/[^"'\\s<>]+/gi) || [];
+  const absolute = source.match(/https?:\\?\/\\?\/[^\s"'<>]+/gi) || [];
   for (const value of absolute) add(value.replace(/\\\//g, '/').replace(/\\u0026/g, '&'));
   for (const value of candidates) {
     try {
@@ -203,7 +203,7 @@ async function enrichArticle(item) {
     const expectedHosts = expectedSourceHosts(item);
     let response = await httpGetResponse(item.link);
     let resolved = new URL(response.finalUrl);
-    if (resolved.hostname.replace(/^www\\./i, '') === 'news.google.com') {
+    if (resolved.hostname.replace(/^www\./i, '') === 'news.google.com') {
       const target = extractGoogleNewsTarget(response.body, expectedHosts);
       if (!target) throw new Error('google_news_target_unresolved');
       response = await httpGetResponse(target);
@@ -249,7 +249,7 @@ async function enrichArticle(item) {
     };
   } catch (error) {
     const message = String(error.message || 'unknown_error');
-    const httpCode = Number((message.match(/^HTTP (\\d+)/) || [])[1] || 0);
+    const httpCode = Number((message.match(/^HTTP (\d+)/) || [])[1] || 0);
     const status = [401, 403, 429].includes(httpCode) ? 'blocked' : httpCode >= 500 ? 'source_server_error' : httpCode ? 'http_error' : /Timeout/i.test(message) ? 'timeout' : 'fetch_error';
     return {
       ...item,
