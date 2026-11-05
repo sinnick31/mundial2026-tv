@@ -1,34 +1,13 @@
 {
-  "ultima_actualizacion": "2026-11-05T10:58:41.171Z",
-  "total_hoy": 535,
+  "ultima_actualizacion": "2026-11-05T11:16:40.346Z",
+  "total_hoy": 537,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 96,
+    "chile": 104,
     "internacional": 2,
-    "colo_colo": 42
+    "colo_colo": 34
   },
   "noticias": [
-    {
-      "title": "La Calera recibe a Coquimbo por los cuartos de ida de la Copa Chile 2026 - PrensaFútbol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE54U0RFNEE5R3ZWVU5IUzdPN01od2ZoY3RWTEpaYXJOS3gzVFFzTHpLSWZrVDkyeUVKV3Frb2hub3ZiVUdIVW5DeGJSblRwOGdiWDM2dTJYaGxpWWlJWF9YQl9nSHNtSV9Bdnp3YWpFaXRuWFRnQURBMlJrSWppUQ?oc=5\" target=\"_blank\">La Calera recibe a Coquimbo por los cuartos de ida de la Copa Chile 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE54U0RFNEE5R3ZWVU5IUzdPN01od2ZoY3RWTEpaYXJOS3gzVFFzTHpLSWZrVDkyeUVKV3Frb2hub3ZiVUdIVW5DeGJSblRwOGdiWDM2dTJYaGxpWWlJWF9YQl9nSHNtSV9Bdnp3YWpFaXRuWFRnQURBMlJrSWppUQ?oc=5",
-      "pubDate": "Mon, 19 Oct 2026 02:05:11 GMT",
-      "timestamp": "2026-10-19T02:05:11.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "PrensaFútbol",
-      "fuente_url_original": "https://www.prensafutbol.cl",
-      "fuente": "PrensaFútbol",
-      "fuente_host": "prensafutbol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Coquimbo Unido",
-      "viral_score": 70,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:18h(+5)"
-      ]
-    },
     {
       "title": "Oficial: Colo-Colo se despide de la Copa Libertadores - En Cancha",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQUGZRQVdDR1FIUHZwaTZycTQxSi0wZXQ5Ujh0dGNVUDdrUDdfSmc1ZXVCMU1VNVNac1B1RnpTWV80VHhSY1J2b0VyYTdHY19iSWF4aG5USmZiWG1oTHZmWVFFT1ppZHZObVZzR1l3Qk5vT0dPQktRbE5IdGtseTBndzdrMFlqcW9TcXhRMldNVzNKREFnUGo2SjhPNWg5NmxpYldpZzk3b00xRnlXQk1RVURvalBaYzhheVFGZzd4SjhycTVLUzVNSTF3?oc=5\" target=\"_blank\">Oficial: Colo-Colo se despide de la Copa Libertadores</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En Cancha</font>",
@@ -18614,27 +18593,6 @@
       ]
     },
     {
-      "title": "Con duelos claves en simultáneo: La programación de la fecha 27 de la Liga de Primera - Cooperativa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8AFBVV95cUxQRVd4NG1nQmVtYndHUk51WkJwMW1jT2NmbFNWaWFjTEY2MXhWR2FqSGhhLVg5bnY2SHNUNk1pS21BRy1Pd2F0d3JpVThtaDhhU0xpX2gzcm16WERRcldkX1ZKRkVFTXlJQ3AxSUd5QmpPWXRJVWJjaWRfeTVaRTlRYnFoWGY2emFwZVdJR0JPejNOSGN3ZEE5TkdLVHNZSC05dEQ2a1FhOHFNR3RCdEp4VVBNc1pmTi1fNENaQXlnS1NES2V3ZGwxQUVDcGtwemNUX0xveEpzUmFqQVR4T2MzOW9Cd1BuNlI3QW5XOXVWNFLSAYwBQVVfeXFMUG10S1FXMUJ0ZnZWNktJbk5obkdxRThkaU5iNzNLYlhwd1N6dTFISWVLdUtmWktWajhxeVhuZ3NTRS1ObWRyYnYwTk8wd3V4akFYVUFnSHp4MWZpV2",
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQRVd4NG1nQmVtYndHUk51WkJwMW1jT2NmbFNWaWFjTEY2MXhWR2FqSGhhLVg5bnY2SHNUNk1pS21BRy1Pd2F0d3JpVThtaDhhU0xpX2gzcm16WERRcldkX1ZKRkVFTXlJQ3AxSUd5QmpPWXRJVWJjaWRfeTVaRTlRYnFoWGY2emFwZVdJR0JPejNOSGN3ZEE5TkdLVHNZSC05dEQ2a1FhOHFNR3RCdEp4VVBNc1pmTi1fNENaQXlnS1NES2V3ZGwxQUVDcGtwemNUX0xveEpzUmFqQVR4T2MzOW9Cd1BuNlI3QW5XOXVWNFLSAYwBQVVfeXFMUG10S1FXMUJ0ZnZWNktJbk5obkdxRThkaU5iNzNLYlhwd1N6dTFISWVLdUtmWktWajhxeVhuZ3NTRS1ObWRyYnYwTk8wd3V4akFYVUFnSHp4MWZpV2cycVlzV1liQ2Y5bTRwM1NHTVJaRFQ3SHdRQnk5MXI2N0pZOHRlMFNhUklQVHZnRkg?oc=5",
-      "pubDate": "Sun, 01 Nov 2026 23:58:00 GMT",
-      "timestamp": "2026-11-01T23:58:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Cooperativa",
-      "fuente_url_original": "https://www.cooperativa.cl",
-      "fuente": "Cooperativa",
-      "fuente_host": "cooperativa.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 90,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 55,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:68h(-10)"
-      ]
-    },
-    {
       "title": "Terremoto en Colo Colo: Lucas Cepeda demanda a los Albos y exige millonario pago - RedGol",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNM1dlMkh6Q1NrN0YxeUlteHA3ZkNKWjRzU09wNGJoa2UyMUx1ZVVncFV5c3FGLXRpQUhPLW1hRGZTZG5taURhb3lkdkVlMmJsWk1GRzVJZmNuVWdJN3lleW5XZm1jN0tPY0VRVDhPemU2SlBIemdDZVgzbVpvamJuMUFnbm5udjBkLTdLVXZaOG1KbFZYa0NCeTlrMG9aWEVydTFSMTk5bkF0QdIBrwFBVV95cUxQYlFaZWhYaF9VbzVObWwyWko5VkEyVWpuZ3FuakhJX3JmN0pxUHgxTEc5NEdTSlNSLVZ5WkZJNjdZY1ZiU1RBLWZ2R3BUcE45YXNmTEI2MjVuaFIzU1Y3VWJpeXBqZnZSVUNkVlFqdG1wY0RkWWF3X1ZaN253Qm9pVzlJcXBqS2Z6YS1tZTRxdEc4cUo5bjJvcjRPU1JPOEtDSX",
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNM1dlMkh6Q1NrN0YxeUlteHA3ZkNKWjRzU09wNGJoa2UyMUx1ZVVncFV5c3FGLXRpQUhPLW1hRGZTZG5taURhb3lkdkVlMmJsWk1GRzVJZmNuVWdJN3lleW5XZm1jN0tPY0VRVDhPemU2SlBIemdDZVgzbVpvamJuMUFnbm5udjBkLTdLVXZaOG1KbFZYa0NCeTlrMG9aWEVydTFSMTk5bkF0QdIBrwFBVV95cUxQYlFaZWhYaF9VbzVObWwyWko5VkEyVWpuZ3FuakhJX3JmN0pxUHgxTEc5NEdTSlNSLVZ5WkZJNjdZY1ZiU1RBLWZ2R3BUcE45YXNmTEI2MjVuaFIzU1Y3VWJpeXBqZnZSVUNkVlFqdG1wY0RkWWF3X1ZaN253Qm9pVzlJcXBqS2Z6YS1tZTRxdEc4cUo5bjJvcjRPU1JPOEtDSXdUSFU1Y2hKam1idHhB?oc=5",
@@ -21172,6 +21130,28 @@
       ]
     },
     {
+      "title": "Con cambios confirmados y encuentros en solo dos días: esta es la programación de la fecha 27 de la Liga de Primera - ADN Radio",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5AFBVV95cUxQVGdMVjRuazVMMl8zcWE3bEVKRllTUGFTZXBWOHJ2RGcwV0lIUzZIS2F1aHh3dUliT0VKRnJpMWg4MFI1NTd5ejRTNF9BalF3NHo1OUtQOXR6RG1BUWs1b3ZfaVIySjNWOTFFamFlOGNEaVp2eXJncFUxMV9fWlQ1YUFxOGROZ01EN0ZUd3laSnBOdUJYaGdUc2Y2SWp4VTlqNmRQOVlwczBCNFpzckc3Xy1TZk1xckgwQUZaOVl3R19wUEstcWZtSURma2pKUm9UalJGWXhXdUdTRkhhZC1oNm5wdE3SAfgBQVVfeXFMTUJ6Sk1CU2F1ZHQ2Z1U3NlhWaTVSZ1lyLVE4cy1VRTJzQ3NoT3BYTWExRUc2UUQ1akE4M2g5MG95TjRFNlRndHhwMVVobGJ5eURXdmJiWFRVdWM1UlRfY2R1Sm80eW1mSV",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQVGdMVjRuazVMMl8zcWE3bEVKRllTUGFTZXBWOHJ2RGcwV0lIUzZIS2F1aHh3dUliT0VKRnJpMWg4MFI1NTd5ejRTNF9BalF3NHo1OUtQOXR6RG1BUWs1b3ZfaVIySjNWOTFFamFlOGNEaVp2eXJncFUxMV9fWlQ1YUFxOGROZ01EN0ZUd3laSnBOdUJYaGdUc2Y2SWp4VTlqNmRQOVlwczBCNFpzckc3Xy1TZk1xckgwQUZaOVl3R19wUEstcWZtSURma2pKUm9UalJGWXhXdUdTRkhhZC1oNm5wdE3SAfgBQVVfeXFMTUJ6Sk1CU2F1ZHQ2Z1U3NlhWaTVSZ1lyLVE4cy1VRTJzQ3NoT3BYTWExRUc2UUQ1akE4M2g5MG95TjRFNlRndHhwMVVobGJ5eURXdmJiWFRVdWM1UlRfY2R1Sm80eW1mSVotTHBxWWJGVkxORXZfZWtmYTRqajV2bmZuM295Z2dVbDJkYlBBdDRLeXBGUXY1eGkwaHNJODkycVVwZnJVejRram9QOWZ6UnVpSXpqWXdWbVo3ZXd4aVpDd282YThoVHFaSFVBOEVETzkxQnJGSnVZM1pDSDk0NURzOHczbm9OTmtkQ1VTcjFUb1M4Q2tsTVI?oc=5",
+      "pubDate": "Tue, 03 Nov 2026 20:56:12 GMT",
+      "timestamp": "2026-11-03T20:56:12.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ADN Radio",
+      "fuente_url_original": "https://www.adnradio.cl",
+      "fuente": "ADN Radio",
+      "fuente_host": "adnradio.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 65,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:38h(+0)"
+      ]
+    },
+    {
       "title": "Universidad Católica vs. Deportes Limache: ANFP confirma cambio de horario para el partido - Radio Agricultura",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxPcnVhLWJyZEFwSVk1WF81aEc2ckVWUDJOUHUwV0dUQklLVGo4MllqSU02SGNhakw4bG5PZzVaNGFxZ0JQeWtCUnkteC1lRXR1VHpibW4wYkxGVWJ6ZnBISVlhYm12MDI5Mmw4bVRIMlllUHZubEdmMTBab0UtZVNlWHdiUG9ERzduZERxQXdkZzNNWUNHcGFxUVFWZjVRNHRYcXFXNE11MjlaNk1HeUhoeUdkSk94QWUzMVh6NGNka044eTRTQXpXRUJIcVFKbFdKbGVnUW1R?oc=5\" target=\"_blank\">Universidad Católica vs. Deportes Limache: ANFP confirma cambio de horario para el partido</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Radio Agric",
       "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPcnVhLWJyZEFwSVk1WF81aEc2ckVWUDJOUHUwV0dUQklLVGo4MllqSU02SGNhakw4bG5PZzVaNGFxZ0JQeWtCUnkteC1lRXR1VHpibW4wYkxGVWJ6ZnBISVlhYm12MDI5Mmw4bVRIMlllUHZubEdmMTBab0UtZVNlWHdiUG9ERzduZERxQXdkZzNNWUNHcGFxUVFWZjVRNHRYcXFXNE11MjlaNk1HeUhoeUdkSk94QWUzMVh6NGNka044eTRTQXpXRUJIcVFKbFdKbGVnUW1R?oc=5",
@@ -22167,6 +22147,28 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:8h(+10)"
+      ]
+    },
+    {
+      "title": "Con duelos claves en simultáneo: La programación de la fecha 27 de la Liga de Primera - Cooperativa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8AFBVV95cUxQRVd4NG1nQmVtYndHUk51WkJwMW1jT2NmbFNWaWFjTEY2MXhWR2FqSGhhLVg5bnY2SHNUNk1pS21BRy1Pd2F0d3JpVThtaDhhU0xpX2gzcm16WERRcldkX1ZKRkVFTXlJQ3AxSUd5QmpPWXRJVWJjaWRfeTVaRTlRYnFoWGY2emFwZVdJR0JPejNOSGN3ZEE5TkdLVHNZSC05dEQ2a1FhOHFNR3RCdEp4VVBNc1pmTi1fNENaQXlnS1NES2V3ZGwxQUVDcGtwemNUX0xveEpzUmFqQVR4T2MzOW9Cd1BuNlI3QW5XOXVWNFLSAYwBQVVfeXFMUG10S1FXMUJ0ZnZWNktJbk5obkdxRThkaU5iNzNLYlhwd1N6dTFISWVLdUtmWktWajhxeVhuZ3NTRS1ObWRyYnYwTk8wd3V4akFYVUFnSHp4MWZpV2",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQRVd4NG1nQmVtYndHUk51WkJwMW1jT2NmbFNWaWFjTEY2MXhWR2FqSGhhLVg5bnY2SHNUNk1pS21BRy1Pd2F0d3JpVThtaDhhU0xpX2gzcm16WERRcldkX1ZKRkVFTXlJQ3AxSUd5QmpPWXRJVWJjaWRfeTVaRTlRYnFoWGY2emFwZVdJR0JPejNOSGN3ZEE5TkdLVHNZSC05dEQ2a1FhOHFNR3RCdEp4VVBNc1pmTi1fNENaQXlnS1NES2V3ZGwxQUVDcGtwemNUX0xveEpzUmFqQVR4T2MzOW9Cd1BuNlI3QW5XOXVWNFLSAYwBQVVfeXFMUG10S1FXMUJ0ZnZWNktJbk5obkdxRThkaU5iNzNLYlhwd1N6dTFISWVLdUtmWktWajhxeVhuZ3NTRS1ObWRyYnYwTk8wd3V4akFYVUFnSHp4MWZpV2cycVlzV1liQ2Y5bTRwM1NHTVJaRFQ3SHdRQnk5MXI2N0pZOHRlMFNhUklQVHZnRkg?oc=5",
+      "pubDate": "Thu, 05 Nov 2026 09:49:01 GMT",
+      "timestamp": "2026-11-05T09:49:01.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Cooperativa",
+      "fuente_url_original": "https://www.cooperativa.cl",
+      "fuente": "Cooperativa",
+      "fuente_host": "cooperativa.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)"
       ]
     }
   ]
