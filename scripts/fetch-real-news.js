@@ -258,6 +258,13 @@ function loadCache() {
 }
 
 
+function replaceEnrichedArticle(collection, original, enriched) {
+  const index = collection.indexOf(original);
+  if (index < 0) return false;
+  collection[index] = enriched;
+  return true;
+}
+
 async function main() {
   console.log('📰 REAL FOOTBALL NEWSROOM v5 — ingesta de fuentes reales');
   const cache = loadCache();
@@ -313,10 +320,15 @@ async function main() {
   const toEnrich = fresh.slice().sort((a, b) => (b.prioridad_fuente || 0) - (a.prioridad_fuente || 0)).slice(0, 30);
   for (let i = 0; i < toEnrich.length; i += 3) {
     const batch = toEnrich.slice(i, i + 3);
-    const enriched = await Promise.all(batch.map(enrichArticle));
-    for (const article of enriched) {
-      const index = fresh.findIndex(item => item.title === article.title && item.timestamp === article.timestamp);
-      if (index >= 0) fresh[index] = article;
+    // La fecha del artículo puede diferir de la fecha RSS y la URL puede canonicalizarse.
+    // Conservar la referencia al objeto original evita perder la versión enriquecida.
+    const enriched = await Promise.all(batch.map(async original => ({
+      original,
+      article: await enrichArticle(original),
+    })));
+    for (const result of enriched) {
+      replaceEnrichedArticle(fresh, result.original, result.article);
+      const article = result.article;
       console.log(article.article_complete ? `  ✓ Artículo completo: ${article.article_title}` : `  ⚠️ ${article.article_fetch_status || 'extraction_error'}: ${article.title} (${article.article_fetch_error || 'sin detalle'})`);
     }
   }
@@ -357,4 +369,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { httpGet, httpGetResponse, decodeXml, decodeHtml, plainText, extractArticle, parseTntHomepage, enrichArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };
+module.exports = { httpGet, httpGetResponse, decodeXml, decodeHtml, plainText, extractArticle, parseTntHomepage, enrichArticle, replaceEnrichedArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };

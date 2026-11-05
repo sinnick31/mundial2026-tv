@@ -139,6 +139,17 @@ jobs:
           echo "Piezas seleccionadas: $TOTAL"
           if [ "$TOTAL" -gt 0 ]; then echo "hay_contenido=true" >> "$GITHUB_OUTPUT"; else echo "hay_contenido=false" >> "$GITHUB_OUTPUT"; fi
 
+      - name: 🧾 Guardar diagnóstico de selección editorial
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: diagnostico-editorial-${{ github.run_number }}
+          path: |
+            editorial-diagnostics.json
+            daily-content.json
+          if-no-files-found: warn
+          retention-days: 7
+
       - name: 🛡️ Bloqueo editorial Chilensis Fútbol
         if: steps.gen.outputs.hay_contenido == 'true'
         run: |
