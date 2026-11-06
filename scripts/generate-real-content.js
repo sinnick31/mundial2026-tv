@@ -361,7 +361,7 @@ function main() {
       ? 'all_candidates_already_covered_by_editorial_history'
       : 'no_candidate_matched_current_editorial_rotation';
     diagnostics.selection_rejection_counts[diagnostics.final_reason] = candidates.length;
-    diagnostics.selection_rejected_examples = alreadyCovered.slice(0, 50).map(item => ({
+    diagnostics.selection_rejected_examples = candidates.slice(0, 50).map(item => ({
       title: clean(item.article_title || item.title || '').slice(0, 180),
       source: clean(item.fuente || item.fuente_host || '').slice(0, 100),
       reason: hasSimilarHook(history, item.title, 'noticia')
