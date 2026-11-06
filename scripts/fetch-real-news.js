@@ -204,7 +204,7 @@ function extractGoogleNewsTarget(html, expectedHosts = []) {
   };
 
   const source = String(html || '');
-  add(source);
+  if (/^https?:\/\//i.test(source.trim())) add(source.trim());
   const attributes = source.match(/(?:href|data-url|data-n-au|data-href|url)\s*=\s*["'][^"']+["']/gi) || [];
   for (const attribute of attributes) {
     const match = attribute.match(/=\s*["']([^"']+)["']/);
