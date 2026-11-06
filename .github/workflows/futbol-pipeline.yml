@@ -20,6 +20,12 @@ on:
     - cron: '0 23 * * *'
   workflow_dispatch:
     inputs:
+      manual_package:
+        description: 'Paquete editorial manual (solo ejecuciones manuales)'
+        required: true
+        default: 'automatic'
+        type: choice
+        options: ['automatic', 'la-u-antofagasta-2026-11-05']
       max_items:
         description: 'Shorts máximos'
         required: false
@@ -119,9 +125,11 @@ jobs:
           node --test tests/editorial-state-merge.test.js
 
       - name: 🔎 Ingerir fuentes verificables
+        if: github.event_name == 'schedule' || inputs.manual_package == 'automatic' || inputs.manual_package == ''
         run: node scripts/fetch-real-news.js
 
       - name: ⚽ Obtener datos estructurados
+        if: github.event_name == 'schedule' || inputs.manual_package == 'automatic' || inputs.manual_package == ''
         run: node scripts/fetch-matches.js
 
       - name: 🧠 Seleccionar SOLO historias con valor
@@ -129,8 +137,14 @@ jobs:
         env:
           MAX_ITEMS: ${{ inputs.max_items || '1' }}
           MODO: ${{ inputs.modo || 'chile' }}
+          MANUAL_PACKAGE: ${{ inputs.manual_package || 'automatic' }}
         run: |
-          node scripts/generate-real-content.js
+          if [ "$MANUAL_PACKAGE" = "la-u-antofagasta-2026-11-05" ]; then
+            node scripts/prepare-manual-package.js content/manual/la-u-antofagasta-2026-11-05.json
+          else
+            node scripts/generate-real-content.js
+          fi
+          node --check scripts/prepare-manual-package.js
           node --check scripts/retention-package.js
           node scripts/retention-package.js daily-content.json
           FECHA=$(date -u +%Y-%m-%d)
