@@ -296,7 +296,7 @@ jobs:
           const clips = fs.existsSync(path) ? fs.readdirSync(path).filter(f => /\.mp4$/i.test(f)) : [];
           console.log('Clips visuales disponibles:', clips.length);
           if (!clips.length) {
-            console.warn('::warning::No hay clips genéricos disponibles. Las noticias usarán gráficos de plantilla; las crónicas de partidos seguirán bloqueadas si no tienen un clip específico autorizado en TEAM_BROLL_MANIFEST.');
+            console.warn('::warning::No hay clips genéricos disponibles. Las noticias usarán gráficos de plantilla; las crónicas de partidos seguirán bloqueadas si no tienen un clip específico.');
           }
           NODE
 
@@ -316,7 +316,7 @@ jobs:
             find . -maxdepth 3 -type f | sort | tail -n 100
             exit 1
           fi
-          node -e "const f=require('./daily-content.json'); if(!Array.isArray(f.contenido)||!f.total||f.total!==f.contenido.length) { console.error('::error::daily-content.json tiene un formato o total incoherente'); process.exit(1) } console.log('Paquete válido:', f.total, 'pieza(s), fecha', f.fecha)"
+          node -e "const f=require('./daily-content.json'); if(!Array.isArray(f.contenido)||!f.total||f.total!==f.contenido.length) { console.error('::error::daily-content.json tiene un formato o contenido inválido.'); process.exit(1); } console.log('Paquete OK: ' + f.total + ' piezas.');"
 
       - name: 🎥 Renderizar + publicar
         env:
@@ -396,6 +396,11 @@ jobs:
           if [ "${{ needs.generate.result }}" != "success" ]; then exit 1; fi
           if [ "${{ needs.publish.result }}" = "failure" ] || [ "${{ needs.publish.result }}" = "cancelled" ]; then exit 1; fi
           if [ "${{ needs.publish.result }}" = "skipped" ]; then
-            echo "::error::No se produjo ningún video: la generación no entregó contenido elegible y el render fue omitido. Revisa editorial-diagnostics.json."
-            exit 1
+            if [ "${{ needs.generate.outputs.hay_contenido }}" = "true" ]; then
+              echo "::error::La generación reportó contenido pero la publicación fue omitida. Revisa el artefacto de diagnóstico y el pipeline de render."
+              exit 1
+            fi
+            echo "ℹ️ No hay contenido elegible para publicar; el pipeline se considera exitoso por no operar."
+            exit 0
           fi
+
