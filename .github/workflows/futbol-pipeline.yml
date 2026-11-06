@@ -14,6 +14,18 @@ on:
       - 'tsconfig.json'
       - '.github/workflows/futbol-pipeline.yml'
       - '.github/workflows/ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'config/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - '.github/workflows/futbol-pipeline.yml'
+      - '.github/workflows/ci.yml'
   schedule:
     - cron: '0 15 * * *'
     - cron: '0 19 * * *'
@@ -57,7 +69,7 @@ env:
 
 jobs:
   validate-push:
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: 🧪 Validar cambios de código sin publicar
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -84,7 +96,7 @@ jobs:
           npx tsc --noEmit
 
   generate:
-    if: github.event_name != 'push'
+    if: github.event_name != 'push' && github.event_name != 'pull_request'
     name: 📰 Detectar noticia + guion original
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -158,6 +170,7 @@ jobs:
           npm run test:editorial-gate
 
       - name: 💾 Guardar memoria editorial
+        if: steps.gen.outputs.hay_contenido == 'true'
         env:
           RENDER_ONLY: ${{ github.event_name == 'schedule' && 'true' || inputs.render_only || 'true' }}
         run: |
@@ -206,7 +219,7 @@ jobs:
     name: 🎬 Render + validar/publicar Short
     runs-on: ubuntu-latest
     needs: generate
-    if: github.event_name != 'push' && needs.generate.outputs.hay_contenido == 'true'
+    if: github.event_name != 'push' && github.event_name != 'pull_request' && needs.generate.outputs.hay_contenido == 'true'
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
@@ -355,7 +368,7 @@ jobs:
     if: always()
     steps:
       - run: |
-          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
+          if [ "${GITHUB_EVENT_NAME}" = "push" ] || [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
             echo "Validación de código: ${{ needs.validate-push.result }}"
             test "${{ needs.validate-push.result }}" = "success"
             echo "Push validado. No se generó ni publicó contenido."
@@ -368,3 +381,7 @@ jobs:
           echo "════════════════════════════════════════"
           if [ "${{ needs.generate.result }}" != "success" ]; then exit 1; fi
           if [ "${{ needs.publish.result }}" = "failure" ] || [ "${{ needs.publish.result }}" = "cancelled" ]; then exit 1; fi
+          if [ "${{ needs.publish.result }}" = "skipped" ]; then
+            echo "::error::No se produjo ningún video: la generación no entregó contenido elegible y el render fue omitido. Revisa editorial-diagnostics.json."
+            exit 1
+          fi
