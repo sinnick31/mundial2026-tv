@@ -250,7 +250,7 @@ function main() {
     const reason = newsCandidateRejection(item, now);
     if (reason) {
       rejectionCounts[reason] = (rejectionCounts[reason] || 0) + 1;
-      if (rejectedExamples.length < 12) rejectedExamples.push({
+      if (rejectedExamples.length < 50) rejectedExamples.push({
         title: clean(item && item.title || '').slice(0, 160),
         source: clean(item && (item.fuente || item.fuente_host) || '').slice(0, 80),
         reason,
@@ -261,12 +261,34 @@ function main() {
   }
   const candidates = allNews.filter(n => newsCandidateRejection(n, now) === null);
   const diagnostics = {
+    schema_version: 2,
+    status: candidates.length ? 'CANDIDATES_FOUND' : 'NO_ELIGIBLE_CONTENT',
     generated_at: new Date(now).toISOString(),
+    source_cache_updated_at: news.ultima_actualizacion || null,
+    found_total: allNews.length,
     cache_total: allNews.length,
     eligible_total: candidates.length,
     rejected_total: allNews.length - candidates.length,
     rejection_counts: rejectionCounts,
+    found_examples: allNews.slice(0, 50).map(item => ({
+      title: clean(item && (item.article_title || item.title) || '').slice(0, 180),
+      source: clean(item && (item.fuente || item.fuente_host) || '').slice(0, 100),
+      url: String(item && item.link || '').slice(0, 500),
+      published_at: item && item.timestamp || null,
+      article_fetch_status: item && item.article_fetch_status || null,
+      article_chars: Number(item && item.article_chars) || String(item && item.article_body || '').length,
+    })),
+    eligible_examples: candidates.slice(0, 30).map(item => ({
+      title: clean(item.article_title || item.title || '').slice(0, 180),
+      source: clean(item.fuente || item.fuente_host || '').slice(0, 100),
+      url: String(item.link || '').slice(0, 500),
+    })),
     rejected_examples: rejectedExamples,
+    selection_rejection_counts: {},
+    selection_rejected_examples: [],
+    selected_examples: [],
+    final_status: null,
+    final_reason: null,
   };
   fs.writeFileSync('editorial-diagnostics.json', JSON.stringify(diagnostics, null, 2) + '\n');
   console.log('🔬 Diagnóstico editorial: ' + JSON.stringify({
@@ -276,8 +298,12 @@ function main() {
     rejection_counts: diagnostics.rejection_counts,
   }));
   if (!candidates.length) {
-    fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, total: 0, contenido: [] }, null, 2));
-    console.log('⚠️ No hay noticias con fuente, fecha y evidencia mínima verificables. Revisa editorial-diagnostics.json; los titulares aislados siguen bloqueados.');
+    diagnostics.status = 'NO_ELIGIBLE_CONTENT';
+    diagnostics.final_status = 'NO_ELIGIBLE_CONTENT';
+    diagnostics.final_reason = 'no_candidates_passed_validation';
+    fs.writeFileSync('editorial-diagnostics.json', JSON.stringify(diagnostics, null, 2) + '\n');
+    fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, estado: 'NO_ELIGIBLE_CONTENT', motivo: diagnostics.final_reason, total: 0, contenido: [] }, null, 2));
+    console.log('NO_ELIGIBLE_CONTENT: no hay noticias que superen la validación de fuente, fecha y evidencia. Revisa editorial-diagnostics.json.');
     return;
   }
 
@@ -328,14 +354,39 @@ function main() {
   }
 
   if (!picks.length) {
-    fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, total: 0, contenido: [] }, null, 2));
-    console.log('⚠️ No hay una pieza nueva y suficientemente distinta. No se publica.');
+    const alreadyCovered = candidates.filter(n => hasSimilarHook(history, n.title, 'noticia'));
+    diagnostics.status = 'NO_ELIGIBLE_CONTENT';
+    diagnostics.final_status = 'NO_ELIGIBLE_CONTENT';
+    diagnostics.final_reason = alreadyCovered.length === candidates.length
+      ? 'all_candidates_already_covered_by_editorial_history'
+      : 'no_candidate_matched_current_editorial_rotation';
+    diagnostics.selection_rejection_counts[diagnostics.final_reason] = candidates.length;
+    diagnostics.selection_rejected_examples = candidates.slice(0, 50).map(item => ({
+      title: clean(item.article_title || item.title || '').slice(0, 180),
+      source: clean(item.fuente || item.fuente_host || '').slice(0, 100),
+      reason: hasSimilarHook(history, item.title, 'noticia')
+        ? 'already_covered_by_editorial_history'
+        : 'not_selected_by_editorial_rotation',
+    }));
+    fs.writeFileSync('editorial-diagnostics.json', JSON.stringify(diagnostics, null, 2) + '\n');
+    fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, estado: 'NO_ELIGIBLE_CONTENT', motivo: diagnostics.final_reason, total: 0, contenido: [] }, null, 2));
+    console.log('NO_ELIGIBLE_CONTENT: no hay una pieza nueva seleccionable. Revisa editorial-diagnostics.json.');
     return;
   }
 
+  diagnostics.status = 'CONTENT_READY';
+  diagnostics.final_status = 'CONTENT_READY';
+  diagnostics.final_reason = 'eligible_items_selected';
+  diagnostics.selected_examples = picks.map(item => ({
+    title: item.titulo_youtube,
+    source: item._fuente,
+    url: item._fuente_url,
+    format: item._formato_recomendado,
+  }));
+  fs.writeFileSync('editorial-diagnostics.json', JSON.stringify(diagnostics, null, 2) + '\n');
   picks.forEach(item => registrar(history, { matchId: null, tipoContenido: 'noticia', hook: item.gancho, titulo: item.titulo_youtube }));
   saveHistory(history);
-  fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, generado_en: new Date().toISOString(), total: picks.length, modo: MODO, politica: 'SOURCE_LOCKED_EDITORIAL_V6', contenido: picks }, null, 2));
+  fs.writeFileSync('daily-content.json', JSON.stringify({ fecha: FECHA, estado: 'CONTENT_READY', generado_en: new Date().toISOString(), total: picks.length, modo: MODO, politica: 'SOURCE_LOCKED_EDITORIAL_V6', contenido: picks }, null, 2));
   console.log(`✅ ${picks.length} piezas reales seleccionadas`);
   picks.forEach((p, i) => console.log(`${i + 1}. [${p._fuente}] ${p.titulo_youtube}`));
 }

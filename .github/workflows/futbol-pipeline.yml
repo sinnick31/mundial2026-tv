@@ -1,31 +1,7 @@
 name: ⚽ CHILENSIS FÚTBOL — Newsroom
 
 on:
-  # Los pushes de código ejecutan validación, nunca publican automáticamente.
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/**'
-      - 'config/**'
-      - 'src/**'
-      - 'tests/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'tsconfig.json'
-      - '.github/workflows/futbol-pipeline.yml'
-      - '.github/workflows/ci.yml'
-  pull_request:
-    branches: [main]
-    paths:
-      - 'scripts/**'
-      - 'config/**'
-      - 'src/**'
-      - 'tests/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'tsconfig.json'
-      - '.github/workflows/futbol-pipeline.yml'
-      - '.github/workflows/ci.yml'
+  # Este workflow es exclusivamente de producción; CI vive en ci.yml.
   schedule:
     - cron: '0 15 * * *'
     - cron: '0 19 * * *'
@@ -74,33 +50,6 @@ env:
   NODE_VERSION: '24'
 
 jobs:
-  validate-push:
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
-    name: 🧪 Validar cambios de código sin publicar
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
-        with:
-          node-version: '24'
-          cache: npm
-      - run: npm ci
-      - name: Validar sintaxis, política editorial y TypeScript
-        run: |
-          node --check scripts/editorial-gate.js
-          node --check scripts/generate-real-content.js
-          node --check scripts/fetch-real-news.js
-          node --check scripts/viral-score.js
-          node --check scripts/render-and-upload.js
-          node --check scripts/text-sanitizer.js
-          node --check scripts/publication-policy.js
-          npm run test:all
-          node -e "JSON.parse(require('fs').readFileSync('tsconfig.json','utf8'))"
-          npx tsc --noEmit
-
   generate:
     if: github.event_name != 'push' && github.event_name != 'pull_request'
     name: 📰 Detectar noticia + guion original
@@ -108,6 +57,7 @@ jobs:
     timeout-minutes: 20
     outputs:
       hay_contenido: ${{ steps.gen.outputs.hay_contenido }}
+      estado: ${{ steps.gen.outputs.estado }}
       fecha: ${{ steps.gen.outputs.fecha }}
     steps:
       - uses: actions/checkout@v5
@@ -162,8 +112,15 @@ jobs:
           FECHA=$(date -u +%Y-%m-%d)
           echo "fecha=$FECHA" >> "$GITHUB_OUTPUT"
           TOTAL=$(node -e "const f=require('./daily-content.json'); console.log(f.total||0)")
+          ESTADO=$(node -e "const f=require('./daily-content.json'); console.log(f.estado || (Number(f.total||0)>0 ? 'CONTENT_READY' : 'NO_ELIGIBLE_CONTENT'))")
           echo "Piezas seleccionadas: $TOTAL"
-          if [ "$TOTAL" -gt 0 ]; then echo "hay_contenido=true" >> "$GITHUB_OUTPUT"; else echo "hay_contenido=false" >> "$GITHUB_OUTPUT"; fi
+          echo "Estado editorial: $ESTADO"
+          echo "estado=$ESTADO" >> "$GITHUB_OUTPUT"
+          if [ "$TOTAL" -gt 0 ]; then
+            echo "hay_contenido=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "hay_contenido=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: 🧾 Guardar diagnóstico de selección editorial
         if: always()
@@ -378,29 +335,28 @@ jobs:
   report:
     name: 📊 Estado final
     runs-on: ubuntu-latest
-    needs: [validate-push, generate, publish]
+    needs: [generate, publish]
     if: always()
     steps:
       - run: |
-          if [ "${GITHUB_EVENT_NAME}" = "push" ] || [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
-            echo "Validación de código: ${{ needs.validate-push.result }}"
-            test "${{ needs.validate-push.result }}" = "success"
-            echo "Push validado. No se generó ni publicó contenido."
-            exit 0
-          fi
           echo "⚽ CHILENSIS FÚTBOL — Newsroom"
           echo "════════════════════════════════════════"
           echo "Generación: ${{ needs.generate.result }}"
-          echo "Publicación: ${{ needs.publish.result }}"
+          echo "Estado editorial: ${{ needs.generate.outputs.estado }}"
+          echo "Publicación/render: ${{ needs.publish.result }}"
           echo "════════════════════════════════════════"
           if [ "${{ needs.generate.result }}" != "success" ]; then exit 1; fi
           if [ "${{ needs.publish.result }}" = "failure" ] || [ "${{ needs.publish.result }}" = "cancelled" ]; then exit 1; fi
           if [ "${{ needs.publish.result }}" = "skipped" ]; then
             if [ "${{ needs.generate.outputs.hay_contenido }}" = "true" ]; then
-              echo "::error::La generación reportó contenido pero la publicación fue omitida. Revisa el artefacto de diagnóstico y el pipeline de render."
+              echo "::error::CONTENT_READY pero render/publicación fue omitido. Esto es un error de orquestación, no un caso sin noticias."
               exit 1
             fi
-            echo "ℹ️ No hay contenido elegible para publicar; el pipeline se considera exitoso por no operar."
+            if [ "${{ needs.generate.outputs.estado }}" != "NO_ELIGIBLE_CONTENT" ]; then
+              echo "::error::Render omitido sin estado NO_ELIGIBLE_CONTENT explícito."
+              exit 1
+            fi
+            echo "ℹ️ NO_ELIGIBLE_CONTENT: ejecución completada sin error técnico; no había piezas publicables."
             exit 0
           fi
 
