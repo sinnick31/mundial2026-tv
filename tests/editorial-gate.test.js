@@ -97,3 +97,25 @@ test('rechaza noticias construidas solo con un titular RSS', () => {
   pkg.contenido[0]._articulo_caracteres = 92;
   assert.throws(() => validatePackage(pkg), /artículo original incompleto/);
 });
+
+test('acepta Short con extracto atribuido aunque no exista artículo completo', () => {
+  const pkg = validPackage();
+  const item = pkg.contenido[0];
+  item._articulo_completo = false;
+  item._articulo_caracteres = 118;
+  item._formato_recomendado = 'short';
+  item._base_evidencia = 'extracto_rss_atribuido';
+  item.descripcion = 'El club confirmó este viernes una modificación en la programación del próximo encuentro del campeonato, según el comunicado publicado por la institución.';
+  assert.deepEqual(validatePackage(pkg), { ok: true, total: 1 });
+});
+
+test('no acepta un extracto RSS demasiado corto ni sin etiqueta editorial de Short', () => {
+  const pkg = validPackage();
+  const item = pkg.contenido[0];
+  item._articulo_completo = false;
+  item._articulo_caracteres = 32;
+  item._formato_recomendado = 'short';
+  item._base_evidencia = 'extracto_rss_atribuido';
+  item.descripcion = 'Dato breve.';
+  assert.throws(() => validatePackage(pkg), /artículo original incompleto/);
+});
