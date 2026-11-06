@@ -178,13 +178,16 @@ function extractGoogleNewsTarget(html, expectedHosts = []) {
     if (typeof value !== 'string' || !value.trim()) return;
     let decoded = value.trim()
       .replace(/&amp;/gi, '&')
+      .replace(/&quot;/gi, '"')
+      .replace(/&#39;/gi, "'")
       .replace(/\\u0026/gi, '&')
       .replace(/\\u003d/gi, '=')
       .replace(/\\u003a/gi, ':')
       .replace(/\\u002f/gi, '/')
       .replace(/\\\//g, '/')
       .replace(/^['"]|['"]$/g, '');
-    for (let pass = 0; pass < 2; pass++) {
+    // Google may double-escape the publisher URL inside its redirect markup.
+    for (let pass = 0; pass < 3; pass++) {
       try {
         const parsed = new URL(decoded, 'https://news.google.com/');
         for (const key of ['url', 'u', 'target', 'redirect', 'q', 'article_url']) {
@@ -205,6 +208,21 @@ function extractGoogleNewsTarget(html, expectedHosts = []) {
 
   const source = String(html || '');
   if (/^https?:\/\//i.test(source.trim())) add(source.trim());
+
+  // Google News may expose the publisher URL through an intermediate redirect.
+  const refreshes = source.match(/<meta\b[^>]*http-equiv\s*=\s*["']?refresh["']?[^>]*>/gi) || [];
+  for (const tag of refreshes) {
+    const match = tag.match(/content\s*=\s*["'][^"']*?url\s*=\s*([^"']+)["']/i);
+    if (match) add(match[1].trim());
+  }
+  const scripts = [
+    /(?:window\.)?location(?:\.href)?\s*=\s*["']([^"']+)["']/gi,
+    /(?:window\.)?location\.(?:assign|replace)\s*\(\s*["']([^"']+)["']/gi,
+  ];
+  for (const pattern of scripts) {
+    for (const match of source.matchAll(pattern)) add(match[1]);
+  }
+
   const attributes = source.match(/(?:href|data-url|data-n-au|data-href|url)\s*=\s*["'][^"']+["']/gi) || [];
   for (const attribute of attributes) {
     const match = attribute.match(/=\s*["']([^"']+)["']/);
@@ -230,10 +248,11 @@ function extractGoogleNewsTarget(html, expectedHosts = []) {
   }
   return '';
 }
-async function enrichArticle(item) {
+
+async function enrichArticle(item, request = httpGetResponse) {
   try {
     const expectedHosts = expectedSourceHosts(item);
-    let response = await httpGetResponse(item.link);
+    let response = await request(item.link);
     let resolved = new URL(response.finalUrl);
     if (isGoogleRedirectHost(resolved.hostname)) {
       // Google News may redirect through news.google.com OR google.com/url.
@@ -241,7 +260,7 @@ async function enrichArticle(item) {
       const redirectHtml = googleRedirectMarkup(response.finalUrl) + response.body;
       const target = extractGoogleNewsTarget(redirectHtml, expectedHosts);
       if (!target) throw new Error('google_news_target_unresolved:' + resolved.hostname);
-      response = await httpGetResponse(target);
+      response = await request(target);
       resolved = new URL(response.finalUrl);
     }
     if (expectedHosts.length && !hostMatches(resolved.hostname, expectedHosts)) {
