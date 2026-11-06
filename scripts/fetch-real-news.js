@@ -172,34 +172,57 @@ function expectedSourceHosts(item) {
   }
 }
 
-function extractGoogleNewsTarget(html, expectedHosts) {
+function extractGoogleNewsTarget(html, expectedHosts = []) {
   const candidates = [];
   const add = value => {
-    if (!value || typeof value !== 'string') return;
-    let decoded = value.replace(/&amp;/g, '&').replace(/\\u0026/g, '&').replace(/\\u003d/g, '=');
-    try {
-      const parsed = new URL(decoded, 'https://news.google.com/');
-      for (const key of ['url', 'u', 'target', 'redirect', 'q']) {
-        const nested = parsed.searchParams.get(key);
-        if (nested) candidates.push(nested);
+    if (typeof value !== 'string' || !value.trim()) return;
+    let decoded = value.trim()
+      .replace(/&amp;/gi, '&')
+      .replace(/\\u0026/gi, '&')
+      .replace(/\\u003d/gi, '=')
+      .replace(/\\u003a/gi, ':')
+      .replace(/\\u002f/gi, '/')
+      .replace(/\\\//g, '/')
+      .replace(/^['"]|['"]$/g, '');
+    for (let pass = 0; pass < 2; pass++) {
+      try {
+        const parsed = new URL(decoded, 'https://news.google.com/');
+        for (const key of ['url', 'u', 'target', 'redirect', 'q', 'article_url']) {
+          const nested = parsed.searchParams.get(key);
+          if (nested && nested !== decoded) add(nested);
+        }
+        if (!isGoogleRedirectHost(parsed.hostname)) candidates.push(parsed.toString());
+        break;
+      } catch (_) {
+        try {
+          const unescaped = decodeURIComponent(decoded);
+          if (unescaped !== decoded) { decoded = unescaped; continue; }
+        } catch (_) {}
+        break;
       }
-      if (parsed.hostname !== 'news.google.com') candidates.push(parsed.toString());
-    } catch (_) {}
+    }
   };
+
   const source = String(html || '');
-  const hrefs = source.match(/(?:href|data-url|data-n-au)=["'][^"']+["']/gi) || [];
-  for (const attribute of hrefs) {
-    const match = attribute.match(/=["']([^"']+)["']/);
+  add(source);
+  const attributes = source.match(/(?:href|data-url|data-n-au|data-href|url)\s*=\s*["'][^"']+["']/gi) || [];
+  for (const attribute of attributes) {
+    const match = attribute.match(/=\s*["']([^"']+)["']/);
     if (match) add(match[1]);
   }
-  const absolute = source.match(/https?:\\?\/\\?\/[^\s"'<>]+/gi) || [];
-  for (const value of absolute) add(value.replace(/\\\//g, '/').replace(/\\u0026/g, '&'));
+  const normalizedSource = source
+    .replace(/\\u0026/gi, '&').replace(/\\u003d/gi, '=')
+    .replace(/\\u003a/gi, ':').replace(/\\u002f/gi, '/')
+    .replace(/\\\//g, '/').replace(/&amp;/gi, '&');
+  const absolute = normalizedSource.match(/https?:\/\/[^\s"'<>\\]+/gi) || [];
+  for (const value of absolute) add(value.replace(/[),.;]+$/g, ''));
+
   for (const value of candidates) {
     try {
       const url = new URL(value, 'https://news.google.com/');
       if (['http:', 'https:'].includes(url.protocol)
         && !url.username && !url.password
-        && url.hostname !== 'news.google.com'
+        && !isGoogleRedirectHost(url.hostname)
         && (!expectedHosts.length || hostMatches(url.hostname, expectedHosts))) {
         return url.toString();
       }
@@ -207,7 +230,6 @@ function extractGoogleNewsTarget(html, expectedHosts) {
   }
   return '';
 }
-
 async function enrichArticle(item) {
   try {
     const expectedHosts = expectedSourceHosts(item);
