@@ -14,6 +14,18 @@ on:
       - 'tsconfig.json'
       - '.github/workflows/futbol-pipeline.yml'
       - '.github/workflows/ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'config/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - '.github/workflows/futbol-pipeline.yml'
+      - '.github/workflows/ci.yml'
   schedule:
     - cron: '0 15 * * *'
     - cron: '0 19 * * *'
@@ -57,7 +69,7 @@ env:
 
 jobs:
   validate-push:
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: 🧪 Validar cambios de código sin publicar
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -356,7 +368,7 @@ jobs:
     if: always()
     steps:
       - run: |
-          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
+          if [ "${GITHUB_EVENT_NAME}" = "push" ] || [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
             echo "Validación de código: ${{ needs.validate-push.result }}"
             test "${{ needs.validate-push.result }}" = "success"
             echo "Push validado. No se generó ni publicó contenido."
