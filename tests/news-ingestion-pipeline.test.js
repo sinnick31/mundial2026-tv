@@ -156,3 +156,67 @@ test('rechaza destinos Google y dominios que no corresponden a la fuente atribui
   assert.equal(extractGoogleNewsTarget('<a href="https://example.com/noticia">x</a>', ['tntsports.cl']), '');
   assert.equal(extractGoogleNewsTarget('<a href="https://news.google.com/articles/abc">x</a>', ['tntsports.cl']), '');
 });
+
+test('resuelve destinos publicados mediante meta refresh de Google News', () => {
+  const { extractGoogleNewsTarget } = require('../scripts/fetch-real-news');
+  const html = '<meta http-equiv="refresh" content="0;url=https%3A%2F%2Fwww.tntsports.cl%2Fnoticia%2Funo">';
+  assert.equal(extractGoogleNewsTarget(html, ['tntsports.cl']), 'https://www.tntsports.cl/noticia/uno');
+});
+
+test('resuelve destinos publicados mediante window.location.replace', () => {
+  const { extractGoogleNewsTarget } = require('../scripts/fetch-real-news');
+  const html = '<script>window.location.replace("https://www.tntsports.cl/noticia/dos")</script>';
+  assert.equal(extractGoogleNewsTarget(html, ['tntsports.cl']), 'https://www.tntsports.cl/noticia/dos');
+});
+
+test('no acepta un redirect de Google hacia un dominio distinto del publisher atribuido', () => {
+  const { extractGoogleNewsTarget } = require('../scripts/fetch-real-news');
+  const html = '<meta http-equiv="refresh" content="0;url=https://example.org/noticia">';
+  assert.equal(extractGoogleNewsTarget(html, ['tntsports.cl']), '');
+});
+
+test('enrichArticle usa la URL editorial resuelta y verifica el host esperado', async () => {
+  const { enrichArticle } = require('../scripts/fetch-real-news');
+  const calls = [];
+  const articleBody = '<article><p>' + 'TNT Sports informó novedades verificadas del fútbol chileno para la próxima jornada. '.repeat(6) + '</p></article>';
+  const request = async url => {
+    calls.push(url);
+    if (url.includes('news.google.com')) {
+      return {
+        finalUrl: 'https://news.google.com/rss/articles/opaque-id',
+        body: '<a href="https://www.tntsports.cl/noticia/confirmada">Abrir noticia</a>',
+      };
+    }
+    return {
+      finalUrl: 'https://www.tntsports.cl/noticia/confirmada',
+      body: articleBody,
+    };
+  };
+  const result = await enrichArticle({
+    title: 'TNT Sports informa una noticia relevante del fútbol chileno',
+    link: 'https://news.google.com/rss/articles/opaque-id',
+    fuente: 'TNT Sports Chile',
+    fuente_url_original: 'https://www.tntsports.cl/',
+    timestamp: '2026-11-06T12:00:00.000Z',
+  }, request);
+  assert.equal(calls.length, 2);
+  assert.equal(result.link, 'https://www.tntsports.cl/noticia/confirmada');
+  assert.equal(result.article_fetch_status, 'complete');
+  assert.equal(result.fecha_publicacion_verificada, true);
+});
+
+test('enrichArticle conserva error explícito si Google News no revela el publisher URL', async () => {
+  const { enrichArticle } = require('../scripts/fetch-real-news');
+  const result = await enrichArticle({
+    title: 'TNT Sports informa una noticia relevante del fútbol chileno',
+    link: 'https://news.google.com/rss/articles/opaque-id',
+    fuente: 'TNT Sports Chile',
+    fuente_url_original: 'https://www.tntsports.cl/',
+    timestamp: '2026-11-06T12:00:00.000Z',
+  }, async () => ({
+    finalUrl: 'https://news.google.com/rss/articles/opaque-id',
+    body: '<html><body>Sin destino editorial en esta página</body></html>',
+  }));
+  assert.equal(result.article_fetch_status, 'fetch_error');
+  assert.match(result.article_fetch_error, /google_news_target_unresolved/);
+});
