@@ -132,3 +132,16 @@ test('reconoce ESPN como fuente atribuida independiente de TNT', () => {
   assert.ok(expected.includes('espn.com.ar'));
   assert.equal(extractGoogleNewsTarget('<a href="https://www.espn.com.ar/futbol/noticia">ESPN</a>', expected), 'https://www.espn.com.ar/futbol/noticia');
 });
+
+
+test('resuelve redirecciones Google News que terminan en google.com/url', () => {
+  const expected = expectedSourceHosts({ fuente: 'TNT Sports Chile', fuente_url_original: 'https://www.tntsports.cl/' });
+  const redirect = '<a href="https://www.google.com/url?sa=t&amp;url=https%3A%2F%2Fwww.tntsports.cl%2Fnoticia%2Fverificada">Google</a>';
+  assert.equal(extractGoogleNewsTarget(redirect, expected), 'https://www.tntsports.cl/noticia/verificada');
+});
+
+test('no permite que un redirector Google entregue un dominio distinto al editor atribuido', () => {
+  const expected = expectedSourceHosts({ fuente: 'ESPN Argentina', fuente_url_original: 'https://www.espn.com.ar/' });
+  const redirect = '<a href="https://www.google.com/url?q=https%3A%2F%2Fexample.com%2Fnoticia">Google</a>';
+  assert.equal(extractGoogleNewsTarget(redirect, expected), '');
+});
