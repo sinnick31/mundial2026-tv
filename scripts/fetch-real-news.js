@@ -142,6 +142,16 @@ function hostMatches(host, expected) {
   return expected.some(domain => normalized === domain || normalized.endsWith('.' + domain));
 }
 
+function isGoogleRedirectHost(host) {
+  const normalized = String(host || '').toLowerCase().replace(/^www\./, '');
+  return normalized === 'news.google.com' || normalized === 'google.com' || normalized.endsWith('.google.com');
+}
+
+function googleRedirectMarkup(url) {
+  const safeUrl = String(url || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+  return '<a href="' + safeUrl + '">Google News redirect</a>';
+}
+
 function expectedSourceHosts(item) {
   const source = String(item.fuente || item.fuente_original || item.fuente_host || '').toLowerCase();
   const sourceUrl = String(item.fuente_url_original || '');
@@ -203,14 +213,17 @@ async function enrichArticle(item) {
     const expectedHosts = expectedSourceHosts(item);
     let response = await httpGetResponse(item.link);
     let resolved = new URL(response.finalUrl);
-    if (resolved.hostname.replace(/^www\./i, '') === 'news.google.com') {
-      const target = extractGoogleNewsTarget(response.body, expectedHosts);
-      if (!target) throw new Error('google_news_target_unresolved');
+    if (isGoogleRedirectHost(resolved.hostname)) {
+      // Google News may redirect through news.google.com OR google.com/url.
+      // Inspect the final redirect URL and HTML, accepting only the attributed publisher host.
+      const redirectHtml = googleRedirectMarkup(response.finalUrl) + response.body;
+      const target = extractGoogleNewsTarget(redirectHtml, expectedHosts);
+      if (!target) throw new Error('google_news_target_unresolved:' + resolved.hostname);
       response = await httpGetResponse(target);
       resolved = new URL(response.finalUrl);
     }
     if (expectedHosts.length && !hostMatches(resolved.hostname, expectedHosts)) {
-      throw new Error('redirect_outside_expected_source');
+      throw new Error('redirect_outside_expected_source:' + resolved.hostname + ':expected=' + expectedHosts.join(','));
     }
     if (resolved.hostname === 'news.google.com') throw new Error('google_news_target_unresolved');
 
