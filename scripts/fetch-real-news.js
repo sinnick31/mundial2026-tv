@@ -186,6 +186,9 @@ function extractGoogleNewsTarget(html, expectedHosts = []) {
       .replace(/\\u002f/gi, '/')
       .replace(/\\\//g, '/')
       .replace(/^['"]|['"]$/g, '');
+    if (!/^https?:\\/\\//i.test(decoded) && /https?%3a%2f%2f/i.test(decoded)) {
+      try { decoded = decodeURIComponent(decoded); } catch (_) {}
+    }
     // Google may double-escape the publisher URL inside its redirect markup.
     for (let pass = 0; pass < 3; pass++) {
       try {
