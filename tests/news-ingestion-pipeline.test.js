@@ -100,3 +100,22 @@ test('una noticia elegible produce una pieza narrable con atribución de fuente'
   assert.equal(piece._fuente_url, item.link);
   assert.equal(piece._articulo_completo, true);
 });
+
+test('resuelve el destino editorial desde el parámetro url de Google News', () => {
+  const { extractGoogleNewsTarget } = require('../scripts/fetch-real-news');
+  const html = '<a href="https://news.google.com/url?url=https%3A%2F%2Fwww.tntsports.cl%2Fnacional%2Fnota">Abrir</a>';
+  assert.equal(extractGoogleNewsTarget(html, ['tntsports.cl']), 'https://www.tntsports.cl/nacional/nota');
+});
+
+test('resuelve URL de publisher embebida en atributos y JSON escapado', () => {
+  const { extractGoogleNewsTarget } = require('../scripts/fetch-real-news');
+  const html = '<div data-n-au="https://www.tntsports.cl/nacional/nota?ref=google&amp;id=7"></div>' +
+    '<script>window.data = {"url":"https:\\/\\/www.tntsports.cl\\/nacional\\/otra"}</script>';
+  assert.equal(extractGoogleNewsTarget(html, ['tntsports.cl']), 'https://www.tntsports.cl/nacional/nota?ref=google&id=7');
+});
+
+test('rechaza destinos Google y dominios que no corresponden a la fuente atribuida', () => {
+  const { extractGoogleNewsTarget } = require('../scripts/fetch-real-news');
+  assert.equal(extractGoogleNewsTarget('<a href="https://example.com/noticia">x</a>', ['tntsports.cl']), '');
+  assert.equal(extractGoogleNewsTarget('<a href="https://news.google.com/articles/abc">x</a>', ['tntsports.cl']), '');
+});
