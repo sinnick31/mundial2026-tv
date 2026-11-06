@@ -77,6 +77,9 @@ jobs:
           node --check scripts/fetch-real-news.js
           node --check scripts/viral-score.js
           node --check scripts/render-and-upload.js
+          node --check scripts/fetch-matches.js
+          node --check scripts/fetch-chile-context.js
+          node --check scripts/generate-results-longform.js
           node --check scripts/text-sanitizer.js
           node --check scripts/publication-policy.js
           npm run test:all
@@ -90,6 +93,7 @@ jobs:
     timeout-minutes: 20
     outputs:
       hay_contenido: ${{ steps.gen.outputs.hay_contenido }}
+      hay_longform: ${{ steps.matches.outputs.hay_longform }}
       fecha: ${{ steps.gen.outputs.fecha }}
     steps:
       - uses: actions/checkout@v5
@@ -122,7 +126,12 @@ jobs:
         run: node scripts/fetch-real-news.js
 
       - name: ⚽ Obtener datos estructurados
-        run: node scripts/fetch-matches.js
+        id: matches
+        run: |
+          node scripts/fetch-matches.js
+          ROWS=$(node -e "const c=require('./matches-cache.json');const r=Array.isArray(c.tabla_posiciones)?c.tabla_posiciones:[];console.log(r.length>=8&&r.every(x=>x.equipo&&Number.isFinite(Number(x.pts)))?'true':'false')")
+          echo "hay_longform=$ROWS" >> "$GITHUB_OUTPUT"
+          echo "Tabla completa disponible para video largo: $ROWS"
 
       - name: 🧠 Seleccionar SOLO historias con valor
         id: gen
@@ -195,11 +204,66 @@ jobs:
           git push origin HEAD:main
 
       - name: 📦 Entregar paquete
-        if: steps.gen.outputs.hay_contenido == 'true'
+        if: steps.gen.outputs.hay_contenido == 'true' || steps.matches.outputs.hay_longform == 'true'
         uses: actions/upload-artifact@v6
         with:
           name: contenido-${{ steps.gen.outputs.fecha }}-${{ github.run_number }}
-          path: daily-content.json
+          path: |
+            daily-content.json
+            matches-cache.json
+            content-history.json
+          retention-days: 7
+
+  render-longform:
+    name: 🎞️ Render local del resumen largo chileno
+    runs-on: ubuntu-latest
+    needs: generate
+    if: github.event_name != 'push' && needs.generate.outputs.hay_longform == 'true'
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - name: 📥 Descargar datos del día
+        uses: actions/download-artifact@v6
+        with:
+          name: contenido-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
+          path: .
+      - name: 🌐 Preparar Remotion y FFmpeg
+        run: |
+          npx remotion browser ensure
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: 🔐 Validar OAuth antes de publicar el video largo
+        if: inputs.render_only == 'false'
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
+        run: node scripts/preflight-youtube-auth.js
+      - name: 🏟️ Renderizar y, si fue autorizado, subir el video largo
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
+          PLAYER_IMAGES_JSON: ${{ secrets.PLAYER_IMAGES_JSON }}
+          YOUTUBE_CLIENT_ID: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_ID || '' }}
+          YOUTUBE_CLIENT_SECRET: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_CLIENT_SECRET || '' }}
+          YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
+          PUBLISH_TO_YOUTUBE: ${{ inputs.render_only == 'false' && 'true' || 'false' }}
+          RESULTS_VIDEO_PRIVACY: ${{ inputs.privacy || 'private' }}
+        run: node scripts/generate-results-longform.js
+      - name: 📦 Guardar video largo renderizado
+        uses: actions/upload-artifact@v6
+        with:
+          name: futbol-chilensis-video-largo-${{ needs.generate.outputs.fecha }}-${{ github.run_number }}
+          path: |
+            out/**/resumen-resultados.mp4
+            out/**/miniatura-resultados.png
+            out/**/reporte-resultados.json
+          if-no-files-found: error
           retention-days: 7
 
   publish:
@@ -299,6 +363,7 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ inputs.render_only == 'false' && secrets.YOUTUBE_REFRESH_TOKEN || '' }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TEAM_IMAGES_JSON: ${{ secrets.TEAM_IMAGES_JSON }}
+          PLAYER_IMAGES_JSON: ${{ secrets.PLAYER_IMAGES_JSON }}
           TEAM_BROLL_MANIFEST: ${{ secrets.TEAM_BROLL_MANIFEST }}
           RENDER_ONLY: ${{ github.event_name == 'schedule' && 'true' || inputs.render_only || 'true' }}
           YOUTUBE_PRIVACY_STATUS: ${{ inputs.privacy || vars.SCHEDULED_VIDEO_PRIVACY || 'public' }}
