@@ -158,6 +158,7 @@ jobs:
           npm run test:editorial-gate
 
       - name: 💾 Guardar memoria editorial
+        if: steps.gen.outputs.hay_contenido == 'true'
         env:
           RENDER_ONLY: ${{ github.event_name == 'schedule' && 'true' || inputs.render_only || 'true' }}
         run: |
@@ -368,3 +369,7 @@ jobs:
           echo "════════════════════════════════════════"
           if [ "${{ needs.generate.result }}" != "success" ]; then exit 1; fi
           if [ "${{ needs.publish.result }}" = "failure" ] || [ "${{ needs.publish.result }}" = "cancelled" ]; then exit 1; fi
+          if [ "${{ needs.publish.result }}" = "skipped" ]; then
+            echo "::error::No se produjo ningún video: la generación no entregó contenido elegible y el render fue omitido. Revisa editorial-diagnostics.json."
+            exit 1
+          fi
