@@ -70,6 +70,43 @@ test('un artículo completo, reciente y con fuente/fecha verificadas es elegible
   assert.equal(isEligibleNewsCandidate(validNews(), now), true);
 });
 
+test('acepta un extracto breve atribuido para Short sin exigir artículo completo', () => {
+  const item = validNews({
+    article_body: '',
+    article_complete: false,
+    article_chars: 118,
+    article_description: 'El club confirmó este viernes una modificación en la programación del próximo encuentro del campeonato, según el comunicado publicado por la institución.',
+    link: 'https://www.anfp.cl/noticia/programacion',
+  });
+  assert.equal(newsCandidateRejection(item, now), null);
+  assert.equal(isEligibleNewsCandidate(item, now), true);
+  const piece = buildItem(item, 'chile', 1);
+  assert.equal(piece._articulo_completo, false);
+  assert.equal(piece._formato_recomendado, 'short');
+  assert.equal(piece._base_evidencia, 'extracto_rss_atribuido');
+  assert.ok(piece.narracion.includes('El club confirmó'));
+});
+
+test('no convierte un titular aislado en noticia elegible', () => {
+  const item = validNews({
+    article_body: '',
+    article_complete: false,
+    article_description: 'Información de última hora.',
+    description: 'Información de última hora.',
+  });
+  assert.equal(newsCandidateRejection(item, now), 'sin_evidencia_breve_suficiente');
+});
+
+test('bloquea enlaces de Google News no resueltos aunque tengan titular y snippet', () => {
+  const item = validNews({
+    article_body: '',
+    article_complete: false,
+    article_description: 'El club confirmó este viernes una modificación en la programación del próximo encuentro del campeonato.',
+    link: 'https://news.google.com/rss/articles/abc',
+  });
+  assert.equal(newsCandidateRejection(item, now), 'url_invalida_o_no_editorial');
+});
+
 test('se bloquean noticias sin fecha parseable o sin verificación explícita', () => {
   assert.equal(isEligibleNewsCandidate(validNews({ timestamp: 'fecha desconocida' }), now), false);
   assert.equal(isEligibleNewsCandidate(validNews({ timestamp: null }), now), false);
