@@ -96,7 +96,7 @@ jobs:
           npx tsc --noEmit
 
   generate:
-    if: github.event_name != 'push'
+    if: github.event_name != 'push' && github.event_name != 'pull_request'
     name: 📰 Detectar noticia + guion original
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -219,7 +219,7 @@ jobs:
     name: 🎬 Render + validar/publicar Short
     runs-on: ubuntu-latest
     needs: generate
-    if: github.event_name != 'push' && needs.generate.outputs.hay_contenido == 'true'
+    if: github.event_name != 'push' && github.event_name != 'pull_request' && needs.generate.outputs.hay_contenido == 'true'
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
