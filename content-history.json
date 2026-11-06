@@ -2,13 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "noticia",
-      "hook": "EX COLO COLO BAJA A TERCERA",
-      "titulo": "Ex Colo Colo de 1ra a 3ra división: ¿Adiós a la élite?",
-      "fecha": "2026-08-07T01:00:39.922Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "ranking",
       "hook": "DEFENSA EFICIENTE POR PUNTO",
       "titulo": "Flamengo: 0.125 goles/punto en 6 partidos. ¿Cómo logra esa solidez?",
@@ -3499,6 +3492,13 @@
       "hook": "SE JUEGA ALGO GRANDE: Tabla de la Liga de Primera tras la fecha 26: Colo Colo, a un paso de…",
       "titulo": "FÚTBOL MUNDIAL: Tabla de la Liga de Primera tras la fecha 26: Colo Colo, a un… | Lo que cambia",
       "fecha": "2026-11-04T02:52:40.468Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "Octavio Rivero y su preparación para volver a jugar: \"Me tuvieron que obligar\" - ESPN Argentina",
+      "titulo": "Octavio Rivero y su preparación para volver a jugar: \"Me tuvieron que obligar\" - ESPN Argentina",
+      "fecha": "2026-11-06T22:22:06.188Z"
     }
   ]
 }
