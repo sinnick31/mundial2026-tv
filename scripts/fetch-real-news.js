@@ -143,7 +143,7 @@ function hostMatches(host, expected) {
 }
 
 function isGoogleRedirectHost(host) {
-  const normalized = String(host || '').toLowerCase().replace(/^www\\./, '');
+  const normalized = String(host || '').toLowerCase().replace(/^www\./, '');
   return normalized === 'news.google.com' || normalized === 'google.com' || normalized.endsWith('.google.com');
 }
 
