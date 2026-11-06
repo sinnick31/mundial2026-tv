@@ -3,7 +3,6 @@
 const fs = require('node:fs');
 const { validatePackage } = require('./editorial-gate');
 const { validateItemForRender } = require('./content-quality-gate');
-const { enrichPackage } = require('./retention-package');
 
 const MAX_SOURCE_AGE_HOURS = 72;
 const MAX_FUTURE_HOURS = 6;
@@ -41,7 +40,6 @@ function prepareManualPackage(template, now = new Date()) {
     total: 1,
     contenido: [structuredClone(item)],
   };
-  enrichPackage(pkg);
   validatePackage(pkg);
   validateItemForRender(pkg.contenido[0], 1);
   return pkg;
