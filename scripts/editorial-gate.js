@@ -84,8 +84,13 @@ function validatePackage(pkg) {
     if (typeof item._noticia_original !== 'string' || item._noticia_original.trim().length < 8) {
       fail(`pieza ${n}: hecho/titular original ausente`);
     }
-    if (item._tipo_contenido === 'noticia' && (item._articulo_completo !== true || !Number.isInteger(item._articulo_caracteres) || item._articulo_caracteres < 300)) {
-      fail(`pieza ${n}: artículo original incompleto; un titular RSS no basta para redactar una noticia`);
+    const fullArticle = item._articulo_completo === true
+      && Number.isInteger(item._articulo_caracteres) && item._articulo_caracteres >= 300;
+    const verifiedShortEvidence = item._formato_recomendado === 'short'
+      && item._base_evidencia === 'extracto_rss_atribuido'
+      && typeof item.descripcion === 'string' && item.descripcion.trim().length >= 60;
+    if (item._tipo_contenido === 'noticia' && !fullArticle && !verifiedShortEvidence) {
+      fail(`pieza ${n}: requiere artículo completo o extracto verificable de al menos 60 caracteres para Short`);
     }
     if (typeof item.titulo_youtube !== 'string'
         || item.titulo_youtube.trim().length < 12
