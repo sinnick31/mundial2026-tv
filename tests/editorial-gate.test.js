@@ -95,7 +95,7 @@ test('rechaza noticias construidas solo con un titular RSS', () => {
   const pkg = validPackage();
   pkg.contenido[0]._articulo_completo = false;
   pkg.contenido[0]._articulo_caracteres = 92;
-  assert.throws(() => validatePackage(pkg), /artículo original incompleto/);
+  assert.throws(() => validatePackage(pkg), /requiere artículo completo o extracto verificable/);
 });
 
 test('acepta Short con extracto atribuido aunque no exista artículo completo', () => {
@@ -117,5 +117,5 @@ test('no acepta un extracto RSS demasiado corto ni sin etiqueta editorial de Sho
   item._formato_recomendado = 'short';
   item._base_evidencia = 'extracto_rss_atribuido';
   item.descripcion = 'Dato breve.';
-  assert.throws(() => validatePackage(pkg), /artículo original incompleto/);
+  assert.throws(() => validatePackage(pkg), /requiere artículo completo o extracto verificable/);
 });
