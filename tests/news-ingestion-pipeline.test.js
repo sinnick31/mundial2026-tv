@@ -220,3 +220,20 @@ test('enrichArticle conserva error explícito si Google News no revela el publis
   assert.equal(result.article_fetch_status, 'fetch_error');
   assert.match(result.article_fetch_error, /google_news_target_unresolved/);
 });
+
+test('resolveGoogleNewsBatchExecute resuelve el publisher URL desde c-wiz data-p y Fbv4je', async () => {
+  const { resolveGoogleNewsBatchExecute } = require('../scripts/fetch-real-news');
+  const html = '<c-wiz data-p="%.@.[[&quot;es-419&quot;,&quot;CL&quot;],&quot;es-419&quot;,&quot;CL&quot;,true,[3,5],1,true,&quot;1&quot;,null,null,null,false],&quot;CBMi123&quot;,1,1,null,false,1794002600,&quot;sigABC&quot;]"></c-wiz>';
+  const mockPost = async (url, body) => {
+    assert.match(url, /batchexecute\?rpcids=Fbv4je/);
+    assert.match(body, /garturlreq/);
+    return {
+      statusCode: 200,
+      body: ')]}\'\n\n[["wrb.fr","Fbv4je","[\"garturlres\",\"https://www.espn.com.ar/futbol/chile/nota/_/id/123\",1]",null,null,null,"generic"]]',
+    };
+  };
+  const resolved = await resolveGoogleNewsBatchExecute(html, ['espn.com.ar'], mockPost);
+  assert.equal(resolved, 'https://www.espn.com.ar/futbol/chile/nota/_/id/123');
+  const rejected = await resolveGoogleNewsBatchExecute(html, ['tntsports.cl'], mockPost);
+  assert.equal(rejected, '');
+});

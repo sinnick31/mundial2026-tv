@@ -45,6 +45,60 @@ function httpGetResponse(url, redirects = 0) {
 async function httpGet(url, redirects = 0) {
   return (await httpGetResponse(url, redirects)).body;
 }
+
+function httpPostForm(url, body, headers = {}) {
+  return new Promise((resolve, reject) => {
+    let parsed;
+    try { parsed = new URL(url); } catch { return reject(new Error('URL no válida')); }
+    const payload = Buffer.from(String(body || ''), 'utf8');
+    const req = https.request(parsed, {
+      method: 'POST',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; ChilensisFootballNewsroom/6.0; +https://github.com/sinnick31/mundial2026-tv)',
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'Content-Length': payload.length,
+        'Accept-Language': 'es-CL,es;q=0.9,en;q=0.6',
+        ...headers,
+      },
+      timeout: 18000,
+    }, (res) => {
+      let data = '';
+      res.setEncoding('utf8');
+      res.on('data', chunk => { data += chunk; });
+      res.on('end', () => {
+        if ((res.statusCode || 500) >= 400) return reject(new Error(`HTTP ${res.statusCode}`));
+        resolve({ body: data, statusCode: res.statusCode });
+      });
+    });
+    req.on('error', reject);
+    req.on('timeout', () => { req.destroy(); reject(new Error('Timeout')); });
+    req.write(payload);
+    req.end();
+  });
+}
+
+async function resolveGoogleNewsBatchExecute(html = '', expectedHosts = [], postForm = httpPostForm) {
+  const dataPMatch = String(html || '').match(/<c-wiz[^>]+data-p=["']([^"']+)["']/i);
+  if (!dataPMatch) return '';
+  try {
+    const rawP = decodeHtml(dataPMatch[1]).replace(/^%\.@\./, '["garturlreq",');
+    const arr = JSON.parse(rawP);
+    if (!Array.isArray(arr) || arr.length < 8) return '';
+    const reqPayload = JSON.stringify([...arr.slice(0, -6), ...arr.slice(-2)]);
+    const fReq = JSON.stringify([[['Fbv4je', reqPayload, null, 'generic']]]);
+    const resp = await postForm(
+      'https://news.google.com/_/DotsSplashUi/data/batchexecute?rpcids=Fbv4je',
+      'f.req=' + encodeURIComponent(fReq)
+    );
+    const match = String(resp && resp.body || '').match(/\\?"garturlres\\?",\\?"(https?:[^"\\]+)/i);
+    if (!match) return '';
+    const candidate = match[1].replace(/\\\//g, '/');
+    return extractGoogleNewsTarget(googleRedirectMarkup(candidate), expectedHosts);
+  } catch (_) {
+    return '';
+  }
+}
+
 function decodeHtml(value = '') {
   const named = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ', ndash: '–', mdash: '—', rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“', hellip: '…', bull: '•', eacute: 'é', Eacute: 'É', aacute: 'á', Aacute: 'Á', iacute: 'í', oacute: 'ó', uacute: 'ú', ntilde: 'ñ', Ntilde: 'Ñ' };
   return String(value).replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (entity, code) => {
@@ -261,7 +315,10 @@ async function enrichArticle(item, request = httpGetResponse) {
       // Google News may redirect through news.google.com OR google.com/url.
       // Inspect the final redirect URL and HTML, accepting only the attributed publisher host.
       const redirectHtml = googleRedirectMarkup(response.finalUrl) + response.body;
-      const target = extractGoogleNewsTarget(redirectHtml, expectedHosts);
+      let target = extractGoogleNewsTarget(redirectHtml, expectedHosts);
+      if (!target && request === httpGetResponse) {
+        target = await resolveGoogleNewsBatchExecute(response.body, expectedHosts);
+      }
       if (!target) throw new Error('google_news_target_unresolved:' + resolved.hostname);
       response = await request(target);
       resolved = new URL(response.finalUrl);
@@ -445,7 +502,16 @@ async function main() {
   }
 
   // El RSS descubre titulares; recuperar el artículo original antes de redactar.
-  const toEnrich = fresh.slice().sort((a, b) => (b.prioridad_fuente || 0) - (a.prioridad_fuente || 0)).slice(0, 30);
+  const sortedFresh = fresh.slice().sort((a, b) => (b.prioridad_fuente || 0) - (a.prioridad_fuente || 0) || (b.viral_score || 0) - (a.viral_score || 0));
+  const perHostCount = {};
+  const toEnrich = [];
+  for (const item of sortedFresh) {
+    const host = item.fuente_host || item.fuente || 'other';
+    if ((perHostCount[host] || 0) >= 6) continue;
+    perHostCount[host] = (perHostCount[host] || 0) + 1;
+    toEnrich.push(item);
+    if (toEnrich.length >= 42) break;
+  }
   for (let i = 0; i < toEnrich.length; i += 3) {
     const batch = toEnrich.slice(i, i + 3);
     // La fecha del artículo puede diferir de la fecha RSS y la URL puede canonicalizarse.
@@ -497,4 +563,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { httpGet, httpGetResponse, extractGoogleNewsTarget, expectedSourceHosts, decodeXml, decodeHtml, plainText, extractArticle, parseTntHomepage, enrichArticle, replaceEnrichedArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };
+module.exports = { httpGet, httpGetResponse, httpPostForm, resolveGoogleNewsBatchExecute, extractGoogleNewsTarget, expectedSourceHosts, decodeXml, decodeHtml, plainText, extractArticle, parseTntHomepage, enrichArticle, replaceEnrichedArticle, getTag, parseFeed, esFutbol, similitud, sourceKey };
