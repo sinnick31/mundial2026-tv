@@ -1,475 +1,13 @@
 {
-  "ultima_actualizacion": "2026-11-06T22:21:56.613Z",
-  "total_hoy": 536,
+  "ultima_actualizacion": "2026-11-07T12:38:45.409Z",
+  "total_hoy": 532,
   "total_reciente": 140,
   "por_categoria": {
-    "chile": 119,
+    "chile": 122,
     "internacional": 4,
-    "colo_colo": 17
+    "colo_colo": 14
   },
   "noticias": [
-    {
-      "title": "Palestino celebra el aumento de aforo para recibir a Colo Colo en la Liga de Primera - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQQXRobUpGRWZXcnZtaUQxWGJYSllvTDRiNjVFMjZTYm90clBBWGdwMEJhSnBmVUVlOFY4b2dSby1JQmxnQTlsRHQ2TTRyN19xYjVJOHVHOUVBcUtCZ0l1VHlLdUZMU0sxTnZDQ2dZYnR5aERieVEtaG84SkVWNWFvRzlfV1B3NEIyTVhVeGU4V0VVOFBNdmNSRDBON3VoNGZzYklHRVZzTm15bFROYWs2Y9IBtgFBVV95cUxNelVZUEg5dGw4QUZ5YlRzZjBCQlNjZnJWUE8yVktqZThCLUxFMEphS0tNcXVZbm1ab1RZeDhxQlVzenF5TXgzajJHYXYwdmtBUEUxRFBUQkZkX2pkemx1a081Y2Nxa0NSM3RveE9vMmd4LUZYbUdqWUlBNVJkNjg4Z3dhX0NOT0JvZjcybkppeUZJV0VmVDZCWFlONW",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQQXRobUpGRWZXcnZtaUQxWGJYSllvTDRiNjVFMjZTYm90clBBWGdwMEJhSnBmVUVlOFY4b2dSby1JQmxnQTlsRHQ2TTRyN19xYjVJOHVHOUVBcUtCZ0l1VHlLdUZMU0sxTnZDQ2dZYnR5aERieVEtaG84SkVWNWFvRzlfV1B3NEIyTVhVeGU4V0VVOFBNdmNSRDBON3VoNGZzYklHRVZzTm15bFROYWs2Y9IBtgFBVV95cUxNelVZUEg5dGw4QUZ5YlRzZjBCQlNjZnJWUE8yVktqZThCLUxFMEphS0tNcXVZbm1ab1RZeDhxQlVzenF5TXgzajJHYXYwdmtBUEUxRFBUQkZkX2pkemx1a081Y2Nxa0NSM3RveE9vMmd4LUZYbUdqWUlBNVJkNjg4Z3dhX0NOT0JvZjcybkppeUZJV0VmVDZCWFlONWkwNUFYNmpxVlZDRUV6aFFHMjVySjJXWmpaUQ?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 17:27:01 GMT",
-      "timestamp": "2026-10-20T17:27:01.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:1h(+15)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "ANFP fija nueva fecha para partido suspendido entre UC y Audax Italiano - laconexion.cl",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNazVZekZjcVg3UERweVVxc3JzZHZILWwtaVVWUHU5QUxOMElkY1ZkQTllVmpxaXU4Z3gtWGFpUXlDVmxPaVd0SUt4UEdUdWFCQUl6cVBsdmNlYlRkSTNiSEZMbWlXa0xqRVYycFpfYkU1OVltNUlDdFhhWUxINXh0VjlXbWpiTmtLRGFTb0hPNUUyazM4bml2TzV3?oc=5\" target=\"_blank\">ANFP fija nueva fecha para partido suspendido entre UC y Audax Italiano</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">laconexion.cl</font>",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNazVZekZjcVg3UERweVVxc3JzZHZILWwtaVVWUHU5QUxOMElkY1ZkQTllVmpxaXU4Z3gtWGFpUXlDVmxPaVd0SUt4UEdUdWFCQUl6cVBsdmNlYlRkSTNiSEZMbWlXa0xqRVYycFpfYkU1OVltNUlDdFhhWUxINXh0VjlXbWpiTmtLRGFTb0hPNUUyazM4bml2TzV3?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 17:35:00 GMT",
-      "timestamp": "2026-10-20T17:35:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "laconexion.cl",
-      "fuente_url_original": "https://laconexion.cl",
-      "fuente": "laconexion.cl",
-      "fuente_host": "laconexion.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 89,
-      "categoria": "chile",
-      "equipo_chile": "Audax Italiano",
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:8h(+10)"
-      ]
-    },
-    {
-      "title": "Fernando Gago sorprende y cita a esta figura de U. de Chile contra Deportes Antofagasta - Bolavip Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPcmxuY0g0VEdPRlRoYm11bk9lcW04UE14X01XTjMtR1cxTG0yMmhWY29sMkpqMWZ4NEJpMGRvX3NuLU5QU3lrQldLbEotTGxHXzZaQWJNUkxUMFRwSy1wc1FvTjFEWWVITjUtbURKUmZaNFZtamo0QzNISUVxRVZnQ0EtNUhEcFlwalRDUG5vaXlRNFA5cXRrQzlKX2xGa1hIR1Jfdm5mQWlJVE9TQTBKWS1FVlZMaGxOUGfSAb8BQVVfeXFMTm9tYjZ3WEVPUkJPZDN2TW13blBaM09mS2p4elY0NVlvMmRoUW1zVVZBMVE2TFlZTWFzUzdUOERIZGhvRHJGUWMyOTNhalJqNUpCc2g5bndsT0NRcktpR2pZRmQzU19KYmllaWR2RkJJZnByV0RmQXNua3R1V1lrYU4xRURFNy1LeFNsdHBRNGJBc0",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcmxuY0g0VEdPRlRoYm11bk9lcW04UE14X01XTjMtR1cxTG0yMmhWY29sMkpqMWZ4NEJpMGRvX3NuLU5QU3lrQldLbEotTGxHXzZaQWJNUkxUMFRwSy1wc1FvTjFEWWVITjUtbURKUmZaNFZtamo0QzNISUVxRVZnQ0EtNUhEcFlwalRDUG5vaXlRNFA5cXRrQzlKX2xGa1hIR1Jfdm5mQWlJVE9TQTBKWS1FVlZMaGxOUGfSAb8BQVVfeXFMTm9tYjZ3WEVPUkJPZDN2TW13blBaM09mS2p4elY0NVlvMmRoUW1zVVZBMVE2TFlZTWFzUzdUOERIZGhvRHJGUWMyOTNhalJqNUpCc2g5bndsT0NRcktpR2pZRmQzU19KYmllaWR2RkJJZnByV0RmQXNua3R1V1lrYU4xRURFNy1LeFNsdHBRNGJBc0pmYTdGa2VWbXF4R0lXQWlGSjBiWUNLazRHUjVMbVNEUXNCVDJCY1ZUZkczU2M?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 17:45:03 GMT",
-      "timestamp": "2026-10-20T17:45:03.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Bolavip Chile",
-      "fuente_url_original": "https://bolavip.com",
-      "fuente": "Bolavip Chile",
-      "fuente_host": "bolavip.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Deportes Antofagasta",
-      "viral_score": 83,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:4h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
-      "title": "ANFP explica los motivos de la suspensión del partido de Colo Colo vs Puerto Montt - Dale Albo",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPSktnc1hJaTk4NlN2U01sNUdMbEJ5YXM4ZWpnNTJDbjRlYWFfVG13OHBrclAzb09BZHNKSFhILWozYVZ6X2M4R1RjR093Y1N1RldFWjBqUGFELXZKWFZBQjhWMmlUTXUwVEhuN01SN25HUWx2SGM3TzNhT3AzRVdQRWdvVzhROW9wc2VmWURaeDFqTWdzd3pKdEtycDVWbjk3S3VPaVM0X0J3RmExWFFRNlMwTdIBuAFBVV95cUxOd21FdTc1WndiMTBEbVhzNktkRF9uakpiNU83SkFlOW1mckxmcmY1Q2diUV9XUmdGckxkaXNaYVBaaXBISVF4OTdOaG9sdGNGcEdKaGQzNVpsSkF6WDJmc2JaVWxVX29KT3B0c202dXhWZkVFVFc0eHAtYmtzUjJKVnpYNTJLUWR0X3hzanI0a3hQZWU5al9MeX",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSktnc1hJaTk4NlN2U01sNUdMbEJ5YXM4ZWpnNTJDbjRlYWFfVG13OHBrclAzb09BZHNKSFhILWozYVZ6X2M4R1RjR093Y1N1RldFWjBqUGFELXZKWFZBQjhWMmlUTXUwVEhuN01SN25HUWx2SGM3TzNhT3AzRVdQRWdvVzhROW9wc2VmWURaeDFqTWdzd3pKdEtycDVWbjk3S3VPaVM0X0J3RmExWFFRNlMwTdIBuAFBVV95cUxOd21FdTc1WndiMTBEbVhzNktkRF9uakpiNU83SkFlOW1mckxmcmY1Q2diUV9XUmdGckxkaXNaYVBaaXBISVF4OTdOaG9sdGNGcEdKaGQzNVpsSkF6WDJmc2JaVWxVX29KT3B0c202dXhWZkVFVFc0eHAtYmtzUjJKVnpYNTJLUWR0X3hzanI0a3hQZWU5al9MeXZVYWxkNG1USURGemNkNXREZldjMVhpYmszN3Q0b3l4?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 18:51:44 GMT",
-      "timestamp": "2026-10-20T18:51:44.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Dale Albo",
-      "fuente_url_original": "https://dalealbo.cl",
-      "fuente": "Dale Albo",
-      "fuente_host": "dalealbo.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 89,
-      "categoria": "chile",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 93,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:4h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "La UC sondea un delantero perteneciente a Colo-Colo para reforzar su ataque en 2027 - En Cancha",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi7AFBVV95cUxQLVpSdkZUR3hkTFI4b0JyRjBza2Z6UFcxeGRDejk2R3M5VkJidUNZUC1KTVN0dGNqb3pRMlBKZmhMY25YSkFLRDNxSlc1LWFLNzBjcHk5cGNrYkhHTl84OURsU3ZnUTE0OTZnYnY2SUNSNWg1bmRiVjNzbFV5SE9YNWNWeHhiYnF2MFRPN01sUjR0WFdZanh6Rm5Yb25QLTJ3VXdXdjJ6MFBsTEZfSUlmWkJyeTVYTFZoLXlDTjN4N09tM3I2cHdnNVlOWVZHS1dxRzhNT0tHWWlwR2E1SThVbk9WOXRvTWhqRHBsWQ?oc=5\" target=\"_blank\">La UC sondea un delantero perteneciente a Colo-Colo para reforzar su ataque en 2027</a>&nbsp;&nbsp;<font colo",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQLVpSdkZUR3hkTFI4b0JyRjBza2Z6UFcxeGRDejk2R3M5VkJidUNZUC1KTVN0dGNqb3pRMlBKZmhMY25YSkFLRDNxSlc1LWFLNzBjcHk5cGNrYkhHTl84OURsU3ZnUTE0OTZnYnY2SUNSNWg1bmRiVjNzbFV5SE9YNWNWeHhiYnF2MFRPN01sUjR0WFdZanh6Rm5Yb25QLTJ3VXdXdjJ6MFBsTEZfSUlmWkJyeTVYTFZoLXlDTjN4N09tM3I2cHdnNVlOWVZHS1dxRzhNT0tHWWlwR2E1SThVbk9WOXRvTWhqRHBsWQ?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 18:51:54 GMT",
-      "timestamp": "2026-10-20T18:51:54.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "En Cancha",
-      "fuente_url_original": "https://www.encancha.cl",
-      "fuente": "En Cancha",
-      "fuente_host": "encancha.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Universidad Católica",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:0h(+15)"
-      ]
-    },
-    {
-      "title": "Una nueva suspensión golpea al fútbol chileno: comunicado oficial - AS Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNYy1vZlZXcW5sYU9lWFhqZWJ0QU9GRWtHd1k1X2hoNHRIV1EyQmtBU0tFYzVWZ1dXdW9LbFhoRUx5R2lwTTZZOXZEZDQybzBMZUJHeS1aaTdCZG1hem9VNkhQcExTWk9MWGhYNWkwb0o2LTF2WkxmWG5zWjljeXRQYkxOZ1dkX0psUWxKaHVNNUpMeURsenNEaEJUQktVS3BEX2Q3TlNn0gG6AUFVX3lxTE45d0xaX25OSjRSbWVDaEtwOUxSRnI3V2ZlYy01NXVkbjQwQ2NWUzhPNEV2OTBKQlBSQ1JibVRKTUNYWlZ5ZlNZc2hQU1IyV2hUR3VXd0VzVUIzdl9qX2JwMTgtUzM4WElEYUpSOG0zWnBJbW5uM0xBQThPUFZJTGZhX3ZWd1hiZ2VKZ2pZSmxpMWpIR2dkSFF4NmIybktwdU51Z25xbl",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYy1vZlZXcW5sYU9lWFhqZWJ0QU9GRWtHd1k1X2hoNHRIV1EyQmtBU0tFYzVWZ1dXdW9LbFhoRUx5R2lwTTZZOXZEZDQybzBMZUJHeS1aaTdCZG1hem9VNkhQcExTWk9MWGhYNWkwb0o2LTF2WkxmWG5zWjljeXRQYkxOZ1dkX0psUWxKaHVNNUpMeURsenNEaEJUQktVS3BEX2Q3TlNn0gG6AUFVX3lxTE45d0xaX25OSjRSbWVDaEtwOUxSRnI3V2ZlYy01NXVkbjQwQ2NWUzhPNEV2OTBKQlBSQ1JibVRKTUNYWlZ5ZlNZc2hQU1IyV2hUR3VXd0VzVUIzdl9qX2JwMTgtUzM4WElEYUpSOG0zWnBJbW5uM0xBQThPUFZJTGZhX3ZWd1hiZ2VKZ2pZSmxpMWpIR2dkSFF4NmIybktwdU51Z25xblRNWUVud3phdlRJeF84Y1p0NThWdw?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 19:41:09 GMT",
-      "timestamp": "2026-10-20T19:41:09.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "AS Chile",
-      "fuente_url_original": "https://chile.as.com",
-      "fuente": "AS Chile",
-      "fuente_host": "chile.as.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 90,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 88,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:2h(+15)",
-        "senal:\\b(oficial|confirmad(+12)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "penal(-12)"
-      ]
-    },
-    {
-      "title": "Suspenden duelo entre Unión La Calera y Coquimbo Unido por Copa Chile - El Día",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSVN0UDNWRUo0U1FTTC1VU1MwTk9uVXl6RlFvVEFnRjVHTDJ0V0p5cFJhSDY2QUNHeUNBZVFPVlNBN0VXRmZJUUxlOC1vZ1BxNDk2UDRUcnBNTkpxdkhiSGRDRXExMEhqTmNNenZSaXFRNUV2R0JBRDctRTN3ZUZYZFo1MC1GMEE4TnF1NkQ3OG5MSWtoZkRYRzhQeV9YaWVadndaemRlYWtxX3M3enliczJ3ZjhLd1hqT254ZzBWc0U?oc=5\" target=\"_blank\">Suspenden duelo entre Unión La Calera y Coquimbo Unido por Copa Chile</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">El Día</font>",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSVN0UDNWRUo0U1FTTC1VU1MwTk9uVXl6RlFvVEFnRjVHTDJ0V0p5cFJhSDY2QUNHeUNBZVFPVlNBN0VXRmZJUUxlOC1vZ1BxNDk2UDRUcnBNTkpxdkhiSGRDRXExMEhqTmNNenZSaXFRNUV2R0JBRDctRTN3ZUZYZFo1MC1GMEE4TnF1NkQ3OG5MSWtoZkRYRzhQeV9YaWVadndaemRlYWtxX3M3enliczJ3ZjhLd1hqT254ZzBWc0U?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 19:48:22 GMT",
-      "timestamp": "2026-10-20T19:48:22.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "El Día",
-      "fuente_url_original": "https://www.diarioeldia.cl",
-      "fuente": "El Día",
-      "fuente_host": "diarioeldia.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Coquimbo Unido",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:2h(+15)"
-      ]
-    },
-    {
-      "title": "Aforo confirmado para el partido de San Luis: Siete mil almas podrán asistir al duelo ante Recoleta - SoyChile.cl",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNdkVaOVhKVTJQTlBmdW5HaXpVWWNoTGZDeVMtclJiYk9pbEk4TnVmbGFSd0I5Q3dIQWxmSGphbG5oc1FRX1htSEFuUUo3TlFyMmkwekhCbDBpUDNQVG9DRnFibm5EbGszZk1vN0RIUElaTEtneDVZUVp3NnJrOHg1dk13UWtFbXJSb1luekV5ZzRqMmdtVF9OR3FXd2E?oc=5\" target=\"_blank\">Aforo confirmado para el partido de San Luis: Siete mil almas podrán asistir al duelo ante Recoleta</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">SoyChile.cl</font>",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdkVaOVhKVTJQTlBmdW5HaXpVWWNoTGZDeVMtclJiYk9pbEk4TnVmbGFSd0I5Q3dIQWxmSGphbG5oc1FRX1htSEFuUUo3TlFyMmkwekhCbDBpUDNQVG9DRnFibm5EbGszZk1vN0RIUElaTEtneDVZUVp3NnJrOHg1dk13UWtFbXJSb1luekV5ZzRqMmdtVF9OR3FXd2E?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 19:51:11 GMT",
-      "timestamp": "2026-10-20T19:51:11.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "SoyChile.cl",
-      "fuente_url_original": "https://www.soychile.cl",
-      "fuente": "SoyChile.cl",
-      "fuente_host": "soychile.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 86,
-      "categoria": "chile",
-      "equipo_chile": "Recoleta",
-      "viral_score": 92,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)",
-        "senal:\\b(oficial|confirmad(+12)"
-      ]
-    },
-    {
-      "title": "A horas de jugarse: temporal obliga a suspender el Unión La Calera vs Coquimbo de hoy en Copa Chile - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOdXdNUmNhOXBxczgxZG9FdUl5a0Q5MXZ4NGx0ZWYzZnlaU2QxbE5UZG5HWHpZVEpPN3I2Yko2MEoyUWJpampDcWxaYkV3NlZhdmtEUUFYZUg1QmY3M1JCUU1fbDdBT2FFcFBITTY4TkVPblo0VWE0N09VOVR2V2xiSFhYaS1JZkpvNm1SMVVTUnpkMUh5cF96YnRHZVVScGFUelEyODIxZmk2a0lKTG9naE5PeG9BNlU5aE1pQWJUVdIBxAFBVV95cUxPVjItNmdHYnZBcWV3WW5nVHdBY3NjSkRLZ0o1dWp5cW9JeFhuMHR3MzR1RWJQWG5jRHg5MEdNOXRRSFVGaTFCRmUwMmF1cE1ibGxCSC0teW8zNFZLSGVfMXVKY2c4SjdHa1huMlUwOVZJNVFpNnZIRFQ1X1NqalFzMFFfOXF4UGU3eVFkYW",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOdXdNUmNhOXBxczgxZG9FdUl5a0Q5MXZ4NGx0ZWYzZnlaU2QxbE5UZG5HWHpZVEpPN3I2Yko2MEoyUWJpampDcWxaYkV3NlZhdmtEUUFYZUg1QmY3M1JCUU1fbDdBT2FFcFBITTY4TkVPblo0VWE0N09VOVR2V2xiSFhYaS1JZkpvNm1SMVVTUnpkMUh5cF96YnRHZVVScGFUelEyODIxZmk2a0lKTG9naE5PeG9BNlU5aE1pQWJUVdIBxAFBVV95cUxPVjItNmdHYnZBcWV3WW5nVHdBY3NjSkRLZ0o1dWp5cW9JeFhuMHR3MzR1RWJQWG5jRHg5MEdNOXRRSFVGaTFCRmUwMmF1cE1ibGxCSC0teW8zNFZLSGVfMXVKY2c4SjdHa1huMlUwOVZJNVFpNnZIRFQ1X1NqalFzMFFfOXF4UGU3eVFkYWNuS0R6Z1BCVjB2dVpJRzJUSWFybkZ6TjZxSTZ4MThhM2FLYjhQSC1oQkJ5UVJFTnY4dlVJbzZf?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 19:58:01 GMT",
-      "timestamp": "2026-10-20T19:58:01.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Coquimbo Unido",
-      "viral_score": 88,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:2h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
-      "title": "El “refuerzo” que tiene Colo Colo para el vital partido con Palestino: “Me pone feliz” - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPcXRFU21SUWlEMllUVm5TdXhQbWtST3J5NDRRTEl5N3g1dF9CTWN6ZDRxN3JmZnFEWE9wdUNFcGw5dl9lbzh1QjV1bGk4Q201SW10TzRHelB1YUpMS1V0QS1mMWQ3Tm9MSURIeFAtZHpRZGFtZnM5MVdrTGJDU2tXRmgxOEpwckowNkZWNW9haDJLVzFrdFZtN25PNlRpbDA1NFdKMkszS3lGMEVX0gGyAUFVX3lxTE8wLUUzMTdxa1UtUEhPc1VRcXRyMEdCS0pydHV6ejJ4Wkk5bFNQTzdHY2NMNTExUTdJRzQwaC1aWTVneVdZdkg3eTJ3d3lJRXZ0cWk2d0VYTWYzVkFtTFh2QVpmTWxPUzhTRjY2Qk94bzBIaFBBbFlUV0FfX2lrTFkwbGJCSjRmR2ctb3B6ckJyUjVtUTlCWm0xcWgyb0lHWn",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPcXRFU21SUWlEMllUVm5TdXhQbWtST3J5NDRRTEl5N3g1dF9CTWN6ZDRxN3JmZnFEWE9wdUNFcGw5dl9lbzh1QjV1bGk4Q201SW10TzRHelB1YUpMS1V0QS1mMWQ3Tm9MSURIeFAtZHpRZGFtZnM5MVdrTGJDU2tXRmgxOEpwckowNkZWNW9haDJLVzFrdFZtN25PNlRpbDA1NFdKMkszS3lGMEVX0gGyAUFVX3lxTE8wLUUzMTdxa1UtUEhPc1VRcXRyMEdCS0pydHV6ejJ4Wkk5bFNQTzdHY2NMNTExUTdJRzQwaC1aWTVneVdZdkg3eTJ3d3lJRXZ0cWk2d0VYTWYzVkFtTFh2QVpmTWxPUzhTRjY2Qk94bzBIaFBBbFlUV0FfX2lrTFkwbGJCSjRmR2ctb3B6ckJyUjVtUTlCWm0xcWgyb0lHWnhqVlEtMWxIMVk0ajFrLU1QS1E?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 20:09:38 GMT",
-      "timestamp": "2026-10-20T20:09:38.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:1h(+15)",
-        "senal:\\b(fichaje|traspaso|(+10)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Las dos alternativas que evalúa la ANFP para completar la llave entre Colo Colo y Puerto Montt por Copa Chile - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxNd0lqY1hiLUxBZm9YRm5rYTdJR2l4QnhzU3o2OGpPSzUycTR3a2xaVi1TbFcwYUR1SFk2ZzlqRnUwdEFUZ25XMFBqZWhYQjlrMnpDMFE5MUpiR3MwOWplMjdjUVFQNjBDRjVNOS15Tk03N1l5aUpyaEc2MGR0bzhIQXZmNzRBci1vUHN0aDlqM0RrMEp2bnNxSXpKT01GQjRNd2RMeW54N05ZQjUtLVQzSDJ1V3ROUUdJRVczM1B1Y3hNYUE4c2x4aXFvUWpGOWtpZE9tcmRQdFRMQWFsTGfSAfIBQVVfeXFMT3hORnNCRDZoSXV1bVZkVU44QmVobi1jUzFFcmJGdjhRaHRDZ3I5dWRuTWVWVkQzNGJFTkRrMGRGNm1wbXUzSGFGQWV3QXdUVXlzbHhKNjMyNlVyb3VrYktPVFB1WURLdy15SW1nX3",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNd0lqY1hiLUxBZm9YRm5rYTdJR2l4QnhzU3o2OGpPSzUycTR3a2xaVi1TbFcwYUR1SFk2ZzlqRnUwdEFUZ25XMFBqZWhYQjlrMnpDMFE5MUpiR3MwOWplMjdjUVFQNjBDRjVNOS15Tk03N1l5aUpyaEc2MGR0bzhIQXZmNzRBci1vUHN0aDlqM0RrMEp2bnNxSXpKT01GQjRNd2RMeW54N05ZQjUtLVQzSDJ1V3ROUUdJRVczM1B1Y3hNYUE4c2x4aXFvUWpGOWtpZE9tcmRQdFRMQWFsTGfSAfIBQVVfeXFMT3hORnNCRDZoSXV1bVZkVU44QmVobi1jUzFFcmJGdjhRaHRDZ3I5dWRuTWVWVkQzNGJFTkRrMGRGNm1wbXUzSGFGQWV3QXdUVXlzbHhKNjMyNlVyb3VrYktPVFB1WURLdy15SW1nX3NNUDduM3I1UGo3Q0xEU2JZZGtkd2ZfYlp3ZHh1T2lZLWpQa3pCUHZUT3RIQzE1MEdmTE9sd21RRU1ZQWhlUTNSZXAza19nWWdBTGV4UHFkT0xqN3ZkZmh6YzBubmE0ZjhoeUo3UkJDWUsxSk9mS04wNlBwU0VZMF9HSy1FV3gzc3lsV2c?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 20:11:06 GMT",
-      "timestamp": "2026-10-20T20:11:06.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "ADN Radio",
-      "fuente_url_original": "https://www.adnradio.cl",
-      "fuente": "ADN Radio",
-      "fuente_host": "adnradio.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 89,
-      "categoria": "chile",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 98,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "A horas de que se jugara: suspenden partido entre La Calera y Coquimbo por pronóstico de lluvias - BioBioChile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNQVpNQnFlR2hLU1RNU2RVYnhBQ2xYX3ZGSEhGRnd0c1ZrclNTVFlTTy1hSVluc1dKelRaMEpNODNGamoxeFk2Y1lKQXBBejZEQVQxdk93U0FYeGk2M2JkWkV0Qnd4aXVnUmlwTGE2Q2xUSEJkM1FiWXB0R2RibG1Cc0xHXzlSQXltVzZOQnNrb2VTNXRDTzJ6MXBDT3NNVkM5dnlKY0VGNGtFQW9ualRNd0IxODdLUXZ1czdPQUxfYVBRNzhCb3JRX1VvbFY?oc=5\" target=\"_blank\">A horas de que se jugara: suspenden partido entre La Calera y Coquimbo por pronóstico de lluvias</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">BioBioChile</font>",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNQVpNQnFlR2hLU1RNU2RVYnhBQ2xYX3ZGSEhGRnd0c1ZrclNTVFlTTy1hSVluc1dKelRaMEpNODNGamoxeFk2Y1lKQXBBejZEQVQxdk93U0FYeGk2M2JkWkV0Qnd4aXVnUmlwTGE2Q2xUSEJkM1FiWXB0R2RibG1Cc0xHXzlSQXltVzZOQnNrb2VTNXRDTzJ6MXBDT3NNVkM5dnlKY0VGNGtFQW9ualRNd0IxODdLUXZ1czdPQUxfYVBRNzhCb3JRX1VvbFY?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 20:19:05 GMT",
-      "timestamp": "2026-10-20T20:19:05.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "BioBioChile",
-      "fuente_url_original": "https://www.biobiochile.cl",
-      "fuente": "BioBioChile",
-      "fuente_host": "biobiochile.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Coquimbo Unido",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)"
-      ]
-    },
-    {
-      "title": "Partido La Calera vs. Coquimbo suspendido horas antes por previsión de lluvias - Canal 9 Bío Bío Televisión",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxNY1NhZnEyMEtSd095ZmdUelg5WThlNGs4R1MyRklTdldzUUZBanNpaFlZc2VkeEpHWTFyQVZWTTNheV9xMDRGU0hOUk5lZzJGeml3RXRvUGF1M2hKOHg4ZU1tQ1JLWkw4ZUZMeTBUcEZKN1M4M0VQakF1N2pyT0Q4dV9TTWxKRjVtUEtBR3NGVXFUMlQw?oc=5\" target=\"_blank\">Partido La Calera vs. Coquimbo suspendido horas antes por previsión de lluvias</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Canal 9 Bío Bío Televisión</font>",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNY1NhZnEyMEtSd095ZmdUelg5WThlNGs4R1MyRklTdldzUUZBanNpaFlZc2VkeEpHWTFyQVZWTTNheV9xMDRGU0hOUk5lZzJGeml3RXRvUGF1M2hKOHg4ZU1tQ1JLWkw4ZUZMeTBUcEZKN1M4M0VQakF1N2pyT0Q4dV9TTWxKRjVtUEtBR3NGVXFUMlQw?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 20:22:03 GMT",
-      "timestamp": "2026-10-20T20:22:03.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Canal 9 Bío Bío Televisión",
-      "fuente_url_original": "https://www.canal9.cl",
-      "fuente": "Canal 9 Bío Bío Televisión",
-      "fuente_host": "canal9.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 89,
-      "categoria": "chile",
-      "equipo_chile": "Coquimbo Unido",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)"
-      ]
-    },
-    {
-      "title": "Ipswich Town toma drástica decisión con Marcelino Núñez tras su polémica en La Roja - Bolavip Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOZEktcGRBaWtCZEdNY1hXWTlmQThYdWNHR3Q2b1k0Yjc2MndkYUQ2VEhQUFowQy1TSEc3SVI5VkZiZU9TaEc1YS0yUUo0YTdYbEVXY3BLdU9XRXBNUUlIMlJ2SFNlaDdnbWRsbnlZdkU2N25rOXh2Q2U3TlBSQ2ZZVjRNajE4dkpzMWRxd3h3bXpELU9UNjI1YTJyZ0lha0xtMEl0UWFEbnI2LUNaSkp3Ym9lZHlBSDFQSWYwQ9IBwgFBVV95cUxNbTByUi0yVVViRzBxeVE5U1dMSVNNcjRpblFSaWNMQ1BOQk94NFZudThCXzI3WkNHUVI3UUZYUUJoTVdld1JSbkcwSWdpc3Z0R0dQWHI5T3pldU1NSDVJSkgycVlvQWQwMml2T25uUUNaNWdFWVRzcDFhQU5OY0RBUUNMX3RLZzZJbXVuNWx3cF",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZEktcGRBaWtCZEdNY1hXWTlmQThYdWNHR3Q2b1k0Yjc2MndkYUQ2VEhQUFowQy1TSEc3SVI5VkZiZU9TaEc1YS0yUUo0YTdYbEVXY3BLdU9XRXBNUUlIMlJ2SFNlaDdnbWRsbnlZdkU2N25rOXh2Q2U3TlBSQ2ZZVjRNajE4dkpzMWRxd3h3bXpELU9UNjI1YTJyZ0lha0xtMEl0UWFEbnI2LUNaSkp3Ym9lZHlBSDFQSWYwQ9IBwgFBVV95cUxNbTByUi0yVVViRzBxeVE5U1dMSVNNcjRpblFSaWNMQ1BOQk94NFZudThCXzI3WkNHUVI3UUZYUUJoTVdld1JSbkcwSWdpc3Z0R0dQWHI5T3pldU1NSDVJSkgycVlvQWQwMml2T25uUUNaNWdFWVRzcDFhQU5OY0RBUUNMX3RLZzZJbXVuNWx3cFlkNkpYOVNMQmRvbmppQkVHNTExT190THk5Y0R1T1JNa2tHeFJkXzh0aTk3NXc2em5iQQ?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 20:40:16 GMT",
-      "timestamp": "2026-10-20T20:40:16.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Bolavip Chile",
-      "fuente_url_original": "https://bolavip.com",
-      "fuente": "Bolavip Chile",
-      "fuente_host": "bolavip.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 78,
-      "categoria": "chile",
-      "equipo_chile": "Selección Chilena",
-      "viral_score": 100,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)",
-        "senal:\\b(polemica|var|expu(+10)",
-        "gigante:la roja(+10)"
-      ]
-    },
-    {
-      "title": "Eligen a Tuto De Paul como el titular de Colo Colo en la recta final: “Que celebren con él” - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNS3pERGtZalYyMjl3VnNSUHBLaXBQWEl0VTg2UmRjb2Z4cjRXOHl6UXBUWmpPYjFRZS0zc2RBcnQ2UEFQaFBWTEI4V19NNlB5MFdKV1JwQkNPNVRjZ183cU04aXpfN2p3LW8xSGFaR2M3bzcwQjhydFRfQjVScTl5YlMtVlZqbEFzdE9SRUJCZV9pQWdLYVBjdUZvNklUR2pHZmV2OS1YdjN4VHB6ZEV2bjVaOEE3d9IBuwFBVV95cUxPd3dYWDBxbktBcDVsNmVHOEQzTFlIZTBIZ0wwa1dGNVRpUE9KdlVmZHVOZ2ZwQTJTcU8zWThUcklkSU5iV2hRamdMVDNjTmVoamtsMUJYQi1BYmwyUkdub1U0V1psdXJTcEI3SWFVODY4WEpfN0NxQjI5SG4tMDI0SWhrRWc4aXg3TGxFVXJNVE9Lanh2cH",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNS3pERGtZalYyMjl3VnNSUHBLaXBQWEl0VTg2UmRjb2Z4cjRXOHl6UXBUWmpPYjFRZS0zc2RBcnQ2UEFQaFBWTEI4V19NNlB5MFdKV1JwQkNPNVRjZ183cU04aXpfN2p3LW8xSGFaR2M3bzcwQjhydFRfQjVScTl5YlMtVlZqbEFzdE9SRUJCZV9pQWdLYVBjdUZvNklUR2pHZmV2OS1YdjN4VHB6ZEV2bjVaOEE3d9IBuwFBVV95cUxPd3dYWDBxbktBcDVsNmVHOEQzTFlIZTBIZ0wwa1dGNVRpUE9KdlVmZHVOZ2ZwQTJTcU8zWThUcklkSU5iV2hRamdMVDNjTmVoamtsMUJYQi1BYmwyUkdub1U0V1psdXJTcEI3SWFVODY4WEpfN0NxQjI5SG4tMDI0SWhrRWc4aXg3TGxFVXJNVE9Lanh2cHdrSm9SWXpPVnNHVzRSbnBIMEZJTHJsTkV1LVJYTjN4VDlKbnBr?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 20:40:41 GMT",
-      "timestamp": "2026-10-20T20:40:41.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:22h(+5)",
-        "senal:\\b(clasific|eliminad(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Ipswich Town toma una drástica decisión con Marcelino Núñez: duro presente para el chileno - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbnkwNGRZR0FYZnAtUEJXV0pGWWZDN0wtRkdkejRkY0plaWhUUzZCVDJpX1pvX0xsRmcwdkhtRHRLQVh2ZzUyVGNreGhlRGE0VDc1Rl9ic2xxdHFkUkIyaTNxMTdxUVFRNDBjTVJyYkFhSFFvREVmQy1pdm54WXdKMTRnYjZKdzBObFlOa09nbmhmVnQ2VUhnLU0tcHZuZ3VOWG43dWNCaUw5MnRTR21VWXhwckhtQmc3Wk5QSS1EbjQ3c2_SAdcBQVVfeXFMTVhMa05faDNVSG5VVmFtZjdpRjFuNEItMXpHN3NPNC1TYjZ0Z1ZWaXdyeFN6eUp4RV9wa2drSGNaT0d0UjJpVHpRMlVNM2piYWxhb1BCU2J6dUp6MUU1ejBuaXF4Sm9HVXlrdFNRQjF4TUZCTDV3R2VpM2NMT2pDcjJBWUxKLU1iZ2",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbnkwNGRZR0FYZnAtUEJXV0pGWWZDN0wtRkdkejRkY0plaWhUUzZCVDJpX1pvX0xsRmcwdkhtRHRLQVh2ZzUyVGNreGhlRGE0VDc1Rl9ic2xxdHFkUkIyaTNxMTdxUVFRNDBjTVJyYkFhSFFvREVmQy1pdm54WXdKMTRnYjZKdzBObFlOa09nbmhmVnQ2VUhnLU0tcHZuZ3VOWG43dWNCaUw5MnRTR21VWXhwckhtQmc3Wk5QSS1EbjQ3c2_SAdcBQVVfeXFMTVhMa05faDNVSG5VVmFtZjdpRjFuNEItMXpHN3NPNC1TYjZ0Z1ZWaXdyeFN6eUp4RV9wa2drSGNaT0d0UjJpVHpRMlVNM2piYWxhb1BCU2J6dUp6MUU1ejBuaXF4Sm9HVXlrdFNRQjF4TUZCTDV3R2VpM2NMT2pDcjJBWUxKLU1iZ2lWc0FpSWx2ZVZMRVluTEMwak9wNlp3Wk1xZDFKMmpGUWlBa3BMY0s4ODVlNE5Ib1ZoNzRwN2VTR19ISFJMWkRHbFJJa19fenZGQjBobkk?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 20:47:14 GMT",
-      "timestamp": "2026-10-20T20:47:14.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "ADN Radio",
-      "fuente_url_original": "https://www.adnradio.cl",
-      "fuente": "ADN Radio",
-      "fuente_host": "adnradio.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:2h(+15)"
-      ]
-    },
-    {
-      "title": "La gran noticia que recibe Fernando Ortiz de cara al partido de Colo Colo vs Palestino - Dale Albo",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPZXZYSXVTY053bDlMMVZXblhMdFJMLWREZFJMNTV6YXhmUnVKeGV6OU9ZMlRDczFzdGRlcWFEVnRaYVNId2RvYVZLWGFES3p2X3VRUUZGWHR3TzRqRk1QaHRUTzNSVDAxNzVpNkpDTXNCSTFoNmZDdkpRZTRUbm04QndPUFVJUUFGYnZyRUttWE9DYXdQR0xFbE9EUjYzQVZFUWtZcGVXdmwyVDlZb2NhZDJ2NlZESHkzUVpTb081a9IBxAFBVV95cUxQU1lrdjBteVFiTzhEdVJoc3FidkNzNFctVGRRVDVCRFVNR0RkT3l3TXBveDBFNFp0UkV2U0JzVFRoZkx5M05GelhnTHpYaVBoSFN4YzdDWlJqa2NZUDFvMk1qNjN6ZWk4c2RTV2ViWktsZ04xajNYRVlFWXpMR3dtdjVKX1FCVS1rX0RsUz",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZXZYSXVTY053bDlMMVZXblhMdFJMLWREZFJMNTV6YXhmUnVKeGV6OU9ZMlRDczFzdGRlcWFEVnRaYVNId2RvYVZLWGFES3p2X3VRUUZGWHR3TzRqRk1QaHRUTzNSVDAxNzVpNkpDTXNCSTFoNmZDdkpRZTRUbm04QndPUFVJUUFGYnZyRUttWE9DYXdQR0xFbE9EUjYzQVZFUWtZcGVXdmwyVDlZb2NhZDJ2NlZESHkzUVpTb081a9IBxAFBVV95cUxQU1lrdjBteVFiTzhEdVJoc3FidkNzNFctVGRRVDVCRFVNR0RkT3l3TXBveDBFNFp0UkV2U0JzVFRoZkx5M05GelhnTHpYaVBoSFN4YzdDWlJqa2NZUDFvMk1qNjN6ZWk4c2RTV2ViWktsZ04xajNYRVlFWXpMR3dtdjVKX1FCVS1rX0RsUzlLTjJwd2VlUkZCNmNnN1BDM2tZY3BVaWFUSkRzNl9KVkJfd1hCWWxoNXFSUGxCQ2Z1Nnc3bW1H?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 20:49:16 GMT",
-      "timestamp": "2026-10-20T20:49:16.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Dale Albo",
-      "fuente_url_original": "https://dalealbo.cl",
-      "fuente": "Dale Albo",
-      "fuente_host": "dalealbo.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:4h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Suspenden Unión La Calera vs Coquimbo Unido por condiciones meteorológicas - Radio Agricultura",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPaEh3Ny1yWHhLYS1wRFZNbjI5Y2pVN3k3a2FxM1VXUUltNzNSMnllRmdUM2o0YXQ5QS1jWURyUjRWUWdDOU0wdWpmTXdsbE5wMktRQlhrT0VmZGx4NUw3VHBmdXNTak03TmpDMk05NmsyUjd4RzV2a1F0a3hjVzRNd0tXcmhlT3Vwdk56RGlCM0R2QWpSbDNkT1V1QmhyY3pxQTVBc1VubW9iTDFzdk9rNjh5N2x6Y2dESXhUMXNSTzhiT2M?oc=5\" target=\"_blank\">Suspenden Unión La Calera vs Coquimbo Unido por condiciones meteorológicas</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Radio Agricultura</font>",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPaEh3Ny1yWHhLYS1wRFZNbjI5Y2pVN3k3a2FxM1VXUUltNzNSMnllRmdUM2o0YXQ5QS1jWURyUjRWUWdDOU0wdWpmTXdsbE5wMktRQlhrT0VmZGx4NUw3VHBmdXNTak03TmpDMk05NmsyUjd4RzV2a1F0a3hjVzRNd0tXcmhlT3Vwdk56RGlCM0R2QWpSbDNkT1V1QmhyY3pxQTVBc1VubW9iTDFzdk9rNjh5N2x6Y2dESXhUMXNSTzhiT2M?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 21:15:13 GMT",
-      "timestamp": "2026-10-20T21:15:13.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Radio Agricultura",
-      "fuente_url_original": "https://www.radioagricultura.cl",
-      "fuente": "Radio Agricultura",
-      "fuente_host": "radioagricultura.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 89,
-      "categoria": "chile",
-      "equipo_chile": "Coquimbo Unido",
-      "viral_score": 88,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:0h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
-      ]
-    },
-    {
-      "title": "Católica explota contra la ANFP y deja un duro mensaje: “Nos exigen cumplir, pero...” - AS Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMXZHX0NmMmVUT2NjRThZc1c2SzgydTZJckZfR05wMXJjbDBjSGI1bmRyRGQyc2d1QTRrbFdOWWtMdDMyaHYzVU1qVmp6NXFfbjVGRGtLTnk5UlhMNVhRX0dyc2tDUVNXUVNZUGVMSUZyZ2ktZnJ2NC1WcTItRGQ2c1lVVVdUSXlZN1RvZEUxTVZqdFRSeDZ0aDhJTXNpTGJmd01mT3pYemNreVhoazFvcjU4Y2dDV3pw0gHMAUFVX3lxTE5Vc0IxOWRXSGRfTWFvTUYyd21BWHlsc3B3NWhLbTNWbU1nNHFsVzdhTU51UmZ4bE9xbFNnZm9mOFpaaHBhaHVKMVpEd2NUdXVSX1BUU0czbUNHZGttdGF4Y0h0RUdieUxKdHhLMzJ3V20tckhfbC16LUZ0dG03ZWFIcmlqUkZzVi1xTlNOSFVMYi01Uj",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMXZHX0NmMmVUT2NjRThZc1c2SzgydTZJckZfR05wMXJjbDBjSGI1bmRyRGQyc2d1QTRrbFdOWWtMdDMyaHYzVU1qVmp6NXFfbjVGRGtLTnk5UlhMNVhRX0dyc2tDUVNXUVNZUGVMSUZyZ2ktZnJ2NC1WcTItRGQ2c1lVVVdUSXlZN1RvZEUxTVZqdFRSeDZ0aDhJTXNpTGJmd01mT3pYemNreVhoazFvcjU4Y2dDV3pw0gHMAUFVX3lxTE5Vc0IxOWRXSGRfTWFvTUYyd21BWHlsc3B3NWhLbTNWbU1nNHFsVzdhTU51UmZ4bE9xbFNnZm9mOFpaaHBhaHVKMVpEd2NUdXVSX1BUU0czbUNHZGttdGF4Y0h0RUdieUxKdHhLMzJ3V20tckhfbC16LUZ0dG03ZWFIcmlqUkZzVi1xTlNOSFVMYi01UjlLMHdiM2NJaUl2Q3J3NXpjUUNxRTczcjhveEkyRkZHY0Rtcml6RDFSNG9LVTRMM2dLb04wS1pEeg?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 21:22:36 GMT",
-      "timestamp": "2026-10-20T21:22:36.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "AS Chile",
-      "fuente_url_original": "https://chile.as.com",
-      "fuente": "AS Chile",
-      "fuente_host": "chile.as.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Universidad Católica",
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:4h(+10)"
-      ]
-    },
-    {
-      "title": "Colo Colo vs. Puerto Montt: las fechas que baraja la ANFP para completar la revancha - Bolavip Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPSXVzNjRnN0VPYmh1YlpsNnZmVVN3azRaNDFWUVVybXh6ZlJsaGsySlM2SFMxeVJRa2tKcVVLWF9oTzBxNUxfY3hNbE10VkRHNnc3UDBMSjdzdmxNaXAxU3c0OThrT0FUOWl1Yk5zb0plaHdsUW0za0hrMU9PVnRPcVI5YWttZi1GU19UemZndS1weWI5Njg3ci1QV0xtSnlHSGx6WGp5UEtSNExIbko4MFRVSVLSAboBQVVfeXFMT2dUOThBRE9kcWJHOUp2bzFGZGdPLUxVcnJyYmxTUmFOX3VfajQ4bHBtQWhucm1rSTNpV21tOUpIUmhmQ1U4VGViNXctZ0lCb0RGcFI1NnR2bllMajhtM3JqTlBpVFBYS0Q1cjNtRlliLXdIblNFNkw0R29WQ1dzMlM3ZGI0MTVCcTllYUg2LUdGczB1VUtVbE",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSXVzNjRnN0VPYmh1YlpsNnZmVVN3azRaNDFWUVVybXh6ZlJsaGsySlM2SFMxeVJRa2tKcVVLWF9oTzBxNUxfY3hNbE10VkRHNnc3UDBMSjdzdmxNaXAxU3c0OThrT0FUOWl1Yk5zb0plaHdsUW0za0hrMU9PVnRPcVI5YWttZi1GU19UemZndS1weWI5Njg3ci1QV0xtSnlHSGx6WGp5UEtSNExIbko4MFRVSVLSAboBQVVfeXFMT2dUOThBRE9kcWJHOUp2bzFGZGdPLUxVcnJyYmxTUmFOX3VfajQ4bHBtQWhucm1rSTNpV21tOUpIUmhmQ1U4VGViNXctZ0lCb0RGcFI1NnR2bllMajhtM3JqTlBpVFBYS0Q1cjNtRlliLXdIblNFNkw0R29WQ1dzMlM3ZGI0MTVCcTllYUg2LUdGczB1VUtVbERCVUptZXZENkRVWEszYWo4ME4yd2tJX1ItN1dmb3d2bGFB?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 21:35:50 GMT",
-      "timestamp": "2026-10-20T21:35:50.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Bolavip Chile",
-      "fuente_url_original": "https://bolavip.com",
-      "fuente": "Bolavip Chile",
-      "fuente_host": "bolavip.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 89,
-      "categoria": "chile",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 90,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "La Copa Chile suma otra suspensión: el mal tiempo obliga a postergar la revancha entre la U y Antofagasta - La Tercera",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxNZGllV1dEbkRvQlJEZHZUTWdkQW5VZmlTT0FrZldpM1daM2JtZy1lUGtmZllNZ29mT05UNGlUbHk2VDhjZUQ2T0hOUmZEb0dtTWVTakFSTDVOMXRON3MzTXd4dWJqNTd3YmwyM0ZGY2VJbVNuSVVtWkk5Q2pyYmZzT0h4blNiZ3lkLXFMcTd2dUpCaEZ4ZGZ0NWRDWUF3Zjl6aUN5QV9BNkRsRXBYTi1oUzNxRENjZ1FTa3lOX2NCYnhjcGg2WU90M2FVWUVuaElEQ3JPV1VidG5aV2lFRmpsLVJvTGhZZ0XSAYgCQVVfeXFMUFdZRWFUS0JOTW5JUWZ5M3FwSC05dlk0OWdaUERQOTBYdFlrMkZ3d093aUY4WGt6aFZkUENfVVJ1NFZsdUJfUVFCTkNGcGZWZ09uNVF5UmdnNEhOY1RPYTVFdk5nam",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNZGllV1dEbkRvQlJEZHZUTWdkQW5VZmlTT0FrZldpM1daM2JtZy1lUGtmZllNZ29mT05UNGlUbHk2VDhjZUQ2T0hOUmZEb0dtTWVTakFSTDVOMXRON3MzTXd4dWJqNTd3YmwyM0ZGY2VJbVNuSVVtWkk5Q2pyYmZzT0h4blNiZ3lkLXFMcTd2dUpCaEZ4ZGZ0NWRDWUF3Zjl6aUN5QV9BNkRsRXBYTi1oUzNxRENjZ1FTa3lOX2NCYnhjcGg2WU90M2FVWUVuaElEQ3JPV1VidG5aV2lFRmpsLVJvTGhZZ0XSAYgCQVVfeXFMUFdZRWFUS0JOTW5JUWZ5M3FwSC05dlk0OWdaUERQOTBYdFlrMkZ3d093aUY4WGt6aFZkUENfVVJ1NFZsdUJfUVFCTkNGcGZWZ09uNVF5UmdnNEhOY1RPYTVFdk5namtJWGZmZ19laXBnSlhvYkVzWUVfN1lUOXNNNmxJLTd0akJfMDFTMTBNbWxWX3hQZ29USlRWT3lTS1ZFdGF6RWpjcFNsNDlaelpSNkhYRzlfcHNhaG0zTXJpSllHeTl1bUhaXzg3bzBIcEh6bXllSkxUTWpuTnozME1WWjhaV1Y4eVNuMU9XZVdXOGIxTEc3T0NKRWNqdXN6ci1JTjFOeVduVWo5?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 21:37:53 GMT",
-      "timestamp": "2026-10-20T21:37:53.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "La Tercera",
-      "fuente_url_original": "https://www.latercera.com",
-      "fuente": "La Tercera",
-      "fuente_host": "latercera.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Universidad de Chile",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:0h(+15)"
-      ]
-    },
     {
       "title": "¿Quién transmite Unión La Calera vs Coquimbo Unido? Horario y dónde ver EN VIVO la Copa Chile - www.elobservatodo.cl",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWk5TbjVWX00taWtkdTRtSEZPVmt5UVRwdFhDcjZuWUFCVWhlY25TSFBEUGJZTmVyZ0F6Y1poU2xBLTFraXJCSkpDRnpMNU5xS3gwOHVpbGszRFJJZElEMGtzakZqN01aYjY1UGFjTGxQbVlhNGFhRlRqeXlnVzV3WFUycWNLaTItUUpjcnN3RlppQVJ3RGdEOF9CQmFtZHdqZTRhdXdtQ0RLMjlSWTUxUFE0ZnNlUVZSUmtla18ybS12RkRZZ2hnbQ?oc=5\" target=\"_blank\">¿Quién transmite Unión La Calera vs Coquimbo Unido? Horario y dónde ver EN VIVO la Copa Chile</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">www.elobservatodo.cl</font",
@@ -20101,6 +19639,29 @@
       ]
     },
     {
+      "title": "Por la 35: la copa de la Liga de Primera estará en Chillán esperando a Colo Colo - Dale Albo",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOelExQjRVd2N3b2JjMDF0NkNhb1NXQ2k5YVBJTkh1RE00aUNRb1NaUjB1LTVGcnI4a1FsbUJjaWgwWG5pWS1hZC1nQTNrNjdpSW1weS1jUVdZTDc3N3VIeXZXdmE1SnF3eHBWQm1xWWVyRHJ3S19kY2Q0Q01qcEEtd05sdllkWE5CS1Z1STRLcXdUMXg5ZGJweFFJOGlvUTlBbDBFejlEd1JGVElpWDdjUGJEcEhQd9IBuwFBVV95cUxOTFM3bmwya0lLUHdta2JqaVlMQmFCNVpydnNaMFhjSHFrZTA0a01nZkFTcHhtVWMtdkIwUnJLZXdSZ09qRzVNbTd6Sk54bU5GdnEtMTlFSkZhSE1VdmVmVVNDaVpLaWFWZE1wOFVsNVZPYkgtd2drbko0VkNQZS02LWxfRDlWc2p5MmZhVG9FM2NRUnR2WW",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOelExQjRVd2N3b2JjMDF0NkNhb1NXQ2k5YVBJTkh1RE00aUNRb1NaUjB1LTVGcnI4a1FsbUJjaWgwWG5pWS1hZC1nQTNrNjdpSW1weS1jUVdZTDc3N3VIeXZXdmE1SnF3eHBWQm1xWWVyRHJ3S19kY2Q0Q01qcEEtd05sdllkWE5CS1Z1STRLcXdUMXg5ZGJweFFJOGlvUTlBbDBFejlEd1JGVElpWDdjUGJEcEhQd9IBuwFBVV95cUxOTFM3bmwya0lLUHdta2JqaVlMQmFCNVpydnNaMFhjSHFrZTA0a01nZkFTcHhtVWMtdkIwUnJLZXdSZ09qRzVNbTd6Sk54bU5GdnEtMTlFSkZhSE1VdmVmVVNDaVpLaWFWZE1wOFVsNVZPYkgtd2drbko0VkNQZS02LWxfRDlWc2p5MmZhVG9FM2NRUnR2WW9TTS1RdDZmQk5NQ2hrekJiQ0F2aTd6VVBya0F2YTRZMVlxS1pz?oc=5",
+      "pubDate": "Wed, 04 Nov 2026 20:09:19 GMT",
+      "timestamp": "2026-11-04T20:09:19.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Dale Albo",
+      "fuente_url_original": "https://dalealbo.cl",
+      "fuente": "Dale Albo",
+      "fuente_host": "dalealbo.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 65,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:64h(-10)",
+        "gigante:colo colo(+10)"
+      ]
+    },
+    {
       "title": "El gran “cortado” de Nicolás Córdova en la Selección Chilena: “No tengo que explicar” - Bolavip Chile",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOS09EcmJ0Z05LSnhVTHlCOHBKM0hPSDJKZDNZVTE1aEUzUUhqTVlCNlo5Z3Z3WFFZaVlValBvRTVkWmpybmY1MkRQaUt3UGhpUFBEeDE4S2Y2THB6d1JnR3JnTlVUNWhNMGFQUXlKSGU5RHR5Y3F4NEhHRjFyRkZ4Qmd5c0R0cHpvSEh2LXF1a2VBeE42dEV2NVRTcy1mUVptYXp1Y3ZIMWZTNzdrZ2p4NnVjNjJ6WnRDc2hXZtIBwgFBVV95cUxPUmx0bVJsS1FmVE83cVdjM0U0M09RbWtmOU9XemZENHNiQ3N6LUVGczNCTVlXUDFKT1BQSnd2V29Mb0RNZS1vUjB4TUROd0VscXM2RnNxaDJfTTVOd2xqc1JnZjBKdlJBOU9oUXZmdm1Gci11S1o4WUFKcUtVOHNUdHRRRTU4NjhlTlZOMVBqbk",
       "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOS09EcmJ0Z05LSnhVTHlCOHBKM0hPSDJKZDNZVTE1aEUzUUhqTVlCNlo5Z3Z3WFFZaVlValBvRTVkWmpybmY1MkRQaUt3UGhpUFBEeDE4S2Y2THB6d1JnR3JnTlVUNWhNMGFQUXlKSGU5RHR5Y3F4NEhHRjFyRkZ4Qmd5c0R0cHpvSEh2LXF1a2VBeE42dEV2NVRTcy1mUVptYXp1Y3ZIMWZTNzdrZ2p4NnVjNjJ6WnRDc2hXZtIBwgFBVV95cUxPUmx0bVJsS1FmVE83cVdjM0U0M09RbWtmOU9XemZENHNiQ3N6LUVGczNCTVlXUDFKT1BQSnd2V29Mb0RNZS1vUjB4TUROd0VscXM2RnNxaDJfTTVOd2xqc1JnZjBKdlJBOU9oUXZmdm1Gci11S1o4WUFKcUtVOHNUdHRRRTU4NjhlTlZOMVBqbkNYWEJnOVdnQ0RHZHJ6VWZka1ZFOWpFQW0zdFlCTHB1Qk5OOW1iWTVvcUR6VGltOFlKQQ?oc=5",
@@ -20142,6 +19703,29 @@
       "razones": [
         "categoria:chile(+40)",
         "frescura:49h(-10)"
+      ]
+    },
+    {
+      "title": "FINAL | U. La Calera 0 - Coquimbo Unido 2 por Copa Chile 2026 - En Cancha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOeDI2MFBTcUZhOVphZ29WSWNBM0VvR3Y2Tm5Wakxva0Q3NVNHMjNUU2NjVFJnTXBGcUNwdUNXYmRKby1TOTAtbTg4dG5uRFBzTXBqcTZ0NW1zNURSejVXQkZ2MTRLSFgxckUtbjJkOS1CNTMzcHJtQXJGWUxCOG9xaUNDSjVXanQxZGlRR3BudlBWdWdidzBOU0RhUEt1RWRfNlpCWU9MZUt2VVU1RFRXSUxXV0E4R3dabTZmVnotaDR5dTA5Y0VsZXYwNEM5RVk?oc=5\" target=\"_blank\">FINAL | U. La Calera 0 - Coquimbo Unido 2 por Copa Chile 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En Cancha</font>",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOeDI2MFBTcUZhOVphZ29WSWNBM0VvR3Y2Tm5Wakxva0Q3NVNHMjNUU2NjVFJnTXBGcUNwdUNXYmRKby1TOTAtbTg4dG5uRFBzTXBqcTZ0NW1zNURSejVXQkZ2MTRLSFgxckUtbjJkOS1CNTMzcHJtQXJGWUxCOG9xaUNDSjVXanQxZGlRR3BudlBWdWdidzBOU0RhUEt1RWRfNlpCWU9MZUt2VVU1RFRXSUxXV0E4R3dabTZmVnotaDR5dTA5Y0VsZXYwNEM5RVk?oc=5",
+      "pubDate": "Wed, 04 Nov 2026 21:45:00 GMT",
+      "timestamp": "2026-11-04T21:45:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "En Cancha",
+      "fuente_url_original": "https://www.encancha.cl",
+      "fuente": "En Cancha",
+      "fuente_host": "encancha.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Coquimbo Unido",
+      "viral_score": 63,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:63h(-10)",
+        "senal:\\b(clasific|eliminad(+8)"
       ]
     },
     {
@@ -20251,7 +19835,7 @@
     },
     {
       "title": "Copa Chile: Coquimbo superó a La Calera como visitante y tomó ventaja en cuartos de final - BioBioChile",
-      "description": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMigwJBVV95cUxOUWQxa01zMU1KRkpYYUtRZV9VNV9GYldlREp6ZGZVd19SWVJiaGdjUV90ODNRT21BclJLUTcxYnh3RUk1N1pVaExsbEdCQUFPWWlVakVyVzhfdlY2NTMtd1A5NmROU3gtbF9lWEVxbGdhYW9xY05jeUtaWmlIaXJyb2VYSF84OXV3LXF1NVRrX3JlWnhKUElVRVJteHZ2b0FwcDVCdmFYcUNqM0xqdXUzXzN2OFc1eWcyZk41YzZScF9ZN0NIcm0xelFmSU1lSkJRTlppbTJfeHRkSXhKVHNwUllLczJodm5rWEFHcjA3WTY3TVhkYWk5MnFES1htNzVaRVJR?oc=5\" target=\"_blank\">Copa Chile: Coquimbo superó a La Calera como visitante y tomó ventaja e",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMigwJBVV95cUxOUWQxa01zMU1KRkpYYUtRZV9VNV9GYldlREp6ZGZVd19SWVJiaGdjUV90ODNRT21BclJLUTcxYnh3RUk1N1pVaExsbEdCQUFPWWlVakVyVzhfdlY2NTMtd1A5NmROU3gtbF9lWEVxbGdhYW9xY05jeUtaWmlIaXJyb2VYSF84OXV3LXF1NVRrX3JlWnhKUElVRVJteHZ2b0FwcDVCdmFYcUNqM0xqdXUzXzN2OFc1eWcyZk41YzZScF9ZN0NIcm0xelFmSU1lSkJRTlppbTJfeHRkSXhKVHNwUllLczJodm5rWEFHcjA3WTY3TVhkYWk5MnFES1htNzVaRVJR?oc=5\" target=\"_blank\">Copa Chile: Coquimbo superó a La Calera como visitante y tomó ventaja en cuarto",
       "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOUWQxa01zMU1KRkpYYUtRZV9VNV9GYldlREp6ZGZVd19SWVJiaGdjUV90ODNRT21BclJLUTcxYnh3RUk1N1pVaExsbEdCQUFPWWlVakVyVzhfdlY2NTMtd1A5NmROU3gtbF9lWEVxbGdhYW9xY05jeUtaWmlIaXJyb2VYSF84OXV3LXF1NVRrX3JlWnhKUElVRVJteHZ2b0FwcDVCdmFYcUNqM0xqdXUzXzN2OFc1eWcyZk41YzZScF9ZN0NIcm0xelFmSU1lSkJRTlppbTJfeHRkSXhKVHNwUllLczJodm5rWEFHcjA3WTY3TVhkYWk5MnFES1htNzVaRVJR?oc=5",
       "pubDate": "Thu, 05 Nov 2026 00:03:48 GMT",
       "timestamp": "2026-11-05T00:03:48.000Z",
@@ -20265,10 +19849,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Coquimbo Unido",
-      "viral_score": 73,
+      "viral_score": 63,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:41h(+0)",
+        "frescura:61h(-10)",
         "senal:\\b(clasific|eliminad(+8)"
       ]
     },
@@ -20310,10 +19894,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Coquimbo Unido",
-      "viral_score": 65,
+      "viral_score": 55,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:40h(+0)"
+        "frescura:60h(-10)"
       ]
     },
     {
@@ -20434,28 +20018,6 @@
       ]
     },
     {
-      "title": "Everton de Viña del Mar S.A.D.P. - Deportes Concepción | Pronóstico y cuotas 07.11.2026 - Diario AS",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ1Q0RGNPbzFEUWplYkpKX2hRSGdPQWFaQUdpWmVSTHNfN2J1bGhnU0NTN2NraVpnODdyOUZsb2JpNU1rNmVKbDJpeHNVQlRzekY5aXRmRnF5U0N5NF93VzJlYV90Y3hSdUhDNlcwLWo5WXZtaVRBY3lvcWluYTZGNzNrRURDWkEyX3o4dngtb2Z3M0prM1k4?oc=5\" target=\"_blank\">Everton de Viña del Mar S.A.D.P. - Deportes Concepción | Pronóstico y cuotas 07.11.2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Diario AS</font>",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ1Q0RGNPbzFEUWplYkpKX2hRSGdPQWFaQUdpWmVSTHNfN2J1bGhnU0NTN2NraVpnODdyOUZsb2JpNU1rNmVKbDJpeHNVQlRzekY5aXRmRnF5U0N5NF93VzJlYV90Y3hSdUhDNlcwLWo5WXZtaVRBY3lvcWluYTZGNzNrRURDWkEyX3o4dngtb2Z3M0prM1k4?oc=5",
-      "pubDate": "Thu, 05 Nov 2026 02:58:32 GMT",
-      "timestamp": "2026-11-05T02:58:32.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Diario AS",
-      "fuente_url_original": "https://as.com",
-      "fuente": "Diario AS",
-      "fuente_host": "as.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 89,
-      "nivel_fuente": 3,
-      "categoria": "chile",
-      "equipo_chile": "Everton",
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:8h(+10)"
-      ]
-    },
-    {
       "title": "Con duelos claves en simultáneo: La programación de la fecha 27 de la Liga de Primera - Cooperativa",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi8AFBVV95cUxQRVd4NG1nQmVtYndHUk51WkJwMW1jT2NmbFNWaWFjTEY2MXhWR2FqSGhhLVg5bnY2SHNUNk1pS21BRy1Pd2F0d3JpVThtaDhhU0xpX2gzcm16WERRcldkX1ZKRkVFTXlJQ3AxSUd5QmpPWXRJVWJjaWRfeTVaRTlRYnFoWGY2emFwZVdJR0JPejNOSGN3ZEE5TkdLVHNZSC05dEQ2a1FhOHFNR3RCdEp4VVBNc1pmTi1fNENaQXlnS1NES2V3ZGwxQUVDcGtwemNUX0xveEpzUmFqQVR4T2MzOW9Cd1BuNlI3QW5XOXVWNFLSAYwBQVVfeXFMUG10S1FXMUJ0ZnZWNktJbk5obkdxRThkaU5iNzNLYlhwd1N6dTFISWVLdUtmWktWajhxeVhuZ3NTRS1ObWRyYnYwTk8wd3V4akFYVUFnSHp4MWZpV2",
       "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQRVd4NG1nQmVtYndHUk51WkJwMW1jT2NmbFNWaWFjTEY2MXhWR2FqSGhhLVg5bnY2SHNUNk1pS21BRy1Pd2F0d3JpVThtaDhhU0xpX2gzcm16WERRcldkX1ZKRkVFTXlJQ3AxSUd5QmpPWXRJVWJjaWRfeTVaRTlRYnFoWGY2emFwZVdJR0JPejNOSGN3ZEE5TkdLVHNZSC05dEQ2a1FhOHFNR3RCdEp4VVBNc1pmTi1fNENaQXlnS1NES2V3ZGwxQUVDcGtwemNUX0xveEpzUmFqQVR4T2MzOW9Cd1BuNlI3QW5XOXVWNFLSAYwBQVVfeXFMUG10S1FXMUJ0ZnZWNktJbk5obkdxRThkaU5iNzNLYlhwd1N6dTFISWVLdUtmWktWajhxeVhuZ3NTRS1ObWRyYnYwTk8wd3V4akFYVUFnSHp4MWZpV2cycVlzV1liQ2Y5bTRwM1NHTVJaRFQ3SHdRQnk5MXI2N0pZOHRlMFNhUklQVHZnRkg?oc=5",
@@ -20548,10 +20110,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Coquimbo Unido",
-      "viral_score": 65,
+      "viral_score": 55,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:29h(+0)"
+        "frescura:49h(-10)"
       ]
     },
     {
@@ -20986,6 +20548,38 @@
       ]
     },
     {
+      "title": "Montes sonríe tras volver a La Roja y desafía a Colo Colo: \"Me gustaría mucho que...\" - TNT Sports",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQQ2RLYkYwVHRscTUtNEtvNjVDbEx6MnZZLS1Ta3NVSzdzcEFIcWltNEhEUTNIcDlfNkw3ekJIUzJoQzFlWm5jSTFYTkprZjhHRWdZN1FUajNTdGdRczhscGx6VjFFT3Jwd01WaXR2NlJlM1FDNWgzYzJIMHY1NXRNYU80WFZHa0JBNDNPRHRRUzFaZms5a3VfWmVKXzNrWW1FckdaMEVnRF9OanNXdDRpb1dlZUF4dDhpc2FPcnBHMUd3cE1lWTIwNThhY05VUGhUbEFGa05vcFTSAd4BQVVfeXFMT1FMY1JQb2tidGtuT1R0OXB2bXI5dkxQbngwWkJ6S2JtczJxM3ZMWUxfMVdLOXJRXzZCZXkzTHMwNV9VaHFpZW8xZnh4cVMzazdkRFhnb1VWQWd5aXRkUUtEWm5hV3JUNXQyYlVtUXpyS2FXOU",
+      "link": "https://tntsports.cl/nacional/Clemente-Montes-sonrie-tras-su-regreso-a-La-Roja-y-desafia-a-Colo-Colo-Me-gustaria-mucho-que-20261105-0012.html",
+      "pubDate": "2026-11-05T18:49:00.000Z",
+      "timestamp": "2026-11-05T18:49:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "TNT Sports",
+      "fuente_url_original": "https://tntsports.cl",
+      "fuente": "TNT Sports",
+      "fuente_host": "tntsports.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 118,
+      "nivel_fuente": 1,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:42h(+0)",
+        "gigante:colo colo(+10)"
+      ],
+      "article_title": "Montes sonríe tras volver a La Roja y desafía a Colo Colo: \"Me gustaría mucho que...\" - TNT Sports",
+      "article_description": "<a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQQ2RLYkYwVHRscTUtNEtvNjVDbEx6MnZZLS1Ta3NVSzdzcEFIcWltNEhEUTNIcDlfNkw3ekJIUzJoQzFlWm5jSTFYTkprZjhHRWdZN1FUajNTdGdRczhscGx6VjFFT3Jwd01WaXR2NlJlM1FDNWgzYzJIMHY1NXRNYU80WFZHa0JBNDNPRHRRUzFaZms5a3VfWmVKXzNrWW1FckdaMEVnRF9OanNXdDRpb1dlZUF4dDhpc2FPcnBHMUd3cE1lWTIwNThhY05VUGhUbEFGa05vcFTSAd4BQVVfeXFMT1FMY1JQb2tidGtuT1R0OXB2bXI5dkxQbngwWkJ6S2JtczJxM3ZMWUxfMVdLOXJRXzZCZXkzTHMwNV9VaHFpZW8xZnh4cVMzazdkRFhnb1VWQWd5aXRkUUtEWm5hV3JUNXQyYlVtUXpyS2FXOU",
+      "article_body": "",
+      "article_chars": 0,
+      "fecha_publicacion_articulo": null,
+      "fecha_publicacion_fuente": "2026-11-05T18:49:00.000Z",
+      "article_complete": false,
+      "article_fetch_status": "extraction_empty",
+      "article_fetch_error": "La página respondió, pero no se encontró el cuerpo del artículo"
+    },
+    {
       "title": "Liga de Primera: Con la corona casi lista en Macul, la verdadera guerra estalla por el Chile 2 y los pasajes a copas internacionales - betsson.sport",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMimwJBVV95cUxNNUhLOUZ6TkMzSElITGxEdkpJX1ltRG5lQ1FTZEt3UVFFWUhqVzRDX2xGZTBqeDJvQ1RISkN3cFpERDZjdW1JYWNZM051c0hDZVd4a3JxOXhiUXBJaGlHTVZVT05CaVJPamZkUHFsMVpOUmIteDlSckNsUFVsdF9QN0xpMjRmM1A5Y09uOXBDLTB4WnNYdEE5SHA4djE1Zk5SZ0JLb2gwYjk0bklKREVzWW9TZ2FUMjFiZ3k1ZzhnN2tNOXVHNmVzUHZSZzVwZ0ZrYXBkalg3QnA5cklXM0g0dGdZSHZfalMzVXcxTG4wd21Va1N6YjNqa0xZNnFWbWRYaEk4czJoM29xeXpEbGdkd0dxMy1qLVBPNDI4?oc=5\" target=\"_blank\">Liga de Primera: Con la corona casi lista en Ma",
       "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxNNUhLOUZ6TkMzSElITGxEdkpJX1ltRG5lQ1FTZEt3UVFFWUhqVzRDX2xGZTBqeDJvQ1RISkN3cFpERDZjdW1JYWNZM051c0hDZVd4a3JxOXhiUXBJaGlHTVZVT05CaVJPamZkUHFsMVpOUmIteDlSckNsUFVsdF9QN0xpMjRmM1A5Y09uOXBDLTB4WnNYdEE5SHA4djE1Zk5SZ0JLb2gwYjk0bklKREVzWW9TZ2FUMjFiZ3k1ZzhnN2tNOXVHNmVzUHZSZzVwZ0ZrYXBkalg3QnA5cklXM0g0dGdZSHZfalMzVXcxTG4wd21Va1N6YjNqa0xZNnFWbWRYaEk4czJoM29xeXpEbGdkd0dxMy1qLVBPNDI4?oc=5",
@@ -21314,6 +20908,28 @@
       ]
     },
     {
+      "title": "U. de Chile 4 - Antofagasta 0 en vivo hoy: goles, resultado y cómo va el partido de la Copa Chile 2026, en directo - AS Chile",
+      "description": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPVGJwMkdiZ0pjTkV0SUs3aVdBNm5oY3VlOE1qOXJOVldma0swVzVqM1dJMjZ0Z2dtMXVYdU5QY21hbzBCUjctdTZ1TFVISWFsSDNJbGt6Z3ZvQ3ZuWFlYVzVOY01ZTy1pUlNIMThjUzR1NHRjWUttME1UNDQ2NDdGbEg3bHBtNmNlMDkyb1Q4aXNtWHk1aURnbFU2MkJTSnhKbVJvZXB6SGhWM3d4elBqcmlNT2dfU1lxcVQ1bVpzQWpwcDAxNjBFdFZfdHdIYUxiSUxMN29tT3hnaVnSAe8BQVVfeXFMT1lmbnlKVzVZYmVmb0h5TV83TEJMbDVPVnhjQjQ5dGJaWVdqNnlaSGRQUDUtUDNxUm5RazBFUy1IVFhCRjhoUEUtdk9Ud0tJZDRNcEVWSXZpNzZWQUJ1N28tTWtpbmtDd293OE",
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPVGJwMkdiZ0pjTkV0SUs3aVdBNm5oY3VlOE1qOXJOVldma0swVzVqM1dJMjZ0Z2dtMXVYdU5QY21hbzBCUjctdTZ1TFVISWFsSDNJbGt6Z3ZvQ3ZuWFlYVzVOY01ZTy1pUlNIMThjUzR1NHRjWUttME1UNDQ2NDdGbEg3bHBtNmNlMDkyb1Q4aXNtWHk1aURnbFU2MkJTSnhKbVJvZXB6SGhWM3d4elBqcmlNT2dfU1lxcVQ1bVpzQWpwcDAxNjBFdFZfdHdIYUxiSUxMN29tT3hnaVnSAe8BQVVfeXFMT1lmbnlKVzVZYmVmb0h5TV83TEJMbDVPVnhjQjQ5dGJaWVdqNnlaSGRQUDUtUDNxUm5RazBFUy1IVFhCRjhoUEUtdk9Ud0tJZDRNcEVWSXZpNzZWQUJ1N28tTWtpbmtDd293OEcweFZqWXNYSmVldnM4ZEpqeEd5SVNDYUNES2J5MHZmd3JzMVFnM1E0cDVYYlJlT0cxVEUtWXRYMUY4cGFvdHp2d3ZZNDRpQWxHRHNVQWJhNnJwZy03LUt3bzRiV0xHU294MnRoQ2lWNFJSRmZMMnQzaTN6SUloeWNrUnNpSWVaTmIzN0E?oc=5",
+      "pubDate": "Fri, 06 Nov 2026 00:03:02 GMT",
+      "timestamp": "2026-11-06T00:03:02.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "AS Chile",
+      "fuente_url_original": "https://chile.as.com",
+      "fuente": "AS Chile",
+      "fuente_host": "chile.as.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 65,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:37h(+0)"
+      ]
+    },
+    {
       "title": "Marquez calls Vega, Corona back for Mexico Nations League games - ESPN",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNVUU0dzVlMWlaZkl3THAwSVhtTERrR0R4SnhvSktZcDladnpDT1hpSWp6MlYzRlRGM0RseUwzZW9IRE91VzVpNVFldF9adjFBSXluSWV4OTJ6UllueE83c2JkZ25Jc0hOa1hvQURyS0NYUDlJX0tDclU0b3hhRUlPOGl0VTFGV3Aweld2NDBtYkxLSEZmUldUeWxzS0c4WnROVy1v?oc=5\" target=\"_blank\">Marquez calls Vega, Corona back for Mexico Nations League games</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN</font>",
       "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVUU0dzVlMWlaZkl3THAwSVhtTERrR0R4SnhvSktZcDladnpDT1hpSWp6MlYzRlRGM0RseUwzZW9IRE91VzVpNVFldF9adjFBSXluSWV4OTJ6UllueE83c2JkZ25Jc0hOa1hvQURyS0NYUDlJX0tDclU0b3hhRUlPOGl0VTFGV3Aweld2NDBtYkxLSEZmUldUeWxzS0c4WnROVy1v?oc=5",
@@ -21351,10 +20967,10 @@
       "nivel_fuente": 2,
       "categoria": "internacional",
       "equipo_chile": null,
-      "viral_score": 38,
+      "viral_score": 33,
       "razones": [
         "categoria:internacional(+8)",
-        "frescura:22h(+5)"
+        "frescura:36h(+0)"
       ],
       "article_title": "Marquez calls Vega, Corona back for Mexico Nations League games - ESPN",
       "article_description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNVUU0dzVlMWlaZkl3THAwSVhtTERrR0R4SnhvSktZcDladnpDT1hpSWp6MlYzRlRGM0RseUwzZW9IRE91VzVpNVFldF9adjFBSXluSWV4OTJ6UllueE83c2JkZ25Jc0hOa1hvQURyS0NYUDlJX0tDclU0b3hhRUlPOGl0VTFGV3Aweld2NDBtYkxLSEZmUldUeWxzS0c4WnROVy1v?oc=5\" target=\"_blank\">Marquez calls Vega, Corona back for Mexico Nations League games</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN</font>",
@@ -21445,6 +21061,28 @@
       "article_fetch_error": "La página respondió, pero no se encontró el cuerpo del artículo"
     },
     {
+      "title": "Fernando Gago: \"Tenemos que seguir insistiendo con nuestra idea\" - ESPN Argentina",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYjFXbmJWZElBcG52RmxWRGw4dE9EUlh5WFllWlZQcE5jQWg3Tk5tWXJXYXlJR1FRU1prYWNaYjBabFFwWVpKZ18xS1ZtUFhCamRYWVF2VUF6R210YjBLVFJTRmFiZEpLN2RzZWZDdFB4OFBBdTJ5ZEVocXVPNktMZXJGYWtULWxmbDdfUVpNclFiVlRzX3Z3SFl1dE5nSVZVUUMtZUdXbGROQ0IwVTlxYllOc2JZY3BK?oc=5\" target=\"_blank\">Fernando Gago: \"Tenemos que seguir insistiendo con nuestra idea\"</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Argentina</font>",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYjFXbmJWZElBcG52RmxWRGw4dE9EUlh5WFllWlZQcE5jQWg3Tk5tWXJXYXlJR1FRU1prYWNaYjBabFFwWVpKZ18xS1ZtUFhCamRYWVF2VUF6R210YjBLVFJTRmFiZEpLN2RzZWZDdFB4OFBBdTJ5ZEVocXVPNktMZXJGYWtULWxmbDdfUVpNclFiVlRzX3Z3SFl1dE5nSVZVUUMtZUdXbGROQ0IwVTlxYllOc2JZY3BK?oc=5",
+      "pubDate": "Fri, 06 Nov 2026 01:01:00 GMT",
+      "timestamp": "2026-11-06T01:01:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ESPN Argentina",
+      "fuente_url_original": "https://www.espn.com.ar",
+      "fuente": "ESPN Argentina",
+      "fuente_host": "espn.com.ar",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 104,
+      "nivel_fuente": 2,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 65,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:36h(+0)"
+      ]
+    },
+    {
       "title": "Octavio Rivero y su preparación para volver a jugar: \"Me tuvieron que obligar\" - ESPN Argentina",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxOeVpGR3NGcGY5cUEtY0xRYzNXT25pNC1fdThkZ256WFVJcEhmdEI1dUVaYXBvSnJ5X1JiZHVDejkzZ0dhd3A2YXQwR0hpc3BIT250ZU50OTJUM0tYRTNhNVBYWWtveWwyRkl4SVlVV2ZJRVRxcUh4QnlfZTZIR3R5enEyWFB2b2tXajVLalBNeGNOangtT0F1aW9XbE1TLXJBb1d5bHJZTUZQb1pUeEdPenVDaE54VTlrVENWcWxxLW4wLWNUNHBoUk5NUQ?oc=5\" target=\"_blank\">Octavio Rivero y su preparación para volver a jugar: \"Me tuvieron que obligar\"</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Argentina</font>",
       "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOeVpGR3NGcGY5cUEtY0xRYzNXT25pNC1fdThkZ256WFVJcEhmdEI1dUVaYXBvSnJ5X1JiZHVDejkzZ0dhd3A2YXQwR0hpc3BIT250ZU50OTJUM0tYRTNhNVBYWWtveWwyRkl4SVlVV2ZJRVRxcUh4QnlfZTZIR3R5enEyWFB2b2tXajVLalBNeGNOangtT0F1aW9XbE1TLXJBb1d5bHJZTUZQb1pUeEdPenVDaE54VTlrVENWcWxxLW4wLWNUNHBoUk5NUQ?oc=5",
@@ -21489,10 +21127,10 @@
       "nivel_fuente": 2,
       "categoria": "chile",
       "equipo_chile": null,
-      "viral_score": 88,
+      "viral_score": 83,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:21h(+5)",
+        "frescura:35h(+0)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:river(+10)"
       ],
@@ -21522,10 +21160,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Colo-Colo",
-      "viral_score": 88,
+      "viral_score": 83,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:21h(+5)",
+        "frescura:35h(+0)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:colo colo(+10)"
       ]
@@ -21546,10 +21184,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Palestino",
-      "viral_score": 70,
+      "viral_score": 65,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:13h(+5)"
+        "frescura:33h(+0)"
       ]
     },
     {
@@ -21594,10 +21232,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": null,
-      "viral_score": 75,
+      "viral_score": 65,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:6h(+10)"
+        "frescura:26h(+0)"
       ]
     },
     {
@@ -21809,6 +21447,39 @@
       ]
     },
     {
+      "title": "Duelos en simultáneo y Colo Colo a un paso del título: la programación de la fecha 27 de la Liga de Primera - El Dínamo",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOZ0xzNGJsM1VqMU1fUTZGM3dXdUY3S3B6UVk5Q1d4QmVDUDA1SC1LLW1rTHYzMmU0aDdPODBwTUxsNlpQb3lENjhyaTk5ZHpub0pJejF1VnBFaEhZVU5xVVRpWHZ3MS1NWjFqR1pmbkVvbDdmSk93UmpPRDJublZYUUhjQ081SGh4NmU1UFNIUHlFNy13cmF3ZnRZQUQ5c0JJSjVVRERHc1UwN2lGSkFnZTFpMDQ5M0FKaXQ0MmN4TFlVTGRhcFNyQWZSelp5SGowOG1HWFVzZGE3SmRBRmNTdnJBX1Q1QQ?oc=5\" target=\"_blank\">Duelos en simultáneo y Colo Colo a un paso del título: la programación de la fecha 27 de la Liga de Primera</a>&nbsp;",
+      "link": "https://www.eldinamo.cl/deportes/2026/11/06/duelos-en-simultaneo-y-colo-colo-a-un-paso-del-titulo-la-programacion-de-la-fecha-27-de-la-liga-de-primera/",
+      "pubDate": "2026-11-06T13:11:06.000Z",
+      "timestamp": "2026-11-06T13:11:06.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "El Dínamo",
+      "fuente_url_original": "https://www.eldinamo.cl",
+      "fuente": "El Dínamo",
+      "fuente_host": "eldinamo.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:23h(+5)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ],
+      "article_title": "Duelos en simultáneo y Colo Colo a un paso del título: la programación de la fecha 27 de la Liga de Primera",
+      "article_description": "Revisa los horarios y los canales que transmitirán los duelos de la fecha 27, donde Colo Colo buscará bajar su estrella 35.",
+      "article_body": "Revisa los horarios y los canales que transmitirán los duelos de la fecha 27, donde Colo Colo buscará bajar su estrella 35. Este fin de semana la Liga de Primera del fútbol chileno entra en etapa de definición, en el marco de la disputa de la fecha 27, que contempla duelos en simultáneo en la lucha por el título, clasificación a copas internacionales y por no descender. El encuentro más destacado será el de Colo Colo vs Ñublense el domingo 8 de noviembre. El Cacique visitará Chillán con el objetivo de bajar su estrella 35, mientras que a la misma hora la U de Chile recibirá a Cobresal con la necesidad de sumar los tres puntos para extender la ilusión y no perder terreno en la lucha por el Chile 2. Horas antes, la U Católica recibirá a Deportes Limache en el Claro Arena. En simultáneo, Audax Italiano se medirá ante Coquimbo Unido. La jornada 27 del Campeonato Nacional culminará con los clubes que pelean la permanencia en la Liga de Primera. Unión La Calera hará de local frente a Huachipato y Universidad de Concepción hará lo propio ante O’Higgins. Kast destacó el aporte de las empresas y de quienes colaboran con la iniciativa. “Cada vez que vemos que el mundo privado apoya, nos alegramos”, afirmó, La Fiscalía Metropolitana Oriente instruyó las primeras diligencias y encargó la investigación a la Brigada de Homicidios de la PDI para esclarecer las circunstancias del fallecimiento del cineasta. Tras su salida, el vicepresidente Pedro Alliana fue investido como nuevo presidente de Paraguay. El fin de la movilización se da ad portas del inicio del servicio Cherry Express a Asia. Fue actor en el colegio, actualmente es músico de una banda de indie rock que este año lanzó su primer disco, fue alumno de Alejandro Aravena cuando Elemental todavía no existía y amigo de Nicanor Parra en Las Cruces. Lector de filosofía y poesía, melómano y siempre atento al arte contemporáneo, el espesor cultural marca su mirada. Este arquitecto, que por segunda vez encabeza la Subsecretaría del Patrimonio Cultural —primero con Sebastián Piñera y ahora con José Antonio Kast— se ha propuesto sacar el patrimonio local de la naftalina y de la trinchera. Para él no es una muralla contra el desarrollo, sino una herencia que llama a actuar: “Estamos obligados a operar sobre las cosas y a sumarles valor. Si no, se lo restamos”, afirma. Félix Ruiz es abogado. En 2021, en plena pandemia, trajo a Chile junto a sus socios —Manuel y Tomás Rogers— los fenomenales productos franceses para calzado Saphir y, casi sin quererlo, terminó abriendo Taller Sartorial, un lugar de restauración y reparación de zapatos en Vitacura. En esta conversación hablamos del oficio, de las escuelas inglesa, italiana y española de zapatería, de las grandes marcas y de qué tipo de zapato corresponde para cada ocasión. Si bien en las librerías de Buenos Aires hay memorias y análisis retrospectivos de lo mucho que se hizo mal, donde los vecinos realmente destacan es en las buenas novelas que se han escrito al respecto. Obras que, leídas en su conjunto, resultan claves para entender el trauma nacional que representan las islas y el sentimiento movilizador que despierta su causa.",
+      "article_chars": 3167,
+      "fecha_publicacion_articulo": "2026-11-06T13:11:06.000Z",
+      "fecha_publicacion_fuente": "2026-11-06T13:11:06.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
       "title": "A la espera del fallo de la ANFP: experto abogado analiza el “castigazo” contra San Marcos de Arica - Arica al día",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQTElzSlNRZHNVbEdnMHBwcGdyb0pVTXpVOEs5RS0yR3o5T1VsdVo5eEVfRTZOZU1Gd05PRGFndXZjeHdYT3NES2ZkblQ1ck9CMWVnT1A4WkM2ckd2OWkyQzc0ZjhSWDJ2U05YS2FQdHZrMnI1LWQ5S3dMQmNBbTBGYTBONUNGMks0d2NueVFPLWhwY083WTEzd2tHWFVoSDlVSFl1bURXeGxuZFVnLUUzWmpVMHF4N3J6NURjOFc2cw?oc=5\" target=\"_blank\">A la espera del fallo de la ANFP: experto abogado analiza el “castigazo” contra San Marcos de Arica</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Arica al día</font>",
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQTElzSlNRZHNVbEdnMHBwcGdyb0pVTXpVOEs5RS0yR3o5T1VsdVo5eEVfRTZOZU1Gd05PRGFndXZjeHdYT3NES2ZkblQ1ck9CMWVnT1A4WkM2ckd2OWkyQzc0ZjhSWDJ2U05YS2FQdHZrMnI1LWQ5S3dMQmNBbTBGYTBONUNGMks0d2NueVFPLWhwY083WTEzd2tHWFVoSDlVSFl1bURXeGxuZFVnLUUzWmpVMHF4N3J6NURjOFc2cw?oc=5",
@@ -21846,10 +21517,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Universidad de Chile",
-      "viral_score": 83,
+      "viral_score": 78,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:3h(+10)",
+        "frescura:23h(+5)",
         "senal:\\b(clasific|eliminad(+8)"
       ]
     },
@@ -21869,10 +21540,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Universidad de Chile",
-      "viral_score": 83,
+      "viral_score": 78,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:8h(+10)",
+        "frescura:22h(+5)",
         "senal:\\b(clasific|eliminad(+8)"
       ]
     },
@@ -21916,10 +21587,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Universidad de Chile",
-      "viral_score": 75,
+      "viral_score": 70,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:7h(+10)"
+        "frescura:22h(+5)"
       ]
     },
     {
@@ -21989,10 +21660,10 @@
       "nivel_fuente": 2,
       "categoria": "chile",
       "equipo_chile": null,
-      "viral_score": 75,
+      "viral_score": 70,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:7h(+10)"
+        "frescura:21h(+5)"
       ],
       "article_title": "Mena, Arizala y Mosquera, novedades de convocatoria en Colombia vs Chile - ESPN Argentina",
       "article_description": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQX3U4SmNqV292d1JFRzZOMU1uSlo0YmJKMGNXSHlFUmlQdXR3YzJpb1BDUGJCMi1EaXJJU1NLelUwMk5DSzRVRm43TWk0Nk5FY3Y1VFRtTkZ1RDJNSk1zdEpEak0xeTZ2YzdUYk9yOGNhaEVjdTI3amRrNGN3QTRYMG1feGRyTEQ0emdSemxENm9mQ21Rc0dHOF9HX2dPRllIRklHNHZoMTZvVFB1UnFpMm1TZGVUbXp6RHE3dmFJUUFidlh4?oc=5\" target=\"_blank\">Mena, Arizala y Mosquera, novedades de convocatoria en Colombia vs Chile</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Argentina</font>",
@@ -22016,14 +21687,14 @@
       "fuente": "TNT Sports",
       "fuente_host": "tntsports.cl",
       "categoria_feed": "chile",
-      "prioridad_fuente": 90,
+      "prioridad_fuente": 89,
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Universidad Católica",
-      "viral_score": 85,
+      "viral_score": 80,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:7h(+10)",
+        "frescura:21h(+5)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "gigante:universidad catolica(+10)",
         "penal(-8)"
@@ -22210,6 +21881,30 @@
       "article_fetch_error": null
     },
     {
+      "title": "Universidad Católica vs Deportes Limache: dónde, cuándo y cómo ver el partido en vivo, en directo, online y en TV - ADN Radio",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxOZk93MnFrbTlhTHJ2RllCS3d6S09nSHFwV2FlaG5maGpGME5HREptZmZSREhpTnB5Z3BOSFhsakxMWVNCWW1ERVVWbDJJb3dYaFJUa2pTdzFTdlFJQUM4VmF4S2VocGp3YjdOazNfN2xidHQxNXZqT0JqMzdpT2p1cDNMTm5SME5ZVEswalpBX2NaSDNOZ2hrSHI2QmJHRC1SalRUUmluNzdEM1lvRV8wUUlGcThsOWRDejNOeHZkR25mOV82emU3RGY4Z04xaFZDZld0Z3czazZJVlUzeHfSAfIBQVVfeXFMUHF0RUczVklSdFlJMjh2WEdrbXg5dDVlUDRxdDRzaVJlaENqYzNwTmYyMXAwRjlPS0dBX25XYzZmd1N5QXo3NTJJUVpFajJvc01DWW1EVTF5bDd3cXprdTFud1libnB0d2VOU3lCNz",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOZk93MnFrbTlhTHJ2RllCS3d6S09nSHFwV2FlaG5maGpGME5HREptZmZSREhpTnB5Z3BOSFhsakxMWVNCWW1ERVVWbDJJb3dYaFJUa2pTdzFTdlFJQUM4VmF4S2VocGp3YjdOazNfN2xidHQxNXZqT0JqMzdpT2p1cDNMTm5SME5ZVEswalpBX2NaSDNOZ2hrSHI2QmJHRC1SalRUUmluNzdEM1lvRV8wUUlGcThsOWRDejNOeHZkR25mOV82emU3RGY4Z04xaFZDZld0Z3czazZJVlUzeHfSAfIBQVVfeXFMUHF0RUczVklSdFlJMjh2WEdrbXg5dDVlUDRxdDRzaVJlaENqYzNwTmYyMXAwRjlPS0dBX25XYzZmd1N5QXo3NTJJUVpFajJvc01DWW1EVTF5bDd3cXprdTFud1libnB0d2VOU3lCNzdKWmlsX0xOcHFfYksySlhKWUM2LU9NclNrX1BXUjRlN2IwRlFkT0o1ei1OcWJReVRPbzRMZURkYWQ0VHJxaHQ0T0duSkZNY2stM3F2VjdPNkpZMHdnakc2VXlRZlNZbDY3RkFZWUs1eDFZb3hBSFp6VXlmb0dKTnY0LS1hU1ZpYnVWTHc?oc=5",
+      "pubDate": "Fri, 06 Nov 2026 16:22:19 GMT",
+      "timestamp": "2026-11-06T16:22:19.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ADN Radio",
+      "fuente_url_original": "https://www.adnradio.cl",
+      "fuente": "ADN Radio",
+      "fuente_host": "adnradio.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Universidad Católica",
+      "viral_score": 72,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:20h(+5)",
+        "gigante:universidad catolica(+10)",
+        "penal(-8)"
+      ]
+    },
+    {
       "title": "El costo del “tiraje a la chimenea”: Colo Colo queda fuera de los playoffs del torneo Proyección del Fútbol Joven - ADN Radio",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxQV2tKcUdSRG9Ybmpjb2NKNGpwS0YxRkdkNWRfRm1WWVpodlV0U0gyTHpkbXFBanpaMlNhandQNi1EYUdibVIzMFlEbGlvbmFnaEQ3UklTa1hfWWNZWjF6Z2FGeTJFRUIxUEdQRkhkMm13SndITF91YmZVWm5sUGpaNnk1LVB4TklfVU0tRk9mMVUzMUVDWDRwTkE5dWZsN016QVh4blZ6bENTTXRjX05FN0VhWGpfUGNPaUlsM292dV9ZZ3lfb1JSQ0FwbFJyOHdlbmtacUlESkw1Y2FZczA40gHzAUFVX3lxTE94TFY4SzlsRjZUUTdlbDVSY2RhdFZuX3hxM1hiV3VQNjFmYXNlRHYwQk92amRpSEhCOHIwSHZ1RFRBU2VyNkVUb3h0aWxWN3J3MExUcm10cXpIRkM1emFkNEtYWnh1U0plR0lCej",
       "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQV2tKcUdSRG9Ybmpjb2NKNGpwS0YxRkdkNWRfRm1WWVpodlV0U0gyTHpkbXFBanpaMlNhandQNi1EYUdibVIzMFlEbGlvbmFnaEQ3UklTa1hfWWNZWjF6Z2FGeTJFRUIxUEdQRkhkMm13SndITF91YmZVWm5sUGpaNnk1LVB4TklfVU0tRk9mMVUzMUVDWDRwTkE5dWZsN016QVh4blZ6bENTTXRjX05FN0VhWGpfUGNPaUlsM292dV9ZZ3lfb1JSQ0FwbFJyOHdlbmtacUlESkw1Y2FZczA40gHzAUFVX3lxTE94TFY4SzlsRjZUUTdlbDVSY2RhdFZuX3hxM1hiV3VQNjFmYXNlRHYwQk92amRpSEhCOHIwSHZ1RFRBU2VyNkVUb3h0aWxWN3J3MExUcm10cXpIRkM1emFkNEtYWnh1U0plR0lCejlkQTE3X2trTTc3ejZjRlRQNG1Yd0cwekVNbW96d3ljR0ExR2R1UnROSWR4dm9zNnFCR1BLdXNXc2xyamNnZjI5Q1Fuc3d2ZjlRbU9aRHljZk5fREw5bWkwYmFJNXI0SUhjR1NvZGJGVThFNmc2M256U0dRSlc0a0ViWHhwQzViQ3NLOHlPTQ?oc=5",
@@ -22232,6 +21927,35 @@
         "senal:\\b(ultima hora|sorpr(+6)",
         "gigante:colo colo(+10)"
       ]
+    },
+    {
+      "title": "¿A qué hora es el Ñublense - Colo Colo? TV, horario, formaciones, dónde y cómo ver Liga de Primera online - AS Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxQamRxRGx0S1ZqWTZRaTRCbDZzYmtuMEQxUjVoNW5fN3NPUHh1SjFPSHJsbUVaUWNLY3VSM2FTLW1pQ3pnWWcxcjVJV2lTa0RwQWxBOTlxeElOc2dZT2lNOVRaSUtoVXc0NUZCakNldlUwU0w1cGNjbUNIQ3ZqV2tXY3czeHNlYmR1RTJ6Nkw3VUNrSWxlTFdrdDFsbkFlYnNsRE5ONHUyeFZOUno1aVBKOG5aeWM2cFZZY0M1a3kxa2d0djladWdFOFFtbkN1eFAwamJ30gHnAUFVX3lxTE9LOXVuSE42YzZ0ZjN5eHRkWVBoUzlfUnR1eWpsUW1adnpvSUFycFlOR2RJSHc0UTd3OTZqWGRsaFJOeUhOTjNETDlTUUhNSHdoamVLbkFnUXByTHpZZ2RpRTh6Y1J5M2tOUEpWdUExWjlvYXhHeWR3bU",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQamRxRGx0S1ZqWTZRaTRCbDZzYmtuMEQxUjVoNW5fN3NPUHh1SjFPSHJsbUVaUWNLY3VSM2FTLW1pQ3pnWWcxcjVJV2lTa0RwQWxBOTlxeElOc2dZT2lNOVRaSUtoVXc0NUZCakNldlUwU0w1cGNjbUNIQ3ZqV2tXY3czeHNlYmR1RTJ6Nkw3VUNrSWxlTFdrdDFsbkFlYnNsRE5ONHUyeFZOUno1aVBKOG5aeWM2cFZZY0M1a3kxa2d0djladWdFOFFtbkN1eFAwamJ30gHnAUFVX3lxTE9LOXVuSE42YzZ0ZjN5eHRkWVBoUzlfUnR1eWpsUW1adnpvSUFycFlOR2RJSHc0UTd3OTZqWGRsaFJOeUhOTjNETDlTUUhNSHdoamVLbkFnUXByTHpZZ2RpRTh6Y1J5M2tOUEpWdUExWjlvYXhHeWR3bUFpa2lhZ0NhT0E2dTQ5Rm5GdkJ4bU1LTkVnakkydGVMdVBFVVlTZENQbk9hU0hnaWtka2M2Z3I3Tkk2WFJHdjdrSU9ZcjgwbkZQWTQwaTdOcjkxQW5jMm5SRkY3SUxfN21uV055N093X0syMHgwYw?oc=5",
+      "pubDate": "Fri, 06 Nov 2026 17:51:20 GMT",
+      "timestamp": "2026-11-06T17:51:20.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "AS Chile",
+      "fuente_url_original": "https://chile.as.com",
+      "fuente": "AS Chile",
+      "fuente_host": "chile.as.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 72,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:19h(+5)",
+        "gigante:colo colo(+10)",
+        "penal(-8)"
+      ],
+      "article_body": "",
+      "article_complete": false,
+      "article_chars": 0,
+      "article_fetch_status": "blocked",
+      "article_fetch_error": "HTTP 403"
     },
     {
       "title": "El nuevo parón que frena el repunte de Fernando Gago con U de Chile - RedGol",
@@ -22421,6 +22145,40 @@
       "article_fetch_error": null
     },
     {
+      "title": "La única duda en Colo Colo para su formación que le apunta al título en Chillán - TNT Sports",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZTFZcUZFazc5TzlQNVp5Umxyck9MeHV4b0JnWU93ZE4wYzBhcGdfclFRMVQtcVA5X0hUcW1welZrcVlidTFNcmJrWDB3c0xTLUo3SDFldkh6N0puQ2pPQ2lVZjFwbmxYVlRxSkVqSDRtUjdyWlpwVWFXc3R0N3FFVXdObUJMRklQYkdvQWZjWWJxc3o5VmYxcGFXQlgwMC1veXVpVzlvQ3o1VmlFYzBocFNSaVNnMWx6OGxHdXhFSXY2QzJ1Yk1MOEZJNzJxYXFZRkdj0gHYAUFVX3lxTE8tbkI0NHB1NmZBWl8yT0dud0U3cEhTS1E2Z3E1VTVTU0dvOFJDdGRBcklJUmlscGdPNW1sMGt2M1hTbzRucVhNRnBEVklqcFdUZ0RJbjVWNW95RU9YS0Z0dzVPOGxJSkRwV05XMDRYcVVwMVg3NFRqSl",
+      "link": "https://tntsports.cl/nacional/colo-colo-posible-formacion-vs-nublense-por-el-titulo-liga-de-primera-mercado-libre-2026-20261106-0019.html",
+      "pubDate": "2026-11-06T19:33:00.000Z",
+      "timestamp": "2026-11-06T19:33:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "TNT Sports",
+      "fuente_url_original": "https://tntsports.cl",
+      "fuente": "TNT Sports",
+      "fuente_host": "tntsports.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 118,
+      "nivel_fuente": 1,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 96,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:17h(+5)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ],
+      "article_title": "La única duda en Colo Colo para su formación que le apunta al título en Chillán - TNT Sports",
+      "article_description": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZTFZcUZFazc5TzlQNVp5Umxyck9MeHV4b0JnWU93ZE4wYzBhcGdfclFRMVQtcVA5X0hUcW1welZrcVlidTFNcmJrWDB3c0xTLUo3SDFldkh6N0puQ2pPQ2lVZjFwbmxYVlRxSkVqSDRtUjdyWlpwVWFXc3R0N3FFVXdObUJMRklQYkdvQWZjWWJxc3o5VmYxcGFXQlgwMC1veXVpVzlvQ3o1VmlFYzBocFNSaVNnMWx6OGxHdXhFSXY2QzJ1Yk1MOEZJNzJxYXFZRkdj0gHYAUFVX3lxTE8tbkI0NHB1NmZBWl8yT0dud0U3cEhTS1E2Z3E1VTVTU0dvOFJDdGRBcklJUmlscGdPNW1sMGt2M1hTbzRucVhNRnBEVklqcFdUZ0RJbjVWNW95RU9YS0Z0dzVPOGxJSkRwV05XMDRYcVVwMVg3NFRqSl",
+      "article_body": "",
+      "article_chars": 0,
+      "fecha_publicacion_articulo": null,
+      "fecha_publicacion_fuente": "2026-11-06T19:33:00.000Z",
+      "article_complete": false,
+      "article_fetch_status": "extraction_empty",
+      "article_fetch_error": "La página respondió, pero no se encontró el cuerpo del artículo"
+    },
+    {
       "title": "Los Tenores, entre el futuro de Fernando Ortiz en Colo Colo y la remontada de la U en Copa Chile - ADN Radio",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxQdWdVUGdVVWFCU2xQSzdNR2Vlb0dwMGxzck1pUHMzZmFFaUQyT1QxdTUtSDR3c0ZsUmMyWUFyZ2ZLTkkwcHNYSmxGcE5OX2dTamNjVHUtVVA3bEdBMWdrUFNLb0JYX1BmbUZld0NxWHRJR1lwZDlna2g2OHJEekFFTmF5eHJGTzFyMTN4a3o5N3RDUHlYQkFZdzJOakJ4MENqX0dpOXVYLU5vZXp0dTNtbTFLZ3hEUmVBS2pmdDU2dWFCWlVTVnloU3l2d9IB3wFBVV95cUxOM2pKNk9tbm11YUVpamhnNzBUakJ1ZUdabXVLU0tYZkZfaHFfT1FFVThOMWNCUUJEdjZpcm1TTTRtX09DSDFfWW11aTJMUWdDb09EVXMzUnhUdFpVc01lQXRiX0VJSUkyNXVjenZEcTNEV0dDVk9HaGtIMmM1RE9kYi",
       "link": "https://www.adnradio.cl/2026/11/06/los-tenores-entre-el-futuro-de-fernando-ortiz-en-colo-colo-y-la-remontada-de-la-u-en-copa-chile/",
@@ -22469,10 +22227,10 @@
       "nivel_fuente": 2,
       "categoria": "chile",
       "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
+      "viral_score": 96,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:2h(+15)",
+        "frescura:16h(+5)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "senal:\\b(clasific|eliminad(+8)",
         "gigante:colo colo(+10)"
@@ -22486,6 +22244,371 @@
       "article_complete": false,
       "article_fetch_status": "extraction_empty",
       "article_fetch_error": "La página respondió, pero no se encontró el cuerpo del artículo"
+    },
+    {
+      "title": "Pronósticos Everton vs Deportes Concepción: los Ruleteros defienden su lugar en la zona de copas - RedGol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNUUZ1WmlrN1E5MTZYdWlRdl9TbEl2cnRWWlFUMHdfc1loOG52dXE0MGVFMFYxWWR2Z3BkWXVJR1RhTWR6b2VnWkVSVTBvczUzQkc3S2lmaHlJbXNiNDRmVk1kaUZjWk4wZGpPNXJCSGphcGduQTJULXgzOXByTGlpWjRIYUR5RldVdFlxTFRHRURhVVRhY2FqV3FFdm4?oc=5\" target=\"_blank\">Pronósticos Everton vs Deportes Concepción: los Ruleteros defienden su lugar en la zona de copas</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">RedGol</font>",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNUUZ1WmlrN1E5MTZYdWlRdl9TbEl2cnRWWlFUMHdfc1loOG52dXE0MGVFMFYxWWR2Z3BkWXVJR1RhTWR6b2VnWkVSVTBvczUzQkc3S2lmaHlJbXNiNDRmVk1kaUZjWk4wZGpPNXJCSGphcGduQTJULXgzOXByTGlpWjRIYUR5RldVdFlxTFRHRURhVVRhY2FqV3FFdm4?oc=5",
+      "pubDate": "Fri, 06 Nov 2026 20:30:00 GMT",
+      "timestamp": "2026-11-06T20:30:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Everton",
+      "viral_score": 70,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:16h(+5)"
+      ]
+    },
+    {
+      "title": "“Nuestro foco es la liguilla”: en Antofagasta solo dejan atrás la eliminación en Copa Chile - PrimeraBChile.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOYUc5TjhyUFVfdXBKVDk2YkZIRExNVGdJVEx2NDRLU0ZnaTFnNlBwM1pSR1h1dWo4WTV5VERnekRyenR1QnlEVlNpZ1Z6UmxGbjFPSHI5alB3WXFMVXh2dzV5NDNpelJEMGtGU2wwWm1rZWE5aFpUVUd6UTlYZGtvWU0tdWVocFZOVjE1X05TRl9HY1BXVlloRW04NkUtZS1Mc29jZmpzZGxhOUlWbllSXy0xV3M?oc=5\" target=\"_blank\">“Nuestro foco es la liguilla”: en Antofagasta solo dejan atrás la eliminación en Copa Chile</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrimeraBChile.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOYUc5TjhyUFVfdXBKVDk2YkZIRExNVGdJVEx2NDRLU0ZnaTFnNlBwM1pSR1h1dWo4WTV5VERnekRyenR1QnlEVlNpZ1Z6UmxGbjFPSHI5alB3WXFMVXh2dzV5NDNpelJEMGtGU2wwWm1rZWE5aFpUVUd6UTlYZGtvWU0tdWVocFZOVjE1X05TRl9HY1BXVlloRW04NkUtZS1Mc29jZmpzZGxhOUlWbllSXy0xV3M?oc=5",
+      "pubDate": "Fri, 06 Nov 2026 21:27:55 GMT",
+      "timestamp": "2026-11-06T21:27:55.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "PrimeraBChile.cl",
+      "fuente_url_original": "https://primerabchile.cl",
+      "fuente": "PrimeraBChile.cl",
+      "fuente_host": "primerabchile.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 78,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:15h(+5)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ]
+    },
+    {
+      "title": "Colo Colo y su enorme palmarés como el más campeón de Chile - PrensaFútbol",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE9QcktKelhRSnhNZVpENTVWZmlqX0pnaHBSdTVQRFdjU1o4SjJmWUZXQmFycl9HbVdFZUl4N2V5RlBnNkdHQ09DQS1MZkc4WVVjRkpkWFRGQU9jWnc4dzJNUXRnQlRWM1R6SmlTT0hEVmhybTRRYWx4aHczRQ?oc=5\" target=\"_blank\">Colo Colo y su enorme palmarés como el más campeón de Chile</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
+      "link": "https://www.prensafutbol.cl/colo-colo-todos-sus-titulos-eterno-campeon/",
+      "pubDate": "2026-11-06T22:12:00.000Z",
+      "timestamp": "2026-11-06T22:12:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "PrensaFútbol",
+      "fuente_url_original": "https://www.prensafutbol.cl",
+      "fuente": "PrensaFútbol",
+      "fuente_host": "prensafutbol.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 88,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:14h(+5)",
+        "senal:\\b(clasific|eliminad(+8)",
+        "gigante:colo colo(+10)"
+      ],
+      "article_title": "Colo Colo y su enorme palmarés como el más campeón de Chile",
+      "article_description": "Por algo le llaman el Eterno Campeón. Colo Colo va por una nueva estrella el fin de semana y repasamos su colección de títulos oficiales.",
+      "article_body": "(Foto: Agencia Uno) Por algo le dicen el Eterno Campeón. Este próximo 08 de noviembre si logra vencer a Ñublense en Chillán por Liga de Primera, Colo Colo bajará su estrella 35 y engruesará su espectacular palmarés, siendo por lejos el club más laureado del fútbol chileno. Los albos cuentan hasta la fecha con 61 títulos en total en el profesionalismo, contando tanto torneos a nivel nacional e internacional. Ad portas de una nueva estrella, en PrensaFútbol repasamos la lista de trofeos del Cacique. https://www.prensafutbol.cl/fernando-ortiz-continuidad-prioridad-colo-colo Los primeros títulos oficiales de Colo Colo El primer grito de campeón de Colo Colo llegó en 1933, cuando logró el título del extinto Campeonato de Apertura, certamen entre clubes de Chile previo al campeonato oficial de Primera División. Los albos lo conquistaron en tres oportunidades en esa excelente buena década. Campeonato de Apertura 1933, 1938 y 1940 Football Cuarto Centenario de Valparaíso 1936 Campeonato Absoluto de Chile 1937 Campeonato de Campeones 1945 El más ganador de Chile: Los torneos nacionales del Popular Colo Colo va camino a su estrella 35. El Eterno Campeón ya ha levantado 34 veces el Huemul de Plata, teniendo equipazos inolvidables como el tricampeón a principios de los '90 y el de Claudio Borghi tetracampeón en 2006-2007. Campeonato Nacional 1937 Campeonato Nacional 1939 Campeonato Nacional 1941 Campeonato Nacional 1944 Campeonato Nacional 1947 Campeonato Nacional 1953 Campeonato Nacional 1956 Campeonato Nacional 1960 Campeonato Nacional 1963 Campeonato Nacional 1970 Campeonato Nacional 1972 Campeonato Nacional 1979 Campeonato Nacional 1981 Campeonato Nacional 1983 Campeonato Nacional 1986 Campeonato Nacional 1989 Campeonato Nacional 1990 Campeonato Nacional 1991 Campeonato Nacional 1993 Campeonato Nacional 1996 Torneo Clausura 1997 Campeonato Nacional 1998 https://youtu.be/Ab1fVH3-YAI?si=Sr1hQbX2_hRfgXhM Torneo Clausura 2002 Torneo Apertura 2006 Torneo Clausura 2006 Torneo Apertura 2007 Torneo Clausura 2007 Torneo Clausura 2008 Torneo Clausura 2009 Torneo Clausura 2013-2014 Torneo Apertura 2015-16 Torneo Transición 2017 Liga de Primera 2022 Liga de Primera 2024 (Foto: Karl Grawe/Getty Images) Colo Colo el más laureado en Copa Chile Al igual que en Liga, Colo Colo es el club con mayor palmarés en la Copa Chile, la cual levantó por última vez en 2023 pero donde sigue con vida para volver a ganar dicho trofeo. Los 14 títulos de Copa Chile corresponden a: 1958, 1974, 1981, 1982, 1985, 1988, 1989, 1990, 1994, 1996, 2016, 2019, 2021 y 2023. https://youtu.be/auEShQIvEJk?si=jTxuSLyNyx-oe1xM Un equipo que ha sabido ser supercampeón En 2013 se inició la Supercopa de Chile, cruce entre el campeón del torneo nacional y de la Copa Chile. Colo Colo la alcanzó por primera vez en 2017 y hasta ahora ha conquistado el trofeo en cuatro oportunidades, habiendo jugado siete finales. El palmarés del conjunto popular en la Supercopa corresponde a los años 2017, 2018, 2022 y 2024. https://youtu.be/uNXZVbs4C9s?si=QU3uzonJTK-7M_cR La Gloria Eterna: Colo Colo único chileno campeón de Copa Libertadores En el plano internacional, Colo Colo se hizo gigante en 1991, cuando el plantel dirigido por Mirko Jozic marcó un hito para el fútbol chileno y conquistó la Copa Libertadores de América, pasando por encima de Olimpia en la final. La Copa Libertadores 1991 sigue latente en el Monumental y hasta ahora el Popular sigue siendo el único equipo del país en lograr la Gloria Eterna. https://youtu.be/-Scs1jBSS6U?si=Z1AckxbUC2_QrUi3 Los últimos gritos de campeón continental Luego de la histórica obtención de la Libertadores, ese Colo Colo siguió pegando fuerte en el continente y conquistó dos títulos internacionales más en 1992. Primero, justo en la fecha de su aniversario (19/04/92), el Cacique venció en penales a Cruzeiro en Japón y ganó la Recopa Sudamericana, agigantando el nombre del fútbol chileno en el extranjero. Meses más tarde, Colo Colo se alzó con la extinta Copa Interamericana tras duelos de ida y vuelta frente a Puebla de México. El Eterno Campeón, liderado por la figura de Marcelo Barticciotto en delantera, ganó ambos partidos sin despeinarse y dio otra vuelta olímpica. https://youtu.be/yuW-99VPWwM?si=-uknbp2frNJ-ZHDT Te podría interesar: https://www.prensafutbol.cl/vozinha-explico-decision-por-colo-colo-chile Ver esta publicación en Instagram Una publicación compartida por PrensaFútbol (@prensafutbol.cl) https://www.youtube.com/watch?v=TtcVXNOiYAQ",
+      "article_chars": 4496,
+      "fecha_publicacion_articulo": "2026-11-06T22:12:00.000Z",
+      "fecha_publicacion_fuente": "2026-11-06T22:12:06.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
+      "title": "Chicó FC vs. Inter Bogotá (Nov 6, 2026) Live Score - ESPN",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE40eC04NVdQVEo5OHlYc1U2MXUtS1VCYTJ5dGN4Nk1LQl93azFSdTJMek1ObTEwMlhKRTFKb3pXSGtyelRwY1pNbHVDOVE1bU1vWWhjSTZvYndwWF9KN19Db2pR?oc=5\" target=\"_blank\">Chicó FC vs. Inter Bogotá (Nov 6, 2026) Live Score</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN</font>",
+      "link": "https://www.espn.com/soccer/match/_/gameId/401878064",
+      "pubDate": "2026-11-06T23:09:21.000Z",
+      "timestamp": "2026-11-06T23:09:21.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ESPN",
+      "fuente_url_original": "https://www.espn.com",
+      "fuente": "ESPN",
+      "fuente_host": "espn.com",
+      "categoria_feed": "internacional",
+      "prioridad_fuente": 102,
+      "nivel_fuente": 2,
+      "categoria": "internacional",
+      "equipo_chile": null,
+      "viral_score": 38,
+      "razones": [
+        "categoria:internacional(+8)",
+        "frescura:13h(+5)"
+      ],
+      "article_title": "Chicó FC vs. Inter Bogotá (Nov 6, 2026) Live Score - ESPN",
+      "article_description": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE40eC04NVdQVEo5OHlYc1U2MXUtS1VCYTJ5dGN4Nk1LQl93azFSdTJMek1ObTEwMlhKRTFKb3pXSGtyelRwY1pNbHVDOVE1bU1vWWhjSTZvYndwWF9KN19Db2pR?oc=5\" target=\"_blank\">Chicó FC vs. Inter Bogotá (Nov 6, 2026) Live Score</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN</font>",
+      "article_body": "",
+      "article_chars": 0,
+      "fecha_publicacion_articulo": null,
+      "fecha_publicacion_fuente": "2026-11-06T23:09:21.000Z",
+      "article_complete": false,
+      "article_fetch_status": "extraction_empty",
+      "article_fetch_error": "La página respondió, pero no se encontró el cuerpo del artículo"
+    },
+    {
+      "title": "Everton de Viña del Mar S.A.D.P. - Deportes Concepción | Pronóstico y cuotas 07.11.2026 - Diario AS",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ1Q0RGNPbzFEUWplYkpKX2hRSGdPQWFaQUdpWmVSTHNfN2J1bGhnU0NTN2NraVpnODdyOUZsb2JpNU1rNmVKbDJpeHNVQlRzekY5aXRmRnF5U0N5NF93VzJlYV90Y3hSdUhDNlcwLWo5WXZtaVRBY3lvcWluYTZGNzNrRURDWkEyX3o4dngtb2Z3M0prM1k4?oc=5\" target=\"_blank\">Everton de Viña del Mar S.A.D.P. - Deportes Concepción | Pronóstico y cuotas 07.11.2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Diario AS</font>",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ1Q0RGNPbzFEUWplYkpKX2hRSGdPQWFaQUdpWmVSTHNfN2J1bGhnU0NTN2NraVpnODdyOUZsb2JpNU1rNmVKbDJpeHNVQlRzekY5aXRmRnF5U0N5NF93VzJlYV90Y3hSdUhDNlcwLWo5WXZtaVRBY3lvcWluYTZGNzNrRURDWkEyX3o4dngtb2Z3M0prM1k4?oc=5",
+      "pubDate": "Sat, 07 Nov 2026 00:17:23 GMT",
+      "timestamp": "2026-11-07T00:17:23.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Diario AS",
+      "fuente_url_original": "https://as.com",
+      "fuente": "Diario AS",
+      "fuente_host": "as.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Everton",
+      "viral_score": 70,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:12h(+5)"
+      ]
+    },
+    {
+      "title": "Agenda de la Selección Chilena de Fútbol para los partidos amistosos frente a Colombia - ANFP",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOODhSSDI2Z0ZCVzB4djNON09DZVVzOEJNVkEtcG11UzVqY0drVzhyeE53NXlHRFU3TzdFOGtxVEs2WkhYTmlyR0pRbF84TXhsTllTVTVYSTgzckl4X0l0RXlsZXE3UEVYaEZFWE82OEZiWVhzM1Uzbmt3M3JkNWg0N2hqdkZ1T1J3aWl5cFE2SmVmcHp0MXVraFYxcVFwc25oN09TbGpGbmV6MjlPMGNFbU1TZlNOWExuRXBB?oc=5\" target=\"_blank\">Agenda de la Selección Chilena de Fútbol para los partidos amistosos frente a Colombia</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ANFP</font>",
+      "link": "https://www.anfp.cl/selecciones/agenda-de-la-seleccion-chilena-de-futbol-para-los-partidos-amistosos-frente-a-colombia/",
+      "pubDate": "2026-11-07T01:15:55.000Z",
+      "timestamp": "2026-11-07T01:15:55.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ANFP",
+      "fuente_url_original": "https://www.anfp.cl",
+      "fuente": "ANFP",
+      "fuente_host": "anfp.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 94,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Selección Chilena",
+      "viral_score": 83,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:11h(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ],
+      "article_title": "Agenda de la Selección Chilena de Fútbol para los partidos amistosos frente a Colombia - ANFP",
+      "article_description": "La Gerencia de Comunicaciones y Asuntos Corporativos de la FFCh informa a los medios la agenda de actividades públicas de la Selección Chilena de Fútbol durante su preparación para la Fecha FIFA de noviembre en la que enfrentará encuentros de ida y vuelta frente a Colombia. Lunes 9 de noviembre Entrenamiento Hora: 18:00 horas. Actividades",
+      "article_body": "La Gerencia de Comunicaciones y Asuntos Corporativos de la FFCh informa a los medios la agenda de actividades públicas de la Selección Chilena de Fútbol durante su preparación para la Fecha FIFA de noviembre en la que enfrentará encuentros de ida y vuelta frente a Colombia. 15 minutos para captar imágenes de la práctica. 15 minutos para captar imágenes de la práctica. 15 minutos para captar imágenes de la práctica. 15 minutos para captar imágenes de la práctica. *Viaje de la Selección Chilena de Fútbol a Cali, Colombia. Conferencia de Prensa Nicolás Córdova, director técnico de la Selección Chilena + Seleccionado Nacional Lugar: Estadio Pascual Guerrero, Cali, Colombia. 15 minutos para captar imágenes de la práctica. Lugar: Estadio Pascual Guerrero, Cali, Colombia. Lugar: Estadio Pascual Guerrero, Cali, Colombia. Conferencias de prensa:  Conferencia post partido Director Técnico, Nicolás Córdova y declaraciones de jugadores en Zona Mixta. Regreso de la Selección Chilena de Fútbol a Santiago de Chile. 15 minutos para captar imágenes de la práctica. 15 minutos para captar imágenes de la práctica. Conferencia de Prensa Nicolás Córdova, director técnico de la Selección Chilena + Seleccionado Nacional Lugar: Estadio Nacional Julio Martínez Prádanos. 15 minutos para captar imágenes de la práctica. Lugar: Estadio Nacional Julio Martínez Prádanos. Conferencias de prensa:  Conferencia post partido Director Técnico, Nicolás Córdova y declaraciones de jugadores en Zona Mixta. (*) La programación se encuentra sujeta a cambios. Los horarios corresponden al lugar donde se encontrará la Selección Chilena. (**) Se enviará material y contenido elaborado por la Gerencia de Comunicaciones y Asuntos Corporativos de la FFCh.",
+      "article_chars": 1733,
+      "fecha_publicacion_articulo": "2026-11-07T01:15:55.000Z",
+      "fecha_publicacion_fuente": "2026-11-07T01:15:55.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
+      "title": "Un gigante de Brasil quiere a una figura clave en el proyecto de Colo Colo - ADN Radio",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNeWJSMDlBRTNtQjBKcUNxSWhjRzJsVzRjaVQ0Q1VPZEVrU0tVUnRwek4tN3gxYzQyQ1EydUtLTmtKOWNZa3BuS1h6NlhBT2ZtR2lNWWRMTXFRSk1QZm50SGppekd2cC1IQkg4QUxPdWs5eDI5NS1rQUczZDg4U3k4U3ByeXBrWko0R0xvMy1Qb1N4aVpnOFVXZzRLUzZPSzFZZWQxOElFaGt5cmhFdUs00gHDAUFVX3lxTFBJLTlEYlRxZVJyczRpWWp3b210WmxaLW5rM05BWGQyQjJCejJBeEJUZVp5LUpDMWJ2cF9LdEdzeWxSSjZJcFBfckFMSzI1ai16dE5FcUdWUG05ZE9jTHhHVTVaVTZkbVBLeWRudTVTUW1Ub0JPbFJXd2tPbl8wRXNBcU1Ub3dyQ1otV1RxLUE2Y1Y1OTQ0RDFJMTJZOT",
+      "link": "https://www.adnradio.cl/2026/11/06/un-gigante-de-brasil-quiere-a-una-figura-clave-en-el-proyecto-de-colo-colo/",
+      "pubDate": "2026-11-07T01:47:07.000Z",
+      "timestamp": "2026-11-07T01:47:07.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ADN Radio",
+      "fuente_url_original": "https://www.adnradio.cl",
+      "fuente": "ADN Radio",
+      "fuente_host": "adnradio.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 85,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:11h(+10)",
+        "gigante:colo colo(+10)"
+      ],
+      "article_title": "Un gigante de Brasil quiere a una figura clave en el proyecto de Colo Colo",
+      "article_description": "Corinthians quiere arrebatarle al “Cacique” a su cabecera del fútbol femenino.",
+      "article_body": "Corinthians quiere arrebatarle al “Cacique” a su cabecera del fútbol femenino. FOTO:KRISTINA SAAVEDRA VOGEL/AGENCIA UNO / KRISTINA SAAVEDRA VOGEL/AGENCIA UNO Colo Colo busca cerrar el doblete en este final de 2026. Y no solo porque puede ser campeón de la Liga de Primera y la Copa Chile, sino porque en el fútbol femenino también es el gran favorito para quedarse con el título. Las albas ya están en las semifinales de la Liga Femenina, donde se medirán ante Coquimbo Unido en busca de una final que les permita ir por el pentacampeonato nacional . Este gran dominio del cuadro “popular” en los últimos años ha tenido una figura central sobre la que se sostiene el proyecto: Tatiele Silveira, entrenadora brasileña que arribó al club en 2023 y que ahora estaría siendo tentada por un grande de su país . Según información de AS Chile , Corinthians tiene en la mira a la DT de Colo Colo , luego de que Emy Lima dejara el banquillo del “Timao” tras caer en la final de la Copa Libertadores 2026 ante Cruzeiro. La entrenadora de 42 años sería una de las opciones que estaría manejando el elenco brasileño para asumir la dirección técnica de su equipo femenino. De hecho, la estratega del “Cacique” ya había sido tentada anteriormente por el club, pero fue ella misma quien declinó las conversaciones debido a su vínculo vigente con las albas. Cabe destacar que Tatiele Silveira tiene contrato vigente con Colo Colo hasta diciembre de 2028 , por lo que, si Corinthians quiere sacarla del Estadio Monumental, deberá hacer una fuerte inversión para convencerla primero a ella y luego a Blanco y Negro. Igualmente, un salto “Timao” correspondería llegar al club de fútbol femenino más grande del continente, ya que son la institución con más Copa Libertadores, con seis títulos . Es más, hasta esta edición, en la que perdieron en la final por penales, eran actuales tricampeonas . Periodista redactor de contenidos de Radio ADN. Se desempeña en la sección de deportes escribiendo con ... Leer más",
+      "article_chars": 1992,
+      "fecha_publicacion_articulo": "2026-11-07T01:47:07.000Z",
+      "fecha_publicacion_fuente": "2026-11-07T01:47:07.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
+      "title": "Everton vs Deportes Concepcion juegan por Torneos Internacionales en 2027 - Pasión de Hincha",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxQSVhDN0N4Y3JzOGZycHR4SjBnS1pjUEZSdWhyUkpINVRmWkJmYVVQTk5hM2RsVVhaU0hBby1wMXNXNm5SUzFiNUNHOTJOOXNFbGQ2enc4amJWMnNza1p4azFHbnBMRWx4MU5mbjd1UGZkT0c0OUUxcW13WVVqZUl5clhWckQ1bXFodjBDdXh4S1F0Xy1XUW9wQ05VTjVTQXhvMEE?oc=5\" target=\"_blank\">Everton vs Deportes Concepcion juegan por Torneos Internacionales en 2027</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Pasión de Hincha</font>",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSVhDN0N4Y3JzOGZycHR4SjBnS1pjUEZSdWhyUkpINVRmWkJmYVVQTk5hM2RsVVhaU0hBby1wMXNXNm5SUzFiNUNHOTJOOXNFbGQ2enc4amJWMnNza1p4azFHbnBMRWx4MU5mbjd1UGZkT0c0OUUxcW13WVVqZUl5clhWckQ1bXFodjBDdXh4S1F0Xy1XUW9wQ05VTjVTQXhvMEE?oc=5",
+      "pubDate": "Sat, 07 Nov 2026 05:51:11 GMT",
+      "timestamp": "2026-11-07T05:51:11.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Pasión de Hincha",
+      "fuente_url_original": "https://pasiondehincha.cl",
+      "fuente": "Pasión de Hincha",
+      "fuente_host": "pasiondehincha.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Everton",
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:7h(+10)"
+      ]
+    },
+    {
+      "title": "Universidad de Chile - Club de Deportes Cobresal | Pronóstico y cuotas 08.11.2026 - Diario AS",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxPR1doV2VGRzQwSzkzV0J2NDNZWVR0TUZNZC04UzlNQUQyWGF4NUFTT0k5VmRnbFpqcDdBdFViN2dKM2xtMVphTkUtTXV2aUVyN0JxQlhSZ3ZPTGlVYktpVVZLMUpQWHdSQ3c1dkFNS1htaU1HT1NnekpJeklUYjJBZGs2XzlSLS02X01tMWxNcGpNbzZDX0E?oc=5\" target=\"_blank\">Universidad de Chile - Club de Deportes Cobresal | Pronóstico y cuotas 08.11.2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Diario AS</font>",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPR1doV2VGRzQwSzkzV0J2NDNZWVR0TUZNZC04UzlNQUQyWGF4NUFTT0k5VmRnbFpqcDdBdFViN2dKM2xtMVphTkUtTXV2aUVyN0JxQlhSZ3ZPTGlVYktpVVZLMUpQWHdSQ3c1dkFNS1htaU1HT1NnekpJeklUYjJBZGs2XzlSLS02X01tMWxNcGpNbzZDX0E?oc=5",
+      "pubDate": "Sat, 07 Nov 2026 09:11:10 GMT",
+      "timestamp": "2026-11-07T09:11:10.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Diario AS",
+      "fuente_url_original": "https://as.com",
+      "fuente": "Diario AS",
+      "fuente_host": "as.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 93,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+10)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "gigante:universidad de chile(+10)"
+      ],
+      "article_body": "",
+      "article_complete": false,
+      "article_chars": 0,
+      "article_fetch_status": "blocked",
+      "article_fetch_error": "HTTP 403"
+    },
+    {
+      "title": "Deportes La Serena vs. Palestino: horario y dónde ver en vivo y online en Chile, por la fecha 27 del Campeo... - Bolavip Chile",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4wFBVV95cUxNR0ludjlySExPN2VpMzZCZS14dEd4NUZjY213UFhPNFNQU3RrSVFRYW9vUHBuQ1hyX19pTXZ5UW92aUpFTGp0Nk5fajUybHlYT3BvaU43ZWNKaFVpVFFsbzhYc1dHclhKYllHU05KSnZvUUtNY1lKNXNDWmNaenJBZGlrT2NSN1NHYnQxQ2RfaXV5bmRzT0JJaDhnTTFQM2FtbGtGUG1RaGlyNHd0dzJrMGFrdmtvRW1aNHVhOWZwWkU5VHlmTzA0Rk5nX0gzTXVYVmtuSHBmMHNUZ29kSWFKWHVnUdIB6AFBVV95cUxNU25wWXFRamt1b1hsZEVMS0JiVTlFWEhheG5ic3FTWTRUdURsOEVCYklqM0FGQU9WTlBwVG9ub1oyWVJvSzFUU2h3OEpiYktfbWstQV83Q0U2VEhnUGFrRm84ME04M3QzQU",
+      "link": "https://bolavip.com/cl/nacional/deportes-la-serena-vs-palestino-horario-y-donde-ver-en-vivo-y-online-en-chile-por-la-fecha-27-del-campeonato-nacional",
+      "pubDate": "2026-11-07T10:01:23.000Z",
+      "timestamp": "2026-11-07T10:01:23.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Bolavip Chile",
+      "fuente_url_original": "https://bolavip.com",
+      "fuente": "Bolavip Chile",
+      "fuente_host": "bolavip.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Palestino",
+      "viral_score": 72,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+15)",
+        "penal(-8)"
+      ],
+      "article_title": "Deportes La Serena vs. Palestino: horario y dónde ver en vivo y online en Chile, por la fecha 27 del Campeonato Nacional",
+      "article_description": "Deportes La Serena y Palestino se enfrentan este sábado 7 de noviembre, en La Portada, por la fecha 27 del Campeonato Nacional. Los detalles de la televisación.",
+      "article_body": "Deportes La Serena recibe a Palestino este sábado 7 de noviembre desde las 15:00 hora de Chile. El encuentro, correspondiente a la fecha 27 del Campeonato Nacional, se disputará en La Portada. Dos equipos parejos en la clasificación se cruzan por una fecha que puede moverlos de lugar. La actualidad de ambos equipos Deportes La Serena empató 0-0 como visitante ante Huachipato en la fecha anterior. Deportes La Serena está 10° en la tabla con 34 puntos. Antes ganó 3-1 como local ante Deportes Concepción. En su último compromiso, Palestino perdió 0-1 como visitante ante Deportes Concepción. El conjunto marcha 5° con 38 puntos. Antes empató 1-1 como local ante Colo-Colo. El historial entre Deportes La Serena y Palestino Deportes La Serena y Palestino se enfrentaron 27 veces en los últimos años: 10 triunfos de Deportes La Serena, 11 de Palestino y 6 empates. Últimos 10 enfrentamientos FechaPartidoResultadoTorneo 16/05/2026Palestino vs. Deportes La Serena5-1Primera División 29/11/2025Deportes La Serena vs. Palestino0-3Primera División 14/06/2025Palestino vs. Deportes La Serena2-1Primera División 23/10/2022Palestino vs. Deportes La Serena5-0Primera División 14/05/2022Deportes La Serena vs. Palestino0-0Primera División 25/10/2021Palestino vs. Deportes La Serena3-3Primera División 20/07/2021Deportes La Serena vs. Palestino4-3Primera División 22/11/2020Palestino vs. Deportes La Serena1-3Primera División 14/10/2020Deportes La Serena vs. Palestino4-2Primera División 10/11/2012Deportes La Serena vs. Palestino1-1Primera División Horario del partido Chile: 15:00 hs Por dónde ver el partido Chile: Max, TNT SPORTS Premium Tabla de posiciones Todos los partidos de la fecha Everton vs. Deportes Concepción — sábado 7 de noviembre, 17:30 hs Universidad Católica vs. Deportes Limache — domingo 8 de noviembre, 12:30 hs Audax Italiano vs. Coquimbo — domingo 8 de noviembre, 12:30 hs Ñublense vs. Colo-Colo — domingo 8 de noviembre, 15:00 hs U de Chile vs. Cobresal — domingo 8 de noviembre, 15:00 hs Unión La Calera vs. Huachipato — domingo 8 de noviembre, 17:30 hs Universidad de Concepción vs. O'Higgins — domingo 8 de noviembre, 20:00 hs En síntesis Deportes La Serena y Palestino se enfrentan este sábado 7 de noviembre por la fecha 27 del Campeonato Nacional. El partido se transmitirá por Max y TNT SPORTS Premium. Deportes La Serena suma 34 puntos en el torneo. Palestino suma 38 puntos en el torneo.",
+      "article_chars": 2413,
+      "fecha_publicacion_articulo": "2026-11-07T10:01:23.000Z",
+      "fecha_publicacion_fuente": "2026-11-07T10:01:23.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
+      "title": "Everton busca consolidarse en zona de copas ante un Deportes Concepción al acecho - Cooperativa",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi9AFBVV95cUxQWEtISWJCT0l0eTdNcXN1eXlWVkF6X2R6TE1wWWh1YS1OSWt2WnU3X0VfTlFleGVBb2xpU090WUNsaEJja0tuYURCa0lHMm93LXhHNlZzVVlnV3lNcDU0d1pkd0Q3bllpbmJXd2ZrSHNNZGVYWUtxX0MzRjZiaXRENm1lckYyUU9RZzd4T2s4Ny16eG14MmQ5S1ZwZ2VMX2Q3OEV5VXktMVhYRk05QVhlR1VLWEFsQXdtSFNhb0NwdjVFT2g3dFZDZGhSUEV2M2hlQ1RnUksyVDRNdk5QcjBQSk1lNVBReVJ3YmhOXzRaeHB5d2Vi0gGMAUFVX3lxTE11QnhuUm5TaEYtVzEwT0V5ZzhHcmZNTlVFWk00MXdGLUwxcG5MQndfVUl4U3pnUXNtVXQ2Sm5ob1hfaS1IYWt1WGxIWFcwQkpJTV9LYW53UV",
+      "link": "https://www.cooperativa.cl/noticias/deportes/futbol/liga-de-primera/everton-busca-consolidarse-en-zona-de-copas-ante-un-deportes-concepcion/2026-11-06/193453.html",
+      "pubDate": "2026-11-07T11:28:00.000Z",
+      "timestamp": "2026-11-07T11:28:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Cooperativa",
+      "fuente_url_original": "https://www.cooperativa.cl",
+      "fuente": "Cooperativa",
+      "fuente_host": "cooperativa.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Everton",
+      "viral_score": 78,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:15h(+5)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)"
+      ],
+      "article_title": "Everton busca consolidarse en zona de copas ante un Deportes Concepción al acecho",
+      "article_description": "Los \"ruleteros\" vuelven a hacer de locales tras dos jornadas ante un \"león de Collao\" envalentonado.",
+      "article_body": "",
+      "article_chars": 100,
+      "fecha_publicacion_articulo": "2026-11-07T11:28:00.000Z",
+      "fecha_publicacion_fuente": "2026-11-06T22:03:00.000Z",
+      "article_complete": false,
+      "article_fetch_status": "body_too_short",
+      "article_fetch_error": "El texto extraído no alcanza 300 caracteres"
+    },
+    {
+      "title": "Deportes La Serena vs Palestino: dónde ver en VIVO y online la Liga de Primera - Radio Pauta 100.5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUmQ4bHlvYWF2Z2IxOWdmZzJzanBpanpzeExmRTRET1VGR3pmcVNmR1NGd243X05rd19nam1XQkhhNmdpQlZFWjJkSV9lTDRITjRMZXRwXzBFRmhHS0EyVkdjUDJJTGFaWG16cDhsaUM5UFB5X0xxUmZsenk2RGprbXZmWlVLXzI3QVVnZEtlcHNNQThRazIyb2Fad3dreW41enREbXVtN2lBYkY0YXhzV1NXUEhCZnBsclZ6NkdwX0k?oc=5\" target=\"_blank\">Deportes La Serena vs Palestino: dónde ver en VIVO y online la Liga de Primera</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Radio Pauta 100.5</font>",
+      "link": "https://www.pauta.cl/deportes/2026/11/07/deportes-la-serena-vs-palestino-donde-ver-en-vivo-y-online-la-liga-de-primera.html",
+      "pubDate": "2026-11-07T11:32:48.000Z",
+      "timestamp": "2026-11-07T11:32:48.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Radio Pauta 100.5",
+      "fuente_url_original": "https://www.pauta.cl",
+      "fuente": "Radio Pauta 100.5",
+      "fuente_host": "pauta.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Palestino",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)",
+        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
+        "penal(-8)"
+      ],
+      "article_title": "Deportes La Serena vs Palestino: dónde ver en VIVO y online la Liga de Primera",
+      "article_description": "Deportes La Serena se enfrenta con Palestino este sábado 7 de noviembre por la fecha 27 de la Liga de Primera 2026. Consulta el horario, qué canal transmite y dónde verlo online en vivo.",
+      "article_body": "Deportes La Serena se enfrenta con Palestino este sábado 7 de noviembre por la fecha 27 de la Liga de Primera 2026. Consulta el horario, qué canal transmite y dónde verlo online en vivo. Este sábado 7 de noviembre, Deportes La Serena recibe a Palestino por la fecha 27 de la Liga de Primera 2026. El compromiso será el encargado de abrir la programación de una nueva jornada del Campeonato Nacional y se disputará durante la tarde en la Región de Coquimbo. El conjunto granate volverá a presentarse ante su público en el Estadio La Portada, mientras que Palestino viajará al norte para disputar uno de sus últimos compromisos de la fase regular. Con solo cuatro fechas por disputarse desde el comienzo de esta jornada, cada resultado puede tener incidencia en las posiciones definitivas de la temporada. En Radio Pauta, te contamos todo lo que debes saber sobre Deportes La Serena vs Palestino, incluyendo las posibles formaciones, el estadio donde se jugará el encuentro, el horario oficial, qué canal lo transmite por televisión y dónde verlo online en vivo desde Chile. Deportes La Serena saltaría a la cancha con la siguiente formación: El cuadro granate dará a conocer oficialmente a sus once titulares durante las horas previas al compromiso. La formación definitiva será informada antes del comienzo del encuentro correspondiente a la fecha 27. Por su parte, Palestino propondría la siguiente formación: El conjunto árabe también confirmará su equipo titular durante la previa del partido en La Serena. El partido entre Deportes La Serena y Palestino se disputará en el Estadio La Portada , recinto en el que el conjunto granate ejercerá la localía. El estadio de la Región de Coquimbo será el primer escenario en recibir actividad por la fecha 27 de la Liga de Primera. Deportes La Serena y Palestino se enfrentarán este sábado 7 de noviembre a las 15:00 horas de Chile . Este corresponde al horario oficial del inicio del partido publicado por Campeonato Chileno. El encuentro entre Deportes La Serena y Palestino será transmitido en VIVO por TNT Sports Premium . La señal comenzará su cobertura antes de las 15:00 horas, por lo que algunos listados televisivos pueden mostrar un horario anterior correspondiente al inicio de la previa. Los fanáticos podrán ver Deportes La Serena vs Palestino online a través de HBO Max . Para acceder al encuentro será necesario contar con el plan correspondiente que incorpora la señal deportiva. De esta manera, el partido que abrirá la fecha 27 podrá seguirse por televisión y también mediante streaming.",
+      "article_chars": 2551,
+      "fecha_publicacion_articulo": "2026-11-07T11:32:48.000Z",
+      "fecha_publicacion_fuente": "2026-11-07T11:32:48.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
+      "title": "Parque Metropolitano implementará registro obligatorio para ciclistas de enduro - laconexion.cl",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPVDNiRGlFdnF6NWhIMDVqdFJvYnF4VWlVaTZzOFU3dWNVRnNLbzlhblluWHRpSVFvSENsT0FnR2lqbV9Wcnhtai03WGlqRzBDbU9FS1VZQTFEOU8za3JuQV9WQkd6ZVYzUEV5cG1XT01qV0JxSVRHemJBVHpsVGJ4OUxlMVBYZEhmdkpTT1ktOGYxeVJfN1Y1VEJPWXFMLWFGa3VHag?oc=5\" target=\"_blank\">Parque Metropolitano implementará registro obligatorio para ciclistas de enduro</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">laconexion.cl</font>",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVDNiRGlFdnF6NWhIMDVqdFJvYnF4VWlVaTZzOFU3dWNVRnNLbzlhblluWHRpSVFvSENsT0FnR2lqbV9Wcnhtai03WGlqRzBDbU9FS1VZQTFEOU8za3JuQV9WQkd6ZVYzUEV5cG1XT01qV0JxSVRHemJBVHpsVGJ4OUxlMVBYZEhmdkpTT1ktOGYxeVJfN1Y1VEJPWXFMLWFGa3VHag?oc=5",
+      "pubDate": "Sat, 07 Nov 2026 12:34:12 GMT",
+      "timestamp": "2026-11-07T12:34:12.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "laconexion.cl",
+      "fuente_url_original": "https://laconexion.cl",
+      "fuente": "laconexion.cl",
+      "fuente_host": "laconexion.cl",
+      "categoria_feed": "colo_colo",
+      "prioridad_fuente": 88,
+      "nivel_fuente": 3,
+      "categoria": "colo_colo",
+      "equipo_chile": null,
+      "viral_score": 100,
+      "razones": [
+        "categoria:colo_colo(+60)",
+        "frescura:0h(+15)"
+      ]
     }
   ]
 }

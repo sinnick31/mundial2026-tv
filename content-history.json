@@ -2,20 +2,6 @@
   "items": [
     {
       "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "DEFENSA EFICIENTE POR PUNTO",
-      "titulo": "Flamengo: 0.125 goles/punto en 6 partidos. ¿Cómo logra esa solidez?",
-      "fecha": "2026-08-07T01:00:58.395Z"
-    },
-    {
-      "match_id": null,
-      "tipo_contenido": "ranking",
-      "hook": "EFICIENCIA GOL X RECIBIDO",
-      "titulo": "Flamengo con 7.0 en ratio GF/GA: ¿El ataque más letal de Sudamérica?",
-      "fecha": "2026-08-07T01:01:11.577Z"
-    },
-    {
-      "match_id": null,
       "tipo_contenido": "noticia",
       "hook": "LA ROJA GIRA EUROPA MUNDIAL",
       "titulo": "La Roja confirma 4 partidos en Europa: ¿Será suficiente para el Mundial?",
@@ -3499,6 +3485,20 @@
       "hook": "Octavio Rivero y su preparación para volver a jugar: \"Me tuvieron que obligar\" - ESPN Argentina",
       "titulo": "Octavio Rivero y su preparación para volver a jugar: \"Me tuvieron que obligar\" - ESPN Argentina",
       "fecha": "2026-11-06T22:22:06.188Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "La única duda en Colo Colo para su formación que le apunta al título en Chillán - TNT Sports",
+      "titulo": "La única duda en Colo Colo para su formación que le apunta al título en Chillán - TNT Sports",
+      "fecha": "2026-11-07T12:38:53.514Z"
+    },
+    {
+      "match_id": null,
+      "tipo_contenido": "noticia",
+      "hook": "Mena, Arizala y Mosquera, novedades de convocatoria en Colombia vs Chile - ESPN Argentina",
+      "titulo": "Mena, Arizala y Mosquera, novedades de convocatoria en Colombia vs Chile - ESPN Argentina",
+      "fecha": "2026-11-07T12:38:53.514Z"
     }
   ]
 }
