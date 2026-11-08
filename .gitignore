@@ -20,3 +20,8 @@ audio/output/*.mp3
 videos/output/*.mp4
 videos/output/tmp/
 thumbnails/output/*.png
+# Assets descargados (se guardan en la caché de Actions)
+assets/clips/
+assets/music/
+assets/backgrounds/stadiums/pexels_*
+videos/output/tmp/
