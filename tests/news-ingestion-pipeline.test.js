@@ -2,7 +2,8 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { extractArticle, replaceEnrichedArticle } = require('../scripts/fetch-real-news');
+const { extractArticle, replaceEnrichedArticle, decodeXml, esFutbol } = require('../scripts/fetch-real-news');
+const { cleanVisibleText } = require('../scripts/text-sanitizer');
 const { isEligibleNewsCandidate, newsCandidateRejection, buildItem } = require('../scripts/generate-real-content');
 
 const now = Date.parse('2026-11-04T12:00:00.000Z');
@@ -236,4 +237,33 @@ test('resolveGoogleNewsBatchExecute resuelve el publisher URL desde c-wiz data-p
   assert.equal(resolved, 'https://www.espn.com.ar/futbol/chile/nota/_/id/123');
   const rejected = await resolveGoogleNewsBatchExecute(html, ['tntsports.cl'], mockPost);
   assert.equal(rejected, '');
+});
+
+
+test('limpia enlaces HTML completos y truncados en snippets RSS', () => {
+  const truncated = '<a href="https://news.google.com/rss/articles/CBMi';
+  assert.equal(cleanVisibleText(truncated), '');
+  assert.equal(decodeXml('&lt;a href="https://news.google.com/rss/articles/CBMi'), '');
+  assert.equal(
+    decodeXml('&lt;a href="https://news.google.com/rss/articles/CBMi..."&gt;La Roja confirma la nómina&lt;/a&gt;'),
+    'La Roja confirma la nómina',
+  );
+});
+
+test('un enlace RSS truncado no se convierte en tema futbolístico ni en evidencia suficiente', () => {
+  const title = 'EN VIVO | Cómputo Teletón 2026: ¿Cuánto lleva recaudado y cuánto falta para llegar a la meta?';
+  const description = decodeXml('&lt;a href="https://news.google.com/rss/articles/CBMi');
+  assert.equal(description, '');
+  assert.equal(esFutbol({ title, description }), false);
+
+  const item = validNews({
+    title,
+    article_title: title,
+    article_body: '',
+    article_complete: false,
+    article_chars: 0,
+    article_description: '',
+    description: '<a href="https://news.google.com/rss/articles/CBMi',
+  });
+  assert.equal(newsCandidateRejection(item, now), 'sin_evidencia_breve_suficiente');
 });

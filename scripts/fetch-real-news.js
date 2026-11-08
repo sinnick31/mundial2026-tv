@@ -8,6 +8,7 @@
 
 const fs = require('fs');
 const https = require('https');
+const { cleanVisibleText } = require('./text-sanitizer');
 const { RSS_FEEDS, KEYWORDS_FUTBOL } = require('../config/ligas');
 const { calcularViralScore, normalizar } = require('./viral-score');
 
@@ -378,17 +379,17 @@ async function enrichArticle(item, request = httpGetResponse) {
   }
 }
 function decodeXml(value = '') {
-  return value
+  // Decodificar primero el HTML embebido y después limpiar etiquetas completas
+  // o truncadas. Así un atributo href no puede convertirse en falsa evidencia.
+  const decoded = String(value)
     .replace(/<!\[CDATA\[|\]\]>/g, '')
-    .replace(/<[^>]+>/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
-    .replace(/&#x27;/gi, "'")
-    .replace(/\s+/g, ' ')
-    .trim();
+    .replace(/&#x27;/gi, "'");
+  return cleanVisibleText(decoded);
 }
 
 function getTag(block, tag) {

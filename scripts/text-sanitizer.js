@@ -15,6 +15,8 @@ function cleanVisibleText(value = '') {
       .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
       .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ')
       .replace(/<\/?[a-z][^>]*>/gi, ' ')
+      // También descartar etiquetas truncadas al final de un snippet RSS.
+      .replace(/<\/?[a-z][^>]*$/gi, ' ')
       .replace(/&(#x[0-9a-f]+|#\d+|[a-z][a-z0-9]+);/gi, (entity, code) => {
         if (code[0] === '#') {
           const hex = code[1]?.toLowerCase() === 'x';
