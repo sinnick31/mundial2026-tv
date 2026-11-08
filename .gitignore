@@ -12,3 +12,11 @@ config/affiliate-links.json
 config/.env
 config/.env.*
 !config/.env.example
+
+# Salidas del noticiario diario
+news_today.json
+pipeline_state.json
+audio/output/*.mp3
+videos/output/*.mp4
+videos/output/tmp/
+thumbnails/output/*.png
