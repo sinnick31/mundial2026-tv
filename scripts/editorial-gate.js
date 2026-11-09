@@ -1,6 +1,7 @@
 'use strict';
 
 const fs = require('node:fs');
+const { hasIndependentEvidence } = require('./editorial-evidence');
 
 const MAX_ITEMS = 2;
 const ALLOWED_CATEGORIES = new Set([
@@ -88,7 +89,8 @@ function validatePackage(pkg) {
       && Number.isInteger(item._articulo_caracteres) && item._articulo_caracteres >= 300;
     const verifiedShortEvidence = item._formato_recomendado === 'short'
       && item._base_evidencia === 'extracto_rss_atribuido'
-      && typeof item.descripcion === 'string' && item.descripcion.trim().length >= 60;
+      && typeof item.descripcion === 'string'
+      && hasIndependentEvidence(item.descripcion, item._noticia_original);
     if (item._tipo_contenido === 'noticia' && !fullArticle && !verifiedShortEvidence) {
       fail(`pieza ${n}: requiere artículo completo o extracto verificable de al menos 60 caracteres para Short`);
     }
