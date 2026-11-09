@@ -88,6 +88,23 @@ test('acepta un extracto breve atribuido para Short sin exigir artículo complet
   assert.ok(piece.narracion.includes('El club confirmó'));
 });
 
+test('rechaza una ficha de marcador cuyo supuesto extracto solo repite el titular', () => {
+  const title = 'U de Chile 2-1 Cobresal (8 de Nov., 2026) Resultado Final - ESPN Argentina';
+  const item = validNews({
+    title,
+    article_title: title,
+    article_body: '',
+    article_complete: false,
+    article_chars: 0,
+    article_description: title,
+    description: title,
+    link: 'https://www.espn.com.ar/futbol/partido/_/juegoId/401850686',
+    fuente: 'ESPN Argentina',
+    fuente_host: 'espn.com.ar',
+  });
+  assert.equal(newsCandidateRejection(item, now), 'extracto_no_independiente');
+});
+
 test('no convierte un titular aislado en noticia elegible', () => {
   const item = validNews({
     article_body: '',
