@@ -18,6 +18,7 @@ function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (_) { return fallback; }
 }
 const { cleanVisibleText } = require('./text-sanitizer');
+const { hasIndependentEvidence } = require('./editorial-evidence');
 function clean(s = '') { return cleanVisibleText(s); }
 
 function normalize(s = '') {
@@ -51,6 +52,7 @@ function newsCandidateRejection(item, now = Date.now()) {
     && typeof item.article_body === 'string' && item.article_body.trim().length >= 300;
   const brief = clean(item.article_description || item.description || '');
   if (!complete && brief.length < 60) return 'sin_evidencia_breve_suficiente';
+  if (!complete && !hasIndependentEvidence(brief, title)) return 'extracto_no_independiente';
   return null;
 }
 function isEligibleNewsCandidate(item, now = Date.now()) {
