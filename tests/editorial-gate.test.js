@@ -109,6 +109,19 @@ test('acepta Short con extracto atribuido aunque no exista artículo completo', 
   assert.deepEqual(validatePackage(pkg), { ok: true, total: 1 });
 });
 
+test('rechaza un extracto RSS que solo repite el titular en el paquete final', () => {
+  const pkg = validPackage();
+  const item = pkg.contenido[0];
+  const title = 'U de Chile 2-1 Cobresal (8 de Nov., 2026) Resultado Final - ESPN Argentina';
+  item._noticia_original = title;
+  item._articulo_completo = false;
+  item._articulo_caracteres = 0;
+  item._formato_recomendado = 'short';
+  item._base_evidencia = 'extracto_rss_atribuido';
+  item.descripcion = title;
+  assert.throws(() => validatePackage(pkg), /requiere artículo completo o extracto verificable/);
+});
+
 test('no acepta un extracto RSS demasiado corto ni sin etiqueta editorial de Short', () => {
   const pkg = validPackage();
   const item = pkg.contenido[0];
