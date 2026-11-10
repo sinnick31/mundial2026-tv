@@ -1,413 +1,13 @@
 {
-  "ultima_actualizacion": "2026-11-10T18:44:57.314Z",
-  "total_hoy": 525,
+  "ultima_actualizacion": "2026-11-10T23:30:55.397Z",
+  "total_hoy": 522,
   "total_reciente": 140,
   "por_categoria": {
-    "tnt_sports": 4,
-    "chile": 98,
-    "colo_colo": 21,
-    "femenino": 11,
-    "tercera": 1,
-    "internacional": 5
+    "tnt_sports": 7,
+    "chile": 125,
+    "colo_colo": 8
   },
   "noticias": [
-    {
-      "title": "Tatiele Silveira identifica el error que condenó a Colo Colo femenino en la Libertadores - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPd2wwZW5FTE9lamV3RVZEa3JYeTRGRU56R2hCOEc0ZTRSd0NGdVpSRzhQVDF2UEdLVHAwbnp5Xy1BVi1WbDB4V05ZOGJGQS03eGRqUDBYSlgxZVAzSFlrb05XTllad000VzhIdFpGUDd6V1JuYzBmZVhCUWcwSGZDVUlIX20zZHRrUU9aUDA3NGY2eVg1bE5nWXd4R2xCOGtLYnE5M3l5UlVRU3lRQVppT3RvSFZRZ9IBuwFBVV95cUxQcE1kWk5XdGVxT1ZqNkJtNGFJVnlPUXJVWjRDaF8xWnBXUTR1dGxRZThzdUtNd0ptRTlGZTNRaV9Ba3czcTZaSTdDSFAwLXVHbHNEcFg4R2xJRTZhVGNURU9IT245WmJUbS1PLTN4QzY0SnJ0OGtWM083X0xSSFZvYjdFeEE4TXBqa0E1SzdPUHUzRHFlYj",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPd2wwZW5FTE9lamV3RVZEa3JYeTRGRU56R2hCOEc0ZTRSd0NGdVpSRzhQVDF2UEdLVHAwbnp5Xy1BVi1WbDB4V05ZOGJGQS03eGRqUDBYSlgxZVAzSFlrb05XTllad000VzhIdFpGUDd6V1JuYzBmZVhCUWcwSGZDVUlIX20zZHRrUU9aUDA3NGY2eVg1bE5nWXd4R2xCOGtLYnE5M3l5UlVRU3lRQVppT3RvSFZRZ9IBuwFBVV95cUxQcE1kWk5XdGVxT1ZqNkJtNGFJVnlPUXJVWjRDaF8xWnBXUTR1dGxRZThzdUtNd0ptRTlGZTNRaV9Ba3czcTZaSTdDSFAwLXVHbHNEcFg4R2xJRTZhVGNURU9IT245WmJUbS1PLTN4QzY0SnJ0OGtWM083X0xSSFZvYjdFeEE4TXBqa0E1SzdPUHUzRHFlYjBhMXVwOEhseHAzOWd1dWxCYXFrc3JIQk5CVjZHSDU1QUZISGFN?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 18:43:45 GMT",
-      "timestamp": "2026-10-23T18:43:45.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:30h(+0)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Colo Colo confirma partido amistoso ante \"un gran rival\": Fecha y lugar - TVN",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNcFZoc0thQnJ3bmQwSjFOOTlRc09ONXB2RENMenFUb21aSDR6NHBEUDZuVlU3aDR3bVB0SjNBV3J4cVRLYXMwWmRRSmZndE1nMlN6eVVDN1hrV0RyOGx2WjlZN2NQeEV3Qi1CUkZtd0Y1MEJCWlhnWnJjR0lOUjdGN0FHa0dxbU1QZ3R6NnBEQ0dybnJ5c1NJQnZqdmhtR2UtWGFISXczSE0tSWVxcHdjMi1R0gG3AUFVX3lxTE5WMmVnM0Z3dGE4eWxmWVZDOWRLREZ0ZFIxUmE1bG5lSFFSQTR0OWw5UGVYZjYtbm5MZElxcnlfQU1GNFFzcUNKR254TjFiczUwNkJOa1Qzb2VCRHhnY25ER1o3aHl1VXN2SUNmYVFtR01CWGVrOVFCMU8yRmg5NTY5d1IzbnEwaDREQmdTTkZpYW9ORDhpamRydW",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcFZoc0thQnJ3bmQwSjFOOTlRc09ONXB2RENMenFUb21aSDR6NHBEUDZuVlU3aDR3bVB0SjNBV3J4cVRLYXMwWmRRSmZndE1nMlN6eVVDN1hrV0RyOGx2WjlZN2NQeEV3Qi1CUkZtd0Y1MEJCWlhnWnJjR0lOUjdGN0FHa0dxbU1QZ3R6NnBEQ0dybnJ5c1NJQnZqdmhtR2UtWGFISXczSE0tSWVxcHdjMi1R0gG3AUFVX3lxTE5WMmVnM0Z3dGE4eWxmWVZDOWRLREZ0ZFIxUmE1bG5lSFFSQTR0OWw5UGVYZjYtbm5MZElxcnlfQU1GNFFzcUNKR254TjFiczUwNkJOa1Qzb2VCRHhnY25ER1o3aHl1VXN2SUNmYVFtR01CWGVrOVFCMU8yRmg5NTY5d1IzbnEwaDREQmdTTkZpYW9ORDhpamRydWhyTEhGbzQzZ2xjc1FtNkh1bHJoMHY5YkJTMVhBWQ?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 19:04:00 GMT",
-      "timestamp": "2026-10-23T19:04:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "TVN",
-      "fuente_url_original": "https://www.tvn.cl",
-      "fuente": "TVN",
-      "fuente_host": "tvn.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:3h(+15)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Colo Colo y la U tienen reprogramados sus duelos en Copa Chile - El Periscopio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPTXItRWdZRzZiNnJRaHg2bFZEd0JnSG8wNFZsZ1lkZFJfeU5sUXB1ajlnX2dGWFhSR2oxQlpBM01XeVhENy00WWFWdUMyQXoyS2dnTkp2RGpOVnRfMXlSWTRmTGQwNjcxN3QxNllIQnFrdmN0T2poQmhOQS1hXzQyaFg1UHVlUGo1RUExS1RkdG5UTWl3Si0tTzVvcmxqV1JxaTlkY0lR?oc=5\" target=\"_blank\">Colo Colo y la U tienen reprogramados sus duelos en Copa Chile</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">El Periscopio</font>",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTXItRWdZRzZiNnJRaHg2bFZEd0JnSG8wNFZsZ1lkZFJfeU5sUXB1ajlnX2dGWFhSR2oxQlpBM01XeVhENy00WWFWdUMyQXoyS2dnTkp2RGpOVnRfMXlSWTRmTGQwNjcxN3QxNllIQnFrdmN0T2poQmhOQS1hXzQyaFg1UHVlUGo1RUExS1RkdG5UTWl3Si0tTzVvcmxqV1JxaTlkY0lR?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 19:15:29 GMT",
-      "timestamp": "2026-10-23T19:15:29.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "El Periscopio",
-      "fuente_url_original": "https://www.elperiscopio.cl",
-      "fuente": "El Periscopio",
-      "fuente_host": "elperiscopio.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 90,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:3h(+15)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "Reprogramados los partidos de vuelta de cuartos de final de Copa Chile - ESPN Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPRXRvRUV6QkZOUmdXYkplR2lLTVphRm5LWV9jSzNWZGMyRnhwdmlfcWk2aGhYNDRoWVhWaEhzd194V29NeGtiNHhYZTZIdXJBWUJTYnQ0Ti1zeXpEN2pRZzliMDRsZFc3MzFSTUF0ak1RWld1NGR0Zjg4Q21ZYnlqYkJDOW1wY2RKU1ZUX3lyUWxBLUNyeDhoOTc2X0lXcHI4RzA4V1l5RFF6QmlnMGljR28zV1RqTFZtY3NfTmZDZw?oc=5\" target=\"_blank\">Reprogramados los partidos de vuelta de cuartos de final de Copa Chile</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ESPN Chile</font>",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPRXRvRUV6QkZOUmdXYkplR2lLTVphRm5LWV9jSzNWZGMyRnhwdmlfcWk2aGhYNDRoWVhWaEhzd194V29NeGtiNHhYZTZIdXJBWUJTYnQ0Ti1zeXpEN2pRZzliMDRsZFc3MzFSTUF0ak1RWld1NGR0Zjg4Q21ZYnlqYkJDOW1wY2RKU1ZUX3lyUWxBLUNyeDhoOTc2X0lXcHI4RzA4V1l5RFF6QmlnMGljR28zV1RqTFZtY3NfTmZDZw?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 19:43:53 GMT",
-      "timestamp": "2026-10-23T19:43:53.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "ESPN Chile",
-      "fuente_url_original": "https://www.espn.cl",
-      "fuente": "ESPN Chile",
-      "fuente_host": "espn.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 96,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:2h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "Se pudrió: aunque salga campeón San Luis no recibirá la copa por los escritoriazos pendientes - La Hora de King Kong",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeGtvLTlXZUdNOHFmZ2JDaVgzVERyeFYwZzl3d21NSnBaSnNmazFiOU5Ma1NsbkphUUtDcDI1dTN2UjVqTjQ4Q1JZdGFaWVFxdnhEYnlSUUwtVFplN1FKYUJuaUsxbWd6V2RBQTg4T0hjTVBLLXR1UjdGenBFT0RZOTI0ejhrVjNiVkw1Y1RpMjFGSDI5S2Ftb1huQlBVek5FTTlZdjRyMXpVdWhYa0JpeGhUUG5xM0ljZlJZaUpIYU4tR0FEeWtjMA?oc=5\" target=\"_blank\">Se pudrió: aunque salga campeón San Luis no recibirá la copa por los escritoriazos pendientes</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">La Hora de King Kong</font",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeGtvLTlXZUdNOHFmZ2JDaVgzVERyeFYwZzl3d21NSnBaSnNmazFiOU5Ma1NsbkphUUtDcDI1dTN2UjVqTjQ4Q1JZdGFaWVFxdnhEYnlSUUwtVFplN1FKYUJuaUsxbWd6V2RBQTg4T0hjTVBLLXR1UjdGenBFT0RZOTI0ejhrVjNiVkw1Y1RpMjFGSDI5S2Ftb1huQlBVek5FTTlZdjRyMXpVdWhYa0JpeGhUUG5xM0ljZlJZaUpIYU4tR0FEeWtjMA?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 20:00:00 GMT",
-      "timestamp": "2026-10-23T20:00:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "La Hora de King Kong",
-      "fuente_url_original": "https://lahoradekingkong.cl",
-      "fuente": "La Hora de King Kong",
-      "fuente_host": "lahoradekingkong.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 86,
-      "categoria": "chile",
-      "equipo_chile": "San Luis",
-      "viral_score": 88,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:2h(+15)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "ANFP le exige a la UC jugar ante Audax Italiano sí o sí: sin publico o cambio de localía - Bolavip Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPVnNSOXRmbUNBSVlNQ0cweHJNNVFkQVRDUWx1bVhSc01QaldaMzZqbFdHU2dKSzBXcXhGcEF0VC1Jc2NCRUNWT0NaTld2UG0waXlBcVZjTy13Tk4tWkJwanBWU21JWWh1ODc1R3lHb05YeEMzcFFEUWJWcEtBUllrQVRBb2tZWllhV1Y2NGJmYU9NRUkxdjUyMWF1OEN3bTEySzJVZm1ZbktReEJPRzB1aWxFQmwzOEhNeUljS9IBwgFBVV95cUxQaEtuNnJfb2NFcnM3anZZZ0hIYnZBRkFZLU1FMWFWbXk4TjQzVHowc1hkWlVuZEJGWjhXTDdhVHk4dUZzYm5renhtSUtPZ1BMay1veUhIYTNDVmVwNzF1R0lDTnJNWUxsOGhZTTV2WmlYaFBlZ3VRMm44NjlKTllfWlY0RHA2d2NxWmNPUm9nRF",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVnNSOXRmbUNBSVlNQ0cweHJNNVFkQVRDUWx1bVhSc01QaldaMzZqbFdHU2dKSzBXcXhGcEF0VC1Jc2NCRUNWT0NaTld2UG0waXlBcVZjTy13Tk4tWkJwanBWU21JWWh1ODc1R3lHb05YeEMzcFFEUWJWcEtBUllrQVRBb2tZWllhV1Y2NGJmYU9NRUkxdjUyMWF1OEN3bTEySzJVZm1ZbktReEJPRzB1aWxFQmwzOEhNeUljS9IBwgFBVV95cUxQaEtuNnJfb2NFcnM3anZZZ0hIYnZBRkFZLU1FMWFWbXk4TjQzVHowc1hkWlVuZEJGWjhXTDdhVHk4dUZzYm5renhtSUtPZ1BMay1veUhIYTNDVmVwNzF1R0lDTnJNWUxsOGhZTTV2WmlYaFBlZ3VRMm44NjlKTllfWlY0RHA2d2NxWmNPUm9nRF9mY1d0aTZFN3lQSFZmcU1BYzVnY0dfNl9fMC1kdU95Um5TelY4MmNFQnVOb3daMS1udw?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 20:03:04 GMT",
-      "timestamp": "2026-10-23T20:03:04.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Bolavip Chile",
-      "fuente_url_original": "https://bolavip.com",
-      "fuente": "Bolavip Chile",
-      "fuente_host": "bolavip.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 90,
-      "categoria": "chile",
-      "equipo_chile": "Universidad Católica",
-      "viral_score": 75,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:5h(+10)"
-      ]
-    },
-    {
-      "title": "Gedeón Díaz da el salto más importante en Colo-Colo - En Cancha",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUUJEelZIRGU2OXdHdUJGcHk5aExRSmxLTTBYYUNyMVFMZmloSm1rM3h6N0hPbXMwTmdEaUY3SUt5SktqeC0xZUFIaEdmRnctREQwZkU3eGJUbGdJbExmU0NBdWU3T2liRmxZelhFRTZxcEpCQTBSQmt4clRrb3lmUkdnMG5IcHBVZkpEVThKWDRCMklKc1lOd1M3QjItN1FLdEZjdXhBcFA4MHRPblU2WGdSQVRZLWxsNk1yMFVPNWc?oc=5\" target=\"_blank\">Gedeón Díaz da el salto más importante en Colo-Colo</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">En Cancha</font>",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUUJEelZIRGU2OXdHdUJGcHk5aExRSmxLTTBYYUNyMVFMZmloSm1rM3h6N0hPbXMwTmdEaUY3SUt5SktqeC0xZUFIaEdmRnctREQwZkU3eGJUbGdJbExmU0NBdWU3T2liRmxZelhFRTZxcEpCQTBSQmt4clRrb3lmUkdnMG5IcHBVZkpEVThKWDRCMklKc1lOd1M3QjItN1FLdEZjdXhBcFA4MHRPblU2WGdSQVRZLWxsNk1yMFVPNWc?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 20:16:47 GMT",
-      "timestamp": "2026-10-23T20:16:47.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "En Cancha",
-      "fuente_url_original": "https://www.encancha.cl",
-      "fuente": "En Cancha",
-      "fuente_host": "encancha.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:2h(+15)"
-      ]
-    },
-    {
-      "title": "¿Y la copa? San Luis y Humberto Suazo en alerta por “escritoriazo” en caso de ser campeón de Primera B - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNUWFsQTFlM05iQlNYdjA2Y29mNFk4WmhmVnY5eU9zWUVDdU5oNGJXVTFjdkhWVkoxOTFNMHU2THhobG5DV3RtZkljZzA0b0ZHMFlJMjlKOXZWWEpVQ0t5cTNSei1WZnVpdE1YemlhQzNtR1JiRTBLU0E2eENKSFh1Q3c1Zmk1RTlOWTJhVkhLeEgwRi1KZGMtTGFZMGdsVVF0ZWtiMVczYzJucHVKb292T09zdjk5cnliNTVOendNa9IBxAFBVV95cUxQWGF5RkRIa2JyWDRxbHdPX3BSTjNkc1JRODM3MGhoME04U01xZks1ck1IOVRvdG5waFhuR2plbXRkWlY2Skp3X2NDQzNOdENzMU1NenpnV2w2U1E0RmNKbXZETXg5QzgzSlYzVEVpSE5La0ZyREhzWXlfUVhLa0Zya3l0WWo0elF3UDRlQj",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNUWFsQTFlM05iQlNYdjA2Y29mNFk4WmhmVnY5eU9zWUVDdU5oNGJXVTFjdkhWVkoxOTFNMHU2THhobG5DV3RtZkljZzA0b0ZHMFlJMjlKOXZWWEpVQ0t5cTNSei1WZnVpdE1YemlhQzNtR1JiRTBLU0E2eENKSFh1Q3c1Zmk1RTlOWTJhVkhLeEgwRi1KZGMtTGFZMGdsVVF0ZWtiMVczYzJucHVKb292T09zdjk5cnliNTVOendNa9IBxAFBVV95cUxQWGF5RkRIa2JyWDRxbHdPX3BSTjNkc1JRODM3MGhoME04U01xZks1ck1IOVRvdG5waFhuR2plbXRkWlY2Skp3X2NDQzNOdENzMU1NenpnV2w2U1E0RmNKbXZETXg5QzgzSlYzVEVpSE5La0ZyREhzWXlfUVhLa0Zya3l0WWo0elF3UDRlQjFKcDcyc1VqUmllUEgzbDFDYjh4RWFRNFB3QTNCb09Ybk1VdUQ5RGFqRmpkSmJfQVFuMjJWSlc4?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 20:17:20 GMT",
-      "timestamp": "2026-10-23T20:17:20.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "San Luis",
-      "viral_score": 91,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:5h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "ANFP reprograma los partidos de Copa Chile suspendidos por la lluvia: fechas y horarios confirmados - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxNN3V3WWhEaU16eV84VXM1M0VMRThQYW9hWDZvd1NCSFdYblJOWXpRYkRnOXpLM1hlWWRQYzhTQWtFb3dJNVpKVUc2aHpETWRGOGJYOGJpYU8xNGQwVDlndjZ1XzVWZkxjMXMwQzNGOHRQYnlhSUtURjg4eFZpNEo5Mm9jbXZFcjk4UDRpaURPajUwRG9hNS1yLTZJZ196Zm5aOGxkcmJLQndGZDlGWnp6NklETnE4M3M0ellWS3Y3UkpNYUUtM2RaYndsSXBZUTDSAeMBQVVfeXFMUGJGY1Jpd3k4UmNaREk4MXpvaDNIUE1rTmZucTFKOElIeE85cmZjdjh0elNhd3VvSERFQnlrR2tuTGFjcWplU3kwN2l0bkJEQXhsclVNVjJEMTdlSG1NRzFVZFIyanlZcl9DVWo2TEdEOUQwdXlXYWFYTUZxNl",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNN3V3WWhEaU16eV84VXM1M0VMRThQYW9hWDZvd1NCSFdYblJOWXpRYkRnOXpLM1hlWWRQYzhTQWtFb3dJNVpKVUc2aHpETWRGOGJYOGJpYU8xNGQwVDlndjZ1XzVWZkxjMXMwQzNGOHRQYnlhSUtURjg4eFZpNEo5Mm9jbXZFcjk4UDRpaURPajUwRG9hNS1yLTZJZ196Zm5aOGxkcmJLQndGZDlGWnp6NklETnE4M3M0ellWS3Y3UkpNYUUtM2RaYndsSXBZUTDSAeMBQVVfeXFMUGJGY1Jpd3k4UmNaREk4MXpvaDNIUE1rTmZucTFKOElIeE85cmZjdjh0elNhd3VvSERFQnlrR2tuTGFjcWplU3kwN2l0bkJEQXhsclVNVjJEMTdlSG1NRzFVZFIyanlZcl9DVWo2TEdEOUQwdXlXYWFYTUZxNlRlTGd2YmdESkd5LVpYOTMweTJ0bTVUZ0p6VENNOHYwSDNJNkp5UERkTjE4aFlwaC1GNEQtaG1OU3Ayb01COEE0RG1iR01scjVWaHJ5MEVabjBhU2ozcXpCQ2tKT3llMHVOM1A1QTQ?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 20:32:55 GMT",
-      "timestamp": "2026-10-23T20:32:55.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "ADN Radio",
-      "fuente_url_original": "https://www.adnradio.cl",
-      "fuente": "ADN Radio",
-      "fuente_host": "adnradio.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 89,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 70,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:21h(+5)"
-      ]
-    },
-    {
-      "title": "San Luis recibe a Deportes Recoleta en una jornada que puede ser histórica - El Observador",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQbTltbkNoZzBUSFlIdERvWHBYT3pvQlhtSXc0UWhLX0RfWFNFM0VzVmZuX3JjelpieHRMeGpFc0RHUXRZdjcxNHg5YzluVmdiT0M5OGtSd0ttWEpqZ3l4My16MFE3R01GZGlQMER5N0JEVlk0S3BvMlI5SUFQNEVHTWVpZnNQbXZiMnNlVXh2Y2FVcGRyMkQzbkxiMHB0WFF2dE80?oc=5\" target=\"_blank\">San Luis recibe a Deportes Recoleta en una jornada que puede ser histórica</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">El Observador</font>",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbTltbkNoZzBUSFlIdERvWHBYT3pvQlhtSXc0UWhLX0RfWFNFM0VzVmZuX3JjelpieHRMeGpFc0RHUXRZdjcxNHg5YzluVmdiT0M5OGtSd0ttWEpqZ3l4My16MFE3R01GZGlQMER5N0JEVlk0S3BvMlI5SUFQNEVHTWVpZnNQbXZiMnNlVXh2Y2FVcGRyMkQzbkxiMHB0WFF2dE80?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 21:08:26 GMT",
-      "timestamp": "2026-10-23T21:08:26.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "El Observador",
-      "fuente_url_original": "https://www.observador.cl",
-      "fuente": "El Observador",
-      "fuente_host": "observador.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 86,
-      "categoria": "chile",
-      "equipo_chile": "Recoleta",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:1h(+15)"
-      ]
-    },
-    {
-      "title": "No habrá copa en Quillota: el lío de escritorio que pone en alerta a San Luis de Chupete Suazo en la lucha por el ascenso - La Tercera",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi_AFBVV95cUxOd3U4R2EzT2RjTXAyX2FGaHNLeHpfSU5XQ0p6OXZ2VE9FSElSMEh6RnNvWWdGMTVKMDBWRmxUV1Nia3B6Rm03dWN1a3psMlRRWmZRS2ktT1BtVVJNaVUxaDJteHhuOHdoTW42c29TTXRUWU5CYnJodkpCSWppUUw0c2d0NEtSNmNoUWpvU1NhVHJsTDFkckVRRHZTSDZiX2xjZEk4Q2JOMEdRclNtVVAydnQ4RnJ4WTI1cnlLdWJNNGRnUDJIWDVzNmNkbjg2ek4tODVwUnRkNkJZOWRiWm9zaVVkUjlhNFRua1FMdTNMV1AtaEwwUmFETjlOcFHSAZ4CQVVfeXFMUGpqSGkwa0VkRWpDa3hpcmNReXhZaDRMck9hcGIzN0dpanc4WVdmV0w4RHdxOHlKclE4S0kxZEZDOTJYN3U1bm4tM1VBeUF6Tk",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOd3U4R2EzT2RjTXAyX2FGaHNLeHpfSU5XQ0p6OXZ2VE9FSElSMEh6RnNvWWdGMTVKMDBWRmxUV1Nia3B6Rm03dWN1a3psMlRRWmZRS2ktT1BtVVJNaVUxaDJteHhuOHdoTW42c29TTXRUWU5CYnJodkpCSWppUUw0c2d0NEtSNmNoUWpvU1NhVHJsTDFkckVRRHZTSDZiX2xjZEk4Q2JOMEdRclNtVVAydnQ4RnJ4WTI1cnlLdWJNNGRnUDJIWDVzNmNkbjg2ek4tODVwUnRkNkJZOWRiWm9zaVVkUjlhNFRua1FMdTNMV1AtaEwwUmFETjlOcFHSAZ4CQVVfeXFMUGpqSGkwa0VkRWpDa3hpcmNReXhZaDRMck9hcGIzN0dpanc4WVdmV0w4RHdxOHlKclE4S0kxZEZDOTJYN3U1bm4tM1VBeUF6TkRfZDY3c0tRbkJpc3FoYkZXcFNPbmJDTHp2bmJINXljRVBFT2huaE5MS192RWpEWGRJOFhPU2hBeUNNMUUwOS1QOGwwT040RHpORjRtb29kS1M1cFhFc0Y2Y2JneXU5dkZra1VuV3VSamcwZ1dFTlNuQU5GTVNDWmZxcE1LNzJnTWZETGVoSkp1WUFJM1ZRd1hiVmZJclY5QWdCb0RhT3NmaDVTX3plQ1EzcktOdmxJczVycEZPM0htY3ZuUWxtMXIyU3dBTzNKcHhmQzFSUQ?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 21:16:32 GMT",
-      "timestamp": "2026-10-23T21:16:32.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "La Tercera",
-      "fuente_url_original": "https://www.latercera.com",
-      "fuente": "La Tercera",
-      "fuente_host": "latercera.com",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 85,
-      "categoria": "chile",
-      "equipo_chile": "San Luis",
-      "viral_score": 65,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:45h(+0)"
-      ]
-    },
-    {
-      "title": "La U confirmó estadio para la revancha contra Antofagasta en la Copa Chile - Cooperativa",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi8gFBVV95cUxNTW5acksxMFF4UVNKUGhKMFJXMWM3cVJ1MGhUdld6bENoS2xhUWJicXFMZUtGRzFrOWQ2b3hXVG9aYmtJWlFtNWZvT1ZKVzNEQklKaTBWVHpiM3JpbDRkUkNoRDJ3TDkySm4wWE1KOWFjZ1JVUWxZbEhreHZnWG5nQTZhZmxlQ1VWREotSWNmUUVtdjVUcW90eFphWDU3QS1DZF82WVkyYjMzWVMxRkRlSGpTTlZBb01GdGpnZ0ZFeGJUbUpfdkFOeTFod3ltWURCUGU1eDFuSWw1R3M3aWpLWWttaFVSc1owR1JEcGV2YmJSZw?oc=5\" target=\"_blank\">La U confirmó estadio para la revancha contra Antofagasta en la Copa Chile</a>&nbsp;&nbsp;<font color",
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNTW5acksxMFF4UVNKUGhKMFJXMWM3cVJ1MGhUdld6bENoS2xhUWJicXFMZUtGRzFrOWQ2b3hXVG9aYmtJWlFtNWZvT1ZKVzNEQklKaTBWVHpiM3JpbDRkUkNoRDJ3TDkySm4wWE1KOWFjZ1JVUWxZbEhreHZnWG5nQTZhZmxlQ1VWREotSWNmUUVtdjVUcW90eFphWDU3QS1DZF82WVkyYjMzWVMxRkRlSGpTTlZBb01GdGpnZ0ZFeGJUbUpfdkFOeTFod3ltWURCUGU1eDFuSWw1R3M3aWpLWWttaFVSc1owR1JEcGV2YmJSZw?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 21:29:00 GMT",
-      "timestamp": "2026-10-23T21:29:00.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Cooperativa",
-      "fuente_url_original": "https://www.cooperativa.cl",
-      "fuente": "Cooperativa",
-      "fuente_host": "cooperativa.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Universidad de Chile",
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:0h(+15)"
-      ]
-    },
-    {
-      "title": "U. de Chile vs. Antofagasta ya tiene nueva fecha confirmada - PrensaFútbol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE9GWFNwMVhJMEd2TE8tTmlZSWpFckZ4WV9IbGVqYVFHZEZ4MXp0WjZEbC01WnZOTG9Lbld6OHlCT1pzOWVMSlVNVFI4YXF6emp0cU5hYWM3U255YVdHWktEcnhOWXJKREVaQkNlT3dweHRudE8tN1J0Y1RVX3h6TFU?oc=5\" target=\"_blank\">U. de Chile vs. Antofagasta ya tiene nueva fecha confirmada</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PrensaFútbol</font>",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9GWFNwMVhJMEd2TE8tTmlZSWpFckZ4WV9IbGVqYVFHZEZ4MXp0WjZEbC01WnZOTG9Lbld6OHlCT1pzOWVMSlVNVFI4YXF6emp0cU5hYWM3U255YVdHWktEcnhOWXJKREVaQkNlT3dweHRudE8tN1J0Y1RVX3h6TFU?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 21:36:52 GMT",
-      "timestamp": "2026-10-23T21:36:52.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "PrensaFútbol",
-      "fuente_url_original": "https://www.prensafutbol.cl",
-      "fuente": "PrensaFútbol",
-      "fuente_host": "prensafutbol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 80,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:0h(+15)"
-      ]
-    },
-    {
-      "title": "Oficial: La final de la Copa de la Liga tiene fecha confirmada - TNT Sports",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPUkQtcXlYWmhxT2lBdW9WcXpaTWlPMzV2eVVna0dZQUxYb0JtS2YtUUpXWmhCRERMSVhaUVNwbTlRZ2VFNzBSc2ZZWXdONm0yTFR0Vk9uODJGUzZCWFF1TUpXLVpEcjM0V2VvMmlkaTA3b0ZkYU5WZGQxeDBlRVhCWC1iNk9kYThhaE5xcHdiVndRVGtDMlhOeTN3OVVLeHNyeFFLcFJlR3dCSkJKU3JWOUFFSHHSAbQBQVVfeXFMT1JELXF5WFpocU9pQXVvVnF6Wk1pTzM1dnlVZ2tHWUFMWG9CbUtmLVFKV1poQkRETElYWlFTcG05UWdlRTcwUnNmWVl3TjZtMkxUdFZPbjgyRlM2QlhRdU1KVy1aRHIzNFdlbzJpZGkwN29GZGFOVmRkMXgwZUVYQlgtYjZPZGE4YWhOcXB3YlZ3UVRrQzJYTn",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPUkQtcXlYWmhxT2lBdW9WcXpaTWlPMzV2eVVna0dZQUxYb0JtS2YtUUpXWmhCRERMSVhaUVNwbTlRZ2VFNzBSc2ZZWXdONm0yTFR0Vk9uODJGUzZCWFF1TUpXLVpEcjM0V2VvMmlkaTA3b0ZkYU5WZGQxeDBlRVhCWC1iNk9kYThhaE5xcHdiVndRVGtDMlhOeTN3OVVLeHNyeFFLcFJlR3dCSkJKU3JWOUFFSHHSAbQBQVVfeXFMT1JELXF5WFpocU9pQXVvVnF6Wk1pTzM1dnlVZ2tHWUFMWG9CbUtmLVFKV1poQkRETElYWlFTcG05UWdlRTcwUnNmWVl3TjZtMkxUdFZPbjgyRlM2QlhRdU1KVy1aRHIzNFdlbzJpZGkwN29GZGFOVmRkMXgwZUVYQlgtYjZPZGE4YWhOcXB3YlZ3UVRrQzJYTnkzdzlVS3hzcnhRS3BSZUd3QkpCSlNyVjlBRUhx?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 21:38:06 GMT",
-      "timestamp": "2026-10-23T21:38:06.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "TNT Sports",
-      "fuente_url_original": "https://tntsports.cl",
-      "fuente": "TNT Sports",
-      "fuente_host": "tntsports.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": null,
-      "viral_score": 95,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:4h(+10)",
-        "senal:\\b(oficial|confirmad(+12)",
-        "senal:\\b(clasific|eliminad(+8)"
-      ]
-    },
-    {
-      "title": "Colo Colo vs. Puerto Montt: el dilatado desenlace de la llave de cuartos de final de Copa Chile ya tiene programación - Primera B Chile",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxPa3p0dlNjQlJVVnduRVZQTWxzRlFDUzZ3OW1ZOGxiYkZSbURnSUFLdUt1Z0l2LTFsc3ZBTmdBYkdaYjYxRFg2YnZuakUwNGFUVEF5RUpFMmdrRWFSZ0VoR25kU0JpQldjdllCbE9QMHQ4c2x4VVZpN1kyUVltcEJWN0RqbW9EV2ZvSG5sQm42bkUtTFhxRWhZdjZCVjV3UmhTSUJMXzBPcG85eXREc2FMLU9tY0p6RlhsX1FVWXR4NzhCdktkY1FsMjYtemhULVdwZHZDdXNqRGM?oc=5\" target=\"_blank\">Colo Colo vs. Puerto Montt: el dilatado desenlace de la llave de cuartos de final de Copa Chile ya tiene programación</a>&nbsp;&nbsp;<fo",
-      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPa3p0dlNjQlJVVnduRVZQTWxzRlFDUzZ3OW1ZOGxiYkZSbURnSUFLdUt1Z0l2LTFsc3ZBTmdBYkdaYjYxRFg2YnZuakUwNGFUVEF5RUpFMmdrRWFSZ0VoR25kU0JpQldjdllCbE9QMHQ4c2x4VVZpN1kyUVltcEJWN0RqbW9EV2ZvSG5sQm42bkUtTFhxRWhZdjZCVjV3UmhTSUJMXzBPcG85eXREc2FMLU9tY0p6RlhsX1FVWXR4NzhCdktkY1FsMjYtemhULVdwZHZDdXNqRGM?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 21:48:59 GMT",
-      "timestamp": "2026-10-23T21:48:59.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Primera B Chile",
-      "fuente_url_original": "https://primerabchile.cl",
-      "fuente": "Primera B Chile",
-      "fuente_host": "primerabchile.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 81,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:70h(-10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "senal:\\b(clasific|eliminad(+8)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "En Colo Colo advierten por el efecto de los parones en el rendimiento del equipo - Dale Albo",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxOekplTDNwQlV4UnQ2M2tEY0ZzaldZZGxFMkJ4NUJhRlVYNy00a2R2SjRLTnI3WHdlVml5S1RlYXJ3VnRWMjN4UEZGUWVqbnJINXpZRkJONkYydVEwbmRKYlVlbkpKYmxmOHZ4aDZBYkdSeHpxTk1WcWsxWjlLbjkyTXprbDJrVWtLT3ZOWU05SF82RFZHbUpHS3F2cV9HRUxkbFhQTkpsOUhBeVh0b2fSAbMBQVVfeXFMT1Zya015SGt5NG1EaTE4elhoMDMwM3QyOS1BZndCVC1lLXVqOFBDUHZvWGhSc2hQV3FfTXRBek5mYlNRbUZkcFQ0ZlZfUE41elBIUHY1S1BUQzRhTGlEOEpMdFR0UEhNY3lxTVEwZ1BPVjZROGxWTGxkSUt5VDJ6aG0xZ1hQaENGYll1aHJRdUhVUmtnYi02M3U2bC1pam",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOekplTDNwQlV4UnQ2M2tEY0ZzaldZZGxFMkJ4NUJhRlVYNy00a2R2SjRLTnI3WHdlVml5S1RlYXJ3VnRWMjN4UEZGUWVqbnJINXpZRkJONkYydVEwbmRKYlVlbkpKYmxmOHZ4aDZBYkdSeHpxTk1WcWsxWjlLbjkyTXprbDJrVWtLT3ZOWU05SF82RFZHbUpHS3F2cV9HRUxkbFhQTkpsOUhBeVh0b2fSAbMBQVVfeXFMT1Zya015SGt5NG1EaTE4elhoMDMwM3QyOS1BZndCVC1lLXVqOFBDUHZvWGhSc2hQV3FfTXRBek5mYlNRbUZkcFQ0ZlZfUE41elBIUHY1S1BUQzRhTGlEOEpMdFR0UEhNY3lxTVEwZ1BPVjZROGxWTGxkSUt5VDJ6aG0xZ1hQaENGYll1aHJRdUhVUmtnYi02M3U2bC1pamlCbnU2WldkYkJoLW11V1ZqOU8tWnM?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 22:12:05 GMT",
-      "timestamp": "2026-10-23T22:12:05.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "Dale Albo",
-      "fuente_url_original": "https://dalealbo.cl",
-      "fuente": "Dale Albo",
-      "fuente_host": "dalealbo.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 88,
-      "categoria": "colo_colo",
-      "equipo_chile": "Colo-Colo",
-      "viral_score": 100,
-      "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:20h(+5)",
-        "gigante:colo colo(+10)"
-      ]
-    },
-    {
-      "title": "La ANFP remece la definición de la Primera B con una inesperada medida: impacto inmediato en San Luis - ADN Radio",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYnpScklVUHhFbTRxdnJVZ2JvUmRZWklraXJSam52MndUX1pzSkNoRnljb19od3NvUFdUc1otVGJNSW14Vk12X0wzT1MwSnpqLWQ3Xy14b082elRyclBJYW5ITDRINzBnVWZ5Z0pfM2R5R3JHaDBBQTdfUDVKQTYxTmtrYjNOTkRhZjVManNOYm1MVmxmYTU1c2U2WkRoZW9mem5UYmdyQ2dTOHNTNnpVZXkwLU5iRm43b0l3MUFrYTZaVklBMkI1V3Z3UWJSQmZYZWfSAeYBQVVfeXFMTUtvU3R6eVF1MUs3d1BfcjlkMlNzN2xyeXlYbG1Yb19vcUpzcGs2VURnbWJBdEtVVG45UXpkQmJOUVhCVlMxZDlaWEpSTy1EcnN4T2F6NTNsbUFqek1sYXpaU0FBOEdpTzkwTGd0RUZkM0xocmxtQ1VHRW",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYnpScklVUHhFbTRxdnJVZ2JvUmRZWklraXJSam52MndUX1pzSkNoRnljb19od3NvUFdUc1otVGJNSW14Vk12X0wzT1MwSnpqLWQ3Xy14b082elRyclBJYW5ITDRINzBnVWZ5Z0pfM2R5R3JHaDBBQTdfUDVKQTYxTmtrYjNOTkRhZjVManNOYm1MVmxmYTU1c2U2WkRoZW9mem5UYmdyQ2dTOHNTNnpVZXkwLU5iRm43b0l3MUFrYTZaVklBMkI1V3Z3UWJSQmZYZWfSAeYBQVVfeXFMTUtvU3R6eVF1MUs3d1BfcjlkMlNzN2xyeXlYbG1Yb19vcUpzcGs2VURnbWJBdEtVVG45UXpkQmJOUVhCVlMxZDlaWEpSTy1EcnN4T2F6NTNsbUFqek1sYXpaU0FBOEdpTzkwTGd0RUZkM0xocmxtQ1VHRWlNRVBsdkpWREFHUm9zY285QzdjTnRnRzJVMFQyempOeGl1Sk5LSzRMejZ2WWNheGFtOEltU3RGYjFCekdtQ1h5bFYzNVVZNUhmQ0Q4VFphN1Fja09oSHpISUQ3RFZfQ2VYYVE4QllOeXBMVnc?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 22:12:35 GMT",
-      "timestamp": "2026-10-23T22:12:35.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "ADN Radio",
-      "fuente_url_original": "https://www.adnradio.cl",
-      "fuente": "ADN Radio",
-      "fuente_host": "adnradio.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 86,
-      "categoria": "chile",
-      "equipo_chile": "San Luis",
-      "viral_score": 89,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:3h(+10)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "senal:\\b(ultima hora|sorpr(+6)"
-      ]
-    },
-    {
-      "title": "Mientras Gago elogia cancha de Rancagua, U de Chile confirma otro estadio vs Antofagasta en Copa Chile - RedGol",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOQWZWaG1lT2FmLVkwNGxXV05nRDl5eHFvTUJrV1kwc1ZaN1FDQXp0QVFYcU9VWFptUzFSNTZXZkZRVVhha2tmVWY0aVZNeUtfU3ZJUk9ZWHhiMlgtb1V4UlpZVnR6Tm5lRWdhQlBDQ0EwNGp6X2ZNbWdkcVppcFlOOUlmQkhINFpkT3dRTmlCNjBUSTlkOC1FYUdQd2xrRmxYbnVEQVczSjFTZVVLUHRnSEE1R3BhTWJydHZ4RVRIcXhpTWtDeUlz0gHMAUFVX3lxTE5PX0o4MGhfSldLcFFfaF9LT1Y0WUd2WDVULUZxcHZCeFZMOUFlTWg2eUJSY0J2dy1OS2l0TW5Cajdsc3M4Q3M2UTRzSzVKbmlOZ0JtWWs4TmRhNUNLVUdFWUc4UGNqaXNYcVFxSDBLYjZpTUEzUEVKbHVKelNxQlFobXdRZG",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQWZWaG1lT2FmLVkwNGxXV05nRDl5eHFvTUJrV1kwc1ZaN1FDQXp0QVFYcU9VWFptUzFSNTZXZkZRVVhha2tmVWY0aVZNeUtfU3ZJUk9ZWHhiMlgtb1V4UlpZVnR6Tm5lRWdhQlBDQ0EwNGp6X2ZNbWdkcVppcFlOOUlmQkhINFpkT3dRTmlCNjBUSTlkOC1FYUdQd2xrRmxYbnVEQVczSjFTZVVLUHRnSEE1R3BhTWJydHZ4RVRIcXhpTWtDeUlz0gHMAUFVX3lxTE5PX0o4MGhfSldLcFFfaF9LT1Y0WUd2WDVULUZxcHZCeFZMOUFlTWg2eUJSY0J2dy1OS2l0TW5Cajdsc3M4Q3M2UTRzSzVKbmlOZ0JtWWs4TmRhNUNLVUdFWUc4UGNqaXNYcVFxSDBLYjZpTUEzUEVKbHVKelNxQlFobXdRZG9qRThndVc0dmtrOFhTZTAzanJ6QXNDaVRkUHM5WXBORDRhYkJweVFlZTJCZ1k1d01ZbS1TbjQxbmxod1R1RFhzWnpkNThQMA?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 22:24:02 GMT",
-      "timestamp": "2026-10-23T22:24:02.000Z",
-      "fecha_publicacion_verificada": true,
-      "fuente_original": "RedGol",
-      "fuente_url_original": "https://redgol.cl",
-      "fuente": "RedGol",
-      "fuente_host": "redgol.cl",
-      "categoria_feed": "chile",
-      "prioridad_fuente": 88,
-      "categoria": "chile",
-      "equipo_chile": "Universidad de Chile",
-      "viral_score": 98,
-      "razones": [
-        "categoria:chile(+40)",
-        "frescura:3h(+15)",
-        "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
-        "gigante:u de chile(+10)"
-      ]
-    },
     {
       "title": "Arquero de Colo Colo asistirá a ceremonia del Balón de Oro en Londres - laconexion.cl",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPXzFaYlJ1aDVXaVd4Y2YwQnc1WTZuc2h4b3F1dV90dEFVeFRDR0tBaWI0bTR1Y3pjUmZmN2NJR0ZGTHE2bzdtWjJyNkdHQ2d5SmNYSWN4cks3MkdPaGVua0FVSS1rakFiUUdVajk2NXQ1MUEtcjBDVzVPOEozSlhzbmNhcjI0S2I5eFF6VDdSY01wSmZqLU04?oc=5\" target=\"_blank\">Arquero de Colo Colo asistirá a ceremonia del Balón de Oro en Londres</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">laconexion.cl</font>",
@@ -20366,10 +19966,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Universidad Católica",
-      "viral_score": 77,
+      "viral_score": 57,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:8h(+10)",
+        "frescura:60h(-10)",
         "gigante:universidad catolica(+10)",
         "penal(-8)"
       ],
@@ -20589,10 +20189,10 @@
       "nivel_fuente": 1,
       "categoria": "tnt_sports",
       "equipo_chile": "Universidad Católica",
-      "viral_score": 79,
+      "viral_score": 59,
       "razones": [
         "categoria:tnt_sports(+42)",
-        "frescura:6h(+10)",
+        "frescura:58h(-10)",
         "gigante:universidad catolica(+10)",
         "penal(-8)"
       ],
@@ -20730,6 +20330,38 @@
       "article_complete": true,
       "article_fetch_status": "complete",
       "article_fetch_error": null
+    },
+    {
+      "title": "Hasta que se te dio, Tano: El primer título de Ortiz como DT - ESPN Argentina",
+      "description": "Hasta que se te dio, Tano: El primer título de Ortiz como DT ESPN Argentina",
+      "link": "https://www.espn.com.ar/futbol/chile/nota/_/id/17494288/fernando-ortiz-dt-colo-colo-primer-titulo-como-dt",
+      "pubDate": "2026-11-08T16:34:00.000Z",
+      "timestamp": "2026-11-08T16:34:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ESPN Argentina",
+      "fuente_url_original": "https://www.espn.com.ar",
+      "fuente": "ESPN Argentina",
+      "fuente_host": "espn.com.ar",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 104,
+      "nivel_fuente": 2,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 63,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:55h(-10)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ],
+      "article_title": "Hasta que se te dio, Tano: El primer título de Ortiz como DT - ESPN Argentina",
+      "article_description": "Hasta que se te dio, Tano: El primer título de Ortiz como DT ESPN Argentina",
+      "article_body": "",
+      "article_chars": 0,
+      "fecha_publicacion_articulo": null,
+      "fecha_publicacion_fuente": "2026-11-08T16:34:00.000Z",
+      "article_complete": false,
+      "article_fetch_status": "extraction_empty",
+      "article_fetch_error": "La página respondió, pero no se encontró el cuerpo del artículo"
     },
     {
       "title": "Universidad de Chile vs. Cobresal EN VIVO: Sigue el minuto a minuto del partido clave por la Liga de Primera - TVN",
@@ -20955,6 +20587,38 @@
       "article_chars": 0,
       "article_fetch_status": "blocked",
       "article_fetch_error": "HTTP 403"
+    },
+    {
+      "title": "Tabla de posiciones Campeonato Nacional 2026 actualizada hoy, 8 de noviembre: fecha 27, fútbol chileno - AS Chile",
+      "description": "Tabla de posiciones Campeonato Nacional 2026 actualizada hoy, 8 de noviembre: fecha 27, fútbol chileno AS Chile",
+      "link": "https://chile.as.com/futbol/tabla-de-posiciones-campeonato-nacional-2026-actualizada-hoy-8-de-noviembre-fecha-27-futbol-chileno-f202611-n/",
+      "pubDate": "2026-11-08T17:34:07.000Z",
+      "timestamp": "2026-11-08T17:34:07.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "AS Chile",
+      "fuente_url_original": "https://chile.as.com",
+      "fuente": "AS Chile",
+      "fuente_host": "chile.as.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 63,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:54h(-10)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ],
+      "article_title": "Tabla de posiciones Campeonato Nacional 2026 actualizada hoy, 8 de noviembre: fecha 27, fútbol chileno",
+      "article_description": "Colo Colo conquistó su estrella 35 tras vencer a Ñublense en Chillán. Universidad de Chile también ganó y recuperó el segundo puesto de la Liga de Primera.",
+      "article_body": "Colo Colo conquistó su estrella 35 tras vencer a Ñublense en Chillán. Universidad de Chile también ganó y recuperó el segundo puesto de la Liga de Primera. La fecha 27 del Campeonato Nacional 2026 dejó definida la lucha por el título. Colo Colo derrotó 2-1 a Ñublense y llegó a 61 puntos, una cifra inalcanzable para sus perseguidores cuando todavía quedan tres fechas por disputar. El Cacique consiguió así su estrella número 35. Universidad de Chile venció 2-1 a Cobresal y alcanzó los 51 puntos, recuperando el segundo lugar. Universidad Católica , que goleó 3-0 a Deportes Limache , quedó tercera con 49 unidades. Los dos equipos universitarios mantienen ahora la disputa por el segundo cupo chileno a la Copa Libertadores. En la pelea por los puestos internacionales, Deportes Limache y Everton siguen igualados con 40 puntos, aunque Limache conserva el cuarto lugar por sus mejores números. Coquimbo Unido , Palestino y Deportes Concepción tienen 38 unidades, mientras Deportes La Serena llegó a 37 después de vencer a los árabes. En la zona baja, Unión La Calera derrotó 1-0 a Huachipato y llegó a 24 puntos, por lo que salió del último lugar. Universidad de Concepción escaló a la decimoquinta posición con 26 unidades, luego de derrotar a O’Higgins por 3-2, en el último partido de la fecha 27. Tabla de posiciones de la Liga de Primera 2026 1° al 3°: clasificación a Copa Libertadores 2027. 4° al 6°: clasificación a Copa Sudamericana 2027. ¡Lleva el deporte contigo! Descarga la App de AS para recibir alertas al instante y configura en MiZona qué quieres leer, sigue a tus equipos y consulta sus partidos. Descárgala aquí. ¿Además buscas licenciar contenido? Haz clic aquí",
+      "article_chars": 1684,
+      "fecha_publicacion_articulo": "2026-11-08T17:34:07.000Z",
+      "fecha_publicacion_fuente": "2026-11-08T17:34:07.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
     },
     {
       "title": "Tabla: La UC hace la tarea goleando a Limache y le mete presión a La U por el Chile 2 - TNT Sports",
@@ -21218,10 +20882,10 @@
       "nivel_fuente": 2,
       "categoria": "chile",
       "equipo_chile": null,
-      "viral_score": 65,
+      "viral_score": 55,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:47h(+0)"
+        "frescura:52h(-10)"
       ]
     },
     {
@@ -21290,10 +20954,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Colo-Colo",
-      "viral_score": 91,
+      "viral_score": 81,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:47h(+0)",
+        "frescura:52h(-10)",
         "senal:\\d+\\s*[-x]\\s*\\d+(+8)",
         "senal:\\b(clasific|eliminad(+8)",
         "gigante:colo colo(+10)"
@@ -21423,10 +21087,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Colo-Colo",
-      "viral_score": 73,
+      "viral_score": 63,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:47h(+0)",
+        "frescura:51h(-10)",
         "senal:\\b(clasific|eliminad(+8)"
       ]
     },
@@ -21446,12 +21110,43 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Colo-Colo",
-      "viral_score": 75,
+      "viral_score": 65,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:46h(+0)",
+        "frescura:51h(-10)",
         "gigante:colo colo(+10)"
       ]
+    },
+    {
+      "title": "Liga de Primera División de Chile 2026: Resultados, partidos, calendario, posiciones y equipos del Torneo Nacional - Teletrece",
+      "description": "Liga de Primera División de Chile 2026: Resultados, partidos, calendario, posiciones y equipos del Torneo Nacional Teletrece",
+      "link": "https://www.t13.cl/noticia/deportes13/liga-primera-division-chile-2026-partidos-equipos-calendario-posiciones-futbol",
+      "pubDate": "2026-11-08T20:22:00.000Z",
+      "timestamp": "2026-11-08T20:22:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Teletrece",
+      "fuente_url_original": "https://www.t13.cl",
+      "fuente": "Teletrece",
+      "fuente_host": "t13.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 55,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:51h(-10)"
+      ],
+      "article_title": "Liga de Primera División de Chile 2026: Resultados, partidos, calendario, posiciones y equipos del Torneo Nacional",
+      "article_description": "La Primera División comenzó su desarrollo el primer fin de semana de febrero y se extenderá hasta diciembre. Coquimbo Unido es el defensor de la corona.",
+      "article_body": "La edición número 110 de la Liga de Primera División de Chile se lleva a cabo a lo largo del 2026, que ofrece fútbol chileno de enero a diciembre. El Campeonato lo defiende Coquimbo Unido , que además de monarca del 2025 es Chile 1 en la Copa Libertadores de esta temporada. Además, los grandes clubes de Santiago buscan mejorar el rendimiento de su última campaña. Mientras a la Universidad de Chile solo le alcanzó para ir a la Copa Sudamericana como cuarta clasificada, el Colo-Colo de Fernando Ortiz ni siquiera jugará torneos internacionales y su foco es local. En el caso de la Universidad Católica , apunta a volver a ganar el título tras un segundo puesto. La Supercopa y la Copa de la Liga son los otros certámenes que, en paralelo, involucran a los equipos de la división de honor. Así es el fixture del campeonato: cuando la ANFP oficialice horarios de los siguientes partidos, aparecerán a continuación. Inscríbete en nuestra lista de correo para recibir gratis las noticias más importantes del día, con la confianza de Teletrece.",
+      "article_chars": 1042,
+      "fecha_publicacion_articulo": "2026-11-08T20:22:00.000Z",
+      "fecha_publicacion_fuente": "2026-11-08T20:22:00.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
     },
     {
       "title": "Así va la TABLA DE POSICIONES de la Liga de Primera 2026 - Teletrece",
@@ -21517,15 +21212,15 @@
       "fuente_url_original": "https://www.campeonatochileno.cl",
       "fuente": "Campeonato Chileno",
       "fuente_host": "campeonatochileno.cl",
-      "categoria_feed": "colo_colo",
-      "prioridad_fuente": 70,
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
       "nivel_fuente": 3,
-      "categoria": "colo_colo",
+      "categoria": "chile",
       "equipo_chile": "Colo-Colo",
-      "viral_score": 93,
+      "viral_score": 63,
       "razones": [
-        "categoria:colo_colo(+60)",
-        "frescura:45h(+0)",
+        "categoria:chile(+40)",
+        "frescura:49h(-10)",
         "senal:\\b(clasific|eliminad(+8)"
       ]
     },
@@ -21569,10 +21264,10 @@
       "nivel_fuente": 2,
       "categoria": "chile",
       "equipo_chile": null,
-      "viral_score": 65,
+      "viral_score": 55,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:44h(+0)"
+        "frescura:49h(-10)"
       ],
       "article_title": "Vozinha: \"Fallé en algunos momentos, pero eso es parte del fútbol\" - ESPN Argentina",
       "article_description": "Vozinha: \"Fallé en algunos momentos, pero eso es parte del fútbol\" ESPN Argentina",
@@ -21605,6 +21300,61 @@
         "categoria:chile(+40)",
         "frescura:43h(+0)",
         "gigante:colo colo(+10)"
+      ]
+    },
+    {
+      "title": "De Paul alaba a Vozinha y expresa su intención de continuar en Colo Colo: “¿Cómo no voy a tener ganas de seguir en un club así?\" - ADN Radio",
+      "description": "De Paul alaba a Vozinha y expresa su intención de continuar en Colo Colo: “¿Cómo no voy a tener ganas de seguir en un club así?\" ADN Radio",
+      "link": "https://www.adnradio.cl/2026/11/08/de-paul-alaba-a-vozinha-y-expresa-su-intencion-de-continuar-en-colo-colo-como-no-voy-a-tener-ganas-de-seguir-en-un-club-asi/",
+      "pubDate": "2026-11-08T23:55:48.000Z",
+      "timestamp": "2026-11-08T23:55:48.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ADN Radio",
+      "fuente_url_original": "https://www.adnradio.cl",
+      "fuente": "ADN Radio",
+      "fuente_host": "adnradio.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:48h(+0)",
+        "gigante:colo colo(+10)"
+      ],
+      "article_title": "De Paul alaba a Vozinha y expresa su intención de continuar en Colo Colo: “¿Cómo no voy a tener ganas de seguir en un club así?\"",
+      "article_description": "En conversación con ADN Deportes, el “Tuto” recalcó la idea de mantenerse compitiendo por un puesto tras ceder la titularidad por una grave lesión.",
+      "article_body": "En conversación con ADN Deportes, el “Tuto” recalcó la idea de mantenerse compitiendo por un puesto tras ceder la titularidad por una grave lesión. El código iframe se ha copiado en el portapapeles Hasta abril, el portero titular de Colo Colo era, sin dudas, Fernando de Paul. Sin embargo, una lesión de rodilla le hizo ceder el puesto al punto de ser testigo desde las tribunas del partido en que el club concretó la vuelta olímpica en la Liga de Primera. En diálogo con ADN Deportes en Chillán, el “Tuto” afrontó de manera muy madura la complicada temporada que ha debido tener. “Jugador grande, pero referente no sé. Me siento bien porque me llevo muy bien con el grupo. Estoy contento, tranquilo, sé que me tocó difícil. Fue un año complicado, arranqué de buena manera, siendo capitán también y el equipo estaba encontrando resultados, pero me tocó la lesión. Es parte de esto, le pasa a muchos jugadores. No me sentí solo, eso me dio mucha fuerza. Trato de disfrutar el día a día. Uno quiere jugar siempre, pero trato de aportar desde donde me toque”, dijo tras sumar su cuarto trofeo con el “Cacique”. “Cada título es especial. Es muy difícil ganar un torneo, a Colo Colo se le exige más. Tuvimos una diferencia importante de puntos, se acortó en un momento, pero nunca dudamos de lo que podíamos dar”, enfatizó. Más allá de apenas haber tenido 12 partidos en el año, aplaudió el rendimiento de quien lo sustituyó durante gran parte de su lesión, Gabriel Maureira. “Acá hay mucha competencia . Cuando llegué me tocó pelear con Brayan por el puesto. Ahora se amplió un poquito esa competencia, es bueno para el equipo. Se demostró que Maureira estaba preparado, tuvo 20 partidos en el primer equipo, muchos no lo valoran. Con él en el arco, el equipo se mantuvo en el primer lugar. Y es díficil que salga un arquero de divisiones inferiores. Lo tomo como competencia. Es normal”, reflexionó, junto con alabar la llegada al club de Vozinha. “ Aporta experiencia, vivió cosas muy importantes. En el arco de Colo Colo repercute todo y en el Mundial lo miraba todo el planeta . Juega estos partidos con más tranquilidad, pareciera, aporta mucho desde lo humano también. Tiene una humildad que se admira, agradecemos que haya llegado para generar más competencia. No me sorprendió que viniera, iban a traer a alguien, era normal y llegó a un equipo muy importante , que genera mucho”, comentó Fernando de Paul, explicitando su intención de seguir en el equipo. “T engo contrato vigente, quiero terminar el año de la mejor manera y conseguir la Copa Chile. Podemos ganar dos títulos en la temporada. ¿Cómo no voy a tener ganas de seguir en un club así? Después uno puede tomar otra decisión o el club, buscando el beneficio para ambos\", cerró el jugador de 35 años en ADN Deportes.",
+      "article_chars": 2780,
+      "fecha_publicacion_articulo": "2026-11-08T23:55:48.000Z",
+      "fecha_publicacion_fuente": "2026-11-08T23:55:48.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
+      "title": "¡Vuelco en Segunda! La liguilla de ascenso a Primera B tiene un nuevo líder en la recta final de competencia - Primera B Chile",
+      "description": "¡Vuelco en Segunda! La liguilla de ascenso a Primera B tiene un nuevo líder en la recta final de competencia Primera B Chile",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdEN4bGxTM3AwYkJ0azhrQlhjM1B5Qm5UaGN4SnJTc2k3NVZyVWlqMFNNZTFaSlJaUWx3d1lSQnVmUUdsTVV6MVpNSmxNTjU1REFyQ0hSWEt0R3RFaWs5c1V2TTNuM1JWM1M1VEE1QzFvNmhsb3cyc3BxU0d3MmQtZW50RDRPMDhsVnVtMlpQNDBUSzdqQ3ZQMnd3cmFZTThXY0E?oc=5",
+      "pubDate": "Mon, 09 Nov 2026 00:12:29 GMT",
+      "timestamp": "2026-11-09T00:12:29.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Primera B Chile",
+      "fuente_url_original": "https://primerabchile.cl",
+      "fuente": "Primera B Chile",
+      "fuente_host": "primerabchile.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 80,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 73,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:47h(+0)",
+        "senal:\\b(clasific|eliminad(+8)"
       ]
     },
     {
@@ -21651,6 +21401,28 @@
         "categoria:chile(+40)",
         "frescura:41h(+0)",
         "gigante:la roja(+10)"
+      ]
+    },
+    {
+      "title": "Santiago Morning se complica y el fantasma de un segundo descenso consecutivo toma fuerza - En Cancha",
+      "description": "Santiago Morning se complica y el fantasma de un segundo descenso consecutivo toma fuerza En Cancha",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPU0ZXWHRwemx4eDg3MDZsblhKV1pmZ09mZGJIcXdwRjNNcDZ0NWVUb3JFMjZteHRwNkk5WjYxTmdHRTI1RlNvMUk1aEN1YXJDdXVRc1c5ZG5FaWtmb3BacEI0R0VHOW9oUW9zaDJqY2FRLTZLVEhUQUtDc3RCU1RQSUp0ZnJWeXJIMGU1NE9Wb25IZTBPcVJMdE5vNGM1bjQ0M2NjREFyWkFnOGJZa0JLOWwycnU4NEctMy11eDc4XzR2ejhNVkU5SDlhZHlMem94aFFSeFJfc0R1QmRNbmo0dDFlNDc?oc=5",
+      "pubDate": "Mon, 09 Nov 2026 01:37:25 GMT",
+      "timestamp": "2026-11-09T01:37:25.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "En Cancha",
+      "fuente_url_original": "https://www.encancha.cl",
+      "fuente": "En Cancha",
+      "fuente_host": "encancha.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 80,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Santiago Morning",
+      "viral_score": 65,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:46h(+0)"
       ]
     },
     {
@@ -22075,10 +21847,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Universidad Católica",
-      "viral_score": 62,
+      "viral_score": 57,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:24h(+5)",
+        "frescura:28h(+0)",
         "penal(-8)"
       ]
     },
@@ -22122,10 +21894,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Universidad de Chile",
-      "viral_score": 80,
+      "viral_score": 75,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:23h(+5)",
+        "frescura:28h(+0)",
         "gigante:colo colo(+10)"
       ]
     },
@@ -22191,10 +21963,10 @@
       "nivel_fuente": 1,
       "categoria": "tnt_sports",
       "equipo_chile": "Universidad Católica",
-      "viral_score": 82,
+      "viral_score": 77,
       "razones": [
         "categoria:tnt_sports(+42)",
-        "frescura:22h(+5)",
+        "frescura:27h(+0)",
         "gigante:colo colo(+10)"
       ],
       "article_title": "El inicio de la planificación de Universidad Católica de cara a El Clásico 189 ante Colo Colo - TNT Sports",
@@ -22284,6 +22056,60 @@
       ]
     },
     {
+      "title": "Resultados y resumen de la fecha 27 en la Liga de Primera - Pasión de Hincha",
+      "description": "Resultados y resumen de la fecha 27 en la Liga de Primera Pasión de Hincha",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPaUVLUFlvNlkyLWIybVBqbWtFbHZHb3lIRS1nUjNuVmJNeFEzMVpjbW1Bcld4ek1LUEl1blQzcHhROFhnLXpDQ1FITkFtWk9oWHFybkxTSmZ6eUUtTmVsRUZfdnFNWkEwcTV1d205TU5rakhKMEpqX29XZlFZM3JWTVZFX092b1pfOFNlVQ?oc=5",
+      "pubDate": "Tue, 10 Nov 2026 01:40:01 GMT",
+      "timestamp": "2026-11-10T01:40:01.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Pasión de Hincha",
+      "fuente_url_original": "https://pasiondehincha.cl",
+      "fuente": "Pasión de Hincha",
+      "fuente_host": "pasiondehincha.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 70,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:22h(+5)"
+      ]
+    },
+    {
+      "title": "Mosa condiciona renovación de Vidal a definición del técnico en Colo Colo - laconexion.cl",
+      "description": "Mosa condiciona renovación de Vidal a definición del técnico en Colo Colo laconexion.cl",
+      "link": "https://laconexion.cl/mosa-condiciona-renovacion-de-vidal-a-definicion-del-tecnico-en-colo-colo/",
+      "pubDate": "2026-11-10T10:00:59.000Z",
+      "timestamp": "2026-11-10T10:00:59.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "laconexion.cl",
+      "fuente_url_original": "https://laconexion.cl",
+      "fuente": "laconexion.cl",
+      "fuente_host": "laconexion.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:13h(+5)",
+        "gigante:colo colo(+10)"
+      ],
+      "article_title": "Mosa condiciona renovación de Vidal a definición del técnico en Colo Colo - La Conexión",
+      "article_description": "El presidente de Blanco y Negro señaló que primero se resolverá la continuidad de Fernando Ortiz antes de abordar el futuro del mediocampista y otros jugadores del plantel albo.",
+      "article_body": "El presidente de Blanco y Negro señaló que primero se resolverá la continuidad de Fernando Ortiz antes de abordar el futuro del mediocampista y otros jugadores del plantel albo. El presidente de Blanco y Negro, Aníbal Mosa, abordó la situación contractual de Arturo Vidal tras la obtención del título 35 de Colo Colo. El dirigente indicó que la renovación del mediocampista será analizada después de definir la continuidad del técnico Fernando Ortiz en el banco albo. «Ustedes están diciendo que Vidal no sigue… nos vamos a sentar con el técnico y después que termine de sellarse la continuidad del técnico, nos sentaremos con la gente técnica y solucionaremos cuál va a ser el panorama para el año 2027», declaró Mosa en la previa de la celebración en el Estadio Monumental, según consignó La Tercera. El presidente del club señaló que el proceso de planificación seguirá un orden establecido. Según explicó, primero se conversará con Ortiz sobre su permanencia, luego se definirá el plantel según las necesidades del entrenador, y posteriormente se revisarán los casos de jugadores con contratos por vencer, incluido el del capitán. Mosa también se refirió al rol del mediocampista dentro del equipo. «Arturo es un tremendo emblema, pero no juega solo. Esta pega la han sacado entre todos adelante. Hay un plantel de 24, 25 jugadores, más 5 o 6 juveniles que alternan», sostuvo el dirigente, quien además mencionó que otros futbolistas como Madrid, Pastrana y Sosa también forman parte del proceso. Respecto a los objetivos para 2027, el presidente señaló que busca un equipo competitivo para las competiciones internacionales, aunque advirtió sobre la necesidad de mantener una administración responsable de los recursos, según La Tercera. Equipo de redacción de La Conexión. Notas de agencia y fuentes oficiales revisadas por el equipo editorial, con atribución a la fuente original. Tu dirección de correo electrónico no será publicada. Los campos obligatorios están marcados con * Los comentarios se filtran automáticamente para mantener un espacio de respeto. Guarda mi nombre, correo electrónico y web en este navegador para la próxima vez que comente. He leído y acepto la política de privacidad . Guardamos tu nombre, correo e IP solo para moderar el comentario.",
+      "article_chars": 2272,
+      "fecha_publicacion_articulo": "2026-11-10T10:00:59.000Z",
+      "fecha_publicacion_fuente": "2026-11-10T10:05:34.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
       "title": "Mosa condiciona renovación de Vidal a definición del técnico en Colo Colo - laconexion.cl",
       "description": "Mosa condiciona renovación de Vidal a definición del técnico en Colo Colo laconexion.cl",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPcmoxVFBGZm5hNDRZQTVYUGFNNG40bWVSQWY2WmdYN3JmeTV5YkFwRG5HeTduNTVIZUdxcE5JTk90cVRzRlpsRUZxeHg3a01IZ1YtR3RBQjl6NlpnRDdITmhhRi1yY2NlSTJHU19jQWNKYjNBOHJCaldFOGtuRy1qQ2dRTWR6eXdZYm9Qempkb25CLUs5bkt5R29GWUI?oc=5",
@@ -22329,6 +22155,39 @@
         "senal:\\b\\d+\\s*(goles|millo(+6)",
         "senal:\\b(clasific|eliminad(+8)"
       ]
+    },
+    {
+      "title": "10 años sin gritar campeón: la negativa racha de la U ya es una de las peores en la historia del fútbol chileno - La Tercera",
+      "description": "10 años sin gritar campeón: la negativa racha de la U ya es una de las peores en la historia del fútbol chileno La Tercera",
+      "link": "https://www.latercera.com/el-deportivo/noticia/10-anos-sin-gritar-campeon-la-negativa-racha-de-la-u-ya-es-una-de-las-peores-en-la-historia-del-futbol-chileno/",
+      "pubDate": "2026-11-10T10:13:19.306Z",
+      "timestamp": "2026-11-10T10:13:19.306Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "La Tercera",
+      "fuente_url_original": "https://www.latercera.com",
+      "fuente": "La Tercera",
+      "fuente_host": "latercera.com",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 90,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 84,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:13h(+5)",
+        "senal:\\b\\d+\\s*(goles|millo(+6)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ],
+      "article_title": "10 años sin gritar campeón: la negativa racha de la U ya es una de las peores en la historia del fútbol chileno - La Tercera",
+      "article_description": "Con la corona perdida, los azules arrastran diez años (contando 2027) sin levantar la copa del campeonato, marca que resalta entre las postergaciones que también incluyen a Universidad Católica y Colo Colo.",
+      "article_body": "A falta de solo tres fechas para el final de la Liga de Primera, Colo Colo consiguió su trigésima quinta estrella. Pero alegría de los albos contrasta fuertemente con el talante de Universidad de Chile , equipo que, tras perder en el Claro Arena ante la UC , se despidió del título. Una ausencia del primer puesto del podio que ya suma una década, si es que los universitarios azules consiguen volver al título en el campeonato nacional el próximo, cuando se cumpla una década, en los 100 años del club deportivo. Sequía que se cuela entre una de las más extensas entre las tres más importantes de la actividad nacional, los cuales acumulan 68 de las 109 coronas que se han disputado en la historia. Es decir, entre esas instituciones acaparan más del 62% del total. Tendencia que también dominan el panorama en la historia reciente, al menos en las veinte versiones anteriores del campeonato nacional. El palmarés de primeros lugares advierte que, en solo seis de esa veintena de títulos, la copa no quedó en las vitrinas de las tres instituciones más importantes de Santiago. El Clausura 2012 quedó en las vitrinas de Huachipato, mientras que la competición de Transición 2013, el honor le correspondió a Unión Española. El triunvirato lo completó O’Higgins de Rancagua, escuadra que consiguió su única estrella en el Apertura 2013. Un par de años más tarde, en el primer semestre de 2015, Cobresal igualó la marca de los rancagüinos después de levantar su primer trofeo en campeonatos nacionales. Desde ese entonces, tuvo que pasar otra decena de ediciones para ver a los acereros como primeros. El año pasado, Coquimbo Unido, también se estrenó como campeón tras sumar la primera estrella de esa historia. Pero la actual frustración de la U ya toma ribetes históricos. El cuadro que hoy dirige Fernando Gago acumula nueve años sin levantar el trofeo como el mejor equipo de Chile . En caso de que lo hagan en 2027, harán el corte en una década, ausencia que pone a los azules en las peores rachas históricas entre los de Macul y las universidades. La ausencia más extensa como detentor de la corona entre esas instituciones, justamente, corresponde a la U, club que demoró 25 años en regresar al oro, desde 1969 hasta 1994 , cuando el equipo de Marcelo Salas cortó la racha. La segunda sequía más extensa también pertenece a los estudiantiles laicos, cuando estuvo en seco 19 años, entre 1940 y 1959. La tercera marca de postergaciones pertenece a la UC, con 18 temporadas entre 1966 y 1984. Los cruzados también ostentan la cuarta posición en este particular ranking, después de esperar una docena de años desde su debut profesional en 1937 hasta su primera estrella, en el ’49. En ese escenario, el actual momento de la U iguala el quinto puesto con la década de complicaciones que tuvo la franja entre 1987 y el Apertura de 1997. En el universo de Colo Colo, su ausencia más larga en lo más alto del podio se corta en siete años consecutivos. Crisis que se extendió solamente en dos procesos: desde 1963 a 1970 y del ’72 al ’79. Para comentar este artículo debes ser suscriptor. Algunos leen, otros se informan. Aprovecha esta oferta única.",
+      "article_chars": 3147,
+      "fecha_publicacion_articulo": "2026-11-10T10:13:19.306Z",
+      "fecha_publicacion_fuente": "2026-11-10T10:13:19.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
     },
     {
       "title": "Con Arturo Vidal a la cabeza: los 5 jugadores que quiere renovar Colo Colo para la temporada 2027 - RedGol",
@@ -22622,6 +22481,38 @@
       ]
     },
     {
+      "title": "La U se juega el Chile 2 en tres finales: dos visitas complican el camino azul - RedGol",
+      "description": "La U se juega el Chile 2 en tres finales: dos visitas complican el camino azul RedGol",
+      "link": "https://redgol.cl/udechile/la-u-se-juega-el-chile-2-en-tres-finales-dos-visitas-complican-el-camino-azul",
+      "pubDate": "2026-11-10T13:51:26.000Z",
+      "timestamp": "2026-11-10T13:51:26.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 83,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:10h(+10)",
+        "senal:\\b(clasific|eliminad(+8)"
+      ],
+      "article_title": "Dos visitas de riesgo y una final en casa: el complicado cierre de temporada que espera a la U",
+      "article_description": "La U busca asegurar un cupo directo a la Libertadores en las últimas fechas, con O'Higgins y Deportes Concepción como rivales clave.",
+      "article_body": "Universidad de Chile entra en la recta final de la Liga de Primera 2026 con un objetivo clave: quedarse con el Chile 2 y asegurar su clasificación directa a la fase de grupos de la Copa Libertadores 2027. Los Azules ya no tienen opciones de pelear por el título, pero se mantienen en pelea con U. Católica por ese boleto internacional. Para conseguirlo, los dirigidos por Fernando Gago tendrán tres partidos decisivos por delante. La U también podría disputar las semifinales de Copa Chile, con Coquimbo Unido como posible rival. O’Higgins y Deportes Concepción, los grandes desafíos de La U El calendario no será fácil, Según detalló el periodista Marcelo Díaz en el programa Pelota Parada de TNT Sports, el conjunto azul deberá afrontar dos visitas especialmente complicadas. El primer desafío será O’Higgins en el Estadio El Teniente de Rancagua. La U tendrá poco apoyo de sus hinchas en las tribunas, mientras que el equipo local contará con el respaldo de su público. Después vendrá la visita a Deportes Concepción, que buscará meterse en puestos de clasificación a torneos internacionales. El último compromiso será ante Unión La Calera, que podría llegar todavía peleando por evitar el descenso. La Copa Chile también aprieta el calendario A esto se suma la posibilidad de disputar las semifinales de Copa Chile, una competencia que también puede exigir físicamente al plantel universitario. Marcelo Díaz apuntó que el rival podría ser Coquimbo Unido, que cuenta con ventaja en su llave, aunque aclaró que todavía no hay nada definido. “Son los tres desafíos que le van quedando a Universidad de Chile”, resumió el periodista, quien también advirtió sobre el desgaste que pueden generar los compromisos ante el cuadro pirata. Así, la U afronta semanas determinantes: necesita sumar en el campeonato para quedarse con el Chile 2, mientras intenta avanzar en Copa Chile y cerrar la temporada con un premio internacional. En resumen… Universidad de Chile tiene tres partidos pendientes en la Liga de Primera 2026.Sus visitas serán ante O’Higgins y Deportes Concepción; el último duelo será frente a Unión La Calera.La U también podría disputar las semifinales de Copa Chile, con Coquimbo Unido como posible rival.",
+      "article_chars": 2217,
+      "fecha_publicacion_articulo": "2026-11-10T13:51:26.000Z",
+      "fecha_publicacion_fuente": "2026-11-10T13:51:26.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
       "title": "Durísimo: un exjugador de Boca contó cómo era el vestuario tras la final perdida ante River en 2018 - Lmneuquen.com",
       "description": "Durísimo: un exjugador de Boca contó cómo era el vestuario tras la final perdida ante River en 2018 Lmneuquen.com",
       "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNNFZGMGx1RW51RUhJU2JiOC1JdThBSTBIV05HY3dEcFpYb1Y1R214b2ttbWpTSUlETlR1QnJmVXgtNTF3Vjg1b2ZqdUZCV0lEcmxjbmZGbmg3YkN3aFljdEdfUXdLV1ZnYWdxR013OGllU0g4WWhxd3NQY0JlZlBmUFJsaDVtdlVCZVNidW5FejhJNG51UXc0RkpXNE01ZTNpY3UtYzQxbUVLM1B4RDdJb0k5SHN3VndpcFY2aTRHbHJYbWJ6N3QwbjkweDlqLW5URGJya00wa2tIUdIB3wFBVV95cUxNcXBla2xaVlBFbUpaSzhxUlZjWkstdjVpNEpMMDhMajlMaDlrZ0UtS3RCZFFhaWJ1d2k3WVpWNXVCS0dtUDJNNzE0SDhqYk9pTXR6QllmZENIQkhXUVYzTTF0QTlxZlowRzFLR21KaUpSWVFrZ1lXT0R2aU5ib3BSTS1RRlVuM0lFWEJGTFRjWU1iU0ZEMy1xQjFaUmZ2S1VySkVza0dfc3haYlVuYmVMRHl6eVUzcVc2RnZOYk11MVBwV1FXVmJtTHNQUFhlb2tEQTVSZE93cU9sNmloRHZz?oc=5",
@@ -22794,18 +22685,40 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "San Marcos de Arica",
-      "viral_score": 80,
+      "viral_score": 75,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:2h(+15)"
+        "frescura:7h(+10)"
+      ]
+    },
+    {
+      "title": "Brujas de Salamanca se quedó sin DT en Segunda División - En Cancha",
+      "description": "Brujas de Salamanca se quedó sin DT en Segunda División En Cancha",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOeDZGdmU3bUc3VnFpSnRyV1BwRktLU3VCRTF2OVU4azl6UkNDelZHdjk0X1hJalVkNmZRR19SeHJPTGhaUk1kTmx0VzhrREV0SkV4d2lyajl0M1JZNEktNGtRcmZoV0VyX3NtRTB2Z0MyeHEyaER1VmhOTEZlNUdUSUZua0pSZVdENFJIQUdlTmlMTmVycTlUTFg3cjNpbEdfR0FiUDJaY01CS2RFTVVLTG9yd0lhVUJC?oc=5",
+      "pubDate": "Tue, 10 Nov 2026 16:45:45 GMT",
+      "timestamp": "2026-11-10T16:45:45.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "En Cancha",
+      "fuente_url_original": "https://www.encancha.cl",
+      "fuente": "En Cancha",
+      "fuente_host": "encancha.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 80,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 75,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:7h(+10)"
       ]
     },
     {
       "title": "San Marcos de Arica acudirá al TAS si se ratifica su desafiliación - Radio Maray",
       "description": "San Marcos de Arica acudirá al TAS si se ratifica su desafiliación Radio Maray",
       "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQmZwN2k4LW5LVDJLVl9lVjNhX2NTeG1mZXFIY3ppQjBMYXpyZlFnWXpGSWdfTm0wX3NjOHZiRjhLVFBHTW16Y0VWcllCa2N0TzFVMnV3MkcxUW4tanZDdjRVQXkyMGtWMEF2bHRkbm9VNjVMcFc1LUtiRVQ3VHEzTUd0U2tZb2pyTHltdHlVdk5yWGE3YkF5WV9pNnJrUWZTVS1DcDM0UjFLbWEy?oc=5",
-      "pubDate": "Tue, 10 Nov 2026 16:46:21 GMT",
-      "timestamp": "2026-11-10T16:46:21.000Z",
+      "pubDate": "Tue, 10 Nov 2026 16:47:07 GMT",
+      "timestamp": "2026-11-10T16:47:07.000Z",
       "fecha_publicacion_verificada": true,
       "fuente_original": "Radio Maray",
       "fuente_url_original": "https://www.maray.cl",
@@ -22816,10 +22729,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "San Marcos de Arica",
-      "viral_score": 80,
+      "viral_score": 75,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:2h(+15)"
+        "frescura:7h(+10)"
       ]
     },
     {
@@ -22838,10 +22751,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Coquimbo Unido",
-      "viral_score": 80,
+      "viral_score": 75,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:2h(+15)"
+        "frescura:7h(+10)"
       ]
     },
     {
@@ -22883,12 +22796,75 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": null,
-      "viral_score": 89,
+      "viral_score": 84,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:1h(+15)",
+        "frescura:6h(+10)",
         "senal:\\b(crisis|despedido|(+9)"
       ]
+    },
+    {
+      "title": "Leo Rey le pide disculpas a hinchas de La U: \"No lo tomen a pecho, es una humorada\" - TNT Sports",
+      "description": "Leo Rey le pide disculpas a hinchas de La U: \"No lo tomen a pecho, es una humorada\" TNT Sports",
+      "link": "https://tntsports.cl/nacional/Leo-Rey-pide-disculpas-a-La-U-tras-acordarse-de-ellos-en-celebracion-de-la-estrella-35-de-Colo-Colo-20261110-0005.html",
+      "pubDate": "2026-11-10T17:33:00.000Z",
+      "timestamp": "2026-11-10T17:33:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "TNT Sports",
+      "fuente_url_original": "https://tntsports.cl",
+      "fuente": "TNT Sports",
+      "fuente_host": "tntsports.cl",
+      "categoria_feed": "tnt_sports",
+      "prioridad_fuente": 126,
+      "nivel_fuente": 1,
+      "categoria": "tnt_sports",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 77,
+      "razones": [
+        "categoria:tnt_sports(+42)",
+        "frescura:6h(+10)"
+      ],
+      "article_title": "Leo Rey le pide disculpas a hinchas de La U: \"No lo tomen a pecho, es una humorada\" - TNT Sports",
+      "article_description": "Leo Rey le pide disculpas a hinchas de La U: \"No lo tomen a pecho, es una humorada\" TNT Sports",
+      "article_body": "",
+      "article_chars": 0,
+      "fecha_publicacion_articulo": null,
+      "fecha_publicacion_fuente": "2026-11-10T17:33:00.000Z",
+      "article_complete": false,
+      "article_fetch_status": "extraction_empty",
+      "article_fetch_error": "La página respondió, pero no se encontró el cuerpo del artículo"
+    },
+    {
+      "title": "San Luis monitorea la situación de Fernando De Paul en Colo Colo - Cooperativa",
+      "description": "San Luis monitorea la situación de Fernando De Paul en Colo Colo Cooperativa",
+      "link": "https://www.cooperativa.cl/noticias/deportes/futbol/colo-colo/san-luis-monitorea-la-situacion-de-fernando-de-paul-en-colo-colo/2026-11-10/145559.html",
+      "pubDate": "2026-11-10T17:36:00.000Z",
+      "timestamp": "2026-11-10T17:36:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Cooperativa",
+      "fuente_url_original": "https://www.cooperativa.cl",
+      "fuente": "Cooperativa",
+      "fuente_host": "cooperativa.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 85,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:6h(+10)",
+        "gigante:colo colo(+10)"
+      ],
+      "article_title": "San Luis monitorea la situación de Fernando De Paul en Colo Colo",
+      "article_description": "Los representantes del arquero esperan la definición del Ascenso para negociar si concreta el regreso a Primera de los quillotanos.",
+      "article_body": "",
+      "article_chars": 131,
+      "fecha_publicacion_articulo": "2026-11-10T17:36:00.000Z",
+      "fecha_publicacion_fuente": "2026-11-10T17:36:00.000Z",
+      "article_complete": false,
+      "article_fetch_status": "body_too_short",
+      "article_fetch_error": "El texto extraído no alcanza 300 caracteres"
     },
     {
       "title": "El 'Flaco' López palpitó la final de la Copa Libertadores: \"Contra un equipo argentino se pone más lindo\" - DSports",
@@ -22929,10 +22905,10 @@
       "nivel_fuente": 3,
       "categoria": "chile",
       "equipo_chile": "Coquimbo Unido",
-      "viral_score": 80,
+      "viral_score": 75,
       "razones": [
         "categoria:chile(+40)",
-        "frescura:1h(+15)",
+        "frescura:6h(+10)",
         "senal:\\b(clasific|eliminad(+8)",
         "penal(-8)"
       ]
@@ -23063,6 +23039,128 @@
         "frescura:0h(+15)",
         "senal:\\b(lesion|baja|desca(+6)",
         "senal:\\b(clasific|eliminad(+8)"
+      ]
+    },
+    {
+      "title": "Colo Colo y Católica será con hinchas de ambos equipos: primer clásico con visitantes en casi 4 años - BioBioChile",
+      "description": "Colo Colo y Católica será con hinchas de ambos equipos: primer clásico con visitantes en casi 4 años BioBioChile",
+      "link": "https://www.biobiochile.cl/noticias/deportes/futbol/futbol-nacional/2026/11/10/colo-colo-anuncia-que-clasico-ante-universidad-catolica-hinchas-visitantes.shtml",
+      "pubDate": "2026-11-10T20:01:33.000Z",
+      "timestamp": "2026-11-10T20:01:33.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "BioBioChile",
+      "fuente_url_original": "https://www.biobiochile.cl",
+      "fuente": "BioBioChile",
+      "fuente_host": "biobiochile.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 89,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Colo-Colo",
+      "viral_score": 91,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+10)",
+        "senal:\\b\\d+\\s*(goles|millo(+6)",
+        "gigante:colo colo(+10)"
+      ],
+      "article_title": "Colo Colo y Católica será con hinchas de ambos equipos: primer clásico con visitantes en casi 4 años",
+      "article_description": "Colo Colo, flamante campeón de la Liga de Primera, anunció el inicio de la venta de entradas...",
+      "article_body": "Certifico que es información real y autorizo a Bio Bio para publicarla de la forma Que estime conveniente, manteniendo la confidencialidad de mis datos si asi lo deseo Colo Colo anunció la venta de entradas para el duelo ante Universidad Católica, que se jugará el domingo 22 de noviembre, a las 18:00 horas, en el Estadio Monumental. El partido contará con público visitante, que ocupará el sector Magallanes. Será el primer clásico entre los grandes con hinchas forasteros en tres años y ocho meses. El canje y la venta para socios comienzan este miércoles 11 de noviembre; luego habrá preventa Tenpo y venta general. Colo Colo , flamante campeón de la Liga de Primera , anunció el inicio de la venta de entradas para su duelo ante Universidad Católica . La gran novedad es que se confirmó que el duelo ante los Cruzados en el Estadio Monumental se jugará con público visitante . Como es habitual en el recinto de Macul, el público forastero tendrá a disposición el sector Magallanes (galería sur). Los tickets estarán a disposición a partir de este miércoles 11 de noviembre. De acuerdo a AS , este será el primer partido entre los grandes del fútbol chileno con hinchas visitantes en tres años y ocho meses. El último clásico con público forastero fue el 12 de marzo de 2023 , cuando Universidad de Chile visitó a Colo Colo con cerca de 2.000 de sus seguidores en el Monumental. En tanto, la vez anterior que fanáticos de la UC asistieron al reducto de Macul fue el 17 de marzo de 2019 . El duelo entre Colo Colo y Universidad Católica se jugará el domingo 22 de noviembre, a contar de las 18:00 horas. 𝗩𝗲𝗻𝘁𝗮 𝗱𝗲 𝗲𝗻𝘁𝗿𝗮𝗱𝗮𝘀 🆚 U. Católica Comenzó el proceso de canje y venta de entradas para la fecha 28 de la #LigaDePrimeraMercadoLibre 🏆🇨🇱 𝗩𝗘𝗡𝗧𝗔 𝗦𝗢𝗖𝗜𝗢𝗦 𝗖𝗦𝗬𝗗 𝗖𝗢𝗟𝗢-𝗖𝗢𝗟𝗢 desde las 12:00 horas. 𝗣𝗥𝗘𝗩𝗘𝗡𝗧𝗔 𝗧𝗘𝗡𝗣𝗢 estará disponible desde las 17:00 horas (Debes ser cliente Tenpo para acceder a la preventa). 🎟️ Durante la preventa puedes adquirir hasta 2 tickets por cuenta Puntoticket, mientras que en la venta general el máximo es de 4 entradas. 👀 Importante: todos los hinchas deben estar inscritos en el Registro Facial de Colo-Colo. 1\"> Por 0 && index !== (post.autores_trust_project.autores_extra.length - 1)\">, 0 && index === (post.autores_trust_project.autores_extra.length - 1)\"> y 1\"> Por 0 && index !== (post.autores_trust_project.autores.length - 1)\">, 0 && index === (post.autores_trust_project.autores.length - 1)\"> y Publicado por 0 && index !== (post.autores_trust_project.autores.length - 1)\">, 0 && index === (post.autores_trust_project.autores.length - 1)\"> y 0 && index !== (post.autores_trust_project.autores_extra.length - 1)\">, 0 && index === (post.autores_trust_project.autores_extra.length - 1)\"> y",
+      "article_chars": 2773,
+      "fecha_publicacion_articulo": "2026-11-10T20:01:33.000Z",
+      "fecha_publicacion_fuente": "2026-11-10T20:01:33.000Z",
+      "article_complete": true,
+      "article_fetch_status": "complete",
+      "article_fetch_error": null
+    },
+    {
+      "title": "Fue compañero de Messi, anotó golazo en O’Higgins y se hace el loco con el descenso: “Ya está, a pasar página” - RedGol",
+      "description": "Fue compañero de Messi, anotó golazo en O’Higgins y se hace el loco con el descenso: “Ya está, a pasar página” RedGol",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNems5WkdTdWh2X3dqSFVDSW1FdHJTWnhWQ0FiU1VPa0hjZGdoQ1ZwNldrY0c3XzhkVnpyemNaNFhYbEFxOFo5c3FJWHhLNDIzT3A3OHlkMDV4VkNja01FYlJ2eE9PVTVudHB5ZDUzdkJQQV80VnVMcFBEN2FCY254S1EtNFA0cG5sckNEM3AzRW44SGNOWk5JM0NhZjFTSTZaTWtWcUtiQjRsWXRvOUZxS2hxSFFjbUtNSXhfVHhIaXljSUtHOEhV0gHMAUFVX3lxTE9WOXh5UXFuNVJPM1BlcC1hYlRNQVRqTEhNSjdLUENJWFYxbHVQUmxjNnVQTHhXS2VBVEZCcmJCbk5rd2tlelQ5a3Y1bEhXRjNPdktkcUR6emNpanp6dTYxM3hZOGJYZXRNNUktamdBWnljUlMydnFHSjBlM25ZWEJIUTBhVUtvSDNsNTJfeHFQZXFWZjFUcENLS2plMTUzMmFuU2kxUlpEZ0VYaXNzOFBkcGw5Tk13Tk5yaFRMbVJiOTlzaEYyXzRxUjVaNw?oc=5",
+      "pubDate": "Tue, 10 Nov 2026 20:08:30 GMT",
+      "timestamp": "2026-11-10T20:08:30.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "RedGol",
+      "fuente_url_original": "https://redgol.cl",
+      "fuente": "RedGol",
+      "fuente_host": "redgol.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 88,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": null,
+      "viral_score": 85,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+10)",
+        "gigante:messi(+10)"
+      ]
+    },
+    {
+      "title": "Se define el descenso en la B: Equipos que peligran, la última fecha y el caso San Marcos de Arica - Teletrece",
+      "description": "Se define el descenso en la B: Equipos que peligran, la última fecha y el caso San Marcos de Arica Teletrece",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdjdTdEljU1dXb0lOWFIyWEhNazN3QVFKUlpkV243M0lBZ240bXBNbll1QkE5V2FvcVEzYnNZbm1IMWtNNG9RQmNSaURVMXB4czNPaWoyUnIzQy1QVTNiclAyOEFuRi1ETlR0S0psLWtnd04zMXhxWjRxel9vMjlsa2ZWM0tlbUt1RU0xVmZKT01xdVlJT0pab3AyUEFSWDdHOVZxTEp6UC1KeUIyWm0tdWJMeFR0Wi1hZVBmYnFham4wcjTSAcMBQVVfeXFMUHY3U3RJY1NXV29JTlhSMlhITWszd0FRSlJaZFduNzNJQWduNG1wTW5ZdUJBOVdhb3FRM2JzWW5tSDFrTTRvUUJjUmlEVTFweHMzT2lqMlJyM0MtUFUzYnJQMjhBbkYtRE5UdEtKbC1rZ3dOMzF4cVo0cXpfbzI5bGtmVjNLZW1LdUVNMVZmSk9NcXVZSU9KWm9wMlBBUlg3RzlWcUxKelAtSnlCMlptLXViTHhUdFotYWVQZmJxYWpuMHI0?oc=5",
+      "pubDate": "Tue, 10 Nov 2026 20:50:00 GMT",
+      "timestamp": "2026-11-10T20:50:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "Teletrece",
+      "fuente_url_original": "https://www.t13.cl",
+      "fuente": "Teletrece",
+      "fuente_host": "t13.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 85,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:3h(+15)"
+      ]
+    },
+    {
+      "title": "HBO Max se adelanta a la ANFP y revela la programación de la última fecha de la Primera B - ADN Radio",
+      "description": "HBO Max se adelanta a la ANFP y revela la programación de la última fecha de la Primera B ADN Radio",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQM21zMkN4eHFNTGdqZ3JQX2xtSUlobFJXNjhoYzhmWE5uQlFCQVI4blNpMU1sYTZTUTZhejBESTNZOFEtZ0lITldEcDVRQ0VzMjZWaFd3YWRLS01ZQTJMbER6bE12M0lJLW1nSXNkZkNXT2VGdFlVX0Qwa1J2dmZrNWtoclZpTndUbVNUeUV5MmdYUWZ3ZnhtbEd6d0lMMmZaTmRmZFBoeVd5dFkxQUxSU1pwYXRKSjRHcVE1dG1TRGE0MWfSAdcBQVVfeXFMTVpNdWN3UDBqcVZfUm51TFgwNHhpSHdJRnN5WmlCMmctNVFMWlNBYVNYTWdnMmNGZjdvTS1pa3dtVWl4U2VqREZncjR2eHZrYnRXLVBNUW4tWS1qOU8yT1ptc3o3Zl9WSEpTY1NsN2pTV3VmNjM2bFl5Sldqb1dKYmN0Z0ZCTl81NlVWU3lpZ29CcVVMVkJGNlVYV2JzdHhSOVczUGJ0cWZtdHMxc1pTZmRQSzBQTFcxeTlPU2tMVnZ0X29KTFZxcG5PeXFzeTJCY2tUWkFCaWM?oc=5",
+      "pubDate": "Tue, 10 Nov 2026 21:30:46 GMT",
+      "timestamp": "2026-11-10T21:30:46.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "ADN Radio",
+      "fuente_url_original": "https://www.adnradio.cl",
+      "fuente": "ADN Radio",
+      "fuente_host": "adnradio.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "Universidad de Chile",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:2h(+15)"
+      ]
+    },
+    {
+      "title": "San Marcos de Arica llega a la Segunda Sala con el TAS como amenaza: ¿cuándo se define la Primera B? - AlAireLibre.cl",
+      "description": "San Marcos de Arica llega a la Segunda Sala con el TAS como amenaza: ¿cuándo se define la Primera B? AlAireLibre.cl",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPRk55VXR3RERSc21vZEtPa2pNdWdrWEFETi1FeURJR3dSNG5GLU14M2VOTS1ITVJueTFHSTRsNXJIUDVMWE9yVjBhRVA5NFN0NVl4T2k0WDJQU0J6OUZqSU1odUJicHN6bXlpYzFFbTdGWm01emFZbHoxamdhVGpwamkwbUFOQkZLMFVhbWc5ejdKZw?oc=5",
+      "pubDate": "Tue, 10 Nov 2026 22:30:00 GMT",
+      "timestamp": "2026-11-10T22:30:00.000Z",
+      "fecha_publicacion_verificada": true,
+      "fuente_original": "AlAireLibre.cl",
+      "fuente_url_original": "https://www.alairelibre.cl",
+      "fuente": "AlAireLibre.cl",
+      "fuente_host": "alairelibre.cl",
+      "categoria_feed": "chile",
+      "prioridad_fuente": 86,
+      "nivel_fuente": 3,
+      "categoria": "chile",
+      "equipo_chile": "San Marcos de Arica",
+      "viral_score": 80,
+      "razones": [
+        "categoria:chile(+40)",
+        "frescura:1h(+15)"
       ]
     }
   ]
