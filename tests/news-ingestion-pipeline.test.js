@@ -4,7 +4,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const { extractArticle, replaceEnrichedArticle, decodeXml, esFutbol } = require('../scripts/fetch-real-news');
 const { cleanVisibleText } = require('../scripts/text-sanitizer');
-const { isEligibleNewsCandidate, newsCandidateRejection, buildItem } = require('../scripts/generate-real-content');
+const { isEligibleNewsCandidate, newsCandidateRejection, buildItem, isInternationalOnly, editorialSlot, typeFor } = require('../scripts/generate-real-content');
 
 const now = Date.parse('2026-11-04T12:00:00.000Z');
 function validNews(overrides = {}) {
@@ -23,6 +23,26 @@ function validNews(overrides = {}) {
   };
 }
 
+
+test('usa el cron que disparó GitHub aunque el job comience con retraso', () => {
+  const delayedRun = new Date('2026-11-10T04:27:00.000Z');
+  assert.equal(editorialSlot(delayedRun, '0 15 * * *'), 0);
+  assert.equal(editorialSlot(delayedRun, '0 19 * * *'), 1);
+  assert.equal(editorialSlot(delayedRun, '0 23 * * *'), 2);
+});
+
+test('mantiene una noticia de Colo-Colo fuera de la ventana internacional aunque la feed mencione FIFA', () => {
+  const title = 'Presidente de FIFA felicita a arquero de Colo Colo tras título nacional';
+  const item = validNews({
+    title,
+    article_title: title,
+    description: 'Gianni Infantino felicitó al arquero de Colo Colo tras conquistar el campeonato chileno. La noticia también menciona el Mundial FIFA 2026.',
+    categoria_feed: 'internacional',
+    equipo_chile: 'Colo-Colo',
+  });
+  assert.equal(isInternationalOnly(item), false);
+  assert.equal(typeFor(item), 'colo_colo');
+});
 
 test('conserva el artículo enriquecido aunque cambien timestamp y URL canónica', () => {
   const original = {
