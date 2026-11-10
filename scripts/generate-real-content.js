@@ -132,6 +132,30 @@ function typeFor(item) {
   if (isInternational(item)) return 'internacional';
   return 'chile';
 }
+
+// International rotation must not absorb a story about a Chilean club merely
+// because its source feed was tagged "internacional" or mentions FIFA/Mundial.
+function isInternationalOnly(item) {
+  return isInternational(item)
+    && !isChileanAbroad(item)
+    && !isFutbolFemenino(item)
+    && !isChileCompetition(item)
+    && !isColo(item);
+}
+
+function editorialSlot(now = new Date(), schedule = process.env.SCHEDULE_CRON || '') {
+  const slotsByCron = {
+    '0 15 * * *': 0,
+    '0 19 * * *': 1,
+    '0 23 * * *': 2,
+  };
+  const cronSlot = slotsByCron[String(schedule || '').trim()];
+  if (Number.isInteger(cronSlot)) return cronSlot;
+
+  // Preserve manual-dispatch behavior and compatibility with older callers.
+  const hourSlot = [15, 19, 23].indexOf(now.getUTCHours());
+  return hourSlot >= 0 ? hourSlot : now.getUTCDate() % 3;
+}
 function editorialAngle(type) {
   if (type === 'futbol_femenino') return 'Qué significa esta noticia para la competición femenina, la jugadora o el equipo, distinguiendo datos confirmados de análisis.';
   if (type === 'colo_colo') return 'Por qué esta noticia importa ahora para Colo-Colo y qué conviene seguir en las próximas horas.';
@@ -323,10 +347,8 @@ function main() {
   // Tres ventanas diarias: dos priorizan Chile; una reserva espacio al fútbol mundial.
   // En ejecuciones manuales fuera de esas horas se usa el día del mes para mantener rotación.
   if (modoEditorial) {
-    const utcHour = new Date().getUTCHours();
-    const scheduledHours = [15, 19, 23];
-    const scheduledSlot = scheduledHours.indexOf(utcHour);
-    const slot = scheduledSlot >= 0 ? scheduledSlot : (new Date().getUTCDate() % 3);
+    const slot = editorialSlot(new Date(), process.env.SCHEDULE_CRON);
+    console.log(`🕒 Ventana editorial: ${slot} (${process.env.SCHEDULE_CRON || 'fallback UTC'})`);
     if (slot === 0) {
       addPick(n => isFutbolFemenino(n), 'futbol_femenino');
       if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n) && !isFutbolFemenino(n), 'chile');
@@ -334,7 +356,7 @@ function main() {
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
       if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
     } else if (slot === 1) {
-      addPick(n => isInternational(n) && !isChileanAbroad(n) && !isFutbolFemenino(n), 'internacional');
+      addPick(isInternationalOnly, 'internacional');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
       if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n), 'chile');
       if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
@@ -394,4 +416,4 @@ function main() {
 }
 if (require.main === module) main();
 
-module.exports = { isFutbolFemenino, typeFor, labelFor, ageHours, sourceTier, sourceTierBonus, importance, newsCandidateRejection, isEligibleNewsCandidate, buildItem, snippet };
+module.exports = { isFutbolFemenino, isInternationalOnly, editorialSlot, typeFor, labelFor, ageHours, sourceTier, sourceTierBonus, importance, newsCandidateRejection, isEligibleNewsCandidate, buildItem, snippet };
