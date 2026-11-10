@@ -100,6 +100,7 @@ jobs:
           MAX_ITEMS: ${{ inputs.max_items || '1' }}
           MODO: ${{ inputs.modo || 'chile' }}
           MANUAL_PACKAGE: ${{ inputs.manual_package || 'automatic' }}
+          SCHEDULE_CRON: ${{ github.event.schedule || '' }}
         run: |
           if [ "$MANUAL_PACKAGE" = "la-u-antofagasta-2026-11-05" ]; then
             node scripts/prepare-manual-package.js content/manual/la-u-antofagasta-2026-11-05.json
