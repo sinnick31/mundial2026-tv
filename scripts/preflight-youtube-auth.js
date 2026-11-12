@@ -16,8 +16,8 @@ function fail(code, message) {
 function sanitizeErrorDescription(value) {
   if (typeof value !== 'string') return '';
   return value
-    .replace(/[\\r\\n\\t]+/g, ' ')
-    .replace(/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1F\\x7F]/g, '')
+    .replace(/[\r\n\t]+/g, ' ')
+    .replace(/[\x00-\x08\x0B\x0C-\x1F\x7F]/g, '')
     .trim()
     .slice(0, 240);
 }
