@@ -1,0 +1,146 @@
+# Noticiario diario de fútbol (prioridad: fútbol chileno masculino y femenino).
+# Corre 08:00 y 20:00 hora de Chile. Cada paso usa continue-on-error para que el pipeline
+# entregue lo que pueda (guion, miniatura, video) aunque un paso intermedio falle.
+name: Noticiario Fútbol Chile
+
+on:
+  schedule:
+    - cron: '0 11 * * *'   # 08:00 Chile (edición mañana)
+    - cron: '0 23 * * *'   # 20:00 Chile (edición noche)
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: 'Qué ejecutar'
+        type: choice
+        options: [completo, solo_scraping, solo_video]
+        default: completo
+      subir_youtube:
+        description: 'Subir a YouTube en esta ejecución (sobrescribe la variable UPLOAD_TO_YOUTUBE)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: football-news-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  MODO: ${{ github.event.inputs.modo || 'completo' }}
+  # Publicación desactivada por defecto: activar con la variable de repositorio UPLOAD_TO_YOUTUBE=true
+  UPLOAD_TO_YOUTUBE: ${{ (github.event.inputs.subir_youtube == 'true' || vars.UPLOAD_TO_YOUTUBE == 'true') && 'true' || 'false' }}
+  PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+  ABACUS_API_KEY: ${{ secrets.ABACUS_API_KEY }}
+  YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+  YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+  YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+  BURN_SUBS: ${{ vars.BURN_SUBS || 'false' }}
+  TZ: America/Santiago
+
+jobs:
+  noticiario:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias (Node, Python, ffmpeg, fuentes)
+        run: |
+          npm ci || npm install
+          pip install -r requirements-pipeline.txt Pillow
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+
+      - name: Restaurar caché de assets
+        id: cache-assets
+        uses: actions/cache@v4
+        with:
+          path: |
+            assets/clips
+            assets/music
+            assets/backgrounds/stadiums
+            assets/credits.json
+          key: football-assets-v1-${{ hashFiles('assets/asset_downloader.py') }}
+
+      - name: Descargar assets libres de derechos
+        if: steps.cache-assets.outputs.cache-hit != 'true' && env.MODO != 'solo_scraping'
+        continue-on-error: true
+        run: python assets/asset_downloader.py
+
+      - name: Scraping de noticias
+        if: env.MODO != 'solo_video'
+        id: scrape
+        continue-on-error: true
+        run: node scraper/news_scraper.js
+
+      - name: Generar guion
+        if: env.MODO != 'solo_scraping'
+        id: guion
+        continue-on-error: true
+        run: node scripts/script_generator.js
+
+      - name: Generar miniaturas A/B/C
+        if: env.MODO != 'solo_scraping'
+        continue-on-error: true
+        run: python thumbnails/thumbnail_generator.py
+
+      - name: Narración TTS (voz chilena)
+        if: env.MODO != 'solo_scraping'
+        continue-on-error: true
+        run: python tts/narrator.py
+
+      - name: Ensamblar video
+        if: env.MODO != 'solo_scraping'
+        id: video
+        continue-on-error: true
+        run: python video/assembler.py
+
+      - name: Subir a YouTube (o dry-run con metadatos)
+        if: env.MODO == 'completo' && steps.video.outcome == 'success'
+        continue-on-error: true
+        run: node youtube/uploader.js
+
+      - name: Publicar artifacts para revisión
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: noticiario-${{ github.run_number }}
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            news_today.json
+            pipeline_state.json
+            scripts/output/*.txt
+            thumbnails/output/*.png
+            videos/output/*.mp4
+            videos/output/*.metadata.json
+            assets/credits.json
+
+      - name: Guardar registro de noticias procesadas
+        if: env.UPLOAD_TO_YOUTUBE == 'true'
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add processed_news.json
+          git diff --cached --quiet || (git commit -m "chore: noticias procesadas [skip ci]" && git push)
+
+      - name: Resumen
+        if: always()
+        run: |
+          echo "### Noticiario Fútbol Chile" >> $GITHUB_STEP_SUMMARY
+          echo "- Modo: $MODO · Subida a YouTube: $UPLOAD_TO_YOUTUBE" >> $GITHUB_STEP_SUMMARY
+          echo "- Scraping: ${{ steps.scrape.outcome }} · Guion: ${{ steps.guion.outcome }} · Video: ${{ steps.video.outcome }}" >> $GITHUB_STEP_SUMMARY
+          ls -la videos/output thumbnails/output 2>/dev/null >> $GITHUB_STEP_SUMMARY || true
