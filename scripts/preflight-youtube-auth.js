@@ -13,6 +13,50 @@ function fail(code, message) {
   process.exit(1);
 }
 
+function sanitizeErrorDescription(value) {
+  if (typeof value !== 'string') return '';
+  return value
+    .replace(/[\r\n\t]+/g, ' ')
+    .replace(/[\x00-\x08\x0B\x0C-\x1F\x7F]/g, '')
+    .trim()
+    .slice(0, 240);
+}
+
+function classifyTokenFailure(statusCode, data = {}) {
+  if (statusCode === 200 && data.access_token) return null;
+
+  const description = sanitizeErrorDescription(data.error_description);
+  const detail = description ? ` Detalle de Google: ${description}` : '';
+
+  switch (data.error) {
+    case 'invalid_client':
+      return {
+        code: 'INVALID_CLIENT',
+        message: `Google rechazó el cliente OAuth. CLIENT_ID y CLIENT_SECRET no corresponden al mismo cliente OAuth activo.${detail}`,
+      };
+    case 'invalid_grant':
+      return {
+        code: 'INVALID_REFRESH_TOKEN',
+        message: `Google devolvió invalid_grant. La respuesta no identifica por sí sola la causa: el refresh token puede haber caducado o sido revocado, no corresponder al par CLIENT_ID/CLIENT_SECRET configurado, o estar afectado por el estado de consentimiento de la aplicación. Si la app es External/Testing y usa scopes de YouTube, comprueba también la caducidad de siete días. Revisa estos puntos antes de emitir otro token.${detail}`,
+      };
+    case 'unauthorized_client':
+      return {
+        code: 'UNAUTHORIZED_CLIENT',
+        message: `El cliente OAuth no está autorizado para este flujo.${detail}`,
+      };
+    case 'deleted_client':
+      return {
+        code: 'DELETED_CLIENT',
+        message: `El cliente OAuth fue eliminado o ya no está disponible.${detail}`,
+      };
+    default:
+      return {
+        code: 'TOKEN_EXCHANGE_FAILED',
+        message: `Google OAuth respondió HTTP ${statusCode} con error ${data.error || 'desconocido'}.${detail}`,
+      };
+  }
+}
+
 function postToken() {
   return new Promise((resolve, reject) => {
     const body = new URLSearchParams({
@@ -95,28 +139,9 @@ async function main() {
 
   const { statusCode, data } = tokenResult;
 
-  if (statusCode !== 200 || !data.access_token) {
-    switch (data.error) {
-      case 'invalid_client':
-        fail(
-          'INVALID_CLIENT',
-          'Google rechazó el cliente OAuth. CLIENT_ID y CLIENT_SECRET no corresponden al mismo cliente OAuth activo.'
-        );
-      case 'invalid_grant':
-        fail(
-          'INVALID_REFRESH_TOKEN',
-          'Google rechazó el refresh token. Debe haberse generado con el mismo cliente OAuth usado en CLIENT_ID/CLIENT_SECRET.'
-        );
-      case 'unauthorized_client':
-        fail('UNAUTHORIZED_CLIENT', 'El cliente OAuth no está autorizado para este flujo.');
-      case 'deleted_client':
-        fail('DELETED_CLIENT', 'El cliente OAuth fue eliminado o ya no está disponible.');
-      default:
-        fail(
-          'TOKEN_EXCHANGE_FAILED',
-          `Google OAuth respondió HTTP ${statusCode} con error ${data.error || 'desconocido'}.`
-        );
-    }
+  const tokenFailure = classifyTokenFailure(statusCode, data);
+  if (tokenFailure) {
+    fail(tokenFailure.code, tokenFailure.message);
   }
 
   console.log('2/3 Refresh token aceptado y access token obtenido: OK');
@@ -158,6 +183,13 @@ async function main() {
   console.log('✅ YouTube OAuth v8 válido. El pipeline puede continuar con render + publicación.');
 }
 
-main().catch(error => {
-  fail('UNEXPECTED', error.message);
-});
+if (require.main === module) {
+  main().catch(error => {
+    fail('UNEXPECTED', error.message);
+  });
+}
+
+module.exports = {
+  sanitizeErrorDescription,
+  classifyTokenFailure,
+};
