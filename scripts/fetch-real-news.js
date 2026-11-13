@@ -547,17 +547,17 @@ async function main() {
       replaceEnrichedArticle(fresh, result.original, result.article);
       const article = result.article;
       if (article.article_complete) {
-        console.log(\`  ✓ Artículo completo: \${article.article_title}\`);
+        console.log(`  ✓ Artículo completo: ${article.article_title}`);
       } else {
         const responseInfo = [
-          \`HTTP \${article.article_response_status || 'desconocido'}\`,
-          \`host=\${article.article_final_host || 'desconocido'}\`,
-          \`type=\${article.article_content_type || 'desconocido'}\`,
-          \`bytes=\${article.article_html_bytes || 0}\`,
-          \`p=\${article.article_paragraph_count ?? 0}\`,
-          \`jsonld=\${article.article_jsonld_count ?? 0}\`,
+          `HTTP ${article.article_response_status || 'desconocido'}`,
+          `host=${article.article_final_host || 'desconocido'}`,
+          `type=${article.article_content_type || 'desconocido'}`,
+          `bytes=${article.article_html_bytes || 0}`,
+          `p=${article.article_paragraph_count ?? 0}`,
+          `jsonld=${article.article_jsonld_count ?? 0}`,
         ].join(' ');
-        console.log(\`  ⚠️ \${article.article_fetch_status || 'extraction_error'}: \${article.title} (\${article.article_fetch_error || 'sin detalle'}; \${responseInfo})\`);
+        console.log(`  ⚠️ ${article.article_fetch_status || 'extraction_error'}: ${article.title} (${article.article_fetch_error || 'sin detalle'}; ${responseInfo})`);
       }
     }
   }
