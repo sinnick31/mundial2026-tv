@@ -304,3 +304,29 @@ test('un enlace RSS truncado no se convierte en tema futbolístico ni en evidenc
   });
   assert.equal(newsCandidateRejection(item, now), 'sin_evidencia_breve_suficiente');
 });
+
+test('registra metadatos HTTP seguros cuando el publisher responde sin cuerpo extraíble', async () => {
+  const { enrichArticle } = require('../scripts/fetch-real-news');
+  const html = '<html><head><title>Consentimiento</title></head><body><div id="app"></div></body></html>';
+  const result = await enrichArticle({
+    title: 'TNT Sports informa una noticia relevante del fútbol chileno',
+    link: 'https://www.tntsports.cl/noticia/consentimiento',
+    fuente: 'TNT Sports Chile',
+    fuente_url_original: 'https://www.tntsports.cl/',
+    timestamp: '2026-11-12T12:00:00.000Z',
+  }, async () => ({
+    finalUrl: 'https://www.tntsports.cl/noticia/consentimiento',
+    body: html,
+    statusCode: 200,
+    contentType: 'text/html; charset=utf-8',
+  }));
+
+  assert.equal(result.article_fetch_status, 'extraction_empty');
+  assert.equal(result.article_response_status, 200);
+  assert.equal(result.article_content_type, 'text/html; charset=utf-8');
+  assert.equal(result.article_final_host, 'www.tntsports.cl');
+  assert.equal(result.article_html_bytes, Buffer.byteLength(html, 'utf8'));
+  assert.equal(result.article_paragraph_count, 0);
+  assert.equal(result.article_jsonld_count, 0);
+});
+
