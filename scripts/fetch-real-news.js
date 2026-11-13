@@ -36,7 +36,7 @@ function httpGetResponse(url, redirects = 0) {
       res.on('data', chunk => { data += chunk; });
       res.on('end', () => {
         if ((res.statusCode || 500) >= 400) return reject(new Error(`HTTP ${res.statusCode}`));
-        resolve({ body: data, finalUrl: parsed.toString(), contentType: res.headers['content-type'] || '' });
+        resolve({ body: data, finalUrl: parsed.toString(), contentType: res.headers['content-type'] || '', statusCode: res.statusCode || null });
       });
     });
     req.on('error', reject);
@@ -307,6 +307,20 @@ function extractGoogleNewsTarget(html, expectedHosts = []) {
   return '';
 }
 
+function articleResponseDiagnostics(response = {}) {
+  const html = String(response.body || '');
+  let finalHost = '';
+  try { finalHost = new URL(response.finalUrl).hostname; } catch (_) { /* URL no disponible */ }
+  return {
+    article_response_status: Number(response.statusCode) || null,
+    article_content_type: String(response.contentType || '').slice(0, 120),
+    article_final_host: finalHost,
+    article_html_bytes: Buffer.byteLength(html, 'utf8'),
+    article_paragraph_count: (html.match(/<p\b/gi) || []).length,
+    article_jsonld_count: (html.match(/<script\b[^>]*type=["']application\/ld\+json["']/gi) || []).length,
+  };
+}
+
 async function enrichArticle(item, request = httpGetResponse) {
   try {
     const expectedHosts = expectedSourceHosts(item);
@@ -329,6 +343,7 @@ async function enrichArticle(item, request = httpGetResponse) {
     }
     if (resolved.hostname === 'news.google.com') throw new Error('google_news_target_unresolved');
 
+    const responseDiagnostics = articleResponseDiagnostics(response);
     const parsed = extractArticle(response.body);
     const canonical = parsed.canonical ? new URL(parsed.canonical, resolved) : resolved;
     if (!['https:', 'http:'].includes(canonical.protocol) || canonical.username || canonical.password) {
@@ -347,6 +362,7 @@ async function enrichArticle(item, request = httpGetResponse) {
     const fetchStatus = body ? 'complete' : (parsed.body.length > 0 ? 'body_too_short' : 'extraction_empty');
     return {
       ...item,
+      ...responseDiagnostics,
       link: canonicalUrl,
       article_title: parsed.title || item.title,
       article_description: parsed.description || item.description || '',
@@ -369,6 +385,12 @@ async function enrichArticle(item, request = httpGetResponse) {
     return {
       ...item,
       article_body: '',
+      article_response_status: httpCode || null,
+      article_content_type: '',
+      article_final_host: '',
+      article_html_bytes: 0,
+      article_paragraph_count: 0,
+      article_jsonld_count: 0,
       article_complete: false,
       article_chars: 0,
       article_fetch_status: status,
@@ -524,7 +546,19 @@ async function main() {
     for (const result of enriched) {
       replaceEnrichedArticle(fresh, result.original, result.article);
       const article = result.article;
-      console.log(article.article_complete ? `  ✓ Artículo completo: ${article.article_title}` : `  ⚠️ ${article.article_fetch_status || 'extraction_error'}: ${article.title} (${article.article_fetch_error || 'sin detalle'})`);
+      if (article.article_complete) {
+        console.log(`  ✓ Artículo completo: ${article.article_title}`);
+      } else {
+        const responseInfo = [
+          `HTTP ${article.article_response_status || 'desconocido'}`,
+          `host=${article.article_final_host || 'desconocido'}`,
+          `type=${article.article_content_type || 'desconocido'}`,
+          `bytes=${article.article_html_bytes || 0}`,
+          `p=${article.article_paragraph_count ?? 0}`,
+          `jsonld=${article.article_jsonld_count ?? 0}`,
+        ].join(' ');
+        console.log(`  ⚠️ ${article.article_fetch_status || 'extraction_error'}: ${article.title} (${article.article_fetch_error || 'sin detalle'}; ${responseInfo})`);
+      }
     }
   }
 
