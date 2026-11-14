@@ -142,7 +142,18 @@ test('bloquea enlaces de Google News no resueltos aunque tengan titular y snippe
     article_description: 'El club confirmó este viernes una modificación en la programación del próximo encuentro del campeonato.',
     link: 'https://news.google.com/rss/articles/abc',
   });
-  assert.equal(newsCandidateRejection(item, now), 'url_invalida_o_no_editorial');
+  assert.equal(newsCandidateRejection(item, now), 'google_news_target_unresolved');
+});
+
+test('clasifica por separado otros dominios Google sin admitirlos como publisher', () => {
+  const item = validNews({ link: 'https://www.google.com/search?q=futbol' });
+  assert.equal(newsCandidateRejection(item, now), 'dominio_google_no_editorial');
+});
+
+test('clasifica por separado protocolo, host y credenciales de URL no válidos', () => {
+  assert.equal(newsCandidateRejection(validNews({ link: 'javascript:alert(1)' }), now), 'url_protocolo_no_admitido');
+  assert.equal(newsCandidateRejection(validNews({ link: 'http://localhost/noticia' }), now), 'url_host_invalido');
+  assert.equal(newsCandidateRejection(validNews({ link: 'https://user:pass@www.anfp.cl/noticia' }), now), 'url_con_credenciales');
 });
 
 test('se bloquean noticias sin fecha parseable o sin verificación explícita', () => {
