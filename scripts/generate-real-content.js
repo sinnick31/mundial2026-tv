@@ -40,9 +40,12 @@ function newsCandidateRejection(item, now = Date.now()) {
   if (typeof item.link !== 'string') return 'url_ausente';
   try {
     const url = new URL(item.link);
-    if (!['http:', 'https:'].includes(url.protocol) || !url.hostname.includes('.')
-      || url.username || url.password || /(^|\.)google\./i.test(url.hostname)
-      || /(^|\.)news\.google\.com$/i.test(url.hostname)) return 'url_invalida_o_no_editorial';
+    // Keep the same fail-closed policy, but expose the actual URL failure in diagnostics.
+    if (!['http:', 'https:'].includes(url.protocol)) return 'url_protocolo_no_admitido';
+    if (!url.hostname.includes('.')) return 'url_host_invalido';
+    if (url.username || url.password) return 'url_con_credenciales';
+    if (/^news\.google\.com$/i.test(url.hostname)) return 'google_news_target_unresolved';
+    if (/(^|\.)google\./i.test(url.hostname)) return 'dominio_google_no_editorial';
   } catch (_) { return 'url_invalida'; }
   const source = String(item.fuente || item.fuente_original || item.fuente_host || '').trim();
   if (!source || /fuente deportiva|desconocida|google news/i.test(source)) return 'fuente_no_identificada';
