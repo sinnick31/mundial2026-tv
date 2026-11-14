@@ -44,6 +44,18 @@ test('mantiene una noticia de Colo-Colo fuera de la ventana internacional aunque
   assert.equal(typeFor(item), 'colo_colo');
 });
 
+test('clasifica fútbol femenino por el título enriquecido aunque el RSS omita la categoría', () => {
+  const item = validNews({
+    title: 'Partidos en simultáneo: así se podrán ver por TV las semifinales-vuelta',
+    article_title: 'Partidos en simultáneo: así se podrán ver por TV las semifinales-vuelta de la Liga Femenina',
+    description: 'Los encuentros se disputan este domingo.',
+    article_description: 'La Liga Femenina 2026 definirá a sus finalistas.',
+    categoria_feed: 'chile',
+    categoria: 'femenino',
+  });
+  assert.equal(typeFor(item), 'futbol_femenino');
+});
+
 test('conserva el artículo enriquecido aunque cambien timestamp y URL canónica', () => {
   const original = {
     title: 'Noticia TNT',
