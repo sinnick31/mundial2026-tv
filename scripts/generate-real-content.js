@@ -73,9 +73,12 @@ function isChileCompetition(item) {
   return feedChile || Boolean(item.equipo_chile) || ['liga de primera', 'primera division', 'campeonato nacional', 'liga de ascenso', 'primera b', 'segunda division', 'liga 2d', 'copa chile', 'copa de la liga', 'supercopa de chile', 'liga femenina', 'ascenso femenino', 'tercera a', 'tercera b', 'futbol formativo', 'futsal', 'anfp', 'anfa'].some(k => t.includes(k));
 }
 function isFutbolFemenino(item) {
-  const category = normalize(item.categoria_feed || item.categoria || '');
-  const text = normalize(`${item.title || ''} ${item.description || ''}`);
-  return ['femenino', 'futbol_femenino', 'liga_femenina', 'la_roja_femenina'].includes(category)
+  const categories = [item.categoria_feed, item.categoria].filter(Boolean).map(normalize);
+  // Prefer the enriched publisher title/description without discarding RSS metadata.
+  const text = normalize([
+    item.article_title, item.title, item.article_description, item.description,
+  ].filter(Boolean).join(' '));
+  return categories.some(category => ['femenino', 'futbol_femenino', 'liga_femenina', 'la_roja_femenina'].includes(category))
     || /\b(liga femenina|futbol femenino|la roja femenina|seleccion femenina|copa femenina|ascenso femenino|women'?s football|women'?s champions league|femenil)\b/.test(text);
 }
 function isInternational(item) {
