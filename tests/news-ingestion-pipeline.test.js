@@ -4,7 +4,8 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const { extractArticle, replaceEnrichedArticle, decodeXml, esFutbol } = require('../scripts/fetch-real-news');
 const { cleanVisibleText } = require('../scripts/text-sanitizer');
-const { isEligibleNewsCandidate, newsCandidateRejection, buildItem, isInternationalOnly, editorialSlot, typeFor } = require('../scripts/generate-real-content');
+const { isEligibleNewsCandidate, newsCandidateRejection, buildItem, isInternationalOnly, editorialSlot, typeFor, splitIntoPoints } = require('../scripts/generate-real-content');
+const { validateItemForRender } = require('../scripts/content-quality-gate');
 
 const now = Date.parse('2026-11-04T12:00:00.000Z');
 function validNews(overrides = {}) {
@@ -351,5 +352,35 @@ test('registra metadatos HTTP seguros cuando el publisher responde sin cuerpo ex
   assert.equal(result.article_html_bytes, Buffer.byteLength(html, 'utf8'));
   assert.equal(result.article_paragraph_count, 0);
   assert.equal(result.article_jsonld_count, 0);
+});
+
+test('reagrupa fragmentos finales de menos de ocho caracteres sin perder texto', () => {
+  const source = '"En los primeros 25 minutos hicimos un buen partido, donde encontramos buenas asociaciones y nos creamos ocasiones de gol.';
+  const points = splitIntoPoints(source);
+  assert.ok(points.length > 0);
+  assert.ok(points.every(point => point.trim().length >= 8));
+  assert.equal(points.join(' '), source);
+});
+
+test('una noticia con una frase larga y una palabra final corta supera el control de render', () => {
+  const body = [
+    'Gabriel Suazo, capitán de la Selección chilena, analizó la caída por la cuenta mínima ante Colombia en Cali.',
+    '"En los primeros 25 minutos hicimos un buen partido, donde encontramos buenas asociaciones y nos creamos ocasiones de gol.',
+    'Luego nos costó un poco, ellos ajustaron y empezaron a presionar más alto a nuestros centrales.',
+    'En la misma línea, Suazo aseguró que estos partidos se definen por detalles y que ambos equipos estuvieron erráticos.',
+    'La lectura de la actuación debe distinguir los pasajes de dominio de los momentos en que el rival ajustó la presión.',
+  ].join(' ');
+  const title = 'Gabriel Suazo: estamos construyendo un gran equipo para seguir compitiendo';
+  const item = validNews({
+    title,
+    article_title: title,
+    article_body: body,
+    article_complete: true,
+    article_chars: body.length,
+    article_description: body.slice(0, 500),
+  });
+  const piece = buildItem(item, 'chile', 1);
+  assert.ok(piece.puntos.every(point => point.trim().length >= 8));
+  assert.deepEqual(validateItemForRender(piece), { ok: true });
 });
 
