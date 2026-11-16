@@ -192,6 +192,40 @@ function fechaPublicacion(item) {
   if (!raw || Number.isNaN(Date.parse(raw))) return null;
   return new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(raw));
 }
+function rebalanceShortChunks(chunks, minLength = 8) {
+  const readable = [];
+  for (const rawChunk of chunks) {
+    const chunk = String(rawChunk || '').trim();
+    if (!chunk) continue;
+    const previous = readable[readable.length - 1];
+    if (chunk.length >= minLength) {
+      if (previous && previous.length < minLength) {
+        readable[readable.length - 1] = previous + ' ' + chunk;
+      } else {
+        readable.push(chunk);
+      }
+      continue;
+    }
+    if (!previous) {
+      readable.push(chunk);
+      continue;
+    }
+    const previousWords = previous.split(/\s+/);
+    let fragment = chunk;
+    while (fragment.length < minLength && previousWords.length > 1) {
+      fragment = previousWords.pop() + ' ' + fragment;
+    }
+    const remaining = previousWords.join(' ');
+    if (remaining.length >= minLength && fragment.length >= minLength) {
+      readable[readable.length - 1] = remaining;
+      readable.push(fragment);
+    } else {
+      readable[readable.length - 1] = [remaining, fragment].filter(Boolean).join(' ');
+    }
+  }
+  return readable.filter(chunk => chunk.length >= minLength);
+}
+
 function splitIntoPoints(text, maxPoints = 7) {
   const sentences = (String(text || '').match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [])
     .map(value => value.trim()).filter(value => value.length > 24);
@@ -207,7 +241,7 @@ function splitIntoPoints(text, maxPoints = 7) {
     }
     if (chunk) chunks.push(chunk);
   }
-  return chunks.slice(0, maxPoints);
+  return rebalanceShortChunks(chunks).slice(0, maxPoints);
 }
 function buildNarration(item, type, resumen) {
   const title = clean(item.article_title || item.title);
@@ -422,4 +456,4 @@ function main() {
 }
 if (require.main === module) main();
 
-module.exports = { isFutbolFemenino, isInternationalOnly, editorialSlot, typeFor, labelFor, ageHours, sourceTier, sourceTierBonus, importance, newsCandidateRejection, isEligibleNewsCandidate, buildItem, snippet };
+module.exports = { isFutbolFemenino, isInternationalOnly, editorialSlot, typeFor, labelFor, ageHours, sourceTier, sourceTierBonus, importance, newsCandidateRejection, isEligibleNewsCandidate, buildItem, snippet, splitIntoPoints };
