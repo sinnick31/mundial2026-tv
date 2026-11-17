@@ -3,7 +3,11 @@
 const MOJIBAKE = /(?:Ã[\u0080-\u00FF]|Â[\u0080-\u00FF]|â€|ï¿½|�|\\uFFFD)/i;
 const HTML_TAG = /<\/?[a-z][^>]*>/i;
 const HTML_ENTITY = /&(?:#\d+|#x[\da-f]+|[a-z][a-z0-9]+);/i;
-const PLACEHOLDER = /\b(?:undefined|null|NaN|TODO|PLACEHOLDER)\b/i;
+const PLACEHOLDER = /\b(?:undefined|null|NaN|PLACEHOLDER)\b/i;
+const TODO_MARKER = /\bTODO\b/;
+function hasTechnicalMarker(value) {
+  return PLACEHOLDER.test(value) || TODO_MARKER.test(value);
+}
 const GENERIC_TEAM = /^(?:f[uú]tbol chileno|f[uú]tbol mundial|chile|noticias|equipo local|equipo visitante|por definir)$/i;
 
 function validateItemForRender(item, index = 1) {
@@ -24,7 +28,7 @@ function validateItemForRender(item, index = 1) {
     if (MOJIBAKE.test(value)) fail('caracteres dañados en ' + key);
     if (HTML_TAG.test(value)) fail('etiquetas HTML sin limpiar en ' + key);
     if (HTML_ENTITY.test(value)) fail('entidades HTML sin decodificar en ' + key);
-    if (PLACEHOLDER.test(value)) fail('marcador técnico visible en ' + key);
+    if (hasTechnicalMarker(value)) fail('marcador técnico visible en ' + key);
   }
   if (typeof item._fuente_url !== 'string' || !/^https?:\/\/[^\s]+$/i.test(item._fuente_url)
       || HTML_ENTITY.test(item._fuente_url)) fail('URL de fuente inválida o sin limpiar');
@@ -37,7 +41,7 @@ function validateItemForRender(item, index = 1) {
     if (MOJIBAKE.test(value)) fail('caracteres dañados en texto visible del video');
     if (HTML_TAG.test(value)) fail('etiquetas HTML sin limpiar en texto visible');
     if (HTML_ENTITY.test(value)) fail('entidades HTML sin decodificar en texto visible');
-    if (PLACEHOLDER.test(value)) fail('marcador técnico visible en texto del video');
+    if (hasTechnicalMarker(value)) fail('marcador técnico visible en texto del video');
   }
   if (item.titulo_youtube.length < 12 || item.titulo_youtube.length > 100) fail('título debe tener entre 12 y 100 caracteres');
   if (typeof item.narracion !== 'string' || item.narracion.trim().length < 180) fail('narración insuficiente; mínimo 180 caracteres');
