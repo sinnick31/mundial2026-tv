@@ -100,3 +100,15 @@ test('no elimina entidades desconocidas: el control de calidad debe bloquearlas'
   item.gancho = cleanVisibleText('Titular &entidaddesconocida; del fútbol chileno');
   assert.throws(() => validateItemForRender(item), /entidades HTML sin decodificar en gancho/);
 });
+
+test('acepta la palabra española todo en la narración', () => {
+  const item = validItem();
+  item.narracion = 'Todo el plantel del cuadro pirata escribió su nombre en un registro histórico. ' + item.narracion;
+  assert.deepEqual(validateItemForRender(item), { ok: true });
+});
+
+test('bloquea el marcador técnico TODO en la narración', () => {
+  const item = validItem();
+  item.narracion = 'TODO: completar la narración. ' + item.narracion;
+  assert.throws(() => validateItemForRender(item), /marcador técnico visible en narracion/);
+});
