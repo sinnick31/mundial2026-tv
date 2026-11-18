@@ -53,5 +53,5 @@ test('acepta una licencia verificable que autoriza expresamente uso en YouTube',
 test('no duplica la fecha de publicación cuando el crédito de fuente ya la incluye', () => {
   const component = fs.readFileSync(path.join(__dirname, '../src/PrediccionShorts.tsx'), 'utf8');
   assert.ok(component.includes('<CreditoFuente fuente={props.fuente || (props.fechaPublicacion ? `Fuente publicada: ${props.fechaPublicacion}` : undefined)} />'));
-  assert.equal(component.includes(".filter(Boolean).join(' · ')") , false);
+  assert.equal(component.includes("<CreditoFuente fuente={[props.fechaPublicacion ? `Fuente publicada: ${props.fechaPublicacion}` : '', props.fuente || ''].filter(Boolean).join(' · ')} />"), false);
 });
