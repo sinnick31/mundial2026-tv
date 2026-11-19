@@ -81,6 +81,9 @@ function isFutbolFemenino(item) {
   return categories.some(category => ['femenino', 'futbol_femenino', 'liga_femenina', 'la_roja_femenina'].includes(category))
     || /\b(liga femenina|futbol femenino|la roja femenina|seleccion femenina|copa femenina|ascenso femenino|women'?s football|women'?s champions league|femenil)\b/.test(text);
 }
+function isOtherChileCompetition(item) {
+  return isChileCompetition(item) && !isColo(item) && !isFutbolFemenino(item);
+}
 function isInternational(item) {
   if (item.categoria_feed === 'internacional' || item.categoria === 'internacional') return true;
   const t = normalize(String(item.title || '') + ' ' + String(item.description || ''));
@@ -391,19 +394,19 @@ function main() {
     console.log(`🕒 Ventana editorial: ${slot} (${process.env.SCHEDULE_CRON || 'fallback UTC'})`);
     if (slot === 0) {
       addPick(n => isFutbolFemenino(n), 'futbol_femenino');
-      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n) && !isFutbolFemenino(n), 'chile');
+      if (picks.length < MAX_ITEMS) addPick(isOtherChileCompetition, 'chile');
       if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
       if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
     } else if (slot === 1) {
       addPick(isInternationalOnly, 'internacional');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
-      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n), 'chile');
+      if (picks.length < MAX_ITEMS) addPick(isOtherChileCompetition, 'chile');
       if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
     } else {
       addPick(n => isFutbolFemenino(n), 'futbol_femenino');
       if (picks.length < MAX_ITEMS) addPick(isChileanAbroad, 'chilenos_exterior');
-      if (picks.length < MAX_ITEMS) addPick(n => isChileCompetition(n) && !isColo(n) && !isFutbolFemenino(n), 'chile');
+      if (picks.length < MAX_ITEMS) addPick(isOtherChileCompetition, 'chile');
       if (picks.length < MAX_ITEMS) addPick(isColo, 'colo_colo');
       if (picks.length < MAX_ITEMS) addPick(isInternational, 'internacional');
     }
@@ -456,4 +459,4 @@ function main() {
 }
 if (require.main === module) main();
 
-module.exports = { isFutbolFemenino, isInternationalOnly, editorialSlot, typeFor, labelFor, ageHours, sourceTier, sourceTierBonus, importance, newsCandidateRejection, isEligibleNewsCandidate, buildItem, snippet, splitIntoPoints };
+module.exports = { isFutbolFemenino, isInternationalOnly, isOtherChileCompetition, editorialSlot, typeFor, labelFor, ageHours, sourceTier, sourceTierBonus, importance, newsCandidateRejection, isEligibleNewsCandidate, buildItem, snippet, splitIntoPoints };
