@@ -4,7 +4,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const { extractArticle, replaceEnrichedArticle, decodeXml, esFutbol } = require('../scripts/fetch-real-news');
 const { cleanVisibleText } = require('../scripts/text-sanitizer');
-const { isEligibleNewsCandidate, newsCandidateRejection, buildItem, isInternationalOnly, editorialSlot, typeFor, splitIntoPoints } = require('../scripts/generate-real-content');
+const { isEligibleNewsCandidate, newsCandidateRejection, buildItem, isInternationalOnly, isOtherChileCompetition, editorialSlot, typeFor, splitIntoPoints } = require('../scripts/generate-real-content');
 const { validateItemForRender } = require('../scripts/content-quality-gate');
 
 const now = Date.parse('2026-11-04T12:00:00.000Z');
@@ -55,6 +55,30 @@ test('clasifica fútbol femenino por el título enriquecido aunque el RSS omita 
     categoria: 'femenino',
   });
   assert.equal(typeFor(item), 'futbol_femenino');
+});
+
+test('no reetiqueta fútbol femenino como fútbol chileno general en la ventana de las 19 UTC', () => {
+  const item = validNews({
+    title: 'Finalistas de la Liga Femenina 2026 ya están definidos',
+    article_title: 'Colo-Colo y Universidad Católica disputarán la final de la Liga Femenina 2026',
+    description: 'La competencia chilena definirá a sus finalistas.',
+    article_description: 'La Liga Femenina 2026 ya tiene a sus dos finalistas.',
+    categoria_feed: 'chile',
+    categoria: 'chile',
+  });
+  assert.equal(editorialSlot(new Date('2026-11-19T01:00:00.000Z'), '0 19 * * *'), 1);
+  assert.equal(isOtherChileCompetition(item), false);
+  assert.equal(typeFor(item), 'futbol_femenino');
+});
+
+test('mantiene otras competencias chilenas en la categoría general', () => {
+  const item = validNews({
+    title: 'ANFP confirma una modificación del calendario del fútbol chileno',
+    article_title: 'ANFP confirma una modificación del calendario del fútbol chileno',
+    categoria_feed: 'chile',
+    categoria: 'chile',
+  });
+  assert.equal(isOtherChileCompetition(item), true);
 });
 
 test('conserva el artículo enriquecido aunque cambien timestamp y URL canónica', () => {
