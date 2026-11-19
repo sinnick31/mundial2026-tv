@@ -482,7 +482,7 @@ export const PrediccionShorts: React.FC<PrediccionProps> = (props) => {
         <Audio src={props.audioSrc.startsWith('http') ? props.audioSrc : staticFile(props.audioSrc)} />
       )}
 
-      <CreditoFuente fuente={[props.fechaPublicacion ? `Fuente publicada: ${props.fechaPublicacion}` : '', props.fuente || ''].filter(Boolean).join(' · ')} />
+      <CreditoFuente fuente={props.fuente || (props.fechaPublicacion ? `Fuente publicada: ${props.fechaPublicacion}` : undefined)} />
 
       <Sequence  durationInFrames={HOOK_END}>
         <HookPhase
