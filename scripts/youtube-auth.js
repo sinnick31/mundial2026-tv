@@ -50,7 +50,7 @@ function getExpectedChannelId() {
   return process.env.YOUTUBE_CHANNEL_ID || 'UCQbAT9x3pVmV5oRAtwoKmKA';
 }
 
-async function verifyChannel(youtube) {
+async function verifyChannel(youtube, expected = getExpectedChannelId()) {
   const response = await youtube.channels.list({
     part: ['id', 'snippet'],
     mine: true,
@@ -63,7 +63,6 @@ async function verifyChannel(youtube) {
     throw error;
   }
 
-  const expected = getExpectedChannelId();
   if (expected && channel.id !== expected) {
     const error = new Error(
       `La autorización pertenece al canal ${channel.id}, no al canal esperado ${expected}.`

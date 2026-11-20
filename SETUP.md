@@ -38,43 +38,21 @@ git push -u origin main
 5. Tipo: **Desktop Application**
 6. Descargar `client_secret.json`
 
-### Paso B — Obtener Refresh Token (una sola vez)
+### Paso B — Autorizar el canal y renovar el refresh token
+
+Usa el JSON del mismo cliente OAuth de escritorio que corresponde a `YOUTUBE_CLIENT_ID` y `YOUTUBE_CLIENT_SECRET` en GitHub Actions. Si estás configurando los secretos por primera vez o cambiaste de cliente, registra ambos valores en GitHub como indica el paso 4 antes de continuar. Guarda el JSON fuera del repositorio.
+
+En tu equipo, instala [GitHub CLI](https://cli.github.com/) e inicia sesión con una cuenta que pueda administrar los secretos del repositorio. Desde la raíz del proyecto, ejecuta:
+
 ```bash
-# Instalar google-auth-library
-npm install -g google-auth-library
-
-# Ejecutar este script en tu PC para autorizar tu canal
-node -e "
-const { OAuth2Client } = require('google-auth-library');
-const http = require('http');
-const url = require('url');
-
-const CLIENT_ID = 'TU_CLIENT_ID';
-const CLIENT_SECRET = 'TU_CLIENT_SECRET';
-const REDIRECT = 'http://localhost:3000/callback';
-
-const client = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT);
-const authUrl = client.generateAuthUrl({
-  access_type: 'offline',
-  scope: ['https://www.googleapis.com/auth/youtube.upload'],
-});
-
-console.log('Abre esta URL en tu navegador:\n' + authUrl);
-
-// Servidor temporal para capturar el código
-const server = http.createServer(async (req, res) => {
-  const q = url.parse(req.url, true);
-  if (q.pathname === '/callback') {
-    const { tokens } = await client.getToken(q.query.code);
-    console.log('\n✅ REFRESH TOKEN:', tokens.refresh_token);
-    console.log('Guárdalo en GitHub Secrets como YOUTUBE_REFRESH_TOKEN');
-    res.end('Token obtenido! Cierra esta ventana.');
-    server.close();
-  }
-});
-server.listen(3000, () => console.log('Esperando callback en http://localhost:3000...'));
-"
+gh auth login
+npm ci
+node scripts/renew-youtube-refresh-token.js "RUTA_AL_JSON_DE_GOOGLE"
 ```
+
+Abre la URL que muestra el script, elige el canal FÚTBOL CHILENSIS y concede los permisos de lectura y subida. El script comprueba que Google acepta el nuevo refresh token y que la autorización corresponde al canal esperado. Después actualiza `YOUTUBE_REFRESH_TOKEN` directamente en GitHub Actions.
+
+Si la aplicación OAuth es **External** y está en **Testing**, Google emite refresh tokens de YouTube que caducan a los siete días. Revisa el estado de publicación de la aplicación en Google Cloud antes de emitir un reemplazo si necesitas una autorización duradera. [Documentación de Google](https://developers.google.com/identity/protocols/oauth2#expiration).
 
 ---
 
@@ -87,32 +65,14 @@ Ve a tu repo → **Settings** → **Secrets and variables** → **Actions** → 
 | `FOOTBALL_DATA_API_KEY` | Tu API key de football-data.org |
 | `YOUTUBE_CLIENT_ID` | OAuth2 Client ID de Google Cloud |
 | `YOUTUBE_CLIENT_SECRET` | OAuth2 Client Secret de Google Cloud |
-| `YOUTUBE_REFRESH_TOKEN` | El refresh token obtenido en el Paso B |
+| `YOUTUBE_REFRESH_TOKEN` | Actualizado por el script del Paso B |
 | `COMPETITION_ID` | `WC` (FIFA World Cup — confirmar ID cuando empiece) |
 
 ---
 
-## 5️⃣ Verificar el workflow
+## 5️⃣ Verificar las credenciales en GitHub Actions
 
-```bash
-# Disparar manualmente con un partido de prueba
-# En GitHub → Actions → ⚽ Mundial 2026 — Auto Shorts → Run workflow
-# Pegar en "force_match":
-{
-  "homeTeam": "BRASIL",
-  "awayTeam": "ARGENTINA",
-  "homeScore": 2,
-  "awayScore": 1,
-  "homeFlag": "🇧🇷",
-  "awayFlag": "🇦🇷",
-  "homeColor": "#009c3b",
-  "awayColor": "#74acdf",
-  "matchDate": "25 JUN 2026",
-  "matchStage": "GRUPO A · JORNADA 1",
-  "venue": "AT&T Stadium",
-  "city": "Dallas, Texas"
-}
-```
+En la pestaña **Actions**, selecciona **Validar YouTube OAuth** y ejecuta el workflow desde `main`. La validación canjea el refresh token configurado y verifica el canal de YouTube. Termina después de comprobar esas credenciales, sin renderizar ni publicar videos.
 
 ---
 

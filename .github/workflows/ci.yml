@@ -16,6 +16,10 @@ on:
       - 'package-lock.json'
       - '.github/workflows/futbol-pipeline.yml'
       - '.github/workflows/ci.yml'
+      - '.github/workflows/youtube-oauth.yml'
+      - 'scripts/preflight-youtube-auth.js'
+      - 'scripts/renew-youtube-refresh-token.js'
+      - 'scripts/youtube-auth.js'
       - '.github/workflows/resultados-largos-diarios.yml'
       - 'scripts/fetch-matches.js'
       - 'config/**'
@@ -37,6 +41,10 @@ on:
       - 'package-lock.json'
       - '.github/workflows/futbol-pipeline.yml'
       - '.github/workflows/ci.yml'
+      - '.github/workflows/youtube-oauth.yml'
+      - 'scripts/preflight-youtube-auth.js'
+      - 'scripts/renew-youtube-refresh-token.js'
+      - 'scripts/youtube-auth.js'
       - '.github/workflows/resultados-largos-diarios.yml'
       - 'scripts/fetch-matches.js'
       - 'config/**'
@@ -77,6 +85,8 @@ jobs:
           node --check scripts/fetch-matches.js
           node --check scripts/generate-results-longform.js
           node --check scripts/preflight-youtube-auth.js
+          node --check scripts/renew-youtube-refresh-token.js
+          node --check scripts/youtube-auth.js
 
       - name: Guard render/upload entrypoint behavior
         run: |
