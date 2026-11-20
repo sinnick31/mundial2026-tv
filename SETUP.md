@@ -72,7 +72,9 @@ Ve a tu repo → **Settings** → **Secrets and variables** → **Actions** → 
 
 ## 5️⃣ Verificar las credenciales en GitHub Actions
 
-En la pestaña **Actions**, selecciona **Validar YouTube OAuth** y ejecuta el workflow desde `main`. La validación canjea el refresh token configurado y verifica el canal de YouTube. Termina después de comprobar esas credenciales, sin renderizar ni publicar videos.
+**Validar YouTube OAuth** ejecuta una comprobación diaria en `main`. También puedes iniciarla desde la pestaña **Actions** después de renovar el secreto. El workflow canjea el refresh token configurado por un access token y verifica el canal autorizado, sin renderizar ni publicar videos.
+
+Al publicar, el cliente OAuth obtiene automáticamente el access token a partir del refresh token guardado. Si Google rechaza el refresh token con `INVALID_REFRESH_TOKEN`, vuelve a autorizar el canal como indica el paso B.
 
 ---
 
