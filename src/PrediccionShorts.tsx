@@ -82,6 +82,19 @@ const BrollLayer: React.FC<{ brollSrc?: string; opacity?: number }> = ({ brollSr
   );
 };
 
+// Gráfica original vectorial: cancha esquemática, sin fotografías ni escudos de terceros.
+const PitchBackdrop: React.FC = () => (
+  <AbsoluteFill style={{ background: 'linear-gradient(155deg, #0e4938 0%, #12604a 45%, #092b32 100%)', overflow: 'hidden' }}>
+    <AbsoluteFill style={{ opacity: 0.14, background: 'repeating-linear-gradient(0deg, transparent 0px, transparent 135px, #b4f8d8 136px, transparent 140px)' }} />
+    <div style={{ position: 'absolute', inset: '9% 10%', border: '5px solid #c5f9e255', borderRadius: 6 }} />
+    <div style={{ position: 'absolute', left: '10%', right: '10%', top: '50%', height: 5, background: '#c5f9e255' }} />
+    <div style={{ position: 'absolute', left: '50%', top: '50%', width: 320, height: 320, border: '5px solid #c5f9e255', borderRadius: '50%', transform: 'translate(-50%, -50%)' }} />
+    <div style={{ position: 'absolute', left: '25%', right: '25%', top: '9%', height: '14%', border: '5px solid #c5f9e255', borderTop: 0 }} />
+    <div style={{ position: 'absolute', left: '25%', right: '25%', bottom: '9%', height: '14%', border: '5px solid #c5f9e255', borderBottom: 0 }} />
+    <AbsoluteFill style={{ background: 'linear-gradient(180deg, #071e2999 0%, #071e29aa 100%)' }} />
+  </AbsoluteFill>
+);
+
 // ─── Fase 1: HOOK (0–2s) ─────────────────────────────────────────────────────
 const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionProps['tipo']; emoji: string; brollSrc?: string; etiquetaSeccion?: string }> = ({
   gancho, subtitulo, tipo, emoji, brollSrc, etiquetaSeccion,
@@ -100,7 +113,8 @@ const HookPhase: React.FC<{ gancho: string; subtitulo: string; tipo: PrediccionP
   const pulseScale = 1 + Math.sin(frame * 0.4) * 0.015;
 
   return (
-    <AbsoluteFill style={{ background: `radial-gradient(ellipse at center, ${colores.bg}dd 0%, #000000 70%)` }}>
+    <AbsoluteFill>
+      <PitchBackdrop />
       <BrollLayer brollSrc={brollSrc} opacity={0.42} />
       {/* Líneas de energía de fondo */}
       <AbsoluteFill style={{ opacity: 0.15 }}>
@@ -317,10 +331,11 @@ const PuntoFullscreen: React.FC<{
   const slideX = interpolate(frame, [0, 12], [40, 0], { extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
 
   return (
-    <AbsoluteFill style={{ background: '#050505' }}>
+    <AbsoluteFill>
+      <PitchBackdrop />
       <BrollLayer brollSrc={brollSrc} opacity={0.48} />
       <AbsoluteFill style={{
-        background: `linear-gradient(180deg, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.68) 100%)`,
+        background: 'linear-gradient(180deg, rgba(5,35,30,0.18) 0%, rgba(5,25,28,0.48) 100%)',
         display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
         padding: '0 60px',
       }}>
@@ -376,7 +391,8 @@ const ContentPhase: React.FC<{
   let nextPointFrame = HEADER_FRAMES;
 
   const header = (
-    <AbsoluteFill style={{ background: 'linear-gradient(180deg, #0a1420 0%, #050505 100%)' }}>
+    <AbsoluteFill>
+      <PitchBackdrop />
       <BrollLayer brollSrc={brollSrc} opacity={0.4} />
       <HeaderBlock
         descripcion={descripcion} equipo1={equipo1} equipo2={equipo2}
@@ -432,7 +448,7 @@ const CTAPhase: React.FC<{
 
   return (
     <AbsoluteFill style={{
-      background: 'linear-gradient(180deg, #07111f 0%, #101827 100%)',
+      background: 'linear-gradient(180deg, #10553e 0%, #0b3442 100%)',
       display: 'flex', flexDirection: 'column',
       alignItems: 'center', justifyContent: 'center',
       gap: 34, padding: '0 64px',
