@@ -55,3 +55,11 @@ test('no duplica la fecha de publicación cuando el crédito de fuente ya la inc
   assert.ok(component.includes('<CreditoFuente fuente={props.fuente || (props.fechaPublicacion ? `Fuente publicada: ${props.fechaPublicacion}` : undefined)} />'));
   assert.equal(component.includes("<CreditoFuente fuente={[props.fechaPublicacion ? `Fuente publicada: ${props.fechaPublicacion}` : '', props.fuente || ''].filter(Boolean).join(' · ')} />"), false);
 });
+
+
+test('usa gráficos de cancha originales como alternativa a fotos no autorizadas', () => {
+  const component = fs.readFileSync(path.join(__dirname, '../src/PrediccionShorts.tsx'), 'utf8');
+  assert.ok(component.includes('const PitchBackdrop: React.FC'));
+  assert.ok(component.includes('<PitchBackdrop />'));
+  assert.ok(component.includes('repeating-linear-gradient'));
+});
