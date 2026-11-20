@@ -1,0 +1,35 @@
+name: Validar YouTube OAuth
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 14 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/youtube-oauth.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Verificar refresh token y canal
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CHANNEL_ID: UCQbAT9x3pVmV5oRAtwoKmKA
+        run: node scripts/preflight-youtube-auth.js
