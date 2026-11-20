@@ -13,14 +13,29 @@ const scopes = [
   'https://www.googleapis.com/auth/youtube.readonly',
 ];
 
-async function authorize(credentials) {
+function getRegisteredLocalRedirect(credentials) {
+  for (const uri of credentials.redirect_uris || []) {
+    const redirect = URL.parse(uri);
+    if (redirect?.protocol === 'http:' &&
+        ['127.0.0.1', 'localhost', '[::1]'].includes(redirect.hostname) &&
+        !redirect.username && !redirect.password && !redirect.search && !redirect.hash) {
+      return redirect;
+    }
+  }
+  throw new Error('El cliente OAuth web necesita una URL de redirección local registrada.');
+}
+
+async function authorize(credentials, localRedirect) {
   const state = randomBytes(32).toString('base64url');
   const server = http.createServer();
-  server.listen(0, '127.0.0.1');
+  const host = localRedirect?.hostname === '[::1]' ? '::1' : '127.0.0.1';
+  const port = localRedirect ? Number(localRedirect.port || 80) : 0;
+  server.listen(port, host);
 
   try {
     await once(server, 'listening');
-    const redirect = `http://127.0.0.1:${server.address().port}/callback`;
+    const redirect = localRedirect?.href || `http://127.0.0.1:${server.address().port}/callback`;
+    const callbackPath = new URL(redirect).pathname;
     const client = new google.auth.OAuth2(credentials.client_id, credentials.client_secret, redirect);
     const { codeVerifier, codeChallenge } = await client.generateCodeVerifierAsync();
     const authUrl = client.generateAuthUrl({
@@ -38,7 +53,7 @@ async function authorize(credentials) {
 
       server.on('request', (request, response) => {
         const url = new URL(request.url, redirect);
-        if (request.method !== 'GET' || url.pathname !== '/callback') {
+        if (request.method !== 'GET' || url.pathname !== callbackPath) {
           response.writeHead(404).end();
           return;
         }
@@ -91,19 +106,21 @@ async function main() {
 
   let credentials;
   try {
-    credentials = JSON.parse(readFileSync(credentialsFile, 'utf8')).installed;
+    credentials = JSON.parse(readFileSync(credentialsFile, 'utf8'));
   } catch {
     throw new Error('No se pudo leer el JSON del cliente OAuth.');
   }
-  if (!credentials?.client_id || !credentials?.client_secret) {
-    throw new Error('Usa el JSON descargado de un cliente OAuth de escritorio.');
+  const client = credentials?.installed || credentials?.web;
+  if (!client?.client_id || !client?.client_secret) {
+    throw new Error('Usa el JSON descargado de un cliente OAuth de Google.');
   }
+  const localRedirect = credentials.installed ? undefined : getRegisteredLocalRedirect(client);
 
   if (spawnSync('gh', ['auth', 'status', '--hostname', 'github.com'], { stdio: 'ignore' }).status !== 0) {
     throw new Error('Instala GitHub CLI e inicia sesión con gh auth login antes de continuar.');
   }
 
-  const token = await authorize(credentials).catch(error => {
+  const token = await authorize(client, localRedirect).catch(error => {
     if (!error.response) throw error;
     throw new Error('Google rechazó el canje o la consulta del canal. Revisa el cliente, los permisos y que YouTube Data API v3 esté habilitada.');
   });
