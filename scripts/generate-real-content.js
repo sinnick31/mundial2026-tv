@@ -9,6 +9,7 @@
 
 const fs = require('fs');
 const { loadHistory, saveHistory, hasSimilarHook, registrar } = require('./content-history');
+const { readHistory: readRenderedHistory, wasRendered } = require('./render-dedup');
 
 const MAX_ITEMS = Math.min(parseInt(process.env.MAX_ITEMS || '2', 10), 2);
 const MODO = process.env.MODO || 'auto';
@@ -308,6 +309,7 @@ function buildItem(item, type, order) {
 function main() {
   const news = readJson('news-cache.json', { noticias: [] });
   const history = loadHistory();
+  const renderedHistory = readRenderedHistory();
   const allNews = Array.isArray(news.noticias) ? news.noticias : [];
   const now = Date.now();
   const rejectionCounts = {};
@@ -377,7 +379,7 @@ function main() {
   const picks = [];
   const addPick = (predicate, type) => {
     if (picks.length >= MAX_ITEMS) return;
-    const item = candidates.filter(predicate).filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia')).sort((a, b) => importance(b) - importance(a))[0];
+    const item = candidates.filter(predicate).filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia') && !wasRendered(renderedHistory, n)).sort((a, b) => importance(b) - importance(a))[0];
     if (!item) return;
     usedLinks.add(item.link);
     picks.push(buildItem(item, type, picks.length + 1));
@@ -410,7 +412,7 @@ function main() {
   }
 
   if (picks.length < MAX_ITEMS) {
-    candidates.filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia')).sort((a, b) => importance(b) - importance(a)).slice(0, MAX_ITEMS - picks.length).forEach(n => {
+    candidates.filter(n => !usedLinks.has(n.link)).filter(n => !hasSimilarHook(history, n.title, 'noticia') && !wasRendered(renderedHistory, n)).sort((a, b) => importance(b) - importance(a)).slice(0, MAX_ITEMS - picks.length).forEach(n => {
       if (picks.length >= MAX_ITEMS) return;
       usedLinks.add(n.link);
       picks.push(buildItem(n, typeFor(n), picks.length + 1));
@@ -418,7 +420,7 @@ function main() {
   }
 
   if (!picks.length) {
-    const alreadyCovered = candidates.filter(n => hasSimilarHook(history, n.title, 'noticia'));
+    const alreadyCovered = candidates.filter(n => hasSimilarHook(history, n.title, 'noticia') || wasRendered(renderedHistory, n));
     diagnostics.status = 'NO_ELIGIBLE_CONTENT';
     diagnostics.final_status = 'NO_ELIGIBLE_CONTENT';
     diagnostics.final_reason = alreadyCovered.length === candidates.length
@@ -428,7 +430,7 @@ function main() {
     diagnostics.selection_rejected_examples = candidates.slice(0, 50).map(item => ({
       title: clean(item.article_title || item.title || '').slice(0, 180),
       source: clean(item.fuente || item.fuente_host || '').slice(0, 100),
-      reason: hasSimilarHook(history, item.title, 'noticia')
+      reason: (hasSimilarHook(history, item.title, 'noticia') || wasRendered(renderedHistory, item))
         ? 'already_covered_by_editorial_history'
         : 'not_selected_by_editorial_rotation',
     }));
