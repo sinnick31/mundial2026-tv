@@ -94,6 +94,14 @@ jobs:
         if: github.event_name == 'schedule' || inputs.manual_package == 'automatic' || inputs.manual_package == ''
         run: node scripts/fetch-matches.js
 
+      - name: 🕒 Recuperar historial efímero de renders validados
+        uses: actions/cache/restore@v4
+        with:
+          path: .render-history-cache.json
+          key: render-history-${{ github.run_id }}
+          restore-keys: |
+            render-history-
+
       - name: 🧠 Seleccionar SOLO historias con valor
         id: gen
         env:
@@ -324,6 +332,26 @@ jobs:
             if(r.total===0||ok.length!==r.total) process.exit(1);
           }
           NODE
+
+      - name: 🕒 Recuperar historial efímero para validación
+        if: ${{ (github.event_name == 'schedule' || inputs.render_only != 'false') && success() }}
+        uses: actions/cache/restore@v4
+        with:
+          path: .render-history-cache.json
+          key: render-history-${{ github.run_id }}
+          restore-keys: |
+            render-history-
+
+      - name: 🧾 Registrar solo renders locales validados (48 h)
+        if: ${{ (github.event_name == 'schedule' || inputs.render_only != 'false') && success() }}
+        run: node scripts/render-dedup.js out/reporte-${{ needs.generate.outputs.fecha }}.json
+
+      - name: 💾 Conservar historial efímero sin modificar main
+        if: ${{ (github.event_name == 'schedule' || inputs.render_only != 'false') && success() }}
+        uses: actions/cache/save@v4
+        with:
+          path: .render-history-cache.json
+          key: render-history-${{ github.run_id }}
 
       - name: 💾 Backup
         if: always()
