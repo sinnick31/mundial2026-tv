@@ -40,7 +40,7 @@ git push -u origin main
 
 ### Paso B — Autorizar el canal y renovar el refresh token
 
-Usa el JSON del mismo cliente OAuth de escritorio que corresponde a `YOUTUBE_CLIENT_ID` y `YOUTUBE_CLIENT_SECRET` en GitHub Actions. Si estás configurando los secretos por primera vez o cambiaste de cliente, registra ambos valores en GitHub como indica el paso 4 antes de continuar. Guarda el JSON fuera del repositorio.
+Usa el JSON del mismo cliente OAuth que corresponde a `YOUTUBE_CLIENT_ID` y `YOUTUBE_CLIENT_SECRET` en GitHub Actions. Si estás configurando los secretos por primera vez o cambiaste de cliente, registra ambos valores en GitHub como indica el paso 4 antes de continuar. Guarda el JSON fuera del repositorio. Si el cliente es de tipo **Aplicación web**, registra una redirección local en Google Cloud, por ejemplo `http://localhost:3000/oauth2callback`, y vuelve a descargar el JSON para incluirla.
 
 En tu equipo, instala [GitHub CLI](https://cli.github.com/) e inicia sesión con una cuenta que pueda administrar los secretos del repositorio. Desde la raíz del proyecto, ejecuta:
 
